@@ -39,7 +39,7 @@
     heading.id = `${project.id}-title`;
     const titleLink = element('a', '', project.title);
     titleLink.href = detailHref(project);
-    const arrow = element('span', '', '↗');
+    const arrow = element('span', '', '→');
     arrow.setAttribute('aria-hidden', 'true');
     titleLink.append(arrow);
     heading.append(titleLink);

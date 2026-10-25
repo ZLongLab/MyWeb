@@ -20,7 +20,6 @@
 .home-social-links { display: flex; flex-wrap: wrap; gap: 20px; }
 .home-social-links:empty { display: none; }
 .home-social-links a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--c-moss); font-size: 13px; white-space: nowrap; }
-.home-social-links a::after { content: '↗'; }
 .home-social-links a:hover { text-decoration: underline; text-underline-offset: 6px; }
 .home-now { padding: 26px 24px 28px; border-left: 3px solid var(--c-clay); background: #f7efe0; transform: rotate(1deg); box-shadow: 0 8px 24px -18px rgba(92, 62, 25, .24); }
 .home-now-overline { color: var(--c-slate); font-family: var(--mono); font-size: 11px; letter-spacing: .7px; }
@@ -40,6 +39,8 @@
 .home-work { display: grid; grid-template-columns: minmax(0, .44fr) minmax(0, .56fr); align-items: center; gap: 48px; min-width: 0; padding: 32px 0; }
 .home-work + .home-work { border-top: 1px solid var(--line); }
 .home-work-copy { min-width: 0; }
+.home-work-copy { display: block; }
+.home-work-copy:hover { text-decoration: none; }
 .home-work-number { display: block; margin-bottom: 14px; color: rgba(200, 90, 50, .18); font-family: var(--font-serif); font-size: 48px; font-style: italic; line-height: 1; }
 .home-work-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; font-size: 12px; }
 .home-work-category { color: var(--warm); font-weight: 500; }
@@ -53,7 +54,7 @@
 .home-work[data-project-id="recallai"] .home-work-image { background: var(--frame-cool); border-color: rgba(43, 91, 70, .12); }
 .home-work[data-project-id="document-assistant"] .home-work-image { background: var(--frame-warm); border-color: rgba(200, 90, 50, .12); }
 .home-work-image img { display: block; width: auto; max-width: 100%; height: auto; max-height: 270px; object-fit: contain; border-radius: 8px; box-shadow: 0 12px 28px -6px rgba(25, 28, 26, .14), 0 2px 6px rgba(25, 28, 26, .04); transition: transform .2s ease; }
-.home-work:hover .home-work-image img, .home-work:focus-visible .home-work-image img { transform: translateY(-3px) scale(1.01); }
+.home-work-image:hover img, .home-work-image:focus-visible img { transform: translateY(-3px) scale(1.01); }
 .home-work:hover .home-work-title { color: var(--green); }
 .home-work:hover .entry-arrow { transform: translateX(4px); }
 .home-writing { margin-top: 0; padding-top: 56px; border-top: 0; }

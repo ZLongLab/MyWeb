@@ -25,15 +25,15 @@
     var projects = window.SITE_PROJECTS.filter(function (project) { return project.featured === true; });
     projectList.replaceChildren();
     projects.forEach(function (project, index) {
-      var link = element('a', 'home-work');
+      var link = element('article', 'home-work');
       link.dataset.projectId = project.id;
-      link.href = window.SITE_NAV.detailHref('projects', project.id);
-      link.setAttribute('aria-label', project.title + ' · 查看作品详情');
-      var copy = element('div', 'home-work-copy');
+      var copy = element('a', 'home-work-copy');
+      copy.href = window.SITE_NAV.detailHref('projects', project.id);
+      copy.setAttribute('aria-label', project.title + ' · 查看作品详情');
       var number = element('span', 'home-work-number', String(index + 1).padStart(2, '0'));
       number.setAttribute('aria-hidden', 'true');
       var title = element('h3', 'home-work-title', project.title);
-      title.append(arrow('↗'));
+      title.append(arrow());
       var meta = element('div', 'home-work-meta');
       meta.append(element('span', 'home-work-category', project.category), element('span', 'home-work-status', project.status));
       var keywords = Array.isArray(project.keywords) ? project.keywords : (Array.isArray(project.tags) ? project.tags : []);
@@ -42,7 +42,11 @@
       link.append(copy);
       var image = project.image;
       if (image && /^assets\/images\/[a-zA-Z0-9_-]+\.(?:png|jpe?g|webp|svg)$/.test(image.src)) {
-        var frame = element('div', 'home-work-image');
+        var frame = element('a', 'home-work-image');
+        frame.href = image.src;
+        frame.setAttribute('data-image-preview', '');
+        frame.setAttribute('data-image-caption', image.caption || project.title + ' 应用界面示例');
+        frame.setAttribute('aria-label', project.title + ' · 查看界面大图');
         var img = element('img');
         img.src = image.src;
         img.alt = image.caption || project.title + ' 应用界面示例';
@@ -50,7 +54,7 @@
         img.height = image.height;
         if (index === 0) img.fetchPriority = 'high';
         else img.loading = 'lazy';
-        frame.append(img);
+        frame.append(img, element('span', 'image-preview-hint', '查看大图 ⤢'));
         link.append(frame);
       }
       projectList.append(link);

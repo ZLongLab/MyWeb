@@ -1,0 +1,343 @@
+{
+  "checks": [
+    {
+      "name": "RecallAI 自动生成五项目录",
+      "passed": true
+    },
+    {
+      "name": "目录跳转保留来源筛选",
+      "passed": true
+    },
+    {
+      "name": "目录键盘焦点到正文",
+      "passed": true
+    },
+    {
+      "name": "正文内第二张截图预览",
+      "passed": true
+    },
+    {
+      "name": "原生目录锚点保留列表来源历史",
+      "passed": true
+    },
+    {
+      "name": "目录和大图后返回列表恢复滚动120px",
+      "passed": true
+    },
+    {
+      "name": "返回保留分类",
+      "passed": true
+    },
+    {
+      "name": "直接打开作品小节锚点",
+      "passed": true
+    },
+    {
+      "name": "DocumentAssistant 自动生成三项目录",
+      "passed": true
+    },
+    {
+      "name": "新文章正文可阅读",
+      "passed": true
+    },
+    {
+      "name": "新文章双向关联作品",
+      "passed": true
+    },
+    {
+      "name": "全站搜索收录新文章",
+      "passed": true
+    },
+    {
+      "name": "搜索词保留",
+      "passed": true
+    },
+    {
+      "name": "重开搜索全选输入",
+      "passed": true
+    },
+    {
+      "name": "联系区 GitHub 真实账号",
+      "passed": true
+    },
+    {
+      "name": "无准备中的联系占位",
+      "passed": true
+    },
+    {
+      "name": "未添加或公开邮箱",
+      "passed": true
+    },
+    {
+      "name": "联系区有效出口说明",
+      "passed": true
+    },
+    {
+      "name": "外链新标签安全属性及唯一箭头",
+      "passed": true
+    },
+    {
+      "name": "首页无嵌套链接 1440",
+      "passed": true
+    },
+    {
+      "name": "首页站内箭头 1440",
+      "passed": true
+    },
+    {
+      "name": "首屏仅展示个人网站入口 1440",
+      "passed": true
+    },
+    {
+      "name": "键盘打开大图不跳页 1440",
+      "passed": true
+    },
+    {
+      "name": "大图放大到225% 1440",
+      "passed": true
+    },
+    {
+      "name": "搜索与大图不叠加 1440",
+      "passed": true
+    },
+    {
+      "name": "大图缩小 1440",
+      "passed": true
+    },
+    {
+      "name": "适应窗口与最小缩放 1440",
+      "passed": true
+    },
+    {
+      "name": "模态内键盘焦点 1440",
+      "passed": true
+    },
+    {
+      "name": "Esc关闭恢复焦点与滚动 1440",
+      "passed": true
+    },
+    {
+      "name": "首页无横向溢出 1440",
+      "passed": true
+    },
+    {
+      "name": "首页无嵌套链接 390",
+      "passed": true
+    },
+    {
+      "name": "首页站内箭头 390",
+      "passed": true
+    },
+    {
+      "name": "首屏仅展示个人网站入口 390",
+      "passed": true
+    },
+    {
+      "name": "键盘打开大图不跳页 390",
+      "passed": true
+    },
+    {
+      "name": "大图放大到225% 390",
+      "passed": true
+    },
+    {
+      "name": "手机放大后可横向滚动",
+      "passed": true
+    },
+    {
+      "name": "搜索与大图不叠加 390",
+      "passed": true
+    },
+    {
+      "name": "大图缩小 390",
+      "passed": true
+    },
+    {
+      "name": "适应窗口与最小缩放 390",
+      "passed": true
+    },
+    {
+      "name": "模态内键盘焦点 390",
+      "passed": true
+    },
+    {
+      "name": "Esc关闭恢复焦点与滚动 390",
+      "passed": true
+    },
+    {
+      "name": "首页无横向溢出 390",
+      "passed": true
+    },
+    {
+      "name": "布局 320 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局 320 projects.html",
+      "passed": true
+    },
+    {
+      "name": "布局 320 project.html?id=recallai",
+      "passed": true
+    },
+    {
+      "name": "布局 320 project.html?id=document-assistant",
+      "passed": true
+    },
+    {
+      "name": "布局 320 project.html?id=folia-android",
+      "passed": true
+    },
+    {
+      "name": "布局 320 articles.html",
+      "passed": true
+    },
+    {
+      "name": "布局 320 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true
+    },
+    {
+      "name": "布局 320 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局 320 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "布局 768 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局 768 projects.html",
+      "passed": true
+    },
+    {
+      "name": "布局 768 project.html?id=recallai",
+      "passed": true
+    },
+    {
+      "name": "布局 768 project.html?id=document-assistant",
+      "passed": true
+    },
+    {
+      "name": "布局 768 project.html?id=folia-android",
+      "passed": true
+    },
+    {
+      "name": "布局 768 articles.html",
+      "passed": true
+    },
+    {
+      "name": "布局 768 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true
+    },
+    {
+      "name": "布局 768 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局 768 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 projects.html",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 project.html?id=recallai",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 project.html?id=document-assistant",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 project.html?id=folia-android",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 articles.html",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局 1440 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "短作品隐藏空目录",
+      "passed": true
+    },
+    {
+      "name": "无效作品保留错误页",
+      "passed": true
+    },
+    {
+      "name": "文章列表自动包含第五篇",
+      "passed": true
+    },
+    {
+      "name": "新文章日期排序",
+      "passed": true
+    },
+    {
+      "name": "触屏放大与400%上限",
+      "passed": true
+    },
+    {
+      "name": "触屏大图具备双向滚动空间",
+      "passed": true
+    },
+    {
+      "name": "触屏按钮关闭并恢复滚动",
+      "passed": true
+    },
+    {
+      "name": "模拟图片失败：提示与禁用缩放",
+      "passed": true
+    },
+    {
+      "name": "原生dialog不可用时退回原图链接",
+      "passed": true
+    },
+    {
+      "name": "file本地双击模式仍可渲染目录并查看大图",
+      "passed": true
+    },
+    {
+      "name": "正常页面没有脚本错误",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "正常页面没有资源失败",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "environment": {
+    "browser": "Installed Chrome through Playwright",
+    "layouts": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "touch": "Chromium mobile emulation, not a physical device",
+    "simulatedFailure": "404 image fixture in a separate page",
+    "websiteRuntimeDependencies": "none added"
+  },
+  "verdict": "PASS"
+}

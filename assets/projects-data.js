@@ -60,7 +60,22 @@ window.SITE_PROJECTS = [
       caption: 'DocumentAssistant 文档分类与归档界面示例。'
     },
     detail: '一个 Windows 本地文档管理与截图工具。根据文档内容给出规则分类建议，确认后复制归档并保留来源文件；可检索文件名、正文、标签与备注，支持文档库备份和归档恢复。分类与检索无需 AI API。\n\n截图工具包含原位标注、滚动长截图，以及可选电脑声音的区域录屏。本地整理的源码版本为 0.23.4。',
-    sourceUrl: 'https://github.com/ZLongLab/DocumentAssistant'
+    sourceUrl: 'https://github.com/ZLongLab/DocumentAssistant',
+    articleId: 'documentassistant-confirm-before-archive',
+    sections: [
+      {
+        heading: '整理流程：建议、检查，再复制归档',
+        paragraphs: ['选择文档库，添加文件或扫描文件夹，查看正文与规则分类建议，再调整分类、课程、项目和标签，确认后复制归档。来源文件保留；重复内容会提示，同名文件会自动编号。', '归档前核对扫描时的内容哈希，发现文件变化时要求重新读取，避免把旧正文和分类建议套用到已经修改的文件。']
+      },
+      {
+        heading: '归档以后：检索与日常操作',
+        paragraphs: ['在文档库检索文件名、正文、标签与备注，查看阅读状态与支持的 PDF 页面预览，再打开需要的文件。Ctrl+F 快速进入搜索，F5 刷新结果及文件状态。', '截图、标注与录屏作为独立入口使用，具体能力和适用范围见源码仓库说明。']
+      },
+      {
+        heading: '版本与恢复',
+        paragraphs: ['本机文档记录的源码版本为 v0.23.4，下载包仍为 v0.23.3，源码改动与安装包功能可能不同。本站截图使用示例资料，不代表每个已发布版本的默认界面。', '文档库提供备份与恢复，执行前应检查备份范围和目标位置。保留来源文件、复制归档和独立备份分别承担不同用途。']
+      }
+    ]
   },
   {
     id: 'folia-android',

@@ -23,6 +23,16 @@
     return node;
   }
 
+  function previewLink(img, caption) {
+    var link = element('a', 'project-image-link');
+    link.href = img.src;
+    link.setAttribute('data-image-preview', '');
+    link.setAttribute('data-image-caption', caption || project.title + ' 界面示例');
+    link.setAttribute('aria-label', project.title + ' · 查看界面大图');
+    link.append(img, element('span', 'image-preview-hint', '查看大图 ⤢'));
+    return link;
+  }
+
   document.getElementById('project-content').hidden = false;
   document.getElementById('project-not-found').hidden = true;
   document.title = project.title + ' · ' + siteTitle;
@@ -33,9 +43,16 @@
   document.getElementById('project-meta').append(element('span', 'portfolio-category', project.category), element('span', 'portfolio-status', project.status));
   (Array.isArray(project.tags) ? project.tags : []).forEach(function (tag) { document.getElementById('project-tags').append(element('li', '', tag)); });
   String(project.detail || '').split(/\n\s*\n/).filter(Boolean).forEach(function (paragraph) { document.getElementById('project-body').append(element('p', '', paragraph)); });
-  (Array.isArray(project.sections) ? project.sections : []).forEach(function (section) {
+  var headings = [];
+  (Array.isArray(project.sections) ? project.sections : []).forEach(function (section, index) {
     var block = element('section', 'project-body-section');
-    if (section.heading) block.append(element('h3', '', section.heading));
+    if (section.heading) {
+      var heading = element('h3', '', section.heading);
+      heading.id = 'project-section-' + (index + 1);
+      heading.tabIndex = -1;
+      block.append(heading);
+      headings.push(heading);
+    }
     (Array.isArray(section.paragraphs) ? section.paragraphs : []).forEach(function (paragraph) { block.append(element('p', '', paragraph)); });
     if (Array.isArray(section.list) && section.list.length) {
       var list = element(section.ordered ? 'ol' : 'ul');
@@ -51,11 +68,29 @@
       sectionImage.height = section.image.height;
       sectionImage.alt = section.image.caption || project.title + ' 界面示例';
       sectionImage.loading = 'lazy';
-      sectionFigure.append(sectionImage, element('figcaption', '', section.image.caption || ''));
+      sectionFigure.append(previewLink(sectionImage, section.image.caption), element('figcaption', '', section.image.caption || ''));
       block.append(sectionFigure);
     }
     document.getElementById('project-body').append(block);
   });
+  var toc = document.getElementById('project-toc');
+  if (toc && headings.length > 1) {
+    var tocList = element('ol');
+    headings.forEach(function (heading) {
+      var item = element('li');
+      var link = element('a', '', heading.textContent);
+      link.href = '#' + heading.id;
+      item.append(link);
+      tocList.append(item);
+    });
+    toc.append(tocList);
+    toc.hidden = false;
+    // A shared URL with a section fragment must work on first load as well.
+    window.addEventListener('load', function () {
+      var target = headings.find(function (heading) { return location.hash === '#' + heading.id; });
+      if (target) target.scrollIntoView();
+    }, { once: true });
+  }
   var linkedArticle = (Array.isArray(window.SITE_ARTICLES) ? window.SITE_ARTICLES : []).find(function (article) { return article.id === project.articleId; });
   if (linkedArticle) {
     var note = element('p', 'project-related-note');
@@ -73,7 +108,7 @@
     img.alt = image.caption;
     img.width = image.width;
     img.height = image.height;
-    figure.append(img, element('figcaption', '', image.caption));
+    figure.append(previewLink(img, image.caption), element('figcaption', '', image.caption));
     figure.hidden = false;
   }
   if (project.sourceUrl) {

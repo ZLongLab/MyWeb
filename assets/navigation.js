@@ -88,6 +88,17 @@
     }
   }
 
+  // Native fragment navigation creates a history entry without our origin state.
+  // Keep the original list attached while readers move through detail sections.
+  var detailOrigin = !isList && history.state && history.state[STATE];
+  window.addEventListener('hashchange', function () {
+    if (!validOrigin(detailOrigin)) return;
+    var state = Object.assign({}, history.state || {});
+    if (validOrigin(state[STATE])) return;
+    state[STATE] = detailOrigin;
+    try { history.replaceState(state, ''); } catch (error) { /* Native section navigation still works. */ }
+  });
+
   document.addEventListener('click', function (event) {
     if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     var link = event.target.closest('a[href]');
@@ -100,6 +111,7 @@
     var targetPage = pageName(target);
     var detailPage = section === 'projects' ? 'project.html' : 'article.html';
     var origin = history.state && history.state[STATE];
+    if (target.hash && cleanHref(target) === cleanHref(new URL(location.href))) return;
     if (isList && targetPage === detailPage && link.closest('[data-project-list], #article-list')) {
       origin = { key: listKey(new URL(location.href), section), y: window.scrollY, at: Date.now() };
       write(HANDOFF, Object.assign({ target: cleanHref(target) }, origin));

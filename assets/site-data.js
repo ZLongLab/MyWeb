@@ -5,6 +5,9 @@ window.SITE_DATA = {
   siteTitle: '有间小站',
   bio: '做一些实用的小工具，也记录把想法做出来的过程。',
   email: '',
-  // GitHub Pages 上的 ZL AI LAB 主页；统一用于首页、关于页和页脚。
-  links: [{ label: 'GitHub 主页', url: 'https://zlonglab.github.io/' }]
+  // 个人展示网站与 GitHub 账号分开；账号入口仅在联系区显示。
+  links: [
+    { label: 'ZL AI LAB', url: 'https://zlonglab.github.io/' },
+    { label: 'GitHub 账号', url: 'https://github.com/ZLongLab', locations: ['contact'], contact: true }
+  ]
 };

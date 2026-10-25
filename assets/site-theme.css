@@ -282,6 +282,15 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .project-detail-copy h2 { font-family: var(--serif); font-size: 24px; }
 .project-detail-copy p { color: var(--muted); font-size: 16px; }
 .project-body-section { margin-top: 30px; }
+.project-toc { padding: 20px 0; margin-top: 24px; border-block: 1px solid var(--line); }
+.project-toc h2 { font-family: var(--font-serif); font-size: 17px; font-weight: 600; color: var(--c-moss); }
+.project-toc ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; padding-left: 22px; margin: 8px 0 0; }
+.project-toc li { padding-left: 2px; color: var(--c-clay); font-family: var(--mono), var(--font); font-size: 13px; }
+.project-toc a { display: inline-flex; align-items: center; min-height: 44px; padding-block: 6px; color: var(--c-moss); line-height: 1.7; overflow-wrap: anywhere; }
+.project-body-section h3 { scroll-margin-top: 24px; }
+.project-body-section h3:focus { outline: none; }
+.project-body-section h3:target { color: var(--c-moss); }
+@media (max-width: 599px) { .project-toc ol { grid-template-columns: minmax(0, 1fr); } }
 .project-body-section h3 { margin: 0 0 12px; color: var(--ink); font-family: var(--font-serif); font-size: 21px; font-weight: 600; line-height: 1.7; }
 .project-body-section ul, .project-body-section ol { margin: 14px 0 0; padding-left: 23px; color: var(--muted); font-size: 16px; line-height: 1.95; }
 .project-body-section li + li { margin-top: 9px; }
@@ -320,7 +329,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .about-contact-socials:empty { display: none; }
 .about-contact .button, .about-contact-socials a { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 46px; max-width: 100%; padding: 10px 22px; border: 1px solid var(--c-moss); border-radius: 999px; background: var(--c-moss); color: var(--bg-paper); box-shadow: 0 4px 12px rgba(43, 91, 70, .16); font-size: 14px; font-weight: 500; line-height: 1.6; overflow-wrap: anywhere; }
 .about-contact .button:hover, .about-contact-socials a:hover { border-color: #346e54; background: #346e54; color: var(--bg-paper); text-decoration: none; }
-.about-contact-socials a::after { content: '↗'; font-size: 16px; line-height: 1; }
+.external-link-arrow { display: inline-block; margin-left: 6px; font-size: 16px; line-height: 1; }
 .about-contact .button:active, .about-contact-socials a:active { border-color: #234b3a; background: #234b3a; }
 .about-contact .contact-pending { gap: 9px; padding: 7px 14px; border: 1px solid rgba(43, 91, 70, .16); border-radius: 999px; background: rgba(227, 237, 232, .5); color: var(--c-moss); }
 .about-contact .contact-pending::before { content: ''; flex-shrink: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--c-moss); }

@@ -142,10 +142,21 @@
     });
   });
 
+  var links = (Array.isArray(config.links) ? config.links : []).filter(function (item) {
+    if (!item || typeof item.url !== 'string' || !textValue(item.label, '')) return false;
+    try {
+      var url = new URL(item.url);
+      return (url.protocol === 'https:' || url.protocol === 'http:') && !url.username && !url.password;
+    } catch (error) { return false; }
+  });
+  var hasSocialContact = links.some(function (item) {
+    return item.contact === true && (!Array.isArray(item.locations) || item.locations.indexOf('contact') !== -1);
+  });
   var email = textValue(config.email, '');
   var hasEmail = /^[^\s@?&#]+@[^\s@?&#]+\.[^\s@?&#]+$/.test(email);
   fillText('[data-contact-description]', hasEmail
     ? '欢迎通过邮件联系我，交流作品、分享想法，或只是打个招呼。'
+    : hasSocialContact ? '项目相关的问题，欢迎前往我的 GitHub 账号，在对应公开仓库已开放的问题区（Issues）交流。'
     : '联系方式还在准备中，期待以后在这里交流。');
   document.querySelectorAll('[data-contact-link]').forEach(function (link) {
     link.setAttribute('href', 'about.html#contact');
@@ -156,26 +167,25 @@
     if (hasEmail) link.setAttribute('href', 'mailto:' + email);
   });
   document.querySelectorAll('[data-contact-pending]').forEach(function (element) {
-    element.hidden = hasEmail;
+    element.hidden = hasEmail || hasSocialContact;
   });
 
   // 社交地址可选；空配置时不生成任何链接。
-  var links = Array.isArray(config.links) ? config.links : [];
   document.querySelectorAll('[data-social-links]').forEach(function (container) {
+    var scope = container.getAttribute('data-social-scope') || 'footer';
     links.forEach(function (item) {
-      if (!item || typeof item.url !== 'string' || !textValue(item.label, '')) return;
-      var url;
-      try {
-        url = new URL(item.url);
-      } catch (error) {
-        return;
-      }
-      if (url.protocol !== 'https:' && url.protocol !== 'http:') return;
+      if (Array.isArray(item.locations) && item.locations.indexOf(scope) === -1) return;
       var link = document.createElement('a');
-      link.href = url.href;
+      link.href = new URL(item.url).href;
       link.textContent = item.label.trim();
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
+      link.setAttribute('aria-label', item.label.trim() + '（新标签页打开）');
+      var arrow = document.createElement('span');
+      arrow.className = 'external-link-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.textContent = '↗';
+      link.appendChild(arrow);
       container.appendChild(link);
     });
   });
