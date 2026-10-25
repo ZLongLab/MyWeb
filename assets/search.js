@@ -46,7 +46,7 @@
     { type: '页面', title: '工作台 · 现在在做什么', summary: '带核对日期的项目近况，连接作品与开发记录。', href: 'workbench.html#now', body: '近况 最近 现在 正在维护 ' + contentText(workbench.focus, 0) },
     { type: '页面', title: '工作台 · 项目里的技术', summary: '已在项目里使用的技术，以及它们负责的事情。', href: 'workbench.html#tools', body: '工具 技术栈 用途 工作台 ' + contentText(workbench.tools, 0) },
     { type: '页面', title: '工作台 · 小站更新', summary: '按日期查看这个网站的更新记录。', href: 'workbench.html#updates', body: '更新日志 版本历史 工作台 ' + contentText(workbench.updates, 0) },
-    { type: '页面', title: '关于本站', summary: '页面结构、字体配色、本地数据和网站状态。', href: 'workbench.html#colophon', body: '工作台 本站说明 配置 字体 配色 HTML CSS JavaScript 暖纸 暖沙 四色 系统字体 无衬线 衬线 松针绿 暖陶土 琥珀金 青瓷灰蓝 在线字体 便签 隐私 本地预览 公开托管 版本 私有仓库 源码备份 导出 JSON 浏览器 关键词 不上传' }
+    { type: '页面', title: '关于本站', summary: '页面结构、字体配色、本地数据和网站状态。', href: 'workbench.html#colophon', body: '工作台 本站说明 配置 字体 配色 HTML CSS JavaScript 暖纸 暖沙 四色 系统字体 无衬线 衬线 松针绿 暖陶土 琥珀金 青瓷灰蓝 在线字体 便签 隐私 本地预览 公开托管 版本 公开仓库 源码备份 审核 导出 JSON 浏览器 关键词 不上传' }
   );
 
   var articles = window.SITE_CONTENT.sortArticles(window.SITE_ARTICLES);
