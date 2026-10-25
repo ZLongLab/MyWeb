@@ -13,6 +13,7 @@ window.SITE_WORKBENCH = {
     { title: 'Capacitor · React · TypeScript', purpose: '移动端适配', description: '用于 Folia 的 Android 适配、构建和界面集成。', projectId: 'folia-android' }
   ],
   updates: [
+    { version: '0.13.2', date: '2026-10-25', title: '导航加一点细边框', changes: ['导航项使用细边框和浅底色，当前页面略深，搜索入口带轻微暖色。', '收回上一轮较重的首页按钮改动，恢复原有绿色主按钮和轻量排版。'] },
     { version: '0.13.1', date: '2026-10-25', title: '让点击入口更醒目', changes: ['首页主操作使用暖陶红，作品补上明确的绿色详情入口。', '加强全部内容、工作台和联系按钮，截图放大与阅读详情分开标识。'] },
     { version: '0.13.0', date: '2026-10-25', title: '给小站补一张工作台', changes: ['增加带日期的项目近况、技术用途清单、小站更新和本站说明。', '首页、关于页、全站页脚与搜索连到同一份工作台内容。'] },
     { version: '0.12.0', date: '2026-10-25', title: '让作品更容易看清和读完', changes: ['截图可放大、滚动和关闭，作品详情增加小节目录。', '新增 DocumentAssistant 开发记录，区分 ZL AI LAB 网站和 GitHub 账号。'] },

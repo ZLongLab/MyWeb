@@ -71,7 +71,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 }
 .brand-mark img, img.brand-mark { width: 32px; height: 32px; display: block; object-fit: contain; }
 .brand-period { margin-left: -7px; color: var(--green); }
-.site-nav { display: flex; align-items: center; flex-direction: row; position: static; gap: 27px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+.site-nav { display: flex; align-items: center; flex-direction: row; position: static; gap: 8px; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
 .site-nav > a, .site-nav .nav-search {
   position: relative;
   display: inline-flex;
@@ -79,24 +79,25 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   justify-content: center;
   gap: 6px;
   min-height: 44px;
-  padding: 8px 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
+  padding: 8px 12px;
+  border: 1px solid #d5dcd0;
+  border-radius: 7px;
+  background: #f8f8f1;
   color: var(--muted);
   font-size: 13px;
   font-weight: 400;
   line-height: 1.6;
   white-space: nowrap;
   box-shadow: none;
-  transition: color .16s;
+  transition: color .16s, background .16s, border-color .16s;
 }
-.site-nav > a:hover, .site-nav .nav-search:hover { color: var(--green); background: transparent; }
+.site-nav > a:hover, .site-nav .nav-search:hover { color: var(--green); background: #edf1e8; border-color: #aebeaa; }
+.site-nav .nav-search { background: #f8f1e6; border-color: #dfd3be; }
 .nav-search-shortcut { color: var(--slate); font-family: var(--mono); font-size: 10px; letter-spacing: -.4px; }
-.site-nav > a[aria-current="page"] { color: var(--ink); font-weight: 600; background: transparent; }
+.site-nav > a[aria-current="page"] { color: var(--green); font-weight: 600; background: #e7eee2; border-color: #9fb39b; }
 .site-nav > a[aria-current="page"]::after {
   content: "";
-  display: block;
+  display: none;
   position: absolute;
   left: 0;
   right: 0;
@@ -435,7 +436,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 @media (min-width: 800px) and (max-width: 1050px) {
   .container { width: calc(100% - 64px); }
-  .site-nav { gap: 15px; }
+  .site-nav { gap: 8px; }
   .brand { font-size: 19px; gap: 8px; }
   .site-nav > a, .site-nav .nav-search { font-size: 12px; }
   .guestbook-layout { gap: 38px; }
@@ -523,8 +524,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 
 /* Navigation collapses below 640px; content keeps its own reading breakpoints. */
 @media (min-width: 640px) and (max-width: 799px) {
-  .site-nav { gap: 12px; }
-  .site-nav > a, .site-nav .nav-search { font-size: 12px; }
+  .site-nav { gap: 6px; }
+  .site-nav > a, .site-nav .nav-search { padding-inline: 8px; font-size: 12px; }
 }
 @media (max-width: 639px) {
   .about-hero-meta { align-items: flex-start; flex-direction: column; gap: 13px; }
@@ -533,11 +534,11 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   .menu-toggle { display: flex; min-width: 76px; padding: 8px 11px; font-size: 12px; }
   .site-nav { display: none; position: absolute; left: 0; right: 0; top: calc(100% + 9px); align-items: stretch; flex-direction: column; gap: 3px; padding: 15px 22px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); box-shadow: 0 12px 25px #30382c12; }
   .site-nav.is-open { display: flex; flex-direction: column; }
-  .site-nav > a, .site-nav .nav-search { justify-content: flex-start; min-height: 48px; padding: 10px 0; border-radius: 0; font-size: 16px; }
-  .site-nav > a[aria-current="page"] { color: var(--green); background: transparent; border-radius: 0; }
+  .site-nav > a, .site-nav .nav-search { justify-content: flex-start; min-height: 48px; padding: 10px 12px; border-radius: 7px; font-size: 16px; }
+  .site-nav > a[aria-current="page"] { color: var(--green); background: #e7eee2; border-color: #9fb39b; border-radius: 7px; }
   .site-nav > a[aria-current="page"]::after { display: none; }
-  .site-nav > a:hover, .site-nav .nav-search:hover { color: var(--green); background: transparent; }
-  .site-nav .nav-contact { justify-content: space-between; min-height: 48px; margin: 4px 0 0; padding: 10px 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; font-size: 16px; }
+  .site-nav > a:hover, .site-nav .nav-search:hover { color: var(--green); background: #edf1e8; border-color: #aebeaa; }
+  .site-nav .nav-contact { justify-content: space-between; min-height: 48px; margin: 4px 0 0; padding: 10px 12px; border: 1px solid #b2c3b3; border-radius: 7px; font-size: 16px; }
 }
 
 @media (max-width: 360px) {
