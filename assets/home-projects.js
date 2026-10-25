@@ -33,12 +33,14 @@
       var number = element('span', 'home-work-number', String(index + 1).padStart(2, '0'));
       number.setAttribute('aria-hidden', 'true');
       var title = element('h3', 'home-work-title', project.title);
-      title.append(arrow());
       var meta = element('div', 'home-work-meta');
       meta.append(element('span', 'home-work-category', project.category), element('span', 'home-work-status', project.status));
       var keywords = Array.isArray(project.keywords) ? project.keywords : (Array.isArray(project.tags) ? project.tags : []);
       var tags = element('p', 'home-work-keywords', keywords.join(' · '));
       copy.append(number, meta, title, element('p', 'home-work-summary', project.summary), tags);
+      var action = element('span', 'home-work-action', '查看详情');
+      action.append(arrow());
+      copy.append(action);
       link.append(copy);
       var image = project.image;
       if (image && /^assets\/images\/[a-zA-Z0-9_-]+\.(?:png|jpe?g|webp|svg)$/.test(image.src)) {
@@ -54,7 +56,7 @@
         img.height = image.height;
         if (index === 0) img.fetchPriority = 'high';
         else img.loading = 'lazy';
-        frame.append(img, element('span', 'image-preview-hint', '查看大图 ⤢'));
+        frame.append(img, element('span', 'image-preview-hint', '放大截图 ⤢'));
         link.append(frame);
       }
       projectList.append(link);

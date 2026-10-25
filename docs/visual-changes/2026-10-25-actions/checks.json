@@ -1,0 +1,244 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "无横向溢出 320 index.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 320 projects.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 320 about.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 390 index.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 390 projects.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 390 about.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 640 index.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 640 index.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 640 projects.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 640 projects.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 640 about.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 640 about.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 768 index.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 768 index.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 768 projects.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 768 projects.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 768 about.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 768 about.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 1024 index.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 1024 index.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 1024 projects.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 1024 projects.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 1024 about.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 1024 about.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 1440 index.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 1440 index.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 1440 projects.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 1440 projects.html",
+      "passed": true
+    },
+    {
+      "name": "无横向溢出 1440 about.html",
+      "passed": true
+    },
+    {
+      "name": "导航联系按钮完整 1440 about.html",
+      "passed": true
+    },
+    {
+      "name": "入口点击尺寸 .home-primary-link",
+      "passed": true,
+      "details": {
+        "height": 56.390625,
+        "color": "rgb(250, 247, 242)",
+        "background": "rgb(182, 77, 47)",
+        "border": "rgb(168, 68, 43)",
+        "font": "16px"
+      }
+    },
+    {
+      "name": "入口文字对比度 .home-primary-link",
+      "passed": true,
+      "details": 4.8
+    },
+    {
+      "name": "入口点击尺寸 .home-about-link",
+      "passed": true,
+      "details": {
+        "height": 52,
+        "color": "rgb(43, 91, 70)",
+        "background": "rgb(250, 248, 242)",
+        "border": "rgb(179, 193, 179)",
+        "font": "14px"
+      }
+    },
+    {
+      "name": "入口文字对比度 .home-about-link",
+      "passed": true,
+      "details": 7.36
+    },
+    {
+      "name": "入口点击尺寸 .home-work-action",
+      "passed": true,
+      "details": {
+        "height": 50.59375,
+        "color": "rgb(250, 247, 242)",
+        "background": "rgb(43, 91, 70)",
+        "border": "rgb(37, 79, 61)",
+        "font": "14px"
+      }
+    },
+    {
+      "name": "入口文字对比度 .home-work-action",
+      "passed": true,
+      "details": 7.31
+    },
+    {
+      "name": "入口点击尺寸 .home-section-heading > .home-text-link",
+      "passed": true,
+      "details": {
+        "height": 46.59375,
+        "color": "rgb(43, 91, 70)",
+        "background": "rgb(250, 248, 242)",
+        "border": "rgb(170, 189, 171)",
+        "font": "14px"
+      }
+    },
+    {
+      "name": "入口文字对比度 .home-section-heading > .home-text-link",
+      "passed": true,
+      "details": 7.36
+    },
+    {
+      "name": "入口点击尺寸 .home-now-footer a",
+      "passed": true,
+      "details": {
+        "height": 45.859893798828125,
+        "color": "rgb(119, 63, 40)",
+        "background": "rgb(246, 224, 203)",
+        "border": "rgb(199, 165, 140)",
+        "font": "13px"
+      }
+    },
+    {
+      "name": "入口文字对比度 .home-now-footer a",
+      "passed": true,
+      "details": 6.51
+    },
+    {
+      "name": "两件作品都有明确详情动作",
+      "passed": true
+    },
+    {
+      "name": "作品详情无嵌套链接或按钮",
+      "passed": true
+    },
+    {
+      "name": "主按钮键盘焦点可见",
+      "passed": true
+    },
+    {
+      "name": "绿色详情入口仍进入正确作品",
+      "passed": true
+    },
+    {
+      "name": "放大截图不跳离首页",
+      "passed": true
+    },
+    {
+      "name": "截图关闭恢复滚动",
+      "passed": true
+    },
+    {
+      "name": "减少动态效果时主按钮不位移",
+      "passed": true
+    },
+    {
+      "name": "无脚本错误",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "无资源失败",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "environment": "Installed Chrome, responsive browser emulation; no physical device claim"
+}

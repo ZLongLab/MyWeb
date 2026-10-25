@@ -106,8 +106,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   border-radius: 1px;
   background: var(--warm);
 }
-.site-nav .nav-contact { margin: 0; border: 0; padding: 8px 0; background: transparent; color: var(--green); border-radius: 0; }
-.site-nav .nav-contact:hover { background: transparent; color: #284331; }
+.site-nav .nav-contact { margin: 0; border: 1px solid #b2c3b3; padding: 8px 12px; background: #e6eee4; color: var(--green); border-radius: 9px; font-weight: 500; }
+.site-nav .nav-contact:hover { background: #d6e3d4; border-color: #829d85; color: #284331; }
 .site-nav .nav-contact > span { margin-left: 3px; font-size: 15px; }
 .menu-toggle { display: none; min-height: 44px; border-radius: 10px; border-color: var(--control-border); color: var(--ink); }
 .eyebrow, .section-index { color: var(--muted); font-size: 12px; letter-spacing: 1px; }
