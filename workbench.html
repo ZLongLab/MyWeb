@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ZL 的工作台：最近的项目进展、实现用到的技术、小站更新与本站说明。">
+  <meta name="author" content="ZL"><meta name="theme-color" content="#faf7f2">
+  <title>工作台 · 有间小站</title>
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/search.css">
+  <link rel="stylesheet" href="assets/navigation.css">
+  <link rel="stylesheet" href="assets/site-theme.css">
+  <link rel="stylesheet" href="assets/workbench.css">
+  <link rel="stylesheet" href="assets/background.css">
+  <script src="assets/site-data.js" defer></script>
+  <script src="assets/articles-data.js" defer></script>
+  <script src="assets/content.js" defer></script>
+  <script src="assets/projects-data.js" defer></script>
+  <script src="assets/workbench-data.js" defer></script>
+  <script src="assets/navigation.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/workbench.js" defer></script>
+  <script src="assets/search.js" defer></script>
+</head>
+<body data-page="workbench">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header container">
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><img src="assets/site-mark.svg" width="32" height="32" alt=""></span><span data-site-title>有间小站</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="主要导航"><a href="index.html">首页</a><a href="projects.html">作品</a><a href="articles.html">文章</a><a href="about.html">关于</a><a class="nav-contact" href="about.html#contact" data-contact-link>联系我 <span aria-hidden="true">→</span></a></nav>
+  </header>
+  <main class="container workbench-page" id="main">
+    <header class="workbench-hero">
+      <p class="eyebrow">工作台 / DESK</p>
+      <h1>此刻，正在做的事<span class="title-period">。</span></h1>
+      <p class="workbench-intro">把最近的项目、实现用到的技术和小站的变化，留在同一张工作台上。</p>
+      <p class="workbench-updated">最近整理 <time datetime="2026-10-25" data-workbench-updated>2026.10.25</time></p>
+      <nav class="workbench-index" aria-label="工作台内容"><a href="#now">当前近况 <span aria-hidden="true">↓</span></a><a href="#tools">实现技术 <span aria-hidden="true">↓</span></a><a href="#updates">小站更新 <span aria-hidden="true">↓</span></a><a href="#colophon">关于本站 <span aria-hidden="true">↓</span></a></nav>
+    </header>
+
+    <section class="workbench-section" id="now" aria-labelledby="workbench-now-title" tabindex="-1">
+      <div class="workbench-section-heading"><p class="workbench-section-index">01 / NOW</p><h2 id="workbench-now-title">当前近况</h2><p>项目在推进，记录也慢慢补上。</p></div>
+      <div class="workbench-section-content" id="workbench-now-list"><noscript><p>近况与项目进展可在<a href="projects.html">作品页</a>和<a href="articles.html">文章页</a>查看。</p></noscript></div>
+    </section>
+
+    <section class="workbench-section" id="tools" aria-labelledby="workbench-tools-title" tabindex="-1">
+      <div class="workbench-section-heading"><p class="workbench-section-index">02 / BUILD</p><h2 id="workbench-tools-title">用什么实现</h2><p>来自已展示项目的技术，按实际用途整理。</p></div>
+      <div class="workbench-section-content" id="workbench-tools-list"><noscript><p>每件作品的技术与用途，见<a href="projects.html">作品介绍</a>。</p></noscript></div>
+    </section>
+
+    <section class="workbench-section" id="updates" aria-labelledby="workbench-updates-title" tabindex="-1">
+      <div class="workbench-section-heading"><p class="workbench-section-index">03 / LOG</p><h2 id="workbench-updates-title">小站更新</h2><p>给每次完成的改动，留下一行记录。</p></div>
+      <div class="workbench-section-content" id="workbench-update-list"><noscript><p>关于小站的记录，可前往<a href="articles.html?category=%E5%BB%BA%E7%AB%99%E6%89%8B%E8%AE%B0">建站手记</a>阅读。</p></noscript></div>
+    </section>
+
+    <section class="workbench-section" id="colophon" aria-labelledby="workbench-colophon-title" tabindex="-1">
+      <div class="workbench-section-heading"><p class="workbench-section-index">04 / COLOPHON</p><h2 id="workbench-colophon-title">关于本站</h2><p>这个小站的制作方式，以及数据留在哪里。</p></div>
+      <div class="workbench-section-content">
+        <dl class="workbench-colophon-list">
+          <div><dt>制作方式</dt><dd>原生 HTML、CSS 与 JavaScript 静态页面，不依赖框架或外部运行库；本地预览可使用本机服务。内容随本地文件维护，目前尚未启用公开托管。</dd></div>
+          <div><dt>字体与颜色</dt><dd>优先使用本机的中文无衬线与衬线字体，缺少时回退到系统字体。暖纸底、暖沙色带，搭配松针绿、暖陶土、琥珀金与青瓷灰蓝，没有在线字体请求。<span class="workbench-palette" aria-hidden="true"><i></i><i></i><i></i><i></i></span></dd></div>
+          <div><dt>搜索与便签</dt><dd>搜索在浏览器内完成，不上传关键词。<a href="guestbook.html">随手便签</a>只保存在当前浏览器，不发送给站主；重要内容可在便签页导出 JSON 备份。</dd></div>
+          <div><dt>版本与交流</dt><dd>源码使用私有仓库保存版本，代码备份不包含浏览器里的便签。项目交流入口放在<a href="about.html#contact">关于页的联系区</a>。</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="footer-inner container"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 保持好奇，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="workbench.html" aria-current="page">工作台</a><a class="footer-notes" href="guestbook.html">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
+</body>
+</html>

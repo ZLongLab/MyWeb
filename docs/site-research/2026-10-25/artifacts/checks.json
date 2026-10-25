@@ -1,0 +1,172 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "首页近况有工作台入口",
+      "passed": true
+    },
+    {
+      "name": "首页人工核对日期正确",
+      "passed": true
+    },
+    {
+      "name": "三项真实项目近况",
+      "passed": true
+    },
+    {
+      "name": "四项技术用途",
+      "passed": true
+    },
+    {
+      "name": "三个实际版本记录",
+      "passed": true
+    },
+    {
+      "name": "近况包含现有项目版本",
+      "passed": true
+    },
+    {
+      "name": "关联已有开发手记",
+      "passed": true
+    },
+    {
+      "name": "目录锚点 now",
+      "passed": true
+    },
+    {
+      "name": "目录锚点 tools",
+      "passed": true
+    },
+    {
+      "name": "目录锚点 updates",
+      "passed": true
+    },
+    {
+      "name": "目录锚点 colophon",
+      "passed": true
+    },
+    {
+      "name": "关于页入口",
+      "passed": true
+    },
+    {
+      "name": "搜索技术可直达工作台小节",
+      "passed": true
+    },
+    {
+      "name": "搜索可见配色并打开本站说明",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 320 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 320 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 320 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 390 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 390 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 390 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 640 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 640 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 640 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 768 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 768 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 768 about.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 1440 index.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 1440 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "布局无横向溢出 1440 about.html",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 index.html",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 projects.html",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 project.html?id=recallai",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 articles.html",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 about.html",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "全站页脚入口 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "原作品大图开关保持可用",
+      "passed": true
+    },
+    {
+      "name": "本地双击模式可读取新数据",
+      "passed": true
+    },
+    {
+      "name": "没有脚本错误",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "没有资源失败",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "environment": "Installed Chrome; responsive browser emulation, not a physical mobile device"
+}

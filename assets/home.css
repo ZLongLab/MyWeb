@@ -28,6 +28,10 @@
 .home-now-list li { display: flex; align-items: flex-start; gap: 9px; color: var(--c-slate); font-size: 12px; line-height: 1.9; overflow-wrap: anywhere; }
 .home-now-icon { flex-shrink: 0; font-size: 14px; line-height: 1.7; }
 .home-now-label { display: block; color: var(--c-moss); font-size: 11px; font-weight: 500; }
+.home-now-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 12px; margin-top: 16px; padding-top: 10px; border-top: 1px solid rgba(43, 91, 70, .13); }
+.home-now-footer a { display: inline-flex; align-items: center; min-height: 44px; color: var(--c-moss); font-size: 12px; }
+.home-now-footer time { color: var(--c-slate); font-family: var(--mono); font-size: 11px; }
+.home-now-footer > span { color: var(--muted); font-size: 11px; }
 .home-section { border-top: 1px solid var(--line); padding-top: 29px; }
 .home-works { width: 100%; padding: 42px 0 36px; border-block: 1px solid rgba(43, 91, 70, .1); background: var(--bg-band); }
 .home-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
