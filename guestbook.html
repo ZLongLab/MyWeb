@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="有间小站的随手便签。仅保存在当前浏览器，不会发送给站主。">
+  <meta name="author" content="ZL"><meta name="theme-color" content="#faf7f2">
+  <title>随手便签（本地） · 有间小站</title>
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/search.css">
+  <link rel="stylesheet" href="assets/guestbook.css">
+
+  <script src="assets/site-data.js" defer></script>
+  <script src="assets/articles-data.js" defer></script>
+  <script src="assets/content.js" defer></script>
+  <script src="assets/projects-data.js" defer></script>
+  <script src="assets/navigation.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/guestbook.js" defer></script>
+  <script src="assets/search.js" defer></script>
+  <link rel="stylesheet" href="assets/navigation.css">
+  <link rel="stylesheet" href="assets/site-theme.css">
+  <link rel="stylesheet" href="assets/background.css">
+</head>
+<body data-page="guestbook">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header container">
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><img src="assets/site-mark.svg" width="32" height="32" alt=""></span><span data-site-title>有间小站</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="主要导航"><a href="index.html">首页</a><a href="projects.html">作品</a><a href="articles.html">文章</a><a href="about.html">关于</a><a class="nav-contact" href="about.html#contact" data-contact-link>联系我 <span aria-hidden="true">→</span></a></nav>
+  </header>
+  <main class="container" id="main">
+    <section class="guestbook-intro" aria-labelledby="guestbook-title">
+      <div><p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> 本地随手便签 / LOCAL NOTES</p><h1 id="guestbook-title">灵感草稿箱<span class="title-period">。</span></h1><p>记下还没展开的想法，留给下一次动手。</p></div>
+
+    </section>
+    <p class="guestbook-scope"><span aria-hidden="true">◎</span><span>便签仅保存在当前浏览器，不会发送给站主，也不会跨设备同步。</span></p>
+    <div class="guestbook-layout">
+      <section class="guestbook-compose" aria-labelledby="compose-heading">
+        <p class="eyebrow section-index">01 / LEAVE A NOTE</p><h2 id="compose-heading">写一张便签。</h2><p class="guestbook-compose-description">用一个称呼，和一段想留下的话。</p>
+        <form id="guestbook-form" novalidate>
+          <div class="guestbook-field"><label for="guestbook-name">你的称呼 <span>必填</span></label><input id="guestbook-name" name="nickname" type="text" required minlength="1" maxlength="30" autocomplete="nickname" aria-describedby="guestbook-name-hint"><p class="guestbook-field-hint" id="guestbook-name-hint">1–30 个字符，可以使用昵称。</p></div>
+          <div class="guestbook-field"><label for="guestbook-content">想留下的话 <span>必填</span></label><textarea id="guestbook-content" name="content" rows="6" required minlength="1" maxlength="600" aria-describedby="guestbook-content-hint guestbook-character-count" placeholder="今天，有什么想记下来的？"></textarea><div class="guestbook-field-footer"><p class="guestbook-field-hint" id="guestbook-content-hint">1–600 个字符。</p><span id="guestbook-character-count">0 / 600</span></div></div>
+          <p class="guestbook-error" id="guestbook-error" role="alert" hidden></p>
+          <button class="button button-primary guestbook-submit" id="guestbook-submit" type="submit" disabled>保存到本浏览器 <span aria-hidden="true">→</span></button>
+          <p class="guestbook-form-note">最多保留 100 条。清除浏览器的网站数据会同时移除留言，重要内容可以导出一份。</p>
+        </form>
+        <p class="guestbook-status" id="guestbook-status" role="status" aria-live="polite" aria-atomic="true"></p>
+        <noscript><p class="guestbook-error">本地便签需要启用 JavaScript。启用后刷新页面，即可保存和查看。</p></noscript>
+      </section>
+      <section class="guestbook-saved" aria-labelledby="saved-heading">
+        <div class="guestbook-saved-heading"><div><p class="eyebrow section-index">02 / WORDS KEPT HERE</p><h2 id="saved-heading" tabindex="-1">收好的灵感。</h2></div><div class="guestbook-backup-actions"><button class="guestbook-export" id="guestbook-import" type="button" aria-describedby="guestbook-import-note" disabled>导入 JSON</button><button class="guestbook-export" id="guestbook-export" type="button" disabled>导出 JSON <span aria-hidden="true">→</span></button><input id="guestbook-import-file" type="file" accept=".json,application/json" aria-label="选择便签备份文件" hidden></div></div>
+        <p class="guestbook-backup-note" id="guestbook-import-note">导入会合并便签，完全相同的记录自动跳过。</p>
+        <p class="guestbook-count" id="guestbook-count">正在读取本地便签…</p>
+        <div class="guestbook-empty" id="guestbook-empty" hidden><h3>还没有便签。</h3><p>留一句话，让这一页从你开始。</p></div>
+        <div class="guestbook-list" id="guestbook-list"></div>
+      </section>
+    </div>
+  </main>
+  <footer class="site-footer"><div class="footer-inner container"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 从这里开始，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="guestbook.html" aria-current="page">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
+  <dialog class="site-dialog guestbook-delete-dialog" id="delete-message-dialog" aria-labelledby="delete-message-title" aria-describedby="delete-message-description">
+    <button class="dialog-close" type="button" data-close-dialog aria-label="取消删除">×</button><p class="eyebrow">REMOVE THIS NOTE</p><h2 id="delete-message-title">删除这张便签？</h2><p id="delete-message-description">这条留言将从当前浏览器移除，删除后无法在此恢复。</p><p class="guestbook-delete-preview" id="delete-message-preview"></p><p class="guestbook-error" id="delete-message-error" role="alert" hidden></p><div class="guestbook-dialog-actions"><button class="button guestbook-button-secondary" type="button" data-close-dialog autofocus>再想想</button><button class="button button-primary" type="button" id="delete-message-confirm">确认删除</button></div>
+  </dialog>
+</body>
+</html>

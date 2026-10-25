@@ -1,0 +1,3 @@
+/* Two soft washes sit behind the first screen, with paper grain below them. */
+body { background-color: var(--bg-paper); background-image: radial-gradient(circle at 15% 10%, rgba(200, 90, 50, .08), transparent 45%), radial-gradient(circle at 85% 20%, rgba(43, 91, 70, .08), transparent 50%), url('page-background.svg'); background-size: 100% max(720px, 70vw), 100% max(720px, 70vw), 1600px 1200px; background-position: center top; background-repeat: no-repeat; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }

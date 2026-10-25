@@ -1,0 +1,23 @@
+# 本机生成的预览、研究记录和重复备份不进入源码历史。
+/.tmp/
+/backups/
+/handoff/
+/research/
+/preview*.png
+/design-*.png
+
+# 运行缓存、编辑器文件与本机配置。
+node_modules/
+.cache/
+coverage/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.env
+.env.*
+!.env.example
+*.pem
+*.key

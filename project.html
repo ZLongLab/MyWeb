@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="有间小站的作品详情，了解项目用途、技术和当前进展。">
+  <meta name="author" content="ZL"><meta name="theme-color" content="#faf7f2">
+  <title>作品详情 · 有间小站</title>
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/projects.css">
+  <link rel="stylesheet" href="assets/search.css">
+  <link rel="stylesheet" href="assets/navigation.css">
+  <link rel="stylesheet" href="assets/site-theme.css">
+  <link rel="stylesheet" href="assets/background.css">
+  <script src="assets/site-data.js" defer></script>
+  <script src="assets/articles-data.js" defer></script>
+  <script src="assets/content.js" defer></script>
+  <script src="assets/projects-data.js" defer></script>
+  <script src="assets/navigation.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/project.js" defer></script>
+  <script src="assets/search.js" defer></script>
+</head>
+<body data-page="project">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header container"><a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><img src="assets/site-mark.svg" width="32" height="32" alt=""></span><span data-site-title>有间小站</span></a><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button><nav class="site-nav" id="site-nav" aria-label="主要导航"><a href="index.html">首页</a><a href="projects.html" aria-current="page">作品</a><a href="articles.html">文章</a><a href="about.html">关于</a><a class="nav-contact" href="about.html#contact" data-contact-link>联系我 <span aria-hidden="true">→</span></a></nav></header>
+  <main class="container project-main" id="main">
+    <nav class="breadcrumbs" aria-label="面包屑"><ol><li><a href="index.html">首页</a></li><li><a href="projects.html" data-project-list-link>作品</a></li><li><span id="project-breadcrumb-title" aria-current="page">作品详情</span></li></ol></nav>
+    <a class="detail-back" href="projects.html" data-project-list-link><span aria-hidden="true">←</span> 返回作品列表</a>
+    <article class="project-reading" id="project-content" aria-labelledby="project-title">
+      <header class="project-detail-header"><p class="eyebrow">PROJECT / 作品详情</p><div class="portfolio-meta" id="project-meta"></div><h1 id="project-title">作品详情</h1><p class="project-detail-summary" id="project-summary"></p><ul class="portfolio-tags" id="project-tags" aria-label="项目技术与特点"></ul></header>
+      <figure class="project-figure" id="project-figure" hidden></figure>
+      <section class="project-detail-copy" aria-labelledby="project-body-heading"><h2 id="project-body-heading">关于这个项目</h2><div id="project-body"></div></section>
+      <div class="project-detail-source" id="project-source"></div>
+      <nav class="detail-end" aria-label="作品详情导航"><a class="detail-back" href="projects.html" data-project-list-link><span aria-hidden="true">←</span> 返回作品列表</a></nav>
+    </article>
+    <section class="project-not-found" id="project-not-found" hidden><h1>这件作品，暂时没有找到。</h1><p>链接可能有误，你可以回到作品列表继续浏览。</p><a class="button button-primary" href="projects.html" data-project-list-link>返回作品列表 <span aria-hidden="true">→</span></a></section>
+    <noscript><p class="no-script-note">作品详情需要启用 JavaScript。你也可以返回作品列表。</p></noscript>
+  </main>
+  <footer class="site-footer"><div class="footer-inner container"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 保持好奇，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="guestbook.html">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
+</body>
+</html>
