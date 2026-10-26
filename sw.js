@@ -4,8 +4,21 @@
 // and external links are deliberately absent, even if the host can serve them.
 const BASE = new URL('./', self.location.href);
 const CACHE_PREFIX = 'myweb-shell-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + '0.14.0';
+const CACHE_NAME = CACHE_PREFIX + '1.0.0';
 const APP_FILES = [
+  'assets/images/github-activity.svg',
+  'assets/seasons.css',
+  'assets/house.css',
+  'assets/room-pages.js',
+  'assets/house.js',
+  'assets/site-snapshot.js',
+  'assets/life-data.js',
+  'assets/house-data.js',
+  'colophon.html',
+  'links.html',
+  'life.html',
+  'uses.html',
+  'now.html',
   'index.html',
   'projects.html',
   'project.html',

@@ -1,0 +1,209 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Approved heatmap contains 177 dated days",
+      "passed": true
+    },
+    {
+      "name": "Approved public total is 32",
+      "passed": true
+    },
+    {
+      "name": "Clock label is not duplicated",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper spring 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper spring 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper spring 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper spring 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper summer 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper summer 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper summer 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper summer 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper autumn 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper autumn 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper autumn 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper autumn 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper winter 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper winter 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper winter 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance paper winter 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night spring 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night spring 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night spring 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night spring 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night summer 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night summer 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night summer 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night summer 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night autumn 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night autumn 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night autumn 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night autumn 1440",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night winter 320",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night winter 390",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night winter 768",
+      "passed": true
+    },
+    {
+      "name": "Final entrance night winter 1440",
+      "passed": true
+    },
+    {
+      "name": "Project category selects two tools",
+      "passed": true
+    },
+    {
+      "name": "Project detail retains category",
+      "passed": true
+    },
+    {
+      "name": "Project breadcrumb restores scroll",
+      "passed": true,
+      "detail": {
+        "y": 425
+      }
+    },
+    {
+      "name": "Article detail retains query",
+      "passed": true
+    },
+    {
+      "name": "Article return restores scroll and filters",
+      "passed": true,
+      "detail": {
+        "y": 662
+      }
+    },
+    {
+      "name": "Collage opens actual screenshot viewer",
+      "passed": true
+    },
+    {
+      "name": "Closing image restores trigger focus",
+      "passed": true
+    },
+    {
+      "name": "Local note saves in original storage key",
+      "passed": true
+    },
+    {
+      "name": "Theme and season preserve original notes",
+      "passed": true
+    },
+    {
+      "name": "Heatmap starts on entering viewport",
+      "passed": true
+    },
+    {
+      "name": "Last-week sequence stays under 1.2s",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion clears heatmap animation",
+      "passed": true
+    },
+    {
+      "name": "No page errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No external requests",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

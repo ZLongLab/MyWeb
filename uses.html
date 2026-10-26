@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ZL 的工具墙：记录已经确认的开发工具，以及为什么在这个小站里用它。">
+  <meta name="author" content="ZL"><meta name="theme-color" content="#faf7f2">
+  <title>工具墙 · 有间小站</title>
+  <script>
+    (function () {
+      var choice = '', season = '';
+      try { choice = localStorage.getItem('myweb_theme_v1') || ''; season = localStorage.getItem('myweb_season_v1') || ''; } catch (error) { /* Preferences are optional. */ }
+      var now = new Date(), hour = now.getHours(), month = now.getMonth() + 1;
+      var mode = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
+      var autoSeason = month >= 3 && month <= 5 ? 'spring' : month >= 6 && month <= 8 ? 'summer' : month >= 9 && month <= 11 ? 'autumn' : 'winter';
+      if (['spring', 'summer', 'autumn', 'winter'].indexOf(season) === -1) season = autoSeason;
+      var root = document.documentElement;
+      root.dataset.theme = mode; root.dataset.season = season;
+      root.style.colorScheme = mode === 'night' ? 'dark' : 'light';
+      var colors = { spring: '#f7f8f3', summer: '#faf7f0', autumn: '#faf5ec', winter: '#f5f6f7' };
+      var color = document.querySelector('meta[name="theme-color"]');
+      if (color) color.content = mode === 'night' ? '#1e2420' : colors[season];
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/search.css">
+  <link rel="stylesheet" href="assets/navigation.css">
+  <link rel="stylesheet" href="assets/site-theme.css">
+  <link rel="stylesheet" href="assets/background.css">
+  <link rel="stylesheet" href="assets/media-viewer.css">
+  <link rel="stylesheet" href="assets/pwa.css">
+  <link rel="stylesheet" href="assets/night.css">
+  <link rel="stylesheet" href="assets/house.css">
+  <link rel="stylesheet" href="assets/seasons.css">
+  <link rel="stylesheet" href="assets/motion.css">
+  <script src="assets/site-data.js" defer></script>
+  <script src="assets/site-snapshot.js" defer></script>
+  <script src="assets/life-data.js" defer></script>
+  <script src="assets/house-data.js" defer></script>
+  <script src="assets/articles-data.js" defer></script>
+  <script src="assets/content.js" defer></script>
+  <script src="assets/projects-data.js" defer></script>
+  <script src="assets/workbench-data.js" defer></script>
+  <script src="assets/navigation.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/room-pages.js" defer></script>
+  <script src="assets/media-viewer.js" defer></script>
+  <script src="assets/search.js" defer></script>
+</head>
+<body data-page="uses" data-room="uses">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header container">
+    <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect class="site-mark-paper" x="2" y="2" width="60" height="60" rx="17" fill="#faf7f0"/><path class="site-mark-outline" d="m12 29 20-16 20 16M18 27v24h28V27" fill="none" stroke="#2b5b46" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path class="site-mark-door" d="m28 35 9-3v20l-9-3Z" fill="#c85a32"/></svg></span><span data-site-title>有间小站</span></a>
+    <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="主要导航"><a href="index.html">首页</a><a href="projects.html">作品</a><a href="articles.html">文章</a><a href="about.html">关于</a><a class="nav-contact" href="about.html#contact" data-contact-link>联系我 <span aria-hidden="true">→</span></a></nav>
+  </header>
+  <main class="room-page container" id="main">
+    <header class="room-header"><p class="room-kicker">有间 / 工具墙</p><h1>顺手的工具，留在手边<span class="title-period">。</span></h1><p class="room-lead">记录已经确认的开发工具，以及为什么在这个小站里用它。</p><p class="room-updated">更新于 <time data-room-updated datetime="2026-10-26">2026-10-26</time></p></header>
+<section class="room-section"><div class="room-section-head"><p class="room-kicker">01 / SOFTWARE</p><h2>开发与维护</h2></div><div class="room-section-body"><ul class="room-list" id="uses-software"></ul></div></section><section class="room-section"><div class="room-section-head"><p class="room-kicker">02 / HARDWARE</p><h2>桌面与设备</h2></div><div class="room-section-body"><ul class="room-list" id="uses-hardware"></ul></div></section><section class="room-section"><div class="room-section-head"><p class="room-kicker">03 / DEFAULTS</p><h2>默认应用</h2></div><div class="room-section-body"><p>日常默认应用还没有填写，以下位置等站主确认。</p><dl class="room-defaults" id="uses-defaults"></dl></div></section><section class="room-section"><div class="room-section-head"><p class="room-kicker">04 / SETUP</p><h2>怎样放在一起</h2></div><div class="room-section-body"><p>这间小站的内容留在本地文件；预览、检查和快照脚本也在本机运行。源码保存到 GitHub，重要版本留有恢复标记。</p><p>项目实际用到的 Electron、React、Python 和 SQLite 等技术，另放在<a href="workbench.html#tools">工作台的实现技术</a>中。</p></div></section>
+    <noscript><p>这里的清单由本地脚本展示，请允许 JavaScript 后查看；你仍可通过页头和页脚浏览其他房间。</p></noscript>
+  </main>
+  <footer class="site-footer"><div class="footer-inner container"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 保持好奇，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="workbench.html" aria-current="page">工作台</a><a class="footer-notes" href="guestbook.html">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
+  <script src="assets/house.js" defer></script>
+  <script src="assets/theme-controls.js" defer></script>
+  <script src="assets/motion.js" defer></script>
+  <script src="assets/pwa.js" defer></script>
+</body>
+</html>

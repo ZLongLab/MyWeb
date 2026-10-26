@@ -1,0 +1,938 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "paper/spring actual theme",
+      "passed": true
+    },
+    {
+      "name": "paper/spring text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 15.114965531728147
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 6.056398275834177
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 6.056398275834177
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 7.3210542562699885
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "paper/spring no overflow",
+      "passed": true
+    },
+    {
+      "name": "paper/summer actual theme",
+      "passed": true
+    },
+    {
+      "name": "paper/summer text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 15.077595686641505
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 6.041424595287182
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 6.041424595287182
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 7.302953873384337
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "paper/summer no overflow",
+      "passed": true
+    },
+    {
+      "name": "paper/autumn actual theme",
+      "passed": true
+    },
+    {
+      "name": "paper/autumn text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 14.854534810827507
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 5.952046587719109
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 5.952046587719109
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 7.194912556925002
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "paper/autumn no overflow",
+      "passed": true
+    },
+    {
+      "name": "paper/winter actual theme",
+      "passed": true
+    },
+    {
+      "name": "paper/winter text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 14.90899571164462
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 5.973868463866744
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 5.973868463866744
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 7.221291129134808
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "paper/winter no overflow",
+      "passed": true
+    },
+    {
+      "name": "night/spring actual theme",
+      "passed": true
+    },
+    {
+      "name": "night/spring text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "night/spring no overflow",
+      "passed": true
+    },
+    {
+      "name": "night/summer actual theme",
+      "passed": true
+    },
+    {
+      "name": "night/summer text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "night/summer no overflow",
+      "passed": true
+    },
+    {
+      "name": "night/autumn actual theme",
+      "passed": true
+    },
+    {
+      "name": "night/autumn text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "night/autumn no overflow",
+      "passed": true
+    },
+    {
+      "name": "night/winter actual theme",
+      "passed": true
+    },
+    {
+      "name": "night/winter text contrast",
+      "passed": true,
+      "detail": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ]
+    },
+    {
+      "name": "night/winter no overflow",
+      "passed": true
+    },
+    {
+      "name": "floorplan no overflow 320",
+      "passed": true
+    },
+    {
+      "name": "floorplan no overflow 390",
+      "passed": true
+    },
+    {
+      "name": "floorplan no overflow 640",
+      "passed": true
+    },
+    {
+      "name": "floorplan no overflow 768",
+      "passed": true
+    },
+    {
+      "name": "floorplan no overflow 1024",
+      "passed": true
+    },
+    {
+      "name": "manual preferences survive reload",
+      "passed": true
+    },
+    {
+      "name": "automatic season covers all twelve months",
+      "passed": true,
+      "detail": [
+        "winter",
+        "winter",
+        "spring",
+        "spring",
+        "spring",
+        "summer",
+        "summer",
+        "summer",
+        "autumn",
+        "autumn",
+        "autumn",
+        "winter"
+      ]
+    },
+    {
+      "name": "auto removes manual preference",
+      "passed": true
+    },
+    {
+      "name": "select applies preference and status",
+      "passed": true
+    },
+    {
+      "name": "invalid API inputs do not change preferences",
+      "passed": true
+    },
+    {
+      "name": "storage event syncs season selector",
+      "passed": true
+    },
+    {
+      "name": "no script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "storage blocked still switches in page",
+      "passed": true
+    }
+  ],
+  "observations": [
+    {
+      "theme": "paper",
+      "season": "spring",
+      "preference": "spring",
+      "background": "rgb(247, 248, 243)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 15.114965531728147
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 6.056398275834177
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 6.056398275834177
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(247, 248, 243)",
+          "contrast": 7.3210542562699885
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#2b5b46",
+      "overflow": false
+    },
+    {
+      "theme": "paper",
+      "season": "summer",
+      "preference": "summer",
+      "background": "rgb(250, 247, 240)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 15.077595686641505
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 6.041424595287182
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 6.041424595287182
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(250, 247, 240)",
+          "contrast": 7.302953873384337
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#2b5b46",
+      "overflow": false
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "preference": "autumn",
+      "background": "rgb(250, 245, 236)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 14.854534810827507
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 5.952046587719109
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 5.952046587719109
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(250, 245, 236)",
+          "contrast": 7.194912556925002
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#2b5b46",
+      "overflow": false
+    },
+    {
+      "theme": "paper",
+      "season": "winter",
+      "preference": "winter",
+      "background": "rgb(245, 246, 247)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(30, 34, 29)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 14.90899571164462
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 5.973868463866744
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(90, 96, 88)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 5.973868463866744
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(245, 246, 247)",
+          "contrast": 7.221291129134808
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(255, 254, 250)",
+          "background": "rgb(43, 91, 70)",
+          "contrast": 7.74267519100645
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(43, 91, 70)",
+          "background": "rgb(248, 248, 241)",
+          "contrast": 7.325676291016273
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#2b5b46",
+      "overflow": false
+    },
+    {
+      "theme": "night",
+      "season": "spring",
+      "preference": "spring",
+      "background": "rgb(30, 36, 32)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#82b697",
+      "overflow": false
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "preference": "summer",
+      "background": "rgb(30, 36, 32)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#82b697",
+      "overflow": false
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "preference": "autumn",
+      "background": "rgb(30, 36, 32)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#82b697",
+      "overflow": false
+    },
+    {
+      "theme": "night",
+      "season": "winter",
+      "preference": "winter",
+      "background": "rgb(30, 36, 32)",
+      "results": [
+        {
+          "selector": "body",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 12.804265020850302
+        },
+        {
+          "selector": ".room-lead",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body > p",
+          "color": "rgb(168, 173, 160)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.887932551914972
+        },
+        {
+          "selector": ".room-section-body a",
+          "color": "rgb(130, 182, 151)",
+          "background": "rgb(30, 36, 32)",
+          "contrast": 6.840665952520763
+        },
+        {
+          "selector": ".button-primary",
+          "color": "rgb(250, 247, 242)",
+          "background": "rgb(52, 92, 70)",
+          "contrast": 7.106350084021074
+        },
+        {
+          "selector": ".nav-theme",
+          "color": "rgb(236, 231, 218)",
+          "background": "rgb(42, 51, 44)",
+          "contrast": 10.575649425542391
+        },
+        {
+          "selector": ".room-door-description",
+          "color": "rgb(189, 200, 183)",
+          "background": "rgb(36, 43, 40)",
+          "contrast": 8.344277121929363
+        }
+      ],
+      "identity": "#82b697",
+      "overflow": false
+    }
+  ]
+}

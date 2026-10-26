@@ -69,7 +69,7 @@
 
   var updateList = document.getElementById('workbench-update-list');
   if (updateList) {
-    (Array.isArray(data.updates) ? data.updates : []).slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }).forEach(function (item) {
+    (Array.isArray(data.updates) ? data.updates : []).slice().sort(function (a, b) { return String(b.date).localeCompare(String(a.date)); }).slice(0, 2).forEach(function (item) {
       var row = element('article', 'workbench-entry');
       var meta = element('p', 'workbench-entry-meta');
       meta.append(dateNode(item.date), document.createTextNode(' · v' + item.version));
@@ -79,5 +79,8 @@
       row.append(list);
       updateList.append(row);
     });
+    var allUpdates = element('a', 'home-text-link', '完整版本史已放进房屋说明书 →');
+    allUpdates.href = 'colophon.html#changelog';
+    updateList.append(allUpdates);
   }
 })();

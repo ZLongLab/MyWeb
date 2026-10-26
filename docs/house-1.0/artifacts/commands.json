@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "name": "Ctrl K opens dialog and focuses search",
+      "passed": true
+    },
+    {
+      "name": "season commands stay out of default list",
+      "passed": true
+    },
+    {
+      "name": "query groups works and articles",
+      "passed": true
+    },
+    {
+      "name": "ArrowDown selects first result",
+      "passed": true
+    },
+    {
+      "name": "ArrowUp wraps to last result",
+      "passed": true
+    },
+    {
+      "name": "Escape closes and returns focus",
+      "passed": true
+    },
+    {
+      "name": "Cmd K reopens with retained selected query",
+      "passed": true
+    },
+    {
+      "name": "missing late theme API gives honest feedback",
+      "passed": true
+    },
+    {
+      "name": "Enter from input executes theme and keeps visible feedback",
+      "passed": true
+    },
+    {
+      "name": "keyboard action returns focus to executable result",
+      "passed": true
+    },
+    {
+      "name": "five season actions searchable",
+      "passed": true
+    },
+    {
+      "name": "season spring calls shared API",
+      "passed": true
+    },
+    {
+      "name": "season summer calls shared API",
+      "passed": true
+    },
+    {
+      "name": "season autumn calls shared API",
+      "passed": true
+    },
+    {
+      "name": "season winter calls shared API",
+      "passed": true
+    },
+    {
+      "name": "season auto calls shared API",
+      "passed": true
+    },
+    {
+      "name": "recent IDs bounded to five in latest order",
+      "passed": true,
+      "details": [
+        "command:season:auto",
+        "command:season:winter",
+        "command:season:autumn",
+        "command:season:summer",
+        "command:season:spring"
+      ]
+    },
+    {
+      "name": "recent block appears above commands",
+      "passed": true
+    },
+    {
+      "name": "recent block has five entries",
+      "passed": true
+    },
+    {
+      "name": "room indexed: 门牌",
+      "passed": true
+    },
+    {
+      "name": "room indexed: 工具墙",
+      "passed": true
+    },
+    {
+      "name": "room indexed: 院子",
+      "passed": true
+    },
+    {
+      "name": "room indexed: 邻居",
+      "passed": true
+    },
+    {
+      "name": "room indexed: 说明书",
+      "passed": true
+    },
+    {
+      "name": "about remains indexed outside house rooms",
+      "passed": true
+    },
+    {
+      "name": "workbench sections indexed",
+      "passed": true
+    },
+    {
+      "name": "blank email hides copy action",
+      "passed": true
+    },
+    {
+      "name": "GitHub is real safe external anchor",
+      "passed": true
+    },
+    {
+      "name": "unsafe input remains plain text",
+      "passed": true
+    },
+    {
+      "name": "project source filter preserved",
+      "passed": true,
+      "details": "project.html?id=recallai&category=%E6%9C%AC%E5%9C%B0%E5%B7%A5%E5%85%B7"
+    },
+    {
+      "name": "keyboard opens native detail route",
+      "passed": true
+    },
+    {
+      "name": "article category/query source preserved",
+      "passed": true,
+      "details": "article.html?id=recallai-local-search&category=%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95&q=%E6%9C%AC%E5%9C%B0"
+    },
+    {
+      "name": "mobile selectable controls meet 44px",
+      "passed": true,
+      "details": [
+        {
+          "w": 44,
+          "h": 44
+        },
+        {
+          "w": 297,
+          "h": 98.46875
+        },
+        {
+          "w": 297,
+          "h": 98.46875
+        },
+        {
+          "w": 297,
+          "h": 98.46875
+        },
+        {
+          "w": 297,
+          "h": 98.46875
+        },
+        {
+          "w": 297,
+          "h": 98.46875
+        },
+        {
+          "w": 297,
+          "h": 184.84375
+        },
+        {
+          "w": 297,
+          "h": 120.0625
+        }
+      ]
+    },
+    {
+      "name": "mobile dialog has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "configured email copies via clipboard",
+      "passed": true
+    },
+    {
+      "name": "clipboard failure never claims success",
+      "passed": true
+    },
+    {
+      "name": "storage denied still allows theme action",
+      "passed": true
+    },
+    {
+      "name": "reduced motion makes top action immediate",
+      "passed": true
+    },
+    {
+      "name": "in-page query retained without storage",
+      "passed": true
+    },
+    {
+      "name": "no unhandled page errors",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "no external requests",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "lateThemeInjected": false
+}

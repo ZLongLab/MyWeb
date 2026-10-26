@@ -1,0 +1,1063 @@
+{
+  "verdict": "PASS",
+  "method": "Actual HTTP pages in isolated Chrome contexts; no production edits. Clipboard success/failure feedback uses a local mock to avoid touching the desktop clipboard. Stale/missing snapshot uses request interception only.",
+  "checks": [
+    {
+      "name": "now 1440 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "最近在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "now"
+        ],
+        "empty": [
+          "还没有公开的在读记录。",
+          "还没有公开的在听记录。"
+        ],
+        "panels": 4,
+        "room": "now",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "uses 1440 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "顺手的工具，留在手边。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "uses"
+        ],
+        "empty": [
+          "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+        ],
+        "panels": 0,
+        "room": "uses",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life 1440 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "给日常，留一点空白。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "life"
+        ],
+        "empty": [
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+        ],
+        "panels": 3,
+        "room": "life",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life empty content 1440 paper",
+      "passed": true,
+      "detail": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ]
+    },
+    {
+      "name": "links 1440 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "一些值得打开的窗口。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "links"
+        ],
+        "empty": [
+          "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+        ],
+        "panels": 0,
+        "room": "links",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "colophon 1440 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "这间小站，是怎样做的。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "colophon"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "colophon",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 6,
+        "photos": 0
+      }
+    },
+    {
+      "name": "workbench 1440 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "此刻，正在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "workbench"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "workbench",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0,
+        "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+      }
+    },
+    {
+      "name": "now 390 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "最近在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "now"
+        ],
+        "empty": [
+          "还没有公开的在读记录。",
+          "还没有公开的在听记录。"
+        ],
+        "panels": 4,
+        "room": "now",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "uses 390 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "顺手的工具，留在手边。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "uses"
+        ],
+        "empty": [
+          "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+        ],
+        "panels": 0,
+        "room": "uses",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life 390 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "给日常，留一点空白。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "life"
+        ],
+        "empty": [
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+        ],
+        "panels": 3,
+        "room": "life",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life empty content 390 paper",
+      "passed": true,
+      "detail": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ]
+    },
+    {
+      "name": "links 390 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "一些值得打开的窗口。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "links"
+        ],
+        "empty": [
+          "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+        ],
+        "panels": 0,
+        "room": "links",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "colophon 390 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "这间小站，是怎样做的。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "colophon"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "colophon",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 6,
+        "photos": 0
+      }
+    },
+    {
+      "name": "workbench 390 spring/paper layout",
+      "passed": true,
+      "detail": {
+        "title": "此刻，正在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "workbench"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "workbench",
+        "theme": "paper",
+        "season": "spring",
+        "copy": 0,
+        "photos": 0,
+        "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+      }
+    },
+    {
+      "name": "palette feedback paper",
+      "passed": true
+    },
+    {
+      "name": "palette fallback feedback paper",
+      "passed": true
+    },
+    {
+      "name": "workbench selector feedback paper",
+      "passed": true
+    },
+    {
+      "name": "workbench manual season survives reload paper",
+      "passed": true
+    },
+    {
+      "name": "now 1440 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "最近在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "now"
+        ],
+        "empty": [
+          "还没有公开的在读记录。",
+          "还没有公开的在听记录。"
+        ],
+        "panels": 4,
+        "room": "now",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "uses 1440 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "顺手的工具，留在手边。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "uses"
+        ],
+        "empty": [
+          "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+        ],
+        "panels": 0,
+        "room": "uses",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life 1440 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "给日常，留一点空白。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "life"
+        ],
+        "empty": [
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+        ],
+        "panels": 3,
+        "room": "life",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life empty content 1440 night",
+      "passed": true,
+      "detail": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ]
+    },
+    {
+      "name": "links 1440 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "一些值得打开的窗口。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "links"
+        ],
+        "empty": [
+          "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+        ],
+        "panels": 0,
+        "room": "links",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "colophon 1440 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "这间小站，是怎样做的。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "colophon"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "colophon",
+        "theme": "night",
+        "season": "winter",
+        "copy": 6,
+        "photos": 0
+      }
+    },
+    {
+      "name": "workbench 1440 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "此刻，正在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "workbench"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "workbench",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0,
+        "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+      }
+    },
+    {
+      "name": "now 390 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "最近在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "now"
+        ],
+        "empty": [
+          "还没有公开的在读记录。",
+          "还没有公开的在听记录。"
+        ],
+        "panels": 4,
+        "room": "now",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "uses 390 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "顺手的工具，留在手边。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "uses"
+        ],
+        "empty": [
+          "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+        ],
+        "panels": 0,
+        "room": "uses",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life 390 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "给日常，留一点空白。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "life"
+        ],
+        "empty": [
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "这个位置先留着，等一条真实记录。",
+          "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+        ],
+        "panels": 3,
+        "room": "life",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "life empty content 390 night",
+      "passed": true,
+      "detail": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ]
+    },
+    {
+      "name": "links 390 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "一些值得打开的窗口。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "links"
+        ],
+        "empty": [
+          "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+        ],
+        "panels": 0,
+        "room": "links",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0
+      }
+    },
+    {
+      "name": "colophon 390 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "这间小站，是怎样做的。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "colophon"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "colophon",
+        "theme": "night",
+        "season": "winter",
+        "copy": 6,
+        "photos": 0
+      }
+    },
+    {
+      "name": "workbench 390 winter/night layout",
+      "passed": true,
+      "detail": {
+        "title": "此刻，正在做的事。",
+        "overflow": false,
+        "rooms": 10,
+        "current": [
+          "workbench"
+        ],
+        "empty": [],
+        "panels": 0,
+        "room": "workbench",
+        "theme": "night",
+        "season": "winter",
+        "copy": 0,
+        "photos": 0,
+        "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+      }
+    },
+    {
+      "name": "palette feedback night",
+      "passed": true
+    },
+    {
+      "name": "palette fallback feedback night",
+      "passed": true
+    },
+    {
+      "name": "workbench selector feedback night",
+      "passed": true
+    },
+    {
+      "name": "workbench manual season survives reload night",
+      "passed": true
+    },
+    {
+      "name": "stale snapshot feedback",
+      "passed": true,
+      "detail": "GitHub 快照已超过 14 天，请人工核对后更新。上次核对 2026-10-01"
+    },
+    {
+      "name": "missing snapshot feedback",
+      "passed": true,
+      "detail": "GitHub 快照尚未核对，请运行本地快照脚本。"
+    },
+    {
+      "name": "no page script errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "observations": [
+    {
+      "route": "now",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "title": "最近在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "now"
+      ],
+      "empty": [
+        "还没有公开的在读记录。",
+        "还没有公开的在听记录。"
+      ],
+      "panels": 4,
+      "room": "now",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "uses",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "title": "顺手的工具，留在手边。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "uses"
+      ],
+      "empty": [
+        "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+      ],
+      "panels": 0,
+      "room": "uses",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "life",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "title": "给日常，留一点空白。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "life"
+      ],
+      "empty": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ],
+      "panels": 3,
+      "room": "life",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "links",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "title": "一些值得打开的窗口。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "links"
+      ],
+      "empty": [
+        "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+      ],
+      "panels": 0,
+      "room": "links",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "colophon",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "title": "这间小站，是怎样做的。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "colophon"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "colophon",
+      "copy": 6,
+      "photos": 0
+    },
+    {
+      "route": "workbench",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "title": "此刻，正在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "workbench"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "workbench",
+      "copy": 0,
+      "photos": 0,
+      "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+    },
+    {
+      "route": "now",
+      "width": 390,
+      "theme": "paper",
+      "season": "spring",
+      "title": "最近在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "now"
+      ],
+      "empty": [
+        "还没有公开的在读记录。",
+        "还没有公开的在听记录。"
+      ],
+      "panels": 4,
+      "room": "now",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "uses",
+      "width": 390,
+      "theme": "paper",
+      "season": "spring",
+      "title": "顺手的工具，留在手边。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "uses"
+      ],
+      "empty": [
+        "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+      ],
+      "panels": 0,
+      "room": "uses",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "life",
+      "width": 390,
+      "theme": "paper",
+      "season": "spring",
+      "title": "给日常，留一点空白。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "life"
+      ],
+      "empty": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ],
+      "panels": 3,
+      "room": "life",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "links",
+      "width": 390,
+      "theme": "paper",
+      "season": "spring",
+      "title": "一些值得打开的窗口。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "links"
+      ],
+      "empty": [
+        "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+      ],
+      "panels": 0,
+      "room": "links",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "colophon",
+      "width": 390,
+      "theme": "paper",
+      "season": "spring",
+      "title": "这间小站，是怎样做的。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "colophon"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "colophon",
+      "copy": 6,
+      "photos": 0
+    },
+    {
+      "route": "workbench",
+      "width": 390,
+      "theme": "paper",
+      "season": "spring",
+      "title": "此刻，正在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "workbench"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "workbench",
+      "copy": 0,
+      "photos": 0,
+      "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+    },
+    {
+      "route": "now",
+      "width": 1440,
+      "theme": "night",
+      "season": "winter",
+      "title": "最近在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "now"
+      ],
+      "empty": [
+        "还没有公开的在读记录。",
+        "还没有公开的在听记录。"
+      ],
+      "panels": 4,
+      "room": "now",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "uses",
+      "width": 1440,
+      "theme": "night",
+      "season": "winter",
+      "title": "顺手的工具，留在手边。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "uses"
+      ],
+      "empty": [
+        "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+      ],
+      "panels": 0,
+      "room": "uses",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "life",
+      "width": 1440,
+      "theme": "night",
+      "season": "winter",
+      "title": "给日常，留一点空白。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "life"
+      ],
+      "empty": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ],
+      "panels": 3,
+      "room": "life",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "links",
+      "width": 1440,
+      "theme": "night",
+      "season": "winter",
+      "title": "一些值得打开的窗口。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "links"
+      ],
+      "empty": [
+        "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+      ],
+      "panels": 0,
+      "room": "links",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "colophon",
+      "width": 1440,
+      "theme": "night",
+      "season": "winter",
+      "title": "这间小站，是怎样做的。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "colophon"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "colophon",
+      "copy": 6,
+      "photos": 0
+    },
+    {
+      "route": "workbench",
+      "width": 1440,
+      "theme": "night",
+      "season": "winter",
+      "title": "此刻，正在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "workbench"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "workbench",
+      "copy": 0,
+      "photos": 0,
+      "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+    },
+    {
+      "route": "now",
+      "width": 390,
+      "theme": "night",
+      "season": "winter",
+      "title": "最近在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "now"
+      ],
+      "empty": [
+        "还没有公开的在读记录。",
+        "还没有公开的在听记录。"
+      ],
+      "panels": 4,
+      "room": "now",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "uses",
+      "width": 390,
+      "theme": "night",
+      "season": "winter",
+      "title": "顺手的工具，留在手边。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "uses"
+      ],
+      "empty": [
+        "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。"
+      ],
+      "panels": 0,
+      "room": "uses",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "life",
+      "width": 390,
+      "theme": "night",
+      "season": "winter",
+      "title": "给日常，留一点空白。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "life"
+      ],
+      "empty": [
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "这个位置先留着，等一条真实记录。",
+        "相册还没有公开照片。以后把愿意留下的日常放在这里。"
+      ],
+      "panels": 3,
+      "room": "life",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "links",
+      "width": 390,
+      "theme": "night",
+      "season": "winter",
+      "title": "一些值得打开的窗口。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "links"
+      ],
+      "empty": [
+        "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。"
+      ],
+      "panels": 0,
+      "room": "links",
+      "copy": 0,
+      "photos": 0
+    },
+    {
+      "route": "colophon",
+      "width": 390,
+      "theme": "night",
+      "season": "winter",
+      "title": "这间小站，是怎样做的。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "colophon"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "colophon",
+      "copy": 6,
+      "photos": 0
+    },
+    {
+      "route": "workbench",
+      "width": 390,
+      "theme": "night",
+      "season": "winter",
+      "title": "此刻，正在做的事。",
+      "overflow": false,
+      "rooms": 10,
+      "current": [
+        "workbench"
+      ],
+      "empty": [],
+      "panels": 0,
+      "room": "workbench",
+      "copy": 0,
+      "photos": 0,
+      "review": "GitHub 快照尚未核对，请运行本地快照脚本。"
+    }
+  ]
+}

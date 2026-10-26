@@ -8,14 +8,18 @@
   <title>工作台 · 有间小站</title>
   <script>
     (function () {
-      var choice = '';
-      try { choice = localStorage.getItem('myweb_theme_v1') || ''; } catch (error) { /* Optional preference storage. */ }
-      var hour = new Date().getHours();
-      var theme = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
-      document.documentElement.setAttribute('data-theme', theme);
-      document.documentElement.style.colorScheme = theme === 'night' ? 'dark' : 'light';
+      var choice = '', season = '';
+      try { choice = localStorage.getItem('myweb_theme_v1') || ''; season = localStorage.getItem('myweb_season_v1') || ''; } catch (error) { /* Preferences are optional. */ }
+      var now = new Date(), hour = now.getHours(), month = now.getMonth() + 1;
+      var mode = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
+      var autoSeason = month >= 3 && month <= 5 ? 'spring' : month >= 6 && month <= 8 ? 'summer' : month >= 9 && month <= 11 ? 'autumn' : 'winter';
+      if (['spring', 'summer', 'autumn', 'winter'].indexOf(season) === -1) season = autoSeason;
+      var root = document.documentElement;
+      root.dataset.theme = mode; root.dataset.season = season;
+      root.style.colorScheme = mode === 'night' ? 'dark' : 'light';
+      var colors = { spring: '#f7f8f3', summer: '#faf7f0', autumn: '#faf5ec', winter: '#f5f6f7' };
       var color = document.querySelector('meta[name="theme-color"]');
-      if (color) color.content = theme === 'night' ? '#1e2420' : '#faf7f2';
+      if (color) color.content = mode === 'night' ? '#1e2420' : colors[season];
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
@@ -27,6 +31,9 @@
   <link rel="stylesheet" href="assets/background.css">
 
   <script src="assets/site-data.js" defer></script>
+  <script src="assets/site-snapshot.js" defer></script>
+  <script src="assets/life-data.js" defer></script>
+  <script src="assets/house-data.js" defer></script>
   <script src="assets/articles-data.js" defer></script>
   <script src="assets/content.js" defer></script>
   <script src="assets/projects-data.js" defer></script>
@@ -38,9 +45,11 @@
 
   <link rel="stylesheet" href="assets/pwa.css">
   <link rel="stylesheet" href="assets/night.css">
+  <link rel="stylesheet" href="assets/house.css">
+  <link rel="stylesheet" href="assets/seasons.css">
   <link rel="stylesheet" href="assets/motion.css">
 </head>
-<body data-page="workbench">
+<body data-page="workbench" data-room="workbench">
   <a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header container">
     <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect class="site-mark-paper" x="2" y="2" width="60" height="60" rx="17" fill="#faf7f0"/><path class="site-mark-outline" d="m12 29 20-16 20 16M18 27v24h28V27" fill="none" stroke="#2b5b46" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path class="site-mark-door" d="m28 35 9-3v20l-9-3Z" fill="#c85a32"/></svg></span><span data-site-title>有间小站</span></a>
@@ -53,12 +62,17 @@
       <h1>此刻，正在做的事<span class="title-period">。</span></h1>
       <p class="workbench-intro">把最近的项目、实现用到的技术和小站的变化，留在同一张工作台上。</p>
       <p class="workbench-updated">最近整理 <time datetime="2026-10-26" data-workbench-updated>2026.10.26</time></p>
-      <nav class="workbench-index" aria-label="工作台内容"><a href="#now">当前近况 <span aria-hidden="true">↓</span></a><a href="#tools">实现技术 <span aria-hidden="true">↓</span></a><a href="#updates">小站更新 <span aria-hidden="true">↓</span></a><a href="#colophon">关于本站 <span aria-hidden="true">↓</span></a></nav>
+      <nav class="workbench-index" aria-label="工作台内容"><a href="#now">当前近况 <span aria-hidden="true">↓</span></a><a href="#tools">实现技术 <span aria-hidden="true">↓</span></a><a href="#appearance">外观与快照 <span aria-hidden="true">↓</span></a><a href="#updates">小站更新 <span aria-hidden="true">↓</span></a><a href="#colophon">关于本站 <span aria-hidden="true">↓</span></a></nav>
     </header>
+
+    <section class="workbench-section" id="appearance" aria-labelledby="workbench-appearance-title" tabindex="-1">
+      <div class="workbench-section-heading"><p class="workbench-section-index">LIGHT / SEASON</p><h2 id="workbench-appearance-title">换一束光</h2><p>只改变季节的天气，不改变房间的身份。</p></div>
+      <div class="workbench-section-content"><div class="season-preferences"><label for="season-picker">季节外观</label><select id="season-picker" data-season-picker aria-label="季节外观"><option value="auto">跟随本地月份</option><option value="spring">春 · 青瓷</option><option value="summer">夏 · 松针</option><option value="autumn">秋 · 陶土</option><option value="winter">冬 · 雾蓝</option></select></div><p data-season-status role="status"></p><p class="room-note" data-snapshot-review></p><a class="home-text-link" href="colophon.html">阅读房屋说明书 →</a></div>
+    </section>
 
     <section class="workbench-section" id="now" aria-labelledby="workbench-now-title" tabindex="-1">
       <div class="workbench-section-heading"><p class="workbench-section-index">01 / NOW</p><h2 id="workbench-now-title">当前近况</h2><p>项目在推进，记录也慢慢补上。</p></div>
-      <div class="workbench-section-content" id="workbench-now-list"><noscript><p>近况与项目进展可在<a href="projects.html">作品页</a>和<a href="articles.html">文章页</a>查看。</p></noscript></div>
+      <div class="workbench-section-content"><p><a class="home-text-link" href="now.html">正式门牌：正在做、正在读与暂时不做 →</a></p><div id="workbench-now-list"><noscript><p>近况与项目进展可在<a href="projects.html">作品页</a>和<a href="articles.html">文章页</a>查看。</p></noscript></div></div>
     </section>
 
     <section class="workbench-section" id="tools" aria-labelledby="workbench-tools-title" tabindex="-1">
@@ -85,6 +99,7 @@
     </section>
   </main>
   <footer class="site-footer"><div class="footer-inner container"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 保持好奇，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="workbench.html" aria-current="page">工作台</a><a class="footer-notes" href="guestbook.html">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
+  <script src="assets/house.js" defer></script>
   <script src="assets/theme-controls.js" defer></script>
   <script src="assets/motion.js" defer></script>
   <script src="assets/pwa.js" defer></script>

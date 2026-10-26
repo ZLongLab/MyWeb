@@ -8,14 +8,18 @@
   <title>随手便签（本地） · 有间小站</title>
   <script>
     (function () {
-      var choice = '';
-      try { choice = localStorage.getItem('myweb_theme_v1') || ''; } catch (error) { /* Optional preference storage. */ }
-      var hour = new Date().getHours();
-      var theme = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
-      document.documentElement.setAttribute('data-theme', theme);
-      document.documentElement.style.colorScheme = theme === 'night' ? 'dark' : 'light';
+      var choice = '', season = '';
+      try { choice = localStorage.getItem('myweb_theme_v1') || ''; season = localStorage.getItem('myweb_season_v1') || ''; } catch (error) { /* Preferences are optional. */ }
+      var now = new Date(), hour = now.getHours(), month = now.getMonth() + 1;
+      var mode = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
+      var autoSeason = month >= 3 && month <= 5 ? 'spring' : month >= 6 && month <= 8 ? 'summer' : month >= 9 && month <= 11 ? 'autumn' : 'winter';
+      if (['spring', 'summer', 'autumn', 'winter'].indexOf(season) === -1) season = autoSeason;
+      var root = document.documentElement;
+      root.dataset.theme = mode; root.dataset.season = season;
+      root.style.colorScheme = mode === 'night' ? 'dark' : 'light';
+      var colors = { spring: '#f7f8f3', summer: '#faf7f0', autumn: '#faf5ec', winter: '#f5f6f7' };
       var color = document.querySelector('meta[name="theme-color"]');
-      if (color) color.content = theme === 'night' ? '#1e2420' : '#faf7f2';
+      if (color) color.content = mode === 'night' ? '#1e2420' : colors[season];
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
@@ -24,6 +28,9 @@
   <link rel="stylesheet" href="assets/guestbook.css">
 
   <script src="assets/site-data.js" defer></script>
+  <script src="assets/site-snapshot.js" defer></script>
+  <script src="assets/life-data.js" defer></script>
+  <script src="assets/house-data.js" defer></script>
   <script src="assets/workbench-data.js" defer></script>
   <script src="assets/articles-data.js" defer></script>
   <script src="assets/content.js" defer></script>
@@ -38,9 +45,11 @@
 
   <link rel="stylesheet" href="assets/pwa.css">
   <link rel="stylesheet" href="assets/night.css">
+  <link rel="stylesheet" href="assets/house.css">
+  <link rel="stylesheet" href="assets/seasons.css">
   <link rel="stylesheet" href="assets/motion.css">
 </head>
-<body data-page="guestbook">
+<body data-page="guestbook" data-room="guestbook">
   <a class="skip-link" href="#main">跳到正文</a>
   <header class="site-header container">
     <a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect class="site-mark-paper" x="2" y="2" width="60" height="60" rx="17" fill="#faf7f0"/><path class="site-mark-outline" d="m12 29 20-16 20 16M18 27v24h28V27" fill="none" stroke="#2b5b46" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path class="site-mark-door" d="m28 35 9-3v20l-9-3Z" fill="#c85a32"/></svg></span><span data-site-title>有间小站</span></a>
@@ -79,6 +88,7 @@
   <dialog class="site-dialog guestbook-delete-dialog" id="delete-message-dialog" aria-labelledby="delete-message-title" aria-describedby="delete-message-description">
     <button class="dialog-close" type="button" data-close-dialog aria-label="取消删除">×</button><p class="eyebrow">REMOVE THIS NOTE</p><h2 id="delete-message-title">删除这张便签？</h2><p id="delete-message-description">这条留言将从当前浏览器移除，删除后无法在此恢复。</p><p class="guestbook-delete-preview" id="delete-message-preview"></p><p class="guestbook-error" id="delete-message-error" role="alert" hidden></p><div class="guestbook-dialog-actions"><button class="button guestbook-button-secondary" type="button" data-close-dialog autofocus>再想想</button><button class="button button-primary" type="button" id="delete-message-confirm">确认删除</button></div>
   </dialog>
+  <script src="assets/house.js" defer></script>
   <script src="assets/theme-controls.js" defer></script>
   <script src="assets/motion.js" defer></script>
   <script src="assets/pwa.js" defer></script>
