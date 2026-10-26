@@ -1,0 +1,117 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "One seed added with exactly the supplied metadata",
+      "passed": true
+    },
+    {
+      "name": "Existing five articles keep all fields except requested two links",
+      "passed": true
+    },
+    {
+      "name": "Approved graph has six real nodes and exactly four directed edges",
+      "passed": true
+    },
+    {
+      "name": "Graph citation sizes match the incoming references",
+      "passed": true
+    },
+    {
+      "name": "New article is first in time view with seed badge",
+      "passed": true
+    },
+    {
+      "name": "New article has two outgoing and two incoming references",
+      "passed": true
+    },
+    {
+      "name": "hello-world points to and is cited by the new seed",
+      "passed": true
+    },
+    {
+      "name": "small-first-version points to and is cited by the new seed",
+      "passed": true
+    },
+    {
+      "name": "Real relationship map and complete text fallback appear",
+      "passed": true
+    },
+    {
+      "name": "Graph stays locally scrollable at 390",
+      "passed": true
+    },
+    {
+      "name": "Graph stays locally scrollable at 320",
+      "passed": true
+    },
+    {
+      "name": "Keyboard node opens new article and keeps topic view",
+      "passed": true
+    },
+    {
+      "name": "Return preserves topics with visible graph",
+      "passed": true
+    },
+    {
+      "name": "Text fallback links select real article",
+      "passed": true
+    },
+    {
+      "name": "Home latest card now shows the supplied seed",
+      "passed": true
+    },
+    {
+      "name": "Home statistics use refreshed six-article snapshot",
+      "passed": true
+    },
+    {
+      "name": "Local search finds the new article",
+      "passed": true
+    },
+    {
+      "name": "File mode displays real approved map",
+      "passed": true
+    },
+    {
+      "name": "File mode keyboard node opens new text",
+      "passed": true
+    },
+    {
+      "name": "Standalone generated SVG exposes six focusable article links",
+      "passed": true
+    },
+    {
+      "name": "Standalone SVG relative links resolve to actual local article",
+      "passed": true
+    },
+    {
+      "name": "Content release preserves 66-resource cache with new version",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.1.2",
+          "count": 66
+        }
+      ]
+    },
+    {
+      "name": "Approved graph survives offline reload",
+      "passed": true
+    },
+    {
+      "name": "Offline new article includes both reference lists",
+      "passed": true
+    },
+    {
+      "name": "No page errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

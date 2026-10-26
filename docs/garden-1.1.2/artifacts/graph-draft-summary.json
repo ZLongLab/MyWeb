@@ -1,0 +1,16 @@
+{
+  "draft": ".tmp/garden",
+  "published": false,
+  "nodes": {
+    "before": 0,
+    "after": 6,
+    "change": 6
+  },
+  "edges": {
+    "before": 0,
+    "after": 4,
+    "change": 4
+  },
+  "eligible": true,
+  "warnings": []
+}
