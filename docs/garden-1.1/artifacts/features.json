@@ -1,0 +1,265 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Generator creates only a production draft",
+      "passed": true
+    },
+    {
+      "name": "Same input produces byte-identical SVG and metadata",
+      "passed": true
+    },
+    {
+      "name": "Production diff is 0 to 5 nodes and 0 to 0 edges",
+      "passed": true,
+      "detail": {
+        "draft": ".tmp/garden",
+        "published": false,
+        "nodes": {
+          "before": 0,
+          "after": 5,
+          "change": 5
+        },
+        "edges": {
+          "before": 0,
+          "after": 0,
+          "change": 0
+        },
+        "eligible": false,
+        "warnings": []
+      }
+    },
+    {
+      "name": "Five real plus two temporary articles form seven nodes and three edges",
+      "passed": true
+    },
+    {
+      "name": "Test source cannot replace production graph",
+      "passed": true
+    },
+    {
+      "name": "Stale draft approval fails without changing existing SVG",
+      "passed": true
+    },
+    {
+      "name": "Explicit approval works in isolated replica",
+      "passed": true
+    },
+    {
+      "name": "Static SVG has seven focusable links and full titles",
+      "passed": true
+    },
+    {
+      "name": "Original five records retain seed maturity",
+      "passed": true
+    },
+    {
+      "name": "No unapproved map appears",
+      "passed": true
+    },
+    {
+      "name": "Tag clusters render from real tags",
+      "passed": true
+    },
+    {
+      "name": "Cluster opens existing list filtered by tag",
+      "passed": true
+    },
+    {
+      "name": "Detail retains tag and view",
+      "passed": true
+    },
+    {
+      "name": "Breadcrumb restores tagged list and position",
+      "passed": true
+    },
+    {
+      "name": "Session restores last chosen topics view",
+      "passed": true
+    },
+    {
+      "name": "Four approved public milestones appear",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion makes timeline fully drawn",
+      "passed": true
+    },
+    {
+      "name": "Approved generic reading is visible",
+      "passed": true
+    },
+    {
+      "name": "Only one empty-photo message remains",
+      "passed": true
+    },
+    {
+      "name": "Default application placeholders are consistent",
+      "passed": true
+    },
+    {
+      "name": "Three confirmed development tools are present",
+      "passed": true
+    },
+    {
+      "name": "seed latest bento uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "seed search uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "seed list uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "seed detail uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "Real tended date displays only when later seed",
+      "passed": true
+    },
+    {
+      "name": "Outgoing references render seed",
+      "passed": true
+    },
+    {
+      "name": "B backlinks contain A seed",
+      "passed": true
+    },
+    {
+      "name": "Same-day tended is not shown seed",
+      "passed": true
+    },
+    {
+      "name": "Approved compatible fixture graph appears",
+      "passed": true
+    },
+    {
+      "name": "SVG and text fallback share seven nodes",
+      "passed": true
+    },
+    {
+      "name": "Graph scrolls locally without whole-page overflow",
+      "passed": true
+    },
+    {
+      "name": "Every graph link has a 44px target",
+      "passed": true
+    },
+    {
+      "name": "Keyboard graph node follows current detail routing",
+      "passed": true
+    },
+    {
+      "name": "Graph detail returns to topics",
+      "passed": true
+    },
+    {
+      "name": "Fewer than three connected articles hides the whole map",
+      "passed": true
+    },
+    {
+      "name": "File mode renders approved fixture SVG and text fallback",
+      "passed": true
+    },
+    {
+      "name": "File graph keyboard link selects a real fixture article",
+      "passed": true
+    },
+    {
+      "name": "growing latest bento uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "growing search uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "growing list uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "growing detail uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "Real tended date displays only when later growing",
+      "passed": true
+    },
+    {
+      "name": "Outgoing references render growing",
+      "passed": true
+    },
+    {
+      "name": "B backlinks contain A growing",
+      "passed": true
+    },
+    {
+      "name": "Same-day tended is not shown growing",
+      "passed": true
+    },
+    {
+      "name": "evergreen latest bento uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "evergreen search uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "evergreen list uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "evergreen detail uses shared badge",
+      "passed": true
+    },
+    {
+      "name": "Real tended date displays only when later evergreen",
+      "passed": true
+    },
+    {
+      "name": "Outgoing references render evergreen",
+      "passed": true
+    },
+    {
+      "name": "B backlinks contain A evergreen",
+      "passed": true
+    },
+    {
+      "name": "Same-day tended is not shown evergreen",
+      "passed": true
+    },
+    {
+      "name": "Timeline line follows real scroll progress",
+      "passed": true,
+      "detail": {
+        "start": 0,
+        "end": 1
+      }
+    },
+    {
+      "name": "Runtime reduced-motion switch fully shows timeline",
+      "passed": true
+    },
+    {
+      "name": "Temporary fixture never changed production articles or approved graph",
+      "passed": true
+    },
+    {
+      "name": "No page errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No external requests in observed live flows",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "fixtureArticles": 7,
+  "productionArticles": 5
+}

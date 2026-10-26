@@ -1,0 +1,320 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Fresh isolated browser has an active controlling service worker",
+      "passed": true
+    },
+    {
+      "name": "Only the scoped 1.1.0 application cache is present",
+      "passed": true
+    },
+    {
+      "name": "Static service worker allowlist has 66 unique runtime resources",
+      "passed": true
+    },
+    {
+      "name": "Actual precache matches all 66 allowed runtime resources exactly",
+      "passed": true
+    },
+    {
+      "name": "Cache excludes documents, research, backups, external URLs and query variants",
+      "passed": true
+    },
+    {
+      "name": "Offline now.html renders its room heading",
+      "passed": true,
+      "detail": "最近在做的事。"
+    },
+    {
+      "name": "Offline now.html contains populated room content",
+      "passed": true
+    },
+    {
+      "name": "Offline uses.html renders its room heading",
+      "passed": true,
+      "detail": "顺手的工具，留在手边。"
+    },
+    {
+      "name": "Offline uses.html contains populated room content",
+      "passed": true
+    },
+    {
+      "name": "Offline life.html renders its room heading",
+      "passed": true,
+      "detail": "给日常，留一点空白。"
+    },
+    {
+      "name": "Offline life.html contains populated room content",
+      "passed": true
+    },
+    {
+      "name": "Offline links.html renders its room heading",
+      "passed": true,
+      "detail": "一些值得打开的窗口。"
+    },
+    {
+      "name": "Offline links.html contains populated room content",
+      "passed": true
+    },
+    {
+      "name": "Offline colophon.html renders its room heading",
+      "passed": true,
+      "detail": "这间小站，是怎样做的。"
+    },
+    {
+      "name": "Offline colophon.html contains populated room content",
+      "passed": true
+    },
+    {
+      "name": "Offline entrance renders with static data and screenshots",
+      "passed": true
+    },
+    {
+      "name": "Offline approved GitHub calendar renders all 177 real days",
+      "passed": true
+    },
+    {
+      "name": "Offline article query selects the correct article",
+      "passed": true
+    },
+    {
+      "name": "Offline project query selects the correct project",
+      "passed": true
+    },
+    {
+      "name": "Offline content search returns real results",
+      "passed": true
+    },
+    {
+      "name": "Offline theme command executes with keyboard",
+      "passed": true
+    },
+    {
+      "name": "Offline command gives visible feedback",
+      "passed": true
+    },
+    {
+      "name": "Offline command panel closes with Escape",
+      "passed": true
+    },
+    {
+      "name": "Offline room command navigates with keyboard",
+      "passed": true
+    },
+    {
+      "name": "Offline topic clusters render",
+      "passed": true
+    },
+    {
+      "name": "Offline unapproved graph stays hidden",
+      "passed": true
+    },
+    {
+      "name": "Offline filtered article maturity renders",
+      "passed": true
+    },
+    {
+      "name": "Offline approved timeline renders",
+      "passed": true
+    },
+    {
+      "name": "Preview keeps README, docs and temporary scripts outside the runtime whitelist",
+      "passed": true,
+      "detail": [
+        {
+          "path": "README.md",
+          "status": 404
+        },
+        {
+          "path": "docs/house-1.0/requirements.md",
+          "status": 404
+        },
+        {
+          "path": ".tmp/house-home-check.cjs",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "name": "Denied requests do not enter the cache",
+      "passed": true
+    },
+    {
+      "name": "Normal online/offline browsing makes zero external requests",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No page script errors during online/offline navigation or commands",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No console errors in normal online/offline flows",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "File opening renders index.html",
+      "passed": true
+    },
+    {
+      "name": "File index.html does not create a manifest link",
+      "passed": true
+    },
+    {
+      "name": "File opening renders now.html",
+      "passed": true
+    },
+    {
+      "name": "File now.html does not create a manifest link",
+      "passed": true
+    },
+    {
+      "name": "File opening renders uses.html",
+      "passed": true
+    },
+    {
+      "name": "File uses.html does not create a manifest link",
+      "passed": true
+    },
+    {
+      "name": "File opening renders life.html",
+      "passed": true
+    },
+    {
+      "name": "File life.html does not create a manifest link",
+      "passed": true
+    },
+    {
+      "name": "File opening renders links.html",
+      "passed": true
+    },
+    {
+      "name": "File links.html does not create a manifest link",
+      "passed": true
+    },
+    {
+      "name": "File opening renders colophon.html",
+      "passed": true
+    },
+    {
+      "name": "File colophon.html does not create a manifest link",
+      "passed": true
+    },
+    {
+      "name": "File mode makes no manifest/SW request and registers no worker",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "File opening makes no HTTP requests",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "New room file opening has no script or console errors",
+      "passed": true,
+      "detail": {
+        "errors": [],
+        "consoleErrors": []
+      }
+    }
+  ],
+  "observations": {
+    "browser": "155.0.8059.85",
+    "caches": [
+      {
+        "name": "myweb-shell-%2F-1.1.0",
+        "urls": [
+          "http://127.0.0.1:4173/assets/images/garden-graph.svg",
+          "http://127.0.0.1:4173/assets/timeline-data.js",
+          "http://127.0.0.1:4173/assets/garden-data.js",
+          "http://127.0.0.1:4173/assets/garden.css",
+          "http://127.0.0.1:4173/assets/garden.js",
+          "http://127.0.0.1:4173/assets/images/github-activity.svg",
+          "http://127.0.0.1:4173/assets/seasons.css",
+          "http://127.0.0.1:4173/assets/house.css",
+          "http://127.0.0.1:4173/assets/room-pages.js",
+          "http://127.0.0.1:4173/assets/house.js",
+          "http://127.0.0.1:4173/assets/site-snapshot.js",
+          "http://127.0.0.1:4173/assets/life-data.js",
+          "http://127.0.0.1:4173/assets/house-data.js",
+          "http://127.0.0.1:4173/colophon.html",
+          "http://127.0.0.1:4173/links.html",
+          "http://127.0.0.1:4173/life.html",
+          "http://127.0.0.1:4173/uses.html",
+          "http://127.0.0.1:4173/now.html",
+          "http://127.0.0.1:4173/index.html",
+          "http://127.0.0.1:4173/projects.html",
+          "http://127.0.0.1:4173/project.html",
+          "http://127.0.0.1:4173/about.html",
+          "http://127.0.0.1:4173/articles.html",
+          "http://127.0.0.1:4173/article.html",
+          "http://127.0.0.1:4173/guestbook.html",
+          "http://127.0.0.1:4173/workbench.html",
+          "http://127.0.0.1:4173/assets/styles.css",
+          "http://127.0.0.1:4173/assets/site-theme.css",
+          "http://127.0.0.1:4173/assets/home.css",
+          "http://127.0.0.1:4173/assets/background.css",
+          "http://127.0.0.1:4173/assets/page-background.svg",
+          "http://127.0.0.1:4173/assets/site-mark.svg",
+          "http://127.0.0.1:4173/assets/favicon.svg",
+          "http://127.0.0.1:4173/assets/site-data.js",
+          "http://127.0.0.1:4173/assets/app.js",
+          "http://127.0.0.1:4173/assets/projects-data.js",
+          "http://127.0.0.1:4173/assets/projects.js",
+          "http://127.0.0.1:4173/assets/projects.css",
+          "http://127.0.0.1:4173/assets/project.js",
+          "http://127.0.0.1:4173/assets/articles-data.js",
+          "http://127.0.0.1:4173/assets/articles.js",
+          "http://127.0.0.1:4173/assets/content.js",
+          "http://127.0.0.1:4173/assets/home-projects.js",
+          "http://127.0.0.1:4173/assets/workbench-data.js",
+          "http://127.0.0.1:4173/assets/workbench.js",
+          "http://127.0.0.1:4173/assets/workbench.css",
+          "http://127.0.0.1:4173/assets/navigation.js",
+          "http://127.0.0.1:4173/assets/navigation.css",
+          "http://127.0.0.1:4173/assets/search.js",
+          "http://127.0.0.1:4173/assets/search.css",
+          "http://127.0.0.1:4173/assets/guestbook.js",
+          "http://127.0.0.1:4173/assets/guestbook.css",
+          "http://127.0.0.1:4173/assets/media-viewer.js",
+          "http://127.0.0.1:4173/assets/media-viewer.css",
+          "http://127.0.0.1:4173/assets/images/recallai-preview.png",
+          "http://127.0.0.1:4173/assets/images/recallai-adoption-preview.png",
+          "http://127.0.0.1:4173/assets/images/documentassistant-preview.png",
+          "http://127.0.0.1:4173/assets/night.css",
+          "http://127.0.0.1:4173/assets/theme-controls.js",
+          "http://127.0.0.1:4173/assets/motion.css",
+          "http://127.0.0.1:4173/assets/motion.js",
+          "http://127.0.0.1:4173/assets/pwa.css",
+          "http://127.0.0.1:4173/assets/pwa.js",
+          "http://127.0.0.1:4173/manifest.webmanifest",
+          "http://127.0.0.1:4173/assets/icons/site-192.png",
+          "http://127.0.0.1:4173/assets/icons/site-512.png"
+        ]
+      }
+    ],
+    "denied": [
+      {
+        "path": "README.md",
+        "status": 404
+      },
+      {
+        "path": "docs/house-1.0/requirements.md",
+        "status": 404
+      },
+      {
+        "path": ".tmp/house-home-check.cjs",
+        "status": 404
+      }
+    ]
+  },
+  "notVerified": [
+    "Actual OS/browser installation was not triggered.",
+    "No physical mobile device or Safari installation was tested.",
+    "No simulated install event or installability test was rerun in this 1.1 acceptance."
+  ]
+}

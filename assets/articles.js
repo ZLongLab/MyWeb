@@ -19,12 +19,15 @@
   var categories = articles.map(function (article) { return article.category; }).filter(function (name, index, names) {
     return typeof name === 'string' && name.trim() && names.indexOf(name) === index;
   });
+  var allTags = articles.flatMap(function (article) { return Array.isArray(article.tags) ? article.tags : []; });
 
   function readContext(sourceParams) {
     var requestedCategory = sourceParams.get('category');
     return {
       category: categories.indexOf(requestedCategory) !== -1 ? requestedCategory : 'all',
-      q: (sourceParams.get('q') || '').slice(0, 100)
+      q: (sourceParams.get('q') || '').slice(0, 100),
+      tag: allTags.indexOf(sourceParams.get('tag')) !== -1 ? sourceParams.get('tag') : '',
+      view: sourceParams.get('view') === 'topics' || sourceParams.get('view') === 'time' ? sourceParams.get('view') : ''
     };
   }
 
@@ -59,6 +62,9 @@
     var meta = createElement('div', 'article-row-meta');
     meta.appendChild(createDate(article));
     meta.appendChild(createCategory(article));
+    meta.appendChild(window.SITE_GARDEN.badge(article));
+    var tended = includeAuthor && window.SITE_GARDEN.tended(article);
+    if (tended) { var watering = createElement('time', 'garden-tended', '最近浇灌于 ' + tended); watering.dateTime = tended; meta.append(watering); }
     meta.appendChild(createElement('span', 'article-read-time', '约 ' + window.SITE_CONTENT.readingTime(article)));
     if (includeAuthor) meta.appendChild(createElement('span', 'article-author', author));
     return meta;
@@ -130,6 +136,13 @@
     var initialContext = readContext(params);
     var category = initialContext.category;
     var query = initialContext.q;
+    var tag = initialContext.tag;
+    var view = initialContext.view;
+    if (!view) { try { view = sessionStorage.getItem('myweb_article_view_v1'); } catch (error) {} }
+    if (view !== 'topics') view = 'time';
+    var clusters = document.getElementById('article-clusters'), graph = document.getElementById('garden-map');
+    function saveView() { try { sessionStorage.setItem('myweb_article_view_v1', view); } catch (error) {} }
+    saveView();
     if (search) {
       search.value = query;
       search.maxLength = 100;
@@ -143,6 +156,8 @@
         else url.searchParams.delete('q');
         if (category !== 'all') url.searchParams.set('category', category);
         else url.searchParams.delete('category');
+        if (tag) url.searchParams.set('tag', tag); else url.searchParams.delete('tag');
+        url.searchParams.set('view', view);
         window.history.replaceState(Object.assign({}, window.history.state || {}), '', url.href);
       } catch (error) {
         // URL 更新只是便利功能，不影响本地阅读。
@@ -153,13 +168,30 @@
       var terms = query.trim().toLocaleLowerCase().split(/\s+/).filter(Boolean);
       var matching = articles.filter(function (article) {
         if (category !== 'all' && article.category !== category) return false;
+        if (tag && (!Array.isArray(article.tags) || article.tags.indexOf(tag) === -1)) return false;
         var text = searchableText(article);
         return terms.every(function (term) { return text.indexOf(term) !== -1; });
       });
 
       list.replaceChildren();
-      var context = { category: category, q: query };
+      var context = { category: category, q: query, tag: tag, view: view };
       matching.forEach(function (article) { list.appendChild(createArticleRow(article, 'h2', context)); });
+      list.hidden = view === 'topics';
+      if (clusters) {
+        clusters.hidden = view !== 'topics'; clusters.replaceChildren();
+        window.SITE_GARDEN.clusters(matching).forEach(function (group) {
+          var card = createElement('a', 'garden-cluster'); card.href = listHref({ category: category, q: query, tag: group.tag, view: 'time' });
+          var heading = createElement('h2', '', group.tag); heading.append(createElement('small', '', group.articles.length + ' 篇'));
+          card.append(heading, createElement('p', '', '最新：' + group.articles[0].title));
+          var distribution = createElement('div', 'garden-distribution');
+          ['seed', 'growing', 'evergreen'].forEach(function (value) { var badge = window.SITE_GARDEN.badge({ maturity: value }); badge.append(document.createTextNode(' ' + group.counts[value])); distribution.append(badge); });
+          card.append(distribution); clusters.append(card);
+        });
+      }
+      if (graph) { window.SITE_GARDEN.renderGraph(graph, articles, context); if (view !== 'topics') graph.hidden = true; }
+      document.querySelectorAll('[data-article-view]').forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.articleView === view)); });
+      var tagFilter = document.getElementById('garden-tag-filter');
+      if (tagFilter) { tagFilter.hidden = !tag; tagFilter.querySelector('span').textContent = '主题：' + tag; }
       filters.forEach(function (button) {
         button.setAttribute('aria-pressed', String(button.getAttribute('data-article-filter') === category));
       });
@@ -188,6 +220,7 @@
       clearButton.addEventListener('click', function () {
         query = '';
         category = 'all';
+        tag = '';
         if (search) search.value = '';
         renderArticles(true);
         if (search) search.focus();
@@ -197,10 +230,16 @@
       var context = readContext(new URLSearchParams(window.location.search));
       category = context.category;
       query = context.q;
+      tag = context.tag;
+      if (context.view) view = context.view;
+      saveView();
       if (search) search.value = query;
       renderArticles(false);
     });
-    renderArticles(false);
+    document.querySelectorAll('[data-article-view]').forEach(function (button) { button.addEventListener('click', function () { view = button.dataset.articleView; saveView(); renderArticles(true); }); });
+    var clearTag = document.getElementById('garden-clear-tag');
+    if (clearTag) clearTag.addEventListener('click', function () { tag = ''; renderArticles(true); });
+    renderArticles(true);
   }
 
   var title = document.getElementById('article-title');
@@ -261,6 +300,16 @@
     }
 
     var related = document.getElementById('article-related');
+    var references = document.getElementById('article-garden-references');
+    if (references) {
+      references.replaceChildren();
+      [['本文提到', window.SITE_GARDEN.mentioned(article, articles)], ['提到本文的', window.SITE_GARDEN.backlinks(article, articles)]].forEach(function (group) {
+        if (!group[1].length) return;
+        var section = createElement('section', 'garden-references'), links = createElement('ul'); section.append(createElement('h2', '', group[0]));
+        group[1].forEach(function (entry) { var li = createElement('li'), link = createElement('a', '', entry.title + ' →'); link.href = articleHref(entry, detailContext); li.append(link); links.append(li); });
+        section.append(links); references.append(section);
+      });
+    }
     if (related) {
       related.replaceChildren();
       window.SITE_CONTENT.relatedArticles(articles, article).forEach(function (item) {

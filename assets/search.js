@@ -63,7 +63,7 @@
   function detailHref(section, id) {
     var page = location.pathname.split('/').pop();
     var params = new URLSearchParams(location.search);
-    var context = page === section + '.html' ? { category: params.get('category'), q: params.get('q') } : {};
+    var context = page === section + '.html' ? { category: params.get('category'), q: params.get('q'), tag: params.get('tag'), view: params.get('view') } : {};
     if (window.SITE_NAV && typeof window.SITE_NAV.detailHref === 'function') return window.SITE_NAV.detailHref(section, id, context);
     return (section === 'projects' ? 'project.html' : 'article.html') + '?id=' + encodeURIComponent(id);
   }
@@ -106,7 +106,7 @@
   else articles.sort(function (a, b) { return String(b.date || '').localeCompare(String(a.date || '')); });
   articles.forEach(function (article) {
     if (!article || !article.id || !article.title) return;
-    addEntry({ id: 'article:' + article.id, type: '文章', title: String(article.title), summary: String(article.summary || ''), href: detailHref('articles', article.id), body: contentText(article.sections, 0), category: String(article.category || ''), tags: contentText(article.tags, 0) });
+    addEntry({ id: 'article:' + article.id, type: '文章', title: String(article.title), summary: String(article.summary || ''), href: detailHref('articles', article.id), body: contentText(article.sections, 0), category: String(article.category || ''), tags: contentText(article.tags, 0), maturity: article.maturity });
   });
   (Array.isArray(window.SITE_PROJECTS) ? window.SITE_PROJECTS : []).forEach(function (project) {
     if (!project || !project.id || !project.title) return;
@@ -247,6 +247,7 @@
     var text = element('span', 'site-search-result-copy');
     if (!compact) text.appendChild(element('span', 'site-search-meta', entry.type + (entry.category ? ' / ' + entry.category : '')));
     text.appendChild(element('span', 'site-search-result-title', entry.title));
+    if (entry.type === '文章' && window.SITE_GARDEN) text.appendChild(window.SITE_GARDEN.badge(entry));
     var excerpt = entry.summary || entry.body || '';
     if (searchTokens.length && !searchTokens.some(function (token) { return normalize(excerpt).indexOf(token) !== -1; }) && entry.body) {
       var body = entry.body.replace(/\s+/g, ' ');

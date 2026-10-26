@@ -1,7 +1,10 @@
+// maturity: seed/growing/evergreen 由站主指定；缺省为 seed。
+// tended 仅填写实质修订日期；links 仅人工填写本文引用的文章 id，不从正文推断。
 // 记录项目开发与建站过程。date 为首次记录日期；阅读时间可省略，由正文自动估算。
 window.SITE_ARTICLES = [
   {
     id: 'documentassistant-confirm-before-archive',
+    maturity: 'seed',
     title: 'DocumentAssistant：先给出分类建议，再确认归档',
     category: '开发记录',
     date: '2026-10-25',
@@ -32,6 +35,7 @@ window.SITE_ARTICLES = [
   },
   {
     id: 'recallai-local-search',
+    maturity: 'seed',
     title: 'RecallAI：本地检索与收纳的边界',
     category: '开发记录',
     date: '2026-10-25',
@@ -63,6 +67,7 @@ window.SITE_ARTICLES = [
   },
   {
     id: 'hello-world',
+    maturity: 'seed',
     title: '你好，世界。这是小站的第一天。',
     category: '建站手记',
     date: '2026-10-24',
@@ -94,6 +99,7 @@ window.SITE_ARTICLES = [
   },
   {
     id: 'small-first-version',
+    maturity: 'seed',
     title: '先做一个小而完整的网站',
     category: '开发记录',
     date: '2026-10-24',
@@ -125,6 +131,7 @@ window.SITE_ARTICLES = [
   },
   {
     id: 'next-steps',
+    maturity: 'seed',
     title: '给下一次更新，留一张清单',
     category: '小站计划',
     date: '2026-10-24',

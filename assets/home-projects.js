@@ -169,9 +169,9 @@
     }
     if (['articles', 'words', 'projects'].every(function (key) { return Number.isInteger(counts[key]) && counts[key] >= 0; })) {
       var grid = element('dl', 'home-stat-grid');
-      [[counts.articles, '篇记录'], [counts.words, '正文字符'], [counts.projects, '件作品'], [dayCount, '天生长']].forEach(function (item) {
+      [[counts.articles, '篇记录'], [counts.words, '正文字符'], [counts.projects, '件作品'], [dayCount, '小站生长']].forEach(function (item, index) {
         var pair = element('div');
-        pair.append(element('dt', '', item[1]), element('dd', '', item[0] === null ? '—' : new Intl.NumberFormat('zh-CN').format(item[0])));
+        pair.append(element('dt', '', item[1]), element('dd', '', item[0] === null ? '—' : new Intl.NumberFormat('zh-CN').format(item[0]) + (index === 3 ? ' 天' : '')));
         grid.append(pair);
       });
       var captionText = '据本地内容快照';
@@ -183,9 +183,8 @@
   var latest = document.getElementById('home-bento-latest');
   if (latest && articles.length) {
     var article = articles[0];
-    var maturity = { seed: '种子', growing: '生长', evergreen: '常青' }[article.maturity] || '手记';
     var latestMeta = element('p', 'home-latest-meta');
-    latestMeta.append(element('span', 'home-note-maturity', maturity), dateNode(article.date));
+    latestMeta.append(window.SITE_GARDEN.badge(article), dateNode(article.date));
     var latestHeading = element('h3', 'home-bento-title');
     var latestLink = element('a', 'home-latest-title', article.title);
     latestLink.href = detailHref('articles', article.id);

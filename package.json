@@ -1,6 +1,6 @@
 {
   "name": "my-personal-website",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "有间小站：本地优先、零依赖的个人网站",
   "type": "module",
@@ -9,6 +9,8 @@
     "snapshot": "node scripts/refresh-snapshots.mjs",
     "snapshot:github": "node scripts/refresh-snapshots.mjs --github",
     "snapshot:approve": "node scripts/refresh-snapshots.mjs --approve-github",
-    "discovery": "node scripts/generate-discovery.mjs"
+    "discovery": "node scripts/generate-discovery.mjs",
+    "garden": "node scripts/generate-garden.mjs",
+    "garden:approve": "node scripts/generate-garden.mjs --approve"
   }
 }

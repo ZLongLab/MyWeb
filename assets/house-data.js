@@ -20,6 +20,9 @@ window.SITE_HOUSE = {
   tools: {
     hardware: [],
     software: [
+      { title: 'VS Code', reason: '写日常代码，整理项目文件。', source: '站主于 2026-10-26 确认' },
+      { title: 'Android Studio', reason: '用于 Android 应用开发与模型部署。', source: '站主于 2026-10-26 确认' },
+      { title: 'Python', reason: '用于医学图像分割模型的训练、评估和实验整理。', source: '站主于 2026-10-26 确认' },
       { title: 'Codex', reason: '用于这个小站的代码修改、页面检查和版本整理。', source: '本次开发环境' },
       { title: 'PowerShell', reason: '在 Windows 上启动本地预览、运行维护脚本。', source: '本机预览环境' },
       { title: 'Node.js', reason: '运行零依赖预览服务，生成文章统计与静态快照。', source: 'package.json / server.mjs' },

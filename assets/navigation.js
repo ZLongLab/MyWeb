@@ -8,7 +8,10 @@
     var categories = (Array.isArray(entries) ? entries : []).map(function (entry) { return entry.category; });
     var category = typeof source.category === 'string' && categories.indexOf(source.category) !== -1 ? source.category : '';
     var q = section === 'articles' && typeof source.q === 'string' ? source.q.trim().slice(0, 100) : '';
-    return { category: category, q: q };
+    var tags = (Array.isArray(entries) ? entries : []).flatMap(function (entry) { return Array.isArray(entry.tags) ? entry.tags : []; });
+    var tag = section === 'articles' && typeof source.tag === 'string' && tags.indexOf(source.tag) !== -1 ? source.tag : '';
+    var view = section === 'articles' && (source.view === 'time' || source.view === 'topics') ? source.view : '';
+    return { category: category, q: q, tag: tag, view: view };
   }
 
   function listHref(section, context) {
@@ -17,6 +20,8 @@
     var params = new URLSearchParams();
     if (state.category) params.set('category', state.category);
     if (state.q) params.set('q', state.q);
+    if (state.tag) params.set('tag', state.tag);
+    if (state.view) params.set('view', state.view);
     return page + (params.size ? '?' + params.toString() : '');
   }
 
@@ -26,6 +31,8 @@
     var params = new URLSearchParams({ id: String(id) });
     if (state.category) params.set('category', state.category);
     if (state.q) params.set('q', state.q);
+    if (state.tag) params.set('tag', state.tag);
+    if (state.view) params.set('view', state.view);
     return page + '?' + params.toString();
   }
 
@@ -49,7 +56,7 @@
     return '';
   }
   function listKey(url, section) {
-    return new URL(listHref(section, { category: url.searchParams.get('category'), q: url.searchParams.get('q') }), url).href;
+    return new URL(listHref(section, { category: url.searchParams.get('category'), q: url.searchParams.get('q'), tag: url.searchParams.get('tag'), view: url.searchParams.get('view') }), url).href;
   }
   function validOrigin(value) {
     return value && typeof value.key === 'string' && Number.isFinite(value.y) && value.y >= 0 && value.y <= 10000000 &&
@@ -102,9 +109,9 @@
   document.addEventListener('click', function (event) {
     if (event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     var link = event.target.closest('a[href]');
-    if (!link || link.hasAttribute('download') || (link.target && link.target !== '_self')) return;
+    if (!link || link.hasAttribute('download') || (link.getAttribute('target') && link.getAttribute('target') !== '_self')) return;
     var target;
-    try { target = new URL(link.href, location.href); } catch (error) { return; }
+    try { target = new URL(link.getAttribute('href'), location.href); } catch (error) { return; }
     remove(HANDOFF);
     remove(RESTORE);
     if (!section || target.origin !== current.origin || sectionFor(target) !== section) return;
@@ -112,7 +119,7 @@
     var detailPage = section === 'projects' ? 'project.html' : 'article.html';
     var origin = history.state && history.state[STATE];
     if (target.hash && cleanHref(target) === cleanHref(new URL(location.href))) return;
-    if (isList && targetPage === detailPage && link.closest('[data-project-list], #article-list')) {
+    if (isList && targetPage === detailPage && link.closest('[data-project-list], #article-list, #garden-map')) {
       origin = { key: listKey(new URL(location.href), section), y: window.scrollY, at: Date.now() };
       write(HANDOFF, Object.assign({ target: cleanHref(target) }, origin));
     } else if (!isList && validOrigin(origin)) {

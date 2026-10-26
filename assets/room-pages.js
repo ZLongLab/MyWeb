@@ -42,12 +42,13 @@
   }
   var defaults = document.getElementById('uses-defaults');
   if (defaults) ((house.tools || {}).defaults || []).forEach(function (item) {
-    var row = el('div'); row.append(el('dt', '', item.title), el('dd', '', item.value || '尚未记录')); defaults.append(row);
+    var row = el('div'); row.append(el('dt', '', item.title), el('dd', '', typeof item.value === 'string' && item.value.trim() ? item.value.trim() : '先留着，等想好了再填')); defaults.append(row);
   });
   ['reading', 'listening', 'watching'].forEach(function (key) { renderLife(document.getElementById('life-' + key), life[key], '这个位置先留着，等一条真实记录。'); });
   var photos = document.getElementById('life-photos');
   if (photos) {
     var entries = Array.isArray(life.photos) ? life.photos : [];
+    var photoHelp = document.getElementById('life-photo-help'); if (photoHelp) photoHelp.hidden = !entries.length;
     if (!entries.length) empty(photos, '相册还没有公开照片。以后把愿意留下的日常放在这里。');
     entries.forEach(function (item) {
       if (typeof item.src !== 'string' || !/^assets\/images\/[\w/.-]+\.(png|jpe?g|webp|avif)$/i.test(item.src) || item.src.indexOf('..') !== -1) return;
