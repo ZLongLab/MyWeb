@@ -1,0 +1,231 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Content unchanged site-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged articles-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged projects-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged life-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged house-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged timeline-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged site-snapshot.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged garden-data.js",
+      "passed": true
+    },
+    {
+      "name": "Life empties have static 56px room-colour sketches",
+      "passed": true
+    },
+    {
+      "name": "Neighbour doorway sketch appears only in empty group",
+      "passed": true
+    },
+    {
+      "name": "Local-note empty sketch is present without changing stored notes",
+      "passed": true
+    },
+    {
+      "name": "Hardware empty hook and eight tool initials render",
+      "passed": true
+    },
+    {
+      "name": "Tool sweep uses transform and shifts title 4px",
+      "passed": true
+    },
+    {
+      "name": "Only growing sprout scales vertically",
+      "passed": true
+    },
+    {
+      "name": "Evergreen icon stays still",
+      "passed": true
+    },
+    {
+      "name": "Three divider houses are exclusive to home",
+      "passed": true
+    },
+    {
+      "name": "Note fold uses a static 18px triangle",
+      "passed": true
+    },
+    {
+      "name": "Season spring icon follows selection",
+      "passed": true
+    },
+    {
+      "name": "Season summer icon follows selection",
+      "passed": true
+    },
+    {
+      "name": "Season autumn icon follows selection",
+      "passed": true
+    },
+    {
+      "name": "Season winter icon follows selection",
+      "passed": true
+    },
+    {
+      "name": "Each season has its own SVG shape",
+      "passed": true
+    },
+    {
+      "name": "Floorplan responds with 3px movement and hidden-from-AT arrow",
+      "passed": true
+    },
+    {
+      "name": "Heatmap cell enlarges without changing colour",
+      "passed": true
+    },
+    {
+      "name": "Heatmap tooltip names the actual week",
+      "passed": true
+    },
+    {
+      "name": "Only detail opening paragraph receives serif clay drop cap",
+      "passed": true
+    },
+    {
+      "name": "Reading progress is CSS scroll-driven on this browser",
+      "passed": true
+    },
+    {
+      "name": "Native reading progress reaches full width",
+      "passed": true
+    },
+    {
+      "name": "Back-to-top appears after one screen with 44px target",
+      "passed": true
+    },
+    {
+      "name": "Back-to-top hides and leaves tab order at the top",
+      "passed": true
+    },
+    {
+      "name": "Colour copy toast is the only polite copy result",
+      "passed": true
+    },
+    {
+      "name": "Toast does not take focus",
+      "passed": true
+    },
+    {
+      "name": "Toast retires without moving focus",
+      "passed": true
+    },
+    {
+      "name": "Failed copy never claims success",
+      "passed": true
+    },
+    {
+      "name": "Command copy toast lives inside modal top layer",
+      "passed": true
+    },
+    {
+      "name": "Command copy uses one polite result and preserves command focus",
+      "passed": true
+    },
+    {
+      "name": "Closing dialog clears its toast",
+      "passed": true
+    },
+    {
+      "name": "Noncopy command still has its own polite feedback",
+      "passed": true
+    },
+    {
+      "name": "Focus ring has dedicated 150ms animation",
+      "passed": true
+    },
+    {
+      "name": "Focus ring settles at 4px offset",
+      "passed": true
+    },
+    {
+      "name": "http single Logo click navigates after short recognition delay",
+      "passed": true
+    },
+    {
+      "name": "http double Logo click navigates without Easter egg",
+      "passed": true
+    },
+    {
+      "name": "http triple Logo stays on current room and reveals thanks",
+      "passed": true
+    },
+    {
+      "name": "http door closes after three seconds even while hovered",
+      "passed": true
+    },
+    {
+      "name": "file single Logo click navigates after short recognition delay",
+      "passed": true
+    },
+    {
+      "name": "file double Logo click navigates without Easter egg",
+      "passed": true
+    },
+    {
+      "name": "file triple Logo stays on current room and reveals thanks",
+      "passed": true
+    },
+    {
+      "name": "file door closes after three seconds even while hovered",
+      "passed": true
+    },
+    {
+      "name": "Logo counter is reset when documents change",
+      "passed": true
+    },
+    {
+      "name": "File greeting respects Shanghai hour 2",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion Easter egg shows static text without door rotation",
+      "passed": true
+    },
+    {
+      "name": "Season marker is completely still with reduced motion",
+      "passed": true
+    },
+    {
+      "name": "File greeting respects Shanghai hour 5",
+      "passed": true
+    },
+    {
+      "name": "File greeting respects Shanghai hour 14",
+      "passed": true
+    },
+    {
+      "name": "No page script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

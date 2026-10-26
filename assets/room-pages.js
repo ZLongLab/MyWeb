@@ -79,10 +79,15 @@
     b.append(color, el('strong', '', entry[0]), el('code', '', entry[1]));
     b.addEventListener('click', async function () {
       var result = document.getElementById('palette-status');
+      function feedback(message) {
+        if (window.SITE_FEEDBACK) { result.removeAttribute('role'); result.setAttribute('aria-live', 'off'); }
+        result.textContent = message;
+        if (window.SITE_FEEDBACK) window.SITE_FEEDBACK.show(message);
+      }
       try {
         if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('clipboard unavailable');
-        await navigator.clipboard.writeText(entry[1]); result.textContent = '已复制 ' + entry[0] + ' ' + entry[1];
-      } catch (e) { result.textContent = '复制不可用，请手动复制：' + entry[1]; }
+        await navigator.clipboard.writeText(entry[1]); feedback('已复制 ' + entry[0] + ' ' + entry[1]);
+      } catch (e) { feedback('复制不可用，请手动复制：' + entry[1]); }
     }); palette.append(b);
   });
   var changelog = document.getElementById('colophon-changelog');

@@ -12,6 +12,8 @@ if (!/^\d+$/.test(portText) || Number(portText) < 1 || Number(portText) > 65535)
 const port = Number(portText);
 const previewUrl = `http://127.0.0.1:${port}`;
 const files = new Map([
+  ['/assets/details.css', 'text/css; charset=utf-8'],
+  ['/assets/details.js', 'text/javascript; charset=utf-8'],
   ['/assets/images/garden-graph.svg', 'image/svg+xml; charset=utf-8'],
   ['/assets/timeline-data.js', 'text/javascript; charset=utf-8'],
   ['/assets/garden-data.js', 'text/javascript; charset=utf-8'],

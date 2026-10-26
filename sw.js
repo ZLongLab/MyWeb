@@ -4,8 +4,10 @@
 // and external links are deliberately absent, even if the host can serve them.
 const BASE = new URL('./', self.location.href);
 const CACHE_PREFIX = 'myweb-shell-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + '1.1.2';
+const CACHE_NAME = CACHE_PREFIX + '1.2.0';
 const APP_FILES = [
+  'assets/details.css',
+  'assets/details.js',
   'assets/images/garden-graph.svg',
   'assets/timeline-data.js',
   'assets/garden-data.js',

@@ -57,6 +57,7 @@
     if (hour >= 20 || hour < 6) greeting = { spring: '春夜安静，给明天留一颗种子。', summer: '夏夜有风，慢慢看，别着急。', autumn: '秋夜灯亮，手边还有一点未完的想法。', winter: '冬夜灯暖，先让自己歇一会儿。' }[season];
     document.querySelectorAll('[data-season-greeting]').forEach(function (node) { node.textContent = greeting; });
     document.querySelectorAll('[data-current-season]').forEach(function (node) { node.textContent = labels[season]; });
+    document.dispatchEvent(new CustomEvent('myweb:clock-change', { detail: { hour: hour, time: value } }));
   }
   updateClock();
   document.querySelectorAll('[data-house-quote]').forEach(function (node) { if (data.quote) node.textContent = data.quote; });

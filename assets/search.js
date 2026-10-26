@@ -134,8 +134,13 @@
   var email = typeof config.email === 'string' ? config.email.trim() : '';
   if (email.length <= 254 && /^[^\s@<>"']+@[^\s@<>"']+\.[^\s@<>"']+$/.test(email)) {
     addEntry({ id: 'command:email', type: '命令', title: '复制联系邮箱', summary: email, body: '邮箱 邮件 联系 email mail copy', action: function () {
-      showFeedback('正在复制邮箱…');
-      return copyText(email).then(function (copied) { return copied ? showFeedback('邮箱已复制：' + email) : showFeedback('复制未完成，可以手动复制：' + email, true); });
+      showFeedback('正在复制邮箱…', false, true);
+      return copyText(email).then(function (copied) {
+        var message = copied ? '邮箱已复制：' + email : '复制未完成，可以手动复制：' + email;
+        var result = showFeedback(message, !copied, Boolean(window.SITE_FEEDBACK));
+        if (window.SITE_FEEDBACK) window.SITE_FEEDBACK.show(message);
+        return result;
+      });
     } });
   }
 
@@ -212,7 +217,9 @@
   dialog.appendChild(footer);
   document.body.appendChild(dialog);
 
-  function showFeedback(message, error) {
+  function showFeedback(message, error, silent) {
+    if (silent) status.removeAttribute('role'); else status.setAttribute('role', 'status');
+    status.setAttribute('aria-live', silent ? 'off' : 'polite');
     status.textContent = message;
     status.classList.toggle('is-feedback', !error);
     status.classList.toggle('is-error', Boolean(error));
@@ -271,6 +278,7 @@
     results.appendChild(section);
   }
   function renderResults() {
+    status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
     while (results.firstChild) results.removeChild(results.firstChild);
     status.classList.remove('is-feedback', 'is-error');
     var query = normalize(input.value);

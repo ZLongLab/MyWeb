@@ -1,0 +1,79 @@
+/* Small details use the existing palette and leave the room structure intact. */
+:root { --detail-footer-light: var(--bg-paper); }
+html[data-theme="night"] { --detail-footer-light: var(--ink); }
+.empty-sketch { display: block; flex: 0 0 auto; width: 56px; height: 56px; margin: 0 0 12px; color: var(--room-accent, var(--c-slate)); }
+#guestbook-empty .empty-sketch { margin-inline: auto; color: var(--c-clay); }
+.season-greeting-line { display: flex; align-items: center; gap: 9px; margin-top: 8px; }
+.season-greeting-line .home-season-greeting { margin: 0; }
+.season-mark { display: inline-flex; flex: 0 0 20px; width: 20px; height: 20px; color: var(--global-accent-text, var(--c-moss)); }
+.season-glyph { display: block; overflow: visible; animation: detail-season-sway 6s ease-in-out infinite; transform-origin: 50% 75%; }
+.season-mark[data-season="winter"] .season-glyph { animation-name: detail-snow-drift; }
+@keyframes detail-season-sway { 0%, 100% { transform: rotate(-3deg); } 50% { transform: rotate(3deg); } }
+@keyframes detail-snow-drift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(2px); } }
+.night-greeting { margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.9; }
+.night-greeting[hidden] { display: none; }
+.home-page .has-house-divider { position: relative; border-top: 0; }
+.home-divider { position: absolute; top: -5px; left: 0; right: 0; display: flex; align-items: center; gap: 9px; height: 10px; color: var(--line); pointer-events: none; }
+.home-divider > span { height: 1px; flex: 1; background: var(--line); }
+.divider-house { display: block; flex: 0 0 10px; }
+body[data-page="article"] #article-body > .article-body-section:first-child > p:first-of-type::first-letter { float: left; padding: .05em .14em 0 0; color: var(--c-clay); font-family: var(--font-serif); font-size: 3.2em; line-height: .92; }
+.tool-initial { display: inline-flex; align-items: center; justify-content: center; flex: 0 0 28px; width: 28px; height: 28px; margin-right: 10px; border-radius: 6px; color: var(--room-accent-text); background: color-mix(in srgb, var(--c-slate) 10%, transparent); font: 12px/1 var(--mono), var(--font); vertical-align: middle; }
+.detail-sweep:hover .tool-initial, .detail-sweep:focus-within .tool-initial { background: color-mix(in srgb, var(--c-slate) 18%, transparent); }
+html { scrollbar-color: var(--control-border, var(--line)) transparent; scrollbar-width: thin; }
+@supports selector(::-webkit-scrollbar) {
+  html { scrollbar-color: auto; scrollbar-width: auto; }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-track { background: transparent; }
+  *::-webkit-scrollbar-thumb { background: var(--control-border, var(--line)); border: 2px solid transparent; border-radius: 5px; background-clip: padding-box; }
+  *::-webkit-scrollbar-thumb:hover { background-color: var(--c-moss); }
+}
+.room-door { --door-accent: var(--c-slate); }
+.room-door[data-room="home"] { --door-accent: var(--global-accent); }
+.room-door[data-room="projects"], .room-door[data-room="guestbook"] { --door-accent: var(--c-clay); }
+.room-door[data-room="articles"] { --door-accent: var(--c-amber); }
+.room-door[data-room="life"], .room-door[data-room="links"] { --door-accent: var(--c-moss); }
+.room-door-name { position: relative; padding-right: 17px; transition: transform .2s ease; }
+.door-arrow { position: absolute; right: 0; top: 0; opacity: 0; transform: translateX(-3px); transition: opacity .2s ease, transform .2s ease; }
+.room-door:hover .room-door-name, .room-door:focus-visible .room-door-name { transform: translateX(3px); }
+.room-door:hover .door-arrow, .room-door:focus-visible .door-arrow { opacity: 1; transform: none; }
+.room-door:hover .room-door-number, .room-door:focus-visible .room-door-number { color: color-mix(in srgb, var(--door-accent) 60%, var(--detail-footer-light)); }
+.home-now::after { content: ''; position: absolute; right: 0; bottom: 0; width: 18px; height: 18px; pointer-events: none; background: linear-gradient(135deg, transparent 46%, color-mix(in srgb, var(--ink) 16%, transparent) 49%, color-mix(in srgb, var(--bg-band) 85%, var(--bg-footer)) 54%); clip-path: polygon(100% 0, 100% 100%, 0 100%); }
+.reading-progress { display: none; }
+@supports (animation-timeline: scroll(root block)) {
+  .reading-progress { display: block; position: fixed; inset: 0 0 auto; z-index: 100; height: 2px; background: var(--c-amber); transform: scaleX(0); transform-origin: left; animation: detail-reading-progress .5s linear both; animation-timeline: scroll(root block); pointer-events: none; }
+}
+@keyframes detail-reading-progress { to { transform: scaleX(1); } }
+.floating-top { display: flex; align-items: center; justify-content: center; position: fixed; right: max(20px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom)); z-index: 80; width: 44px; height: 44px; min-width: 44px; min-height: 44px; padding: 0; border: 1px solid var(--line); border-radius: 50%; color: var(--c-clay); background: var(--bg-paper); box-shadow: 0 1px 2px color-mix(in srgb, var(--c-clay) 6%, transparent), 0 8px 20px -6px color-mix(in srgb, var(--ink) 18%, transparent); cursor: pointer; pointer-events: none; opacity: 0; transform: translateY(7px); transition: opacity .2s ease, transform .2s ease; }
+.floating-top.is-visible { pointer-events: auto; opacity: 1; transform: none; }
+.site-toast { position: fixed; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); z-index: 150; width: max-content; max-width: min(440px, calc(100vw - 40px)); padding: 10px 17px; border: 1px solid var(--line); border-radius: 7px; background: var(--surface); color: var(--ink); box-shadow: 0 5px 18px color-mix(in srgb, var(--ink) 12%, transparent); font: 13px/1.8 var(--font); text-align: center; pointer-events: none; opacity: 0; transform: translate(-50%, 8px); transition: opacity .25s ease, transform .25s ease; }
+.site-toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.detail-sweep { position: relative; isolation: isolate; }
+.detail-sweep::after { content: ''; position: absolute; inset: 0; z-index: -1; background: color-mix(in srgb, var(--room-accent) 6%, transparent); transform: scaleX(0); transform-origin: left; transition: transform .3s ease; pointer-events: none; }
+.detail-sweep:hover::after, .detail-sweep:focus-within::after { transform: scaleX(1); }
+.detail-sweep h3 { transition: transform .3s ease; }
+.detail-sweep:hover h3, .detail-sweep:focus-within h3 { transform: translateX(4px); }
+.garden-maturity[data-maturity="growing"] svg { transform-origin: center bottom; transition: transform .25s ease; }
+.garden-maturity[data-maturity="growing"]:hover svg { transform: scaleY(1.15); }
+.home-heatmap-day { transform-box: fill-box; transform-origin: center; transition: transform .18s ease; }
+.home-heatmap-day:hover { transform: scale(1.25); }
+.heatmap-tip { position: fixed; z-index: 90; padding: 5px 8px; border: 1px solid var(--line); border-radius: 4px; background: var(--surface); color: var(--ink); font: 10px/1.7 var(--mono), var(--font); pointer-events: none; opacity: 0; transform: translate(-50%, -100%); transition: opacity .15s ease; }
+.heatmap-tip.is-visible { opacity: 1; }
+html :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible { outline: 2px solid var(--control-focus, var(--c-moss)); outline-offset: 4px; animation: detail-focus-ring .15s ease; }
+@keyframes detail-focus-ring { from { outline-offset: 2px; } to { outline-offset: 4px; } }
+.house-footer :is(a, button):focus-visible { outline-color: var(--detail-footer-light); }
+.site-header .brand { position: relative; }
+.site-header .brand.is-door-open .site-mark-door { transform: perspective(100px) rotateY(-15deg); }
+.site-header .brand.is-door-open .brand-mark::after { opacity: 1; background: linear-gradient(90deg, var(--c-amber), transparent); }
+.site-header a.brand.door-finished .site-mark-door { transform: none; }
+.site-header .brand.door-finished .brand-mark::after { opacity: 0; }
+html[data-theme="night"] body.is-late-night .site-header .brand-mark::after { opacity: .55; }
+.door-thanks { position: absolute; left: 0; top: calc(100% + 6px); width: max-content; max-width: 180px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--c-clay); background: var(--bg-paper); font: 11px/1.8 var(--font); opacity: 0; transform: translateY(-3px); transition: transform .25s ease, opacity .25s ease; pointer-events: none; }
+.brand.is-door-open .door-thanks { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .season-glyph { animation: none !important; transform: none !important; }
+  .reading-progress { display: none; }
+  .detail-sweep h3, .room-door-name, .garden-maturity[data-maturity="growing"] svg, .home-heatmap-day:hover, .site-header .brand.is-door-open .site-mark-door { transform: none !important; }
+  .detail-sweep::after, .door-arrow { transition: none; }
+  html :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible { animation: none !important; }
+}
+@media print { .floating-top, .reading-progress, .site-toast, .heatmap-tip, .door-thanks, .season-mark { display: none !important; } }

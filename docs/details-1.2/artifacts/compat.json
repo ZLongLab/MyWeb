@@ -1,0 +1,276 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Real scrollbar paper spring",
+      "passed": true,
+      "detail": {
+        "theme": "paper",
+        "season": "spring",
+        "thumb": "rgb(205, 211, 198)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar paper summer",
+      "passed": true,
+      "detail": {
+        "theme": "paper",
+        "season": "summer",
+        "thumb": "rgb(205, 211, 198)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar paper autumn",
+      "passed": true,
+      "detail": {
+        "theme": "paper",
+        "season": "autumn",
+        "thumb": "rgb(205, 211, 198)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar paper winter",
+      "passed": true,
+      "detail": {
+        "theme": "paper",
+        "season": "winter",
+        "thumb": "rgb(205, 211, 198)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar night spring",
+      "passed": true,
+      "detail": {
+        "theme": "night",
+        "season": "spring",
+        "thumb": "rgb(83, 99, 79)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar night summer",
+      "passed": true,
+      "detail": {
+        "theme": "night",
+        "season": "summer",
+        "thumb": "rgb(83, 99, 79)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar night autumn",
+      "passed": true,
+      "detail": {
+        "theme": "night",
+        "season": "autumn",
+        "thumb": "rgb(83, 99, 79)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Real scrollbar night winter",
+      "passed": true,
+      "detail": {
+        "theme": "night",
+        "season": "winter",
+        "thumb": "rgb(83, 99, 79)",
+        "track": "rgba(0, 0, 0, 0)",
+        "width": "10px",
+        "occupied": 10
+      }
+    },
+    {
+      "name": "Reduced season has no motion",
+      "passed": true
+    },
+    {
+      "name": "Reduced heatmap hover stays still",
+      "passed": true
+    },
+    {
+      "name": "Reduced sweep is immediate and title stays still",
+      "passed": true
+    },
+    {
+      "name": "Reduced growing sprout stays still",
+      "passed": true
+    },
+    {
+      "name": "Reduced footer stays still and arrow is immediately visible",
+      "passed": true
+    },
+    {
+      "name": "Reduced focus ring is immediate",
+      "passed": true
+    },
+    {
+      "name": "Reduced reading progress is hidden",
+      "passed": true
+    },
+    {
+      "name": "Reduced backtop has no transition",
+      "passed": true
+    },
+    {
+      "name": "Reduced backtop scroll is immediate",
+      "passed": true
+    },
+    {
+      "name": "Reduced file copy toast shows immediately without motion",
+      "passed": true
+    },
+    {
+      "name": "File mode without clipboard gives honest manual fallback",
+      "passed": true
+    },
+    {
+      "name": "Graph keyboard routing still preserves topics",
+      "passed": true
+    },
+    {
+      "name": "Return restores topic view and approved graph",
+      "passed": true
+    },
+    {
+      "name": "Version 1.2 cache contains exactly 68 local resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.2.0",
+          "count": 68
+        }
+      ]
+    },
+    {
+      "name": "Offline home loads new season and divider details",
+      "passed": true
+    },
+    {
+      "name": "Offline detail keeps dropcap and bidirectional links",
+      "passed": true
+    },
+    {
+      "name": "Offline approved garden still has six nodes and four edges",
+      "passed": true
+    },
+    {
+      "name": "Preview excludes documentation and verification helpers",
+      "passed": true,
+      "detail": [
+        {
+          "path": "README.md",
+          "status": 404
+        },
+        {
+          "path": "docs/details-1.2/README.md",
+          "status": 404
+        },
+        {
+          "path": ".tmp/details-compat.cjs",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "name": "No page script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "palettes": [
+    {
+      "theme": "paper",
+      "season": "spring",
+      "thumb": "rgb(205, 211, 198)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "paper",
+      "season": "summer",
+      "thumb": "rgb(205, 211, 198)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "thumb": "rgb(205, 211, 198)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "paper",
+      "season": "winter",
+      "thumb": "rgb(205, 211, 198)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "night",
+      "season": "spring",
+      "thumb": "rgb(83, 99, 79)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "thumb": "rgb(83, 99, 79)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "thumb": "rgb(83, 99, 79)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    },
+    {
+      "theme": "night",
+      "season": "winter",
+      "thumb": "rgb(83, 99, 79)",
+      "track": "rgba(0, 0, 0, 0)",
+      "width": "10px",
+      "occupied": 10
+    }
+  ],
+  "browser": "155.0.8059.85",
+  "notVerified": [
+    "Firefox live rendering",
+    "Physical mobile device",
+    "NVDA or VoiceOver reading",
+    "OS PWA installation"
+  ]
+}
