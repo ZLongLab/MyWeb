@@ -1,0 +1,1088 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "缓存与服务器运行清单完全对齐",
+      "passed": true
+    },
+    {
+      "name": "缓存不含文档、备份或外链",
+      "passed": true
+    },
+    {
+      "name": "本地相对manifest配置",
+      "passed": true
+    },
+    {
+      "name": "PNG图标尺寸 192",
+      "passed": true
+    },
+    {
+      "name": "PNG图标尺寸 512",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 index.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 index.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 projects.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 projects.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 project.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 project.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 articles.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 articles.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 article.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 article.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 about.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 about.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "首次样式前同步确定主题 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "唯一可动画门扇 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 index.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 about.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 320 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 index.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 about.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 390 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 index.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 about.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 640 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 index.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 about.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 768 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 index.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 about.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1024 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 index.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 about.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 paper 1440 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "paper",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "只保留一处荧光高光 paper",
+      "passed": true
+    },
+    {
+      "name": "搜索键盘选择 paper",
+      "passed": true
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 index.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 about.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 320 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 index.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 about.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 390 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 index.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 about.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 640 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 index.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 about.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 768 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 index.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 about.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1024 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 index.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 projects.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 project.html?id=recallai",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 articles.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 article.html?id=documentassistant-confirm-before-archive",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 about.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 guestbook.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "主题/布局/减少动效 night 1440 workbench.html",
+      "passed": true,
+      "details": {
+        "theme": "night",
+        "overflow": false,
+        "hidden": 0,
+        "button": true
+      }
+    },
+    {
+      "name": "只保留一处荧光高光 night",
+      "passed": true
+    },
+    {
+      "name": "搜索键盘选择 night",
+      "passed": true
+    },
+    {
+      "name": "所有已渲染链接与按钮至少44px",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "正常页面无脚本异常",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "正常页面无资源失败",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "正常页面零外部请求",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "browser": "155.0.8059.85",
+  "small": [],
+  "external": []
+}

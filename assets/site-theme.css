@@ -79,6 +79,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
   justify-content: center;
   gap: 6px;
   min-height: 44px;
+  min-width: 44px;
   padding: 8px 12px;
   border: 1px solid #d5dcd0;
   border-radius: 7px;
@@ -433,6 +434,12 @@ a:focus-visible, button:focus-visible, summary:focus-visible {
 .site-footer .footer-notes, .site-footer .back-top, .site-footer [data-social-links] a { color: #d8dfd4; }
 .site-footer .footer-notes:hover, .site-footer .back-top:hover, .site-footer [data-social-links] a:hover { color: #efc9ad; }
 .site-footer a:focus-visible { outline-color: #efc9ad; }
+.footer-inner a { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; }
+.breadcrumbs a { min-width: 44px; min-height: 44px; }
+.workbench-colophon-list a { display: inline-flex; align-items: center; min-height: 44px; }
+.brand-mark svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.home-text-link, .home-social-links a { min-width: 44px; }
+.portfolio-filters button { min-width: 44px; }
 
 @media (min-width: 800px) and (max-width: 1050px) {
   .container { width: calc(100% - 64px); }

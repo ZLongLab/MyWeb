@@ -1,0 +1,364 @@
+{
+  "verdict": "PASS",
+  "environment": {
+    "browser": "155.0.8059.85",
+    "driver": "Playwright via existing local installation",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "serviceWorkers": "blocked in isolated motion test",
+    "physicalDeviceTested": false
+  },
+  "checks": [
+    {
+      "name": "Hero 四级动画实际开始并完成",
+      "passed": true,
+      "evidence": {
+        "starts": [
+          {
+            "type": "animationstart",
+            "name": "site-intro",
+            "at": 184.40000000596046,
+            "elapsed": 0,
+            "target": "motion-intro"
+          },
+          {
+            "type": "animationstart",
+            "name": "site-intro",
+            "at": 249.5,
+            "elapsed": 0,
+            "target": "home-bio motion-intro"
+          },
+          {
+            "type": "animationstart",
+            "name": "site-intro",
+            "at": 333.5,
+            "elapsed": 0,
+            "target": "home-opening-actions motion-intro"
+          },
+          {
+            "type": "animationstart",
+            "name": "site-intro",
+            "at": 416.40000000596046,
+            "elapsed": 0,
+            "target": "home-now motion-intro"
+          }
+        ],
+        "ends": [
+          {
+            "type": "animationend",
+            "name": "site-intro",
+            "at": 634.6000000014901,
+            "elapsed": 0.45,
+            "target": "motion-intro"
+          },
+          {
+            "type": "animationend",
+            "name": "site-intro",
+            "at": 700.5,
+            "elapsed": 0.45,
+            "target": "home-bio motion-intro"
+          },
+          {
+            "type": "animationend",
+            "name": "site-intro",
+            "at": 783.5,
+            "elapsed": 0.44999999999999996,
+            "target": "home-opening-actions motion-intro"
+          },
+          {
+            "type": "animationend",
+            "name": "site-intro",
+            "at": 866.4000000059605,
+            "elapsed": 0.44999999999999996,
+            "target": "home-now motion-intro"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hero 按标题/简介/按钮/近况顺序编排且总时长不超过 0.8 秒",
+      "passed": true,
+      "evidence": {
+        "observedSpanMs": 682,
+        "actualTargets": [
+          "motion-intro",
+          "home-bio motion-intro",
+          "home-opening-actions motion-intro",
+          "home-now motion-intro"
+        ]
+      }
+    },
+    {
+      "name": "首屏只保留指定关键词高光",
+      "passed": true,
+      "evidence": [
+        "把想法做出来的过程"
+      ]
+    },
+    {
+      "name": "高光宽度动画实际完成 0.6 秒",
+      "passed": true,
+      "evidence": [
+        {
+          "type": "animationstart",
+          "name": "site-highlight",
+          "at": 249.5,
+          "elapsed": 0,
+          "target": "bio-highlight motion-highlight"
+        },
+        {
+          "type": "animationend",
+          "name": "site-highlight",
+          "at": 849.8000000044703,
+          "elapsed": 0.6,
+          "target": "bio-highlight motion-highlight"
+        }
+      ]
+    },
+    {
+      "name": "滚动进入区块后浮现动画完成并恢复正常样式",
+      "passed": true,
+      "evidence": {
+        "pendingBefore": 1,
+        "reveal": [
+          {
+            "type": "animationstart",
+            "name": "site-reveal",
+            "at": 1016.3000000044703,
+            "elapsed": 0,
+            "target": "home-section home-writing container motion-reveal"
+          },
+          {
+            "type": "animationend",
+            "name": "site-reveal",
+            "at": 1516,
+            "elapsed": 0.5,
+            "target": "home-section home-writing container motion-reveal"
+          }
+        ]
+      }
+    },
+    {
+      "name": "悬停门扇实际产生 transform",
+      "passed": true,
+      "evidence": "matrix3d(0.966403, 0, 0.257031, -0.00255213, 0, 1, 0, 0, -0.257031, 0, 0.966403, -0.00959571, 0, 0, 0, 1)"
+    },
+    {
+      "name": "键盘焦点门扇实际产生 transform",
+      "passed": true
+    },
+    {
+      "name": "跨文档同源导航实际完成",
+      "passed": true,
+      "evidence": {
+        "previous": {
+          "url": "http://127.0.0.1:4173/index.html",
+          "nativeViewTransition": true
+        },
+        "reveal": [],
+        "startViewTransitionSupported": true,
+        "navigationEntryType": "navigate",
+        "status": "NATIVE_TRIGGERED_DESTINATION_NOT_YET_OBSERVED_AT_IMMEDIATE_LOAD_SAMPLE",
+        "nativeTriggerObserved": true,
+        "fullVisualPlaybackConfirmed": false,
+        "evidenceBoundary": "Source pageswap.viewTransition was observed. Destination pagereveal was sampled immediately after load; an empty array at that moment cannot establish whether the transition was later played or skipped."
+      }
+    },
+    {
+      "name": "运行时 reduced-motion 清理状态、关闭全局动画/过渡与门扇",
+      "passed": true,
+      "evidence": {
+        "pending": 0,
+        "door": "none",
+        "scroll": "auto",
+        "nonzeroMotion": []
+      }
+    },
+    {
+      "name": "直接带 fragment 打开正文没有隐藏祖先",
+      "passed": true,
+      "evidence": [
+        {
+          "opacity": "1",
+          "pending": false
+        },
+        {
+          "opacity": "1",
+          "pending": false
+        },
+        {
+          "opacity": "1",
+          "pending": false
+        },
+        {
+          "opacity": "1",
+          "pending": false
+        },
+        {
+          "opacity": "1",
+          "pending": false
+        }
+      ]
+    },
+    {
+      "name": "直接带 fragment 打开工作台小节可见",
+      "passed": true
+    },
+    {
+      "name": "正常动效操作没有脚本错误",
+      "passed": true,
+      "evidence": []
+    },
+    {
+      "name": "IO 不可用时所有区块直接可见且无脚本错误",
+      "passed": true,
+      "evidence": {
+        "pending": 0,
+        "visible": true,
+        "errors": []
+      }
+    }
+  ],
+  "observations": {
+    "crossDocumentViewTransition": {
+      "previous": {
+        "url": "http://127.0.0.1:4173/index.html",
+        "nativeViewTransition": true
+      },
+      "reveal": [],
+      "startViewTransitionSupported": true,
+      "navigationEntryType": "navigate",
+      "status": "NATIVE_TRIGGERED_READY_AND_FINISHED_OBSERVED",
+      "nativeTriggerObserved": true,
+      "fullVisualPlaybackConfirmed": false,
+      "evidenceBoundary": "Source pageswap.viewTransition was observed. Destination pagereveal was sampled immediately after load; an empty array at that moment cannot establish whether the transition was later played or skipped.",
+      "initialObservation": {
+        "previous": {
+          "url": "http://127.0.0.1:4173/index.html",
+          "nativeViewTransition": true
+        },
+        "reveal": [],
+        "startViewTransitionSupported": true,
+        "navigationEntryType": "navigate",
+        "status": "NATIVE_TRIGGERED_DESTINATION_NOT_YET_OBSERVED_AT_IMMEDIATE_LOAD_SAMPLE",
+        "nativeTriggerObserved": true,
+        "fullVisualPlaybackConfirmed": false,
+        "evidenceBoundary": "Source pageswap.viewTransition was observed. Destination pagereveal was sampled immediately after load; an empty array at that moment cannot establish whether the transition was later played or skipped."
+      },
+      "preciseFollowUp": {
+        "observedAt": "2026-10-26T01:15:42.584Z",
+        "experimentCount": 1,
+        "environment": {
+          "browser": "155.0.8059.85",
+          "headless": true,
+          "viewport": {
+            "width": 1440,
+            "height": 900
+          },
+          "serviceWorkers": "blocked",
+          "reducedMotion": "no-preference"
+        },
+        "steps": [
+          "Open index.html in a fresh isolated context with init-script event probes.",
+          "Wait for the initial hero animation classes to clear.",
+          "Click the actual home-primary-link once to navigate to projects.html.",
+          "Capture immediately after load, then explicitly wait up to 2000ms for pagereveal and up to 2000ms for ready/finished settlement."
+        ],
+        "immediateLoadSample": {
+          "events": [
+            {
+              "type": "pagereveal",
+              "url": "http://127.0.0.1:4173/projects.html",
+              "at": 46,
+              "nativeViewTransition": true,
+              "ready": "fulfilled",
+              "finished": "pending",
+              "readyAt": 46.79999999993015
+            }
+          ],
+          "animationEvents": []
+        },
+        "destinationEventWait": "observed",
+        "settlementWait": "settled",
+        "previous": {
+          "type": "pageswap",
+          "url": "http://127.0.0.1:4173/index.html",
+          "at": 1072.7999999999302,
+          "nativeViewTransition": true,
+          "ready": "pending",
+          "finished": "pending"
+        },
+        "destination": {
+          "events": [
+            {
+              "type": "pagereveal",
+              "url": "http://127.0.0.1:4173/projects.html",
+              "at": 46,
+              "nativeViewTransition": true,
+              "ready": "fulfilled",
+              "finished": "fulfilled",
+              "readyAt": 46.79999999993015,
+              "finishedAt": 377.39999999990687
+            }
+          ],
+          "animationEvents": [
+            {
+              "type": "animationstart",
+              "name": "-ua-view-transition-group-anim-root",
+              "pseudoElement": "::view-transition-group(root)",
+              "at": 80.79999999993015,
+              "elapsedTime": 0
+            },
+            {
+              "type": "animationstart",
+              "name": "site-vt-in",
+              "pseudoElement": "::view-transition-new(root)",
+              "at": 80.79999999993015,
+              "elapsedTime": 0
+            },
+            {
+              "type": "animationstart",
+              "name": "site-vt-out",
+              "pseudoElement": "::view-transition-old(root)",
+              "at": 80.79999999993015,
+              "elapsedTime": 0
+            },
+            {
+              "type": "animationend",
+              "name": "site-vt-out",
+              "pseudoElement": "::view-transition-old(root)",
+              "at": 280.69999999995343,
+              "elapsedTime": 0.22
+            },
+            {
+              "type": "animationend",
+              "name": "-ua-view-transition-group-anim-root",
+              "pseudoElement": "::view-transition-group(root)",
+              "at": 295.69999999995343,
+              "elapsedTime": 0.25
+            },
+            {
+              "type": "animationend",
+              "name": "site-vt-in",
+              "pseudoElement": "::view-transition-new(root)",
+              "at": 377.0999999999767,
+              "elapsedTime": 0.32
+            }
+          ]
+        },
+        "startViewTransitionSupported": true,
+        "navigationEntryType": "navigate",
+        "visibility": "visible",
+        "pageErrors": [],
+        "status": "NATIVE_TRIGGERED_READY_AND_FINISHED_OBSERVED",
+        "nativeTriggerObserved": true,
+        "destinationLifecycleCompleted": true,
+        "fullVisualPlaybackConfirmed": false,
+        "evidenceBoundary": "A non-null pageswap.viewTransition proves a real native cross-document transition was created. Destination pagereveal plus fulfilled ready/finished proves its lifecycle reached animation-ready and finished states. This event-only headless probe does not prove every rendered animation frame or visual smoothness. The earlier empty destination array sampled immediately after load did not prove suppression or lack of native support."
+      }
+    }
+  },
+  "failures": []
+}

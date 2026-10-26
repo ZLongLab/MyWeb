@@ -1,0 +1,63 @@
+/* Progressive enhancement: content is visible until motion.js opts an item in. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: site-vt-out .22s ease both; }
+::view-transition-new(root) { animation: site-vt-in .32s ease both; }
+@keyframes site-vt-out { to { opacity: 0; } }
+@keyframes site-vt-in { from { opacity: 0; transform: translateY(8px); } }
+
+.site-header .brand { view-transition-name: brand; }
+::view-transition-group(brand) { animation: none; }
+::view-transition-old(brand) { animation: none; opacity: 0; }
+::view-transition-new(brand) { animation: none; opacity: 1; }
+
+.motion-intro { animation: site-intro .45s ease-out var(--intro-delay, 0ms) both; }
+@keyframes site-intro {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.bio-highlight { background-repeat: no-repeat; background-size: 100% 100%; }
+.motion-highlight { animation: site-highlight .6s ease-out .08s both; }
+@keyframes site-highlight {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
+}
+
+.motion-pending { opacity: 0; transform: translateY(12px); }
+.motion-reveal { animation: site-reveal .5s ease-out var(--reveal-delay, 0ms) both; }
+@keyframes site-reveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
+.site-header .site-mark-door {
+  transform-box: fill-box;
+  transform-origin: left center;
+  transition: transform .3s ease;
+}
+.site-header .brand:hover .site-mark-door,
+.site-header .brand:focus-visible .site-mark-door {
+  transform: perspective(100px) rotateY(-15deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+  html, html:focus-within { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) {
+    animation: none !important;
+  }
+  .motion-pending, .motion-reveal, .motion-intro {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .bio-highlight { background-size: 100% 100% !important; }
+  .site-header .site-mark-door,
+  .site-header .brand:hover .site-mark-door,
+  .site-header .brand:focus-visible .site-mark-door {
+    transform: none !important;
+  }
+}

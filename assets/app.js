@@ -27,7 +27,7 @@
   // Keep configured prose as text; only the matching phrase gets a visual highlight.
   document.querySelectorAll('.home-bio[data-site-bio]').forEach(function (element) {
     var bio = element.textContent;
-    var phrases = ['实用的小工具', '把想法做出来的过程'];
+    var phrases = ['把想法做出来的过程'];
     var matches = phrases.map(function (phrase) { return { phrase: phrase, start: bio.indexOf(phrase) }; }).filter(function (match) { return match.start !== -1; }).sort(function (a, b) { return a.start - b.start; });
     if (!matches.length) return;
     var nodes = [];

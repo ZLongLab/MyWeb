@@ -1,0 +1,303 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "VM: network wins over an existing old cache",
+      "passed": true
+    },
+    {
+      "name": "VM: successful network content refreshes the canonical cache",
+      "passed": true
+    },
+    {
+      "name": "VM: detail query strings do not create unbounded cache keys",
+      "passed": true
+    },
+    {
+      "name": "VM: offline detail query falls back to the refreshed HTML shell",
+      "passed": true
+    },
+    {
+      "name": "VM: scoped root URL maps to the cached index",
+      "passed": true
+    },
+    {
+      "name": "VM: docs paths are not intercepted",
+      "passed": true
+    },
+    {
+      "name": "VM: external origins are not intercepted",
+      "passed": true
+    },
+    {
+      "name": "VM: non-GET requests are not intercepted",
+      "passed": true
+    },
+    {
+      "name": "VM: cache cleanup preserves other applications and scopes",
+      "passed": true,
+      "detail": [
+        "myweb-shell-%2FMyWeb%2F-0.13.3"
+      ]
+    },
+    {
+      "name": "VM: worker never forces skipWaiting",
+      "passed": true
+    },
+    {
+      "name": "Browser recognizes the local manifest",
+      "passed": true,
+      "detail": {
+        "url": "http://127.0.0.1:4173/manifest.webmanifest",
+        "errors": []
+      }
+    },
+    {
+      "name": "Manifest identity and standalone launch configuration",
+      "passed": true
+    },
+    {
+      "name": "Both declared PNG icons decode at 192/512 pixels",
+      "passed": true,
+      "detail": [
+        {
+          "src": "assets/icons/site-192.png",
+          "width": 192,
+          "height": 192
+        },
+        {
+          "src": "assets/icons/site-512.png",
+          "width": 512,
+          "height": 512
+        }
+      ]
+    },
+    {
+      "name": "Worker is ready and controls the page",
+      "passed": true
+    },
+    {
+      "name": "Successful install precaches the exact 48 runtime resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-0.14.0",
+          "count": 48
+        }
+      ]
+    },
+    {
+      "name": "Runtime cache excludes docs, backups, external URLs and query variants",
+      "passed": true
+    },
+    {
+      "name": "Offline homepage renders",
+      "passed": true
+    },
+    {
+      "name": "Offline article query selects the requested article",
+      "passed": true
+    },
+    {
+      "name": "Offline project query selects the requested project",
+      "passed": true
+    },
+    {
+      "name": "Offline local search returns results",
+      "passed": true
+    },
+    {
+      "name": "README/docs stay outside the preview runtime whitelist",
+      "passed": true,
+      "detail": [
+        {
+          "path": "README.md",
+          "status": 404
+        },
+        {
+          "path": "docs/dev-loop-runs/2026-10-25-experience014/00-requirements.md",
+          "status": 404
+        }
+      ]
+    },
+    {
+      "name": "README/docs requests do not enter the worker cache",
+      "passed": true
+    },
+    {
+      "name": "PWA and normal app browsing make no external requests",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No page script errors during normal online/offline flows",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No console errors during normal online/offline flows",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "File opening still renders the homepage",
+      "passed": true
+    },
+    {
+      "name": "File mode neither creates a manifest link nor requests manifest/SW",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "File context registers no service worker",
+      "passed": true
+    },
+    {
+      "name": "File mode has no script or console errors",
+      "passed": true,
+      "detail": {
+        "errors": [],
+        "consoleErrors": []
+      }
+    },
+    {
+      "name": "No install button without browser eligibility/event",
+      "passed": true
+    },
+    {
+      "name": "Mock install eligibility reveals the install control",
+      "passed": true
+    },
+    {
+      "name": "Click calls only the mocked prompt once; dismissal is not labeled installed",
+      "passed": true
+    },
+    {
+      "name": "Mock appinstalled event removes the install control",
+      "passed": true
+    },
+    {
+      "name": "Persistent profile: browser recognizes the local manifest without parse errors",
+      "passed": true
+    },
+    {
+      "name": "Persistent profile: CDP reports no PWA installability errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "observations": {
+    "vmCacheNames": [
+      "myweb-shell-%2FMyWeb%2F-0.14.0"
+    ],
+    "cdpManifest": {
+      "url": "http://127.0.0.1:4173/manifest.webmanifest",
+      "errors": []
+    },
+    "manifestIcons": [
+      {
+        "src": "assets/icons/site-192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+        "src": "assets/icons/site-512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      }
+    ],
+    "installability": {
+      "installabilityErrors": [
+        {
+          "errorId": "in-incognito",
+          "errorArguments": []
+        }
+      ]
+    },
+    "browserCaches": [
+      {
+        "name": "myweb-shell-%2F-0.14.0",
+        "urls": [
+          "http://127.0.0.1:4173/index.html",
+          "http://127.0.0.1:4173/projects.html",
+          "http://127.0.0.1:4173/project.html",
+          "http://127.0.0.1:4173/about.html",
+          "http://127.0.0.1:4173/articles.html",
+          "http://127.0.0.1:4173/article.html",
+          "http://127.0.0.1:4173/guestbook.html",
+          "http://127.0.0.1:4173/workbench.html",
+          "http://127.0.0.1:4173/assets/styles.css",
+          "http://127.0.0.1:4173/assets/site-theme.css",
+          "http://127.0.0.1:4173/assets/home.css",
+          "http://127.0.0.1:4173/assets/background.css",
+          "http://127.0.0.1:4173/assets/page-background.svg",
+          "http://127.0.0.1:4173/assets/site-mark.svg",
+          "http://127.0.0.1:4173/assets/favicon.svg",
+          "http://127.0.0.1:4173/assets/site-data.js",
+          "http://127.0.0.1:4173/assets/app.js",
+          "http://127.0.0.1:4173/assets/projects-data.js",
+          "http://127.0.0.1:4173/assets/projects.js",
+          "http://127.0.0.1:4173/assets/projects.css",
+          "http://127.0.0.1:4173/assets/project.js",
+          "http://127.0.0.1:4173/assets/articles-data.js",
+          "http://127.0.0.1:4173/assets/articles.js",
+          "http://127.0.0.1:4173/assets/content.js",
+          "http://127.0.0.1:4173/assets/home-projects.js",
+          "http://127.0.0.1:4173/assets/workbench-data.js",
+          "http://127.0.0.1:4173/assets/workbench.js",
+          "http://127.0.0.1:4173/assets/workbench.css",
+          "http://127.0.0.1:4173/assets/navigation.js",
+          "http://127.0.0.1:4173/assets/navigation.css",
+          "http://127.0.0.1:4173/assets/search.js",
+          "http://127.0.0.1:4173/assets/search.css",
+          "http://127.0.0.1:4173/assets/guestbook.js",
+          "http://127.0.0.1:4173/assets/guestbook.css",
+          "http://127.0.0.1:4173/assets/media-viewer.js",
+          "http://127.0.0.1:4173/assets/media-viewer.css",
+          "http://127.0.0.1:4173/assets/images/recallai-preview.png",
+          "http://127.0.0.1:4173/assets/images/recallai-adoption-preview.png",
+          "http://127.0.0.1:4173/assets/images/documentassistant-preview.png",
+          "http://127.0.0.1:4173/assets/night.css",
+          "http://127.0.0.1:4173/assets/theme-controls.js",
+          "http://127.0.0.1:4173/assets/motion.css",
+          "http://127.0.0.1:4173/assets/motion.js",
+          "http://127.0.0.1:4173/assets/pwa.css",
+          "http://127.0.0.1:4173/assets/pwa.js",
+          "http://127.0.0.1:4173/manifest.webmanifest",
+          "http://127.0.0.1:4173/assets/icons/site-512.png",
+          "http://127.0.0.1:4173/assets/icons/site-192.png"
+        ]
+      }
+    ],
+    "deniedResources": [
+      {
+        "path": "README.md",
+        "status": 404
+      },
+      {
+        "path": "docs/dev-loop-runs/2026-10-25-experience014/00-requirements.md",
+        "status": 404
+      }
+    ],
+    "mockInstall": "An isolated invalid-manifest fixture and blocked SW prevent a real install prompt. Only synthetic event/UI behavior was tested.",
+    "isolatedProfileInstallability": {
+      "profileType": "fresh isolated persistent profile; no existing user profile",
+      "profile": "D:/MyWeb/.tmp/browser/pwa014-installability-1792977354727",
+      "manifest": {
+        "url": "http://127.0.0.1:4173/manifest.webmanifest",
+        "errors": []
+      },
+      "installability": {
+        "installabilityErrors": []
+      },
+      "nativeInstallPromptInvoked": false,
+      "actualInstallationTested": false
+    }
+  },
+  "notVerified": [
+    "Actual OS/browser installation was not triggered or completed.",
+    "No physical mobile device or Safari installation was tested."
+  ]
+}

@@ -1,0 +1,4 @@
+.site-footer .site-install { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 8px 12px; border: 1px solid #68776a; border-radius: 7px; background: transparent; color: #d8dfd4; font: inherit; font-size: 12px; line-height: 1.7; cursor: pointer; }
+.site-footer .site-install:hover:enabled { border-color: #b79a80; color: #efc9ad; }
+.site-footer .site-install:focus-visible { outline: 2px solid #efc9ad; outline-offset: 4px; }
+.site-footer .site-install:disabled { opacity: .6; cursor: default; }

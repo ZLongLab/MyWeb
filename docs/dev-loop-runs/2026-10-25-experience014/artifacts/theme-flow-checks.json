@@ -1,0 +1,166 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "手动切换夜色",
+      "passed": true
+    },
+    {
+      "name": "主题按钮状态与名称同步",
+      "passed": true
+    },
+    {
+      "name": "刷新保留手动主题",
+      "passed": true
+    },
+    {
+      "name": "夜色theme-color",
+      "passed": true
+    },
+    {
+      "name": "初始夜色背景正确",
+      "passed": true
+    },
+    {
+      "name": "夜色主要文字对比度 body",
+      "passed": true,
+      "details": {
+        "color": "rgb(236, 231, 218)",
+        "bg": "rgb(30, 36, 32)",
+        "ratio": 12.8
+      }
+    },
+    {
+      "name": "夜色主要文字对比度 .home-primary-link",
+      "passed": true,
+      "details": {
+        "color": "rgb(250, 247, 242)",
+        "bg": "rgb(52, 92, 70)",
+        "ratio": 7.11
+      }
+    },
+    {
+      "name": "夜色主要文字对比度 .home-now li",
+      "passed": true,
+      "details": {
+        "color": "rgb(143, 176, 193)",
+        "bg": "rgb(48, 54, 43)",
+        "ratio": 5.42
+      }
+    },
+    {
+      "name": "夜色主要文字对比度 .home-bio",
+      "passed": true,
+      "details": {
+        "color": "rgb(168, 173, 160)",
+        "bg": "rgb(30, 36, 32)",
+        "ratio": 6.89
+      }
+    },
+    {
+      "name": "夜色主要文字对比度 .nav-theme",
+      "passed": true,
+      "details": {
+        "color": "rgb(236, 231, 218)",
+        "bg": "rgb(42, 51, 44)",
+        "ratio": 10.58
+      }
+    },
+    {
+      "name": "跨标签页主题同步",
+      "passed": true
+    },
+    {
+      "name": "搜索上下键选择",
+      "passed": true
+    },
+    {
+      "name": "搜索回车进入结果",
+      "passed": true
+    },
+    {
+      "name": "跨页保留搜索词",
+      "passed": true
+    },
+    {
+      "name": "示例便签已在隔离上下文保存",
+      "passed": true
+    },
+    {
+      "name": "切换主题刷新不改动便签数据",
+      "passed": true
+    },
+    {
+      "name": "时段默认与手动优先 {\"hour\":22,\"saved\":null,\"want\":\"night\"}",
+      "passed": true
+    },
+    {
+      "name": "时段默认与手动优先 {\"hour\":9,\"saved\":null,\"want\":\"paper\"}",
+      "passed": true
+    },
+    {
+      "name": "时段默认与手动优先 {\"hour\":22,\"saved\":\"paper\",\"want\":\"paper\"}",
+      "passed": true
+    },
+    {
+      "name": "存储被禁用时仍可切换主题",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 index.html",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 projects.html",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 project.html?id=recallai",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 articles.html",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 article.html?id=recallai-local-search",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 about.html",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 guestbook.html",
+      "passed": true
+    },
+    {
+      "name": "file打开与PWA静默降级 workbench.html",
+      "passed": true
+    },
+    {
+      "name": "file主题刷新保留",
+      "passed": true
+    },
+    {
+      "name": "file没有manifest或SW请求",
+      "passed": true
+    },
+    {
+      "name": "无脚本异常",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "无控制台错误",
+      "passed": true,
+      "details": []
+    },
+    {
+      "name": "零外部HTTP请求",
+      "passed": true,
+      "details": []
+    }
+  ],
+  "environment": "155.0.8059.85"
+}
