@@ -182,7 +182,8 @@
         window.SITE_GARDEN.clusters(matching).forEach(function (group) {
           var card = createElement('a', 'garden-cluster'); card.href = listHref({ category: category, q: query, tag: group.tag, view: 'time' });
           var heading = createElement('h2', '', group.tag); heading.append(createElement('small', '', group.articles.length + ' 篇'));
-          card.append(heading, createElement('p', '', '最新：' + group.articles[0].title));
+          card.append(heading);
+          if (group.articles.length >= 2) card.append(createElement('p', '', '最新：' + group.articles[0].title));
           var distribution = createElement('div', 'garden-distribution');
           ['seed', 'growing', 'evergreen'].forEach(function (value) { var badge = window.SITE_GARDEN.badge({ maturity: value }); badge.append(document.createTextNode(' ' + group.counts[value])); distribution.append(badge); });
           card.append(distribution); clusters.append(card);

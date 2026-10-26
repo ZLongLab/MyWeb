@@ -1,0 +1,159 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Only article tags changed",
+      "passed": true
+    },
+    {
+      "name": "Six clusters have exactly the requested counts",
+      "passed": true,
+      "detail": {
+        "DocumentAssistant": 1,
+        "本地工具": 2,
+        "开发记录": 3,
+        "RecallAI": 1,
+        "建站手记": 2,
+        "小站计划": 1
+      }
+    },
+    {
+      "name": "Every article has at most three tags",
+      "passed": true
+    },
+    {
+      "name": "Existing four milestones are unchanged",
+      "passed": true
+    },
+    {
+      "name": "Exact supplied fifth milestone appended",
+      "passed": true
+    },
+    {
+      "name": "Cache version updated with resource count unchanged",
+      "passed": true
+    },
+    {
+      "name": "Timeline list still renders five seed articles",
+      "passed": true
+    },
+    {
+      "name": "Topics view renders six cards",
+      "passed": true
+    },
+    {
+      "name": "Single-item cards hide latest, multiple-item cards retain it",
+      "passed": true,
+      "detail": [
+        {
+          "tag": "开发记录",
+          "count": 3,
+          "latest": 1,
+          "badges": 3
+        },
+        {
+          "tag": "本地工具",
+          "count": 2,
+          "latest": 1,
+          "badges": 3
+        },
+        {
+          "tag": "建站手记",
+          "count": 2,
+          "latest": 1,
+          "badges": 3
+        },
+        {
+          "tag": "小站计划",
+          "count": 1,
+          "latest": 0,
+          "badges": 3
+        },
+        {
+          "tag": "DocumentAssistant",
+          "count": 1,
+          "latest": 0,
+          "badges": 3
+        },
+        {
+          "tag": "RecallAI",
+          "count": 1,
+          "latest": 0,
+          "badges": 3
+        }
+      ]
+    },
+    {
+      "name": "UI counts match requested tag map",
+      "passed": true
+    },
+    {
+      "name": "Narrow topics view fits",
+      "passed": true
+    },
+    {
+      "name": "Merged tag opens two matching records",
+      "passed": true
+    },
+    {
+      "name": "Detail badge and source filters remain intact",
+      "passed": true
+    },
+    {
+      "name": "Return restores tag, query, view and scroll",
+      "passed": true
+    },
+    {
+      "name": "Home maturity badge still renders",
+      "passed": true
+    },
+    {
+      "name": "Search still finds article with shared maturity",
+      "passed": true
+    },
+    {
+      "name": "Fifth timeline item renders",
+      "passed": true
+    },
+    {
+      "name": "File view also shows exactly six clusters",
+      "passed": true
+    },
+    {
+      "name": "File single-item condition matches HTTP",
+      "passed": true
+    },
+    {
+      "name": "File timeline shows all five items",
+      "passed": true
+    },
+    {
+      "name": "New version precaches all 66 runtime resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.1.1",
+          "count": 66
+        }
+      ]
+    },
+    {
+      "name": "Offline topics reflect merged tags",
+      "passed": true
+    },
+    {
+      "name": "Offline timeline includes the new entry",
+      "passed": true
+    },
+    {
+      "name": "No script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ]
+}

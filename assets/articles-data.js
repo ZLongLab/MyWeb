@@ -1,5 +1,6 @@
 // maturity: seed/growing/evergreen 由站主指定；缺省为 seed。
 // tended 仅填写实质修订日期；links 仅人工填写本文引用的文章 id，不从正文推断。
+// 每篇 tags 最多 3 个；新标签先查能否并入现有标签，不为一篇文章新造标签。
 // 记录项目开发与建站过程。date 为首次记录日期；阅读时间可省略，由正文自动估算。
 window.SITE_ARTICLES = [
   {
@@ -9,7 +10,7 @@ window.SITE_ARTICLES = [
     category: '开发记录',
     date: '2026-10-25',
     summary: '从规则分类、复制归档到备份恢复，整理文档工具为什么需要把最后的确认留给使用者。',
-    tags: ['DocumentAssistant', '本地工具', '文档归档', '开发记录'],
+    tags: ['DocumentAssistant', '本地工具', '开发记录'],
     projectId: 'document-assistant',
     sections: [
       {
@@ -40,7 +41,7 @@ window.SITE_ARTICLES = [
     category: '开发记录',
     date: '2026-10-25',
     summary: '从关键词检索、离线 OCR 到原位置索引和复制收纳，整理一个本地资料工具的实现取舍。',
-    tags: ['RecallAI', '本地工具', '开发记录', '资料整理'],
+    tags: ['RecallAI', '本地工具', '开发记录'],
     projectId: 'recallai',
     sections: [
       {
@@ -73,7 +74,7 @@ window.SITE_ARTICLES = [
     date: '2026-10-24',
     readTime: '2 分钟',
     summary: '从“想有一个自己的网站”开始，先搭好首页、作品和关于我，让这个想法有一个可以打开的地方。',
-    tags: ['第一篇', '个人网站', '从零开始'],
+    tags: ['建站手记'],
     sections: [
       {
         paragraphs: [
@@ -105,7 +106,7 @@ window.SITE_ARTICLES = [
     date: '2026-10-24',
     readTime: '2 分钟',
     summary: '把第一版的范围收在三个页面里，先做好阅读、导航和基本交互，再根据真实内容继续扩展。',
-    tags: ['第一版', '页面设计', '开发记录'],
+    tags: ['建站手记', '开发记录'],
     sections: [
       {
         paragraphs: [
@@ -137,7 +138,7 @@ window.SITE_ARTICLES = [
     date: '2026-10-24',
     readTime: '2 分钟',
     summary: '围绕项目内容、实际使用和上线准备整理下一步，让每次更新都有一个可以着手的地方。',
-    tags: ['更新计划', '内容整理', '待办清单'],
+    tags: ['小站计划'],
     sections: [
       {
         paragraphs: [
