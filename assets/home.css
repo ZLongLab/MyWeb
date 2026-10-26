@@ -27,7 +27,10 @@
 .home-season-greeting { margin-top: 5px; color: var(--muted); font-family: var(--serif); font-size: 12px; }
 
 /* The collage uses the same local project screenshots as the work list. */
-.home-showcase { position: relative; min-width: 0; min-height: 366px; }
+.home-showcase { position: relative; isolation: isolate; min-width: 0; min-height: 366px; }
+.home-house-watermark { display: none; position: absolute; z-index: -1; top: -58px; right: -18px; width: 420px; height: 420px; color: var(--muted); opacity: .045; pointer-events: none; }
+@media (min-width: 1024px) { .home-house-watermark { display: block; } }
+@media print { .home-house-watermark { display: none; } }
 .home-showcase-stage { position: relative; height: 308px; min-width: 0; }
 .home-shot { position: absolute; display: block; width: 79%; border: 1px solid #cbd8cf; border-radius: 10px; background: var(--frame-cool); box-shadow: 0 1px 2px rgba(62,45,25,.06), 0 16px 32px -12px rgba(62,45,25,.18); transition: transform .25s ease; }
 .home-shot-front { z-index: 2; top: 10px; left: 0; transform: rotate(-1.3deg); }
@@ -113,6 +116,7 @@
 
 /* The living room has a permanent deep ground, not a row of repeated cards. */
 .home-works { width: 100%; padding: 36px 0 22px; border-block: 1px solid #3b4840; color: #f1ebdf; background: #242b28; --ink: #f1ebdf; --muted: #c1cabe; --line: #414c44; --c-slate: #a4bdc7; --slate: #a4bdc7; --warm: #eaa17c; --green: #b4d1bd; --frame-cool: #dce8e0; --frame-warm: #f0dfd4; }
+html:not([data-theme="night"]) .home-works { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 560' fill='none' stroke='white' stroke-opacity='.04' stroke-width='1'%3E%3Cpath d='M82 212C96 75 282 25 413 67S661 155 647 316 437 510 282 478 55 373 82 212Z'/%3E%3Cpath d='M140 230C148 121 292 83 398 119S595 180 584 307 426 450 304 427 120 351 140 230Z'/%3E%3Cpath d='M202 246C210 171 307 137 389 170S530 207 519 299 420 394 326 373 188 324 202 246Z'/%3E%3Cpath d='M267 254C279 210 325 199 376 220S463 244 457 291 411 339 350 323 255 299 267 254Z'/%3E%3C/svg%3E"); background-size: 740px 600px; background-position: right -100px top 35%; background-repeat: no-repeat; }
 .home-works .home-section-heading .home-section-kicker { color: #b5cbbb; }
 .home-works .home-section-heading h2::before { background: #e69973; }
 .home-works .home-section-heading > .home-text-link { color: #bad7c6; }

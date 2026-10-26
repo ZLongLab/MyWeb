@@ -6,6 +6,12 @@
 /preview*.png
 /design-*.png
 
+# 后续验收截图只保留本机；既有已跟踪图片继续保留历史。
+/docs/**/artifacts/**/*.png
+/docs/**/artifacts/**/*.jpg
+/docs/**/artifacts/**/*.jpeg
+/docs/**/artifacts/**/*.webp
+
 # 运行缓存、编辑器文件与本机配置。
 node_modules/
 .cache/

@@ -1,0 +1,528 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Only the requested reading entry is removed",
+      "passed": true
+    },
+    {
+      "name": "Preserved articles-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved projects-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved house-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved site-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved timeline-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved garden-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved site-snapshot.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved images/garden-graph.svg",
+      "passed": true
+    },
+    {
+      "name": "Added CSS stays within 5 KiB",
+      "passed": true,
+      "detail": {
+        "bytes": 4184
+      }
+    },
+    {
+      "name": "Four unused styles removed without changing runtime allowlist",
+      "passed": true
+    },
+    {
+      "name": "New screenshots ignored while JSON remains tracked",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha paper spring",
+      "passed": true,
+      "detail": {
+        "bg": "radial-gradient(circle at 15% 10%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(43, 91, 70, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll",
+        "wash": "rgba(74, 107, 124, .08)",
+        "wash2": "rgba(43, 91, 70, .08)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen paper spring",
+      "passed": true
+    },
+    {
+      "name": "Paper has no star overlay spring",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode spring paper",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha paper summer",
+      "passed": true,
+      "detail": {
+        "bg": "radial-gradient(circle at 15% 10%, rgba(43, 91, 70, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll",
+        "wash": "rgba(43, 91, 70, .08)",
+        "wash2": "rgba(74, 107, 124, .08)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen paper summer",
+      "passed": true
+    },
+    {
+      "name": "Paper has no star overlay summer",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode summer paper",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha paper autumn",
+      "passed": true,
+      "detail": {
+        "bg": "radial-gradient(circle at 15% 10%, rgba(200, 90, 50, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(217, 155, 38, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll",
+        "wash": "rgba(200, 90, 50, .08)",
+        "wash2": "rgba(217, 155, 38, .08)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen paper autumn",
+      "passed": true
+    },
+    {
+      "name": "Paper has no star overlay autumn",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode autumn paper",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha paper winter",
+      "passed": true,
+      "detail": {
+        "bg": "radial-gradient(circle at 15% 10%, rgba(91, 113, 131, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll",
+        "wash": "rgba(91, 113, 131, .08)",
+        "wash2": "rgba(74, 107, 124, .08)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen paper winter",
+      "passed": true
+    },
+    {
+      "name": "Paper has no star overlay winter",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode winter paper",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha night spring",
+      "passed": true,
+      "detail": {
+        "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(156, 191, 205, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(152, 198, 165, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll, scroll",
+        "wash": "rgba(156, 191, 205, .06)",
+        "wash2": "rgba(152, 198, 165, .06)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen night spring",
+      "passed": true
+    },
+    {
+      "name": "Night-only first-screen SVG has fourteen static stars spring",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode spring night",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha night summer",
+      "passed": true,
+      "detail": {
+        "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(152, 198, 165, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(156, 191, 205, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll, scroll",
+        "wash": "rgba(152, 198, 165, .06)",
+        "wash2": "rgba(156, 191, 205, .06)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen night summer",
+      "passed": true
+    },
+    {
+      "name": "Night-only first-screen SVG has fourteen static stars summer",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode summer night",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha night autumn",
+      "passed": true,
+      "detail": {
+        "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(231, 160, 120, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(229, 179, 84, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll, scroll",
+        "wash": "rgba(231, 160, 120, .06)",
+        "wash2": "rgba(229, 179, 84, .06)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen night autumn",
+      "passed": true
+    },
+    {
+      "name": "Night-only first-screen SVG has fourteen static stars autumn",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode autumn night",
+      "passed": true
+    },
+    {
+      "name": "Two seasonal washes with correct alpha night winter",
+      "passed": true,
+      "detail": {
+        "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(166, 189, 208, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(156, 191, 205, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+        "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+        "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+        "attachment": "scroll, scroll, scroll, scroll",
+        "wash": "rgba(166, 189, 208, .06)",
+        "wash2": "rgba(156, 191, 205, .06)"
+      }
+    },
+    {
+      "name": "Paper repeats below the first screen night winter",
+      "passed": true
+    },
+    {
+      "name": "Night-only first-screen SVG has fourteen static stars winter",
+      "passed": true
+    },
+    {
+      "name": "Contours only in paper mode winter night",
+      "passed": true
+    },
+    {
+      "name": "Each seasonal background differs",
+      "passed": true
+    },
+    {
+      "name": "Scoped fading room pattern articles.html paper",
+      "passed": true,
+      "detail": {
+        "bg": "repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 27px, rgb(217, 155, 38) 27px, rgb(217, 155, 38) 28px)",
+        "size": "auto",
+        "opacity": "0.05",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern articles.html night",
+      "passed": true,
+      "detail": {
+        "bg": "repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 27px, rgb(229, 179, 84) 27px, rgb(229, 179, 84) 28px)",
+        "size": "auto",
+        "opacity": "0.03",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern article.html?id=how-this-site-grew paper",
+      "passed": true,
+      "detail": {
+        "bg": "repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 27px, rgb(217, 155, 38) 27px, rgb(217, 155, 38) 28px)",
+        "size": "auto",
+        "opacity": "0.05",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern article.html?id=how-this-site-grew night",
+      "passed": true,
+      "detail": {
+        "bg": "repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 27px, rgb(229, 179, 84) 27px, rgb(229, 179, 84) 28px)",
+        "size": "auto",
+        "opacity": "0.03",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern workbench.html paper",
+      "passed": true,
+      "detail": {
+        "bg": "linear-gradient(rgb(74, 107, 124) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgb(74, 107, 124) 1px, rgba(0, 0, 0, 0) 1px)",
+        "size": "24px 24px, 24px 24px",
+        "opacity": "0.05",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern workbench.html night",
+      "passed": true,
+      "detail": {
+        "bg": "linear-gradient(rgb(143, 176, 193) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgb(143, 176, 193) 1px, rgba(0, 0, 0, 0) 1px)",
+        "size": "24px 24px, 24px 24px",
+        "opacity": "0.03",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern life.html paper",
+      "passed": true,
+      "detail": {
+        "bg": "radial-gradient(circle at 1px 1px, rgb(43, 91, 70) 1px, rgba(0, 0, 0, 0) 1px)",
+        "size": "26px 26px",
+        "opacity": "0.05",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Scoped fading room pattern life.html night",
+      "passed": true,
+      "detail": {
+        "bg": "radial-gradient(circle at 1px 1px, rgb(130, 182, 151) 1px, rgba(0, 0, 0, 0) 1px)",
+        "size": "26px 26px",
+        "opacity": "0.03",
+        "mask": "linear-gradient(rgb(0, 0, 0), rgba(0, 0, 0, 0))",
+        "height": 180,
+        "events": "none",
+        "z": "-1",
+        "animation": "none"
+      }
+    },
+    {
+      "name": "Reading placeholder replaces removed content life.html",
+      "passed": true
+    },
+    {
+      "name": "Reading placeholder replaces removed content now.html",
+      "passed": true
+    },
+    {
+      "name": "House watermark breakpoint 320",
+      "passed": true
+    },
+    {
+      "name": "House watermark breakpoint 1023",
+      "passed": true
+    },
+    {
+      "name": "House watermark breakpoint 1024",
+      "passed": true
+    },
+    {
+      "name": "House watermark breakpoint 1440",
+      "passed": true
+    },
+    {
+      "name": "House SVG is decorative and click-through",
+      "passed": true
+    },
+    {
+      "name": "Collage screenshot still opens viewer above background",
+      "passed": true
+    },
+    {
+      "name": "Footer texture reuses the existing paper below content",
+      "passed": true
+    },
+    {
+      "name": "Static materials survive reduced-motion setting unchanged",
+      "passed": true
+    },
+    {
+      "name": "Decorative header disappears in print",
+      "passed": true
+    },
+    {
+      "name": "Offline cache stays at 68 resources with version 1.3",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.3.0",
+          "count": 68
+        }
+      ]
+    },
+    {
+      "name": "Offline seasonal light and graph-paper header work",
+      "passed": true
+    },
+    {
+      "name": "Offline reading entry is also removed",
+      "passed": true
+    },
+    {
+      "name": "File night stars and seasonal washes render",
+      "passed": true
+    },
+    {
+      "name": "File yard has dot header and empty reading",
+      "passed": true
+    },
+    {
+      "name": "No script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "backgrounds": [
+    {
+      "theme": "paper",
+      "season": "spring",
+      "bg": "radial-gradient(circle at 15% 10%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(43, 91, 70, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll",
+      "wash": "rgba(74, 107, 124, .08)",
+      "wash2": "rgba(43, 91, 70, .08)"
+    },
+    {
+      "theme": "paper",
+      "season": "summer",
+      "bg": "radial-gradient(circle at 15% 10%, rgba(43, 91, 70, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll",
+      "wash": "rgba(43, 91, 70, .08)",
+      "wash2": "rgba(74, 107, 124, .08)"
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "bg": "radial-gradient(circle at 15% 10%, rgba(200, 90, 50, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(217, 155, 38, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll",
+      "wash": "rgba(200, 90, 50, .08)",
+      "wash2": "rgba(217, 155, 38, .08)"
+    },
+    {
+      "theme": "paper",
+      "season": "winter",
+      "bg": "radial-gradient(circle at 15% 10%, rgba(91, 113, 131, 0.08), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll",
+      "wash": "rgba(91, 113, 131, .08)",
+      "wash2": "rgba(74, 107, 124, .08)"
+    },
+    {
+      "theme": "night",
+      "season": "spring",
+      "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(156, 191, 205, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(152, 198, 165, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll, scroll",
+      "wash": "rgba(156, 191, 205, .06)",
+      "wash2": "rgba(152, 198, 165, .06)"
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(152, 198, 165, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(156, 191, 205, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll, scroll",
+      "wash": "rgba(152, 198, 165, .06)",
+      "wash2": "rgba(156, 191, 205, .06)"
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(231, 160, 120, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(229, 179, 84, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll, scroll",
+      "wash": "rgba(231, 160, 120, .06)",
+      "wash2": "rgba(229, 179, 84, .06)"
+    },
+    {
+      "theme": "night",
+      "season": "winter",
+      "bg": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='s' width='480' height='360' patternUnits='userSpaceOnUse'%3E%3Cg fill='white' fill-opacity='.05'%3E%3Ccircle cx='29' cy='43' r='.5'/%3E%3Ccircle cx='117' cy='21' r='.75'/%3E%3Ccircle cx='236' cy='61' r='.5'/%3E%3Ccircle cx='401' cy='31' r='.5'/%3E%3Ccircle cx='62' cy='138' r='.75'/%3E%3Ccircle cx='183' cy='115' r='.5'/%3E%3Ccircle cx='328' cy='151' r='.75'/%3E%3Ccircle cx='456' cy='123' r='.5'/%3E%3Ccircle cx='19' cy='247' r='.5'/%3E%3Ccircle cx='142' cy='221' r='.75'/%3E%3Ccircle cx='284' cy='269' r='.5'/%3E%3Ccircle cx='419' cy='235' r='.75'/%3E%3Ccircle cx='95' cy='327' r='.5'/%3E%3Ccircle cx='359' cy='332' r='.5'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100%25' height='100%25' fill='url(%23s)'/%3E%3C/svg%3E\"), radial-gradient(circle at 15% 10%, rgba(166, 189, 208, 0.06), rgba(0, 0, 0, 0) 45%), radial-gradient(circle at 85% 20%, rgba(156, 191, 205, 0.06), rgba(0, 0, 0, 0) 50%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "repeat": "no-repeat, no-repeat, no-repeat, repeat",
+      "size": "100% 1008px, 100% 1008px, 100% 1008px, 1600px 1200px",
+      "attachment": "scroll, scroll, scroll, scroll",
+      "wash": "rgba(166, 189, 208, .06)",
+      "wash2": "rgba(156, 191, 205, .06)"
+    }
+  ],
+  "browser": "155.0.8059.85",
+  "physicalDevice": "PENDING - not accessed"
+}

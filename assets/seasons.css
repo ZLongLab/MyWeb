@@ -4,6 +4,7 @@
   --global-accent-text: #a44827;
   --global-soft: #f1e0d0;
   --global-wash: rgba(200, 90, 50, .08);
+  --global-wash-2: rgba(217, 155, 38, .08);
   --room-accent: var(--c-slate);
   --room-accent-text: #4a6b7c;
   --room-vt-duration: .32s;
@@ -15,33 +16,37 @@ html[data-season="spring"] {
   --global-accent-text: #3f5d6c;
   --global-soft: #e6eeeb;
   --global-wash: rgba(74, 107, 124, .08);
+  --global-wash-2: rgba(43, 91, 70, .08);
 }
 html[data-season="summer"] {
   --global-accent: #2b5b46;
   --global-accent-text: #2b5b46;
   --global-soft: #e6eee1;
   --global-wash: rgba(43, 91, 70, .08);
+  --global-wash-2: rgba(74, 107, 124, .08);
 }
 html[data-season="autumn"] {
   --global-accent: #c85a32;
   --global-accent-text: #a44827;
   --global-soft: #f1e0d0;
   --global-wash: rgba(200, 90, 50, .08);
+  --global-wash-2: rgba(217, 155, 38, .08);
 }
 html[data-season="winter"] {
   --global-accent: #5b7183;
   --global-accent-text: #4b6072;
   --global-soft: #e4eaf0;
   --global-wash: rgba(91, 113, 131, .08);
+  --global-wash-2: rgba(74, 107, 124, .08);
 }
 html[data-season="spring"]:not([data-theme="night"]) { --bg-paper: #f7f8f3; }
 html[data-season="summer"]:not([data-theme="night"]) { --bg-paper: #faf7f0; }
 html[data-season="autumn"]:not([data-theme="night"]) { --bg-paper: #faf5ec; }
 html[data-season="winter"]:not([data-theme="night"]) { --bg-paper: #f5f6f7; }
-html[data-theme="night"][data-season="spring"] { --global-accent: #9cbfcd; --global-accent-text: #9cbfcd; --global-soft: #2c3c3e; }
-html[data-theme="night"][data-season="summer"] { --global-accent: #98c6a5; --global-accent-text: #98c6a5; --global-soft: #2c3d30; }
-html[data-theme="night"][data-season="autumn"] { --global-accent: #e7a078; --global-accent-text: #e7a078; --global-soft: #403429; }
-html[data-theme="night"][data-season="winter"] { --global-accent: #a6bdd0; --global-accent-text: #a6bdd0; --global-soft: #2e3a46; }
+html[data-theme="night"][data-season="spring"] { --global-accent: #9cbfcd; --global-accent-text: #9cbfcd; --global-soft: #2c3c3e; --global-wash: rgba(156, 191, 205, .06); --global-wash-2: rgba(152, 198, 165, .06); }
+html[data-theme="night"][data-season="summer"] { --global-accent: #98c6a5; --global-accent-text: #98c6a5; --global-soft: #2c3d30; --global-wash: rgba(152, 198, 165, .06); --global-wash-2: rgba(156, 191, 205, .06); }
+html[data-theme="night"][data-season="autumn"] { --global-accent: #e7a078; --global-accent-text: #e7a078; --global-soft: #403429; --global-wash: rgba(231, 160, 120, .06); --global-wash-2: rgba(229, 179, 84, .06); }
+html[data-theme="night"][data-season="winter"] { --global-accent: #a6bdd0; --global-accent-text: #a6bdd0; --global-soft: #2e3a46; --global-wash: rgba(166, 189, 208, .06); --global-wash-2: rgba(156, 191, 205, .06); }
 html[data-theme="night"] { --room-accent-text: var(--c-slate); }
 
 body[data-room="projects"], body[data-room="project"], body[data-page="projects"], body[data-page="project"] { --room-accent: var(--c-clay); --room-accent-text: #a44827; }
