@@ -303,7 +303,7 @@ html:not([data-theme="night"]) .home-works { background-image: url("data:image/s
 
 /* 1.4: a desk scene, rather than floating thumbnails. */
 .home-opening { position: relative; isolation: isolate; align-items: start; padding-top: 36px; gap: 30px; }
-.home-opening::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 20% 20%, color-mix(in srgb, var(--global-accent) 12%, transparent), transparent 65%); mask-image: linear-gradient(transparent, #000 12%, #000 75%, transparent); }
+.home-opening::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 20% 20%, color-mix(in srgb, var(--global-accent) 12%, transparent), transparent 65%); mask-image: linear-gradient(90deg, transparent, #000 14%, #000 86%, transparent), linear-gradient(transparent, #000 12%, #000 75%, transparent); mask-composite: intersect; }
 .home-opening-copy { padding-top: 28px; }
 .home-opening .home-bio { color: var(--ink); }
 html body[data-page="home"] .home-opening :is(.home-room-kicker, .home-text-link:not(.home-primary-link), .home-social-links a) { color: color-mix(in srgb, var(--global-accent-text) 88%, var(--ink)); }
