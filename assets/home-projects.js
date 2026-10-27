@@ -44,7 +44,7 @@
     for (var index = 0; index < 3; index += 1) dots.append(element('i'));
     bar.append(dots, element('span', 'home-window-name', project.title), element('span', 'home-window-local', 'LOCAL'));
     var view = element('span', 'home-window-view');
-    view.append(window.SITE_PICTURES.create(image, { priority: priority, sizes: '(max-width: 768px) 85vw, (max-width: 1100px) 44vw, 500px' }));
+    view.append(window.SITE_PICTURES.create(image, { priority: priority, sizes: '(max-width: 768px) 92vw, (max-width: 1100px) 44vw, 500px' }));
     chrome.append(bar, view);
     frame.append(chrome, element('span', 'image-preview-hint', '查看大图 ⤢'));
     return frame;

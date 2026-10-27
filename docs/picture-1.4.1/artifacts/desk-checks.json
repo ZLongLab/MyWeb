@@ -1,0 +1,242 @@
+{
+  "verdict": "PASS",
+  "rows": [
+    {
+      "width": 1440,
+      "layers": [
+        {
+          "selector": ".home-shot-front",
+          "ratio": 0.1935483870967742,
+          "samples": 10540,
+          "rect": {
+            "x": 671.4360961914062,
+            "y": 187.6827850341797,
+            "w": 503.64337158203125,
+            "h": 351.55633544921875
+          },
+          "position": "absolute"
+        },
+        {
+          "selector": ".home-shot-back",
+          "ratio": 0,
+          "samples": 3796,
+          "rect": {
+            "x": 942.302978515625,
+            "y": 418.9320373535156,
+            "w": 301.28466796875,
+            "h": 220.87026977539062
+          },
+          "position": "absolute"
+        },
+        {
+          "selector": ".home-now",
+          "ratio": 0.000407000407000407,
+          "samples": 2457,
+          "rect": {
+            "x": 673.7061767578125,
+            "y": 504.9347229003906,
+            "w": 253.368896484375,
+            "h": 160.16183471679688
+          },
+          "position": "absolute"
+        }
+      ],
+      "layout": {
+        "gap": -390.15625,
+        "frontTop": 187.6827850341797,
+        "overflow": false,
+        "noteRadius": "6px"
+      }
+    },
+    {
+      "width": 1024,
+      "layers": [
+        {
+          "selector": ".home-shot-front",
+          "ratio": 0.13679769042860315,
+          "samples": 9006,
+          "rect": {
+            "x": 468.4470520019531,
+            "y": 188.02490234375,
+            "w": 463.7934265136719,
+            "h": 325.9970703125
+          },
+          "position": "absolute"
+        },
+        {
+          "selector": ".home-shot-back",
+          "ratio": 0.004873591227535791,
+          "samples": 3283,
+          "rect": {
+            "x": 717.8443603515625,
+            "y": 419.3341979980469,
+            "w": 277.498779296875,
+            "h": 205.64407348632812
+          },
+          "position": "absolute"
+        },
+        {
+          "selector": ".home-now",
+          "ratio": 0,
+          "samples": 2457,
+          "rect": {
+            "x": 470.5030517578125,
+            "y": 504.9347229003906,
+            "w": 253.368896484375,
+            "h": 160.16183471679688
+          },
+          "position": "absolute"
+        }
+      ],
+      "layout": {
+        "gap": -372.453125,
+        "frontTop": 188.02490234375,
+        "overflow": false,
+        "noteRadius": "6px"
+      }
+    },
+    {
+      "width": 768,
+      "layers": [
+        {
+          "selector": ".home-shot-front",
+          "ratio": 0.027292379751396145,
+          "samples": 22204,
+          "rect": {
+            "x": 15.7813720703125,
+            "y": 458.84088134765625,
+            "w": 736.437255859375,
+            "h": 502.4276123046875
+          },
+          "position": "relative"
+        },
+        {
+          "selector": ".home-shot-back",
+          "ratio": 0.00023191094619666049,
+          "samples": 8624,
+          "rect": {
+            "x": 291.4030456542969,
+            "y": 676.1708374023438,
+            "w": 461.8345642089844,
+            "h": 323.5958251953125
+          },
+          "position": "relative"
+        },
+        {
+          "selector": ".home-now",
+          "ratio": 0,
+          "samples": 7098,
+          "rect": {
+            "x": 19.324600219726562,
+            "y": 431.8109130859375,
+            "w": 729.350830078125,
+            "h": 164.315673828125
+          },
+          "position": "static"
+        }
+      ],
+      "layout": {
+        "gap": 28,
+        "frontTop": 458.84088134765625,
+        "overflow": false,
+        "noteRadius": "6px"
+      }
+    },
+    {
+      "width": 390,
+      "layers": [
+        {
+          "selector": ".home-shot-front",
+          "ratio": 0.05598813496477568,
+          "samples": 5394,
+          "rect": {
+            "x": 17.841693878173828,
+            "y": 447.27740478515625,
+            "w": 354.31658935546875,
+            "h": 256.4608154296875
+          },
+          "position": "relative"
+        },
+        {
+          "selector": ".home-shot-back",
+          "ratio": 0.000462962962962963,
+          "samples": 2160,
+          "rect": {
+            "x": 150.2212371826172,
+            "y": 672.9661865234375,
+            "w": 222.55751037597656,
+            "h": 170.505126953125
+          },
+          "position": "relative"
+        },
+        {
+          "selector": ".home-now",
+          "ratio": 0,
+          "samples": 3393,
+          "rect": {
+            "x": 19.324357986450195,
+            "y": 840.210205078125,
+            "w": 351.35125732421875,
+            "h": 159.42333984375
+          },
+          "position": "static"
+        }
+      ],
+      "layout": {
+        "gap": 28,
+        "frontTop": 447.27740478515625,
+        "overflow": false,
+        "noteRadius": "6px"
+      }
+    },
+    {
+      "width": 320,
+      "layers": [
+        {
+          "selector": ".home-shot-front",
+          "ratio": 0.06436965811965811,
+          "samples": 3744,
+          "rect": {
+            "x": 14.179612159729004,
+            "y": 520.0654296875,
+            "w": 291.6407470703125,
+            "h": 216.119140625
+          },
+          "position": "relative"
+        },
+        {
+          "selector": ".home-shot-back",
+          "ratio": 0,
+          "samples": 1496,
+          "rect": {
+            "x": 123.0779037475586,
+            "y": 706.6143188476562,
+            "w": 183.29730224609375,
+            "h": 145.3807373046875
+          },
+          "position": "relative"
+        },
+        {
+          "selector": ".home-now",
+          "ratio": 0.00035612535612535614,
+          "samples": 2808,
+          "rect": {
+            "x": 15.323177337646484,
+            "y": 840.668212890625,
+            "w": 289.3536376953125,
+            "h": 158.88232421875
+          },
+          "position": "static"
+        }
+      ],
+      "layout": {
+        "gap": 28,
+        "frontTop": 520.0654296875,
+        "overflow": false,
+        "noteRadius": "6px"
+      }
+    }
+  ],
+  "errors": [],
+  "failed": []
+}

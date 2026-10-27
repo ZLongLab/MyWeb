@@ -21,6 +21,8 @@
   --frame-mist: #e6ecf0;
   --footer-bg: var(--bg-footer);
   --line: #e2e1d9;
+  --shadow-near: 0 1px 2px rgba(25, 28, 26, .06), 0 8px 20px -8px rgba(25, 28, 26, .14);
+  --shadow-lift: 0 2px 3px rgba(25, 28, 26, .1), 0 18px 34px -12px rgba(25, 28, 26, .26);
   --accent: #e5eadd;
   --soft: #f3efe6;
   --font: "Noto Sans SC", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
