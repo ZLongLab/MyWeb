@@ -1,0 +1,197 @@
+{
+  "scope": "Desktop entrance correction only",
+  "checks": [
+    {
+      "name": "1280 balanced copy and scene, detached note",
+      "passed": true,
+      "detail": {
+        "height": 664.890625,
+        "centerDifference": 0.0078125,
+        "noteGap": 26.87213134765625,
+        "frontWidth": 481.02532958984375,
+        "backWidth": 262.39892578125,
+        "notePosition": "relative",
+        "secondary": "assets/images/documentassistant-preview-960.webp",
+        "overflow": false
+      }
+    },
+    {
+      "name": "1280 window overlap remains below 30%; note unobstructed",
+      "passed": true,
+      "detail": {
+        "front": 0.14282761471682515,
+        "back": 0.0006648936170212766,
+        "note": 0
+      }
+    },
+    {
+      "name": "1440 balanced copy and scene, detached note",
+      "passed": true,
+      "detail": {
+        "height": 664.890625,
+        "centerDifference": 0.0078125,
+        "noteGap": 26.87213134765625,
+        "frontWidth": 481.02532958984375,
+        "backWidth": 262.39892578125,
+        "notePosition": "relative",
+        "secondary": "assets/images/documentassistant-preview-960.webp",
+        "overflow": false
+      }
+    },
+    {
+      "name": "1440 window overlap remains below 30%; note unobstructed",
+      "passed": true,
+      "detail": {
+        "front": 0.14282761471682515,
+        "back": 0.0006648936170212766,
+        "note": 0
+      }
+    },
+    {
+      "name": "1920 balanced copy and scene, detached note",
+      "passed": true,
+      "detail": {
+        "height": 664.890625,
+        "centerDifference": 0.0078125,
+        "noteGap": 26.87213134765625,
+        "frontWidth": 481.02532958984375,
+        "backWidth": 262.39892578125,
+        "notePosition": "relative",
+        "secondary": "assets/images/documentassistant-preview-960.webp",
+        "overflow": false
+      }
+    },
+    {
+      "name": "1920 window overlap remains below 30%; note unobstructed",
+      "passed": true,
+      "detail": {
+        "front": 0.14282761471682515,
+        "back": 0.0006648936170212766,
+        "note": 0
+      }
+    },
+    {
+      "name": "Lighter secondary preview opens its matching full image",
+      "passed": true
+    },
+    {
+      "name": "Closing preview restores its trigger focus",
+      "passed": true
+    },
+    {
+      "name": "Compact season card still switches spring",
+      "passed": true
+    },
+    {
+      "name": "Compact season card still switches summer",
+      "passed": true
+    },
+    {
+      "name": "Compact season card still switches autumn",
+      "passed": true
+    },
+    {
+      "name": "Compact season card still switches winter",
+      "passed": true
+    },
+    {
+      "name": "paper note text contrast at least 4.50",
+      "passed": true,
+      "detail": [
+        {
+          "text": "门口的便签",
+          "ratio": 12.463511431672128
+        },
+        {
+          "text": "维护",
+          "ratio": 4.9867917436443845
+        },
+        {
+          "text": "RecallAI v0.25.0 · 本地检索",
+          "ratio": 5.65680132284512
+        },
+        {
+          "text": "记录",
+          "ratio": 4.9867917436443845
+        },
+        {
+          "text": "这个站是怎么长出来的",
+          "ratio": 5.65680132284512
+        },
+        {
+          "text": "看看近况 →",
+          "ratio": 6.83801617980364
+        },
+        {
+          "text": "2026-10-27",
+          "ratio": 5.65680132284512
+        }
+      ]
+    },
+    {
+      "name": "night note text contrast at least 4.50",
+      "passed": true,
+      "detail": [
+        {
+          "text": "门口的便签",
+          "ratio": 9.08497135373651
+        },
+        {
+          "text": "维护",
+          "ratio": 5.418772592918606
+        },
+        {
+          "text": "RecallAI v0.25.0 · 本地检索",
+          "ratio": 5.419894855216028
+        },
+        {
+          "text": "记录",
+          "ratio": 5.418772592918606
+        },
+        {
+          "text": "这个站是怎么长出来的",
+          "ratio": 5.419894855216028
+        },
+        {
+          "text": "看看近况 →",
+          "ratio": 5.382702272833815
+        },
+        {
+          "text": "2026-10-27",
+          "ratio": 5.419894855216028
+        }
+      ]
+    },
+    {
+      "name": "Desktop file mode renders the corrected scene",
+      "passed": true
+    },
+    {
+      "name": "Entrance is shorter than the previous version",
+      "passed": true,
+      "detail": {
+        "before": 712,
+        "after": 664.890625,
+        "reduction": 47.109375
+      }
+    },
+    {
+      "name": "Cache updated to 1.5.1, still 75 files",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.5.1",
+          "count": 75
+        }
+      ]
+    },
+    {
+      "name": "No desktop script errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "verdict": "PASS"
+}

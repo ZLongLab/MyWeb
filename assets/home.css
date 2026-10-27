@@ -381,7 +381,7 @@ picture { display: block; }
 
 /* 1.5 desktop rhythm; the existing narrow layouts keep their own measures. */
 @media screen and (min-width: 1024px) {
-  .home-opening { gap: var(--space-heading); padding-block: var(--space-home); }
+  .home-opening { grid-template-columns: minmax(0, .48fr) minmax(0, .52fr); align-items: center; gap: var(--space-heading); padding-block: var(--space-home); }
   .home-opening-copy { padding-top: 0; }
   .home-opening h1 { margin-block: var(--space-card) var(--space-heading); }
   .home-opening-actions, .home-local-meta { margin-top: var(--space-card); }
@@ -391,10 +391,22 @@ picture { display: block; }
   .home-bento-grid { gap: var(--space-card); }
   .home-bento { padding: var(--space-card); }
   .home-bento-pulse, .home-bento-stats { padding: var(--space-card-large); }
-  .home-showcase .home-now { padding: var(--space-card); }
-  .home-showcase { min-height: calc(540px + var(--space-heading)); }
-  .home-showcase-stage { height: calc(540px + var(--space-heading)); }
-  .home-shot-back { top: calc(300px + var(--space-heading)); }
+  .home-showcase { min-height: 0; }
+  .home-showcase::after { display: none; }
+  .home-showcase-stage { height: 384px; }
+  .home-shot-front { top: 40px; width: 78%; }
+  .home-shot-back { top: 188px; width: 42%; }
+  .home-shot-back .home-window-bar { background: var(--frame-warm); color: var(--ink); }
+  .home-showcase .home-now { position: relative; left: auto; right: auto; bottom: auto; display: grid; grid-template-columns: 80px minmax(0, 1fr) auto; align-items: center; gap: var(--space-card); width: 100%; margin-top: var(--space-card); padding: var(--space-card); transform: none; box-shadow: var(--shadow-near); }
+  .home-showcase .home-now::before, .home-showcase .home-now::after, .home-now-overline { display: none; }
+  .home-now h2 { font-size: 14px; }
+  .home-now-list { margin: 0; }
+  .home-now-footer { flex-direction: column; align-items: flex-end; gap: 0; margin: 0; border: 0; }
+  .home-now-footer time { color: var(--muted); transform: none; }
+  .desk-seasons { top: -12px; right: 0; gap: 0; }
+  .desk-seasons button { height: 44px; padding-top: 20px; }
+  .desk-seasons button::before { inset: 4px 6px auto; height: 13px; }
+  .desk-stamp { top: 56px; right: 0; width: 56px; height: 56px; }
   .home-work { gap: var(--space-heading); padding-block: var(--space-heading); }
   .home-work-image { padding: var(--space-card-large); }
   .home-work-summary, .journal-summary, .home-bento-description { font-size: 16px; }

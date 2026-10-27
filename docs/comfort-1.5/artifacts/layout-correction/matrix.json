@@ -1,0 +1,2511 @@
+{
+  "scope": "Entrance only; desktop 1280/1440/1920; 1280/1440/1920, paper/night, spring/autumn",
+  "baseline": "492307e",
+  "checks": [
+    {
+      "name": "Allowlist remains 76 preview / 75 cache, identical membership",
+      "passed": true,
+      "detail": {
+        "preview": 76,
+        "cache": 75
+      }
+    },
+    {
+      "name": "Runtime files all exist",
+      "passed": true
+    },
+    {
+      "name": "No docs or external resources cached",
+      "passed": true
+    },
+    {
+      "name": "Server whitelist unchanged",
+      "passed": true
+    },
+    {
+      "name": "layout paper spring 1280 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "paper",
+        "season": "spring",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast paper spring 1280 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#272c26",
+        "muted": "#5a6058",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "种子",
+            "class": "home-latest-meta",
+            "ratio": 4.89,
+            "ratioExact": 4.885951022691302
+          },
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用",
+            "class": "home-bento-description",
+            "ratio": 5.5,
+            "ratioExact": 5.497690980981386
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout paper spring 1440 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "paper",
+        "season": "spring",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast paper spring 1440 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#272c26",
+        "muted": "#5a6058",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "种子",
+            "class": "home-latest-meta",
+            "ratio": 4.89,
+            "ratioExact": 4.885951022691302
+          },
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用",
+            "class": "home-bento-description",
+            "ratio": 5.5,
+            "ratioExact": 5.497690980981386
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout paper spring 1920 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "paper",
+        "season": "spring",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast paper spring 1920 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#272c26",
+        "muted": "#5a6058",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "种子",
+            "class": "home-latest-meta",
+            "ratio": 4.89,
+            "ratioExact": 4.885951022691302
+          },
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "春夜安静，给明天留一颗种子。",
+            "class": "home-season-greeting",
+            "ratio": 5.43,
+            "ratioExact": 5.429563725535069
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout paper autumn 1280 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "paper",
+        "season": "autumn",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast paper autumn 1280 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#272c26",
+        "muted": "#5a6058",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "种子",
+            "class": "home-latest-meta",
+            "ratio": 4.8,
+            "ratioExact": 4.801488409652071
+          },
+          {
+            "text": "玄关 / A PLACE OF MY OWN",
+            "class": "home-room-kicker",
+            "ratio": 4.95,
+            "ratioExact": 4.951987427502477
+          },
+          {
+            "text": "GARDEN / 园子里的路",
+            "class": "home-room-kicker",
+            "ratio": 5.05,
+            "ratioExact": 5.052946553156347
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout paper autumn 1440 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "paper",
+        "season": "autumn",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast paper autumn 1440 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#272c26",
+        "muted": "#5a6058",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "种子",
+            "class": "home-latest-meta",
+            "ratio": 4.8,
+            "ratioExact": 4.801488409652071
+          },
+          {
+            "text": "玄关 / A PLACE OF MY OWN",
+            "class": "home-room-kicker",
+            "ratio": 4.92,
+            "ratioExact": 4.91621456108047
+          },
+          {
+            "text": "GARDEN / 园子里的路",
+            "class": "home-room-kicker",
+            "ratio": 5.05,
+            "ratioExact": 5.052946553156347
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout paper autumn 1920 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "paper",
+        "season": "autumn",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast paper autumn 1920 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#272c26",
+        "muted": "#5a6058",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "种子",
+            "class": "home-latest-meta",
+            "ratio": 4.8,
+            "ratioExact": 4.801488409652071
+          },
+          {
+            "text": "玄关 / A PLACE OF MY OWN",
+            "class": "home-room-kicker",
+            "ratio": 4.92,
+            "ratioExact": 4.91621456108047
+          },
+          {
+            "text": "GARDEN / 园子里的路",
+            "class": "home-room-kicker",
+            "ratio": 5.05,
+            "ratioExact": 5.052946553156347
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout night spring 1280 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "night",
+        "season": "spring",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast night spring 1280 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#e3dcc8",
+        "muted": "#a8ada0",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "把想法做出来的过程",
+            "class": "home-bio",
+            "ratio": 5.55,
+            "ratioExact": 5.549099855068211
+          },
+          {
+            "text": "。",
+            "class": "home-bio",
+            "ratio": 5.55,
+            "ratioExact": 5.549099855068211
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout night spring 1440 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "night",
+        "season": "spring",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast night spring 1440 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#e3dcc8",
+        "muted": "#a8ada0",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "把想法做出来的过程",
+            "class": "home-bio",
+            "ratio": 5.48,
+            "ratioExact": 5.482989503000856
+          },
+          {
+            "text": "。",
+            "class": "home-bio",
+            "ratio": 5.54,
+            "ratioExact": 5.544975757721119
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout night spring 1920 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "night",
+        "season": "spring",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast night spring 1920 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#e3dcc8",
+        "muted": "#a8ada0",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "把想法做出来的过程",
+            "class": "home-bio",
+            "ratio": 5.38,
+            "ratioExact": 5.378881262025312
+          },
+          {
+            "text": "。",
+            "class": "home-bio",
+            "ratio": 5.46,
+            "ratioExact": 5.459193711846166
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout night autumn 1280 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "night",
+        "season": "autumn",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast night autumn 1280 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#e3dcc8",
+        "muted": "#a8ada0",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "把想法做出来的过程",
+            "class": "home-bio",
+            "ratio": 5.57,
+            "ratioExact": 5.569443014662688
+          },
+          {
+            "text": "。",
+            "class": "home-bio",
+            "ratio": 5.59,
+            "ratioExact": 5.587619815567087
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout night autumn 1440 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "night",
+        "season": "autumn",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast night autumn 1440 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#e3dcc8",
+        "muted": "#a8ada0",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "把想法做出来的过程",
+            "class": "home-bio",
+            "ratio": 5.57,
+            "ratioExact": 5.565761390666149
+          },
+          {
+            "text": "。",
+            "class": "home-bio",
+            "ratio": 5.59,
+            "ratioExact": 5.591330423684708
+          }
+        ]
+      }
+    },
+    {
+      "name": "layout night autumn 1920 index.html",
+      "passed": true,
+      "detail": {
+        "overflow": false,
+        "theme": "night",
+        "season": "autumn",
+        "bodyFont": "16px",
+        "headerHeight": 88,
+        "containers": [
+          {
+            "class": "site-header container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-opening container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-path container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-overview container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-works-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "container home-garden-inner container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-section home-writing container container-wide has-house-divider",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "home-signoff container container-wide",
+            "wide": true,
+            "width": 1200
+          },
+          {
+            "class": "footer-inner house-footer-inner container container-wide",
+            "wide": true,
+            "width": 1200
+          }
+        ],
+        "rooms": 10,
+        "pending": 0,
+        "small": []
+      }
+    },
+    {
+      "name": "contrast night autumn 1920 index.html",
+      "passed": true,
+      "detail": {
+        "ink": "#e3dcc8",
+        "muted": "#a8ada0",
+        "mutedElements": 15,
+        "mutedClasses": [
+          "home-season-greeting",
+          "",
+          "home-bento-description",
+          "home-pulse-total",
+          "home-latest-meta",
+          "home-work-summary",
+          "home-garden-meta",
+          "journal-summary"
+        ],
+        "computedFailures": [],
+        "rasterSamples": 32,
+        "rasterFailures": [],
+        "lowestRaster": [
+          {
+            "text": "实线表示引用，虚线仅为分组。",
+            "class": "home-garden-caption",
+            "ratio": 5.33,
+            "ratioExact": 5.332346106657315
+          },
+          {
+            "text": "把想法做出来的过程",
+            "class": "home-bio",
+            "ratio": 5.42,
+            "ratioExact": 5.423793132390339
+          },
+          {
+            "text": "。",
+            "class": "home-bio",
+            "ratio": 5.47,
+            "ratioExact": 5.465525282557997
+          }
+        ]
+      }
+    },
+    {
+      "name": "desktop file index.html",
+      "passed": true
+    },
+    {
+      "name": "Desktop file mode avoids script errors and network registrations",
+      "passed": true,
+      "detail": {
+        "fileErrors": [],
+        "fileNetwork": []
+      }
+    },
+    {
+      "name": "No script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No failed runtime resources",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Zero runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "layouts": [
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "paper",
+      "season": "spring",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "paper",
+      "season": "spring",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "paper",
+      "season": "autumn",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "paper",
+      "season": "autumn",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "paper",
+      "season": "autumn",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "night",
+      "season": "spring",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "night",
+      "season": "spring",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "night",
+      "season": "spring",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "night",
+      "season": "autumn",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "night",
+      "season": "autumn",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "night",
+      "season": "autumn",
+      "overflow": false,
+      "bodyFont": "16px",
+      "headerHeight": 88,
+      "containers": [
+        {
+          "class": "site-header container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "wide": true,
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "wide": true,
+          "width": 1200
+        }
+      ],
+      "rooms": 10,
+      "pending": 0,
+      "small": []
+    }
+  ],
+  "palettes": [
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "paper",
+      "season": "spring",
+      "ink": "#272c26",
+      "muted": "#5a6058",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "种子",
+          "class": "home-latest-meta",
+          "ratio": 4.89,
+          "ratioExact": 4.885951022691302
+        },
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用",
+          "class": "home-bento-description",
+          "ratio": 5.5,
+          "ratioExact": 5.497690980981386
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "paper",
+      "season": "spring",
+      "ink": "#272c26",
+      "muted": "#5a6058",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "种子",
+          "class": "home-latest-meta",
+          "ratio": 4.89,
+          "ratioExact": 4.885951022691302
+        },
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用",
+          "class": "home-bento-description",
+          "ratio": 5.5,
+          "ratioExact": 5.497690980981386
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "paper",
+      "season": "spring",
+      "ink": "#272c26",
+      "muted": "#5a6058",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "种子",
+          "class": "home-latest-meta",
+          "ratio": 4.89,
+          "ratioExact": 4.885951022691302
+        },
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "春夜安静，给明天留一颗种子。",
+          "class": "home-season-greeting",
+          "ratio": 5.43,
+          "ratioExact": 5.429563725535069
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "paper",
+      "season": "autumn",
+      "ink": "#272c26",
+      "muted": "#5a6058",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "种子",
+          "class": "home-latest-meta",
+          "ratio": 4.8,
+          "ratioExact": 4.801488409652071
+        },
+        {
+          "text": "玄关 / A PLACE OF MY OWN",
+          "class": "home-room-kicker",
+          "ratio": 4.95,
+          "ratioExact": 4.951987427502477
+        },
+        {
+          "text": "GARDEN / 园子里的路",
+          "class": "home-room-kicker",
+          "ratio": 5.05,
+          "ratioExact": 5.052946553156347
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "paper",
+      "season": "autumn",
+      "ink": "#272c26",
+      "muted": "#5a6058",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "种子",
+          "class": "home-latest-meta",
+          "ratio": 4.8,
+          "ratioExact": 4.801488409652071
+        },
+        {
+          "text": "玄关 / A PLACE OF MY OWN",
+          "class": "home-room-kicker",
+          "ratio": 4.92,
+          "ratioExact": 4.91621456108047
+        },
+        {
+          "text": "GARDEN / 园子里的路",
+          "class": "home-room-kicker",
+          "ratio": 5.05,
+          "ratioExact": 5.052946553156347
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "paper",
+      "season": "autumn",
+      "ink": "#272c26",
+      "muted": "#5a6058",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "种子",
+          "class": "home-latest-meta",
+          "ratio": 4.8,
+          "ratioExact": 4.801488409652071
+        },
+        {
+          "text": "玄关 / A PLACE OF MY OWN",
+          "class": "home-room-kicker",
+          "ratio": 4.92,
+          "ratioExact": 4.91621456108047
+        },
+        {
+          "text": "GARDEN / 园子里的路",
+          "class": "home-room-kicker",
+          "ratio": 5.05,
+          "ratioExact": 5.052946553156347
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "night",
+      "season": "spring",
+      "ink": "#e3dcc8",
+      "muted": "#a8ada0",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "把想法做出来的过程",
+          "class": "home-bio",
+          "ratio": 5.55,
+          "ratioExact": 5.549099855068211
+        },
+        {
+          "text": "。",
+          "class": "home-bio",
+          "ratio": 5.55,
+          "ratioExact": 5.549099855068211
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "night",
+      "season": "spring",
+      "ink": "#e3dcc8",
+      "muted": "#a8ada0",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "把想法做出来的过程",
+          "class": "home-bio",
+          "ratio": 5.48,
+          "ratioExact": 5.482989503000856
+        },
+        {
+          "text": "。",
+          "class": "home-bio",
+          "ratio": 5.54,
+          "ratioExact": 5.544975757721119
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "night",
+      "season": "spring",
+      "ink": "#e3dcc8",
+      "muted": "#a8ada0",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "把想法做出来的过程",
+          "class": "home-bio",
+          "ratio": 5.38,
+          "ratioExact": 5.378881262025312
+        },
+        {
+          "text": "。",
+          "class": "home-bio",
+          "ratio": 5.46,
+          "ratioExact": 5.459193711846166
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "night",
+      "season": "autumn",
+      "ink": "#e3dcc8",
+      "muted": "#a8ada0",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "把想法做出来的过程",
+          "class": "home-bio",
+          "ratio": 5.57,
+          "ratioExact": 5.569443014662688
+        },
+        {
+          "text": "。",
+          "class": "home-bio",
+          "ratio": 5.59,
+          "ratioExact": 5.587619815567087
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "night",
+      "season": "autumn",
+      "ink": "#e3dcc8",
+      "muted": "#a8ada0",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "把想法做出来的过程",
+          "class": "home-bio",
+          "ratio": 5.57,
+          "ratioExact": 5.565761390666149
+        },
+        {
+          "text": "。",
+          "class": "home-bio",
+          "ratio": 5.59,
+          "ratioExact": 5.591330423684708
+        }
+      ]
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "night",
+      "season": "autumn",
+      "ink": "#e3dcc8",
+      "muted": "#a8ada0",
+      "mutedElements": 15,
+      "mutedClasses": [
+        "home-season-greeting",
+        "",
+        "home-bento-description",
+        "home-pulse-total",
+        "home-latest-meta",
+        "home-work-summary",
+        "home-garden-meta",
+        "journal-summary"
+      ],
+      "computedFailures": [],
+      "rasterSamples": 32,
+      "rasterFailures": [],
+      "lowestRaster": [
+        {
+          "text": "实线表示引用，虚线仅为分组。",
+          "class": "home-garden-caption",
+          "ratio": 5.33,
+          "ratioExact": 5.332346106657315
+        },
+        {
+          "text": "把想法做出来的过程",
+          "class": "home-bio",
+          "ratio": 5.42,
+          "ratioExact": 5.423793132390339
+        },
+        {
+          "text": "。",
+          "class": "home-bio",
+          "ratio": 5.47,
+          "ratioExact": 5.465525282557997
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "badResources": [],
+  "external": [],
+  "browser": "156.0.8078.48",
+  "failures": [],
+  "verdict": "PASS"
+}

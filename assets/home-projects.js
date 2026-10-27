@@ -52,11 +52,19 @@
 
   var featured = projects.filter(function (project) { return project.featured === true; });
   var showcase = document.getElementById('home-showcase');
+  var desktopShowcase = window.matchMedia('(min-width: 1024px)');
   if (showcase && featured.some(function (project) { return validImage(project.image); })) {
-    showcase.replaceChildren();
-    featured.filter(function (project) { return validImage(project.image); }).slice(0, 2).forEach(function (project, index) {
-      showcase.append(windowFrame(project, 'home-shot ' + (index === 0 ? 'home-shot-front' : 'home-shot-back'), index === 0, true));
-    });
+    function renderShowcase() {
+      var focusedProject = showcase.contains(document.activeElement) ? document.activeElement.dataset.projectId : '';
+      showcase.replaceChildren();
+      featured.filter(function (project) { return validImage(project.image); }).slice(0, 2).forEach(function (project, index) {
+        var frame = windowFrame(project, 'home-shot ' + (index === 0 ? 'home-shot-front' : 'home-shot-back'), index === 0, index === 0 || !desktopShowcase.matches);
+        showcase.append(frame);
+        if (project.id === focusedProject) frame.focus({ preventScroll: true });
+      });
+    }
+    renderShowcase();
+    desktopShowcase.addEventListener('change', renderShowcase);
   }
   var recall = projects.find(function (project) { return project.id === 'recallai'; });
   var nowRecall = document.querySelector('[data-now-recall]');
