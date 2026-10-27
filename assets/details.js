@@ -50,7 +50,7 @@
     var ticket = serial, host = document.querySelector('dialog[open]') || document.body;
     toast.classList.remove('is-visible'); toast.textContent = ''; if (toast.parentNode !== host) host.append(toast);
     frame = requestAnimationFrame(function () { if (ticket !== serial) return; toast.textContent = String(message); toast.classList.add('is-visible');
-      toastTimer = window.setTimeout(function () { toast.classList.remove('is-visible'); clearTimer = window.setTimeout(function () { toast.textContent = ''; }, reduced.matches ? 0 : 250); }, 1600);
+      toastTimer = window.setTimeout(function () { toast.classList.remove('is-visible'); clearTimer = window.setTimeout(function () { toast.textContent = ''; }, reduced.matches ? 0 : 300); }, 1600);
     });
   }
   window.SITE_FEEDBACK = { show: showToast };

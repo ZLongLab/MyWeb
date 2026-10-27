@@ -1,0 +1,879 @@
+{
+  "rows": [
+    {
+      "route": "index.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "home-opening container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "home-path container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "home-section home-overview container container-wide has-house-divider",
+          "width": 1200
+        },
+        {
+          "class": "home-works-inner container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "container home-garden-inner container-wide",
+          "width": 1200
+        },
+        {
+          "class": "home-section home-writing container container-wide has-house-divider",
+          "width": 1200
+        },
+        {
+          "class": "home-signoff container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "width": 1200
+        }
+      ],
+      "heading": [
+        {
+          "text": "有间小站。",
+          "spacing": "1.4976px",
+          "size": "74.88px"
+        },
+        {
+          "text": "门口的便签",
+          "spacing": "0.32px",
+          "size": "16px"
+        },
+        {
+          "text": "先在这儿坐一会儿",
+          "spacing": "0.52px",
+          "size": "26px"
+        },
+        {
+          "text": "本地资料检索",
+          "spacing": "0.52px",
+          "size": "26px"
+        },
+        {
+          "text": "这个站是怎么长出来的",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "做过的东西",
+          "spacing": "0.52px",
+          "size": "26px"
+        },
+        {
+          "text": "想法之间，也有小径。",
+          "spacing": "0.54px",
+          "size": "27px"
+        },
+        {
+          "text": "最近的记录",
+          "spacing": "0.52px",
+          "size": "26px"
+        },
+        {
+          "text": "这个站是怎么长出来的",
+          "spacing": "0.38px",
+          "size": "19px"
+        },
+        {
+          "text": "DocumentAssistant：先给出分类建议，",
+          "spacing": "0.38px",
+          "size": "19px"
+        },
+        {
+          "text": "RecallAI：本地检索与收纳的边界",
+          "spacing": "0.38px",
+          "size": "19px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "projects.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "width": 1200
+        }
+      ],
+      "heading": [
+        {
+          "text": "做过的东西。",
+          "spacing": "0.92px",
+          "size": "46px"
+        },
+        {
+          "text": "Folia · Android 适配→",
+          "spacing": "0.56px",
+          "size": "28px"
+        },
+        {
+          "text": "有间小站 · 个人网站→",
+          "spacing": "0.56px",
+          "size": "28px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "project.html?id=recallai",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container container-wide",
+          "width": 1200
+        },
+        {
+          "class": "container project-main container-wide",
+          "width": 1200
+        },
+        {
+          "class": "footer-inner house-footer-inner container container-wide",
+          "width": 1200
+        }
+      ],
+      "heading": [
+        {
+          "text": "本页目录",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "关于这个项目",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "从什么问题出发",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "实际怎么用",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "实现与取舍",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "目前进展：旧索引转为收纳副本",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "使用边界",
+          "spacing": "0.42px",
+          "size": "21px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "articles.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "写下来的事。",
+          "spacing": "0.92px",
+          "size": "46px"
+        },
+        {
+          "text": "这个站是怎么长出来的",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "DocumentAssistant：先给出分类建议，",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "RecallAI：本地检索与收纳的边界",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "你好，世界。这是小站的第一天。",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "先做一个小而完整的网站",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "给下一次更新，留一张清单",
+          "spacing": "0.5px",
+          "size": "25px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "article.html?id=how-this-site-grew",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "container reading-main",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "这个站是怎么长出来的",
+          "spacing": "0.76px",
+          "size": "38px"
+        },
+        {
+          "text": "先住得下，再谈好看",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "0.14：有了夜里和离线",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "1.0：它变成一所房子",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "1.1：开始种花园",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "本文提到",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "提到本文的",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "继续阅读",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "你好，世界。这是小站的第一天。",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "先做一个小而完整的网站",
+          "spacing": "0.34px",
+          "size": "17px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": {
+        "width": 720,
+        "font": "16px",
+        "lineHeight": "33.6px"
+      },
+      "overflow": false
+    },
+    {
+      "route": "about.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "container about-page",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "很高兴，在这里遇见你。",
+          "spacing": "1.28px",
+          "size": "64px"
+        },
+        {
+          "text": "为什么有这个小站",
+          "spacing": "0.48px",
+          "size": "24px"
+        },
+        {
+          "text": "联系我",
+          "spacing": "0.6px",
+          "size": "30px"
+        },
+        {
+          "text": "小站生长的足迹",
+          "spacing": "0.56px",
+          "size": "28px"
+        },
+        {
+          "text": "有了想法",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "小站开源",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "0.14 体验版",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "1.0「有间」",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "1.1「花园版」",
+          "spacing": "0.34px",
+          "size": "17px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "guestbook.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "灵感草稿箱。",
+          "spacing": "0.92px",
+          "size": "46px"
+        },
+        {
+          "text": "写一张便签。",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "收好的灵感。",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "还没有便签。",
+          "spacing": "0.36px",
+          "size": "18px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "workbench.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "container workbench-page",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "此刻，正在做的事。",
+          "spacing": "0.92px",
+          "size": "46px"
+        },
+        {
+          "text": "换一束光",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "当前近况",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "Folia · Android 适配",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "用什么实现",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "小站更新",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "留一点呼吸，让小站更安静",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "让桌面与花园各有位置",
+          "spacing": "0.42px",
+          "size": "21px"
+        },
+        {
+          "text": "关于本站",
+          "spacing": "0.5px",
+          "size": "25px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "now.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "room-page container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "最近在做的事。",
+          "spacing": "1.04px",
+          "size": "52px"
+        },
+        {
+          "text": "正在做",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "Folia · Android 适配",
+          "spacing": "0.34px",
+          "size": "17px"
+        },
+        {
+          "text": "正在读",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "正在听",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "暂时不做",
+          "spacing": "0.36px",
+          "size": "18px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "uses.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "room-page container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "顺手的工具，留在手边。",
+          "spacing": "1.04px",
+          "size": "52px"
+        },
+        {
+          "text": "开发与维护",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "桌面与设备",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "默认应用",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "怎样放在一起",
+          "spacing": "0.5px",
+          "size": "25px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "life.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "room-page container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "给日常，留一点空白。",
+          "spacing": "1.04px",
+          "size": "52px"
+        },
+        {
+          "text": "在读",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "在听",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "在看",
+          "spacing": "0.36px",
+          "size": "18px"
+        },
+        {
+          "text": "拾起一些片刻",
+          "spacing": "0.5px",
+          "size": "25px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "links.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "room-page container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "一些值得打开的窗口。",
+          "spacing": "1.04px",
+          "size": "52px"
+        },
+        {
+          "text": "慢慢认识的小站",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "设计参考与资源",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "以后再串门",
+          "spacing": "0.5px",
+          "size": "25px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "colophon.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "room-page container",
+          "width": 1040
+        },
+        {
+          "class": "footer-inner house-footer-inner container",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "这间小站，是怎样做的。",
+          "spacing": "1.04px",
+          "size": "52px"
+        },
+        {
+          "text": "简单一点，住得久一点",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "纸、墨与四季",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "留在这里的原则",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "一间一间，慢慢修缮",
+          "spacing": "0.5px",
+          "size": "25px"
+        },
+        {
+          "text": "留一点呼吸，让小站更安静",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "让桌面与花园各有位置",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "玄关里，摆下一张书桌",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "让季节的光照进每间房",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "给住下来的小站添一点细节",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "种下花园的第一组互引",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "给主题丛收一收枝叶",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "花园，让记录慢慢生长",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "有间，让栏目成为房间",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "让阅读与切页更从容",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "重新整理首页空间",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "导航加一点细边框",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "让点击入口更醒目",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "给小站补一张工作台",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "让作品更容易看清和读完",
+          "spacing": "0.4px",
+          "size": "20px"
+        },
+        {
+          "text": "从页面走向真实项目",
+          "spacing": "0.4px",
+          "size": "20px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    },
+    {
+      "route": "404.html",
+      "bodyFont": "16px",
+      "container": [
+        {
+          "class": "site-header container",
+          "width": 1040
+        },
+        {
+          "class": "container lost-main",
+          "width": 720
+        },
+        {
+          "class": "container lost-footer",
+          "width": 1040
+        }
+      ],
+      "heading": [
+        {
+          "text": "这里，还没有这间房。",
+          "spacing": "0.96px",
+          "size": "48px"
+        }
+      ],
+      "prose15": [],
+      "old": [],
+      "reader": null,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

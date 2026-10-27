@@ -2,5 +2,5 @@
 .site-footer .site-install:hover:enabled { border-color: #b79a80; color: #efc9ad; }
 .site-footer .site-install:focus-visible { outline: 2px solid #efc9ad; outline-offset: 4px; }
 .site-footer .site-install:disabled { opacity: .6; cursor: default; }
-.site-offline { margin: 0; color: #d8dfd4; font: 11px/1.9 var(--mono), var(--font); opacity: 0; transition: opacity .2s ease; }
+.site-offline { margin: 0; color: #d8dfd4; font: 11px/1.9 var(--mono), var(--font); opacity: 0; transition: opacity var(--duration-fast) var(--ease-out); }
 .site-offline.is-offline { margin-top: 12px; opacity: 1; }

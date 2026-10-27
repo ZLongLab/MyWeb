@@ -7,7 +7,7 @@
   --global-wash-2: rgba(217, 155, 38, .08);
   --room-accent: var(--c-slate);
   --room-accent-text: #4a6b7c;
-  --room-vt-duration: .32s;
+  --room-vt-duration: var(--duration-normal);
   --room-vt-x: 0px;
   --room-vt-y: 8px;
 }
@@ -66,11 +66,11 @@ body[data-page="home"] .home-opening .home-text-link:not(.home-primary-link),
 body[data-page="home"] .home-social-links a { color: var(--global-accent-text); }
 .site-header .nav-theme:focus-visible { outline-color: var(--global-accent-text); }
 
-/* Navigation stays native; differences between rooms stay within 80ms. */
-html:has(body[data-page="home"]) { --room-vt-duration: .28s; --room-vt-y: 5px; }
+/* Navigation stays native; room directions share the 300ms duration. */
+html:has(body[data-page="home"]) { --room-vt-duration: var(--duration-normal); --room-vt-y: 5px; }
 html:has(body[data-room="articles"]), html:has(body[data-room="article"]),
-html:has(body[data-page="articles"]), html:has(body[data-page="article"]) { --room-vt-duration: .32s; --room-vt-x: 8px; --room-vt-y: 0px; }
-html:has(body[data-room="life"]) { --room-vt-duration: .36s; --room-vt-y: 4px; }
+html:has(body[data-page="articles"]), html:has(body[data-page="article"]) { --room-vt-duration: var(--duration-normal); --room-vt-x: 8px; --room-vt-y: 0px; }
+html:has(body[data-room="life"]) { --room-vt-duration: var(--duration-normal); --room-vt-y: 4px; }
 html:root::view-transition-new(root) { animation-name: house-room-in; animation-duration: var(--room-vt-duration); }
 @keyframes house-room-in { from { opacity: 0; transform: translate(var(--room-vt-x), var(--room-vt-y)); } }
 
@@ -86,9 +86,9 @@ html:root::view-transition-new(root) { animation-name: house-room-in; animation-
   background: linear-gradient(90deg, rgba(255, 250, 222, .96), rgba(255, 250, 222, 0));
   pointer-events: none;
   opacity: 0;
-  transition: opacity .3s ease;
+  transition: opacity var(--duration-normal) var(--ease-out);
 }
-html[data-theme="night"] .site-header .brand-mark::after { background: linear-gradient(90deg, #ffd997, rgba(255, 217, 151, 0)); box-shadow: -2px 0 7px rgba(235, 171, 81, .22); }
+html[data-theme="night"] .site-header .brand-mark::after { background: linear-gradient(90deg, #ffd997, rgba(255, 217, 151, 0)); box-shadow: none; }
 .site-header .brand:hover .brand-mark::after, .site-header .brand:focus-visible .brand-mark::after { opacity: .85; }
 @media (prefers-reduced-motion: reduce) {
   .site-header .brand-mark::after { display: none; transition: none; }

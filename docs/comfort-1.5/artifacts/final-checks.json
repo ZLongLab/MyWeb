@@ -1,0 +1,86 @@
+{
+  "scope": "Final desktop source and feedback checks",
+  "checks": [
+    {
+      "name": "Preview whitelist source unchanged",
+      "passed": true
+    },
+    {
+      "name": "Service worker resource list unchanged",
+      "passed": true
+    },
+    {
+      "name": "Version and cache version 1.5.0",
+      "passed": true
+    },
+    {
+      "name": "Common transitions use only the 200/300ms tokens",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Paper grain is .08/.06",
+      "passed": true
+    },
+    {
+      "name": "Both seasonal washes extend to 55/60 without position or alpha changes",
+      "passed": true
+    },
+    {
+      "name": "No new runtime resources",
+      "passed": true
+    },
+    {
+      "name": "Home title reaches 80px at 1920",
+      "passed": true
+    },
+    {
+      "name": "paper work band has 24px fades with its original ground",
+      "passed": true,
+      "detail": {
+        "top": "24px",
+        "bottom": "24px",
+        "before": "linear-gradient(rgb(250, 245, 236), rgba(0, 0, 0, 0))",
+        "after": "linear-gradient(rgba(0, 0, 0, 0), rgb(250, 245, 236))",
+        "background": "rgb(36, 43, 40)"
+      }
+    },
+    {
+      "name": "night work band has 24px fades with its original ground",
+      "passed": true,
+      "detail": {
+        "top": "24px",
+        "bottom": "24px",
+        "before": "linear-gradient(rgb(30, 36, 32), rgba(0, 0, 0, 0))",
+        "after": "linear-gradient(rgba(0, 0, 0, 0), rgb(30, 36, 32))",
+        "background": "rgb(36, 43, 40)"
+      }
+    },
+    {
+      "name": "Toast uses polite confirmation and 300ms transitions",
+      "passed": true,
+      "detail": {
+        "text": "已复制",
+        "live": "polite",
+        "opacity": "1",
+        "duration": "0.3s, 0.3s"
+      }
+    },
+    {
+      "name": "Toast keeps text until its fade completes",
+      "passed": true
+    },
+    {
+      "name": "Toast clears after fading without taking focus",
+      "passed": true
+    },
+    {
+      "name": "No final desktop script errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "verdict": "PASS"
+}

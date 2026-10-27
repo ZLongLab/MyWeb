@@ -82,7 +82,7 @@ button.palette-swatch:hover { background: var(--surface); }
 .room-table th, .room-table td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--line); line-height: 1.8; }
 .room-table th { color: var(--ink); font-weight: 500; }
 .room-table td { color: var(--muted); }
-.room-window { display: block; min-width: 0; width: 100%; overflow: hidden; border-radius: 12px; background: var(--surface); box-shadow: 0 1px 2px rgba(62,45,25,.06), 0 16px 32px -12px rgba(62,45,25,.18); }
+.room-window { display: block; min-width: 0; width: 100%; overflow: hidden; border-radius: 12px; background: var(--surface); box-shadow: var(--shadow-near); }
 .room-window-bar { display: flex; align-items: center; gap: 5px; width: 100%; height: 28px; min-height: 28px; padding: 0 10px; border-bottom: 1px solid rgba(43,91,70,.1); background: rgba(250,247,242,.85); }
 .room-window-bar > i { display: block; width: 6px; height: 6px; flex-shrink: 0; border-radius: 50%; background: #c85a32; }
 .room-window-bar > i:nth-child(2) { background: #d99b26; }
@@ -114,6 +114,24 @@ html[data-theme="night"] .room-window-bar > span { color: var(--c-slate); }
 .house-footer-wordmark { margin: 23px 0 -.15em; padding: 0; color: #607063; font: 600 clamp(48px, 9.5vw, 132px)/1.05 var(--font-serif); letter-spacing: .05em; white-space: nowrap; user-select: none; pointer-events: none; }
 .site-footer.house-footer .site-install { margin-top: 14px; color: #ece7da; border-color: #73876e; background: #314333; }
 .site-footer.house-footer .site-install:hover { background: #405540; }
+
+@media screen and (min-width: 1024px) {
+  .room-page { padding-block: var(--space-page); }
+  .room-header { margin-bottom: var(--space-heading); }
+  .room-section { gap: var(--space-heading); padding-block: var(--space-page); }
+  .room-section-head h2 { margin-bottom: var(--space-heading); }
+  .room-panels, .life-grid { gap: var(--space-heading); }
+  .room-panel { padding-top: var(--space-card); }
+  .room-panel h2, .room-panel h3 { margin-bottom: var(--space-heading); }
+  .room-list > li, .room-changelog-entry { padding-block: var(--space-card); }
+  .room-note { padding: var(--space-card); margin-block: var(--space-card); }
+  .room-empty { padding: var(--space-card); }
+  .room-section-body > p:not(.room-meta):not(.room-kicker):not(.room-updated):not(.room-note), .room-panel p:not(.room-meta):not(.room-kicker), .room-panel li, .room-list p:not(.room-meta), .room-defaults dd, .room-changelog-entry ul { font-size: 16px; }
+  .site-footer .house-footer-inner { padding-top: var(--space-page); }
+  body[data-page="home"] .site-footer .house-footer-inner { padding-top: var(--space-home); }
+  .site-footer.house-footer .room-door { padding-block: var(--space-card); }
+  .house-footer-bottom { padding-top: var(--space-card); }
+}
 
 /* Existing reading pages keep their measures; only their small identity marks change. */
 body[data-page="articles"] .eyebrow, body[data-page="article"] .eyebrow { color: var(--room-accent-text); }

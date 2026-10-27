@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1200" viewBox="0 0 1600 1200" fill="none">
   <defs>
-    <pattern id="paper" width="31" height="29" patternUnits="userSpaceOnUse"><circle cx="3" cy="5" r=".45" fill="#827764" fill-opacity=".13"/><circle cx="19" cy="21" r=".35" fill="#827764" fill-opacity=".1"/></pattern>
+    <pattern id="paper" width="31" height="29" patternUnits="userSpaceOnUse"><circle cx="3" cy="5" r=".45" fill="#827764" fill-opacity=".08"/><circle cx="19" cy="21" r=".35" fill="#827764" fill-opacity=".06"/></pattern>
   </defs>
   <rect width="1600" height="1200" fill="url(#paper)"/>
 </svg>

@@ -1,0 +1,517 @@
+{
+  "desktopOnly": true,
+  "checks": [
+    {
+      "name": "Unchanged content assets/articles-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/projects-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/house-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/life-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/site-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/timeline-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/garden-data.js",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/images/garden-graph.svg",
+      "passed": true
+    },
+    {
+      "name": "Unchanged content assets/site-snapshot.js",
+      "passed": true
+    },
+    {
+      "name": "All box shadows use the three registered tokens",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Both muted declarations are identical to baseline",
+      "passed": true
+    },
+    {
+      "name": "No runtime files added",
+      "passed": true
+    },
+    {
+      "name": "paper initial sticky header and fixed reader measure",
+      "passed": true,
+      "detail": {
+        "header": 88,
+        "mainTop": 88,
+        "position": "sticky",
+        "blur": "blur(8px)",
+        "background": "color(srgb 0.980392 0.960784 0.92549 / 0.85)",
+        "reader": {
+          "width": 720,
+          "font": "16px",
+          "lineHeight": "33.6px"
+        },
+        "fontSmoothing": "antialiased",
+        "rendering": "optimizelegibility"
+      }
+    },
+    {
+      "name": "paper compact 64px header keeps the 88px document footprint",
+      "passed": true,
+      "detail": {
+        "header": 64,
+        "top": 0,
+        "mainTop": 88,
+        "progress": {
+          "z": "100",
+          "top": 0,
+          "height": 2,
+          "display": "block"
+        },
+        "headerZ": "95"
+      }
+    },
+    {
+      "name": "paper reading progress stays above the header",
+      "passed": true,
+      "detail": {
+        "z": "100",
+        "top": 0,
+        "height": 2,
+        "display": "block"
+      }
+    },
+    {
+      "name": "paper anchored first paragraph is clear of the sticky header",
+      "passed": true,
+      "detail": {
+        "paragraphTop": 92.1875,
+        "headerBottom": 64,
+        "scrollPadding": "92px"
+      }
+    },
+    {
+      "name": "paper complete article scroll reveals all content",
+      "passed": true
+    },
+    {
+      "name": "paper dialog uses its registered shadow",
+      "passed": true
+    },
+    {
+      "name": "night initial sticky header and fixed reader measure",
+      "passed": true,
+      "detail": {
+        "header": 88,
+        "mainTop": 88,
+        "position": "sticky",
+        "blur": "blur(8px)",
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "reader": {
+          "width": 720,
+          "font": "16px",
+          "lineHeight": "33.6px"
+        },
+        "fontSmoothing": "antialiased",
+        "rendering": "optimizelegibility"
+      }
+    },
+    {
+      "name": "night compact 64px header keeps the 88px document footprint",
+      "passed": true,
+      "detail": {
+        "header": 64,
+        "top": 0,
+        "mainTop": 88,
+        "progress": {
+          "z": "100",
+          "top": 0,
+          "height": 2,
+          "display": "block"
+        },
+        "headerZ": "95"
+      }
+    },
+    {
+      "name": "night reading progress stays above the header",
+      "passed": true,
+      "detail": {
+        "z": "100",
+        "top": 0,
+        "height": 2,
+        "display": "block"
+      }
+    },
+    {
+      "name": "night anchored first paragraph is clear of the sticky header",
+      "passed": true,
+      "detail": {
+        "paragraphTop": 92.1875,
+        "headerBottom": 64,
+        "scrollPadding": "92px"
+      }
+    },
+    {
+      "name": "night complete article scroll reveals all content",
+      "passed": true
+    },
+    {
+      "name": "night dialog uses its registered shadow",
+      "passed": true
+    },
+    {
+      "name": "Marquee starts paused outside the viewport",
+      "passed": true
+    },
+    {
+      "name": "Marquee runs in view and pauses on hover",
+      "passed": true,
+      "detail": {
+        "running": "running",
+        "hoverAdvance": 0
+      }
+    },
+    {
+      "name": "Marquee pauses again after leaving the viewport",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion leaves the marquee static",
+      "passed": true
+    },
+    {
+      "name": "Heatmap is not marked seen before its first appearance",
+      "passed": true
+    },
+    {
+      "name": "Heatmap first appearance writes the session marker",
+      "passed": true
+    },
+    {
+      "name": "Heatmap does not replay after a reload in the same session",
+      "passed": true
+    },
+    {
+      "name": "Desk remains static while entrance is still running",
+      "passed": true,
+      "detail": {
+        "ready": false,
+        "x": 0,
+        "at": 576.0999999996275
+      }
+    },
+    {
+      "name": "Desk takes over after the approximately 700ms entrance",
+      "passed": true,
+      "detail": {
+        "x": 0.976,
+        "elapsed": 699,
+        "introClasses": 0
+      }
+    },
+    {
+      "name": "Keyboard focus still clears desktop parallax",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion keeps desktop parallax disabled",
+      "passed": true
+    },
+    {
+      "name": "Navigation and metadata sizes preserved index.html",
+      "passed": true,
+      "detail": {
+        "before": [
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "nav-search",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "nav-contact",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-room-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-now-label",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-now-label",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-section-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-section-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "home-room-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "home-section-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "journal-meta",
+            "font": "10px",
+            "spacing": "normal"
+          },
+          {
+            "class": "journal-meta",
+            "font": "10px",
+            "spacing": "normal"
+          },
+          {
+            "class": "journal-meta",
+            "font": "10px",
+            "spacing": "normal"
+          }
+        ],
+        "after": [
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "nav-search",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "nav-contact",
+            "font": "13px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-room-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-now-label",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-now-label",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "",
+            "font": "11px",
+            "spacing": "normal"
+          },
+          {
+            "class": "home-section-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-bento-kicker",
+            "font": "10px",
+            "spacing": "1.5px"
+          },
+          {
+            "class": "home-section-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "home-room-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "home-section-kicker",
+            "font": "10px",
+            "spacing": "1.7px"
+          },
+          {
+            "class": "journal-meta",
+            "font": "10px",
+            "spacing": "normal"
+          },
+          {
+            "class": "journal-meta",
+            "font": "10px",
+            "spacing": "normal"
+          },
+          {
+            "class": "journal-meta",
+            "font": "10px",
+            "spacing": "normal"
+          }
+        ],
+        "reason": "Compare the rendered metadata, not the font inherited by a text-free parent ul."
+      }
+    },
+    {
+      "name": "Navigation and metadata sizes preserved life.html",
+      "passed": true
+    },
+    {
+      "name": "Navigation and metadata sizes preserved workbench.html",
+      "passed": true
+    },
+    {
+      "name": "Navigation and metadata sizes preserved article.html?id=hello-world",
+      "passed": true
+    },
+    {
+      "name": "Desktop cache advances to 1.5.0 and stays at 75 resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.5.0",
+          "count": 75
+        }
+      ]
+    },
+    {
+      "name": "No desktop script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "external": [],
+  "failures": [],
+  "verdict": "PASS",
+  "rechecks": [
+    {
+      "reason": "Use document scroll-padding for the compact header, including sections without ids. Compare actual note text rather than its text-free list wrapper.",
+      "checks": 3
+    }
+  ]
+}

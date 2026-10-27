@@ -1,7 +1,7 @@
 /* Progressive enhancement: content is visible until motion.js opts an item in. */
 @view-transition { navigation: auto; }
-::view-transition-old(root) { animation: site-vt-out .22s ease both; }
-::view-transition-new(root) { animation: site-vt-in .32s ease both; }
+::view-transition-old(root) { animation: site-vt-out var(--duration-fast) var(--ease-out) both; }
+::view-transition-new(root) { animation: site-vt-in var(--duration-normal) var(--ease-out) both; }
 @keyframes site-vt-out { to { opacity: 0; } }
 @keyframes site-vt-in { from { opacity: 0; transform: translateY(8px); } }
 
@@ -10,20 +10,20 @@
 ::view-transition-old(brand) { animation: none; opacity: 0; }
 ::view-transition-new(brand) { animation: none; opacity: 1; }
 
-.motion-intro { animation: site-intro .45s ease-out var(--intro-delay, 0ms) both; }
+.motion-intro { animation: site-intro .45s var(--ease-out) var(--intro-delay, 0ms) both; }
 @keyframes site-intro {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: none; }
 }
 .bio-highlight { background-repeat: no-repeat; background-size: 100% 100%; }
-.motion-highlight { animation: site-highlight .6s ease-out .08s both; }
+.motion-highlight { animation: site-highlight .6s var(--ease-out) .08s both; }
 @keyframes site-highlight {
   from { background-size: 0% 100%; }
   to { background-size: 100% 100%; }
 }
 
 .motion-pending { opacity: 0; transform: translateY(12px); }
-.motion-reveal { animation: site-reveal .5s ease-out var(--reveal-delay, 0ms) both; }
+.motion-reveal { animation: site-reveal .5s var(--ease-out) var(--reveal-delay, 0ms) both; }
 @keyframes site-reveal {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: none; }
@@ -32,7 +32,7 @@
 .site-header .site-mark-door {
   transform-box: fill-box;
   transform-origin: left center;
-  transition: transform .3s ease;
+  transition: transform var(--duration-normal) var(--ease-out);
 }
 .site-header .brand:hover .site-mark-door,
 .site-header .brand:focus-visible .site-mark-door {

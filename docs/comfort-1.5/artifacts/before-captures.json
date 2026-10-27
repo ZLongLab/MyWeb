@@ -1,0 +1,115 @@
+{
+  "stage": "before",
+  "baseline": "c929d13",
+  "desktopOnly": true,
+  "records": [
+    {
+      "route": "index.html",
+      "width": 1280,
+      "theme": "paper",
+      "shot": "index-1280-paper.png"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "index-1440-paper.png"
+    },
+    {
+      "route": "index.html",
+      "width": 1920,
+      "theme": "paper",
+      "shot": "index-1920-paper.png"
+    },
+    {
+      "route": "projects.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "projects-1440-paper.png"
+    },
+    {
+      "route": "project.html?id=recallai",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "project-1440-paper.png"
+    },
+    {
+      "route": "articles.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "articles-1440-paper.png"
+    },
+    {
+      "route": "article.html?id=how-this-site-grew",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "article-1440-paper.png"
+    },
+    {
+      "route": "about.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "about-1440-paper.png"
+    },
+    {
+      "route": "guestbook.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "guestbook-1440-paper.png"
+    },
+    {
+      "route": "workbench.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "workbench-1440-paper.png"
+    },
+    {
+      "route": "now.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "now-1440-paper.png"
+    },
+    {
+      "route": "uses.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "uses-1440-paper.png"
+    },
+    {
+      "route": "life.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "life-1440-paper.png"
+    },
+    {
+      "route": "links.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "links-1440-paper.png"
+    },
+    {
+      "route": "colophon.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "colophon-1440-paper.png"
+    },
+    {
+      "route": "404.html",
+      "width": 1440,
+      "theme": "paper",
+      "shot": "404-1440-paper.png"
+    },
+    {
+      "route": "index.html",
+      "width": 1440,
+      "theme": "night",
+      "shot": "index-1440-night.png"
+    },
+    {
+      "route": "article.html?id=how-this-site-grew",
+      "width": 1440,
+      "theme": "night",
+      "shot": "article-1440-night.png"
+    }
+  ]
+}

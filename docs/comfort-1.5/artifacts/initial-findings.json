@@ -1,0 +1,9 @@
+{
+  "aboutNight": {
+    "minimum": 4.24531919806806,
+    "affected": "Muted sentence-ending punctuation touching the marker background",
+    "correction": "Desktop night about marker alpha .22 to .12; muted unchanged"
+  },
+  "probeCorrection": "404 keeps its existing 720px inner measure; outer header/footer remain 1040px.",
+  "metadataCorrection": "Room kickers and metadata excluded from the body-size increase."
+}

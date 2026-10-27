@@ -1,0 +1,160 @@
+{
+  "shadows": [
+    {
+      "file": "details.css",
+      "type": "shadow",
+      "from": "0 1px 2px color-mix(in srgb, var(--c-clay) 6%, transparent), 0 8px 20px -6px color-mix(in srgb, var(--ink) 18%, transparent)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "details.css",
+      "type": "shadow",
+      "from": "0 5px 18px color-mix(in srgb, var(--ink) 12%, transparent)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "guestbook.css",
+      "type": "shadow",
+      "from": "8px 10px 0 #e5eadc",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "guestbook.css",
+      "type": "shadow",
+      "from": "0 0 0 3px #b8c99a36",
+      "to": "none; outline: 2px solid var(--control-focus); outline-offset: 2px"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 4px 12px rgba(43, 91, 70, .18)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 1px 2px rgba(62,45,25,.06), 0 16px 32px -12px rgba(62,45,25,.18)",
+      "to": "var(--shadow-lift)"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 1px 2px rgba(62,45,25,.06), 0 16px 32px -12px rgba(62,45,25,.18)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 1px 2px rgba(62,45,25,.06), 0 16px 32px -12px rgba(62,45,25,.18)",
+      "to": "var(--shadow-lift)"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 8px 14px color-mix(in srgb, var(--ink) 7%, transparent)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 3px 8px color-mix(in srgb, var(--ink) 9%, transparent)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "home.css",
+      "type": "shadow",
+      "from": "0 0 0 1px var(--global-accent-text), 0 5px 10px color-mix(in srgb, var(--ink) 12%, transparent)",
+      "to": "none; outline: 2px solid var(--control-focus); outline-offset: 2px"
+    },
+    {
+      "file": "house.css",
+      "type": "shadow",
+      "from": "0 1px 2px rgba(62,45,25,.06), 0 16px 32px -12px rgba(62,45,25,.18)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "media-viewer.css",
+      "type": "shadow",
+      "from": "0 24px 90px #13231e44",
+      "to": "var(--shadow-dialog)"
+    },
+    {
+      "file": "media-viewer.css",
+      "type": "shadow",
+      "from": "0 8px 24px #20352a22",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "night.css",
+      "type": "shadow",
+      "from": "0 0 0 3px #82b69722",
+      "to": "none; outline: 2px solid var(--control-focus); outline-offset: 2px"
+    },
+    {
+      "file": "night.css",
+      "type": "shadow",
+      "from": "0 0 0 3px #e6937220",
+      "to": "none; outline: 2px solid var(--c-clay); outline-offset: 2px"
+    },
+    {
+      "file": "night.css",
+      "type": "shadow",
+      "from": "0 24px 90px #00000066",
+      "to": "var(--shadow-dialog)"
+    },
+    {
+      "file": "search.css",
+      "type": "shadow",
+      "from": "0 24px 90px #1b302a33",
+      "to": "var(--shadow-dialog)"
+    },
+    {
+      "file": "seasons.css",
+      "type": "shadow",
+      "from": "-2px 0 7px rgba(235, 171, 81, .22)",
+      "to": "none"
+    },
+    {
+      "file": "site-theme.css",
+      "type": "shadow",
+      "from": "0 12px 28px -6px rgba(25, 28, 26, .14), 0 2px 6px rgba(25, 28, 26, .04)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "site-theme.css",
+      "type": "shadow",
+      "from": "0 4px 12px rgba(43, 91, 70, .16)",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "site-theme.css",
+      "type": "shadow",
+      "from": "0 0 0 3px #3e5e4814",
+      "to": "none; outline: 2px solid var(--control-focus); outline-offset: 2px"
+    },
+    {
+      "file": "site-theme.css",
+      "type": "shadow",
+      "from": "0 0 0 3px #a9554012",
+      "to": "none; outline: 2px solid var(--c-clay); outline-offset: 2px"
+    },
+    {
+      "file": "site-theme.css",
+      "type": "shadow",
+      "from": "0 24px 90px #26352329",
+      "to": "var(--shadow-dialog)"
+    },
+    {
+      "file": "site-theme.css",
+      "type": "shadow",
+      "from": "0 12px 25px #30382c12",
+      "to": "var(--shadow-near)"
+    },
+    {
+      "file": "styles.css",
+      "type": "shadow",
+      "from": "rgb(229, 234, 220) 0px 0px 0px 4px",
+      "to": "var(--shadow-near)"
+    }
+  ]
+}

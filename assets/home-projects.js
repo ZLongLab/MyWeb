@@ -217,10 +217,13 @@
   var stamp = document.querySelector('[data-desk-version]'); if (stamp && workbench.updates && workbench.updates[0]) stamp.textContent = 'v' + workbench.updates[0].version.replace(/\.0$/, '');
   var band = document.getElementById('home-garden-band'), graph = window.SITE_GARDEN_GRAPH || {};
   if (band && graph.eligible && graph.nodes && graph.edges) { band.hidden = false; band.querySelector('img').height = graph.height || 250; band.querySelector('img').alt = '文章花园缩略图：' + graph.nodes.length + ' 篇记录，' + graph.edges.length + ' 条引用；完整图请进入书房。'; band.querySelector('[data-garden-summary]').textContent = graph.nodes.length + ' 篇记录 · ' + graph.edges.length + ' 条小径'; }
-  var desk = document.querySelector('.home-showcase'), fine = window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)'), frame = 0, point = [0, 0];
+  var desk = document.querySelector('.home-showcase'), fine = window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)'), frame = 0, point = [0, 0], deskReady = false;
   function resetDesk() { cancelAnimationFrame(frame); frame = 0; point = [0, 0]; if (desk) { desk.style.setProperty('--desk-x', '0'); desk.style.setProperty('--desk-y', '0'); } }
   if (desk) {
-    desk.addEventListener('pointermove', function (event) { if (!fine.matches || reduce.matches || event.pointerType === 'touch' || desk.contains(document.activeElement)) return resetDesk(); var b = desk.getBoundingClientRect(); point = [Math.max(-1, Math.min(1, (event.clientX - b.left) / b.width * 2 - 1)), Math.max(-1, Math.min(1, (event.clientY - b.top) / b.height * 2 - 1))]; if (!frame) frame = requestAnimationFrame(function () { frame = 0; desk.style.setProperty('--desk-x', point[0].toFixed(3)); desk.style.setProperty('--desk-y', point[1].toFixed(3)); }); });
+    function releaseDesk() { deskReady = true; resetDesk(); }
+    if (window.SITE_MOTION && window.SITE_MOTION.introReady) releaseDesk();
+    else document.addEventListener('myweb:intro-complete', releaseDesk, { once: true });
+    desk.addEventListener('pointermove', function (event) { if (!deskReady || !fine.matches || reduce.matches || event.pointerType === 'touch' || desk.contains(document.activeElement)) return resetDesk(); var b = desk.getBoundingClientRect(); point = [Math.max(-1, Math.min(1, (event.clientX - b.left) / b.width * 2 - 1)), Math.max(-1, Math.min(1, (event.clientY - b.top) / b.height * 2 - 1))]; if (!frame) frame = requestAnimationFrame(function () { frame = 0; desk.style.setProperty('--desk-x', point[0].toFixed(3)); desk.style.setProperty('--desk-y', point[1].toFixed(3)); }); });
     desk.addEventListener('pointerleave', resetDesk); desk.addEventListener('focusin', resetDesk); fine.addEventListener('change', resetDesk); reduce.addEventListener('change', resetDesk); window.addEventListener('pagehide', resetDesk);
   }
 })();

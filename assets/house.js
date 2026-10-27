@@ -23,6 +23,7 @@
   if (footer && rooms.length) {
     footer.classList.add('house-footer');
     var inner = el('div', 'footer-inner house-footer-inner container');
+    if (['home', 'projects', 'project'].indexOf(page) !== -1) inner.classList.add('container-wide');
     var top = el('div', 'house-footer-top');
     top.append(link((window.SITE_DATA || {}).siteTitle || '有间小站', 'index.html', 'footer-brand'), el('p', 'house-footer-caption', '一所放作品、手记，也给生活留位置的小房子。'));
     var plan = el('nav', 'house-floorplan'); plan.setAttribute('aria-label', '房间平面图');
@@ -64,9 +65,16 @@
   var heatmap = document.querySelector('[data-heatmap]');
   if (heatmap && 'IntersectionObserver' in window) {
     var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (!reducedMotion.matches) {
+    var heatmapSeen = true;
+    try { heatmapSeen = sessionStorage.getItem('myweb_heatmap_played_v1') === '1'; }
+    catch (error) { /* Without session storage, leave this optional animation quiet. */ }
+    if (!reducedMotion.matches && !heatmapSeen) {
       var heatmapObserver = new IntersectionObserver(function (entries) {
-        if (entries.some(function (entry) { return entry.isIntersecting; })) { heatmap.classList.add('is-growing'); heatmapObserver.disconnect(); }
+        if (entries.some(function (entry) { return entry.isIntersecting; })) {
+          try { sessionStorage.setItem('myweb_heatmap_played_v1', '1'); heatmap.classList.add('is-growing'); }
+          catch (error) { /* Restricted storage keeps the chart static. */ }
+          heatmapObserver.disconnect();
+        }
       }, { threshold: .15 });
       heatmapObserver.observe(heatmap);
       window.addEventListener('pagehide', function () { heatmapObserver.disconnect(); }, { once: true });
