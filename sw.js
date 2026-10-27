@@ -4,7 +4,7 @@
 // and external links are deliberately absent, even if the host can serve them.
 const BASE = new URL('./', self.location.href);
 const CACHE_PREFIX = 'myweb-shell-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + '1.4.0';
+const CACHE_NAME = CACHE_PREFIX + '1.4.1';
 const APP_FILES = [
   'assets/images/recallai-preview-960.webp',
   'assets/images/recallai-preview-640.webp',

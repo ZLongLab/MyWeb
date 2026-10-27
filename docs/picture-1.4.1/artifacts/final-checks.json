@@ -1,0 +1,190 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Preserved assets/articles-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved assets/life-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved assets/house-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved assets/site-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved assets/timeline-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved assets/site-snapshot.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved assets/projects-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserved docs/entrance-1.4/real-device-checklist.md",
+      "passed": true
+    },
+    {
+      "name": "Physical-device checklist still has blank results",
+      "passed": true
+    },
+    {
+      "name": "Real now content is centred, removing the long blank strip",
+      "passed": true,
+      "detail": {
+        "before": {
+          "height": 325.1875,
+          "largestEmptyVerticalGap": 97.40625,
+          "heatmapUnusedWidth": 117.86885245901641
+        },
+        "after": {
+          "height": 361.0625,
+          "largestEmptyVerticalGap": 72.09375,
+          "heatmapUnusedWidth": 0.013831967213150165
+        }
+      }
+    },
+    {
+      "name": "Heatmap fills its real aspect ratio without a right-hand blank strip",
+      "passed": true,
+      "detail": {
+        "before": 117.86885245901641,
+        "after": 0.013831967213150165
+      }
+    },
+    {
+      "name": "42 audited layouts have no overflow, ellipsis clipping or script errors",
+      "passed": true
+    },
+    {
+      "name": "Footer descriptions align within 4px in every paired row",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "paper window / panel / note radii are 10 / 9 / 6",
+      "passed": true
+    },
+    {
+      "name": "paper spring selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "paper summer selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "paper autumn selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "paper winter selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "night window / panel / note radii are 10 / 9 / 6",
+      "passed": true
+    },
+    {
+      "name": "night spring selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "night summer selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "night autumn selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "night winter selected card stays on top with visible bounds",
+      "passed": true
+    },
+    {
+      "name": "paper contact shadow uses the shared near token",
+      "passed": true
+    },
+    {
+      "name": "night contact shadow uses the shared near token",
+      "passed": true
+    },
+    {
+      "name": "Desktop parallax remains bounded",
+      "passed": true
+    },
+    {
+      "name": "Keyboard focus resets parallax",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion leaves desk static",
+      "passed": true
+    },
+    {
+      "name": "File mode window still opens a 10px media viewer",
+      "passed": true
+    },
+    {
+      "name": "File search has complete results in the shared panel family",
+      "passed": true
+    },
+    {
+      "name": "Touch input cannot activate desk parallax",
+      "passed": true
+    },
+    {
+      "name": "Updated SW cache has exactly 75 resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.4.1",
+          "count": 75
+        }
+      ]
+    },
+    {
+      "name": "Offline SVG is the exact approved composition",
+      "passed": true
+    },
+    {
+      "name": "Cached home keeps the flow note, graph and version",
+      "passed": true
+    },
+    {
+      "name": "Cached study retains all six approved nodes",
+      "passed": true
+    },
+    {
+      "name": "Offline unknown path remains a genuine 404",
+      "passed": true
+    },
+    {
+      "name": "Reconnect preserves focus",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors or external requests",
+      "passed": true,
+      "detail": {
+        "errors": [],
+        "external": []
+      }
+    }
+  ],
+  "notVerified": [
+    "Physical mobile device",
+    "OS PWA installation and shortcut menu",
+    "Firefox/Safari",
+    "Screen reader"
+  ]
+}

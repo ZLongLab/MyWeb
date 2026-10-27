@@ -69,6 +69,18 @@ html :is(a, button, input, textarea, select, summary, [tabindex]):focus-visible 
 html[data-theme="night"] body.is-late-night .site-header .brand-mark::after { opacity: .55; }
 .door-thanks { position: absolute; left: 0; top: calc(100% + 6px); width: max-content; max-width: 180px; padding: 4px 8px; border: 1px solid var(--line); border-radius: 4px; color: var(--c-clay); background: var(--bg-paper); font: 11px/1.8 var(--font); opacity: 0; transform: translateY(-3px); transition: transform .25s ease, opacity .25s ease; pointer-events: none; }
 .brand.is-door-open .door-thanks { opacity: 1; transform: none; }
+/* Shared container family; circles and primary capsules retain their roles. */
+html[data-theme] :is(.home-window, .room-window, .home-work-image, .image-viewer, .photo-strip img) { border-radius: var(--radius-window); }
+html[data-theme] :is(.home-bento, .home-garden-preview, .about-quote, .guestbook-empty, .site-dialog, .site-search-dialog) { border-radius: var(--radius-panel); }
+html[data-theme] :is(.site-nav > a, .site-nav .nav-search, .site-nav .nav-theme, .menu-toggle, .site-search-field, .site-search-result, .garden-view-switch button, .garden-tag-filter button, .article-filters button, .portfolio-filters button, .guestbook-field input, .guestbook-field textarea, .guestbook-export, .button, .tool-initial, .article-cover, .image-preview-hint, .site-toast, .door-thanks, .heatmap-tip, .desk-seasons button) { border-radius: var(--radius-note); }
+.home-window, .room-window, .image-viewer-stage img { box-shadow: var(--shadow-near); }
+.home-showcase .home-window { box-shadow: none; }
+html[data-theme] :is(.site-dialog, .site-search-dialog, .image-viewer) { box-shadow: var(--shadow-lift); }
+.site-toast, .home-primary-link, .desk-seasons button, .about-contact .button, .about-contact-socials a { box-shadow: var(--shadow-near); }
+.desk-seasons [aria-pressed="true"] { box-shadow: var(--shadow-near); }
+.desk-seasons [aria-pressed="true"]:not(:focus-visible) { outline: 1px solid var(--global-accent-text); outline-offset: 1px; }
+html[data-theme] .about-contact .button, html[data-theme] .about-contact-socials a { border-radius: 999px; }
+
 @media (prefers-reduced-motion: reduce) {
   .season-glyph { animation: none !important; transform: none !important; }
   .reading-progress { display: none; }

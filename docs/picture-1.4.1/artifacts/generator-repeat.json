@@ -1,0 +1,16 @@
+{
+  "verdict": "PASS",
+  "records": [
+    {
+      "file": "garden-data.json",
+      "a": "66790e59cab664ec2648f36584c7107ddcd6c0ab9f69b78be824c96cad3c2fbb",
+      "b": "66790e59cab664ec2648f36584c7107ddcd6c0ab9f69b78be824c96cad3c2fbb"
+    },
+    {
+      "file": "garden-graph.svg",
+      "a": "3bdae829012f7017386f6f4c33888e2c688ac05a11722eb419c90280260f08f6",
+      "b": "3bdae829012f7017386f6f4c33888e2c688ac05a11722eb419c90280260f08f6"
+    }
+  ],
+  "publishedSvgMatches": true
+}
