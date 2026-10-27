@@ -28,6 +28,14 @@ html[data-theme="night"] .garden-maturity[data-maturity="evergreen"] { color: #f
 .garden-graph-stage { max-width: 100%; overflow-x: auto; }
 .garden-graph-stage svg { display: block; width: 100%; min-width: 720px; height: auto; }
 .garden-graph-edge { stroke: var(--line); stroke-width: 2; }
+.garden-graph-stage .has-path-focus .garden-graph-node:not(.is-related), .garden-graph-stage .has-path-focus .garden-graph-edge:not(.is-connected) { opacity: .3; }
+.garden-graph-stage .has-path-focus .garden-graph-edge.is-connected { stroke: var(--room-accent-text); stroke-width: 2.5; }
+.article-cover { display: inline-flex; flex: 0 0 44px; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--cover-tone, var(--c-amber)); background: color-mix(in srgb, var(--cover-tone, var(--c-amber)) 10%, transparent); font: 28px/1 var(--font-serif); border-radius: 3px; }
+.article-cover[data-cover-tone="clay"] { --cover-tone: var(--c-clay); }
+.article-cover[data-cover-tone="moss"] { --cover-tone: var(--c-moss); }
+.article-cover[data-cover-tone="amber"] { --cover-tone: var(--c-amber); }
+.article-row.has-cover { position: relative; padding-left: 66px; }
+.article-row.has-cover > .article-cover { position: absolute; left: 0; top: 28px; }
 .garden-graph-node text { fill: var(--ink); font: 14px var(--font); }
 .garden-graph-node .garden-hit { fill: transparent; stroke: transparent; }
 .garden-graph-node:focus-visible { outline: none; }

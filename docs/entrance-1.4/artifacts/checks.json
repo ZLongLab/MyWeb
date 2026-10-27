@@ -1,0 +1,353 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Content unchanged articles-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged life-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged house-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged site-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged timeline-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged garden-data.js",
+      "passed": true
+    },
+    {
+      "name": "Content unchanged images/garden-graph.svg",
+      "passed": true
+    },
+    {
+      "name": "Project copy unchanged except image metadata",
+      "passed": true
+    },
+    {
+      "name": "Approved GitHub data and statistics preserved",
+      "passed": true
+    },
+    {
+      "name": "Original PNG archived byte-for-byte recallai-preview",
+      "passed": true
+    },
+    {
+      "name": "Both WebP variants smaller recallai-preview",
+      "passed": true
+    },
+    {
+      "name": "Original PNG archived byte-for-byte recallai-adoption-preview",
+      "passed": true
+    },
+    {
+      "name": "Both WebP variants smaller recallai-adoption-preview",
+      "passed": true
+    },
+    {
+      "name": "Original PNG archived byte-for-byte documentassistant-preview",
+      "passed": true
+    },
+    {
+      "name": "Both WebP variants smaller documentassistant-preview",
+      "passed": true
+    },
+    {
+      "name": "Original PNG archived byte-for-byte documentassistant-dark-preview",
+      "passed": true
+    },
+    {
+      "name": "Both WebP variants smaller documentassistant-dark-preview",
+      "passed": true
+    },
+    {
+      "name": "Two responsive windows include real dark DocumentAssistant",
+      "passed": true
+    },
+    {
+      "name": "Responsive source offers exactly 640w and 960w",
+      "passed": true
+    },
+    {
+      "name": "Desk has visual weight at 1440",
+      "passed": true
+    },
+    {
+      "name": "Desk has visual weight at 1280",
+      "passed": true
+    },
+    {
+      "name": "Desk has visual weight at 1024",
+      "passed": true
+    },
+    {
+      "name": "Note has 11px readable text and unwrapped labels",
+      "passed": true
+    },
+    {
+      "name": "Note is above both windows",
+      "passed": true
+    },
+    {
+      "name": "Status and stamp come from actual records",
+      "passed": true
+    },
+    {
+      "name": "Season card selects spring",
+      "passed": true
+    },
+    {
+      "name": "Season card selects summer",
+      "passed": true
+    },
+    {
+      "name": "Season card selects autumn",
+      "passed": true
+    },
+    {
+      "name": "Season card selects winter",
+      "passed": true
+    },
+    {
+      "name": "Status follows night and winter immediately",
+      "passed": true
+    },
+    {
+      "name": "Parallax has three bounded depths",
+      "passed": true
+    },
+    {
+      "name": "Keyboard focus clears all parallax",
+      "passed": true
+    },
+    {
+      "name": "Window keyboard opens full 960w WebP",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion disables parallax completely",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion windows do not move on hover",
+      "passed": true
+    },
+    {
+      "name": "Six-room path links have 44px targets",
+      "passed": true
+    },
+    {
+      "name": "Graph band uses the existing static six-node SVG",
+      "passed": true
+    },
+    {
+      "name": "Second work reverses visual layout while DOM stays copy first",
+      "passed": true
+    },
+    {
+      "name": "Three latest entries have decorative 44px covers",
+      "passed": true
+    },
+    {
+      "name": "Mobile scene is below copy and exactly 340px 768",
+      "passed": true
+    },
+    {
+      "name": "Mobile path is locally scrollable 768",
+      "passed": true
+    },
+    {
+      "name": "Mobile scene is below copy and exactly 340px 390",
+      "passed": true
+    },
+    {
+      "name": "Mobile path is locally scrollable 390",
+      "passed": true
+    },
+    {
+      "name": "Article list has six covers",
+      "passed": true
+    },
+    {
+      "name": "Hover lights only incident edges and neighbours",
+      "passed": true
+    },
+    {
+      "name": "Keyboard focus also highlights paths",
+      "passed": true
+    },
+    {
+      "name": "Graph route and return preserve topic view",
+      "passed": true
+    },
+    {
+      "name": "Main and section project images use responsive pictures",
+      "passed": true
+    },
+    {
+      "name": "Project picture still opens media viewer",
+      "passed": true
+    },
+    {
+      "name": "Nested unknown route returns an actual 404 page",
+      "passed": true
+    },
+    {
+      "name": "404 has six local links and working root asset base",
+      "passed": true
+    },
+    {
+      "name": "404 local search is usable",
+      "passed": true
+    },
+    {
+      "name": "File 404 retains search without HTTP",
+      "passed": true
+    },
+    {
+      "name": "File home loads WebP windows and season controls",
+      "passed": true
+    },
+    {
+      "name": "Touch leaves parallax at zero",
+      "passed": true
+    },
+    {
+      "name": "Version 1.4 cache has 75 runtime resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.4.0",
+          "count": 75
+        }
+      ]
+    },
+    {
+      "name": "Offline sign politely confirms cached browsing",
+      "passed": true
+    },
+    {
+      "name": "Offline reload keeps new scene and graph band",
+      "passed": true
+    },
+    {
+      "name": "Offline missing route also returns status 404",
+      "passed": true
+    },
+    {
+      "name": "Reconnect does not steal focus",
+      "passed": true
+    },
+    {
+      "name": "Reconnect clears the single status sign",
+      "passed": true
+    },
+    {
+      "name": "Three PWA shortcuts reuse the existing 192 icon",
+      "passed": true
+    },
+    {
+      "name": "No page script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime external requests",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "images": [
+    {
+      "variants": [
+        {
+          "path": "assets/images/recallai-preview-960.webp",
+          "width": 960,
+          "bytes": 24930,
+          "height": 608
+        },
+        {
+          "path": "assets/images/recallai-preview-640.webp",
+          "width": 640,
+          "bytes": 13264,
+          "height": 404
+        }
+      ],
+      "name": "recallai-preview",
+      "originalBytes": 644891,
+      "originalHash": "6DF70C0E7A120FC69D9A412F93ED2F59BB13D9100450675261E0D06BEAE9CF1C"
+    },
+    {
+      "variants": [
+        {
+          "path": "assets/images/recallai-adoption-preview-960.webp",
+          "width": 960,
+          "bytes": 27838,
+          "height": 608
+        },
+        {
+          "path": "assets/images/recallai-adoption-preview-640.webp",
+          "width": 640,
+          "bytes": 14668,
+          "height": 404
+        }
+      ],
+      "name": "recallai-adoption-preview",
+      "originalBytes": 513682,
+      "originalHash": "698C5F764813D7304BF68CED2B62D6116597694A5196DEA48D534BAD2EB7AC91"
+    },
+    {
+      "variants": [
+        {
+          "path": "assets/images/documentassistant-preview-960.webp",
+          "width": 960,
+          "bytes": 47152,
+          "height": 600
+        },
+        {
+          "path": "assets/images/documentassistant-preview-640.webp",
+          "width": 640,
+          "bytes": 24506,
+          "height": 400
+        }
+      ],
+      "name": "documentassistant-preview",
+      "originalBytes": 246339,
+      "originalHash": "7F1F67BC01A6C57F7E97A8FE961A7E78C4265831C57FE6AB36CE83D9394B641B"
+    },
+    {
+      "variants": [
+        {
+          "path": "assets/images/documentassistant-dark-preview-960.webp",
+          "width": 960,
+          "bytes": 31682,
+          "height": 594
+        },
+        {
+          "path": "assets/images/documentassistant-dark-preview-640.webp",
+          "width": 640,
+          "bytes": 16280,
+          "height": 396
+        }
+      ],
+      "name": "documentassistant-dark-preview",
+      "originalBytes": 225278,
+      "originalHash": "993D91ACB6574B0AD5EF8AFF470B5189BB2C92D6BF8E5F72542348F8E4D548B8"
+    }
+  ],
+  "notVerified": [
+    "Physical mobile device",
+    "OS PWA shortcut menu",
+    "Firefox/Safari",
+    "RecallAI source has no light screenshot; actual dark interface retained in a light frame."
+  ]
+}

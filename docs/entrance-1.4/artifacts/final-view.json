@@ -1,0 +1,57 @@
+{
+  "seasonCards": [
+    {
+      "theme": "paper",
+      "season": "spring",
+      "strip": "rgb(74, 107, 124)",
+      "tone": "#4a6b7c"
+    },
+    {
+      "theme": "paper",
+      "season": "summer",
+      "strip": "rgb(43, 91, 70)",
+      "tone": "#2b5b46"
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "strip": "rgb(200, 90, 50)",
+      "tone": "#c85a32"
+    },
+    {
+      "theme": "paper",
+      "season": "winter",
+      "strip": "rgb(91, 113, 131)",
+      "tone": "#5b7183"
+    },
+    {
+      "theme": "night",
+      "season": "spring",
+      "strip": "rgb(156, 191, 205)",
+      "tone": "#9cbfcd"
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "strip": "rgb(152, 198, 165)",
+      "tone": "#98c6a5"
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "strip": "rgb(231, 160, 120)",
+      "tone": "#e7a078"
+    },
+    {
+      "theme": "night",
+      "season": "winter",
+      "strip": "rgb(166, 189, 208)",
+      "tone": "#a6bdd0"
+    }
+  ],
+  "offlineSign": {
+    "beforeWordmark": true,
+    "opacity": "1",
+    "text": "离线中 · 你看的是缓存里的小站"
+  }
+}

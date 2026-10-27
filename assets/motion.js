@@ -87,7 +87,7 @@
 
   function intro() {
     if (media.matches) return;
-    ['.home-opening h1', '.home-bio', '.home-opening-actions', '.home-now'].forEach(function (item, index) {
+    ['.home-opening h1', '.home-bio', '.home-opening-actions'].forEach(function (item, index) {
       var node = document.querySelector(item);
       if (!node || !node.getClientRects().length) return;
       node.style.setProperty('--intro-delay', index * 80 + 'ms');

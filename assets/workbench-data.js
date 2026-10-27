@@ -1,6 +1,6 @@
 // 工作台只记录已在本站项目中确认的内容；updated 是人工核对日期，不随浏览时间变化。
 window.SITE_WORKBENCH = {
-  updated: '2026-10-26',
+  updated: '2026-10-27',
   focus: [
     { projectId: 'recallai', label: '本地资料检索', description: '整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用边界。' },
     { projectId: 'document-assistant', label: '文档整理', description: '把规则分类、确认归档和备份恢复的取舍写清楚，保留源码与下载版本的区别。' },
@@ -13,6 +13,7 @@ window.SITE_WORKBENCH = {
     { title: 'Capacitor · React · TypeScript', purpose: '移动端适配', description: '用于 Folia 的 Android 适配、构建和界面集成。', projectId: 'folia-android' }
   ],
   updates: [
+    { version: '1.4.0', date: '2026-10-27', title: '玄关里，摆下一张书桌', changes: ['放大双窗与近况便签，接入季节色卡、真实状态和房间路径，穿插文章花园与交错作品。', '截图改为两档WebP，补上404、离线提示、关系图小径高亮与PWA快捷入口。'] },
     { version: '1.3.0', date: '2026-10-26', title: '让季节的光照进每间房', changes: ['接通四季双色光晕，补上书房稿纸、工作台方格、院子圆点，以及夜色星点和页脚纸纹。', '玄关加入房子水印、客厅加入淡等高线；撤下在读，整理旧样式，保留原有内容与交互。'] },
     { version: '1.2.0', date: '2026-10-26', title: '给住下来的小站添一点细节', changes: ['补上留位线描、四季角标、便签折角、工具小签与书房首字下沉。', '统一复制确认，加入阅读进度、浮动回顶和轻量悬停反馈；藏好门牌三连击与深夜留灯，减少动态效果时保持安静。'] },
     { version: '1.1.2', date: '2026-10-26', title: '种下花园的第一组互引', changes: ['加入《这个站是怎么长出来的》，与第一天和第一版两篇记录建立人工互引。', '核对后发布第一张文章关系图；新文保持种子，首页最新记录与本地统计同步更新。'] },

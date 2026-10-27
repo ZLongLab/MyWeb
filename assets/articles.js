@@ -72,6 +72,7 @@
 
   function createArticleRow(article, headingTag, context) {
     var row = createElement('a', 'article-row');
+    row.classList.add('has-cover'); row.appendChild(window.SITE_GARDEN.cover(article));
     row.href = articleHref(article, context);
     row.appendChild(createMeta(article, false));
     row.appendChild(createElement(headingTag || 'h2', 'article-row-title', article.title));

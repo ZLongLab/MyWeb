@@ -12,9 +12,7 @@ window.SITE_PROJECTS = [
     status: '本地开发 · v0.25.0',
     featured: true,
     image: {
-      src: 'assets/images/recallai-preview.png',
-      width: 1424,
-      height: 901,
+      src: 'assets/images/recallai-preview-960.webp', smallSrc: 'assets/images/recallai-preview-640.webp', width: 960, height: 608,
       caption: 'RecallAI 应用界面示例（v0.23）；当前开发版本见上方项目状态。'
     },
     detail: 'RecallAI 是一个面向 Windows 的本地资料检索工具。可以用文件名、文档正文或截图里的文字找资料，再用收藏、标签、备注和专题资料夹继续整理。\n\n检索、文字提取和 OCR 在本机完成，无需账号或 AI API。当前项目状态为本地开发 v0.25.0；下方分别说明使用方式、实现取舍和仍需注意的边界。',
@@ -35,7 +33,7 @@ window.SITE_PROJECTS = [
       {
         heading: '目前进展：旧索引转为收纳副本',
         paragraphs: ['v0.25.0 在“设置与资料源”中加入“转为复制收纳”：把指定来源已经索引的文件复制进资料库，保留原件，以及原来的收藏、标签、备注和专题关系。', '转换前会核对文件状态；来源缺失、内容变化或目标冲突时会给出提示，避免把变化悄悄覆盖过去。下面是隔离示例资料完成转换后的设置页面。'],
-        image: { src: 'assets/images/recallai-adoption-preview.png', width: 1424, height: 901, caption: 'RecallAI v0.25.0：旧索引转为复制收纳后的状态，使用隔离示例资料。' }
+        image: { src: 'assets/images/recallai-adoption-preview-960.webp', smallSrc: 'assets/images/recallai-adoption-preview-640.webp', width: 960, height: 608, caption: 'RecallAI v0.25.0：旧索引转为复制收纳后的状态，使用隔离示例资料。' }
       },
       {
         heading: '使用边界',
@@ -54,11 +52,10 @@ window.SITE_PROJECTS = [
     status: '源码 v0.23.4',
     featured: true,
     image: {
-      src: 'assets/images/documentassistant-preview.png',
-      width: 1920,
-      height: 1200,
+      src: 'assets/images/documentassistant-preview-960.webp', smallSrc: 'assets/images/documentassistant-preview-640.webp', width: 960, height: 600,
       caption: 'DocumentAssistant 文档分类与归档界面示例。'
     },
+    sceneImage: { src: 'assets/images/documentassistant-dark-preview-960.webp', smallSrc: 'assets/images/documentassistant-dark-preview-640.webp', width: 960, height: 594, caption: 'DocumentAssistant 深色界面示例：临时示例资料，非当前默认主题。' },
     detail: '一个 Windows 本地文档管理与截图工具。根据文档内容给出规则分类建议，确认后复制归档并保留来源文件；可检索文件名、正文、标签与备注，支持文档库备份和归档恢复。分类与检索无需 AI API。\n\n截图工具包含原位标注、滚动长截图，以及可选电脑声音的区域录屏。本地整理的源码版本为 0.23.4。',
     sourceUrl: 'https://github.com/ZLongLab/DocumentAssistant',
     articleId: 'documentassistant-confirm-before-archive',

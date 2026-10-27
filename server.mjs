@@ -12,6 +12,16 @@ if (!/^\d+$/.test(portText) || Number(portText) < 1 || Number(portText) > 65535)
 const port = Number(portText);
 const previewUrl = `http://127.0.0.1:${port}`;
 const files = new Map([
+  ['/assets/images/recallai-preview-960.webp', 'image/webp'],
+  ['/assets/images/recallai-preview-640.webp', 'image/webp'],
+  ['/assets/images/recallai-adoption-preview-960.webp', 'image/webp'],
+  ['/assets/images/recallai-adoption-preview-640.webp', 'image/webp'],
+  ['/assets/images/documentassistant-preview-960.webp', 'image/webp'],
+  ['/assets/images/documentassistant-preview-640.webp', 'image/webp'],
+  ['/assets/images/documentassistant-dark-preview-960.webp', 'image/webp'],
+  ['/assets/images/documentassistant-dark-preview-640.webp', 'image/webp'],
+  ['/assets/pictures.js', 'text/javascript; charset=utf-8'],
+  ['/404.html', 'text/html; charset=utf-8'],
   ['/assets/details.css', 'text/css; charset=utf-8'],
   ['/assets/details.js', 'text/javascript; charset=utf-8'],
   ['/assets/images/garden-graph.svg', 'image/svg+xml; charset=utf-8'],
@@ -61,9 +71,6 @@ const files = new Map([
   ['/assets/background.css', 'text/css; charset=utf-8'],
   ['/assets/page-background.svg', 'image/svg+xml; charset=utf-8'],
   ['/assets/site-mark.svg', 'image/svg+xml; charset=utf-8'],
-  ['/assets/images/recallai-preview.png', 'image/png'],
-  ['/assets/images/recallai-adoption-preview.png', 'image/png'],
-  ['/assets/images/documentassistant-preview.png', 'image/png'],
   ['/assets/site-data.js', 'text/javascript; charset=utf-8'],
   ['/assets/app.js', 'text/javascript; charset=utf-8'],
   ['/assets/navigation.js', 'text/javascript; charset=utf-8'],
@@ -117,7 +124,11 @@ const server = createServer(async (request, response) => {
   if (pathname === '/') pathname = '/index.html';
   const mime = files.get(pathname);
   if (!mime) {
-    sendText(request, response, 404, '页面不存在。\n');
+    try {
+      const body = await readFile(new URL('404.html', root));
+      response.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': body.length, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+      response.end(request.method === 'HEAD' ? undefined : body);
+    } catch { sendText(request, response, 404, '页面不存在。\n'); }
     return;
   }
 

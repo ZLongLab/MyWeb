@@ -25,7 +25,7 @@
 
   function previewLink(img, caption) {
     var link = element('a', 'project-image-link');
-    link.href = img.src;
+    link.href = img.querySelector('img').src;
     link.setAttribute('data-image-preview', '');
     link.setAttribute('data-image-caption', caption || project.title + ' 界面示例');
     link.setAttribute('aria-label', project.title + ' · 查看界面大图');
@@ -62,12 +62,7 @@
     if (section.image && /^assets\/images\/[a-zA-Z0-9_-]+\.(?:png|jpe?g|webp|svg)$/.test(section.image.src)) {
       var sectionFigure = element('figure', 'project-figure');
       sectionFigure.dataset.projectId = project.id;
-      var sectionImage = element('img');
-      sectionImage.src = section.image.src;
-      sectionImage.width = section.image.width;
-      sectionImage.height = section.image.height;
-      sectionImage.alt = section.image.caption || project.title + ' 界面示例';
-      sectionImage.loading = 'lazy';
+      var sectionImage = window.SITE_PICTURES.create(section.image);
       sectionFigure.append(previewLink(sectionImage, section.image.caption), element('figcaption', '', section.image.caption || ''));
       block.append(sectionFigure);
     }
@@ -103,11 +98,7 @@
   if (image && /^assets\/images\/[a-zA-Z0-9_-]+\.(?:png|jpe?g|webp|svg)$/.test(image.src)) {
     var figure = document.getElementById('project-figure');
     figure.dataset.projectId = project.id;
-    var img = element('img');
-    img.src = image.src;
-    img.alt = image.caption;
-    img.width = image.width;
-    img.height = image.height;
+    var img = window.SITE_PICTURES.create(image, { priority: true });
     figure.append(previewLink(img, image.caption), element('figcaption', '', image.caption));
     figure.hidden = false;
   }

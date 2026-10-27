@@ -5,6 +5,17 @@
   // or service-worker requests. Installation is optional browser functionality.
   if ((location.protocol !== 'http:' && location.protocol !== 'https:') || !window.isSecureContext) return;
 
+  var footer = document.querySelector('.footer-inner'), offlineSign, clearSign, wasOffline = false;
+  if (footer) {
+    offlineSign = document.createElement('p'); offlineSign.className = 'site-offline'; offlineSign.setAttribute('role', 'status'); offlineSign.setAttribute('aria-live', 'polite'); offlineSign.setAttribute('aria-atomic', 'true'); var wordmark = footer.querySelector('.house-footer-wordmark'); if (wordmark) wordmark.before(offlineSign); else footer.append(offlineSign);
+    function syncConnection() {
+      clearTimeout(clearSign);
+      if (!navigator.onLine) { wasOffline = true; var text = navigator.serviceWorker && navigator.serviceWorker.controller ? '离线中 · 你看的是缓存里的小站' : '离线中 · 小站在当前设备上打开'; if (offlineSign.textContent !== text) offlineSign.textContent = text; offlineSign.classList.add('is-offline'); }
+      else { if (wasOffline) offlineSign.textContent = '已恢复连接。'; wasOffline = false; offlineSign.classList.remove('is-offline'); clearSign = setTimeout(function () { offlineSign.textContent = ''; }, 250); }
+    }
+    window.addEventListener('online', syncConnection); window.addEventListener('offline', syncConnection); window.addEventListener('pageshow', syncConnection); if ('serviceWorker' in navigator) navigator.serviceWorker.addEventListener('controllerchange', syncConnection); syncConnection();
+  }
+
   if (!document.querySelector('link[rel="manifest"]')) {
     var manifest = document.createElement('link');
     manifest.rel = 'manifest';

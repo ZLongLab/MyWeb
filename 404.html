@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <script>(function(){var b=document.createElement('base');b.href=location.protocol==='file:'?new URL('./',location.href).href:(location.hostname==='zlonglab.github.io'&&location.pathname.indexOf('/MyWeb/')===0?'/MyWeb/':'/');document.head.append(b);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="这间房还不存在。回到有间小站，或搜索作品与记录。">
+  <meta name="author" content="ZL"><meta name="theme-color" content="#faf7f2">
+  <title>没有这间房 · 有间小站</title>
+  <script>
+    (function () {
+      var choice = '', season = '';
+      try { choice = localStorage.getItem('myweb_theme_v1') || ''; season = localStorage.getItem('myweb_season_v1') || ''; } catch (error) { /* Preferences are optional. */ }
+      var now = new Date(), hour = now.getHours(), month = now.getMonth() + 1;
+      var mode = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
+      var autoSeason = month >= 3 && month <= 5 ? 'spring' : month >= 6 && month <= 8 ? 'summer' : month >= 9 && month <= 11 ? 'autumn' : 'winter';
+      if (['spring', 'summer', 'autumn', 'winter'].indexOf(season) === -1) season = autoSeason;
+      var root = document.documentElement;
+      root.dataset.theme = mode; root.dataset.season = season;
+      root.style.colorScheme = mode === 'night' ? 'dark' : 'light';
+      var colors = { spring: '#f7f8f3', summer: '#faf7f0', autumn: '#faf5ec', winter: '#f5f6f7' };
+      var color = document.querySelector('meta[name="theme-color"]');
+      if (color) color.content = mode === 'night' ? '#1e2420' : colors[season];
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/search.css">
+  <link rel="stylesheet" href="assets/navigation.css">
+  <link rel="stylesheet" href="assets/site-theme.css">
+  <link rel="stylesheet" href="assets/home.css">
+  <link rel="stylesheet" href="assets/media-viewer.css">
+  <link rel="stylesheet" href="assets/background.css">
+
+  <script src="assets/site-data.js" defer></script>
+  <script src="assets/site-snapshot.js" defer></script>
+  <script src="assets/life-data.js" defer></script>
+  <script src="assets/house-data.js" defer></script>
+  <script src="assets/workbench-data.js" defer></script>
+  <script src="assets/articles-data.js" defer></script>
+  <script src="assets/garden-data.js" defer></script>
+  <script src="assets/timeline-data.js" defer></script>
+  <script src="assets/garden.js" defer></script>
+  <script src="assets/content.js" defer></script>
+  <script src="assets/projects-data.js" defer></script>
+  <script src="assets/navigation.js" defer></script>
+  <script src="assets/app.js" defer></script>
+  <script src="assets/workbench.js" defer></script>
+  <script src="assets/search.js" defer></script>
+
+  <link rel="stylesheet" href="assets/pwa.css">
+  <link rel="stylesheet" href="assets/night.css">
+  <link rel="stylesheet" href="assets/house.css">
+  <link rel="stylesheet" href="assets/seasons.css">
+  <link rel="stylesheet" href="assets/garden.css">
+  <link rel="stylesheet" href="assets/details.css">
+  <link rel="stylesheet" href="assets/motion.css">
+<style>.lost-main{max-width:720px;padding-block:50px 80px}.lost-door{display:block;width:88px;height:96px;color:var(--c-clay);margin-bottom:22px}.lost-main h1{font:600 clamp(32px,5vw,48px)/1.5 var(--serif);margin-bottom:14px}.lost-main>p{color:var(--muted);line-height:1.9}.lost-main #site-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));position:static;gap:12px;margin-top:28px;padding:0;background:transparent;box-shadow:none;border:0}.lost-main #site-nav>a,.lost-main #site-nav>button{display:flex;align-items:center;justify-content:center;min-width:44px;min-height:48px;padding:10px;border:1px solid var(--line);border-radius:5px;color:var(--room-accent-text);background:var(--surface);font:14px/1.8 var(--font)}.lost-main .nav-theme-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.lost-footer{padding-bottom:24px;font-size:12px;color:var(--muted)}@media(max-width:639px){.lost-main #site-nav{grid-template-columns:repeat(2,minmax(0,1fr))}}.lost-footer .site-offline{color:var(--c-clay)}</style>
+</head>
+
+<body class="lost-page" data-page="notfound" data-room="notfound"><a class="skip-link" href="#main">跳到正文</a><header class="site-header container"><a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect class="site-mark-paper" x="2" y="2" width="60" height="60" rx="17" fill="#faf7f0"/><path class="site-mark-outline" d="m12 29 20-16 20 16M18 27v24h28V27" fill="none" stroke="#2b5b46" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path class="site-mark-door" d="m28 35 9-3v20l-9-3Z" fill="#c85a32"/></svg></span><span data-site-title>有间小站</span></a></header><main class="container lost-main" id="main"><svg class="lost-door" viewBox="0 0 64 72" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M13 65V9h37v56M9 65h47M23 65V17l20-5v53M35 38h1"/></svg><p class="eyebrow">404 / ROOM NOT FOUND</p><h1>这里，还没有这间房。</h1><p>地址可能写错了，也可能是东西搬了位置。<br>从下面的门进去，或者搜索一下。</p><nav class="site-nav lost-map" id="site-nav" aria-label="小站平面图"><a href="index.html">玄关 / 首页</a><a href="projects.html">客厅 / 作品</a><a href="articles.html">书房 / 记录</a><a href="workbench.html">工作台</a><a href="life.html">院子</a></nav></main><footer class="container lost-footer"><div class="footer-inner">有间小站 · 给下次来，留一扇门。</div></footer><script src="assets/theme-controls.js" defer></script><script src="assets/details.js" defer></script><script src="assets/motion.js" defer></script><script src="assets/pwa.js" defer></script></body></html>

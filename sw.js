@@ -4,8 +4,18 @@
 // and external links are deliberately absent, even if the host can serve them.
 const BASE = new URL('./', self.location.href);
 const CACHE_PREFIX = 'myweb-shell-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + '1.3.0';
+const CACHE_NAME = CACHE_PREFIX + '1.4.0';
 const APP_FILES = [
+  'assets/images/recallai-preview-960.webp',
+  'assets/images/recallai-preview-640.webp',
+  'assets/images/recallai-adoption-preview-960.webp',
+  'assets/images/recallai-adoption-preview-640.webp',
+  'assets/images/documentassistant-preview-960.webp',
+  'assets/images/documentassistant-preview-640.webp',
+  'assets/images/documentassistant-dark-preview-960.webp',
+  'assets/images/documentassistant-dark-preview-640.webp',
+  'assets/pictures.js',
+  '404.html',
   'assets/details.css',
   'assets/details.js',
   'assets/images/garden-graph.svg',
@@ -62,9 +72,6 @@ const APP_FILES = [
   'assets/guestbook.css',
   'assets/media-viewer.js',
   'assets/media-viewer.css',
-  'assets/images/recallai-preview.png',
-  'assets/images/recallai-adoption-preview.png',
-  'assets/images/documentassistant-preview.png',
   'assets/night.css',
   'assets/theme-controls.js',
   'assets/motion.css',
@@ -101,7 +108,10 @@ self.addEventListener('fetch', event => {
   // strings remain in the address bar and are processed by the page scripts.
   const canonical = new URL(requested.pathname, BASE.origin);
   if (canonical.pathname === BASE.pathname) canonical.pathname += 'index.html';
-  if (!ALLOWED.has(canonical.href)) return;
+  if (!ALLOWED.has(canonical.href)) {
+    if (event.request.mode === 'navigate' && requested.pathname.startsWith(BASE.pathname)) event.respondWith(fetch(event.request).catch(async () => { const cached = await caches.match(new URL('404.html', BASE).href); return cached ? new Response(cached.body, { status: 404, headers: cached.headers }) : Response.error(); }));
+    return;
+  }
 
   event.respondWith((async () => {
     try {

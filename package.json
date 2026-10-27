@@ -1,6 +1,6 @@
 {
   "name": "my-personal-website",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "private": true,
   "description": "有间小站：本地优先、零依赖的个人网站",
   "type": "module",

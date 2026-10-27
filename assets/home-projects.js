@@ -28,9 +28,9 @@
     if (/^\d{4}-\d{2}-\d{2}$/.test(date || '')) time.dateTime = date;
     return time;
   }
-  function windowFrame(project, className, priority) {
-    if (!validImage(project.image)) return null;
-    var image = project.image;
+  function windowFrame(project, className, priority, scene) {
+    var image = scene && project.sceneImage || project.image;
+    if (!validImage(image)) return null;
     var frame = element('a', className);
     frame.href = image.src;
     frame.dataset.projectId = project.id;
@@ -44,15 +44,7 @@
     for (var index = 0; index < 3; index += 1) dots.append(element('i'));
     bar.append(dots, element('span', 'home-window-name', project.title), element('span', 'home-window-local', 'LOCAL'));
     var view = element('span', 'home-window-view');
-    var img = element('img');
-    img.src = image.src;
-    img.alt = image.caption || project.title + ' 应用界面示例';
-    if (image.width) img.width = image.width;
-    if (image.height) img.height = image.height;
-    img.decoding = 'async';
-    if (priority) img.fetchPriority = 'high';
-    else img.loading = 'lazy';
-    view.append(img);
+    view.append(window.SITE_PICTURES.create(image, { priority: priority, sizes: '(max-width: 768px) 85vw, (max-width: 1100px) 44vw, 500px' }));
     chrome.append(bar, view);
     frame.append(chrome, element('span', 'image-preview-hint', '查看大图 ⤢'));
     return frame;
@@ -63,7 +55,7 @@
   if (showcase && featured.some(function (project) { return validImage(project.image); })) {
     showcase.replaceChildren();
     featured.filter(function (project) { return validImage(project.image); }).slice(0, 2).forEach(function (project, index) {
-      showcase.append(windowFrame(project, 'home-shot ' + (index === 0 ? 'home-shot-front' : 'home-shot-back'), index === 0));
+      showcase.append(windowFrame(project, 'home-shot ' + (index === 0 ? 'home-shot-front' : 'home-shot-back'), index === 0, true));
     });
   }
   var recall = projects.find(function (project) { return project.id === 'recallai'; });
@@ -207,9 +199,28 @@
       var category = element('span', 'journal-category', article.category);
       category.dataset.category = article.category;
       meta.append(dateNode(article.date), category, arrow());
-      link.append(copy, meta);
+      link.append(window.SITE_GARDEN.cover(article), copy, meta);
       articleList.append(link);
     });
     if (!articles.length) articleList.append(element('p', 'home-bento-empty', '记录还在整理，稍后再来书房看看。'));
+  }
+  var counts = snapshot.statistics || {};
+  [['projects', '件作品'], ['articles', '篇记录']].forEach(function (entry) { var node = document.querySelector('[data-home-count="' + entry[0] + '"]'); if (node && Number.isInteger(counts[entry[0]])) node.textContent = counts[entry[0]] + ' ' + entry[1]; });
+  var seasonNames = { spring: '春', summer: '夏', autumn: '秋', winter: '冬' };
+  function syncDesk() {
+    var season = document.documentElement.dataset.season, theme = document.documentElement.dataset.theme;
+    document.querySelectorAll('[data-desk-season]').forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.deskSeason === season)); });
+    var weather = document.querySelector('[data-home-weather]'); if (weather) weather.textContent = '此刻 ' + (seasonNames[season] || '秋') + ' / ' + (theme === 'night' ? '夜色' : '纸色');
+  }
+  document.querySelectorAll('[data-desk-season]').forEach(function (button) { button.addEventListener('click', function () { if (window.SITE_THEME) window.SITE_THEME.setSeason(button.dataset.deskSeason); }); });
+  document.addEventListener('myweb:season-change', syncDesk); document.addEventListener('myweb:theme-change', syncDesk); syncDesk();
+  var stamp = document.querySelector('[data-desk-version]'); if (stamp && workbench.updates && workbench.updates[0]) stamp.textContent = 'v' + workbench.updates[0].version.replace(/\.0$/, '');
+  var band = document.getElementById('home-garden-band'), graph = window.SITE_GARDEN_GRAPH || {};
+  if (band && graph.eligible && graph.nodes && graph.edges) { band.hidden = false; band.querySelector('img').alt = '文章花园缩略图：' + graph.nodes.length + ' 篇记录，' + graph.edges.length + ' 条引用；完整图请进入书房。'; band.querySelector('[data-garden-summary]').textContent = graph.nodes.length + ' 篇记录 · ' + graph.edges.length + ' 条小径'; }
+  var desk = document.querySelector('.home-showcase'), fine = window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)'), frame = 0, point = [0, 0];
+  function resetDesk() { cancelAnimationFrame(frame); frame = 0; point = [0, 0]; if (desk) { desk.style.setProperty('--desk-x', '0'); desk.style.setProperty('--desk-y', '0'); } }
+  if (desk) {
+    desk.addEventListener('pointermove', function (event) { if (!fine.matches || reduce.matches || event.pointerType === 'touch' || desk.contains(document.activeElement)) return resetDesk(); var b = desk.getBoundingClientRect(); point = [Math.max(-1, Math.min(1, (event.clientX - b.left) / b.width * 2 - 1)), Math.max(-1, Math.min(1, (event.clientY - b.top) / b.height * 2 - 1))]; if (!frame) frame = requestAnimationFrame(function () { frame = 0; desk.style.setProperty('--desk-x', point[0].toFixed(3)); desk.style.setProperty('--desk-y', point[1].toFixed(3)); }); });
+    desk.addEventListener('pointerleave', resetDesk); desk.addEventListener('focusin', resetDesk); fine.addEventListener('change', resetDesk); reduce.addEventListener('change', resetDesk); window.addEventListener('pagehide', resetDesk);
   }
 })();
