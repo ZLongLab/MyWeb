@@ -1,0 +1,124 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "name": "Articles and approved reference directions unchanged",
+      "passed": true
+    },
+    {
+      "name": "All six maturities and titles unchanged",
+      "passed": true
+    },
+    {
+      "name": "Same generated SVG is embedded for the study and served for home",
+      "passed": true
+    },
+    {
+      "name": "Compact layout and citation radius budget",
+      "passed": true
+    },
+    {
+      "name": "Short labels omit ellipses and keep Latin product names",
+      "passed": true
+    },
+    {
+      "name": "Test-only growth shapes are generated without publishing",
+      "passed": true
+    },
+    {
+      "name": "Band is shorter than the 1.4 reference",
+      "passed": true,
+      "detail": {
+        "before": 287,
+        "after": 247.265625
+      }
+    },
+    {
+      "name": "http study loads all nodes, curves and waiting group",
+      "passed": true
+    },
+    {
+      "name": "http full titles remain accessible",
+      "passed": true
+    },
+    {
+      "name": "http visible labels are complete short labels",
+      "passed": true
+    },
+    {
+      "name": "http paper path stroke remains explicit at 45%",
+      "passed": true
+    },
+    {
+      "name": "http night path stroke remains explicit at 45%",
+      "passed": true
+    },
+    {
+      "name": "http keyboard path highlight preserved",
+      "passed": true
+    },
+    {
+      "name": "http node opens the real article",
+      "passed": true
+    },
+    {
+      "name": "http return restores topics",
+      "passed": true
+    },
+    {
+      "name": "http graph stays local and hit targets exceed 44px",
+      "passed": true
+    },
+    {
+      "name": "file study loads all nodes, curves and waiting group",
+      "passed": true
+    },
+    {
+      "name": "file full titles remain accessible",
+      "passed": true
+    },
+    {
+      "name": "file visible labels are complete short labels",
+      "passed": true
+    },
+    {
+      "name": "file paper path stroke remains explicit at 45%",
+      "passed": true
+    },
+    {
+      "name": "file night path stroke remains explicit at 45%",
+      "passed": true
+    },
+    {
+      "name": "file keyboard path highlight preserved",
+      "passed": true
+    },
+    {
+      "name": "file node opens the real article",
+      "passed": true
+    },
+    {
+      "name": "file return restores topics",
+      "passed": true
+    },
+    {
+      "name": "file graph stays local and hit targets exceed 44px",
+      "passed": true
+    },
+    {
+      "name": "Standalone SVG retains six links and 44px keyboard targets",
+      "passed": true
+    },
+    {
+      "name": "Standalone file links resolve to the actual article",
+      "passed": true
+    },
+    {
+      "name": "No script errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "approvedByOwner": true,
+  "sourceBaseline": "b57acbf"
+}

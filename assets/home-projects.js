@@ -216,7 +216,7 @@
   document.addEventListener('myweb:season-change', syncDesk); document.addEventListener('myweb:theme-change', syncDesk); syncDesk();
   var stamp = document.querySelector('[data-desk-version]'); if (stamp && workbench.updates && workbench.updates[0]) stamp.textContent = 'v' + workbench.updates[0].version.replace(/\.0$/, '');
   var band = document.getElementById('home-garden-band'), graph = window.SITE_GARDEN_GRAPH || {};
-  if (band && graph.eligible && graph.nodes && graph.edges) { band.hidden = false; band.querySelector('img').alt = '文章花园缩略图：' + graph.nodes.length + ' 篇记录，' + graph.edges.length + ' 条引用；完整图请进入书房。'; band.querySelector('[data-garden-summary]').textContent = graph.nodes.length + ' 篇记录 · ' + graph.edges.length + ' 条小径'; }
+  if (band && graph.eligible && graph.nodes && graph.edges) { band.hidden = false; band.querySelector('img').height = graph.height || 250; band.querySelector('img').alt = '文章花园缩略图：' + graph.nodes.length + ' 篇记录，' + graph.edges.length + ' 条引用；完整图请进入书房。'; band.querySelector('[data-garden-summary]').textContent = graph.nodes.length + ' 篇记录 · ' + graph.edges.length + ' 条小径'; }
   var desk = document.querySelector('.home-showcase'), fine = window.matchMedia('(min-width: 769px) and (hover: hover) and (pointer: fine)'), reduce = window.matchMedia('(prefers-reduced-motion: reduce)'), frame = 0, point = [0, 0];
   function resetDesk() { cancelAnimationFrame(frame); frame = 0; point = [0, 0]; if (desk) { desk.style.setProperty('--desk-x', '0'); desk.style.setProperty('--desk-y', '0'); } }
   if (desk) {

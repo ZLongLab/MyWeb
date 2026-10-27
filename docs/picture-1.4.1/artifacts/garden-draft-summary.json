@@ -1,0 +1,25 @@
+{
+  "draft": ".tmp/garden",
+  "published": false,
+  "nodes": {
+    "before": 6,
+    "after": 6,
+    "change": 0
+  },
+  "edges": {
+    "before": 4,
+    "after": 4,
+    "change": 0
+  },
+  "layout": {
+    "version": 2,
+    "height": {
+      "before": 300,
+      "after": 250
+    },
+    "movedNodes": 6,
+    "isolatedNodes": 3
+  },
+  "eligible": true,
+  "warnings": []
+}

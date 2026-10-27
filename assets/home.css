@@ -339,13 +339,14 @@ html[data-theme="night"] .desk-seasons [data-desk-season="winter"] { --season-co
 .home-path i { width: 5px; height: 5px; border: 1px solid currentColor; border-radius: 50%; }
 .home-path a[aria-current], .home-path a:hover { color: var(--global-accent-text); }
 .home-path a[aria-current] i { background: currentColor; }
-.home-garden-band { padding-block: 30px; background: var(--bg-band); border-bottom: 1px solid var(--line); }
+.home-garden-band { padding-block: 22px; background: var(--bg-band); border-bottom: 1px solid var(--line); }
 .home-garden-band[hidden] { display: none; }
 .home-garden-inner { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: 45px; }
 .home-garden-inner h2 { margin: 10px 0; font: 600 27px/1.6 var(--serif); }
 .home-garden-inner p:not(.home-room-kicker) { color: var(--muted); font-size: 13px; line-height: 1.9; }
 .home-garden-inner .home-garden-meta { margin-top: 9px; font-family: var(--mono); font-size: 11px; }
-.home-garden-preview { padding: 16px 8px; background: #faf7f2; border-radius: 4px; }
+.home-garden-preview { padding: 8px; background: #faf7f2; border-radius: 9px; }
+.home-garden-inner .home-garden-preview .home-garden-caption { margin-top: 4px; color: #4a6b7c; font-size: 11px; text-align: center; }
 .home-garden-preview img { display: block; width: 100%; height: auto; }
 .home-work:nth-child(even) .home-work-copy { grid-column: 2; grid-row: 1; }
 .home-work:nth-child(even) .home-work-image { grid-column: 1; grid-row: 1; }

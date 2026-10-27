@@ -30,6 +30,17 @@
     }); });
     return Array.from(groups, function (pair) { return { tag: pair[0], articles: pair[1], counts: pair[1].reduce(function (sum, a) { sum[maturity(a)]++; return sum; }, { seed: 0, growing: 0, evergreen: 0 }) }; }).sort(function (a, b) { return b.articles.length - a.articles.length || a.tag.localeCompare(b.tag, 'zh-CN'); });
   }
+  function reviewedSvg(graph, context) {
+    if (typeof graph.svg !== 'string') return null;
+    var parsed = new DOMParser().parseFromString(graph.svg, 'image/svg+xml'), root = parsed.documentElement;
+    var tags = ['svg', 'title', 'desc', 'style', 'g', 'ellipse', 'path', 'circle', 'rect', 'text', 'a'];
+    if (root.localName !== 'svg' || parsed.querySelector('parsererror') || Array.from(root.querySelectorAll('*')).some(function (node) { return tags.indexOf(node.localName) === -1 || Array.from(node.attributes).some(function (a) { return /^on/i.test(a.name); }); })) return null;
+    if (Array.from(root.querySelectorAll('style')).some(function (style) { return /@import|url\s*\(/i.test(style.textContent); })) return null;
+    var links = Array.from(root.querySelectorAll('.garden-graph-node'));
+    if (links.length !== graph.nodes.length || root.querySelectorAll('.garden-graph-edge').length !== graph.edges.length || !links.every(function (link) { return graph.nodes.some(function (n) { return n.id === link.dataset.articleId && link.getAttribute('aria-label') === n.title; }); })) return null;
+    links.forEach(function (link) { link.setAttribute('href', window.SITE_NAV.detailHref('articles', link.dataset.articleId, context)); });
+    return document.importNode(root, true);
+  }
   function renderGraph(target, articles, context) {
     if (!target) return;
     target.hidden = true;
@@ -37,10 +48,13 @@
     if (!graph.eligible || !validDate(graph.reviewedAt) || !Array.isArray(graph.nodes) || !Array.isArray(graph.edges)) return;
     var edges = articles.flatMap(function (a) { return mentioned(a, articles).map(function (b) { return a.id + '\u0000' + b.id; }); }).sort();
     if (JSON.stringify(edges) !== JSON.stringify(graph.edges.map(function (e) { return e.from + '\u0000' + e.to; }).sort()) || graph.nodes.length !== articles.length) return;
-    if (!graph.nodes.every(function (n) { var a = articles.find(function (a) { return a.id === n.id; }); return a && a.title === n.title && maturity(a) === n.maturity && [n.x, n.y, n.r].every(Number.isFinite) && n.r >= 14 && n.r <= 30; })) return;
+    if (!graph.nodes.every(function (n) { var a = articles.find(function (a) { return a.id === n.id; }); return a && a.title === n.title && maturity(a) === n.maturity && [n.x, n.y, n.r].every(Number.isFinite) && (graph.version >= 2 ? n.r >= 10 && n.r <= 13 && typeof n.label === 'string' : n.r >= 14 && n.r <= 30); })) return;
     if (new Set(graph.edges.flatMap(function (e) { return [e.from, e.to]; })).size < 3) return;
     var stage = target.querySelector('.garden-graph-stage'), list = target.querySelector('ul'); stage.replaceChildren(); list.replaceChildren();
-    var ns = 'http://www.w3.org/2000/svg', svg = document.createElementNS(ns, 'svg');
+    var ns = 'http://www.w3.org/2000/svg', svg = graph.version >= 2 ? reviewedSvg(graph, context) : null;
+    if (graph.version >= 2 && !svg) return;
+    if (!svg) {
+    svg = document.createElementNS(ns, 'svg');
     svg.setAttribute('viewBox', '0 0 900 ' + Math.max(170, graph.height || 170)); svg.setAttribute('role', 'group'); svg.setAttribute('aria-label', '文章引用关系图，可使用 Tab 逐个访问文章');
     graph.edges.forEach(function (e) { var from = graph.nodes.find(function (n) { return n.id === e.from; }), to = graph.nodes.find(function (n) { return n.id === e.to; }); if (!from || !to) return;
       var line = document.createElementNS(ns, 'line'); line.setAttribute('class', 'garden-graph-edge'); line.dataset.from = e.from; line.dataset.to = e.to; ['x1', 'y1', 'x2', 'y2'].forEach(function (key, i) { line.setAttribute(key, String([from.x, from.y, to.x, to.y][i])); }); svg.append(line);
@@ -54,6 +68,7 @@
       link.append(title, hit, circle, text); svg.append(link);
       var li = document.createElement('li'), a = document.createElement('a'); a.href = href; a.textContent = n.title; li.append(a); list.append(li);
     });
+    } else graph.nodes.forEach(function (n) { var li = document.createElement('li'), a = document.createElement('a'); a.href = window.SITE_NAV.detailHref('articles', n.id, context); a.textContent = n.title; li.append(a); list.append(li); });
     var hovered = '', focused = '';
     function highlight() { var id = focused || hovered, related = new Set([id]); graph.edges.forEach(function (edge) { if (edge.from === id || edge.to === id) { related.add(edge.from); related.add(edge.to); } }); svg.classList.toggle('has-path-focus', Boolean(id)); svg.querySelectorAll('.garden-graph-node').forEach(function (node) { node.classList.toggle('is-related', related.has(node.dataset.articleId)); }); svg.querySelectorAll('.garden-graph-edge').forEach(function (edge) { edge.classList.toggle('is-connected', edge.dataset.from === id || edge.dataset.to === id); }); }
     svg.addEventListener('pointerover', function (event) { var node = event.target.closest('.garden-graph-node'); hovered = node ? node.dataset.articleId : ''; highlight(); });
