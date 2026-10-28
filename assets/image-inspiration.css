@@ -10,7 +10,7 @@
 .image-room-preview > a { display:block; padding:9px; border:1px solid var(--line); border-radius:10px; background:var(--bg); box-shadow:var(--shadow-near); transform:rotate(-3deg); width:76%; }
 .image-room-preview img { display:block; width:100%; border-radius:5px; aspect-ratio:10/7; }
 .image-room-preview .image-room-preview-small { position:absolute; width:46%; right:0; bottom:-1px; transform:rotate(5deg); }
-.image-room-preview .image-room-preview-label { margin:8px 0 0; text-align:right; color:var(--muted); font:10px/1.5 var(--mono); }
+.image-room-preview .image-room-preview-label { margin:8px 0 0; text-align:left; padding-left:12px; color:var(--muted); font:10px/1.5 var(--mono),var(--font); }
 .image-room-notice { margin:0 0 25px; padding:12px 0; border-block:1px solid var(--line); color:var(--muted); font-size:12px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:9px 24px; }
 .image-room-notice a { text-decoration:underline; text-underline-offset:4px; color:var(--green); }
 .image-room-tools { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:13px 20px; }
