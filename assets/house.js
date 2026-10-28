@@ -36,7 +36,7 @@
     var bottom = el('div', 'house-footer-bottom');
     bottom.append(el('p', 'house-footer-meta', '本站共 ' + rooms.length + ' 间房 · 上次修缮 ' + (workbench.updated || data.updated || '')));
     var links = el('div', 'house-footer-links');
-    links.append(link('关于 ZL', 'about.html'), link('GitHub ↗', 'https://github.com/ZLongLab'), link('回到顶部 ↑', '#main'));
+    links.append(link('关于 ZL', 'about.html'), link('GitHub ↗', 'https://github.com/ZLongLab'), link('订阅', 'feed.xml'), link('回到顶部 ↑', '#main'));
     links.children[1].target = '_blank'; links.children[1].rel = 'noopener noreferrer';
     bottom.append(links);
     var wordmark = el('div', 'house-footer-wordmark', '有间小站。'); wordmark.setAttribute('aria-hidden', 'true');
@@ -95,6 +95,9 @@
   document.querySelectorAll('[data-snapshot-review]').forEach(function (node) {
     node.textContent = !reviewed ? 'GitHub 快照尚未核对，请运行本地快照脚本。' : age > 14 ? 'GitHub 快照已超过 14 天，请人工核对后更新。上次核对 ' + reviewed : 'GitHub 快照已核对：' + reviewed + '。页面不会实时请求 GitHub。';
     node.classList.toggle('is-stale', age > 14);
+    if (snapshot.github && snapshot.github.status === 'ready') {
+      node.textContent += ' 范围 ' + snapshot.github.from + ' 至 ' + snapshot.github.to + '，共 ' + snapshot.github.total + ' 次公开贡献。';
+    }
   });
   // 现有截图查看器继续接管链接，仅给内页图片加同一套窗口外框。
   document.querySelectorAll('body:not([data-page="home"]) .portfolio-image, body:not([data-page="home"]) .project-image-link').forEach(function (frame) {

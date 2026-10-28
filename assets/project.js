@@ -40,6 +40,7 @@
   document.getElementById('project-title').textContent = project.title;
   document.getElementById('project-summary').textContent = project.summary;
   document.querySelector('meta[name="description"]').content = project.summary;
+  window.SITE_CONTENT.updateDiscovery(document.title, project.summary, 'project.html?id=' + encodeURIComponent(project.id), 'website');
   document.getElementById('project-meta').append(element('span', 'portfolio-category', project.category), element('span', 'portfolio-status', project.status));
   (Array.isArray(project.tags) ? project.tags : []).forEach(function (tag) { document.getElementById('project-tags').append(element('li', '', tag)); });
   String(project.detail || '').split(/\n\s*\n/).filter(Boolean).forEach(function (paragraph) { document.getElementById('project-body').append(element('p', '', paragraph)); });

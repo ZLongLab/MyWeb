@@ -270,6 +270,7 @@
     document.title = article.title + ' · ' + siteTitle;
     var description = document.querySelector('meta[name="description"]');
     if (description) description.setAttribute('content', article.summary);
+    window.SITE_CONTENT.updateDiscovery(document.title, article.summary, 'article.html?id=' + encodeURIComponent(article.id), 'article');
 
     var meta = document.getElementById('article-meta');
     if (meta) meta.replaceChildren(createMeta(article, true));

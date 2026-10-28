@@ -13,7 +13,7 @@ if (!files.includes('index.html') || !files.includes('404.html') || new Set(file
   throw Error('Invalid runtime allowlist.');
 }
 for (const file of files) {
-  if (!/^(?:[a-z0-9-]+\.html|sw\.js|manifest\.webmanifest|assets\/[a-z0-9/_.-]+)$/.test(file)
+  if (!/^(?:[a-z0-9-]+\.html|sw\.js|manifest\.webmanifest|feed\.xml|sitemap\.xml|robots\.txt|assets\/[a-z0-9/_.-]+)$/.test(file)
       || file.split('/').some(part => part === '.' || part === '..')) throw Error('Unsafe runtime path.');
   let current = root;
   for (const part of file.split('/')) {

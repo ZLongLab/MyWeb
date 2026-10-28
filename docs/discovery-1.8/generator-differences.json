@@ -1,0 +1,157 @@
+{
+  "base": "https://zlonglab.github.io/MyWeb/",
+  "image": "https://zlonglab.github.io/MyWeb/assets/images/recallai-preview-960.webp",
+  "metadataDifferences": [
+    {
+      "file": "about.html",
+      "html": {
+        "title": "关于我 · 有间小站",
+        "description": "认识 ZL，一名计算机学生。这里记录实用工具、开源适配和动手过程中的思考。"
+      },
+      "generator": {
+        "title": "关于 ZL · 有间小站",
+        "description": "计算机学生，记录实用工具与把想法做出来的过程。",
+        "url": "https://zlonglab.github.io/MyWeb/about.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "articles.html",
+      "html": {
+        "title": "文章与笔记 · 有间小站",
+        "description": "有间小站的文章与笔记，记录建站过程、正在发生的想法和下一步计划。"
+      },
+      "generator": {
+        "title": "书房 · 有间小站",
+        "description": "开发过程与还在生长的想法",
+        "url": "https://zlonglab.github.io/MyWeb/articles.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "colophon.html",
+      "html": {
+        "title": "房屋说明书 · 有间小站",
+        "description": "ZL 的房屋说明书：一页讲清制作方式、内容原则，以及数据留在哪里。"
+      },
+      "generator": {
+        "title": "说明书 · 有间小站",
+        "description": "制作方式、颜色、原则与版本史",
+        "url": "https://zlonglab.github.io/MyWeb/colophon.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "guestbook.html",
+      "html": {
+        "title": "随手便签（本地） · 有间小站",
+        "description": "有间小站的随手便签。仅保存在当前浏览器，不会发送给站主。"
+      },
+      "generator": {
+        "title": "留言墙 · 有间小站",
+        "description": "只保存在自己浏览器的随手便签",
+        "url": "https://zlonglab.github.io/MyWeb/guestbook.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "index.html",
+      "html": {
+        "title": "有间小站 · 作品与记录",
+        "description": "ZL 的个人小站。一名计算机学生，记录实用工具、开源适配和把想法做出来的过程。"
+      },
+      "generator": {
+        "title": "玄关 · 有间小站",
+        "description": "先坐一会儿，看看这间小站",
+        "url": "https://zlonglab.github.io/MyWeb/index.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "life.html",
+      "html": {
+        "title": "院子 · 有间小站",
+        "description": "ZL 的院子：不急着填满。读到的、听到的、看到的，都可以慢慢留下。"
+      },
+      "generator": {
+        "title": "院子 · 有间小站",
+        "description": "给书、音乐、电影和照片留位置",
+        "url": "https://zlonglab.github.io/MyWeb/life.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "links.html",
+      "html": {
+        "title": "邻居 · 有间小站",
+        "description": "ZL 的邻居：链接后面应当有一句理由，也应当分清参考与朋友。"
+      },
+      "generator": {
+        "title": "邻居 · 有间小站",
+        "description": "设计参考，以及慢慢认识的小站",
+        "url": "https://zlonglab.github.io/MyWeb/links.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "now.html",
+      "html": {
+        "title": "门牌 · 有间小站",
+        "description": "ZL 的门牌：一张带日期的近况，不把忙碌当作进展。"
+      },
+      "generator": {
+        "title": "门牌 · 有间小站",
+        "description": "正在做的事，与暂时放下的事",
+        "url": "https://zlonglab.github.io/MyWeb/now.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "projects.html",
+      "html": {
+        "title": "作品 · 有间小站",
+        "description": "有间小站的作品与项目，记录想法变成现实的过程。"
+      },
+      "generator": {
+        "title": "客厅 · 有间小站",
+        "description": "把日常的问题，慢慢做成工具",
+        "url": "https://zlonglab.github.io/MyWeb/projects.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "uses.html",
+      "html": {
+        "title": "工具墙 · 有间小站",
+        "description": "ZL 的工具墙：记录已经确认的开发工具，以及为什么在这个小站里用它。"
+      },
+      "generator": {
+        "title": "工具墙 · 有间小站",
+        "description": "已确认的工具与使用理由",
+        "url": "https://zlonglab.github.io/MyWeb/uses.html",
+        "type": "website"
+      }
+    },
+    {
+      "file": "workbench.html",
+      "html": {
+        "title": "工作台 · 有间小站",
+        "description": "ZL 的工作台：最近的项目进展、实现用到的技术、小站更新与本站说明。"
+      },
+      "generator": {
+        "title": "工作台 · 有间小站",
+        "description": "项目、技术和维护清单",
+        "url": "https://zlonglab.github.io/MyWeb/workbench.html",
+        "type": "website"
+      }
+    }
+  ],
+  "fallbackPages": [
+    "404.html",
+    "article.html",
+    "project.html",
+    "video-prompts.html"
+  ],
+  "sitemapNote": "Preserved generator output: 23 URLs; no standalone video-prompts.html, 404.html or bare detail shells. No clean URLs generated.",
+  "robotsNote": "Generator emits no robots.txt; added Allow and Sitemap only."
+}

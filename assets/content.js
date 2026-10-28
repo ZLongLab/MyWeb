@@ -29,5 +29,16 @@
     return others.filter(related).concat(others.filter(function (article) { return !related(article); })).slice(0, 2);
   }
 
-  window.SITE_CONTENT = { sortArticles: sortArticles, readingTime: readingTime, relatedArticles: relatedArticles };
+  // Metadata only: share URLs are official even when this page runs from file://.
+  function updateDiscovery(title, description, path, type) {
+    var official = new URL(path, 'https://zlonglab.github.io/MyWeb/');
+    if (official.origin !== 'https://zlonglab.github.io' || official.pathname.indexOf('/MyWeb/') !== 0) return;
+    var values = { 'og:title': title, 'og:description': description, 'og:url': official.href, 'og:type': type,
+      'twitter:title': title, 'twitter:description': description, 'twitter:url': official.href };
+    Object.keys(values).forEach(function (key) {
+      var meta = document.querySelector('meta[' + (key.indexOf('og:') === 0 ? 'property' : 'name') + '="' + key + '"]');
+      if (meta) meta.content = values[key];
+    });
+  }
+  window.SITE_CONTENT = { sortArticles: sortArticles, readingTime: readingTime, relatedArticles: relatedArticles, updateDiscovery: updateDiscovery };
 })();

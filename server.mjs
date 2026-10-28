@@ -13,6 +13,9 @@ if (!/^\d+$/.test(portText) || Number(portText) < 1 || Number(portText) > 65535)
 const port = Number(portText);
 const previewUrl = `http://127.0.0.1:${port}`;
 const files = new Map([
+  ['/feed.xml', 'application/rss+xml; charset=utf-8'],
+  ['/sitemap.xml', 'application/xml; charset=utf-8'],
+  ['/robots.txt', 'text/plain; charset=utf-8'],
   ['/video-prompts.html', 'text/html; charset=utf-8'],
   ['/assets/video-templates.js', 'text/javascript; charset=utf-8'],
   ['/assets/video-prompts-core.js', 'text/javascript; charset=utf-8'],

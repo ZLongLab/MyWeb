@@ -1,0 +1,140 @@
+{
+  "index.html": {
+    "title": "玄关 · 有间小站",
+    "description": "先坐一会儿，看看这间小站",
+    "url": "https://zlonglab.github.io/MyWeb/index.html",
+    "type": "website"
+  },
+  "now.html": {
+    "title": "门牌 · 有间小站",
+    "description": "正在做的事，与暂时放下的事",
+    "url": "https://zlonglab.github.io/MyWeb/now.html",
+    "type": "website"
+  },
+  "projects.html": {
+    "title": "客厅 · 有间小站",
+    "description": "把日常的问题，慢慢做成工具",
+    "url": "https://zlonglab.github.io/MyWeb/projects.html",
+    "type": "website"
+  },
+  "articles.html": {
+    "title": "书房 · 有间小站",
+    "description": "开发过程与还在生长的想法",
+    "url": "https://zlonglab.github.io/MyWeb/articles.html",
+    "type": "website"
+  },
+  "workbench.html": {
+    "title": "工作台 · 有间小站",
+    "description": "项目、技术和维护清单",
+    "url": "https://zlonglab.github.io/MyWeb/workbench.html",
+    "type": "website"
+  },
+  "uses.html": {
+    "title": "工具墙 · 有间小站",
+    "description": "已确认的工具与使用理由",
+    "url": "https://zlonglab.github.io/MyWeb/uses.html",
+    "type": "website"
+  },
+  "life.html": {
+    "title": "院子 · 有间小站",
+    "description": "给书、音乐、电影和照片留位置",
+    "url": "https://zlonglab.github.io/MyWeb/life.html",
+    "type": "website"
+  },
+  "links.html": {
+    "title": "邻居 · 有间小站",
+    "description": "设计参考，以及慢慢认识的小站",
+    "url": "https://zlonglab.github.io/MyWeb/links.html",
+    "type": "website"
+  },
+  "guestbook.html": {
+    "title": "留言墙 · 有间小站",
+    "description": "只保存在自己浏览器的随手便签",
+    "url": "https://zlonglab.github.io/MyWeb/guestbook.html",
+    "type": "website"
+  },
+  "colophon.html": {
+    "title": "说明书 · 有间小站",
+    "description": "制作方式、颜色、原则与版本史",
+    "url": "https://zlonglab.github.io/MyWeb/colophon.html",
+    "type": "website"
+  },
+  "about.html": {
+    "title": "关于 ZL · 有间小站",
+    "description": "计算机学生，记录实用工具与把想法做出来的过程。",
+    "url": "https://zlonglab.github.io/MyWeb/about.html",
+    "type": "website"
+  },
+  "article.html?id=how-this-site-grew": {
+    "title": "这个站是怎么长出来的 · 有间小站",
+    "description": "从三页的第一版，到夜色、四季和十间房，再到开始种花园——把这个小站三次改版的取舍记下来。",
+    "url": "https://zlonglab.github.io/MyWeb/article.html?id=how-this-site-grew",
+    "type": "article"
+  },
+  "article.html?id=documentassistant-confirm-before-archive": {
+    "title": "DocumentAssistant：先给出分类建议，再确认归档 · 有间小站",
+    "description": "从规则分类、复制归档到备份恢复，整理文档工具为什么需要把最后的确认留给使用者。",
+    "url": "https://zlonglab.github.io/MyWeb/article.html?id=documentassistant-confirm-before-archive",
+    "type": "article"
+  },
+  "article.html?id=recallai-local-search": {
+    "title": "RecallAI：本地检索与收纳的边界 · 有间小站",
+    "description": "从关键词检索、离线 OCR 到原位置索引和复制收纳，整理一个本地资料工具的实现取舍。",
+    "url": "https://zlonglab.github.io/MyWeb/article.html?id=recallai-local-search",
+    "type": "article"
+  },
+  "article.html?id=hello-world": {
+    "title": "你好，世界。这是小站的第一天。 · 有间小站",
+    "description": "从“想有一个自己的网站”开始，先搭好首页、作品和关于我，让这个想法有一个可以打开的地方。",
+    "url": "https://zlonglab.github.io/MyWeb/article.html?id=hello-world",
+    "type": "article"
+  },
+  "article.html?id=small-first-version": {
+    "title": "先做一个小而完整的网站 · 有间小站",
+    "description": "把第一版的范围收在三个页面里，先做好阅读、导航和基本交互，再根据真实内容继续扩展。",
+    "url": "https://zlonglab.github.io/MyWeb/article.html?id=small-first-version",
+    "type": "article"
+  },
+  "article.html?id=next-steps": {
+    "title": "给下一次更新，留一张清单 · 有间小站",
+    "description": "围绕项目内容、实际使用和上线准备整理下一步，让每次更新都有一个可以着手的地方。",
+    "url": "https://zlonglab.github.io/MyWeb/article.html?id=next-steps",
+    "type": "article"
+  },
+  "project.html?id=prompt-optimizer": {
+    "title": "提示词优化器 · Prompt Optimizer · 有间小站",
+    "description": "接入自己的模型，优化提示词、比较结果，管理模板、变量与收藏。",
+    "url": "https://zlonglab.github.io/MyWeb/project.html?id=prompt-optimizer",
+    "type": "website"
+  },
+  "project.html?id=video-prompts": {
+    "title": "视频灵感室 · AI 提示词工具 · 有间小站",
+    "description": "选一个拍摄方向，填写自己的故事，整理可复制的提示词，收藏模板并保存草稿。",
+    "url": "https://zlonglab.github.io/MyWeb/project.html?id=video-prompts",
+    "type": "website"
+  },
+  "project.html?id=recallai": {
+    "title": "RecallAI · 有间小站",
+    "description": "把散落的文件、文档和图片文字，变成可以在本机检索的资料库。",
+    "url": "https://zlonglab.github.io/MyWeb/project.html?id=recallai",
+    "type": "website"
+  },
+  "project.html?id=document-assistant": {
+    "title": "DocumentAssistant · 有间小站",
+    "description": "为课程资料、实验报告和文献提供分类归档，也把截图、标注和录屏放在顺手的位置。",
+    "url": "https://zlonglab.github.io/MyWeb/project.html?id=document-assistant",
+    "type": "website"
+  },
+  "project.html?id=folia-android": {
+    "title": "Folia · Android 适配 · 有间小站",
+    "description": "基于 Folia 开源音乐播放器，为 Android 使用场景整理打包和运行适配。",
+    "url": "https://zlonglab.github.io/MyWeb/project.html?id=folia-android",
+    "type": "website"
+  },
+  "project.html?id=personal-site": {
+    "title": "有间小站 · 个人网站 · 有间小站",
+    "description": "把已经做过的东西放在一起，也为新的文章、想法和交流留出位置。",
+    "url": "https://zlonglab.github.io/MyWeb/project.html?id=personal-site",
+    "type": "website"
+  }
+}
