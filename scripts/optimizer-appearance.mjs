@@ -12,6 +12,32 @@ export async function optimizerAppearance() {
   return {
     nav,
     style: '<style id="myweb-optimizer-appearance">' + css + '</style>',
+    templatePaths: [
+      'packages/ui/src/components/MainLayout.vue',
+      'packages/ui/src/components/app-layout/AppHeaderActions.vue',
+      'packages/ui/src/components/basic-mode/BasicSystemWorkspace.vue',
+      'packages/ui/src/components/basic-mode/BasicUserWorkspace.vue'
+    ],
+    patchTemplate(file, pristine) {
+      if (file.endsWith('/MainLayout.vue')) {
+        const slot = '<slot name="core-nav"></slot>';
+        if (!pristine.includes(slot)) throw Error('Upstream navigation changed.');
+        return pristine.replace(slot, slot + '<p class="myweb-workspace-guide" aria-label="使用顺序"><span>写下想法</span><i aria-hidden="true">→</i><span>选择模型与模板</span><i aria-hidden="true">→</i><span>优化并对比</span></p>');
+      }
+      if (file.endsWith('/AppHeaderActions.vue')) {
+        const action = `@click="emit('open-model-manager')"`;
+        if (!pristine.includes(action)) throw Error('Upstream model action changed.');
+        return pristine.replace(action, action + ' class="myweb-model-action"');
+      }
+      if (!pristine.includes('<OutputDisplay')) throw Error('Upstream test output changed.');
+      let patched = pristine.replace('<OutputDisplay', '<OutputDisplay placeholder="运行测试后，在这里查看结果。"');
+      if (file.endsWith('/BasicSystemWorkspace.vue')) {
+        const placeholder = `:placeholder="t('promptOptimizer.placeholder')"`;
+        if (!patched.includes(placeholder)) throw Error('Upstream input placeholder changed.');
+        patched = patched.replace(placeholder, 'placeholder="例如：把这段介绍改得更清楚，保留事实，语气自然，控制在 200 字以内。"');
+      }
+      return patched;
+    },
     patchTheme(pristine) {
       const anchor = '// 获取可用主题列表';
       const expression = 'currentThemeConfig.value.themeOverrides || {}';

@@ -54,12 +54,38 @@ html, body { background: var(--myweb-paper); }
 #app .core-navigation { margin-left: 8px; padding-left: 22px; }
 #app .nav-actions .n-button:not(.n-button--circle) { --n-border-radius: 7px !important; }
 #app .nav-actions .n-button__icon { font-size: 14px; opacity: .8; }
+#app .nav-actions .action-button .n-button__icon { filter: grayscale(1); opacity: .65; }
+#app .nav-actions .myweb-model-action {
+  --n-color: color-mix(in srgb, var(--myweb-moss) 7%, var(--myweb-card)) !important;
+  --n-text-color: var(--myweb-moss) !important;
+  --n-border: 1px solid color-mix(in srgb, var(--myweb-moss) 38%, var(--myweb-line)) !important;
+}
+/* Two deliberate rows: destinations and actions, then workspace modes and a quiet guide. */
+#app .nav-content { display: grid !important; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px !important; }
+#app .nav-content > .n-flex:first-child { display: contents !important; }
+#app .nav-content .brand-link { grid-column: 1; grid-row: 1; justify-self: start; }
+#app .nav-content .nav-actions { grid-column: 2; grid-row: 1; justify-self: end; min-width: 0; }
+#app .nav-content .core-navigation {
+  grid-column: 1 / -1; grid-row: 2;
+  display: flex; align-items: center; justify-content: space-between; gap: 18px;
+  margin: 0; padding: 12px 0 0; min-height: 0;
+  border-left: 0; border-top: 1px solid var(--myweb-line);
+}
+.myweb-workspace-guide { display: none; margin: 0; align-items: center; gap: 10px; font: 11px/1.7 var(--myweb-font); color: var(--myweb-muted); white-space: nowrap; }
+#app .compact-viewport-frame:has([data-testid="workspace"]) .myweb-workspace-guide { display: flex; }
+.myweb-workspace-guide i { font-style: normal; color: var(--myweb-clay); opacity: .75; }
 #app .n-card { border-radius: 10px; }
 #app .n-card-header__main { letter-spacing: -.3px; }
 #app textarea { line-height: 1.85 !important; }
 #app .n-input--textarea .n-input-wrapper { padding: 12px 14px; }
 #app .n-empty { --n-text-color: var(--myweb-muted); }
 #app .n-empty .n-empty__icon { opacity: .55; }
+#app .variant-result-card .n-empty { padding: 20px; box-sizing: border-box; text-align: center; }
+#app .variant-result-card .n-empty__description { max-width: 17em; color: var(--myweb-muted); font-size: 12px; line-height: 1.9; }
+#app .variant-result-card .n-empty__icon { margin-bottom: 14px; color: var(--myweb-moss); opacity: .42; }
+#app .input-panel-title { display: inline-flex; align-items: center; gap: 10px; }
+#app .input-panel-title::before { content: ''; width: 3px; height: 16px; background: var(--myweb-moss); border-radius: 2px; flex-shrink: 0; }
+#app .n-input--textarea:focus-within { transition: box-shadow 160ms ease, border-color 160ms ease; }
 /* Compact layouts have their own surface variables; keep them in the same palette. */
 :root[data-optimizer-theme="light"], :root[data-optimizer-theme="dark"] {
   --compact-paper: var(--myweb-card);
@@ -71,6 +97,7 @@ html, body { background: var(--myweb-paper); }
 @media (max-width: 1100px) {
   #myweb-tool-nav { gap: 22px; }
   .myweb-tool-stamp { display: none; }
+  #app .myweb-workspace-guide { display: none !important; }
 }
 @media (max-width: 640px) {
   :root { --myweb-tool-nav-height: 60px; }
@@ -86,4 +113,5 @@ html, body { background: var(--myweb-paper); }
 }
 @media (prefers-reduced-motion: reduce) {
   #myweb-tool-nav * { transition: none !important; }
+  #app .n-input--textarea { transition: none !important; }
 }
