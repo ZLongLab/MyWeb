@@ -3,6 +3,13 @@
 // featured 控制首页精选；image 是首页和作品详情共用的本地界面示例。
 window.SITE_PROJECTS = [
   {
+    id: 'prompt-optimizer', title: '提示词优化器 · Prompt Optimizer', category: '网页工具', status: '自托管 · v2.12.0', featured: false,
+    summary: '接入自己的模型，优化提示词、比较结果，管理模板、变量与收藏。',
+    tags: ['开源部署', '提示词优化', '自配模型'], keywords: ['Prompt Optimizer', '优化器', '系统提示词', '用户提示词', '模型管理', '对比测试'],
+    sourceUrl: 'https://github.com/linshenkx/prompt-optimizer',
+    detail: '基于 linshenkx/prompt-optimizer v2.12.0 的独立网页部署，保留原作者归属与 AGPL-3.0-only 许可。\n\n提供提示词优化、结果测试、模板、历史与收藏管理。公开版本没有预置 API 密钥；实际优化需要在模型管理中配置自己的服务，输入会发送至所选模型服务商。'
+  },
+  {
     id: 'video-prompts', title: '视频灵感室 · AI 提示词工具', category: '网页工具', status: '已上线 · 8 个模板', featured: false,
     summary: '选一个拍摄方向，填写自己的故事，整理可复制的提示词，收藏模板并保存草稿。',
     tags: ['AI 视频', '提示词', '本地草稿'],

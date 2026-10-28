@@ -46,7 +46,7 @@
     if (typeof value !== 'string' || /^(?:[a-z][a-z\d+.-]*:|\/\/)/i.test(value)) return '';
     try {
       var url = new URL(value, location.href);
-      return url.origin === location.origin && /\.html$/i.test(url.pathname) ? value : '';
+      return url.origin === location.origin && (/\.html$/i.test(url.pathname) || url.pathname.endsWith('/prompt-optimizer/')) ? value : '';
     } catch (error) { return ''; }
   }
   function addEntry(entry) {
@@ -95,6 +95,7 @@
     { id: 'page:workbench', title: '工作台', summary: '项目近况、技术用途与小站更新。', href: 'workbench.html', body: '工作台 维护 开发 项目 技术' }
   ].forEach(function (page) { page.type = '页面'; addEntry(page); });
   var workbench = window.SITE_WORKBENCH || {};
+  addEntry({ id: 'page:prompt-optimizer', type: '页面', title: '提示词优化器 · Prompt Optimizer', summary: '配置自己的模型，优化提示词、测试比较并保存收藏。', href: 'prompt-optimizer/', body: 'AI 优化 模型 系统提示词 用户提示词 模板 变量 对比测试 开源部署' });
   addEntry({ id: 'page:video-prompts', type: '页面', title: '视频灵感室 · AI 提示词工具', summary: '8 个创作模板：填写想法、复制提示词、收藏和备份草稿。', href: 'video-prompts.html', body: 'Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿' });
   [
     { id: 'page:workbench:now', title: '工作台 · 现在在做什么', summary: '带核对日期的项目近况，连接作品与开发记录。', href: 'workbench.html#now', body: '近况 最近 现在 正在维护 ' + contentText(workbench.focus, 0) },

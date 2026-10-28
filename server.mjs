@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
+import { optimizerFiles } from './scripts/optimizer-files.mjs';
 
 const root = new URL('./', import.meta.url);
 const portText = process.env.PORT ?? '4173';
@@ -95,6 +96,10 @@ const files = new Map([
   ['/assets/favicon.svg', 'image/svg+xml; charset=utf-8'],
 ]);
 
+const optimizer = await optimizerFiles(fileURLToPath(root), true);
+const optimizerPaths = new Map((optimizer?.files || []).map(file => ['/prompt-optimizer/' + file.relative, file]));
+if (optimizerPaths.has('/prompt-optimizer/index.html')) optimizerPaths.set('/prompt-optimizer/', optimizerPaths.get('/prompt-optimizer/index.html'));
+
 function sendText(request, response, status, message, extraHeaders = {}) {
   const body = Buffer.from(message, 'utf8');
   response.writeHead(status, {
@@ -127,6 +132,16 @@ const server = createServer(async (request, response) => {
     return;
   }
   if (pathname === '/') pathname = '/index.html';
+  if (pathname === '/prompt-optimizer') { sendText(request, response, 301, '', { Location: '/prompt-optimizer/' }); return; }
+  const optimizerFile = optimizerPaths.get(pathname);
+  if (optimizerFile) {
+    try {
+      const body = await readFile(optimizerFile.full);
+      response.writeHead(200, { 'Content-Type': optimizerFile.mime, 'Content-Length': body.length, 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
+      response.end(request.method === 'HEAD' ? undefined : body);
+    } catch { sendText(request, response, 404, '工具资源不存在。\n'); }
+    return;
+  }
   const mime = files.get(pathname);
   if (!mime) {
     try {

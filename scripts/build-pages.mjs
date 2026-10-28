@@ -2,6 +2,7 @@
 import { readFile, writeFile, mkdir, mkdtemp, lstat } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
+import { optimizerFiles } from './optimizer-files.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const server = await readFile(path.join(root, 'server.mjs'), 'utf8');
@@ -37,6 +38,14 @@ for (const file of files) {
   await writeFile(path.join(directory, file), data);
 }
 await writeFile(path.join(directory, '.nojekyll'), '');
-await writeFile(path.join(root, '.tmp', 'pages-build.json'), JSON.stringify({ site: site.href, directory, runtimeFiles: files.length, files }, null, 2) + '\n');
+const optimizer = await optimizerFiles(root);
+const toolFiles = [];
+for (const file of optimizer.files) {
+  const relative = 'prompt-optimizer/' + file.relative;
+  await mkdir(path.dirname(path.join(directory, relative)), { recursive: true });
+  await writeFile(path.join(directory, relative), await readFile(file.full));
+  toolFiles.push(relative);
+}
+await writeFile(path.join(root, '.tmp', 'pages-build.json'), JSON.stringify({ site: site.href, directory, runtimeFiles: files.length + toolFiles.length, mainFiles: files.length, optimizerFiles: toolFiles.length, files: files.concat(toolFiles) }, null, 2) + '\n');
 if (process.env.GITHUB_OUTPUT) await writeFile(process.env.GITHUB_OUTPUT, 'directory=' + directory + '\n', { flag: 'a' });
-console.log('Prepared ' + files.length + ' runtime files at ' + directory);
+console.log('Prepared ' + files.length + ' main files and ' + toolFiles.length + ' optimizer files at ' + directory);

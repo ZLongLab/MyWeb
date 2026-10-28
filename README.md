@@ -39,7 +39,20 @@ npm start
 
 修改文件并保存后，刷新浏览器即可看到更新。无需编译，也无需安装依赖。
 
-## 当前版本 1.6.1「视频灵感室」
+## 当前版本 1.7.0「提示词优化器」
+
+- 独立子目录 `prompt-optimizer/` 部署 linshenkx/prompt-optimizer v2.12.0；作品、工作台、全站搜索和视频灵感室都有入口。
+- 未预置模型密钥。实际优化前由使用者在模型管理中配置服务；输入会发送给所选模型服务商，可能产生调用费用。视频灵感室不自动传递填写内容。
+- 构建固定到 `scripts/optimizer-source.json` 的源码提交，按原作者 AGPL-3.0-only 许可提供原始源码、本站入口修改补丁及构建脚本。详见 [部署与验收记录](docs/prompt-optimizer-1.7.md)。
+- 主站保持81项运行白名单及80项离线缓存；优化器使用独立子目录与自身缓存作用域。完整发布额外包含当前42个优化器文件，不包含工作区、依赖或模型密钥。
+
+### 本地重建优化器
+
+需要 Node.js 24.22.1 与 pnpm 10.6.1。在 `.tmp/prompt-optimizer-source` 准备固定版本源码（提交见 `scripts/optimizer-source.json`），在该源码目录安装网页依赖：`pnpm --filter '@prompt-optimizer/web...' install --frozen-lockfile --ignore-scripts`，再回到本站运行 `npm run build:optimizer`、`npm run build:pages`。Windows可将 `MYWEB_PNPM_JS` 指向pnpm的JS入口；自动部署已配置同样的源码版本和构建步骤。
+
+`build:pages`现在会校验已生成的优化器版本与资源清单；没有该构建时会提示先执行 `build:optimizer`。发布只读取主站白名单与经过校验的优化器产物，不直接上传第三方源码工作目录。
+
+### 1.6.1「视频灵感室」
 
 - 1.6.1 补充无 `.html` 地址的离线映射，兼容 ChatGPT 展示站的地址重定向。
 

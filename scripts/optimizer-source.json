@@ -1,0 +1,8 @@
+{
+  "repository": "https://github.com/linshenkx/prompt-optimizer",
+  "version": "2.12.0",
+  "commit": "fe72bb1f6e6ff970658b67b75dc630ff1adcfc55",
+  "license": "AGPL-3.0-only",
+  "node": "24.22.1",
+  "pnpm": "10.6.1"
+}
