@@ -95,6 +95,7 @@
     { id: 'page:workbench', title: '工作台', summary: '项目近况、技术用途与小站更新。', href: 'workbench.html', body: '工作台 维护 开发 项目 技术' }
   ].forEach(function (page) { page.type = '页面'; addEntry(page); });
   var workbench = window.SITE_WORKBENCH || {};
+  addEntry({ id: 'page:video-prompts', type: '页面', title: '视频灵感室 · AI 提示词工具', summary: '8 个创作模板：填写想法、复制提示词、收藏和备份草稿。', href: 'video-prompts.html', body: 'Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿' });
   [
     { id: 'page:workbench:now', title: '工作台 · 现在在做什么', summary: '带核对日期的项目近况，连接作品与开发记录。', href: 'workbench.html#now', body: '近况 最近 现在 正在维护 ' + contentText(workbench.focus, 0) },
     { id: 'page:workbench:tools', title: '工作台 · 项目里的技术', summary: '已在项目里使用的技术，以及它们负责的事情。', href: 'workbench.html#tools', body: '工具 技术栈 用途 工作台 ' + contentText(workbench.tools, 0) },

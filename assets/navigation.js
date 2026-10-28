@@ -26,6 +26,7 @@
   }
 
   function detailHref(section, id, context) {
+    if (section === 'projects' && id === 'video-prompts') return 'video-prompts.html';
     var page = section === 'projects' ? 'project.html' : 'article.html';
     var state = contextFor(section, context);
     var params = new URLSearchParams({ id: String(id) });

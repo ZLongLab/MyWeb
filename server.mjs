@@ -12,6 +12,11 @@ if (!/^\d+$/.test(portText) || Number(portText) < 1 || Number(portText) > 65535)
 const port = Number(portText);
 const previewUrl = `http://127.0.0.1:${port}`;
 const files = new Map([
+  ['/video-prompts.html', 'text/html; charset=utf-8'],
+  ['/assets/video-templates.js', 'text/javascript; charset=utf-8'],
+  ['/assets/video-prompts-core.js', 'text/javascript; charset=utf-8'],
+  ['/assets/video-prompts.js', 'text/javascript; charset=utf-8'],
+  ['/assets/video-prompts.css', 'text/css; charset=utf-8'],
   ['/assets/images/recallai-preview-960.webp', 'image/webp'],
   ['/assets/images/recallai-preview-640.webp', 'image/webp'],
   ['/assets/images/recallai-adoption-preview-960.webp', 'image/webp'],

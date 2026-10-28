@@ -4,8 +4,13 @@
 // and external links are deliberately absent, even if the host can serve them.
 const BASE = new URL('./', self.location.href);
 const CACHE_PREFIX = 'myweb-shell-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + '1.5.2';
+const CACHE_NAME = CACHE_PREFIX + '1.6.0';
 const APP_FILES = [
+  'video-prompts.html',
+  'assets/video-templates.js',
+  'assets/video-prompts-core.js',
+  'assets/video-prompts.js',
+  'assets/video-prompts.css',
   'assets/images/recallai-preview-960.webp',
   'assets/images/recallai-preview-640.webp',
   'assets/images/recallai-adoption-preview-960.webp',
