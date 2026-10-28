@@ -70,3 +70,22 @@ README当前版本、工作台更新记录及说明书版本史均同步。说�
 ## 回退
 
 基线提交为`6974344ce1833c970c3f726b3a6edda215697ff5`。需要回退时通过正常Git版本流程恢复该状态并重新构建部署；不覆盖浏览器本地便签、收藏或优化器配置。原批准快照及热力图仍可从基线提交恢复。
+
+## 发布结果
+
+- 运行文件发布提交：`0cd0a3e41e080af12f315c9dacd0449d9dde709d`。
+- [GitHub Actions 40654819579](https://github.com/ZLongLab/MyWeb/actions/runs/40654819579)的build和deploy均成功，确认完成后才执行线上复核。
+- 正式地址：https://zlonglab.github.io/MyWeb/ 。
+- 线上读取时间：`2026-10-28T08:11:48.038Z`。22项线上文件检查全部通过：三件套与批准快照／SVG均为200且内容逐字一致，15页源代码均含正式OG与Twitter元标签，首页源代码含正式分享图片地址，线上SW版本为1.8.0。
+- 桌面浏览器另确认首页53次／179格、工作台范围与53次及非过期状态、工作台和说明书版本1.8.0、订阅点击区不小于44px；无脚本错误、无外部运行请求。
+- 浏览器XML解析器成功解析sitemap与feed，23个sitemap地址和13个feed链接字段全量符合正式/MyWeb/基准路径。
+
+| 线上文件 | HTTP | SHA-256（与本地原件相同） |
+| --- | ---: | --- |
+| `feed.xml` | 200 | `eb980cfd7f17c90e5cec697397660131e08f580d9f7c65cab71bfd287b11a332` |
+| `assets/site-snapshot.js` | 200 | `476cadc34bb407b402233c698b97249ae89f9731b43ae6047c8f06bbbce94435` |
+| `assets/images/github-activity.svg` | 200 | `5a8eecd52e64623e6a1683c5a29042bf3dc0e9a5ccd4dfeda0462cd96b5dc98a` |
+| `sitemap.xml` | 200 | `c9ed7b71e5e2032fe9f8692c353705456d65577997f2a9d523712687d06f17f7` |
+| `robots.txt` | 200 | `1647fa4533992a38a51962eda4e2057d447fbaec852f332a5e9e984bff6bb992` |
+
+本节是发布后的纯文档补充，提交标记`[skip ci]`以避免对完全相同的运行文件再做一次部署；不改变上述已验收的线上内容。最后复核Git改动仅为此记录，工作区干净。
