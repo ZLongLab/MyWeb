@@ -5,6 +5,7 @@
   "description": "有间小站：本地优先、零依赖的个人网站",
   "type": "module",
   "scripts": {
+    "build:pages": "node scripts/build-pages.mjs",
     "start": "node server.mjs",
     "snapshot": "node scripts/refresh-snapshots.mjs",
     "snapshot:github": "node scripts/refresh-snapshots.mjs --github",

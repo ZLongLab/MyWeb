@@ -5,6 +5,7 @@
 /research/
 /preview*.png
 /design-*.png
+/docs/**/artifacts/real-device-*/
 
 # 后续验收截图只保留本机；既有已跟踪图片继续保留历史。
 /docs/**/artifacts/**/*.png
