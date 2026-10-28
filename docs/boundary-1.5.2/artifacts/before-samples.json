@@ -1,0 +1,2001 @@
+{
+  "stage": "before",
+  "baseline": "b42b92f",
+  "scope": "Desktop only, summer/autumn, paper/night, 1280/1440/1920",
+  "method": "Chrome screenshot PNG decoded with browser canvas, exact x-2/x+2 RGB pixels. Foreground copy/showcase visibility temporarily hidden without layout changes to expose the rendered background at hero vertical midpoint.",
+  "rows": [
+    {
+      "theme": "paper",
+      "season": "summer",
+      "width": 1280,
+      "clientWidth": 1270,
+      "overflow": false,
+      "hero": {
+        "x": 35,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1235,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 35,
+        "y": 222.71875,
+        "width": 562.546875,
+        "height": 395.4375,
+        "right": 597.546875,
+        "bottom": 618.15625
+      },
+      "scene": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 625.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 823,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1243,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1235,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.168627 0.356863 0.27451 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              234
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              234
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              242,
+              240,
+              235
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              242,
+              240,
+              235
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              233
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              233
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1263,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              235
+            ]
+          },
+          "b": {
+            "x": 1267,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              235
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "paper",
+      "season": "summer",
+      "width": 1440,
+      "clientWidth": 1430,
+      "overflow": false,
+      "hero": {
+        "x": 115,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1315,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 115,
+        "y": 217.734375,
+        "width": 562.546875,
+        "height": 405.40625,
+        "right": 677.546875,
+        "bottom": 623.140625
+      },
+      "scene": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 705.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 903,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1323,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1315,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.168627 0.356863 0.27451 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              241,
+              240,
+              232
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              241,
+              240,
+              232
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              240,
+              239,
+              234
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              240,
+              239,
+              234
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              241,
+              240,
+              232
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              241,
+              240,
+              232
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1423,
+            "y": 420,
+            "rgb": [
+              241,
+              240,
+              234
+            ]
+          },
+          "b": {
+            "x": 1427,
+            "y": 420,
+            "rgb": [
+              241,
+              240,
+              234
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "paper",
+      "season": "summer",
+      "width": 1920,
+      "clientWidth": 1910,
+      "overflow": false,
+      "hero": {
+        "x": 355,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1555,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 355,
+        "y": 214.65625,
+        "width": 562.546875,
+        "height": 411.5625,
+        "right": 917.546875,
+        "bottom": 626.21875
+      },
+      "scene": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 945.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 1143,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1563,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1555,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.168627 0.356863 0.27451 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              238,
+              238,
+              231
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              238,
+              238,
+              231
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              239,
+              238,
+              233
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              239,
+              238,
+              233
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              239,
+              239,
+              231
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              239,
+              239,
+              231
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1903,
+            "y": 420,
+            "rgb": [
+              240,
+              239,
+              234
+            ]
+          },
+          "b": {
+            "x": 1907,
+            "y": 420,
+            "rgb": [
+              240,
+              239,
+              234
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "width": 1280,
+      "clientWidth": 1270,
+      "overflow": false,
+      "hero": {
+        "x": 35,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1235,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 35,
+        "y": 222.71875,
+        "width": 562.546875,
+        "height": 395.4375,
+        "right": 597.546875,
+        "bottom": 618.15625
+      },
+      "scene": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 625.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 823,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1243,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1235,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.784314 0.352941 0.196078 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.980392 0.960784 0.92549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              229
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              229
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              227
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              227
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              229
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              228
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1263,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              227
+            ]
+          },
+          "b": {
+            "x": 1267,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              227
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "width": 1440,
+      "clientWidth": 1430,
+      "overflow": false,
+      "hero": {
+        "x": 115,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1315,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 115,
+        "y": 217.734375,
+        "width": 562.546875,
+        "height": 405.40625,
+        "right": 677.546875,
+        "bottom": 623.140625
+      },
+      "scene": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 705.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 903,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1323,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1315,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.784314 0.352941 0.196078 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.980392 0.960784 0.92549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              248,
+              238,
+              228
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              248,
+              238,
+              228
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              248,
+              240,
+              225
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              248,
+              240,
+              225
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              247,
+              238,
+              228
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              247,
+              238,
+              228
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1423,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              226
+            ]
+          },
+          "b": {
+            "x": 1427,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              226
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "paper",
+      "season": "autumn",
+      "width": 1920,
+      "clientWidth": 1910,
+      "overflow": false,
+      "hero": {
+        "x": 355,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1555,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 355,
+        "y": 214.65625,
+        "width": 562.546875,
+        "height": 411.5625,
+        "right": 917.546875,
+        "bottom": 626.21875
+      },
+      "scene": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 945.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 1143,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1563,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1555,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.784314 0.352941 0.196078 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.980392 0.960784 0.92549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              247,
+              236,
+              226
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              247,
+              236,
+              226
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              223
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              223
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              247,
+              237,
+              226
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              247,
+              237,
+              226
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1903,
+            "y": 420,
+            "rgb": [
+              249,
+              240,
+              225
+            ]
+          },
+          "b": {
+            "x": 1907,
+            "y": 420,
+            "rgb": [
+              249,
+              240,
+              225
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "width": 1280,
+      "clientWidth": 1270,
+      "overflow": false,
+      "hero": {
+        "x": 35,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1235,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 35,
+        "y": 222.71875,
+        "width": 562.546875,
+        "height": 395.4375,
+        "right": 597.546875,
+        "bottom": 618.15625
+      },
+      "scene": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 625.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 823,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1243,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1235,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.596078 0.776471 0.647059 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              34,
+              41,
+              36
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              34,
+              41,
+              36
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              33,
+              40,
+              35
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              33,
+              40,
+              35
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1263,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          },
+          "b": {
+            "x": 1267,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "width": 1440,
+      "clientWidth": 1430,
+      "overflow": false,
+      "hero": {
+        "x": 115,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1315,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 115,
+        "y": 217.734375,
+        "width": 562.546875,
+        "height": 405.40625,
+        "right": 677.546875,
+        "bottom": 623.140625
+      },
+      "scene": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 705.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 903,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1323,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1315,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.596078 0.776471 0.647059 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              37
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              37
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              40
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              40
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              33,
+              41,
+              36
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              33,
+              41,
+              36
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1423,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          },
+          "b": {
+            "x": 1427,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "night",
+      "season": "summer",
+      "width": 1920,
+      "clientWidth": 1910,
+      "overflow": false,
+      "hero": {
+        "x": 355,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1555,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 355,
+        "y": 214.65625,
+        "width": 562.546875,
+        "height": 411.5625,
+        "right": 917.546875,
+        "bottom": 626.21875
+      },
+      "scene": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 945.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 1143,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1563,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1555,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.596078 0.776471 0.647059 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              38
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              38
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              37,
+              44,
+              41
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              37,
+              44,
+              41
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              34,
+              42,
+              37
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              34,
+              42,
+              37
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1903,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              40
+            ]
+          },
+          "b": {
+            "x": 1907,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              40
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "width": 1280,
+      "clientWidth": 1270,
+      "overflow": false,
+      "hero": {
+        "x": 35,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1235,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 35,
+        "y": 222.71875,
+        "width": 562.546875,
+        "height": 395.4375,
+        "right": 597.546875,
+        "bottom": 618.15625
+      },
+      "scene": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 625.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1235,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 823,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1243,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 625.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1235,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.905882 0.627451 0.470588 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              36,
+              40,
+              35
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              36,
+              40,
+              35
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              38,
+              42,
+              34
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              38,
+              42,
+              34
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              35,
+              39,
+              34
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              35,
+              39,
+              34
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1263,
+            "y": 420,
+            "rgb": [
+              37,
+              41,
+              34
+            ]
+          },
+          "b": {
+            "x": 1267,
+            "y": 420,
+            "rgb": [
+              37,
+              41,
+              34
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "width": 1440,
+      "clientWidth": 1430,
+      "overflow": false,
+      "hero": {
+        "x": 115,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1315,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 115,
+        "y": 217.734375,
+        "width": 562.546875,
+        "height": 405.40625,
+        "right": 677.546875,
+        "bottom": 623.140625
+      },
+      "scene": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 705.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1315,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 903,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1323,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 705.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1315,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.905882 0.627451 0.470588 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              37,
+              41,
+              36
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              37,
+              41,
+              36
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              39,
+              42,
+              35
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              39,
+              42,
+              35
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              36,
+              40,
+              34
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              36,
+              40,
+              34
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1423,
+            "y": 420,
+            "rgb": [
+              38,
+              42,
+              34
+            ]
+          },
+          "b": {
+            "x": 1427,
+            "y": 420,
+            "rgb": [
+              38,
+              42,
+              34
+            ]
+          }
+        }
+      }
+    },
+    {
+      "theme": "night",
+      "season": "autumn",
+      "width": 1920,
+      "clientWidth": 1910,
+      "overflow": false,
+      "hero": {
+        "x": 355,
+        "y": 88,
+        "width": 1200,
+        "height": 664.890625,
+        "right": 1555,
+        "bottom": 752.890625
+      },
+      "copy": {
+        "x": 355,
+        "y": 214.65625,
+        "width": 562.546875,
+        "height": 411.5625,
+        "right": 917.546875,
+        "bottom": 626.21875
+      },
+      "scene": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 520.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "note": {
+        "x": 945.546875,
+        "y": 568,
+        "width": 609.453125,
+        "height": 112.890625,
+        "right": 1555,
+        "bottom": 680.890625
+      },
+      "watermark": {
+        "x": 1143,
+        "y": 145,
+        "width": 420,
+        "height": 420,
+        "right": 1563,
+        "bottom": 565
+      },
+      "stage": {
+        "x": 945.546875,
+        "y": 160,
+        "width": 609.453125,
+        "height": 384,
+        "right": 1555,
+        "bottom": 544
+      },
+      "glow": {
+        "left": "0px",
+        "right": "0px",
+        "width": "1200px",
+        "mask": "linear-gradient(90deg, rgba(0, 0, 0, 0), rgb(0, 0, 0) 14%, rgb(0, 0, 0) 86%, rgba(0, 0, 0, 0)), linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "intersect, intersect",
+        "background": "radial-gradient(at 20% 20%, color(srgb 0.905882 0.627451 0.470588 / 0.12), rgba(0, 0, 0, 0) 65%)"
+      },
+      "header": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 88
+      },
+      "mainOverflow": "visible",
+      "samples": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              39,
+              42,
+              36
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              39,
+              42,
+              36
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              40,
+              44,
+              35
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              40,
+              44,
+              35
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "viewportLeft": {
+          "a": {
+            "x": 2,
+            "y": 420,
+            "rgb": [
+              37,
+              40,
+              35
+            ]
+          },
+          "b": {
+            "x": 6,
+            "y": 420,
+            "rgb": [
+              37,
+              40,
+              35
+            ]
+          }
+        },
+        "viewportRight": {
+          "a": {
+            "x": 1903,
+            "y": 420,
+            "rgb": [
+              39,
+              43,
+              35
+            ]
+          },
+          "b": {
+            "x": 1907,
+            "y": 420,
+            "rgb": [
+              39,
+              43,
+              35
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "errors": []
+}

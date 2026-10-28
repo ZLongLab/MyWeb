@@ -87,8 +87,8 @@ html[data-theme] .about-contact .button, html[data-theme] .about-contact-socials
   body { font-size: 16px; }
   html[data-theme] :is(h1, h2, h3, h4):not([lang="en"]) { letter-spacing: .02em; }
   html[data-theme] :is(h1, h2, h3, h4)[lang="en"] { letter-spacing: normal; }
-  .site-header { position: sticky; top: 0; z-index: 95; height: var(--header-full); margin-bottom: 0; background: var(--bg-paper); background: color-mix(in srgb, var(--bg-paper) 85%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); transition: height var(--duration-fast) var(--ease-out), margin-bottom var(--duration-fast) var(--ease-out), background-color var(--duration-normal) var(--ease-out); }
-  .site-header.is-scrolled { height: var(--header-compact); margin-bottom: calc(var(--header-full) - var(--header-compact)); }
+  .site-header { position: sticky; top: 0; z-index: 95; height: var(--header-full); margin-bottom: 0; border-bottom-color: transparent; background: transparent; -webkit-backdrop-filter: none; backdrop-filter: none; transition: height var(--duration-fast) var(--ease-out), margin-bottom var(--duration-fast) var(--ease-out), background-color var(--duration-normal) var(--ease-out), border-color var(--duration-normal) var(--ease-out); }
+  .site-header.is-scrolled { height: var(--header-compact); margin-bottom: calc(var(--header-full) - var(--header-compact)); border-bottom-color: var(--line); background: var(--bg-paper); background: color-mix(in srgb, var(--bg-paper) 85%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
   .site-header-sentinel { position: absolute; top: var(--space-card); left: 0; width: 1px; height: 1px; pointer-events: none; }
   main [id], .project-body-section h3 { scroll-margin-top: 0; }
   .portfolio-intro, .writing-intro, .guestbook-intro, .about-hero, .workbench-page .workbench-hero { padding-block: var(--space-page) var(--space-heading); }

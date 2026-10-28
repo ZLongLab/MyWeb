@@ -1,0 +1,2476 @@
+{
+  "scope": "Desktop boundary fixes only",
+  "checks": [
+    {
+      "name": "Preserve assets/background.css",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/night.css",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/house.css",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/home-projects.js",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/articles-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/projects-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/life-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/house-data.js",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/site-snapshot.js",
+      "passed": true
+    },
+    {
+      "name": "Preserve assets/page-background.svg",
+      "passed": true
+    },
+    {
+      "name": "No new runtime file",
+      "passed": true
+    },
+    {
+      "name": "Article stays at 720px, version is 1.5.2",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash paper summer 1280",
+      "passed": true,
+      "detail": {
+        "left": "-40px",
+        "right": "-40px",
+        "width": "1280px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.168627 0.356863 0.27451 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary paper summer 1280",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              234
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              242,
+              241,
+              234
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              242,
+              240,
+              235
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              242,
+              240,
+              235
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage paper summer 1280",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 649.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 929.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 625.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1235,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry paper summer 1280",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash paper summer 1440",
+      "passed": true,
+      "detail": {
+        "left": "-120px",
+        "right": "-120px",
+        "width": "1440px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.168627 0.356863 0.27451 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary paper summer 1440",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              238,
+              238,
+              229
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              238,
+              238,
+              229
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              240,
+              239,
+              234
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              240,
+              239,
+              234
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage paper summer 1440",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 729.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1009.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 705.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1315,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry paper summer 1440",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash paper summer 1920",
+      "passed": true,
+      "detail": {
+        "left": "-360px",
+        "right": "-360px",
+        "width": "1920px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.168627 0.356863 0.27451 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary paper summer 1920",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              229,
+              231,
+              224
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              228,
+              230,
+              224
+            ]
+          },
+          "delta": [
+            -1,
+            -1,
+            0
+          ],
+          "maxChannelDelta": 1,
+          "rgbDistance": 1.4142135623730951
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              239,
+              238,
+              233
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              239,
+              238,
+              233
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage paper summer 1920",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 969.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1249.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 945.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1555,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry paper summer 1920",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash paper autumn 1280",
+      "passed": true,
+      "detail": {
+        "left": "-40px",
+        "right": "-40px",
+        "width": "1280px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.784314 0.352941 0.196078 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary paper autumn 1280",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              229
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              229
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              227
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              249,
+              241,
+              227
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage paper autumn 1280",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 649.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 929.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 625.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1235,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry paper autumn 1280",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash paper autumn 1440",
+      "passed": true,
+      "detail": {
+        "left": "-120px",
+        "right": "-120px",
+        "width": "1440px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.784314 0.352941 0.196078 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary paper autumn 1440",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              247,
+              236,
+              225
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              247,
+              236,
+              225
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              248,
+              240,
+              225
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              248,
+              240,
+              225
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage paper autumn 1440",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 729.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1009.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 705.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1315,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry paper autumn 1440",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash paper autumn 1920",
+      "passed": true,
+      "detail": {
+        "left": "-360px",
+        "right": "-360px",
+        "width": "1920px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.784314 0.352941 0.196078 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary paper autumn 1920",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              245,
+              229,
+              219
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              244,
+              228,
+              218
+            ]
+          },
+          "delta": [
+            -1,
+            -1,
+            -1
+          ],
+          "maxChannelDelta": 1,
+          "rgbDistance": 1.7320508075688772
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              223
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              248,
+              239,
+              223
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage paper autumn 1920",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 969.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1249.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 945.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1555,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry paper autumn 1920",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash night summer 1280",
+      "passed": true,
+      "detail": {
+        "left": "-40px",
+        "right": "-40px",
+        "width": "1280px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.596078 0.776471 0.647059 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary night summer 1280",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              34,
+              41,
+              36
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              34,
+              41,
+              36
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              35,
+              42,
+              39
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage night summer 1280",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 649.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 929.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 625.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1235,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry night summer 1280",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash night summer 1440",
+      "passed": true,
+      "detail": {
+        "left": "-120px",
+        "right": "-120px",
+        "width": "1440px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.596078 0.776471 0.647059 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary night summer 1440",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              37,
+              44,
+              39
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              37,
+              44,
+              39
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              40
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              36,
+              43,
+              40
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage night summer 1440",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 729.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1009.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 705.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1315,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry night summer 1440",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash night summer 1920",
+      "passed": true,
+      "detail": {
+        "left": "-360px",
+        "right": "-360px",
+        "width": "1920px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.596078 0.776471 0.647059 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary night summer 1920",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              41,
+              50,
+              44
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              41,
+              49,
+              44
+            ]
+          },
+          "delta": [
+            0,
+            -1,
+            0
+          ],
+          "maxChannelDelta": 1,
+          "rgbDistance": 1
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              37,
+              44,
+              41
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              37,
+              44,
+              41
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage night summer 1920",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 969.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1249.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 945.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1555,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry night summer 1920",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash night autumn 1280",
+      "passed": true,
+      "detail": {
+        "left": "-40px",
+        "right": "-40px",
+        "width": "1280px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.905882 0.627451 0.470588 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary night autumn 1280",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 33,
+            "y": 420,
+            "rgb": [
+              36,
+              40,
+              35
+            ]
+          },
+          "plus": {
+            "x": 37,
+            "y": 420,
+            "rgb": [
+              36,
+              40,
+              35
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1233,
+            "y": 420,
+            "rgb": [
+              38,
+              42,
+              34
+            ]
+          },
+          "plus": {
+            "x": 1237,
+            "y": 420,
+            "rgb": [
+              38,
+              42,
+              34
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage night autumn 1280",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 649.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 929.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 625.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1235,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry night autumn 1280",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash night autumn 1440",
+      "passed": true,
+      "detail": {
+        "left": "-120px",
+        "right": "-120px",
+        "width": "1440px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.905882 0.627451 0.470588 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary night autumn 1440",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 113,
+            "y": 420,
+            "rgb": [
+              40,
+              43,
+              37
+            ]
+          },
+          "plus": {
+            "x": 117,
+            "y": 420,
+            "rgb": [
+              40,
+              43,
+              37
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        },
+        "right": {
+          "minus": {
+            "x": 1313,
+            "y": 420,
+            "rgb": [
+              39,
+              42,
+              35
+            ]
+          },
+          "plus": {
+            "x": 1317,
+            "y": 420,
+            "rgb": [
+              39,
+              42,
+              35
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage night autumn 1440",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 729.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1009.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 705.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1315,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry night autumn 1440",
+      "passed": true
+    },
+    {
+      "name": "Full-width wash night autumn 1920",
+      "passed": true,
+      "detail": {
+        "left": "-360px",
+        "right": "-360px",
+        "width": "1920px",
+        "mask": "linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) 12%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0))",
+        "composite": "add",
+        "background": "radial-gradient(38% 64% at 40% 32%, color(srgb 0.905882 0.627451 0.470588 / 0.12), rgba(0, 0, 0, 0) 100%)"
+      }
+    },
+    {
+      "name": "Continuous left/right boundary night autumn 1920",
+      "passed": true,
+      "detail": {
+        "left": {
+          "minus": {
+            "x": 353,
+            "y": 420,
+            "rgb": [
+              48,
+              47,
+              40
+            ]
+          },
+          "plus": {
+            "x": 357,
+            "y": 420,
+            "rgb": [
+              48,
+              48,
+              40
+            ]
+          },
+          "delta": [
+            0,
+            1,
+            0
+          ],
+          "maxChannelDelta": 1,
+          "rgbDistance": 1
+        },
+        "right": {
+          "minus": {
+            "x": 1553,
+            "y": 420,
+            "rgb": [
+              40,
+              44,
+              35
+            ]
+          },
+          "plus": {
+            "x": 1557,
+            "y": 420,
+            "rgb": [
+              40,
+              44,
+              35
+            ]
+          },
+          "delta": [
+            0,
+            0,
+            0
+          ],
+          "maxChannelDelta": 0,
+          "rgbDistance": 0
+        }
+      }
+    },
+    {
+      "name": "Watermark contained in stage night autumn 1920",
+      "passed": true,
+      "detail": {
+        "watermark": {
+          "x": 969.546875,
+          "y": 232,
+          "width": 280,
+          "height": 280,
+          "right": 1249.546875,
+          "bottom": 512
+        },
+        "stage": {
+          "x": 945.546875,
+          "y": 160,
+          "width": 609.453125,
+          "height": 384,
+          "right": 1555,
+          "bottom": 544
+        }
+      }
+    },
+    {
+      "name": "Preserve foreground geometry night autumn 1920",
+      "passed": true
+    },
+    {
+      "name": "Transparent top header paper index.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper index.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper projects.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper projects.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper project.html?id=recallai",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper project.html?id=recallai",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper articles.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper articles.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper article.html?id=hello-world",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper article.html?id=hello-world",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper about.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper about.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper guestbook.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper guestbook.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper workbench.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper workbench.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper now.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper now.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper uses.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper uses.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper life.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper life.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper links.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper links.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper colophon.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header paper colophon.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.980392 0.968627 0.941176 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(226, 225, 217)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header paper 404.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Short 404 preserves top header paper",
+      "passed": true,
+      "detail": {
+        "scrollRange": 0,
+        "y": 0,
+        "background": "rgba(0, 0, 0, 0)",
+        "compact": false
+      }
+    },
+    {
+      "name": "Transparent top header night index.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night index.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night projects.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night projects.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night project.html?id=recallai",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night project.html?id=recallai",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night articles.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night articles.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night article.html?id=hello-world",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night article.html?id=hello-world",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night about.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night about.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night guestbook.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night guestbook.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night workbench.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night workbench.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night now.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night now.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night uses.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night uses.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night life.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night life.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night links.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night links.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night colophon.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Scrolled header night colophon.html",
+      "passed": true,
+      "detail": {
+        "background": "color(srgb 0.117647 0.141176 0.12549 / 0.85)",
+        "blur": "blur(8px)",
+        "border": "rgb(57, 65, 58)",
+        "height": 64,
+        "sticky": "sticky",
+        "y": 0,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Transparent top header night 404.html",
+      "passed": true,
+      "detail": {
+        "background": "rgba(0, 0, 0, 0)",
+        "blur": "none",
+        "border": "rgba(0, 0, 0, 0)",
+        "height": 88,
+        "mainTop": 88
+      }
+    },
+    {
+      "name": "Short 404 preserves top header night",
+      "passed": true,
+      "detail": {
+        "scrollRange": 0,
+        "y": 0,
+        "background": "rgba(0, 0, 0, 0)",
+        "compact": false
+      }
+    },
+    {
+      "name": "Body / work band / footer span client width",
+      "passed": true,
+      "detail": [
+        {
+          "name": "body",
+          "width": 1430,
+          "clientWidth": 1430
+        },
+        {
+          "name": "header",
+          "width": 1200,
+          "clientWidth": 1430
+        },
+        {
+          "name": "living room",
+          "width": 1430,
+          "clientWidth": 1430
+        },
+        {
+          "name": "garden band",
+          "width": 1430,
+          "clientWidth": 1430
+        },
+        {
+          "name": "pulse card",
+          "width": 690,
+          "clientWidth": 1430
+        },
+        {
+          "name": "stats card",
+          "width": 690,
+          "clientWidth": 1430
+        },
+        {
+          "name": "footer",
+          "width": 1430,
+          "clientWidth": 1430
+        }
+      ]
+    },
+    {
+      "name": "Window and note shadows not clipped at stage",
+      "passed": true
+    },
+    {
+      "name": "Normal-motion header after 300px paper",
+      "passed": true
+    },
+    {
+      "name": "Reader clears header and retains measure paper",
+      "passed": true,
+      "detail": {
+        "paragraphTop": 92.1875,
+        "headerBottom": 64,
+        "width": 720,
+        "font": "16px",
+        "line": "33.6px",
+        "progressZ": "100",
+        "headerZ": "95"
+      }
+    },
+    {
+      "name": "Normal-motion header after 300px night",
+      "passed": true
+    },
+    {
+      "name": "Reader clears header and retains measure night",
+      "passed": true,
+      "detail": {
+        "paragraphTop": 92.1875,
+        "headerBottom": 64,
+        "width": 720,
+        "font": "16px",
+        "line": "33.6px",
+        "progressZ": "100",
+        "headerZ": "95"
+      }
+    },
+    {
+      "name": "Cache 1.5.2, still 75 resources",
+      "passed": true,
+      "detail": [
+        {
+          "name": "myweb-shell-%2F-1.5.2",
+          "count": 75
+        }
+      ]
+    },
+    {
+      "name": "No behavior script errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "Local wash already transparent at viewport edges paper 1280",
+      "passed": true,
+      "detail": [
+        {
+          "x": 2,
+          "y": 420,
+          "on": [
+            242,
+            241,
+            233
+          ],
+          "off": [
+            242,
+            241,
+            233
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 6,
+          "y": 420,
+          "on": [
+            242,
+            241,
+            233
+          ],
+          "off": [
+            242,
+            241,
+            233
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1263,
+          "y": 420,
+          "on": [
+            242,
+            241,
+            235
+          ],
+          "off": [
+            242,
+            241,
+            235
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1267,
+          "y": 420,
+          "on": [
+            242,
+            241,
+            235
+          ],
+          "off": [
+            242,
+            241,
+            235
+          ],
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "name": "Local wash already transparent at viewport edges paper 1440",
+      "passed": true,
+      "detail": [
+        {
+          "x": 2,
+          "y": 420,
+          "on": [
+            241,
+            240,
+            232
+          ],
+          "off": [
+            241,
+            240,
+            232
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 6,
+          "y": 420,
+          "on": [
+            241,
+            240,
+            232
+          ],
+          "off": [
+            241,
+            240,
+            232
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1423,
+          "y": 420,
+          "on": [
+            241,
+            240,
+            234
+          ],
+          "off": [
+            241,
+            240,
+            234
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1427,
+          "y": 420,
+          "on": [
+            241,
+            240,
+            234
+          ],
+          "off": [
+            241,
+            240,
+            234
+          ],
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "name": "Local wash already transparent at viewport edges paper 1920",
+      "passed": true,
+      "detail": [
+        {
+          "x": 2,
+          "y": 420,
+          "on": [
+            239,
+            239,
+            231
+          ],
+          "off": [
+            239,
+            239,
+            231
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 6,
+          "y": 420,
+          "on": [
+            239,
+            239,
+            231
+          ],
+          "off": [
+            239,
+            239,
+            231
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1903,
+          "y": 420,
+          "on": [
+            240,
+            239,
+            234
+          ],
+          "off": [
+            240,
+            239,
+            234
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1907,
+          "y": 420,
+          "on": [
+            240,
+            239,
+            234
+          ],
+          "off": [
+            240,
+            239,
+            234
+          ],
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "name": "Local wash already transparent at viewport edges night 1280",
+      "passed": true,
+      "detail": [
+        {
+          "x": 2,
+          "y": 420,
+          "on": [
+            33,
+            40,
+            35
+          ],
+          "off": [
+            33,
+            40,
+            35
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 6,
+          "y": 420,
+          "on": [
+            33,
+            40,
+            35
+          ],
+          "off": [
+            33,
+            40,
+            35
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1263,
+          "y": 420,
+          "on": [
+            35,
+            42,
+            39
+          ],
+          "off": [
+            35,
+            42,
+            39
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1267,
+          "y": 420,
+          "on": [
+            35,
+            42,
+            39
+          ],
+          "off": [
+            35,
+            42,
+            39
+          ],
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "name": "Local wash already transparent at viewport edges night 1440",
+      "passed": true,
+      "detail": [
+        {
+          "x": 2,
+          "y": 420,
+          "on": [
+            33,
+            41,
+            36
+          ],
+          "off": [
+            33,
+            41,
+            36
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 6,
+          "y": 420,
+          "on": [
+            33,
+            41,
+            36
+          ],
+          "off": [
+            33,
+            41,
+            36
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1423,
+          "y": 420,
+          "on": [
+            35,
+            42,
+            39
+          ],
+          "off": [
+            35,
+            42,
+            39
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1427,
+          "y": 420,
+          "on": [
+            35,
+            42,
+            39
+          ],
+          "off": [
+            35,
+            42,
+            39
+          ],
+          "maxChannelDelta": 0
+        }
+      ]
+    },
+    {
+      "name": "Local wash already transparent at viewport edges night 1920",
+      "passed": true,
+      "detail": [
+        {
+          "x": 2,
+          "y": 420,
+          "on": [
+            34,
+            42,
+            37
+          ],
+          "off": [
+            34,
+            42,
+            37
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 6,
+          "y": 420,
+          "on": [
+            34,
+            42,
+            37
+          ],
+          "off": [
+            34,
+            42,
+            37
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1903,
+          "y": 420,
+          "on": [
+            36,
+            43,
+            40
+          ],
+          "off": [
+            36,
+            43,
+            40
+          ],
+          "maxChannelDelta": 0
+        },
+        {
+          "x": 1907,
+          "y": 420,
+          "on": [
+            36,
+            43,
+            40
+          ],
+          "off": [
+            36,
+            43,
+            40
+          ],
+          "maxChannelDelta": 0
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "layers": [
+    {
+      "name": "body",
+      "selector": "body",
+      "width": 1430,
+      "clientWidth": 1430,
+      "background": "radial-gradient(circle at 15% 10%, rgba(43, 91, 70, 0.08), rgba(0, 0, 0, 0) 55%), radial-gradient(circle at 85% 20%, rgba(74, 107, 124, 0.08), rgba(0, 0, 0, 0) 60%), url(\"http://127.0.0.1:4173/assets/page-background.svg\")",
+      "color": "rgb(250, 247, 240)"
+    },
+    {
+      "name": "header",
+      "selector": ".site-header",
+      "width": 1200,
+      "clientWidth": 1430,
+      "background": "none",
+      "color": "rgba(0, 0, 0, 0)"
+    },
+    {
+      "name": "living room",
+      "selector": ".home-works",
+      "width": 1430,
+      "clientWidth": 1430,
+      "background": "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 720 560' fill='none' stroke='white' stroke-opacity='.04' stroke-width='1'%3E%3Cpath d='M82 212C96 75 282 25 413 67S661 155 647 316 437 510 282 478 55 373 82 212Z'/%3E%3Cpath d='M140 230C148 121 292 83 398 119S595 180 584 307 426 450 304 427 120 351 140 230Z'/%3E%3Cpath d='M202 246C210 171 307 137 389 170S530 207 519 299 420 394 326 373 188 324 202 246Z'/%3E%3Cpath d='M267 254C279 210 325 199 376 220S463 244 457 291 411 339 350 323 255 299 267 254Z'/%3E%3C/svg%3E\")",
+      "color": "rgb(36, 43, 40)"
+    },
+    {
+      "name": "garden band",
+      "selector": ".home-garden-band",
+      "width": 1430,
+      "clientWidth": 1430,
+      "background": "none",
+      "color": "rgb(242, 236, 225)"
+    },
+    {
+      "name": "pulse card",
+      "selector": ".home-bento-pulse",
+      "width": 690,
+      "clientWidth": 1430,
+      "background": "none",
+      "color": "rgb(36, 43, 40)"
+    },
+    {
+      "name": "stats card",
+      "selector": ".home-bento-stats",
+      "width": 690,
+      "clientWidth": 1430,
+      "background": "none",
+      "color": "rgb(36, 43, 40)"
+    },
+    {
+      "name": "footer",
+      "selector": ".site-footer",
+      "width": 1430,
+      "clientWidth": 1430,
+      "background": "none",
+      "color": "rgb(36, 43, 40)"
+    },
+    {
+      "name": "room header pattern",
+      "route": "articles.html",
+      "class": "writing-intro",
+      "background": "repeating-linear-gradient(rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 27px, rgb(217, 155, 38) 27px, rgb(217, 155, 38) 28px)",
+      "opacity": "0.05"
+    },
+    {
+      "name": "room header pattern",
+      "route": "workbench.html",
+      "class": "workbench-hero",
+      "background": "linear-gradient(rgb(74, 107, 124) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgb(74, 107, 124) 1px, rgba(0, 0, 0, 0) 1px)",
+      "opacity": "0.05"
+    },
+    {
+      "name": "room header pattern",
+      "route": "life.html",
+      "class": "room-header",
+      "background": "radial-gradient(circle at 1px 1px, rgb(43, 91, 70) 1px, rgba(0, 0, 0, 0) 1px)",
+      "opacity": "0.05"
+    }
+  ],
+  "failures": [],
+  "verdict": "PASS",
+  "rechecks": [
+    {
+      "reason": "404 has no vertical scroll range at the desktop viewport; verify transparent top appearance instead of expecting a 300px scroll that cannot occur.",
+      "checks": [
+        "Scrolled header paper 404.html",
+        "Scrolled header night 404.html"
+      ]
+    }
+  ]
+}

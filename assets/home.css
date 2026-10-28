@@ -381,6 +381,9 @@ picture { display: block; }
 
 /* 1.5 desktop rhythm; the existing narrow layouts keep their own measures. */
 @media screen and (min-width: 1024px) {
+  /* Clip the full-viewport wash at the page edge, not at the content column. */
+  .home-page { overflow-x: clip; }
+  .home-opening::before { left: calc(50% - 50vw); right: calc(50% - 50vw); background: radial-gradient(ellipse 38% 64% at 40% 32%, color-mix(in srgb, var(--global-accent) 12%, transparent), transparent 100%); mask-image: linear-gradient(transparent, #000 12%, #000 75%, transparent); mask-composite: add; }
   .home-opening { grid-template-columns: minmax(0, .48fr) minmax(0, .52fr); align-items: center; gap: var(--space-heading); padding-block: var(--space-home); }
   .home-opening-copy { padding-top: 0; }
   .home-opening h1 { margin-block: var(--space-card) var(--space-heading); }
@@ -394,6 +397,7 @@ picture { display: block; }
   .home-showcase { min-height: 0; }
   .home-showcase::after { display: none; }
   .home-showcase-stage { height: 384px; }
+  .home-house-watermark { top: 72px; left: var(--space-card); right: auto; width: 280px; height: 280px; opacity: .07; }
   .home-shot-front { top: 40px; width: 78%; }
   .home-shot-back { top: 188px; width: 42%; }
   .home-shot-back .home-window-bar { background: var(--frame-warm); color: var(--ink); }
