@@ -2,6 +2,9 @@
 import fs from 'node:fs/promises';
 const root = new URL('../', import.meta.url);
 const base = 'https://zlonglab.github.io/MyWeb/';
+const recordOption = process.argv.find(arg => arg.startsWith('--record-dir='));
+const recordDir = recordOption ? recordOption.slice(13) : 'docs/discovery-1.8';
+if (!/^docs\/[a-z0-9][a-z0-9.-]*$/.test(recordDir) || recordDir.includes('..')) throw Error('Record directory must be one named directory under docs/.');
 const image = base + 'assets/images/recallai-preview-960.webp';
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
@@ -33,7 +36,7 @@ for (const file of ['feed.xml', 'sitemap.xml']) {
   await fs.writeFile(new URL(file, root), content);
 }
 await fs.writeFile(new URL('robots.txt', root), 'User-agent: *\nAllow: /\nSitemap: ' + base + 'sitemap.xml\n');
-await fs.mkdir(new URL('docs/discovery-1.8/', root), { recursive: true });
-await fs.writeFile(new URL('docs/discovery-1.8/og-metadata.json', root), JSON.stringify(generated, null, 2) + '\n');
-await fs.writeFile(new URL('docs/discovery-1.8/generator-differences.json', root), JSON.stringify({ base, image, metadataDifferences: differences, fallbackPages: pages.filter(file => !generated[file]), sitemapNote: 'Preserved generator output: 23 URLs; no standalone video-prompts.html, 404.html or bare detail shells. No clean URLs generated.', robotsNote: 'Generator emits no robots.txt; added Allow and Sitemap only.' }, null, 2) + '\n');
+await fs.mkdir(new URL(recordDir + '/', root), { recursive: true });
+await fs.writeFile(new URL(recordDir + '/og-metadata.json', root), JSON.stringify(generated, null, 2) + '\n');
+await fs.writeFile(new URL(recordDir + '/generator-differences.json', root), JSON.stringify({ base, image, metadataDifferences: differences, fallbackPages: pages.filter(file => !generated[file]), sitemapNote: 'Preserved generator output and existing HTML/query URLs. Image room has an explicit standalone URL; no standalone video room, 404 or bare detail shells. No clean URLs generated.', robotsNote: 'Generator emits no robots.txt; added Allow and Sitemap only.' }, null, 2) + '\n');
 console.log(JSON.stringify({ htmlPages: pages.length, generatorMetadataDifferences: differences.length, fallbackPages: pages.filter(file => !generated[file]), published: false }));

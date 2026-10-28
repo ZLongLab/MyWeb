@@ -39,7 +39,15 @@ npm start
 
 修改文件并保存后，刷新浏览器即可看到更新。无需编译，也无需安装依赖。
 
-## 当前版本 1.8.0「上线完善包」
+## 当前版本 1.9.0「图片灵感室」
+
+- 新增[图片灵感室](image-prompts.html)：20个图片提示词起点，按人物、产品、海报、场景和插画筛选，可搜索、复制、本地收藏和导入导出收藏。
+- 18条提示词由本站编写，2条参考改写自YouMind OpenLab收录项目，详情保留原作者、原帖、许可与修改说明。20张配图是本站原创SVG构图示意，不是模型生成结果；实际模型效果尚未验证。
+- 作品、工作台、全站搜索与视频灵感室均有入口。复制后可以自行粘贴到优化器或视频灵感室，不自动写入、覆盖草稿，不读取API密钥。
+- 主站白名单109项、离线缓存105项；新增25个必要文件约72KB，feed／sitemap／robots继续不入缓存。优化器独立45项保持原样。GitHub贡献快照保留站主已批准的53次，不重新抓取或批准；站内作品计数更新为7件。
+- 正式OG与站点地图接入新页面，历史1.8档案保留。详见[来源、实现与验收记录](docs/image-inspiration-1.9/README.md)。
+
+### 1.8.0「上线完善包」
 
 - 接入 OG／Twitter 分享元信息、[站点地图](sitemap.xml)、[RSS](feed.xml)与允许全站抓取的[robots.txt](robots.txt)。订阅入口沿用页脚链接样式，文章列表及详情提供 RSS 自动发现。
 - 发现草稿由 `npm run discovery -- --site-url=https://zlonglab.github.io/MyWeb/` 生成；检查后用 `node scripts/enable-discovery.mjs` 接入。保留生成器的文案与 URL 范围，差异及静态详情页限制见 [交付记录](docs/discovery-1.8/README.md)。没有提交搜索引擎或注册 Search Console。

@@ -95,6 +95,7 @@
     { id: 'page:workbench', title: '工作台', summary: '项目近况、技术用途与小站更新。', href: 'workbench.html', body: '工作台 维护 开发 项目 技术' }
   ].forEach(function (page) { page.type = '页面'; addEntry(page); });
   var workbench = window.SITE_WORKBENCH || {};
+  addEntry({ id: 'page:image-prompts', type: '页面', title: '图片灵感室 · 图片提示词起点', summary: '20 个起点：人物、产品、海报、场景和插画；复制、收藏与本地备份。', href: 'image-prompts.html', body: '图片 生图 提示词 灵感 摄影 水彩 人物 产品 海报 插画 Nano Banana 收藏' });
   addEntry({ id: 'page:prompt-optimizer', type: '页面', title: '提示词优化器 · Prompt Optimizer', summary: '配置自己的模型，优化提示词、测试比较并保存收藏。', href: 'prompt-optimizer/', body: 'AI 优化 模型 系统提示词 用户提示词 模板 变量 对比测试 开源部署' });
   addEntry({ id: 'page:video-prompts', type: '页面', title: '视频灵感室 · AI 提示词工具', summary: '8 个创作模板：填写想法、复制提示词、收藏和备份草稿。', href: 'video-prompts.html', body: 'Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿' });
   [

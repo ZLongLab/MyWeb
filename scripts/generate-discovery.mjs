@@ -18,6 +18,7 @@ try {
   const items = articles.map(a => '<item><title>' + escape(a.title) + '</title><link>' + escape(url('article.html?id=' + encodeURIComponent(a.id))) + '</link><guid isPermaLink="true">' + escape(url('article.html?id=' + encodeURIComponent(a.id))) + '</guid><pubDate>' + new Date(a.date + 'T12:00:00+08:00').toUTCString() + '</pubDate><description>' + escape(a.summary) + '</description></item>').join('');
   const feed = '<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>有间小站</title><link>' + escape(base.href) + '</link><description>ZL 的作品与开发手记</description><language>zh-CN</language>' + items + '</channel></rss>\n';
   const paths = [...houseWindow.SITE_HOUSE.rooms.map(r => r.href), 'about.html', ...articles.map(a => 'article.html?id=' + encodeURIComponent(a.id)), ...projectWindow.SITE_PROJECTS.map(p => 'project.html?id=' + encodeURIComponent(p.id))];
+  if (projectWindow.SITE_PROJECTS.some(p => p.id === 'image-prompts')) paths.push('image-prompts.html');
   const sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + paths.map(p => '<url><loc>' + escape(url(p)) + '</loc></url>').join('') + '</urlset>\n';
   const og = Object.fromEntries(houseWindow.SITE_HOUSE.rooms.map(r => [r.href, { title: r.name + ' · 有间小站', description: r.description, url: url(r.href), type: 'website' }]));
   og['about.html'] = { title: '关于 ZL · 有间小站', description: '计算机学生，记录实用工具与把想法做出来的过程。', url: url('about.html'), type: 'website' };

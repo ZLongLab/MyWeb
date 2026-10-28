@@ -26,6 +26,7 @@
   }
 
   function detailHref(section, id, context) {
+    if (section === 'projects' && id === 'image-prompts') return 'image-prompts.html';
     if (section === 'projects' && id === 'prompt-optimizer') return 'prompt-optimizer/';
     if (section === 'projects' && id === 'video-prompts') return 'video-prompts.html';
     var page = section === 'projects' ? 'project.html' : 'article.html';

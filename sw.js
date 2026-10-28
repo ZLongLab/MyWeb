@@ -4,8 +4,33 @@
 // and external links are deliberately absent, even if the host can serve them.
 const BASE = new URL('./', self.location.href);
 const CACHE_PREFIX = 'myweb-shell-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE_NAME = CACHE_PREFIX + '1.8.0';
+const CACHE_NAME = CACHE_PREFIX + '1.9.0';
 const APP_FILES = [
+  'assets/images/inspiration/amber-bottle.svg',
+  'assets/images/inspiration/bento-product.svg',
+  'assets/images/inspiration/blue-hour.svg',
+  'assets/images/inspiration/botanical-poster.svg',
+  'assets/images/inspiration/clay-fox.svg',
+  'assets/images/inspiration/frosted-flacon.svg',
+  'assets/images/inspiration/headphones.svg',
+  'assets/images/inspiration/isometric-desk.svg',
+  'assets/images/inspiration/lakeside-cabin.svg',
+  'assets/images/inspiration/monochrome.svg',
+  'assets/images/inspiration/music-poster.svg',
+  'assets/images/inspiration/old-bookshop.svg',
+  'assets/images/inspiration/paper-mountains.svg',
+  'assets/images/inspiration/quiet-courtyard.svg',
+  'assets/images/inspiration/quote-card.svg',
+  'assets/images/inspiration/rainy-street.svg',
+  'assets/images/inspiration/studio-portrait.svg',
+  'assets/images/inspiration/tea-table.svg',
+  'assets/images/inspiration/watercolor-cat.svg',
+  'assets/images/inspiration/window-portrait.svg',
+  'image-prompts.html',
+  'assets/image-inspiration-data.js',
+  'assets/image-inspiration-core.js',
+  'assets/image-inspiration.js',
+  'assets/image-inspiration.css',
   'video-prompts.html',
   'assets/video-templates.js',
   'assets/video-prompts-core.js',

@@ -3,6 +3,13 @@
 // featured 控制首页精选；image 是首页和作品详情共用的本地界面示例。
 window.SITE_PROJECTS = [
   {
+    id: 'image-prompts', title: '图片灵感室 · 图片提示词起点', category: '网页工具', status: '已上线 · 20 个起点', featured: false,
+    summary: '按人物、产品、海报、场景和插画找灵感，复制图片提示词，收藏喜欢的构图。',
+    tags: ['图片提示词', '原创示意', '本地收藏'], keywords: ['图片灵感室', '生图', '摄影', '水彩', '产品图', '海报', 'Nano Banana'],
+    sourceUrl: 'https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts',
+    detail: '20 个图片提示词起点与本站原创构图示意。提供分类、搜索、本地收藏和收藏备份。浏览与复制不调用 AI，实际生成需使用自己的模型服务。\n\n18 条提示词由本站编写，2 条参考改写自 YouMind OpenLab 的收录项目，保留原作者、来源与 CC BY 4.0 说明。配图不代表模型生成结果，也未验证具体模型效果。'
+  },
+  {
     id: 'prompt-optimizer', title: '提示词优化器 · Prompt Optimizer', category: '网页工具', status: '自托管 · v2.12.0', featured: false,
     summary: '接入自己的模型，优化提示词、比较结果，管理模板、变量与收藏。',
     tags: ['开源部署', '提示词优化', '自配模型'], keywords: ['Prompt Optimizer', '优化器', '系统提示词', '用户提示词', '模型管理', '对比测试'],
