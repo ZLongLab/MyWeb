@@ -1,0 +1,89 @@
+/* MyWeb's paper, moss and clay. No controls or workspaces are removed. */
+:root {
+  --myweb-tool-nav-height: 76px;
+  --myweb-paper: #faf7f2;
+  --myweb-card: #fffdf8;
+  --myweb-soft: #f3efe6;
+  --myweb-ink: #272c26;
+  --myweb-muted: #5a6058;
+  --myweb-line: #deded2;
+  --myweb-moss: #2b5b46;
+  --myweb-clay: #a44827;
+  --myweb-font: "Noto Sans SC", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+}
+:root.dark {
+  --myweb-paper: #1e2420;
+  --myweb-card: #252e28;
+  --myweb-soft: #2d3830;
+  --myweb-ink: #e4e8de;
+  --myweb-muted: #b3bcad;
+  --myweb-line: #435044;
+  --myweb-moss: #98c6a5;
+  --myweb-clay: #e7a078;
+  color-scheme: dark;
+}
+html, body { background: var(--myweb-paper); }
+#myweb-tool-nav {
+  box-sizing: border-box;
+  position: fixed; inset: 0 0 auto; z-index: 10000;
+  height: var(--myweb-tool-nav-height);
+  display: flex; align-items: center; gap: 28px;
+  padding: 0 clamp(20px, 3vw, 48px);
+  background: var(--myweb-paper); color: var(--myweb-ink);
+  border-bottom: 1px solid var(--myweb-line);
+  font: 13px/1.6 var(--myweb-font);
+  -webkit-font-smoothing: antialiased;
+}
+#myweb-tool-nav a { color: inherit; text-decoration: none; white-space: nowrap; }
+#myweb-tool-nav a:hover { color: var(--myweb-moss); }
+#myweb-tool-nav a:focus-visible { outline: 2px solid var(--myweb-moss); outline-offset: 4px; border-radius: 4px; }
+#myweb-tool-nav .myweb-tool-brand { display: flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 600; letter-spacing: -.5px; min-height: 44px; }
+.myweb-tool-brand svg { flex: none; }
+.myweb-tool-room { display: flex; align-items: center; gap: 13px; color: var(--myweb-ink); }
+.myweb-tool-room > span:first-child { color: var(--myweb-muted); }
+.myweb-tool-room i { font-style: normal; color: #9ba08f; }
+.myweb-tool-stamp { color: var(--myweb-clay); font: 10px/1.5 "Cascadia Code", Consolas, monospace; letter-spacing: 1.4px; margin-left: 3px; }
+.myweb-tool-links { margin-left: auto; display: flex; align-items: center; gap: 24px; color: var(--myweb-muted); font-size: 12px; }
+.myweb-tool-links a { display: flex; gap: 12px; align-items: center; min-height: 44px; }
+#app .compact-viewport-frame { top: var(--myweb-tool-nav-height) !important; height: calc(100dvh - var(--myweb-tool-nav-height)) !important; max-height: calc(100dvh - var(--myweb-tool-nav-height)) !important; }
+#app .n-config-provider { font-family: var(--myweb-font); -webkit-font-smoothing: antialiased; }
+#app .nav-header-enhanced { padding: 13px clamp(20px, 3vw, 48px) !important; }
+#app .brand-link { padding-left: 0; }
+#app .brand-link .logo-image { display: none; }
+#app .brand-link .theme-title { font-size: 17px; font-weight: 600; letter-spacing: -.4px; }
+#app .core-navigation { margin-left: 8px; padding-left: 22px; }
+#app .nav-actions .n-button:not(.n-button--circle) { --n-border-radius: 7px !important; }
+#app .nav-actions .n-button__icon { font-size: 14px; opacity: .8; }
+#app .n-card { border-radius: 10px; }
+#app .n-card-header__main { letter-spacing: -.3px; }
+#app textarea { line-height: 1.85 !important; }
+#app .n-input--textarea .n-input-wrapper { padding: 12px 14px; }
+#app .n-empty { --n-text-color: var(--myweb-muted); }
+#app .n-empty .n-empty__icon { opacity: .55; }
+/* Compact layouts have their own surface variables; keep them in the same palette. */
+:root[data-optimizer-theme="light"], :root[data-optimizer-theme="dark"] {
+  --compact-paper: var(--myweb-card);
+  --compact-soft: var(--myweb-soft);
+  --compact-border: var(--myweb-line);
+  --compact-ink: var(--myweb-ink);
+  --compact-muted: var(--myweb-muted);
+}
+@media (max-width: 1100px) {
+  #myweb-tool-nav { gap: 22px; }
+  .myweb-tool-stamp { display: none; }
+}
+@media (max-width: 640px) {
+  :root { --myweb-tool-nav-height: 60px; }
+  #myweb-tool-nav { padding: 0 14px; gap: 14px; }
+  #myweb-tool-nav .myweb-tool-brand { font-size: 16px; gap: 6px; }
+  .myweb-tool-brand svg { width: 27px; height: 27px; }
+  .myweb-tool-room { font-size: 12px; }
+  .myweb-tool-room > span:first-child, .myweb-tool-room i { display: none; }
+  .myweb-tool-links { gap: 0; font-size: 11px; }
+  .myweb-tool-links .myweb-studio-link { display: none; }
+  .myweb-tool-links a { gap: 3px; }
+  #app .compact-original-card { border-radius: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #myweb-tool-nav * { transition: none !important; }
+}
