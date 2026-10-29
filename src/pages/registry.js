@@ -1,4 +1,9 @@
 export const pages = {
+  "image-tools.html": {
+    load: () => import("./ImageToolsPage.jsx"),
+    page: "image-tools",
+    room: "workbench",
+  },
   "404.html": {
     load: () => import("./NotFoundPage.jsx"),
     page: "notfound",

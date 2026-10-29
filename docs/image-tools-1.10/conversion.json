@@ -1,0 +1,13 @@
+{
+  "inputBytes": 2526287,
+  "outputBytes": 190334,
+  "type": "image/webp",
+  "width": 1024,
+  "height": 768,
+  "download": "workshop-test-01.webp",
+  "wasmRequests": [
+    "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+  ],
+  "external": [],
+  "uploads": []
+}

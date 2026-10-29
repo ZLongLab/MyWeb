@@ -1,0 +1,23 @@
+{
+  "conditions": "Isolated Chrome; SW blocked; same paper/autumn 1440x1000; decoded bytes; gzip is local estimate, not a timing benchmark.",
+  "comparison": {
+    "index.html": {
+      "beforeBytes": 376970,
+      "afterBytes": 379179,
+      "deltaBytes": 2209,
+      "deltaPercent": 0.585988274929039,
+      "beforeFiles": 20,
+      "afterFiles": 20,
+      "codecChunksLoaded": []
+    },
+    "image-prompts.html": {
+      "beforeBytes": 377816,
+      "afterBytes": 380025,
+      "deltaBytes": 2209,
+      "deltaPercent": 0.5846761386494981,
+      "beforeFiles": 17,
+      "afterFiles": 17,
+      "codecChunksLoaded": []
+    }
+  }
+}

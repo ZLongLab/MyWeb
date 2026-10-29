@@ -1,0 +1,69 @@
+{
+  "baseline": "ae59afc4002b2a8858c22af04522001daf1de98c",
+  "directory": "dist",
+  "base": "/MyWeb/",
+  "cacheVersion": "1.10.0-react-90002afb7955",
+  "cachedFiles": 123,
+  "mainFiles": 134,
+  "optimizerFiles": 45,
+  "wasmFiles": [
+    {
+      "file": "assets/avif_enc-Co4TcJko.wasm",
+      "bytes": 3485872,
+      "sha256": "d9f2a95164362af48558d176e619becfd49dd97b50b86c679b47100860522b3d"
+    },
+    {
+      "file": "assets/mozjpeg_enc-DO-zoExo.wasm",
+      "bytes": 251524,
+      "sha256": "24d4177f1c4963e2058b107189249651c61fdef125570e79b1dfb63c8bb49326"
+    },
+    {
+      "file": "assets/squoosh_resize_bg-YY9xfwUg.wasm",
+      "bytes": 34545,
+      "sha256": "5b1f702d502c4d0a70b99f78691bd554d566ba95859e4c57af5435955a1d74a5"
+    },
+    {
+      "file": "assets/webp_enc-BpZvKflB.wasm",
+      "bytes": 281261,
+      "sha256": "b6085bb6702f144e9dc6016d58d230b34a84976bf0d080b7390b4b4b137d6ab7"
+    }
+  ],
+  "wasmPrecached": [],
+  "sitemapUrls": [
+    "https://zlonglab.github.io/MyWeb/index.html",
+    "https://zlonglab.github.io/MyWeb/now.html",
+    "https://zlonglab.github.io/MyWeb/projects.html",
+    "https://zlonglab.github.io/MyWeb/articles.html",
+    "https://zlonglab.github.io/MyWeb/workbench.html",
+    "https://zlonglab.github.io/MyWeb/uses.html",
+    "https://zlonglab.github.io/MyWeb/life.html",
+    "https://zlonglab.github.io/MyWeb/links.html",
+    "https://zlonglab.github.io/MyWeb/guestbook.html",
+    "https://zlonglab.github.io/MyWeb/colophon.html",
+    "https://zlonglab.github.io/MyWeb/about.html",
+    "https://zlonglab.github.io/MyWeb/article.html?id=how-this-site-grew",
+    "https://zlonglab.github.io/MyWeb/article.html?id=documentassistant-confirm-before-archive",
+    "https://zlonglab.github.io/MyWeb/article.html?id=recallai-local-search",
+    "https://zlonglab.github.io/MyWeb/article.html?id=hello-world",
+    "https://zlonglab.github.io/MyWeb/article.html?id=small-first-version",
+    "https://zlonglab.github.io/MyWeb/article.html?id=next-steps",
+    "https://zlonglab.github.io/MyWeb/project.html?id=image-tools",
+    "https://zlonglab.github.io/MyWeb/project.html?id=image-prompts",
+    "https://zlonglab.github.io/MyWeb/project.html?id=prompt-optimizer",
+    "https://zlonglab.github.io/MyWeb/project.html?id=video-prompts",
+    "https://zlonglab.github.io/MyWeb/project.html?id=recallai",
+    "https://zlonglab.github.io/MyWeb/project.html?id=document-assistant",
+    "https://zlonglab.github.io/MyWeb/project.html?id=folia-android",
+    "https://zlonglab.github.io/MyWeb/project.html?id=personal-site",
+    "https://zlonglab.github.io/MyWeb/image-prompts.html",
+    "https://zlonglab.github.io/MyWeb/image-tools.html"
+  ],
+  "originalHtmlUnchanged": 16,
+  "originalStylesUnchanged": 23,
+  "oldProjectsAndVersionEntriesPreserved": true,
+  "feedUnchanged": true,
+  "optimizerSourceAndWorkflowUnchanged": true,
+  "credentialPatternFindings": [],
+  "publishedFiles": 179,
+  "deployed": false
+}

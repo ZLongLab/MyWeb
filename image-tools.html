@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="批量转换 WebP、JPEG、AVIF、PNG，调整质量与图片宽度；全程在当前浏览器本地处理，不上传图片。"><meta name="author" content="ZL"><meta name="theme-color" content="#faf7f2"><title>图片工坊 · 有间小站</title>
+  <script>
+    (function () {
+      var choice = '', season = '';
+      try { choice = localStorage.getItem('myweb_theme_v1') || ''; season = localStorage.getItem('myweb_season_v1') || ''; } catch (error) { /* Preferences are optional. */ }
+      var now = new Date(), hour = now.getHours(), month = now.getMonth() + 1;
+      var mode = choice === 'paper' || choice === 'night' ? choice : (hour >= 20 || hour < 6 ? 'night' : 'paper');
+      var autoSeason = month >= 3 && month <= 5 ? 'spring' : month >= 6 && month <= 8 ? 'summer' : month >= 9 && month <= 11 ? 'autumn' : 'winter';
+      if (['spring', 'summer', 'autumn', 'winter'].indexOf(season) === -1) season = autoSeason;
+      var root = document.documentElement;
+      root.dataset.theme = mode; root.dataset.season = season;
+      root.style.colorScheme = mode === 'night' ? 'dark' : 'light';
+      var colors = { spring: '#f7f8f3', summer: '#faf7f0', autumn: '#faf5ec', winter: '#f5f6f7' };
+      var color = document.querySelector('meta[name="theme-color"]');
+      if (color) color.content = mode === 'night' ? '#1e2420' : colors[season];
+    })();
+  </script>
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/search.css">
+  <link rel="stylesheet" href="/assets/navigation.css">
+  <link rel="stylesheet" href="/assets/site-theme.css">
+  <link rel="stylesheet" href="/assets/background.css">
+
+  <link rel="stylesheet" href="/assets/pwa.css">
+  <link rel="stylesheet" href="/assets/night.css">
+  <link rel="stylesheet" href="/assets/house.css">
+  <link rel="stylesheet" href="/assets/seasons.css">
+  <link rel="stylesheet" href="/assets/garden.css">
+  <link rel="stylesheet" href="/assets/details.css">
+  <link rel="stylesheet" href="/assets/motion.css">
+  <link rel="stylesheet" href="/assets/image-tools.css">
+  <!-- discovery:start -->
+  <meta property="og:title" content="图片工坊 · 有间小站">
+  <meta property="og:description" content="批量转换 WebP、JPEG、AVIF、PNG，调整质量与图片宽度；全程在当前浏览器本地处理，不上传图片。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zlonglab.github.io/MyWeb/image-tools.html">
+  <meta property="og:image" content="https://zlonglab.github.io/MyWeb/assets/images/recallai-preview-960.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="图片工坊 · 有间小站">
+  <meta name="twitter:description" content="批量转换 WebP、JPEG、AVIF、PNG，调整质量与图片宽度；全程在当前浏览器本地处理，不上传图片。">
+  <meta name="twitter:url" content="https://zlonglab.github.io/MyWeb/image-tools.html">
+  <meta name="twitter:image" content="https://zlonglab.github.io/MyWeb/assets/images/recallai-preview-960.webp">
+  <!-- discovery:end -->
+  <link rel="stylesheet" href="/src/styles/react-shell.css">
+  <script type="module" src="/src/main.jsx"></script>
+</head>
+<body data-page="image-tools" data-room="workbench">
+  <div id="root"></div>
+  <noscript>本站需要 JavaScript 才能展示内容。请启用 JavaScript 后刷新；文章订阅可通过 <a href="feed.xml">RSS</a> 阅读。</noscript>
+</body>
+</html>

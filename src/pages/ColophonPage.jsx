@@ -114,6 +114,20 @@ function SitePrinciples() {
   );
 }
 
+function ImageToolsNote() {
+  return (
+    <section className="room-section" id="image-tools">
+      <div className="room-section-head"><p className="room-kicker">IMAGE WORKSHOP</p><h2>图片工坊的使用边界</h2></div>
+      <div className="room-section-body">
+        <p><a href="image-tools.html">打开图片工坊 →</a> 批量调整图片格式与宽度，编解码来自 jSquash / Squoosh；PNG 使用浏览器 Canvas。全程在本地处理，不上传图片。</p>
+        <p>图片和结果只保留在当前页，刷新后需要重新选择。动画只处理首帧，JPEG 透明区域填为白色，输出不保留原图附加元数据。</p>
+        <p>页面壳与脚本可离线打开；较大的编解码器二进制不进入离线预缓存，首次转换或重新加载组件需要联网，不保证离线转换。AVIF 编码较慢。</p>
+        <p><a href="THIRD-PARTY-LICENSES.txt">查看编解码器开源许可证 ↗</a></p>
+      </div>
+    </section>
+  );
+}
+
 function Changelog() {
   return (
     <section className="room-section" id="changelog">
@@ -138,6 +152,7 @@ export default function ColophonPage() {
         <SiteStructure />
         <ColorPalette />
         <SitePrinciples />
+        <ImageToolsNote />
         <Changelog />
         {"\n    "}
         {"\n  "}

@@ -10,7 +10,10 @@ import { optimizerFiles } from "./scripts/optimizer-files.mjs";
 const root = fileURLToPath(new URL("./", import.meta.url));
 // Native controllers still own parts of the page DOM. Limit Fast Refresh and
 // automatic memoization to components whose entire subtree belongs to React.
-const managedComponents = /\/src\/components\/(ProjectCard|ProjectCollection|ToolShortcut|SiteMark)\.jsx$/;
+const managedComponents = /\/src\/(?:components\/(?:ProjectCard|ProjectCollection|ToolShortcut|SiteMark|image-tools\/(?:ImageToolsSettings|ImageToolsQueue))|pages\/ImageToolsPage)\.jsx$/;
+// The page owns a Worker and Blob URLs. Editing the page itself reloads it to
+// dispose those resources; its pure child components can preserve state.
+const refreshComponents = /\/src\/components\/(?:ProjectCard|ProjectCollection|ToolShortcut|SiteMark|image-tools\/(?:ImageToolsSettings|ImageToolsQueue))\.jsx$/;
 const compilerPreset = reactCompilerPreset({ compilationMode: 'annotation', target: '19' });
 compilerPreset.rolldown.filter.id = { include: managedComponents, exclude: /node_modules/ };
 async function syncStyles() {
@@ -131,6 +134,7 @@ function siteFiles() {
           else {
             publishedFiles.push(relative);
             if (
+              // Large codec binaries stay network-loaded, never precached.
               /\.(?:html|js|css|svg|webp|png|webmanifest)$/.test(relative) &&
               relative !== "sw.js"
             )
@@ -186,12 +190,14 @@ function siteFiles() {
 export default defineConfig({
   appType: "mpa",
   base,
-  plugins: [react({ include: managedComponents }), babel({ presets: [compilerPreset] }), siteFiles()],
+  plugins: [react({ include: refreshComponents }), babel({ presets: [compilerPreset] }), siteFiles()],
   oxc: { jsx: { runtime: "automatic" } },
   optimizeDeps: {
     entries: pages,
     include: ["react", "react-dom/client", "react/jsx-runtime"],
+    exclude: ["@jsquash/webp", "@jsquash/jpeg", "@jsquash/avif", "@jsquash/resize"],
   },
+  worker: { format: "es" },
   server: {
     host: "127.0.0.1",
     port: Number(process.env.PORT || 4173),

@@ -23,7 +23,7 @@ test.beforeEach(async ({ page }) => {
   });
 });
 for (const width of [1440, 390])
-  test(`All sixteen pages, metadata, local resources and layout at ${width}`, async ({
+  test(`All ${pages.length} pages, metadata, local resources and layout at ${width}`, async ({
     page,
   }) => {
     await page.setViewportSize({ width, height: 1000 });
@@ -107,7 +107,7 @@ test("React project filters, query reload and legacy anchors", async ({
   page,
 }) => {
   await ready(page, "projects.html");
-  await expect(page.locator(".portfolio-project")).toHaveCount(7);
+  await expect(page.locator(".portfolio-project")).toHaveCount(oldWindow.SITE_PROJECTS.length);
   await page.getByRole("button", { name: "本地工具", exact: true }).click();
   await expect(page.locator(".portfolio-project")).toHaveCount(
     oldWindow.SITE_PROJECTS.filter((p) => p.category === "本地工具").length,

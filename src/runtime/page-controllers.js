@@ -1,4 +1,18 @@
 export const pageControllers = {
+  // React owns every descendant of the new tool page. Only shared shell
+  // controllers are mounted here; no native controller populates its UI.
+  "image-tools": [
+    () => import("../controllers/garden.js"),
+    () => import("../controllers/content.js"),
+    () => import("../controllers/navigation.js"),
+    () => import("../controllers/app.js"),
+    () => import("../controllers/search.js"),
+    () => import("../controllers/house.js"),
+    () => import("../controllers/theme-controls.js"),
+    () => import("../controllers/details.js"),
+    () => import("../controllers/motion.js"),
+    () => import("../controllers/pwa.js"),
+  ],
   notfound: [
     () => import("../controllers/garden.js"),
     () => import("../controllers/content.js"),

@@ -1,0 +1,199 @@
+{
+  "index.html": {
+    "jsFiles": [
+      {
+        "file": "assets/HomePage-BlS6wf5I.js",
+        "bytes": 11640,
+        "gzip": 2990
+      },
+      {
+        "file": "assets/app-6oY_rQhg.js",
+        "bytes": 3971,
+        "gzip": 1869
+      },
+      {
+        "file": "assets/compiler-runtime-DOWVuN7T.js",
+        "bytes": 8033,
+        "gzip": 3038
+      },
+      {
+        "file": "assets/content-D1Ddn-ms.js",
+        "bytes": 1480,
+        "gzip": 778
+      },
+      {
+        "file": "assets/details-B9l9xuLz.js",
+        "bytes": 7019,
+        "gzip": 3006
+      },
+      {
+        "file": "assets/garden-BC4Ek4f-.js",
+        "bytes": 8251,
+        "gzip": 3155
+      },
+      {
+        "file": "assets/home-projects-BqtchCxc.js",
+        "bytes": 10682,
+        "gzip": 4486
+      },
+      {
+        "file": "assets/house-CJ3Gmfik.js",
+        "bytes": 4010,
+        "gzip": 2102
+      },
+      {
+        "file": "assets/jsx-runtime-BX5dh3L7.js",
+        "bytes": 971,
+        "gzip": 557
+      },
+      {
+        "file": "assets/main-BD9f8jC7.js",
+        "bytes": 231735,
+        "gzip": 70104
+      },
+      {
+        "file": "assets/media-viewer-eVjZKXzH.js",
+        "bytes": 3451,
+        "gzip": 1500
+      },
+      {
+        "file": "assets/motion-Cr9NN1EC.js",
+        "bytes": 4428,
+        "gzip": 1621
+      },
+      {
+        "file": "assets/navigation-CVsMhdG8.js",
+        "bytes": 2824,
+        "gzip": 1245
+      },
+      {
+        "file": "assets/navigation-PnF27A8Y.js",
+        "bytes": 890,
+        "gzip": 467
+      },
+      {
+        "file": "assets/pictures-3zqGBNdI.js",
+        "bytes": 515,
+        "gzip": 344
+      },
+      {
+        "file": "assets/pwa-CSuDHMvo.js",
+        "bytes": 2233,
+        "gzip": 1109
+      },
+      {
+        "file": "assets/search-BA2xELzb.js",
+        "bytes": 17905,
+        "gzip": 7271
+      },
+      {
+        "file": "assets/site-Cf7RwDQp.js",
+        "bytes": 50878,
+        "gzip": 18035
+      },
+      {
+        "file": "assets/theme-controls-C5Lsk3cA.js",
+        "bytes": 3760,
+        "gzip": 1702
+      },
+      {
+        "file": "assets/workbench-BrHHiQcO.js",
+        "bytes": 2294,
+        "gzip": 1005
+      }
+    ],
+    "jsDecodedBytes": 376970,
+    "jsGzipEstimate": 126384
+  },
+  "image-prompts.html": {
+    "jsFiles": [
+      {
+        "file": "assets/ImageInspirationPage-Bvzq4z2d.js",
+        "bytes": 8950,
+        "gzip": 2946
+      },
+      {
+        "file": "assets/app-6oY_rQhg.js",
+        "bytes": 3971,
+        "gzip": 1869
+      },
+      {
+        "file": "assets/compiler-runtime-DOWVuN7T.js",
+        "bytes": 8033,
+        "gzip": 3038
+      },
+      {
+        "file": "assets/content-D1Ddn-ms.js",
+        "bytes": 1480,
+        "gzip": 778
+      },
+      {
+        "file": "assets/details-B9l9xuLz.js",
+        "bytes": 7019,
+        "gzip": 3006
+      },
+      {
+        "file": "assets/garden-BC4Ek4f-.js",
+        "bytes": 8251,
+        "gzip": 3155
+      },
+      {
+        "file": "assets/house-CJ3Gmfik.js",
+        "bytes": 4010,
+        "gzip": 2102
+      },
+      {
+        "file": "assets/image-inspiration-C0bJjVdm.js",
+        "bytes": 20478,
+        "gzip": 9253
+      },
+      {
+        "file": "assets/jsx-runtime-BX5dh3L7.js",
+        "bytes": 971,
+        "gzip": 557
+      },
+      {
+        "file": "assets/main-BD9f8jC7.js",
+        "bytes": 231735,
+        "gzip": 70104
+      },
+      {
+        "file": "assets/motion-Cr9NN1EC.js",
+        "bytes": 4428,
+        "gzip": 1621
+      },
+      {
+        "file": "assets/navigation-CVsMhdG8.js",
+        "bytes": 2824,
+        "gzip": 1245
+      },
+      {
+        "file": "assets/navigation-PnF27A8Y.js",
+        "bytes": 890,
+        "gzip": 467
+      },
+      {
+        "file": "assets/pwa-CSuDHMvo.js",
+        "bytes": 2233,
+        "gzip": 1109
+      },
+      {
+        "file": "assets/search-BA2xELzb.js",
+        "bytes": 17905,
+        "gzip": 7271
+      },
+      {
+        "file": "assets/site-Cf7RwDQp.js",
+        "bytes": 50878,
+        "gzip": 18035
+      },
+      {
+        "file": "assets/theme-controls-C5Lsk3cA.js",
+        "bytes": 3760,
+        "gzip": 1702
+      }
+    ],
+    "jsDecodedBytes": 377816,
+    "jsGzipEstimate": 128258
+  }
+}

@@ -266,6 +266,14 @@ export default function initialize(scope) {
     });
     var workbench = window.SITE_WORKBENCH || {};
     addEntry({
+      id: "page:image-tools",
+      type: "页面",
+      title: "图片工坊 · 本地图片转换",
+      summary: "多张图片顺序压缩与缩放，转换 WebP、JPEG、AVIF、PNG；全程本地处理，不上传。",
+      href: "image-tools.html",
+      body: "图片工坊 图片压缩 格式转换 批量 缩放 下载 WebP JPEG AVIF PNG jSquash Squoosh",
+    });
+    addEntry({
       id: "page:image-prompts",
       type: "页面",
       title: "图片灵感室 · 图片提示词起点",

@@ -1,6 +1,6 @@
 // 工作台只记录已在本站项目中确认的内容；updated 是人工核对日期，不随浏览时间变化。
 window.SITE_WORKBENCH = {
-  updated: '2026-10-28',
+  updated: '2026-10-29',
   focus: [
     { projectId: 'recallai', label: '本地资料检索', description: '整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用边界。' },
     { projectId: 'document-assistant', label: '文档整理', description: '把规则分类、确认归档和备份恢复的取舍写清楚，保留源码与下载版本的区别。' },
@@ -13,6 +13,7 @@ window.SITE_WORKBENCH = {
     { title: 'Capacitor · React · TypeScript', purpose: '移动端适配', description: '用于 Folia 的 Android 适配、构建和界面集成。', projectId: 'folia-android' }
   ],
   updates: [
+    { version: '1.10.0', date: '2026-10-29', title: '把几张图片放进工坊', changes: ['新增图片工坊，批量图片顺序转换 WebP、JPEG、AVIF、PNG，统一质量与尺寸，逐张或全部下载。', '融合 jSquash / Squoosh 单线程编解码，本地处理不上传；二进制按需加载，不进入离线预缓存。'] },
     { version: '1.9.0', date: '2026-10-28', title: '给图片也留一个灵感起点', changes: ['新增图片灵感室，20 个图片提示词按人物、产品、海报、场景和插画分类，可搜索、复制、收藏与备份。', '使用原创构图示意，保留参考改写的作者与许可；接通视频灵感室、优化器及小站入口，不自动传送内容。'] },
     { version: '1.8.0', date: '2026-10-28', title: '把小站的发现入口接好', changes: ['启用正式分享元信息、站点地图和 RSS 订阅，保持页面样式与相对资源路径。', '经站主确认更新 GitHub 公开贡献快照：2026-05-03 至 2026-10-28，共 53 次。'] },
     { version: '1.7.2', date: '2026-10-28', title: '把提示词工作台再整理一下', changes: ['工具栏按操作与工作区分成两层，突出模型管理，补上轻量使用顺序。', '输入区加入写法示例，基础模式的测试空状态说明下一步；保持模型调用、历史和收藏流程。'] },

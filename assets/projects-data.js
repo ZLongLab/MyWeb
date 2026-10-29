@@ -3,6 +3,13 @@
 // featured 控制首页精选；image 是首页和作品详情共用的本地界面示例。
 window.SITE_PROJECTS = [
   {
+    id: 'image-tools', title: '图片工坊 · 本地图片转换', category: '网页工具', status: '已上线 · 本地处理', featured: false,
+    summary: '多张图片顺序转换 WebP、JPEG、AVIF、PNG，并调整尺寸；编解码来自 jSquash / Squoosh，全程本地处理。',
+    tags: ['图片压缩', '批量转换', 'WebAssembly'], keywords: ['图片工坊', '图片转换', '缩放', 'WebP', 'JPEG', 'AVIF', 'PNG', 'jSquash', 'Squoosh'],
+    sourceUrl: 'https://github.com/jamsinclair/jSquash',
+    detail: '融合 jSquash / Squoosh 的单线程 WebP、JPEG、AVIF 编码与缩放能力，PNG 使用浏览器 Canvas。图片在当前浏览器本地顺序处理，不上传文件。\n\n支持批量选择与拖放，统一格式、质量和宽度档，逐张显示大小变化并下载。页面壳可离线打开；编码器二进制不预缓存，首次转换需要联网加载。'
+  },
+  {
     id: 'image-prompts', title: '图片灵感室 · 图片提示词起点', category: '网页工具', status: '已上线 · 20 个起点', featured: false,
     summary: '按人物、产品、海报、场景和插画找灵感，复制图片提示词，收藏喜欢的构图。',
     tags: ['图片提示词', '原创示意', '本地收藏'], keywords: ['图片灵感室', '生图', '摄影', '水彩', '产品图', '海报', 'Nano Banana'],

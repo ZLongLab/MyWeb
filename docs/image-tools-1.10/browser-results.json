@@ -1,0 +1,320 @@
+{
+  "stats": {
+    "startTime": "2026-10-29T11:29:41.403Z",
+    "duration": 51372.818,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "name": "Image workshop lazily converts a real PNG to a smaller WebP and downloads it without external requests",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1367
+        }
+      ]
+    },
+    {
+      "name": "All four formats, alpha handling, resize and singleton single-thread codec loading work",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3535
+        }
+      ]
+    },
+    {
+      "name": "An invalid image does not block subsequent jobs, and completed files can all download",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2309
+        }
+      ]
+    },
+    {
+      "name": "Tool entry points connect workbench, projects and commands, and file drop works",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1000
+        }
+      ]
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1280 / paper",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2767
+        }
+      ]
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1280 / night",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2795
+        }
+      ]
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1440 / paper",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2877
+        }
+      ]
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1440 / night",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2796
+        }
+      ]
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1920 / paper",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 3001
+        }
+      ]
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1920 / night",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2948
+        }
+      ]
+    },
+    {
+      "name": "The cached workshop shell opens offline, excludes all WASM and clearly asks to reconnect",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 916
+        }
+      ]
+    },
+    {
+      "name": "Development entry can unmount and remount without duplicate native integrations",
+      "file": "lifecycle.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1018
+        }
+      ]
+    },
+    {
+      "name": "All 17 pages, metadata, local resources and layout at 1440",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2441
+        }
+      ]
+    },
+    {
+      "name": "All 17 pages, metadata, local resources and layout at 390",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2372
+        }
+      ]
+    },
+    {
+      "name": "Every project and article, including missing IDs, keeps content and share metadata",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1791
+        }
+      ]
+    },
+    {
+      "name": "React project filters, query reload and legacy anchors",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 747
+        }
+      ]
+    },
+    {
+      "name": "Article search, topic clusters, graph and filter restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 946
+        }
+      ]
+    },
+    {
+      "name": "Search keyboard commands and theme persistence",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 792
+        }
+      ]
+    },
+    {
+      "name": "Narrow navigation uses React state and closes after commands or Escape",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 630
+        }
+      ]
+    },
+    {
+      "name": "Picture viewer zoom, fit and focus restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 680
+        }
+      ]
+    },
+    {
+      "name": "Old local notes are preserved, can merge backups, export and delete",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 713
+        }
+      ]
+    },
+    {
+      "name": "Video templates, manual editing, old drafts, favorites and backups",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 759
+        }
+      ]
+    },
+    {
+      "name": "Image examples, source credit, copy, local favorites, merge and cross-tab sync",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1158
+        }
+      ]
+    },
+    {
+      "name": "Corrupt local data is not overwritten",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 782
+        }
+      ]
+    },
+    {
+      "name": "Real service worker keeps query pages and all lazy modules available offline",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 975
+        }
+      ]
+    },
+    {
+      "name": "Prompt engines and catalogs load only in their own tool pages",
+      "file": "modernization.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 770
+        }
+      ]
+    },
+    {
+      "name": "React Compiler output and Fast Refresh preserve an active project filter",
+      "file": "modernization.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 822
+        }
+      ]
+    },
+    {
+      "name": "List return restores scroll position and old deep section links still land correctly",
+      "file": "navigation.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 851
+        }
+      ]
+    }
+  ]
+}

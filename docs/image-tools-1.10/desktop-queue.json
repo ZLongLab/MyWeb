@@ -1,0 +1,350 @@
+[
+  {
+    "case": "1280-night.json",
+    "scrolling": {
+      "y": 1220,
+      "busy": true
+    },
+    "responsiveness": {
+      "ticks": 67,
+      "states": [
+        [
+          "processing",
+          "pending",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "processing",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "processing",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "processing",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "processing"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "done"
+        ]
+      ]
+    },
+    "external": [],
+    "wasm": [
+      "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+    ]
+  },
+  {
+    "case": "1280-paper.json",
+    "scrolling": {
+      "y": 1220,
+      "busy": true
+    },
+    "responsiveness": {
+      "ticks": 67,
+      "states": [
+        [
+          "processing",
+          "pending",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "processing",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "processing",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "processing",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "processing"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "done"
+        ]
+      ]
+    },
+    "external": [],
+    "wasm": [
+      "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+    ]
+  },
+  {
+    "case": "1440-night.json",
+    "scrolling": {
+      "y": 1229,
+      "busy": true
+    },
+    "responsiveness": {
+      "ticks": 67,
+      "states": [
+        [
+          "processing",
+          "pending",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "processing",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "processing",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "processing",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "processing"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "done"
+        ]
+      ]
+    },
+    "external": [],
+    "wasm": [
+      "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+    ]
+  },
+  {
+    "case": "1440-paper.json",
+    "scrolling": {
+      "y": 1229,
+      "busy": true
+    },
+    "responsiveness": {
+      "ticks": 68,
+      "states": [
+        [
+          "processing",
+          "pending",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "processing",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "processing",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "processing",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "processing"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "done"
+        ]
+      ]
+    },
+    "external": [],
+    "wasm": [
+      "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+    ]
+  },
+  {
+    "case": "1920-night.json",
+    "scrolling": {
+      "y": 1229,
+      "busy": true
+    },
+    "responsiveness": {
+      "ticks": 68,
+      "states": [
+        [
+          "processing",
+          "pending",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "processing",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "processing",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "processing",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "processing"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "done"
+        ]
+      ]
+    },
+    "external": [],
+    "wasm": [
+      "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+    ]
+  },
+  {
+    "case": "1920-paper.json",
+    "scrolling": {
+      "y": 1229,
+      "busy": true
+    },
+    "responsiveness": {
+      "ticks": 68,
+      "states": [
+        [
+          "processing",
+          "pending",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "processing",
+          "pending",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "processing",
+          "pending",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "processing",
+          "pending"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "processing"
+        ],
+        [
+          "done",
+          "done",
+          "done",
+          "done",
+          "done"
+        ]
+      ]
+    },
+    "external": [],
+    "wasm": [
+      "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm"
+    ]
+  }
+]

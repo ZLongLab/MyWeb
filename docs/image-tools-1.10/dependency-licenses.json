@@ -1,0 +1,51 @@
+{
+  "packages": [
+    {
+      "name": "@jsquash/webp",
+      "version": "1.5.0",
+      "license": "Apache-2.0",
+      "licenseSha256": "8c3690b09c168f196446cf5904332023bbc15eb92b6a7cee470ac829e6a65d20",
+      "source": "https://github.com/jamsinclair/jSquash"
+    },
+    {
+      "name": "@jsquash/jpeg",
+      "version": "1.6.0",
+      "license": "Apache-2.0",
+      "licenseSha256": "8c3690b09c168f196446cf5904332023bbc15eb92b6a7cee470ac829e6a65d20",
+      "source": "https://github.com/jamsinclair/jSquash"
+    },
+    {
+      "name": "@jsquash/avif",
+      "version": "2.1.1",
+      "license": "Apache-2.0",
+      "licenseSha256": "8c3690b09c168f196446cf5904332023bbc15eb92b6a7cee470ac829e6a65d20",
+      "source": "https://github.com/jamsinclair/jSquash"
+    },
+    {
+      "name": "@jsquash/resize",
+      "version": "2.1.1",
+      "license": "Apache-2.0",
+      "licenseSha256": "8c3690b09c168f196446cf5904332023bbc15eb92b6a7cee470ac829e6a65d20",
+      "source": "https://github.com/jamsinclair/jSquash"
+    }
+  ],
+  "codecNotices": [
+    {
+      "name": "libavif v1.0.1 (BSD-2-Clause and bundled notices)",
+      "url": "https://raw.githubusercontent.com/AOMediaCodec/libavif/v1.0.1/LICENSE"
+    },
+    {
+      "name": "libaom v3.7.0 LICENSE",
+      "url": "https://aomedia.googlesource.com/aom/+/refs/tags/v3.7.0/LICENSE?format=TEXT"
+    },
+    {
+      "name": "libaom v3.7.0 PATENTS",
+      "url": "https://aomedia.googlesource.com/aom/+/refs/tags/v3.7.0/PATENTS?format=TEXT"
+    },
+    {
+      "name": "Independent JPEG Group notice (Mozilla MozJPEG)",
+      "url": "https://raw.githubusercontent.com/mozilla/mozjpeg/master/README.ijg"
+    }
+  ],
+  "route": "Single-thread codec entry points only; PNG uses browser Canvas."
+}

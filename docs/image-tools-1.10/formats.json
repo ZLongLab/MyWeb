@@ -1,0 +1,105 @@
+{
+  "results": [
+    {
+      "format": "webp",
+      "type": "image/webp",
+      "size": 38404,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "format": "jpeg",
+      "type": "image/jpeg",
+      "size": 50372,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        255,
+        251,
+        252,
+        255
+      ]
+    },
+    {
+      "format": "avif",
+      "type": "image/avif",
+      "size": 40062,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        0,
+        0,
+        255,
+        1
+      ]
+    },
+    {
+      "format": "png",
+      "type": "image/png",
+      "size": 630135,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "format": "webp",
+      "type": "image/webp",
+      "size": 38404,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "format": "jpeg",
+      "type": "image/jpeg",
+      "size": 50372,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        255,
+        251,
+        252,
+        255
+      ]
+    },
+    {
+      "format": "avif",
+      "type": "image/avif",
+      "size": 40062,
+      "width": 640,
+      "height": 480,
+      "corner": [
+        0,
+        0,
+        255,
+        1
+      ]
+    }
+  ],
+  "wasmRequests": [
+    "http://127.0.0.1:4192/MyWeb/assets/squoosh_resize_bg-YY9xfwUg.wasm",
+    "http://127.0.0.1:4192/MyWeb/assets/webp_enc-BpZvKflB.wasm",
+    "http://127.0.0.1:4192/MyWeb/assets/mozjpeg_enc-DO-zoExo.wasm",
+    "http://127.0.0.1:4192/MyWeb/assets/avif_enc-Co4TcJko.wasm"
+  ],
+  "external": [],
+  "uploads": [],
+  "workers": 1,
+  "crossOriginIsolated": false
+}

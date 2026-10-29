@@ -1,4 +1,11 @@
 import ToolShortcut from "../components/ToolShortcut.jsx";
+function ImageToolsShortcut() {
+  return (
+    <ToolShortcut eyebrow="本地工具 / IMAGE WORKSHOP" href="image-tools.html" label="打开图片工坊 →" offset={20}>
+      多张图片顺序转换 WebP、JPEG、AVIF、PNG，调整尺寸，全程本地处理。
+    </ToolShortcut>
+  );
+}
 function ImageShortcut() {
   return (
     <ToolShortcut
@@ -289,6 +296,7 @@ export default function WorkbenchPage() {
   return (
     <>
       <main className="container workbench-page" id="main">
+        <ImageToolsShortcut />
         {"\n    "}
         <ImageShortcut />
         {"\n    "}

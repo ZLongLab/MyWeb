@@ -31,6 +31,7 @@ export function listHref(section, context) {
 export function detailHref(section, id, context) {
   const tools = {
     "image-prompts": "image-prompts.html",
+    "image-tools": "image-tools.html",
     "video-prompts": "video-prompts.html",
     "prompt-optimizer": "prompt-optimizer/",
   };
