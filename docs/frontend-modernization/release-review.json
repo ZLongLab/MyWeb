@@ -12,5 +12,10 @@
   "cacheVersion": "1.9.0-react-2fbd5ddcd8d8",
   "optimizerCredentialsEmpty": true,
   "forbiddenPublishedFiles": [],
-  "deployment": "pending"
+  "deployment": "success",
+  "deployedCommit": "43847405323a947dcc1dfca86729256ee1bca9e0",
+  "actionsRunId": 40817204376,
+  "actionsUrl": "https://github.com/ZLongLab/MyWeb/actions/runs/40817204376",
+  "liveChecks": 294,
+  "knownDependencyVulnerabilities": 0
 }

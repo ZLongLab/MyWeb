@@ -38,3 +38,5 @@ CSS、页面内容、静态资源、OG 与发现文件均不修改。GitHub 公�
 GitHub Actions 加入 lint 与 Chromium 浏览器检查，通过后才上传和部署 Pages。主站运行依赖仍只有 React 与 React DOM；编译器、开发插件和代码检查工具只用于开发／构建。启动、构建命令保持 `npm run dev`、`npm run build`、`npm run preview`；完整发布使用 `npm run build:pages`。
 
 本地检查与上线复核的结果另存本目录的 JSON 文件；截图只留本机 `.tmp/`。线上结果以 Actions 成功与发布后的实际复核为准。
+
+2026-10-29 发布代码提交为 `43847405323a947dcc1dfca86729256ee1bca9e0`。[Actions 40817204376](https://github.com/ZLongLab/MyWeb/actions/runs/40817204376) 的构建、Chromium 回归与 Pages 部署全部成功。线上完成 294 项逐项核对，包括所有 16 个主站页面、114 个缓存文件与本机构建的内容比对、三个发现文件返回 200、优化器空模型配置、主题／搜索、图片收藏重载、视频草稿、便签与嵌套 404。脚本错误、失败的运行资源、新增外部运行请求均为 0。详情见 `live-results.json`。
