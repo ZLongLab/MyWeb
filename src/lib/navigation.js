@@ -1,7 +1,8 @@
 // Pure URL boundary shared by React components and the preserved navigation controller.
+import { projects, articles } from '../data/site.js';
 export function contextFor(section, context = {}) {
-  const entries =
-    section === "projects" ? window.SITE_PROJECTS : window.SITE_ARTICLES;
+  const entries = section === "projects" ? projects : articles;
+  context = context || {};
   const categories = entries.map((entry) => entry.category);
   const tags = entries.flatMap((entry) => entry.tags || []);
   return {

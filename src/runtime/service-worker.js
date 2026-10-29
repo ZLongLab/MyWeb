@@ -87,12 +87,12 @@ self.addEventListener("fetch", (event) => {
           try {
             const cache = await caches.open(CACHE_NAME);
             await cache.put(canonical.href, response.clone());
-          } catch (error) {
+          } catch {
             /* Cache quota/storage failure must not hide a good network response. */
           }
         }
         return response;
-      } catch (error) {
+      } catch {
         try {
           const cache = await caches.open(CACHE_NAME);
           const cached = await cache.match(canonical.href);
@@ -104,7 +104,7 @@ self.addEventListener("fetch", (event) => {
               statusText: cached.statusText,
               headers: cached.headers,
             });
-        } catch (storageError) {
+        } catch {
           /* A restricted cache cannot provide an offline fallback. */
         }
         return Response.error();

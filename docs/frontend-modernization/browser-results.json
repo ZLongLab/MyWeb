@@ -1,0 +1,199 @@
+{
+  "tests": [
+    {
+      "name": "Development entry can unmount and remount without duplicate native integrations",
+      "file": "lifecycle.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1224
+        }
+      ]
+    },
+    {
+      "name": "All sixteen pages, metadata, local resources and layout at 1440",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2619
+        }
+      ]
+    },
+    {
+      "name": "All sixteen pages, metadata, local resources and layout at 390",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2592
+        }
+      ]
+    },
+    {
+      "name": "Every project and article, including missing IDs, keeps content and share metadata",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1790
+        }
+      ]
+    },
+    {
+      "name": "React project filters, query reload and legacy anchors",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 789
+        }
+      ]
+    },
+    {
+      "name": "Article search, topic clusters, graph and filter restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1012
+        }
+      ]
+    },
+    {
+      "name": "Search keyboard commands and theme persistence",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 968
+        }
+      ]
+    },
+    {
+      "name": "Narrow navigation uses React state and closes after commands or Escape",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 665
+        }
+      ]
+    },
+    {
+      "name": "Picture viewer zoom, fit and focus restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 738
+        }
+      ]
+    },
+    {
+      "name": "Old local notes are preserved, can merge backups, export and delete",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 847
+        }
+      ]
+    },
+    {
+      "name": "Video templates, manual editing, old drafts, favorites and backups",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 827
+        }
+      ]
+    },
+    {
+      "name": "Image examples, source credit, copy, local favorites, merge and cross-tab sync",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1252
+        }
+      ]
+    },
+    {
+      "name": "Corrupt local data is not overwritten",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 821
+        }
+      ]
+    },
+    {
+      "name": "Real service worker keeps query pages and all lazy modules available offline",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1006
+        }
+      ]
+    },
+    {
+      "name": "Prompt engines and catalogs load only in their own tool pages",
+      "file": "modernization.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 890
+        }
+      ]
+    },
+    {
+      "name": "React Compiler output and Fast Refresh preserve an active project filter",
+      "file": "modernization.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 941
+        }
+      ]
+    },
+    {
+      "name": "List return restores scroll position and old deep section links still land correctly",
+      "file": "navigation.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 934
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-29T04:17:22.528Z",
+    "duration": 26147.142,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

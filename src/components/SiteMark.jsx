@@ -1,4 +1,5 @@
 export default function SiteMark() {
+  "use memo";
   return (
     <span className="brand-mark" aria-hidden="true">
       <svg

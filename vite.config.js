@@ -1,4 +1,6 @@
 import { defineConfig } from "vite";
+import react, { reactCompilerPreset } from "@vitejs/plugin-react";
+import babel from "@rolldown/plugin-babel";
 import fs from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -6,6 +8,11 @@ import { createHash } from "node:crypto";
 import { optimizerFiles } from "./scripts/optimizer-files.mjs";
 
 const root = fileURLToPath(new URL("./", import.meta.url));
+// Native controllers still own parts of the page DOM. Limit Fast Refresh and
+// automatic memoization to components whose entire subtree belongs to React.
+const managedComponents = /\/src\/components\/(ProjectCard|ProjectCollection|ToolShortcut|SiteMark)\.jsx$/;
+const compilerPreset = reactCompilerPreset({ compilationMode: 'annotation', target: '19' });
+compilerPreset.rolldown.filter.id = { include: managedComponents, exclude: /node_modules/ };
 async function syncStyles() {
   // Serve each stylesheet in its original order; bundling these together changes
   // the cascade on projects, notes and the workbench. src/styles is canonical.
@@ -179,7 +186,7 @@ function siteFiles() {
 export default defineConfig({
   appType: "mpa",
   base,
-  plugins: [siteFiles()],
+  plugins: [react({ include: managedComponents }), babel({ presets: [compilerPreset] }), siteFiles()],
   oxc: { jsx: { runtime: "automatic" } },
   optimizeDeps: {
     entries: pages,

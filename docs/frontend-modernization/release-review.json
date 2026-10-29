@@ -1,0 +1,16 @@
+{
+  "baseline": "607a14eb4fc49b5ed14e14e6c5a21211197ffd7e",
+  "branch": "codex/frontend-modernization",
+  "verdict": "APPROVE",
+  "scannedSourceFiles": 20,
+  "credentialPatternFindings": [],
+  "preservedSourceFiles": 170,
+  "publishedFiles": 166,
+  "mainFiles": 121,
+  "optimizerFiles": 45,
+  "cachedFiles": 114,
+  "cacheVersion": "1.9.0-react-2fbd5ddcd8d8",
+  "optimizerCredentialsEmpty": true,
+  "forbiddenPublishedFiles": [],
+  "deployment": "pending"
+}

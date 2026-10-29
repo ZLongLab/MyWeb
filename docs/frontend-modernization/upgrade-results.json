@@ -1,0 +1,45 @@
+{
+  "checks": [
+    {
+      "name": "old 1.9.0 worker active",
+      "pass": true
+    },
+    {
+      "name": "React worker waits without forcing old tabs to reload",
+      "pass": true
+    },
+    {
+      "name": "React works while old tab is still open",
+      "pass": true
+    },
+    {
+      "name": "existing keys unchanged",
+      "pass": true
+    },
+    {
+      "name": "new cache activates and retires old cache after tabs close",
+      "pass": true
+    },
+    {
+      "name": "upgraded image room works offline",
+      "pass": true
+    },
+    {
+      "name": "old note survives upgrade and offline navigation",
+      "pass": true
+    },
+    {
+      "name": "old video favorite survives upgrade",
+      "pass": true
+    },
+    {
+      "name": "all seeded data preserved",
+      "pass": true
+    },
+    {
+      "name": "no upgrade script errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}

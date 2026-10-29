@@ -5,6 +5,7 @@ export default function ToolShortcut({
   offset,
   children,
 }) {
+  "use memo";
   return (
     <aside className="workbench-tool-teaser" style={{ marginTop: offset }}>
       <p className="eyebrow">{eyebrow}</p>

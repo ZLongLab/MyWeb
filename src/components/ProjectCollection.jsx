@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ProjectCard from "./ProjectCard.jsx";
 import { detailHref, listHref } from "../lib/navigation.js";
-const projects = window.SITE_PROJECTS;
+import { projects } from "../data/site.js";
 const categories = [
   "全部",
   ...new Set(projects.map((project) => project.category)),
@@ -11,6 +11,7 @@ function readCategory() {
   return categories.includes(value) ? value : "全部";
 }
 export default function ProjectCollection() {
+  "use memo";
   const [category, setCategory] = useState(readCategory);
   const selected = projects.filter(
     (project) => category === "全部" || project.category === category,

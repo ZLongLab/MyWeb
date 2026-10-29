@@ -22,6 +22,8 @@ jobs:
           node-version: '24.22.1'
       - name: Install React and Vite dependencies
         run: npm ci --ignore-scripts
+      - name: Check JavaScript and React rules
+        run: npm run lint
       - name: Check local prompt data rules
         run: npm run check
       - name: Checkout pinned Prompt Optimizer source
@@ -43,6 +45,10 @@ jobs:
       - name: Prepare runtime files only
         id: build
         run: node scripts/build-pages.mjs --site-url=https://zlonglab.github.io/MyWeb/
+      - name: Install browser for release checks
+        run: npx playwright install --with-deps chromium
+      - name: Check browser behavior before publishing
+        run: npm run test:e2e
       - uses: actions/upload-pages-artifact@v4
         with:
           path: ${{ steps.build.outputs.directory }}

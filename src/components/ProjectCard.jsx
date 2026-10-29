@@ -1,6 +1,7 @@
 import { detailHref } from "../lib/navigation.js";
 
 export default function ProjectCard({ project, index, category }) {
+  "use memo";
   return (
     <article
       className="portfolio-project"

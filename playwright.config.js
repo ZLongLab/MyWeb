@@ -14,7 +14,7 @@ export default defineConfig({
   reporter: [["list"], ["json", { outputFile: ".tmp/react-tests.json" }]],
   use: {
     baseURL: "http://127.0.0.1:4192/MyWeb/",
-    channel: "chrome",
+    channel: process.env.CI ? undefined : "chrome",
     headless: true,
     viewport: { width: 1440, height: 1000 },
     timezoneId: "Asia/Shanghai",

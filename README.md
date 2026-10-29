@@ -2,6 +2,8 @@
 
 ZL 的中文个人网站，已从传统页面迁移为 **React 19 + JavaScript + CSS + Vite 8**。保留 16 个主站 HTML 地址、10 个房间、原视觉与动画，以及图片／视频灵感室和本地便签。提示词优化器仍为独立子站。暂不开发后端、数据库或账号系统。
 
+工程层已接入稳定版 **React Compiler 1.0**、官方 React 开发插件和 **Oxlint**，保留原有 CSS 与纯前端部署。图片／视频工具的专用数据和逻辑按页面加载；首页渲染所需 JavaScript 相比升级前减少约 6.5%。发布前自动检查 JavaScript、提示词逻辑与浏览器交互。范围和测量条件见 [前端工程升级记录](docs/frontend-modernization/README.md)。
+
 本次在分支 `codex/react-migration` 完成，原版基线为 `b059dda`（内容版本 1.9.0）。网站原有内容版本不变；离线缓存使用内容哈希区分 React 构建。迁移已通过发布检查，正式站点地址保持不变；部署结果以 GitHub Actions 为准。 详见 [迁移与验证记录](docs/react-migration/README.md)。
 
 ## 启动与开发
@@ -20,6 +22,7 @@ npm run dev
 - `src/main.jsx` 按旧页面地址加载组件；`src/App.jsx` 组织公共结构，`src/pages/` 保留各页面内容与分区。
 - `src/components/` 维护导航、页脚、站标、作品卡片与筛选、工作台工具入口。作品筛选与导航菜单使用 React 状态。
 - `src/controllers/` 是已能正常工作的浏览器交互模块，通过 React 生命周期接入。原生表单值和空列表区域由这些模块管理，避免 React 同时管理其内部节点。不要在这些区域加入会反复更新的 React 子节点；后续可按模块替换为状态组件。
+- `ProjectCard`、`ProjectCollection`、`ToolShortcut`、`SiteMark` 四个完全由 React 管理的组件启用编译器自动记忆化和保留状态的 Fast Refresh。其他页面与原生交互区域沿用整页更新，防止热更新造成重复监听或覆盖用户输入。新增组件需确认 DOM 所有权后再扩展 `vite.config.js` 的范围。
 - `src/styles/` 是当前样式源文件；构建会原样复制公共 CSS 并保留每页原加载顺序。`public/assets/` 是当前图片、图标、站标等静态资源，`public/` 保存 RSS、站点地图、robots 与安装清单。
 - `assets/*-data.js`、`assets/site-snapshot.js`、`assets/video-templates.js` 和两份 `*-core.js` 继续作为有效内容／纯逻辑来源，维护脚本仍能读取。其余原 `assets` 控制器、样式、图片，以及根目录旧 SW／XML／manifest 保留作迁移恢复材料，**新页面和发布构建不引用它们**。请勿继续修改这些旧副本。
 - 个人信息在 `assets/site-data.js`，作品在 `assets/projects-data.js`，文章在 `assets/articles-data.js`，房间／工具在 `assets/house-data.js`，近况／版本记录在 `assets/workbench-data.js`。新增页面还需在 `src/pages/registry.js` 登记。
@@ -35,17 +38,20 @@ npm run preview
 
 `npm run build` 在本机已有已校验优化器产物时会一并复制；没有产物时只构建主站并明确提示。**完整正式发布请使用 `npm run build:optimizer` 和 `npm run build:pages`**；后者缺少优化器产物会失败，避免漏掉已上线的子站。优化器的源码准备方式见下面 1.7.2 记录。
 
-推送至 `main` 后，GitHub Actions 使用锁文件安装主站依赖，检查提示词数据，再构建固定版本优化器和主站，将 `dist/` 上传到 Pages。构建不上传源码、依赖、本机截图、历史材料或密钥。只有 Actions 的部署步骤成功才代表线上已更新。
+推送至 `main` 后，GitHub Actions 使用锁文件安装主站依赖，检查 JavaScript 与提示词数据，再构建固定版本优化器和主站，通过 Chromium 浏览器回归后将 `dist/` 上传到 Pages。任一步骤失败都会阻止发布。构建不上传源码、依赖、本机截图、历史材料或密钥。只有 Actions 的部署步骤成功才代表线上已更新。
 
 ## 验证
 
 ```powershell
+npm run lint
 npm run check
 npm run build
 npm run test:e2e
 ```
 
-浏览器测试默认使用已安装的 Chrome，不自动下载浏览器；测试产物和截图放在 `.tmp/`，不发布。测试会启动本机 4192 端口的构建预览和 4193 端口的开发服务。
+完整发布检查也可运行 `npm run verify`，其中 `build:pages` 要求本机已有通过校验的优化器产物。Oxlint 检查 React 组件、运行时、测试与构建配置；迁移保留的原生控制器暂由既有功能测试覆盖。
+
+本机浏览器测试默认使用已安装的 Chrome，不自动下载浏览器；CI 安装并使用 Playwright 对应的 Chromium。测试产物和截图放在 `.tmp/`，不发布。测试会启动本机 4192 端口的构建预览和 4193 端口的开发服务。热更新检查会短暂修改并在结束时还原 `ProjectCard.jsx` 的一个标签，请勿在测试期间同时编辑该文件。
 
 本地存储键名、版本与导入导出格式保持兼容。新来源（如端口、协议或域名变化）仍需导出／导入迁移数据；同一线上地址发布 React 版不会主动清除数据。浏览与复制提示词仍不调用 AI；优化器仍需使用者自己的模型配置。本次没有调用真实 AI、读取个人 API 配置，或修改已核对的 GitHub 每日贡献数据。
 

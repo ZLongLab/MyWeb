@@ -1,4 +1,6 @@
 // Behavior preserved from the 1.9.0 implementation; initialized by the React lifecycle.
+import "../../assets/video-templates.js";
+import "../../assets/video-prompts-core.js";
 export default function initialize(scope) {
   (function () {
     "use strict";
