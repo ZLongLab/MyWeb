@@ -1,0 +1,205 @@
+{
+  "templates": [
+    {
+      "id": "cinematic",
+      "title": "电影短片",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/cinematic-narrative-short.md",
+      "legacy": true
+    },
+    {
+      "id": "anime",
+      "title": "动漫风格",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/anime-style-lock.md",
+      "legacy": true
+    },
+    {
+      "id": "stop-motion",
+      "title": "定格动画",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/stop-motion-cadence.md",
+      "legacy": true
+    },
+    {
+      "id": "product",
+      "title": "产品展示",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/product-commercial-shotlist.md",
+      "legacy": true
+    },
+    {
+      "id": "travel",
+      "title": "旅行记录",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/travel-city-walk.md",
+      "legacy": true
+    },
+    {
+      "id": "music",
+      "title": "音乐 MV",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/music-beat-sync-mv.md",
+      "legacy": true
+    },
+    {
+      "id": "pet",
+      "title": "宠物短片",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/pet-animal.md",
+      "legacy": true
+    },
+    {
+      "id": "storyboard",
+      "title": "分镜设计",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/storyboard-grid-to-video.md",
+      "legacy": true
+    },
+    {
+      "id": "story-sequence",
+      "title": "分镜叙事",
+      "platform": "seedance",
+      "sourceRefs": [
+        "marso-storyboards",
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/marsoyang1/awesome-seedance-prompts/blob/9fa64c4b788d2a8d924984f7d2c3ad9be3ed2098/README.md",
+      "legacy": false
+    },
+    {
+      "id": "product-ad",
+      "title": "产品广告",
+      "platform": "seedance",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula",
+        "videoprompts-fields"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/product-commercial-shotlist.md",
+      "legacy": false
+    },
+    {
+      "id": "one-take",
+      "title": "一镜到底",
+      "platform": "通用",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/pov-continuous-take.md",
+      "legacy": false
+    },
+    {
+      "id": "kling-daily",
+      "title": "可灵 · 日常动作",
+      "platform": "kling",
+      "sourceRefs": [
+        "kling-terms",
+        "videoprompts-fields"
+      ],
+      "sourceUrl": "https://github.com/Yuyyxz/kling-prompt-engineering/blob/11a67070991f757c017e84a9ece6c809371aa1fa/03-t2v-guide.md",
+      "legacy": false
+    },
+    {
+      "id": "kling-product",
+      "title": "可灵 · 材质展示",
+      "platform": "kling",
+      "sourceRefs": [
+        "kling-terms",
+        "videoprompts-fields"
+      ],
+      "sourceUrl": "https://github.com/Yuyyxz/kling-prompt-engineering/blob/11a67070991f757c017e84a9ece6c809371aa1fa/19-cinematography-dictionary.md",
+      "legacy": false
+    },
+    {
+      "id": "process-detail",
+      "title": "手作过程",
+      "platform": "通用",
+      "sourceRefs": [
+        "learnprompt",
+        "seedance-formula"
+      ],
+      "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/process-transformation-montage.md",
+      "legacy": false
+    },
+    {
+      "id": "nature-observation",
+      "title": "自然观察",
+      "platform": "通用",
+      "sourceRefs": [
+        "videoprompts-fields",
+        "kling-terms"
+      ],
+      "sourceUrl": "https://github.com/yangchangjiang/videoprompts/tree/cb47d134c1a8e0695587a6c8efbaaaca2dbb0917/templates",
+      "legacy": false
+    }
+  ],
+  "lexicon": [
+    {
+      "id": "movement",
+      "title": "运镜",
+      "count": 16,
+      "platform": "通用"
+    },
+    {
+      "id": "shot",
+      "title": "景别",
+      "count": 8,
+      "platform": "通用"
+    },
+    {
+      "id": "angle",
+      "title": "角度",
+      "count": 8,
+      "platform": "通用"
+    },
+    {
+      "id": "lighting",
+      "title": "光线",
+      "count": 17,
+      "platform": "通用"
+    },
+    {
+      "id": "color",
+      "title": "色彩",
+      "count": 8,
+      "platform": "通用"
+    }
+  ],
+  "oldIndependentVocabularyOptions": 0,
+  "totalVocabularyEntries": 57
+}

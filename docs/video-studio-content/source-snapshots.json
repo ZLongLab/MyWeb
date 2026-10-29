@@ -1,0 +1,71 @@
+{
+  "baseline": "6c302f9f6406ff1a248a0a8baa89334e1e5cb13c",
+  "sources": [
+    {
+      "repo": "LearnPrompt/awesome-seedance",
+      "sha": "ecd568ffa0edf687254dad213a99a8aee7388067",
+      "branch": "main",
+      "retrievedAt": "2026-10-29",
+      "url": "https://github.com/LearnPrompt/awesome-seedance",
+      "license": "Code MIT; curation CC BY 4.0; creator prompts/media separately owned",
+      "use": "Classification, reusable structures and themes only; examples newly authored.",
+      "licensePaths": [
+        "LICENSE",
+        "README_zh.md#版权与下架政策"
+      ]
+    },
+    {
+      "repo": "marsoyang1/awesome-seedance-prompts",
+      "sha": "9fa64c4b788d2a8d924984f7d2c3ad9be3ed2098",
+      "branch": "main",
+      "retrievedAt": "2026-10-29",
+      "url": "https://github.com/marsoyang1/awesome-seedance-prompts",
+      "license": "No LICENSE found; LICENSE URL returned an error and root has README.md/source only",
+      "use": "Timeline and shot-table field structure only. No prompt text or media reuse.",
+      "licensePaths": []
+    },
+    {
+      "repo": "Yuyyxz/kling-prompt-engineering",
+      "sha": "11a67070991f757c017e84a9ece6c809371aa1fa",
+      "branch": "master",
+      "retrievedAt": "2026-10-29",
+      "url": "https://github.com/Yuyyxz/kling-prompt-engineering",
+      "license": "MIT (Copyright 2026 YY)",
+      "use": "Cinematography terms adapted; Chinese explanations rewritten; platform instructions limited to natural-language intentions.",
+      "licensePaths": [
+        "LICENSE",
+        "19-cinematography-dictionary.md"
+      ]
+    },
+    {
+      "repo": "rich5000/seedance-prompt-guide",
+      "sha": "1dbdd80db24e934963920e09c51e20653eee0125",
+      "branch": "master",
+      "retrievedAt": "2026-10-29",
+      "url": "https://github.com/rich5000/seedance-prompt-guide",
+      "license": "MIT (Copyright 2026 rich5000)",
+      "use": "Role -> action -> camera -> mood/sound structural checklist. No examples, parameter tables or reference numbering copied.",
+      "licensePaths": [
+        "LICENSE",
+        "README.md",
+        "SKILL.md"
+      ]
+    },
+    {
+      "repo": "yangchangjiang/videoprompts",
+      "sha": "cb47d134c1a8e0695587a6c8efbaaaca2dbb0917",
+      "branch": "master",
+      "retrievedAt": "2026-10-29",
+      "url": "https://github.com/yangchangjiang/videoprompts",
+      "license": "Template directories CC BY 4.0; Python MIT; worker reference-only",
+      "use": "Field dimensions only. No template prompt text, program code or model/media assets used.",
+      "licensePaths": [
+        "LICENSE",
+        "templates/CC-BY-4.0.md"
+      ]
+    }
+  ],
+  "mediaDownloaded": false,
+  "scopeApproval": "User explicitly approved minimal native vocabulary wiring and per-template platform guidance; layout, filters and persisted schema stay unchanged.",
+  "upstreamDictionaryTableRows": 95
+}

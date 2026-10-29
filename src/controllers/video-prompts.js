@@ -156,6 +156,7 @@ export default function initialize(scope) {
         }),
       );
       $("prompt-source").href =
+        byId[id].sourceUrl ||
         "https://github.com/LearnPrompt/awesome-seedance/blob/main/docs/templates/zh/" +
         byId[id].source +
         ".md";
@@ -341,6 +342,22 @@ export default function initialize(scope) {
           renderCards();
         });
       });
+    document.querySelectorAll('[data-video-vocabulary]').forEach(function (picker) {
+      scope.listen(picker, 'change', function () {
+        var field = form.elements[picker.dataset.videoVocabulary];
+        var phrase = picker.value;
+        picker.value = '';
+        if (!field || !phrase) return;
+        var next = field.value.trimEnd();
+        next = next ? next + '；' + phrase : phrase;
+        if (next.length > 1000) {
+          status('当前字段加入词条后会超过 1000 字，请先精简原内容。', true);
+          return;
+        }
+        field.value = next;
+        field.dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    });
     scope.listen(form, "submit", function (event) {
       event.preventDefault();
     });

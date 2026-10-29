@@ -1,0 +1,210 @@
+{
+  "stats": {
+    "startTime": "2026-10-29T12:34:52.179Z",
+    "duration": 73785.49100000001,
+    "expected": 33,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "tests": [
+    {
+      "name": "Image workshop lazily converts a real PNG to a smaller WebP and downloads it without external requests",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 1534
+    },
+    {
+      "name": "All four formats, alpha handling, resize and singleton single-thread codec loading work",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3945
+    },
+    {
+      "name": "An invalid image does not block subsequent jobs, and completed files can all download",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 2422
+    },
+    {
+      "name": "Tool entry points connect workbench, projects and commands, and file drop works",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 1535
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1280 / paper",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3269
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1280 / night",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3239
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1440 / paper",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3258
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1440 / night",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3328
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1920 / paper",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3316
+    },
+    {
+      "name": "Desktop five-image queue stays responsive at 1920 / night",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 3335
+    },
+    {
+      "name": "The cached workshop shell opens offline, excludes all WASM and clearly asks to reconnect",
+      "file": "image-tools.spec.js",
+      "status": "expected",
+      "duration": 1438
+    },
+    {
+      "name": "Development entry can unmount and remount without duplicate native integrations",
+      "file": "lifecycle.spec.js",
+      "status": "expected",
+      "duration": 1533
+    },
+    {
+      "name": "All 17 pages, metadata, local resources and layout at 1440",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 4131
+    },
+    {
+      "name": "All 17 pages, metadata, local resources and layout at 390",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 3658
+    },
+    {
+      "name": "Every project and article, including missing IDs, keeps content and share metadata",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 2785
+    },
+    {
+      "name": "React project filters, query reload and legacy anchors",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 952
+    },
+    {
+      "name": "Article search, topic clusters, graph and filter restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1337
+    },
+    {
+      "name": "Search keyboard commands and theme persistence",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1149
+    },
+    {
+      "name": "Narrow navigation uses React state and closes after commands or Escape",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 825
+    },
+    {
+      "name": "Picture viewer zoom, fit and focus restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 938
+    },
+    {
+      "name": "Old local notes are preserved, can merge backups, export and delete",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1126
+    },
+    {
+      "name": "Video templates, manual editing, old drafts, favorites and backups",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1208
+    },
+    {
+      "name": "Image examples, source credit, copy, local favorites, merge and cross-tab sync",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1617
+    },
+    {
+      "name": "Corrupt local data is not overwritten",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1160
+    },
+    {
+      "name": "Real service worker keeps query pages and all lazy modules available offline",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "duration": 1527
+    },
+    {
+      "name": "Prompt engines and catalogs load only in their own tool pages",
+      "file": "modernization.spec.js",
+      "status": "expected",
+      "duration": 1105
+    },
+    {
+      "name": "React Compiler output and Fast Refresh preserve an active project filter",
+      "file": "modernization.spec.js",
+      "status": "expected",
+      "duration": 1116
+    },
+    {
+      "name": "List return restores scroll position and old deep section links still land correctly",
+      "file": "navigation.spec.js",
+      "status": "expected",
+      "duration": 1249
+    },
+    {
+      "name": "Actual old 1.10 export imports and restores all eight favorites and drafts verbatim",
+      "file": "video-content.spec.js",
+      "status": "expected",
+      "duration": 1369
+    },
+    {
+      "name": "All fifteen complete examples are selectable, and platform briefs never cross-label models",
+      "file": "video-content.spec.js",
+      "status": "expected",
+      "duration": 2601
+    },
+    {
+      "name": "Vocabulary appends across the three pickers, respects limits and preserves manual output",
+      "file": "video-content.spec.js",
+      "status": "expected",
+      "duration": 795
+    },
+    {
+      "name": "Video content and source notes at desktop 1440 / paper",
+      "file": "video-content.spec.js",
+      "status": "expected",
+      "duration": 1093
+    },
+    {
+      "name": "Video content and source notes at desktop 1440 / night",
+      "file": "video-content.spec.js",
+      "status": "expected",
+      "duration": 1077
+    }
+  ]
+}

@@ -3,13 +3,14 @@
   var fieldKeys = ['subject', 'scene', 'action', 'look', 'camera', 'duration', 'aspect', 'extra'];
   function empty() { return { version: 1, favorites: [], drafts: [] }; }
   function compose(template, fields, mode) {
-    var rows = ['【' + template.title + ' · 提示词草稿】'];
-    [['主体', 'subject'], ['场景', 'scene'], ['主要动作', 'action'], ['画风与光线', 'look'], ['摄影机行为', 'camera'], ['预计时长（创作目标）', 'duration'], ['构图意图', 'aspect'], [template.extraLabel, 'extra']].forEach(function (pair) {
+    var profile = root.VIDEO_PLATFORM_PROFILES[template.platform || 'seedance'];
+    var rows = ['【' + template.title + ' · 提示词草稿】', '适用平台：' + profile.label];
+    [['主体', 'subject'], ['场景', 'scene'], ['主要动作', 'action'], ['摄影机行为', 'camera'], ['画风与光线', 'look'], ['预计时长（创作目标）', 'duration'], ['构图意图', 'aspect'], [template.extraLabel, 'extra']].forEach(function (pair) {
       var value = String(fields[pair[1]] || '').trim();
       if (value) rows.push(pair[0] + '：' + value);
     });
     rows.push('', '画面组织：', template.structure.join('\n'), '', '说明：以上为文字草稿，尚未经过实际视频生成验证。时长与构图是创作目标，具体设置以所用平台为准。');
-    if (mode === 'brief') rows = ['请依据以下创作要求，完善一份中文视频制作提示词。保留已有主体、事件与结尾，不擅自新增故事事实。', '一个镜头一个主要任务；如需多镜头，请先列分镜，再给出每镜独立可复制的提示词。不要使用“同上”代替角色与场景描述。', '目标是 Seedance 创作方向；当前入口的参数和参考图能力尚未核实，请只用普通自然语言，不编造专属参数、参考图编号或接口。没有实际附件时不要假装看过参考图；精确卡点、字幕和合成单列为后期事项。', '', rows.slice(0, -2).join('\n'), '', '参考方法：', template.tips.join('\n'), '', '本次优先避免：', template.pitfalls.join('\n'), '', '请只交付可用的文字方案，明确必要假设和待核实能力；不要声称已生成或验证视频。'];
+    if (mode === 'brief') rows = ['请依据以下创作要求，完善一份中文视频制作提示词。保留已有主体、事件与结尾，不擅自新增故事事实。', '一个镜头一个主要任务；如需多镜头，请先列分镜，再给出每镜独立可复制的提示词。不要使用“同上”代替角色与场景描述。', profile.brief, '', rows.slice(0, -2).join('\n'), '', '参考方法：', template.tips.join('\n'), '', '本次优先避免：', template.pitfalls.join('\n'), '', '请只交付可用的文字方案，明确必要假设和待核实能力；不要声称已生成或验证视频。'];
     return rows.join('\n');
   }
   function validate(value, ids) {

@@ -24,11 +24,11 @@ window.SITE_PROJECTS = [
     detail: '基于 linshenkx/prompt-optimizer v2.12.0 的独立网页部署，保留原作者归属与 AGPL-3.0-only 许可。\n\n提供提示词优化、结果测试、模板、历史与收藏管理。公开版本没有预置 API 密钥；实际优化需要在模型管理中配置自己的服务，输入会发送至所选模型服务商。'
   },
   {
-    id: 'video-prompts', title: '视频灵感室 · AI 提示词工具', category: '网页工具', status: '已上线 · 8 个模板', featured: false,
+    id: 'video-prompts', title: '视频灵感室 · AI 提示词工具', category: '网页工具', status: '已上线 · 15 个模板', featured: false,
     summary: '选一个拍摄方向，填写自己的故事，整理可复制的提示词，收藏模板并保存草稿。',
     tags: ['AI 视频', '提示词', '本地草稿'],
     keywords: ['视频灵感室', 'Seedance', '电影', '动漫', 'MV', '分镜', '宠物', '定格动画'],
-    detail: '小站里的视频创作工具：提供电影短片、动漫、定格动画、产品展示、旅行记录、音乐 MV、宠物与分镜 8 个方向。按模板整理文字，不调用 AI 或生成视频。\n\n支持本地收藏、可编辑草稿及 JSON 导入导出。方法参考 LearnPrompt/awesome-seedance，保留署名；中文示例由本站重新编写。'
+    detail: '小站里的视频创作工具：提供电影、动画、产品、分镜叙事、一镜到底与可灵等 15 个方向，并附 57 条摄影候选词。按模板整理文字，不调用 AI 或生成视频。\n\n支持本地收藏、可编辑草稿及 JSON 导入导出。方法参考 LearnPrompt/awesome-seedance，保留署名；中文示例由本站重新编写。'
   },
   {
     id: 'recallai',

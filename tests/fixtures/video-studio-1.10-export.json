@@ -1,0 +1,164 @@
+{
+  "app": "myweb-video-studio",
+  "version": 1,
+  "exportedAt": "2026-10-29T12:15:32.594Z",
+  "data": {
+    "version": 1,
+    "favorites": [
+      "cinematic",
+      "anime",
+      "stop-motion",
+      "product",
+      "travel",
+      "music",
+      "pet",
+      "storyboard"
+    ],
+    "drafts": [
+      {
+        "id": "legacy-cinematic",
+        "template": "cinematic",
+        "title": "旧版导出 · 电影短片",
+        "fields": {
+          "subject": "一位穿浅灰外套的旧书店店主",
+          "scene": "傍晚将要打烊的书店，暖光从台灯落在木桌上",
+          "action": "整理旧书时，一张手写明信片从书页滑落；他拾起卡片，停下动作，轻轻笑了",
+          "look": "写实电影质感，暖色台灯与窗外蓝色暮光",
+          "camera": "从书桌中景缓慢推近到手中的明信片",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "结尾停留在店主的微笑，不展示卡片上的文字"
+        },
+        "output": "旧版手动保留正文 cinematic\n第二行 <保留原样> & 中文标点。",
+        "mode": "draft",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-anime",
+        "template": "anime",
+        "title": "旧版导出 · 动漫风格",
+        "fields": {
+          "subject": "一位戴黄色围巾、背蓝色帆布包的短发少年",
+          "scene": "初秋午后的河堤，小草随风轻轻摆动",
+          "action": "少年沿河慢慢走着，停下来接住一片飘落的银杏叶，再抬头望向远处",
+          "look": "二维手绘动画，细铅笔线条，低饱和水彩色块",
+          "camera": "侧面中景跟随，在接住叶子时停住",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "围巾、背包和发型保持一致，人物动作舒缓"
+        },
+        "output": "旧版手动保留正文 anime\n第二行 <保留原样> & 中文标点。",
+        "mode": "brief",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-stop-motion",
+        "template": "stop-motion",
+        "title": "旧版导出 · 定格动画",
+        "fields": {
+          "subject": "一只穿绿色小围裙的毛毡刺猬",
+          "scene": "纸板搭成的微型厨房，桌上有木碗和一颗红苹果",
+          "action": "刺猬把苹果滚到碗边，用双手稳住，再小步绕到碗的另一侧",
+          "look": "毛毡纤维与纸板切边清晰可见，温暖的手工定格动画",
+          "camera": "固定机位，平视微缩桌面",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "角色位置逐格小幅变化，保留停顿；不追求平滑的三维运动"
+        },
+        "output": "旧版手动保留正文 stop-motion\n第二行 <保留原样> & 中文标点。",
+        "mode": "draft",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-product",
+        "template": "product",
+        "title": "旧版导出 · 产品展示",
+        "fields": {
+          "subject": "一只没有品牌字样的米白色陶瓷马克杯",
+          "scene": "浅色木桌，后方是模糊的亚麻窗帘",
+          "action": "热气从杯口缓缓升起，一束晨光划过杯身，最后停留在把手和釉面的细节",
+          "look": "自然光静物摄影，柔和阴影，温润陶瓷质感",
+          "camera": "从杯身侧面缓慢靠近，杯子本身保持不动",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "杯把、比例和釉色全程一致；结尾留出干净背景供后期加字"
+        },
+        "output": "旧版手动保留正文 product\n第二行 <保留原样> & 中文标点。",
+        "mode": "brief",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-travel",
+        "template": "travel",
+        "title": "旧版导出 · 旅行记录",
+        "fields": {
+          "subject": "一位穿米色衬衫、提着布袋的旅行者",
+          "scene": "清晨的海边小城，石板街道还带着雨后的水光",
+          "action": "旅行者走过一扇蓝色木门，停下整理布袋，再望向街道尽头的海",
+          "look": "低饱和旅行纪录片，自然晨光，轻微胶片颗粒",
+          "camera": "背后中景缓慢跟拍，在人物停下时保持稳定",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "一处地点、一次停留；不插入其他城市或季节的画面"
+        },
+        "output": "旧版手动保留正文 travel\n第二行 <保留原样> & 中文标点。",
+        "mode": "draft",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-music",
+        "template": "music",
+        "title": "旧版导出 · 音乐 MV",
+        "fields": {
+          "subject": "一位穿深蓝舞台服、留短卷发的键盘手",
+          "scene": "空旷的小剧场，侧面有一束暖白聚光灯",
+          "action": "键盘手轻轻敲出几个音符，抬头看向空座位，灯光在最后一个动作后慢慢收暗",
+          "look": "克制的独立音乐现场影像，深蓝与暖白配色",
+          "camera": "固定中景，只在结束前缓慢靠近",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "舒缓钢琴曲的情绪；精确卡点在剪辑阶段按实际音频处理"
+        },
+        "output": "旧版手动保留正文 music\n第二行 <保留原样> & 中文标点。",
+        "mode": "brief",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-pet",
+        "template": "pet",
+        "title": "旧版导出 · 宠物短片",
+        "fields": {
+          "subject": "一只白胸口、橘色背毛的小猫",
+          "scene": "雨后的窗台，玻璃上有水滴，旁边放着一盆薄荷",
+          "action": "小猫轻轻嗅一片薄荷叶，耳朵转向窗外的声音，然后慢慢坐下",
+          "look": "透明水彩动画，浅纸纹，柔软的橘绿配色",
+          "camera": "固定近景，镜头与猫的眼睛高度相近",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "始终只有一只猫；毛色分布和身体比例不变"
+        },
+        "output": "旧版手动保留正文 pet\n第二行 <保留原样> & 中文标点。",
+        "mode": "draft",
+        "updated": "2026-10-28T08:00:00.000Z"
+      },
+      {
+        "id": "legacy-storyboard",
+        "template": "storyboard",
+        "title": "旧版导出 · 分镜设计",
+        "fields": {
+          "subject": "一位穿白衬衫的手工装帧师",
+          "scene": "安静的装帧工作室，同一张原木工作桌",
+          "action": "把纸张叠齐、穿线、合上书脊，最后把完成的小书放到窗边",
+          "look": "温暖纪录片质感，手部与纸张细节清楚",
+          "camera": "全景交代桌面，近景记录手部，最后回到桌面中景",
+          "duration": "约 10 秒",
+          "aspect": "横屏 16:9",
+          "extra": "三个镜头：叠纸；穿线；合书。每镜一个主要任务，前后沿用同一本书"
+        },
+        "output": "旧版手动保留正文 storyboard\n第二行 <保留原样> & 中文标点。",
+        "mode": "brief",
+        "updated": "2026-10-28T08:00:00.000Z"
+      }
+    ]
+  }
+}

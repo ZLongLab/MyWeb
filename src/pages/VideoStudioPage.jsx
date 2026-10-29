@@ -1,3 +1,19 @@
+import '../../assets/video-lexicon.js';
+import '../../assets/video-content-sources.js';
+
+function PromptVocabulary({ groups, target, label }) {
+  return (
+    <select aria-label={label} data-video-vocabulary={target} defaultValue="">
+      <option value="">{label} · 可选</option>
+      {window.VIDEO_LEXICON.filter(group => groups.includes(group.id)).map(group => (
+        <optgroup key={group.id} label={group.title + ' · 通用'}>
+          {group.entries.map(entry => <option key={entry.term} value={entry.value} title={entry.meaning}>{entry.term} · {entry.meaning}（{entry.platform}）</option>)}
+        </optgroup>
+      ))}
+    </select>
+  );
+}
+
 function PromptHero() {
   return (
     <section className="prompt-hero" aria-labelledby="prompt-title">
@@ -225,6 +241,7 @@ function PromptGrid() {
                   rows="2"
                   placeholder="例如：水彩纸纹、柔和晨光、低饱和色彩"
                 ></textarea>
+                <PromptVocabulary groups={['lighting', 'color']} target="look" label="添加光线或色彩" />
               </div>
               {"\n          "}
               <div className="prompt-field">
@@ -251,6 +268,10 @@ function PromptGrid() {
                     maxLength="1000"
                     placeholder="固定机位 / 缓慢推近 / 侧面跟拍"
                   />
+                  <div className="prompt-field-pair">
+                    <PromptVocabulary groups={['movement']} target="camera" label="添加运镜" />
+                    <PromptVocabulary groups={['shot', 'angle']} target="camera" label="添加景别或角度" />
+                  </div>
                 </div>
                 <div className="prompt-field-pair">
                   <div className="prompt-field">
@@ -266,7 +287,7 @@ function PromptGrid() {
                     <label htmlFor="prompt-aspect">{"构图意图"}</label>
                     <select id="prompt-aspect" name="aspect">
                       <option value="">{"暂不指定"}</option>
-                      {"横屏 16:9"}
+                      <option>{"横屏 16:9"}</option>
                       <option>{"竖屏 9:16"}</option>
                       <option>{"方形 1:1"}</option>
                     </select>
@@ -462,31 +483,17 @@ function PromptNotebook() {
 
 function PromptOriginNote() {
   return (
-    <div className="prompt-origin-note">
+    <div className="prompt-origin-note" id="video-sources">
+      <p>来源快照与改写说明 · 2026-10-29。模板示例由本站原创，摄影词条释义经改写；没有搬运来源的完整案例提示词、视频、GIF 或图片，也没有验证实际生成效果。</p>
+      {window.VIDEO_CONTENT_SOURCES.map(source => (
+        <p key={source.id} data-video-source={source.id}>
+          <a href={source.url} target="_blank" rel="noopener noreferrer">{source.title} ↗</a>
+          {' · ' + source.license + '。' + source.usage + ' '}
+          {source.licenseUrl && <a href={source.licenseUrl} target="_blank" rel="noopener noreferrer">许可范围 ↗</a>}
+        </p>
+      ))}
       <p>
-        {"方法参考 "}
-        <a
-          href="https://github.com/LearnPrompt/awesome-seedance"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {"LearnPrompt / Awesome Seedance ↗"}
-        </a>
-        {
-          "，按 CC BY 4.0 署名改编。本站重新编写了中文示例、表单与文字整理逻辑，没有复制原作者的视频、图片或完整案例提示词。"
-        }
-        <a
-          href="https://github.com/LearnPrompt/awesome-seedance#copyright--takedown-notice"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {"来源与许可说明 ↗"}
-        </a>
-      </p>
-      <p>
-        {
-          "内容整理于 2026-10-28，不自动抓取更新。清理浏览器数据会删除本地收藏与草稿；GitHub 网址与 ChatGPT 展示网址的资料分别保存，需要迁移时请导出、导入。"
-        }
+        本次只取固定提交快照，不自动抓取更新。<a href="THIRD-PARTY-LICENSES.txt">第三方许可登记 ↗</a>。清理浏览器数据会删除本地收藏与草稿；不同浏览器或网址之间需要导出、导入。
       </p>
     </div>
   );

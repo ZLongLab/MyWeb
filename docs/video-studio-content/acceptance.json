@@ -1,0 +1,41 @@
+{
+  "baseline": "6c302f9f6406ff1a248a0a8baa89334e1e5cb13c",
+  "version": "1.11.0",
+  "templatesBefore": 8,
+  "templatesAfter": 15,
+  "legacyTemplateIdsPreserved": true,
+  "legacyExampleStoryFieldsPreserved": true,
+  "validationAndMergeCodeUnchanged": true,
+  "persistedFields": [
+    "subject",
+    "scene",
+    "action",
+    "look",
+    "camera",
+    "duration",
+    "aspect",
+    "extra"
+  ],
+  "storageKey": "myweb_video_studio_v1",
+  "storageVersion": 1,
+  "stylesUnchanged": 24,
+  "imageWorkshopModulesUnchanged": 7,
+  "dependencyGraphUnchanged": true,
+  "discoveryFilesUnchanged": true,
+  "githubSnapshotUnchanged": true,
+  "sourceCount": 5,
+  "newExampleVerbatim32CharacterMatches": [],
+  "credentialPatternFindings": [],
+  "changedMediaFiles": [],
+  "screenshotsLocalOnly": true,
+  "desktop1440Themes": [
+    "paper",
+    "night"
+  ],
+  "cacheVersion": "1.11.0-react-0c54a9e0b48a",
+  "cachedFiles": 123,
+  "mainFiles": 134,
+  "optimizerFiles": 45,
+  "tests": 33,
+  "deployed": false
+}

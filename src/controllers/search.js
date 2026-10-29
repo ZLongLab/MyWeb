@@ -294,7 +294,7 @@ export default function initialize(scope) {
       id: "page:video-prompts",
       type: "页面",
       title: "视频灵感室 · AI 提示词工具",
-      summary: "8 个创作模板：填写想法、复制提示词、收藏和备份草稿。",
+      summary: "15 个创作模板与摄影候选词：分镜、产品广告、一镜到底和可灵方向；收藏与备份草稿。",
       href: "video-prompts.html",
       body: "Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿",
     });
