@@ -45,6 +45,7 @@ test('All fifteen complete examples are selectable, and platform briefs never cr
   page.on('dialog', dialog => dialog.accept());
   await open(page);
   for (const template of templates) {
+    await page.locator('#prompt-platform').selectOption(template.platform === '通用' ? 'generic' : template.platform);
     await page.locator(`[data-template="${template.id}"]`).click();
     await page.locator('#prompt-example').click();
     for (const field of ['subject', 'scene', 'action', 'camera', 'look', 'duration', 'aspect', 'extra']) {
@@ -52,9 +53,10 @@ test('All fifteen complete examples are selectable, and platform briefs never cr
     }
     await page.locator('[data-output-mode="draft"]').click();
     const draft = await page.locator('#prompt-output').inputValue();
-    expect(draft).toContain('适用平台：');
-    expect(draft.indexOf('主要动作：')).toBeLessThan(draft.indexOf('摄影机行为：'));
-    expect(draft.indexOf('摄影机行为：')).toBeLessThan(draft.indexOf('画风与光线：'));
+    expect(draft).toContain(template.example.subject);
+    expect(draft).toContain(template.example.action);
+    if (template.platform === 'seedance') expect(draft).not.toContain('\n');
+    else expect(draft).toContain('分镜序列：');
     await page.locator('[data-output-mode="brief"]').click();
     const brief = await page.locator('#prompt-output').inputValue();
     if (template.platform === 'kling') {
@@ -67,10 +69,11 @@ test('All fifteen complete examples are selectable, and platform briefs never cr
     await expect(page.locator('#prompt-source')).toHaveAttribute('href', template.sourceUrl);
   }
   await page.locator('#prompt-search').fill('可灵');
+  await page.locator('#prompt-platform').selectOption('kling');
   await expect(page.locator('[data-template]')).toHaveCount(2);
   await page.locator('#prompt-search').fill('');
   await page.locator('[data-prompt-filter="展示"]').click();
-  await expect(page.locator('[data-template]')).toHaveCount(templates.filter(template => template.family === '展示').length);
+  await expect(page.locator('[data-template]')).toHaveCount(templates.filter(template => template.family === '展示' && ['kling', '通用'].includes(template.platform)).length);
 });
 
 test('Vocabulary appends across the three pickers, respects limits and preserves manual output', async ({ page }) => {
@@ -86,7 +89,12 @@ test('Vocabulary appends across the three pickers, respects limits and preserves
   await page.getByLabel('添加运镜').selectOption(movement.value);
   await page.getByLabel('添加景别或角度').selectOption(shot.value);
   await page.getByLabel('添加光线或色彩').selectOption(light.value);
-  for (const phrase of [movement.value, shot.value, light.value]) expect(await page.locator('#prompt-output').inputValue()).toContain(phrase);
+  for (const phrase of [movement.value, shot.value]) expect(await page.locator('#prompt-camera').inputValue()).toContain(phrase);
+  expect(await page.locator('#prompt-look').inputValue()).toContain(light.value);
+  const assembled = await page.locator('#prompt-output').inputValue();
+  expect(assembled).toContain('推近（Push-in）');
+  expect(assembled).toContain('中景（Medium Shot (MS)）');
+  expect(assembled).toContain(light.value);
   await page.locator('#prompt-output').fill('手工编辑的镜头正文，不能被词库覆盖。');
   await page.getByLabel('添加运镜').selectOption(data.window.VIDEO_LEXICON[0].entries[1].value);
   await expect(page.locator('#prompt-output')).toHaveValue('手工编辑的镜头正文，不能被词库覆盖。');
@@ -113,15 +121,15 @@ for (const theme of ['paper', 'night']) {
     await page.setViewportSize({ width: 1440, height: 1000 });
     await page.addInitScript(theme => localStorage.setItem('myweb_theme_v1', theme), theme);
     await open(page, 'story-sequence');
-    await expect(page.locator('[data-template]')).toHaveCount(15);
-    await expect(page.locator('[data-video-source]')).toHaveCount(5);
+    await expect(page.locator('[data-template]')).toHaveCount(13);
+    await expect(page.locator('[data-video-source]')).toHaveCount(6);
     await expect(page.locator('#video-sources')).toContainText('未提供明确许可证');
     await expect(page.locator('#video-sources')).toContainText('CC BY 4.0');
     await expect(page.locator('#prompt-extra')).toHaveValue(/S01.*S02.*S03/s);
     await page.locator('.prompt-advanced summary').click();
     await page.getByLabel('添加景别或角度').selectOption(data.window.VIDEO_LEXICON[1].entries[3].value);
     await page.getByLabel('添加光线或色彩').selectOption(data.window.VIDEO_LEXICON[3].entries[4].value);
-    expect(await page.locator('#prompt-output').inputValue()).toContain('角色');
+    expect(await page.locator('#prompt-output').inputValue()).toContain(data.window.VIDEO_TEMPLATES.find(template => template.id === 'story-sequence').example.subject);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBeTruthy();
     await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
     await page.screenshot({ path: `.tmp/video-studio-content/1440-${theme}.png`, fullPage: true });

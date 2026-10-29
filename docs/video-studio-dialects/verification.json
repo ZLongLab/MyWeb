@@ -1,0 +1,211 @@
+{
+  "checkedDate": "2026-10-29",
+  "baseline": "a9e3fa42ecf5756c7f2a117caea1666ebfe290e1",
+  "version": "1.12.0",
+  "templateContentUnchanged": true,
+  "lexiconByteIdentical": true,
+  "templateCount": 15,
+  "terms": 57,
+  "storageKey": "myweb_video_studio_v1",
+  "storageVersion": 1,
+  "profiles": {
+    "simple": {
+      "rules": [
+        "主体 → 动作 → 场景 → 镜头 → 风格，一段成文，不输出分段标题。",
+        "保留填写的主体、动作、场景、镜头、风格；补充内容只提取结尾与首条关键约束，不展开分镜或后期。",
+        "子句从简，合并换行；时长与画幅只作创作意图。"
+      ],
+      "order": [
+        "subject",
+        "action",
+        "scene",
+        "camera",
+        "look"
+      ],
+      "separator": "；",
+      "constraintLimit": 1,
+      "constraintPattern": "不要|不展示|不增加|不改变|不新增|不插入|不追求|不让|禁止|避免|保持|一致|始终|只有|不变|只表现|每镜",
+      "endingPattern": "结尾|结束|最后|落点",
+      "briefLead": "请为 Seedance 完善以下自然语言提示词，保留主体、事件与结尾，仍用一段简洁文字，不新增故事事实。"
+    },
+    "rich": {
+      "rules": [
+        "先写总纲句，再依次输出场景与妆造、分镜序列、镜头语言、光影氛围、约束与后期；各段空行分隔。",
+        "分镜沿用填写的 S 编号与时间轴；无分镜时只安排一个镜头，无时长时仅标 0 秒起、结束待定，不虚构剧情。",
+        "运镜采用中文（English）对照；未知描述原样保留，不推断未填写的摄影动作。",
+        "保留补充内容与后期事项；秒数是剪辑安排，不是平台参数或精确执行承诺。"
+      ],
+      "sections": [
+        {
+          "title": "场景与妆造",
+          "renderer": "scene",
+          "fields": [
+            "subject",
+            "scene",
+            "aspect"
+          ]
+        },
+        {
+          "title": "分镜序列",
+          "renderer": "sequence"
+        },
+        {
+          "title": "镜头语言",
+          "renderer": "camera",
+          "field": "camera"
+        },
+        {
+          "title": "光影氛围",
+          "renderer": "field",
+          "field": "look",
+          "fallback": "光线与风格待补充，不额外设定。"
+        },
+        {
+          "title": "约束与后期",
+          "renderer": "extra"
+        }
+      ],
+      "briefLead": "请为 {platform} 完善以下自然语言分镜方案，保留主体、事件与结尾，每镜可独立复制，不新增故事事实。",
+      "timingNote": "秒数仅为剪辑安排，精确卡点、字幕、声音与合成留到后期；当前入口的参数、参考图与音频能力尚未核实。"
+    }
+  },
+  "templates": [
+    {
+      "id": "cinematic",
+      "title": "电影短片",
+      "platform": "seedance",
+      "dialect": "both"
+    },
+    {
+      "id": "anime",
+      "title": "动漫风格",
+      "platform": "seedance",
+      "dialect": "simple"
+    },
+    {
+      "id": "stop-motion",
+      "title": "定格动画",
+      "platform": "seedance",
+      "dialect": "simple"
+    },
+    {
+      "id": "product",
+      "title": "产品展示",
+      "platform": "seedance",
+      "dialect": "both"
+    },
+    {
+      "id": "travel",
+      "title": "旅行记录",
+      "platform": "seedance",
+      "dialect": "simple"
+    },
+    {
+      "id": "music",
+      "title": "音乐 MV",
+      "platform": "seedance",
+      "dialect": "both"
+    },
+    {
+      "id": "pet",
+      "title": "宠物短片",
+      "platform": "seedance",
+      "dialect": "simple"
+    },
+    {
+      "id": "storyboard",
+      "title": "分镜设计",
+      "platform": "seedance",
+      "dialect": "both"
+    },
+    {
+      "id": "story-sequence",
+      "title": "分镜叙事",
+      "platform": "seedance",
+      "dialect": "both"
+    },
+    {
+      "id": "product-ad",
+      "title": "产品广告",
+      "platform": "seedance",
+      "dialect": "both"
+    },
+    {
+      "id": "one-take",
+      "title": "一镜到底",
+      "platform": "通用",
+      "dialect": "both"
+    },
+    {
+      "id": "kling-daily",
+      "title": "可灵 · 日常动作",
+      "platform": "kling",
+      "dialect": "rich"
+    },
+    {
+      "id": "kling-product",
+      "title": "可灵 · 材质展示",
+      "platform": "kling",
+      "dialect": "rich"
+    },
+    {
+      "id": "process-detail",
+      "title": "手作过程",
+      "platform": "通用",
+      "dialect": "both"
+    },
+    {
+      "id": "nature-observation",
+      "title": "自然观察",
+      "platform": "通用",
+      "dialect": "both"
+    }
+  ],
+  "build": {
+    "base": "/MyWeb/",
+    "cacheVersion": "1.12.0-react-531d52291f89",
+    "cachedFiles": 124,
+    "mainFiles": 135,
+    "optimizerFiles": 45
+  },
+  "cachedWasm": 0,
+  "automated": {
+    "command": "npm run verify",
+    "expected": 38,
+    "unexpected": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "durationMs": 77017.33499999999
+  },
+  "actualOldNewBrowserCompatibility": {
+    "baseline": "a9e3fa42ecf5756c7f2a117caea1666ebfe290e1",
+    "oldBuildVersion": "1.11.0",
+    "newBuildVersion": "1.12.0",
+    "checks": [
+      "Actual 1.12 UI export includes platform=sora and backup version 1",
+      "Actual preserved 1.11 page has 15 templates and no platform selector",
+      "Actual 1.11 page opens new output verbatim",
+      "1.12 → 1.11 field subject",
+      "1.12 → 1.11 field scene",
+      "1.12 → 1.11 field action",
+      "1.12 → 1.11 field look",
+      "1.12 → 1.11 field camera",
+      "1.12 → 1.11 field duration",
+      "1.12 → 1.11 field aspect",
+      "1.12 → 1.11 field extra",
+      "Actual 1.11 re-export preserves favorites and known data, drops only unsupported platform",
+      "Actual 1.11 rejects colliding import without clearing existing data",
+      "Actual 1.11 → 1.12 import opens on Seedance without rewriting saved output",
+      "Actual 1.11 → 1.12 preserves imported shape and favorites",
+      "Rich storyboard keeps original second anchors paper",
+      "Rich storyboard keeps original second anchors night",
+      "No script errors or external runtime requests"
+    ],
+    "errors": [],
+    "external": []
+  },
+  "screenshots": "local only; not committed",
+  "deployment": {
+    "status": "pending"
+  }
+}

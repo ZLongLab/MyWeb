@@ -9,7 +9,7 @@ test('Prompt engines and catalogs load only in their own tool pages', async ({ p
   await expect(page.locator('.image-room-card')).toHaveCount(20);
   expect(await page.evaluate(() => !!window.IMAGE_CORE && window.VIDEO_TEMPLATES === undefined)).toBeTruthy();
   await page.goto('video-prompts.html');
-  await expect(page.locator('[data-template]')).toHaveCount(15);
+  await expect(page.locator('[data-template]')).toHaveCount(13);
   expect(await page.evaluate(() => !!window.VIDEO_CORE && window.IMAGE_INSPIRATION === undefined)).toBeTruthy();
 });
 

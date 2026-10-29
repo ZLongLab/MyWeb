@@ -109,7 +109,7 @@ function SitePrinciples() {
           </a>
           {"保存；源码备份不包含浏览器里的便签。"}
         </p>
-        <p>视频灵感室的五个来源按固定快照登记：LearnPrompt 策展内容 CC BY 4.0、代码 MIT；marsoyang1 未提供明确许可，只参考字段结构；Yuyyxz 与 rich5000 为 MIT；VideoPrompts.tools 仅参考 CC BY 4.0 模板库的字段维度。本站示例原创，不搬运案例提示词或媒体。<a href="video-prompts.html#video-sources">阅读逐项来源与改写说明 ↗</a>，<a href="THIRD-PARTY-LICENSES.txt">查看第三方许可登记 ↗</a>。</p>
+        <p>视频灵感室的内容来源按固定快照登记：LearnPrompt 策展内容 CC BY 4.0、代码 MIT；marsoyang1 未提供明确许可，只参考字段结构；Yuyyxz 与 rich5000 为 MIT；VideoPrompts.tools 仅参考 CC BY 4.0 模板库的字段维度。平台方言另参考 ZhongBiao-zheng / video-prompt（MIT），只借简派与繁派划分方法，档案及文字由本站原创，不保证模型效果。本站示例原创，不搬运案例提示词或媒体。<a href="video-prompts.html#video-sources">阅读逐项来源与改写说明 ↗</a>，<a href="THIRD-PARTY-LICENSES.txt">查看第三方许可登记 ↗</a>。</p>
       </div>
     </section>
   );

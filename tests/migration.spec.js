@@ -251,7 +251,7 @@ test("Video templates, manual editing, old drafts, favorites and backups", async
 }) => {
   page.on("dialog", (dialog) => dialog.accept());
   await ready(page, "video-prompts.html?template=cinematic");
-  await expect(page.locator("[data-template]")).toHaveCount(15);
+  await expect(page.locator("[data-template]")).toHaveCount(13);
   await expect(page.locator("#prompt-subject")).not.toHaveValue("");
   await page.locator("#prompt-output").fill("手动保留的提示词");
   await page.locator("#prompt-subject").fill("灰衣书店店主");

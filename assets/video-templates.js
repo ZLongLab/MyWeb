@@ -3,6 +3,7 @@
 window.VIDEO_TEMPLATES = [
   {
     "id": "cinematic",
+    "dialect": "both",
     "source": "cinematic-narrative-short",
     "title": "电影短片",
     "family": "叙事",
@@ -45,6 +46,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "anime",
+    "dialect": "simple",
     "source": "anime-style-lock",
     "title": "动漫风格",
     "family": "动画",
@@ -87,6 +89,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "stop-motion",
+    "dialect": "simple",
     "source": "stop-motion-cadence",
     "title": "定格动画",
     "family": "动画",
@@ -129,6 +132,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "product",
+    "dialect": "both",
     "source": "product-commercial-shotlist",
     "title": "产品展示",
     "family": "展示",
@@ -171,6 +175,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "travel",
+    "dialect": "simple",
     "source": "travel-city-walk",
     "title": "旅行记录",
     "family": "叙事",
@@ -213,6 +218,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "music",
+    "dialect": "both",
     "source": "music-beat-sync-mv",
     "title": "音乐 MV",
     "family": "节奏",
@@ -255,6 +261,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "pet",
+    "dialect": "simple",
     "source": "pet-animal",
     "title": "宠物短片",
     "family": "日常",
@@ -297,6 +304,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "storyboard",
+    "dialect": "both",
     "source": "storyboard-grid-to-video",
     "title": "分镜设计",
     "family": "分镜",
@@ -339,6 +347,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "story-sequence",
+    "dialect": "both",
     "source": "timeline-shot-script",
     "sourceUrl": "https://github.com/marsoyang1/awesome-seedance-prompts/blob/9fa64c4b788d2a8d924984f7d2c3ad9be3ed2098/README.md",
     "sourceRefs": [
@@ -382,6 +391,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "product-ad",
+    "dialect": "both",
     "source": "product-commercial-shotlist",
     "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/product-commercial-shotlist.md",
     "sourceRefs": [
@@ -425,6 +435,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "one-take",
+    "dialect": "both",
     "source": "pov-continuous-take",
     "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/pov-continuous-take.md",
     "sourceRefs": [
@@ -467,6 +478,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "kling-daily",
+    "dialect": "rich",
     "source": "kling-text-to-video",
     "sourceUrl": "https://github.com/Yuyyxz/kling-prompt-engineering/blob/11a67070991f757c017e84a9ece6c809371aa1fa/03-t2v-guide.md",
     "sourceRefs": [
@@ -509,6 +521,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "kling-product",
+    "dialect": "rich",
     "source": "kling-material-study",
     "sourceUrl": "https://github.com/Yuyyxz/kling-prompt-engineering/blob/11a67070991f757c017e84a9ece6c809371aa1fa/19-cinematography-dictionary.md",
     "sourceRefs": [
@@ -551,6 +564,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "process-detail",
+    "dialect": "both",
     "source": "process-transformation-montage",
     "sourceUrl": "https://github.com/LearnPrompt/awesome-seedance/blob/ecd568ffa0edf687254dad213a99a8aee7388067/docs/templates/zh/process-transformation-montage.md",
     "sourceRefs": [
@@ -593,6 +607,7 @@ window.VIDEO_TEMPLATES = [
   },
   {
     "id": "nature-observation",
+    "dialect": "both",
     "source": "original-nature-study",
     "sourceUrl": "https://github.com/yangchangjiang/videoprompts/tree/cb47d134c1a8e0695587a6c8efbaaaca2dbb0917/templates",
     "sourceRefs": [

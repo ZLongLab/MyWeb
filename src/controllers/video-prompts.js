@@ -1,5 +1,7 @@
 // Behavior preserved from the 1.9.0 implementation; initialized by the React lifecycle.
 import "../../assets/video-templates.js";
+import "../../assets/video-dialects.js";
+import "../../assets/video-lexicon.js";
 import "../../assets/video-prompts-core.js";
 export default function initialize(scope) {
   (function () {
@@ -22,6 +24,7 @@ export default function initialize(scope) {
     )
       ? new URLSearchParams(location.search).get("template")
       : "cinematic";
+    var platform = byId[selected].platform === '通用' ? 'generic' : byId[selected].platform || 'seedance';
     var category = "全部",
       mode = "draft",
       manual = false,
@@ -92,7 +95,7 @@ export default function initialize(scope) {
         $("prompt-output-state").textContent = "表单有变化 · 点“重新整理”更新";
         return;
       }
-      output.value = core.compose(byId[selected], fields(), mode);
+      output.value = core.compose(byId[selected], fields(), mode, platform);
       manual = false;
       $("prompt-output-state").textContent = "已按填写内容整理";
       count();
@@ -176,6 +179,7 @@ export default function initialize(scope) {
       var query = $("prompt-search").value.trim().toLocaleLowerCase();
       var filtered = templates.filter(function (t) {
         return (
+          core.supportsPlatform(t, platform) &&
           (category === "全部" ||
             (category === "收藏"
               ? state.favorites.includes(t.id)
@@ -292,6 +296,8 @@ export default function initialize(scope) {
                 return item.id === draft.id;
               });
               if (!current) return;
+              platform = current.platform || 'seedance';
+              $('prompt-platform').value = platform;
               select(current.template, false, true);
               core.fields.forEach(function (name) {
                 form.elements[name].value = current.fields[name];
@@ -334,6 +340,13 @@ export default function initialize(scope) {
         state.drafts.length + " / 50 份 · 只保存在当前浏览器";
     }
     scope.listen($("prompt-search"), "input", renderCards);
+    scope.listen($('prompt-platform'), 'change', function () {
+      platform = $('prompt-platform').value;
+      renderCards();
+      renderOutput(true);
+      dirty = true;
+      status('已按' + window.VIDEO_PLATFORMS.find(function (item) { return item.id === platform; }).option + '重新整理，全部表单内容保留。' + (core.supportsPlatform(byId[selected], platform) ? '' : '当前编辑模板不在此平台列表中，可继续编辑或另选起点。'));
+    });
     document
       .querySelectorAll("[data-prompt-filter]")
       .forEach(function (button) {
@@ -469,6 +482,7 @@ export default function initialize(scope) {
         fields: values,
         output: output.value,
         mode: mode,
+        platform: platform,
         updated: new Date().toISOString(),
       };
       if (
@@ -580,6 +594,7 @@ export default function initialize(scope) {
         event.returnValue = "";
       }
     });
+    $('prompt-platform').value = platform;
     select(selected, true, true);
     renderDrafts();
     if (locked)

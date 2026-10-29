@@ -1370,3 +1370,37 @@ Full license text: https://creativecommons.org/licenses/by/4.0/legalcode
 LearnPrompt / goodcase.ai curation: CC BY 4.0. Code is MIT. Creator prompts and media remain under their original owners; no creator prompt text or media copied.
 Full CC BY 4.0 license: https://creativecommons.org/licenses/by/4.0/legalcode
 All new MyWeb examples are original. No marsoyang1 prompt text or media reused. VideoPrompt fields referenced only; no Python or edge-worker code used.
+
+
+Video Studio Dialects 1.12.0 - method reference only
+Source: ZhongBiao-zheng/video-prompt
+Snapshot: 31482da9327a3b57096a9bb01b512239d0cb76c2
+Retrieved: 2026-10-29
+License: MIT
+License URL: https://github.com/ZhongBiao-zheng/video-prompt/blob/31482da9327a3b57096a9bb01b512239d0cb76c2/LICENSE
+Use: Only the simple/rich writing-method classification is referenced. Site
+profiles, assembly rules and generated connective wording are original. No
+upstream prompt examples, API syntax, code or media are copied. This is not
+an assurance of model capabilities or generation quality.
+
+MIT License
+
+Copyright (c) 2026 ZhongBiao-zheng
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

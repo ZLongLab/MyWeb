@@ -1,5 +1,6 @@
 import '../../assets/video-lexicon.js';
 import '../../assets/video-content-sources.js';
+import '../../assets/video-dialects.js';
 
 function PromptVocabulary({ groups, target, label }) {
   return (
@@ -92,6 +93,12 @@ function PromptGrid() {
           <h2 id="prompt-library-title">{"找一个起点"}</h2>
         </div>
         <div className="prompt-panel-body">
+          <div className="prompt-platform-field">
+            <label className="prompt-search-label" htmlFor="prompt-platform">平台与方言</label>
+            <select id="prompt-platform" defaultValue="seedance" aria-describedby="prompt-dialect-note">
+              {window.VIDEO_PLATFORMS.map(platform => <option key={platform.id} value={platform.id}>{platform.option}</option>)}
+            </select>
+          </div>
           {"\n        "}
           <label className="prompt-search-label" htmlFor="prompt-search">
             {"搜索模板"}
@@ -401,6 +408,9 @@ function PromptGrid() {
             role="status"
             aria-live="polite"
           ></p>
+          <p className="prompt-storage-note">
+            <span id="prompt-dialect-note">简派把主体与动作连成一段，繁派展开分镜与镜头说明；这是写作预设，效果需在所用平台试用。</span>
+          </p>
           <p className="prompt-storage-note">
             {
               "这里按模板整理文字，不调用 AI，也不生成视频。你的填写不会发送给站主，收藏和草稿只留在当前浏览器。"
