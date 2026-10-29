@@ -20,6 +20,10 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24.22.1'
+      - name: Install React and Vite dependencies
+        run: npm ci --ignore-scripts
+      - name: Check local prompt data rules
+        run: npm run check
       - name: Checkout pinned Prompt Optimizer source
         uses: actions/checkout@v6
         with:

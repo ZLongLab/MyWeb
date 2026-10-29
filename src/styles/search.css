@@ -1,0 +1,64 @@
+/* Search and command palette share the current paper/night/season colours. */
+.site-nav .nav-search{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:8px 0;min-width:44px;min-height:44px;border:0;background:transparent;color:var(--muted);font-size:14px;white-space:nowrap}
+.site-nav .nav-search:hover{color:var(--green)}
+.site-nav .nav-search svg{flex-shrink:0}
+.site-search-dialog{width:min(660px,calc(100% - 36px));max-height:min(760px,calc(100dvh - 72px));padding:25px 28px 0;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);box-shadow: var(--shadow-dialog);overflow:auto;overscroll-behavior:contain}
+.site-search-dialog::backdrop{background:#20352973;backdrop-filter:blur(4px)}
+.site-search-header{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;margin-bottom:18px}
+.site-search-header h2{font-size:25px;line-height:1.5;letter-spacing:-.5px}
+.site-search-header p{font-size:12px;color:var(--muted);margin-top:5px;line-height:1.7}
+.site-search-close{display:flex;align-items:center;justify-content:center;flex-shrink:0;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--muted);font-size:25px;line-height:1}
+.site-search-close:hover{background:var(--soft);color:var(--green)}
+.site-search-field{display:flex;align-items:center;gap:12px;min-height:50px;padding:10px 15px;border:1px solid var(--control-border,var(--line));border-radius:7px;background:var(--bg);color:var(--green)}
+.site-search-field svg{flex-shrink:0;width:19px;height:19px}
+.site-search-field:focus-within{outline:2px solid var(--control-focus,var(--green));outline-offset:3px}
+.site-search-field input{min-width:0;width:100%;padding:0;border:0;outline:0;background:transparent;color:var(--ink);font-size:16px;line-height:1.7}
+.site-search-field input::placeholder{color:var(--muted);font-size:13px}
+.site-search-status{position:sticky;top:0;z-index:2;background:var(--surface);min-height:42px;font-size:11px;line-height:1.8;color:var(--muted);padding:15px 0 12px}
+.site-search-status,.site-search-footer{transition: background-color var(--duration-normal) var(--ease-out),color var(--duration-normal) var(--ease-out)}
+.site-search-status.is-feedback{color:var(--green);font-weight:500}
+.site-search-status.is-error{color:var(--c-clay,var(--warm));font-weight:500}
+.site-search-results{min-height:125px;overflow-wrap:anywhere}
+.site-search-group+.site-search-group{margin-top:19px}
+.site-search-group-title{display:flex;align-items:center;gap:9px;margin:0 0 6px;padding-inline:9px;font-family:var(--font-mono,monospace);font-size:11px;line-height:1.8;font-weight:500;letter-spacing:.04em;color:var(--c-slate,var(--muted))}
+.site-search-group-title::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--c-clay,var(--warm))}
+.site-search-list{list-style:none;margin:0;padding:0}
+.site-search-list li{margin:0;border-top:1px solid var(--line)}
+.site-search-result{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;min-height:44px;padding:13px 10px 14px;border:0;border-radius:5px;background:transparent;color:var(--ink);font:inherit;text-align:left;text-decoration:none;cursor:pointer;transition: background-color var(--duration-fast) var(--ease-out),color var(--duration-fast) var(--ease-out)}
+.site-search-result-copy{display:block;min-width:0}
+.site-search-result:hover,.site-search-result:focus-visible{background:var(--soft)}
+.site-search-meta{display:block;color:var(--green);font-size:10px;line-height:1.7;letter-spacing:.3px}
+.site-search-result-title{display:block;font-size:16px;line-height:1.6;margin-top:3px;font-weight:500}
+.site-search-excerpt{display:block;color:var(--muted);font-size:12px;line-height:1.8;margin-top:4px}
+.site-search-result-marker{flex-shrink:0;color:var(--green);font-size:16px;line-height:1}
+.site-search-result.is-compact{padding-block:10px;min-height:60px}
+.site-search-result.is-compact .site-search-result-title{margin-top:0;font-size:14px}
+.site-search-result.is-compact .site-search-excerpt{font-size:11px;margin-top:2px}
+.site-search-result:disabled{cursor:wait;opacity:.75}
+.site-search-empty{text-align:center;padding:12px 0 35px}
+.site-search-empty-mark{display:block;font-size:35px;line-height:1.5;color:var(--green)}
+.site-search-empty h3{font-size:19px;font-weight:500;margin-top:9px}
+.site-search-empty p{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.9}
+.site-search-footer{position:sticky;bottom:0;display:flex;justify-content:space-between;gap:18px;padding:14px 0 17px;margin-top:17px;border-top:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:10px;line-height:1.7}
+.site-search-dialog a:focus-visible,.site-search-dialog button:focus-visible,.site-nav .nav-search:focus-visible{outline:2px solid var(--control-focus,var(--green));outline-offset:2px}
+.site-search-copy-field{position:fixed;left:0;top:0;width:1px;height:1px;padding:0;border:0;opacity:0;pointer-events:none}
+@media(min-width:640px) and (max-width:1050px){.site-nav .nav-search{font-size:13px}}
+@media(max-width:639px){
+  .site-nav .nav-search{justify-content:flex-start;min-height:48px;padding:11px 12px;font-size:14px}
+  .site-search-dialog{width:calc(100% - 28px);max-height:calc(100dvh - 28px);padding:20px 17px 0;border-radius:11px}
+  .site-search-header{margin-bottom:17px;gap:10px}
+  .site-search-header h2{font-size:21px}
+  .site-search-header p{font-size:11px;margin-top:4px}
+  .site-search-field{gap:9px;padding:10px 12px}
+  .site-search-field input::placeholder{font-size:11px}
+  .site-search-status{padding-top:15px;font-size:10px}
+  .site-search-group-title{padding-inline:5px}
+  .site-search-result{padding:12px 6px;gap:10px}
+  .site-search-result-title{font-size:15px}
+  .site-search-excerpt{font-size:11px}
+  .site-search-result.is-compact{padding-block:10px}
+  .site-search-result.is-compact .site-search-result-title{font-size:13px}
+  .site-search-footer{font-size:9px;gap:12px;padding-bottom:16px}
+  .site-search-empty p{font-size:11px}
+}
+@media(prefers-reduced-motion:reduce){.site-search-result{transition:none}}

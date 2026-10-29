@@ -1,0 +1,6 @@
+/* The mounting point adds no layout box; preserve the original body flex sizing. */
+#root { display: contents; }
+#root > main { flex: 1 0 auto; }
+.workbench-tool-teaser { padding: 18px 22px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface); }
+.workbench-tool-teaser-description { margin: 8px 0 0; }
+.workbench-tool-teaser-description > span { color: var(--muted); font-size: 13px; }

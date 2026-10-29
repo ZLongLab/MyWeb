@@ -64,7 +64,7 @@ try {
     if (!date(reviewedAt) || reviewedAt > today) throw Error('Approval requires a real --reviewed=YYYY-MM-DD date, not a future date.');
     const draft = JSON.parse(await readFile(resolve(output, 'garden-data.json'), 'utf8')), svg = await readFile(resolve(output, 'garden-graph.svg'), 'utf8');
     if (JSON.stringify(draft) !== JSON.stringify(result.data) || svg !== result.svg) throw Error('Draft differs from current articles. Generate and review again; approved files were not changed.');
-    await writeFile(resolve(root, 'assets/images/garden-graph.svg'), result.svg);
+    await writeFile(resolve(root, 'public/assets/images/garden-graph.svg'), result.svg);
     await writeFile(resolve(root, 'assets/garden-data.js'), '// Explicitly reviewed static graph; do not edit generated positions.\nwindow.SITE_GARDEN_GRAPH = ' + JSON.stringify({ ...result.data, reviewedAt, svg: result.svg }, null, 2) + ';\n');
     console.log(JSON.stringify({ approved: true, reviewedAt, nodes: result.data.nodes.length, edges: result.data.edges.length, eligible: result.data.eligible }));
   } else {

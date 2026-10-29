@@ -4,8 +4,12 @@ setlocal
 cd /d "%~dp0"
 where node >nul 2>nul
 if errorlevel 1 (
-  echo 未找到 Node.js。你可以先直接双击 index.html 查看网站。
-  echo 如需本地服务器，请安装 Node.js 后再次运行此文件。
+  echo 未找到 Node.js。请先安装 Node.js 22.12 或更新版本。
+  pause
+  exit /b 1
+)
+if not exist node_modules\vite (
+  echo 首次启动需要安装网站依赖，请在此目录运行 npm install。
   pause
   exit /b 1
 )

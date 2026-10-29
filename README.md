@@ -1,43 +1,55 @@
 # 有间小站
 
-ZL 的本地优先中文个人网站。栏目组织成一所可逛的小房子：10 个房间、15 个 HTML 页面（含404，另有视频灵感室工具页）；主导航仍是首页、作品、文章、关于，其他房间从玄关和页脚平面图进入。纯静态、零运行依赖，通过 GitHub Pages 托管。
+ZL 的中文个人网站，已从传统页面迁移为 **React 19 + JavaScript + CSS + Vite 8**。保留 16 个主站 HTML 地址、10 个房间、原视觉与动画，以及图片／视频灵感室和本地便签。提示词优化器仍为独立子站。暂不开发后端、数据库或账号系统。
 
-网站地址为 [有间小站](https://zlonglab.github.io/MyWeb/)。源码与版本历史保存在 GitHub 公开仓库 [ZLongLab/MyWeb](https://github.com/ZLongLab/MyWeb)，可供阅读和审核。基准标记为 `baseline-2026-10-25`，后续保存和恢复方式见 [版本恢复说明](版本恢复说明.md)。
+本次在分支 `codex/react-migration` 完成，原版基线为 `b059dda`（内容版本 1.9.0）。网站原有内容版本不变；离线缓存使用内容哈希区分 React 构建。迁移已通过发布检查，正式站点地址保持不变；部署结果以 GitHub Actions 为准。 详见 [迁移与验证记录](docs/react-migration/README.md)。
 
-## 发布网站
+## 启动与开发
 
-推送到 `main` 后，`.github/workflows/pages.yml` 自动准备并发布网页，无需安装项目依赖。Actions 中的成功部署才代表该版本已上线；本地修改保存后不会自动上传。GitHub Pages 发布源使用 GitHub Actions。
-
-`npm run build:pages` 从 `server.mjs` 的运行白名单提取资源，生成到全新的 `.tmp/pages-site-*` 目录；当前为81个运行文件，另加空的 `.nojekyll`。只上传该目录，排除 README、docs、scripts、研究资料、备份和本机配置。缺失资源或符号链接会让准备步骤失败；404产物加入 `/MyWeb/` 基准路径，保证多层错误地址也能加载样式和导航。
-
-网页上的便签仍只保存在访客自己的浏览器中。新网址与本机预览属于不同来源，本机便签和外观偏好不会自动迁移；需要迁移便签时先导出，再到新网址导入。
-
-2026-10-28 的发布前检查见 [检查记录](docs/deployment-2026-10-28.md)。发布范围和源码仓库范围不同：源码仓库仍然公开，包括已跟踪的历史验收记录。
-
-## 打开网站
-
-- 最简单：双击 `index.html`，浏览器会直接打开首页。
-- 推荐：已安装 Node.js 时，双击 `启动预览.cmd`。启动成功后会自动打开浏览器，地址默认为 `http://127.0.0.1:4173`。保留终端窗口，按 `Ctrl+C` 停止预览。
-- 也可以在这个文件夹打开终端，运行 `npm start`，再手动打开上述地址。不需要执行 `npm install`。
-
-预览只监听本机的 `127.0.0.1`，其他设备不能通过局域网访问。如果端口已被占用，可在 PowerShell 中运行：
+安装 Node.js 22.12 以上或 24 LTS，然后在此目录运行：
 
 ```powershell
-$env:PORT = '4174'
-npm start
+npm ci
+npm run dev
 ```
 
-然后访问 `http://127.0.0.1:4174`。只对当前终端生效；结束后可以关闭终端，或运行 `Remove-Item Env:PORT`。
+默认打开 [本机开发页面](http://127.0.0.1:4173/MyWeb/)。也可以运行 `npm start` 或双击 `启动预览.cmd`；启动脚本不会自动安装依赖。按 Ctrl+C 停止服务。更换端口可用 `$env:PORT='4175'`，或 `npm run dev -- --port 4175`。源码 HTML 现在是 Vite 入口，需要通过服务器打开，不能再直接双击运行。
 
-## 换成自己的内容
+## 文件与内容维护
 
-1. 用文本编辑器打开 `assets/site-data.js`，按照文件中的注释修改称呼、身份、简介和邮箱等资料。当前署名为 ZL，身份为计算机学生；站名保留“有间小站”。
-2. “联系我”统一进入关于页的联系区。当前提供真实 GitHub 账号；没有任何有效联系地址时才显示待公开提示。填写有效邮箱后显示独立的“发送邮件”按钮。社交地址的 `locations` 可限定 home / footer / contact 位置。
-3. 作品内容集中在 `assets/projects-data.js` 中，已放入 RecallAI、DocumentAssistant、Folia Android 适配和本站。用途、技术与版本说明根据本机项目文档整理；Folia 标明基于开源项目的适配。`featured: true` 控制首页精选，`image` 维护预览图，`sections` 可补充段落、列表和小节图片，`articleId` 可关联开发手记；其他作品通过“全部作品”浏览。分类筛选由 `assets/projects.js` 处理，独立详情页 `project.html` 由 `assets/project.js` 渲染。
-4. 文章内容集中在 `assets/articles-data.js` 中。参考已有对象，修改标识、标题、分类、日期、摘要和正文。每篇文章需要不同的标识。首页、列表和搜索共用 `assets/content.js` 的日期排序；阅读时间可手写，省略或留空时按正文约 320 字/分钟向上取整，最少 1 分钟。
-5. 页面文字在对应 HTML 中；共享视觉由 `assets/site-theme.css`、`assets/night.css`、`assets/seasons.css` 和 `assets/house.css` 维护，首页布局在 `assets/home.css`。房间目录、工具和推荐在 `assets/house-data.js`，书影音与本地照片在 `assets/life-data.js`；项目近况和版本史仍读取 `assets/workbench-data.js`。
+- `src/main.jsx` 按旧页面地址加载组件；`src/App.jsx` 组织公共结构，`src/pages/` 保留各页面内容与分区。
+- `src/components/` 维护导航、页脚、站标、作品卡片与筛选、工作台工具入口。作品筛选与导航菜单使用 React 状态。
+- `src/controllers/` 是已能正常工作的浏览器交互模块，通过 React 生命周期接入。原生表单值和空列表区域由这些模块管理，避免 React 同时管理其内部节点。不要在这些区域加入会反复更新的 React 子节点；后续可按模块替换为状态组件。
+- `src/styles/` 是当前样式源文件；构建会原样复制公共 CSS 并保留每页原加载顺序。`public/assets/` 是当前图片、图标、站标等静态资源，`public/` 保存 RSS、站点地图、robots 与安装清单。
+- `assets/*-data.js`、`assets/site-snapshot.js`、`assets/video-templates.js` 和两份 `*-core.js` 继续作为有效内容／纯逻辑来源，维护脚本仍能读取。其余原 `assets` 控制器、样式、图片，以及根目录旧 SW／XML／manifest 保留作迁移恢复材料，**新页面和发布构建不引用它们**。请勿继续修改这些旧副本。
+- 个人信息在 `assets/site-data.js`，作品在 `assets/projects-data.js`，文章在 `assets/articles-data.js`，房间／工具在 `assets/house-data.js`，近况／版本记录在 `assets/workbench-data.js`。新增页面还需在 `src/pages/registry.js` 登记。
 
-修改文件并保存后，刷新浏览器即可看到更新。无需编译，也无需安装依赖。
+## 构建与发布
+
+```powershell
+npm run build
+npm run preview
+```
+
+输出为 `dist/`；预览默认地址为 [本机构建预览](http://127.0.0.1:4174/MyWeb/)。默认基准路径 `/MyWeb/` 适配 GitHub Pages。其他静态平台若部署在域名根路径，可运行 `npm run build -- --base=/`。旧的 `.html`、查询参数与锚点都保留，不要求服务器做单页路由回退。嵌套错误地址由带基准路径的 `404.html` 处理。
+
+`npm run build` 在本机已有已校验优化器产物时会一并复制；没有产物时只构建主站并明确提示。**完整正式发布请使用 `npm run build:optimizer` 和 `npm run build:pages`**；后者缺少优化器产物会失败，避免漏掉已上线的子站。优化器的源码准备方式见下面 1.7.2 记录。
+
+推送至 `main` 后，GitHub Actions 使用锁文件安装主站依赖，检查提示词数据，再构建固定版本优化器和主站，将 `dist/` 上传到 Pages。构建不上传源码、依赖、本机截图、历史材料或密钥。只有 Actions 的部署步骤成功才代表线上已更新。
+
+## 验证
+
+```powershell
+npm run check
+npm run build
+npm run test:e2e
+```
+
+浏览器测试默认使用已安装的 Chrome，不自动下载浏览器；测试产物和截图放在 `.tmp/`，不发布。测试会启动本机 4192 端口的构建预览和 4193 端口的开发服务。
+
+本地存储键名、版本与导入导出格式保持兼容。新来源（如端口、协议或域名变化）仍需导出／导入迁移数据；同一线上地址发布 React 版不会主动清除数据。浏览与复制提示词仍不调用 AI；优化器仍需使用者自己的模型配置。本次没有调用真实 AI、读取个人 API 配置，或修改已核对的 GitHub 每日贡献数据。
+
+以下为迁移前的内容版本历史；其中旧白名单计数与免构建启动方式仅对应当时的实现。
 
 ## 当前版本 1.9.0「图片灵感室」
 

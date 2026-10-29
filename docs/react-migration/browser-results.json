@@ -1,0 +1,177 @@
+{
+  "tests": [
+    {
+      "name": "Development entry can unmount and remount without duplicate native integrations",
+      "file": "lifecycle.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1282
+        }
+      ]
+    },
+    {
+      "name": "All sixteen pages, metadata, local resources and layout at 1440",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2438
+        }
+      ]
+    },
+    {
+      "name": "All sixteen pages, metadata, local resources and layout at 390",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 2283
+        }
+      ]
+    },
+    {
+      "name": "Every project and article, including missing IDs, keeps content and share metadata",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1691
+        }
+      ]
+    },
+    {
+      "name": "React project filters, query reload and legacy anchors",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 706
+        }
+      ]
+    },
+    {
+      "name": "Article search, topic clusters, graph and filter restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 854
+        }
+      ]
+    },
+    {
+      "name": "Search keyboard commands and theme persistence",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 885
+        }
+      ]
+    },
+    {
+      "name": "Narrow navigation uses React state and closes after commands or Escape",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 634
+        }
+      ]
+    },
+    {
+      "name": "Picture viewer zoom, fit and focus restoration",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 685
+        }
+      ]
+    },
+    {
+      "name": "Old local notes are preserved, can merge backups, export and delete",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 814
+        }
+      ]
+    },
+    {
+      "name": "Video templates, manual editing, old drafts, favorites and backups",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 806
+        }
+      ]
+    },
+    {
+      "name": "Image examples, source credit, copy, local favorites, merge and cross-tab sync",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 1253
+        }
+      ]
+    },
+    {
+      "name": "Corrupt local data is not overwritten",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 795
+        }
+      ]
+    },
+    {
+      "name": "Real service worker keeps query pages and all lazy modules available offline",
+      "file": "migration.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 965
+        }
+      ]
+    },
+    {
+      "name": "List return restores scroll position and old deep section links still land correctly",
+      "file": "navigation.spec.js",
+      "status": "expected",
+      "results": [
+        {
+          "status": "passed",
+          "duration": 894
+        }
+      ]
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-29T02:57:39.847Z",
+    "duration": 21923.686999999998,
+    "expected": 15,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

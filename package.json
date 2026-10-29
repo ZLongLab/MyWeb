@@ -2,7 +2,7 @@
   "name": "my-personal-website",
   "version": "1.9.0",
   "private": true,
-  "description": "有间小站：本地优先、零依赖的个人网站",
+  "description": "有间小站：React + JavaScript + CSS + Vite，本地优先的个人网站",
   "type": "module",
   "scripts": {
     "build:optimizer": "node scripts/build-optimizer.mjs",
@@ -13,6 +13,22 @@
     "snapshot:approve": "node scripts/refresh-snapshots.mjs --approve-github",
     "discovery": "node scripts/generate-discovery.mjs",
     "garden": "node scripts/generate-garden.mjs",
-    "garden:approve": "node scripts/generate-garden.mjs --approve"
+    "garden:approve": "node scripts/generate-garden.mjs --approve",
+    "dev": "vite --open",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "node scripts/check-image-core.mjs && node scripts/check-video-core.mjs",
+    "test:e2e": "playwright test"
+  },
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "vite": "8.3.5"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
   }
 }

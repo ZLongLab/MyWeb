@@ -33,9 +33,9 @@ for (const file of ['feed.xml', 'sitemap.xml']) {
   const text = content.toString('utf8');
   const urls = [...text.matchAll(/<(?:loc|link|guid\b[^>]*?)>(https?:[^<]*)<\//g)].map(match => match[1]);
   if (!urls.length || urls.some(url => !url.startsWith(base))) throw Error('Unexpected public URL in ' + file);
-  await fs.writeFile(new URL(file, root), content);
+  await fs.writeFile(new URL('public/' + file, root), content);
 }
-await fs.writeFile(new URL('robots.txt', root), 'User-agent: *\nAllow: /\nSitemap: ' + base + 'sitemap.xml\n');
+await fs.writeFile(new URL('public/robots.txt', root), 'User-agent: *\nAllow: /\nSitemap: ' + base + 'sitemap.xml\n');
 await fs.mkdir(new URL(recordDir + '/', root), { recursive: true });
 await fs.writeFile(new URL(recordDir + '/og-metadata.json', root), JSON.stringify(generated, null, 2) + '\n');
 await fs.writeFile(new URL(recordDir + '/generator-differences.json', root), JSON.stringify({ base, image, metadataDifferences: differences, fallbackPages: pages.filter(file => !generated[file]), sitemapNote: 'Preserved generator output and existing HTML/query URLs. Image room has an explicit standalone URL; no standalone video room, 404 or bare detail shells. No clean URLs generated.', robotsNote: 'Generator emits no robots.txt; added Allow and Sitemap only.' }, null, 2) + '\n');

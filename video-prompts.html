@@ -17,38 +17,20 @@
       if (color) color.content = mode === 'night' ? '#1e2420' : colors[season];
     })();
   </script>
-  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml"><link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="assets/search.css">
+  <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml"><link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/search.css">
+  <link rel="stylesheet" href="/assets/navigation.css">
+  <link rel="stylesheet" href="/assets/site-theme.css">
+  <link rel="stylesheet" href="/assets/background.css">
 
-  <script src="assets/site-data.js" defer></script>
-  <script src="assets/site-snapshot.js" defer></script>
-  <script src="assets/life-data.js" defer></script>
-  <script src="assets/house-data.js" defer></script>
-  <script src="assets/workbench-data.js" defer></script>
-  <script src="assets/articles-data.js" defer></script>
-  <script src="assets/garden-data.js" defer></script>
-  <script src="assets/timeline-data.js" defer></script>
-  <script src="assets/garden.js" defer></script>
-  <script src="assets/content.js" defer></script>
-  <script src="assets/projects-data.js" defer></script>
-  <script src="assets/navigation.js" defer></script>
-  <script src="assets/app.js" defer></script>
-  <script src="assets/search.js" defer></script>
-  <link rel="stylesheet" href="assets/navigation.css">
-  <link rel="stylesheet" href="assets/site-theme.css">
-  <link rel="stylesheet" href="assets/background.css">
-
-  <link rel="stylesheet" href="assets/pwa.css">
-  <link rel="stylesheet" href="assets/night.css">
-  <link rel="stylesheet" href="assets/house.css">
-  <link rel="stylesheet" href="assets/seasons.css">
-  <link rel="stylesheet" href="assets/garden.css">
-  <link rel="stylesheet" href="assets/details.css">
-  <link rel="stylesheet" href="assets/motion.css">
-  <link rel="stylesheet" href="assets/video-prompts.css">
-  <script src="assets/video-templates.js" defer></script>
-  <script src="assets/video-prompts-core.js" defer></script>
-  <script src="assets/video-prompts.js" defer></script>
+  <link rel="stylesheet" href="/assets/pwa.css">
+  <link rel="stylesheet" href="/assets/night.css">
+  <link rel="stylesheet" href="/assets/house.css">
+  <link rel="stylesheet" href="/assets/seasons.css">
+  <link rel="stylesheet" href="/assets/garden.css">
+  <link rel="stylesheet" href="/assets/details.css">
+  <link rel="stylesheet" href="/assets/motion.css">
+  <link rel="stylesheet" href="/assets/video-prompts.css">
   <!-- discovery:start -->
   <meta property="og:title" content="视频灵感室 · 有间小站">
   <meta property="og:description" content="8 个 AI 视频创作模板，填写想法、整理提示词、收藏与备份草稿。所有填写在当前浏览器内完成。">
@@ -61,48 +43,11 @@
   <meta name="twitter:url" content="https://zlonglab.github.io/MyWeb/video-prompts.html">
   <meta name="twitter:image" content="https://zlonglab.github.io/MyWeb/assets/images/recallai-preview-960.webp">
   <!-- discovery:end -->
+  <link rel="stylesheet" href="/src/styles/react-shell.css">
+  <script type="module" src="/src/main.jsx"></script>
 </head>
 <body data-page="video-prompts" data-room="workbench">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header container"><a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect class="site-mark-paper" x="2" y="2" width="60" height="60" rx="17" fill="#faf7f0"/><path class="site-mark-outline" d="m12 29 20-16 20 16M18 27v24h28V27" fill="none" stroke="#2b5b46" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path class="site-mark-door" d="m28 35 9-3v20l-9-3Z" fill="#c85a32"/></svg></span><span data-site-title>有间小站</span></a><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button><nav class="site-nav" id="site-nav" aria-label="主要导航"><a href="index.html">首页</a><a href="projects.html">作品</a><a href="articles.html">文章</a><a href="about.html">关于</a><a class="nav-contact" href="about.html#contact" data-contact-link>联系我 <span aria-hidden="true">→</span></a></nav></header>
-  <main class="prompt-shell" id="main">
-    <section class="prompt-hero" aria-labelledby="prompt-title">
-      <div class="prompt-hero-copy"><p class="eyebrow">工作台里的小工具 / VIDEO STUDIO · 01</p><h1 id="prompt-title">视频灵感室<span>。</span></h1><p>从一个想法，到一段能用的提示词。选一个拍摄方向，填进自己的故事，再慢慢打磨。</p></div>
-      <svg class="prompt-hero-art" viewBox="0 0 180 110" fill="none" aria-hidden="true"><rect x="17" y="20" width="138" height="78" rx="5" stroke="currentColor" stroke-width="1.2"/><path d="M17 37h138M17 80h138M65 37v43M113 37v43M27 26h14m10 0h14m10 0h14m10 0h14m10 0h14M27 91h14m10 0h14m10 0h14m10 0h14m10 0h14" stroke="currentColor" stroke-width="1.2"/><circle cx="41" cy="58" r="9" stroke="currentColor"/><path d="m78 69 12-22 12 22Zm46-11 10-10 10 10-10 10Z" stroke="currentColor"/><path d="m143 5 2 7 7 2-7 2-2 7-2-7-7-2 7-2Z" fill="currentColor"/></svg>
-    </section>
-    <div class="prompt-path"><b>01 选一个方向</b><span aria-hidden="true">→</span><b>02 填进你的想法</b><span aria-hidden="true">→</span><b>03 复制，去创作</b><a href="projects.html">回客厅看作品 ↗</a></div>
-    <noscript><p>这个工具需要 JavaScript 才能整理和保存草稿。你仍可阅读<a href="https://github.com/LearnPrompt/awesome-seedance">原始模板项目</a>。</p></noscript>
-    <div class="prompt-grid">
-      <section class="prompt-panel prompt-library" aria-labelledby="prompt-library-title"><div class="prompt-panel-head"><p class="prompt-step">01 / FIND YOUR FRAME</p><h2 id="prompt-library-title">找一个起点</h2></div><div class="prompt-panel-body">
-        <label class="prompt-search-label" for="prompt-search">搜索模板</label><input id="prompt-search" type="search" maxlength="100" placeholder="试试：动画、宠物、节奏" autocomplete="off">
-        <div class="prompt-filter-row" role="group" aria-label="筛选模板"><button type="button" class="prompt-filter" data-prompt-filter="全部" aria-pressed="true">全部</button><button type="button" class="prompt-filter" data-prompt-filter="叙事" aria-pressed="false">叙事</button><button type="button" class="prompt-filter" data-prompt-filter="动画" aria-pressed="false">动画</button><button type="button" class="prompt-filter" data-prompt-filter="展示" aria-pressed="false">展示</button><button type="button" class="prompt-filter" data-prompt-filter="收藏" aria-pressed="false">我的收藏</button></div>
-        <p class="prompt-result-count" id="prompt-result-count" aria-live="polite"></p><div class="prompt-template-list" id="prompt-template-list"></div><p class="prompt-empty" id="prompt-no-results" hidden>这里还没有匹配的模板。换个词，或回到“全部”看看。</p>
-      </div></section>
-      <section class="prompt-panel" aria-labelledby="prompt-editor-heading"><div class="prompt-panel-head"><p class="prompt-step">02 / MAKE IT YOURS</p><div class="prompt-heading-row"><h2 id="prompt-editor-heading" tabindex="-1"><span id="prompt-template-title">电影短片</span></h2><button class="prompt-text-button" id="prompt-example" type="button">填入示例 ↗</button></div><p class="prompt-description" id="prompt-template-description"></p></div>
-        <div class="prompt-panel-body"><form id="prompt-form"><div class="prompt-fields">
-          <div class="prompt-field"><label for="prompt-subject">画面主角<span>必填</span></label><input id="prompt-subject" name="subject" required maxlength="1000" placeholder="人物、动物或物品，以及它的外观"></div>
-          <div class="prompt-field"><label for="prompt-scene">故事发生在哪里<span>必填</span></label><textarea id="prompt-scene" name="scene" required maxlength="1000" rows="2" placeholder="地点、时间，以及能看见的环境细节"></textarea></div>
-          <div class="prompt-field"><label for="prompt-action">镜头里发生什么<span>必填</span></label><textarea id="prompt-action" name="action" required maxlength="1000" rows="3" placeholder="从开始到结束，描述一件具体发生的事"></textarea></div>
-          <div class="prompt-field"><label for="prompt-look">画风与光线<span>可选</span></label><textarea id="prompt-look" name="look" maxlength="1000" rows="2" placeholder="例如：水彩纸纹、柔和晨光、低饱和色彩"></textarea></div>
-          <div class="prompt-field"><label for="prompt-extra" id="prompt-extra-label">结尾与情绪变化</label><textarea id="prompt-extra" name="extra" maxlength="1000" rows="2" aria-describedby="prompt-extra-hint"></textarea><p class="prompt-field-hint" id="prompt-extra-hint"></p></div>
-          <details class="prompt-advanced"><summary>再补一点镜头细节 · 可选</summary><div class="prompt-field"><label for="prompt-camera">摄影机怎么移动</label><input id="prompt-camera" name="camera" maxlength="1000" placeholder="固定机位 / 缓慢推近 / 侧面跟拍"></div><div class="prompt-field-pair"><div class="prompt-field"><label for="prompt-duration">预计时长</label><input id="prompt-duration" name="duration" maxlength="40" placeholder="例如：约 10 秒"></div><div class="prompt-field"><label for="prompt-aspect">构图意图</label><select id="prompt-aspect" name="aspect"><option value="">暂不指定</option>横屏 16:9</option><option>竖屏 9:16</option><option>方形 1:1</option></select></div></div><p class="prompt-field-hint">这些是创作目标，实际可选项以你使用的视频平台为准。</p></details>
-        </div></form><details class="prompt-guidance"><summary>拍摄小提醒与容易踩的坑</summary><h3>试试这样写</h3><ul id="prompt-tips"></ul><h3>优先避免</h3><ul id="prompt-pitfalls"></ul><a class="prompt-source-link" id="prompt-source" href="https://github.com/LearnPrompt/awesome-seedance" target="_blank" rel="noopener noreferrer">阅读上游模板与案例（新标签页） ↗</a></details><button class="prompt-text-button" id="prompt-clear" type="button">清空当前填写</button></div>
-      </section>
-      <section class="prompt-panel prompt-result-panel" aria-labelledby="prompt-result-title"><div class="prompt-panel-head"><p class="prompt-step">03 / READY TO TAKE AWAY</p><h2 id="prompt-result-title">把想法带走</h2></div><div class="prompt-panel-body">
-        <div class="prompt-modes" role="group" aria-label="输出类型"><button class="prompt-mode" type="button" data-output-mode="draft" aria-pressed="true">提示词草稿</button><button class="prompt-mode" type="button" data-output-mode="brief" aria-pressed="false">给 AI 完善</button></div>
-        <label class="prompt-output-label" id="prompt-output-label" for="prompt-output">可编辑的文字草稿。</label><textarea class="prompt-output" id="prompt-output" maxlength="20000" spellcheck="false" aria-describedby="prompt-output-state"></textarea>
-        <div class="prompt-output-meta"><span id="prompt-output-count"></span><button class="prompt-text-button" id="prompt-regenerate" type="button">重新整理 ↻</button></div><p class="prompt-field-hint" id="prompt-output-state">已按填写内容整理</p>
-        <button class="prompt-main-action" id="prompt-copy" type="button">复制提示词草稿 ↗</button><button class="prompt-secondary-action" id="prompt-save" type="button">保存到我的草稿</button><p class="prompt-status" id="prompt-status" role="status" aria-live="polite"></p><p class="prompt-storage-note">这里按模板整理文字，不调用 AI，也不生成视频。你的填写不会发送给站主，收藏和草稿只留在当前浏览器。</p><p class="prompt-storage-note">想继续打磨？复制后<a class="text-link" href="prompt-optimizer/" target="_blank" rel="noopener noreferrer">打开提示词优化器 ↗</a>，粘贴草稿并配置自己的模型。不自动传送你的填写。</p><p class="prompt-storage-note">想先找画面方向？<a class="text-link" href="image-prompts.html" target="_blank" rel="noopener noreferrer">去图片灵感室找构图 ↗</a>，再回来补充动作与镜头。</p>
-      </div></section>
-    </div>
-    <section class="prompt-notebook" aria-labelledby="prompt-notebook-title"><div class="prompt-notebook-head"><div><h2 id="prompt-notebook-title">留给下次的想法</h2><p id="prompt-draft-count">0 / 50 份 · 只保存在当前浏览器</p></div><div class="prompt-backup-actions"><button class="prompt-text-button" id="prompt-import" type="button">导入备份 ↗</button><button class="prompt-text-button" id="prompt-export" type="button">导出备份 ↗</button><input id="prompt-import-file" type="file" accept=".json,application/json" hidden aria-label="选择视频灵感室备份"></div></div><div class="prompt-drafts" id="prompt-drafts"></div><p class="prompt-empty" id="prompt-drafts-empty">还没有保存的草稿。先从上面的示例改起，把自己的版本留下来。</p></section>
-    <div class="prompt-origin-note"><p>方法参考 <a href="https://github.com/LearnPrompt/awesome-seedance" target="_blank" rel="noopener noreferrer">LearnPrompt / Awesome Seedance ↗</a>，按 CC BY 4.0 署名改编。本站重新编写了中文示例、表单与文字整理逻辑，没有复制原作者的视频、图片或完整案例提示词。<a href="https://github.com/LearnPrompt/awesome-seedance#copyright--takedown-notice" target="_blank" rel="noopener noreferrer">来源与许可说明 ↗</a></p><p>内容整理于 2026-10-28，不自动抓取更新。清理浏览器数据会删除本地收藏与草稿；GitHub 网址与 ChatGPT 展示网址的资料分别保存，需要迁移时请导出、导入。</p></div>
-  </main>
-  <footer class="site-footer"><div class="footer-inner container"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 从这里开始，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="workbench.html">工作台</a><a class="footer-notes" href="guestbook.html">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
-  <script src="assets/house.js" defer></script>
-  <script src="assets/theme-controls.js" defer></script>
-  <script src="assets/details.js" defer></script>
-  <script src="assets/motion.js" defer></script>
-  <script src="assets/pwa.js" defer></script>
+  <div id="root"></div>
+  <noscript>本站需要 JavaScript 才能展示内容。请启用 JavaScript 后刷新；文章订阅可通过 <a href="feed.xml">RSS</a> 阅读。</noscript>
 </body>
 </html>

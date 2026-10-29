@@ -1,0 +1,65 @@
+.portfolio-intro{display:grid;grid-template-columns:1.6fr 1fr;gap:80px;align-items:center;padding:64px 0 52px}
+.portfolio-intro h1{font-size:49px;line-height:1.45;letter-spacing:-1.6px;margin:21px 0 19px}
+.portfolio-intro>div>p:last-child{font-size:15px;color:var(--muted);line-height:1.95}
+.portfolio-aside{justify-self:end;border-left:1px solid #cad6bc;padding:18px 0 18px 28px;max-width:265px}
+.portfolio-aside>span{display:block;font-size:33px;line-height:1;color:#71885a;margin-bottom:16px}
+.portfolio-aside>p{font-family:var(--serif);font-size:18px;line-height:1.9;color:#536849}
+.portfolio-aside>small{display:block;margin-top:20px;font-size:8px;letter-spacing:1.3px;color:var(--muted)}
+.portfolio-collection{border-top:1px solid var(--line);padding-bottom:12px}
+.portfolio-toolbar{display:flex;gap:20px;justify-content:space-between;align-items:center;padding:24px 0 20px}
+.portfolio-filters{display:flex;gap:7px;flex-wrap:wrap}
+.portfolio-filters button{font:inherit;font-size:12px;border:1px solid transparent;background:transparent;color:var(--muted);padding:8px 13px;border-radius:5px;min-height:40px;cursor:pointer}
+.portfolio-filters button:hover{background:#eaf0e0;color:var(--green)}
+.portfolio-filters button[aria-pressed=true]{background:var(--green);color:#fffef6;border-color:var(--green)}
+.portfolio-count{font-size:11px;color:var(--muted);white-space:nowrap}
+.portfolio-project{display:grid;grid-template-columns:72px minmax(0,1fr);gap:27px;padding:34px 0 31px;border-top:1px solid var(--line);scroll-margin-top:22px}
+.portfolio-project:last-child{border-bottom:1px solid var(--line)}
+.portfolio-number{font-family:Georgia,var(--serif);font-size:43px;line-height:1.2;color:#a1b28b;font-style:italic;padding-top:2px}
+.portfolio-meta{display:flex;gap:16px;align-items:center;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+.portfolio-category{color:#526f42}
+.portfolio-status{font-size:10px;padding:2px 7px;background:#edf2e3;border:1px solid #dce5cf;border-radius:3px;color:#637753}
+.portfolio-title{font-size:28px;line-height:1.5;letter-spacing:-.6px;font-weight:500;margin-top:13px;overflow-wrap:anywhere}
+.portfolio-summary{font-size:14px;line-height:1.95;color:var(--muted);margin-top:11px;max-width:58em}
+.portfolio-tags{display:flex;gap:7px;flex-wrap:wrap;list-style:none;padding:0;margin:17px 0 0}
+.portfolio-tags li{font-size:10px;line-height:1.8;color:#69795c;border:1px solid #dce4cf;background:#f0f3e8;border-radius:3px;padding:2px 8px}
+.portfolio-details{margin-top:19px}
+.portfolio-toggle{display:flex;align-items:center;justify-content:space-between;gap:25px;width:fit-content;min-height:40px;font-size:12px;color:var(--green);cursor:pointer;list-style:none;padding:5px 0}
+.portfolio-toggle::-webkit-details-marker{display:none}
+.portfolio-toggle-open{display:none}
+.portfolio-toggle-arrow{font-size:18px;transition: transform var(--duration-fast) var(--ease-out)}
+.portfolio-details[open] .portfolio-toggle-closed{display:none}
+.portfolio-details[open] .portfolio-toggle-open{display:inline}
+.portfolio-details[open] .portfolio-toggle-arrow{transform:rotate(180deg)}
+.portfolio-detail-body{border-left:2px solid #c6d5b4;padding:1px 0 3px 20px;margin-top:13px;max-width:65em;font-size:14px;line-height:2;color:#56664e;overflow-wrap:anywhere}
+.portfolio-detail-body p+p{margin-top:15px}
+.portfolio-detail-body .project-source-link{margin-top:20px;font-size:12px}
+.portfolio-empty{padding:45px 20px;text-align:center;font-size:14px;color:var(--muted);border-block:1px solid var(--line)}
+.portfolio-filters button:focus-visible,.portfolio-toggle:focus-visible{outline:2px solid #64834d;outline-offset:4px}
+@media(max-width:1050px){.portfolio-intro{gap:40px}.portfolio-intro h1{font-size:43px}.portfolio-project{grid-template-columns:55px minmax(0,1fr);gap:20px}}
+@media(max-width:799px){
+  .portfolio-intro{grid-template-columns:1fr;gap:25px;padding:39px 0 33px}
+  .portfolio-intro h1{font-size:clamp(32px,7vw,43px);letter-spacing:-1px;margin:19px 0 16px}
+  .portfolio-intro>div>p:last-child{font-size:14px}
+  .portfolio-aside{display:grid;grid-template-columns:30px 1fr;gap:0 14px;justify-self:start;width:100%;max-width:none;padding:13px 0 13px 17px;border-left:2px solid #cad6bc}
+  .portfolio-aside>span{font-size:27px;grid-row:1/3;margin:3px 0 0}
+  .portfolio-aside>p{font-size:14px}
+  .portfolio-aside>p br{display:none}
+  .portfolio-aside>small{font-size:7px;margin-top:9px;letter-spacing:1px}
+  .portfolio-toolbar{align-items:flex-start;flex-direction:column;gap:12px;padding:20px 0 16px}
+  .portfolio-filters{gap:4px}
+  .portfolio-filters button{font-size:11px;padding:7px 11px}
+  .portfolio-count{font-size:10px;padding-left:1px}
+  .portfolio-project{grid-template-columns:34px minmax(0,1fr);gap:12px;padding:25px 0 23px}
+  .portfolio-number{font-size:29px;padding-top:2px}
+  .portfolio-meta{gap:8px;font-size:10px}
+  .portfolio-status{font-size:9px;padding:2px 5px}
+  .portfolio-title{font-size:22px;margin-top:11px}
+  .portfolio-summary{font-size:13px;line-height:1.95;margin-top:9px}
+  .portfolio-tags{gap:5px;margin-top:14px}
+  .portfolio-tags li{font-size:9px;padding:2px 6px}
+  .portfolio-details{margin-top:14px}
+  .portfolio-toggle{font-size:11px;gap:19px}
+  .portfolio-detail-body{font-size:13px;padding-left:14px;margin-top:9px}
+  .portfolio-detail-body p+p{margin-top:12px}
+}
+@media(prefers-reduced-motion:reduce){.portfolio-toggle-arrow{transition:none}}

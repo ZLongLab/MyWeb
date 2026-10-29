@@ -23,39 +23,21 @@
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg?v=0.9" type="image/svg+xml">
-  <link rel="stylesheet" href="assets/styles.css">
-  <link rel="stylesheet" href="assets/projects.css">
-  <link rel="stylesheet" href="assets/search.css">
-  <link rel="stylesheet" href="assets/navigation.css">
-  <link rel="stylesheet" href="assets/site-theme.css">
-  <link rel="stylesheet" href="assets/media-viewer.css">
-  <link rel="stylesheet" href="assets/background.css">
+  <link rel="stylesheet" href="/assets/styles.css">
+  <link rel="stylesheet" href="/assets/projects.css">
+  <link rel="stylesheet" href="/assets/search.css">
+  <link rel="stylesheet" href="/assets/navigation.css">
+  <link rel="stylesheet" href="/assets/site-theme.css">
+  <link rel="stylesheet" href="/assets/media-viewer.css">
+  <link rel="stylesheet" href="/assets/background.css">
 
-  <script src="assets/site-data.js" defer></script>
-  <script src="assets/site-snapshot.js" defer></script>
-  <script src="assets/life-data.js" defer></script>
-  <script src="assets/house-data.js" defer></script>
-  <script src="assets/workbench-data.js" defer></script>
-  <script src="assets/articles-data.js" defer></script>
-  <script src="assets/garden-data.js" defer></script>
-  <script src="assets/timeline-data.js" defer></script>
-  <script src="assets/garden.js" defer></script>
-  <script src="assets/content.js" defer></script>
-  <script src="assets/pictures.js" defer></script>
-  <script src="assets/projects-data.js" defer></script>
-  <script src="assets/navigation.js" defer></script>
-  <script src="assets/app.js" defer></script>
-  <script src="assets/project.js" defer></script>
-  <script src="assets/media-viewer.js" defer></script>
-  <script src="assets/search.js" defer></script>
-
-  <link rel="stylesheet" href="assets/pwa.css">
-  <link rel="stylesheet" href="assets/night.css">
-  <link rel="stylesheet" href="assets/house.css">
-  <link rel="stylesheet" href="assets/seasons.css">
-  <link rel="stylesheet" href="assets/garden.css">
-  <link rel="stylesheet" href="assets/details.css">
-  <link rel="stylesheet" href="assets/motion.css">
+  <link rel="stylesheet" href="/assets/pwa.css">
+  <link rel="stylesheet" href="/assets/night.css">
+  <link rel="stylesheet" href="/assets/house.css">
+  <link rel="stylesheet" href="/assets/seasons.css">
+  <link rel="stylesheet" href="/assets/garden.css">
+  <link rel="stylesheet" href="/assets/details.css">
+  <link rel="stylesheet" href="/assets/motion.css">
   <!-- discovery:start -->
   <meta property="og:title" content="作品详情 · 有间小站">
   <meta property="og:description" content="有间小站的作品详情，了解项目用途、技术和当前进展。">
@@ -68,29 +50,11 @@
   <meta name="twitter:url" content="https://zlonglab.github.io/MyWeb/project.html">
   <meta name="twitter:image" content="https://zlonglab.github.io/MyWeb/assets/images/recallai-preview-960.webp">
   <!-- discovery:end -->
+  <link rel="stylesheet" href="/src/styles/react-shell.css">
+  <script type="module" src="/src/main.jsx"></script>
 </head>
 <body data-page="project" data-room="projects">
-  <a class="skip-link" href="#main">跳到正文</a>
-  <header class="site-header container container-wide"><a class="brand" href="index.html" aria-label="返回首页"><span class="brand-mark" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true" focusable="false"><rect class="site-mark-paper" x="2" y="2" width="60" height="60" rx="17" fill="#faf7f0"/><path class="site-mark-outline" d="m12 29 20-16 20 16M18 27v24h28V27" fill="none" stroke="#2b5b46" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path class="site-mark-door" d="m28 35 9-3v20l-9-3Z" fill="#c85a32"/></svg></span><span data-site-title>有间小站</span></a><button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-nav"><span>菜单</span><span class="menu-lines" aria-hidden="true"></span></button><nav class="site-nav" id="site-nav" aria-label="主要导航"><a href="index.html">首页</a><a href="projects.html" aria-current="page">作品</a><a href="articles.html">文章</a><a href="about.html">关于</a><a class="nav-contact" href="about.html#contact" data-contact-link>联系我 <span aria-hidden="true">→</span></a></nav></header>
-  <main class="container project-main container-wide" id="main">
-    <nav class="breadcrumbs" aria-label="面包屑"><ol><li><a href="index.html">首页</a></li><li><a href="projects.html" data-project-list-link>作品</a></li><li><span id="project-breadcrumb-title" aria-current="page">作品详情</span></li></ol></nav>
-    <a class="detail-back" href="projects.html" data-project-list-link><span aria-hidden="true">←</span> 返回作品列表</a>
-    <article class="project-reading" id="project-content" aria-labelledby="project-title">
-      <header class="project-detail-header"><p class="eyebrow">PROJECT / 作品详情</p><div class="portfolio-meta" id="project-meta"></div><h1 id="project-title">作品详情</h1><p class="project-detail-summary" id="project-summary"></p><ul class="portfolio-tags" id="project-tags" aria-label="项目技术与特点"></ul></header>
-      <nav class="project-toc" id="project-toc" aria-labelledby="project-toc-heading" hidden><h2 id="project-toc-heading">本页目录</h2></nav>
-      <figure class="project-figure" id="project-figure" hidden></figure>
-      <section class="project-detail-copy" aria-labelledby="project-body-heading"><h2 id="project-body-heading">关于这个项目</h2><div id="project-body"></div></section>
-      <div class="project-detail-source" id="project-source"></div>
-      <nav class="detail-end" aria-label="作品详情导航"><a class="detail-back" href="projects.html" data-project-list-link><span aria-hidden="true">←</span> 返回作品列表</a></nav>
-    </article>
-    <section class="project-not-found" id="project-not-found" hidden><h1>这件作品，暂时没有找到。</h1><p>链接可能有误，你可以回到作品列表继续浏览。</p><a class="button button-primary" href="projects.html" data-project-list-link>返回作品列表 <span aria-hidden="true">→</span></a></section>
-    <noscript><p class="no-script-note">作品详情需要启用 JavaScript。你也可以返回作品列表。</p></noscript>
-  </main>
-  <footer class="site-footer"><div class="footer-inner container container-wide"><a class="footer-brand" href="index.html" data-site-title>有间小站</a><span>© <span data-year>2026</span> · 保持好奇，慢慢生长。</span><div data-social-links></div><a class="footer-notes" href="workbench.html">工作台</a><a class="footer-notes" href="guestbook.html">随手便签（本地）</a><a href="#main" class="back-top">回到顶部 ↑</a></div></footer>
-  <script src="assets/house.js" defer></script>
-  <script src="assets/theme-controls.js" defer></script>
-  <script src="assets/details.js" defer></script>
-  <script src="assets/motion.js" defer></script>
-  <script src="assets/pwa.js" defer></script>
+  <div id="root"></div>
+  <noscript>本站需要 JavaScript 才能展示内容。请启用 JavaScript 后刷新；文章订阅可通过 <a href="feed.xml">RSS</a> 阅读。</noscript>
 </body>
 </html>

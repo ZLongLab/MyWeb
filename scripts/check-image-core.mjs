@@ -6,7 +6,7 @@ for(const file of ['assets/image-inspiration-data.js','assets/image-inspiration-
 const items=window.IMAGE_INSPIRATION,core=window.IMAGE_CORE,ids=items.map(i=>i.id),plain=x=>JSON.parse(JSON.stringify(x));
 assert.equal(items.length,20);assert.equal(new Set(ids).size,20);
 for(const category of ['人物','产品','海报','场景','插画'])assert.equal(core.filter(items,category,'',[],false).length,4);
-for(const item of items){assert.ok(window.VIDEO_TEMPLATES.some(v=>v.id===item.video));for(const key of ['subject','setting','look','composition','palette','avoid'])assert.ok(item[key]?.length>0);assert.ok(fs.existsSync(new URL('../assets/images/inspiration/'+item.id+'.svg',import.meta.url)));const prompt=core.compose(item);assert.ok(prompt.includes(item.subject));assert.ok(prompt.includes('没有附带参考图'));assert.ok(!prompt.includes('同上'));}
+for(const item of items){assert.ok(window.VIDEO_TEMPLATES.some(v=>v.id===item.video));for(const key of ['subject','setting','look','composition','palette','avoid'])assert.ok(item[key]?.length>0);assert.ok(fs.existsSync(new URL('../public/assets/images/inspiration/'+item.id+'.svg',import.meta.url)));const prompt=core.compose(item);assert.ok(prompt.includes(item.subject));assert.ok(prompt.includes('没有附带参考图'));assert.ok(!prompt.includes('同上'));}
 assert.equal(items.filter(i=>i.source).length,2);
 for(const item of items.filter(i=>i.source)){assert.equal(item.source.license,'CC BY 4.0');assert.equal(new URL(item.source.url).protocol,'https:');assert.ok(item.source.author&&item.source.changes);}
 assert.equal(core.filter(items,'全部','PORTRAIT',[],false)[0].id,'window-portrait');

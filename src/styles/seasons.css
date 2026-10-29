@@ -1,0 +1,96 @@
+/* Seasons change the light in the entrance, never a room's identity colours. */
+:root {
+  --global-accent: #c85a32;
+  --global-accent-text: #a44827;
+  --global-soft: #f1e0d0;
+  --global-wash: rgba(200, 90, 50, .08);
+  --global-wash-2: rgba(217, 155, 38, .08);
+  --room-accent: var(--c-slate);
+  --room-accent-text: #4a6b7c;
+  --room-vt-duration: var(--duration-normal);
+  --room-vt-x: 0px;
+  --room-vt-y: 8px;
+}
+html[data-season="spring"] {
+  --global-accent: #4a6b7c;
+  --global-accent-text: #3f5d6c;
+  --global-soft: #e6eeeb;
+  --global-wash: rgba(74, 107, 124, .08);
+  --global-wash-2: rgba(43, 91, 70, .08);
+}
+html[data-season="summer"] {
+  --global-accent: #2b5b46;
+  --global-accent-text: #2b5b46;
+  --global-soft: #e6eee1;
+  --global-wash: rgba(43, 91, 70, .08);
+  --global-wash-2: rgba(74, 107, 124, .08);
+}
+html[data-season="autumn"] {
+  --global-accent: #c85a32;
+  --global-accent-text: #a44827;
+  --global-soft: #f1e0d0;
+  --global-wash: rgba(200, 90, 50, .08);
+  --global-wash-2: rgba(217, 155, 38, .08);
+}
+html[data-season="winter"] {
+  --global-accent: #5b7183;
+  --global-accent-text: #4b6072;
+  --global-soft: #e4eaf0;
+  --global-wash: rgba(91, 113, 131, .08);
+  --global-wash-2: rgba(74, 107, 124, .08);
+}
+html[data-season="spring"]:not([data-theme="night"]) { --bg-paper: #f7f8f3; }
+html[data-season="summer"]:not([data-theme="night"]) { --bg-paper: #faf7f0; }
+html[data-season="autumn"]:not([data-theme="night"]) { --bg-paper: #faf5ec; }
+html[data-season="winter"]:not([data-theme="night"]) { --bg-paper: #f5f6f7; }
+html[data-theme="night"][data-season="spring"] { --global-accent: #9cbfcd; --global-accent-text: #9cbfcd; --global-soft: #2c3c3e; --global-wash: rgba(156, 191, 205, .06); --global-wash-2: rgba(152, 198, 165, .06); }
+html[data-theme="night"][data-season="summer"] { --global-accent: #98c6a5; --global-accent-text: #98c6a5; --global-soft: #2c3d30; --global-wash: rgba(152, 198, 165, .06); --global-wash-2: rgba(156, 191, 205, .06); }
+html[data-theme="night"][data-season="autumn"] { --global-accent: #e7a078; --global-accent-text: #e7a078; --global-soft: #403429; --global-wash: rgba(231, 160, 120, .06); --global-wash-2: rgba(229, 179, 84, .06); }
+html[data-theme="night"][data-season="winter"] { --global-accent: #a6bdd0; --global-accent-text: #a6bdd0; --global-soft: #2e3a46; --global-wash: rgba(166, 189, 208, .06); --global-wash-2: rgba(156, 191, 205, .06); }
+html[data-theme="night"] { --room-accent-text: var(--c-slate); }
+
+body[data-room="projects"], body[data-room="project"], body[data-page="projects"], body[data-page="project"] { --room-accent: var(--c-clay); --room-accent-text: #a44827; }
+body[data-room="articles"], body[data-room="article"], body[data-page="articles"], body[data-page="article"] { --room-accent: var(--c-amber); --room-accent-text: #93620a; }
+body[data-room="workbench"], body[data-room="now"], body[data-room="uses"], body[data-room="colophon"], body[data-page="workbench"] { --room-accent: var(--c-slate); --room-accent-text: #4a6b7c; }
+body[data-room="life"] { --room-accent: var(--c-moss); --room-accent-text: #2b5b46; }
+html[data-theme="night"] body[data-room="projects"], html[data-theme="night"] body[data-room="project"], html[data-theme="night"] body[data-page="projects"], html[data-theme="night"] body[data-page="project"] { --room-accent-text: var(--c-clay); }
+html[data-theme="night"] body[data-room="articles"], html[data-theme="night"] body[data-room="article"], html[data-theme="night"] body[data-page="articles"], html[data-theme="night"] body[data-page="article"] { --room-accent-text: var(--c-amber); }
+html[data-theme="night"] body[data-room="workbench"], html[data-theme="night"] body[data-room="now"], html[data-theme="night"] body[data-room="uses"], html[data-theme="night"] body[data-room="colophon"], html[data-theme="night"] body[data-page="workbench"] { --room-accent-text: var(--c-slate); }
+html[data-theme="night"] body[data-room="life"] { --room-accent-text: var(--c-moss); }
+
+body[data-page="home"] .home-overline::before,
+body[data-page="home"] .home-title-dot { color: var(--global-accent); }
+body[data-page="home"] .home-overline::before { background-color: var(--global-accent); }
+body[data-page="home"] .home-opening { --control-focus: var(--global-accent-text); }
+body[data-page="home"] .home-opening .home-text-link:not(.home-primary-link),
+body[data-page="home"] .home-social-links a { color: var(--global-accent-text); }
+.site-header .nav-theme:focus-visible { outline-color: var(--global-accent-text); }
+
+/* Navigation stays native; room directions share the 300ms duration. */
+html:has(body[data-page="home"]) { --room-vt-duration: var(--duration-normal); --room-vt-y: 5px; }
+html:has(body[data-room="articles"]), html:has(body[data-room="article"]),
+html:has(body[data-page="articles"]), html:has(body[data-page="article"]) { --room-vt-duration: var(--duration-normal); --room-vt-x: 8px; --room-vt-y: 0px; }
+html:has(body[data-room="life"]) { --room-vt-duration: var(--duration-normal); --room-vt-y: 4px; }
+html:root::view-transition-new(root) { animation-name: house-room-in; animation-duration: var(--room-vt-duration); }
+@keyframes house-room-in { from { opacity: 0; transform: translate(var(--room-vt-x), var(--room-vt-y)); } }
+
+.site-header .brand-mark { position: relative; }
+.site-header .brand-mark::after {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 17px;
+  width: 3px;
+  height: 9px;
+  border-radius: 1px;
+  background: linear-gradient(90deg, rgba(255, 250, 222, .96), rgba(255, 250, 222, 0));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+html[data-theme="night"] .site-header .brand-mark::after { background: linear-gradient(90deg, #ffd997, rgba(255, 217, 151, 0)); box-shadow: none; }
+.site-header .brand:hover .brand-mark::after, .site-header .brand:focus-visible .brand-mark::after { opacity: .85; }
+@media (prefers-reduced-motion: reduce) {
+  .site-header .brand-mark::after { display: none; transition: none; }
+  html:root::view-transition-new(root) { animation: none !important; }
+}

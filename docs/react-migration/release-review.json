@@ -1,0 +1,16 @@
+{
+  "baseline": "b059dda8bc05c71b5aaa8a4b732009708815c781",
+  "branch": "codex/react-migration",
+  "verdict": "APPROVE",
+  "scannedSourceFiles": 142,
+  "credentialPatternFindings": [],
+  "dataFilesUnchanged": 13,
+  "originalStylesUnchanged": 19,
+  "publishedFiles": 165,
+  "mainFiles": 120,
+  "optimizerFiles": 45,
+  "cachedFiles": 113,
+  "optimizerCredentialsEmpty": true,
+  "forbiddenPublishedFiles": [],
+  "deployed": false
+}

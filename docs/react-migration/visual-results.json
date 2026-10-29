@@ -1,0 +1,92 @@
+{
+  "initialMatrix": {
+    "pages": 16,
+    "widths": [
+      1440,
+      390
+    ],
+    "themes": [
+      "paper",
+      "night"
+    ],
+    "cases": 64,
+    "scope": "Full-page screenshots with text, visible links, metadata and primary geometry comparison; corrections documented in README."
+  },
+  "finalTargeted": {
+    "cases": [
+      {
+        "file": "1440-night-404.html-0.png",
+        "size": true,
+        "pixels": 1440000,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "1440-night-index.html-0.png",
+        "size": true,
+        "pixels": 6972480,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "1440-paper-404.html-0.png",
+        "size": true,
+        "pixels": 1440000,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "1440-paper-index.html-0.png",
+        "size": true,
+        "pixels": 6972480,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "390-night-404.html-0.png",
+        "size": true,
+        "pixels": 390000,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "390-night-index.html-0.png",
+        "size": true,
+        "pixels": 2292810,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "390-paper-404.html-0.png",
+        "size": true,
+        "pixels": 390000,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      },
+      {
+        "file": "390-paper-index.html-0.png",
+        "size": true,
+        "pixels": 2292810,
+        "different": 0,
+        "ratio": 0,
+        "mean": 0,
+        "max": 0
+      }
+    ]
+  },
+  "screenshotsLocalOnly": true
+}

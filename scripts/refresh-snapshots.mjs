@@ -77,7 +77,7 @@ async function generate(approve) {
     reviewedAt = [...args].find(arg => arg.startsWith('--reviewed='))?.slice(11) || '';
     if (!/^\d{4}-\d{2}-\d{2}$/.test(reviewedAt) || !Number.isFinite(Date.parse(reviewedAt + 'T00:00:00Z')) || dayString(new Date(reviewedAt + 'T00:00:00Z')) !== reviewedAt || reviewedAt > today()) throw Error('Approval requires an actual --reviewed=YYYY-MM-DD date.');
     github = JSON.parse(await readFile(draftPath, 'utf8')); validateGithub(github);
-    await writeFile(new URL(github.svg, root), githubSvg(github));
+    await writeFile(new URL("public/" + github.svg, root), githubSvg(github));
   }
   const text = articles.value.map(article => (article.sections || []).map(section => [section.heading || '', ...(section.paragraphs || []), ...(section.list || [])].join('')).join('')).join('');
   const snapshot = {

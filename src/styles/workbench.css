@@ -1,0 +1,64 @@
+/* An open notebook: a quiet index on the left and readable entries on the right. */
+.workbench-page { padding-bottom: 72px; }
+.workbench-page .workbench-hero { padding: 62px 0 40px; }
+.workbench-page .workbench-hero > .eyebrow { color: var(--c-slate); font-family: var(--mono), var(--font); font-size: 12px; letter-spacing: .8px; }
+.workbench-page .workbench-hero h1 { max-width: 850px; margin: 17px 0 16px; font-family: var(--font-serif); font-size: clamp(32px, 4vw, 46px); font-weight: 600; line-height: 1.65; letter-spacing: -.6px; }
+.workbench-page .workbench-intro { max-width: 620px; color: var(--muted); font-size: 16px; line-height: 1.9; }
+.workbench-page .workbench-updated { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 19px; color: var(--muted); font-size: 12px; }
+.workbench-page .workbench-updated time { color: var(--c-slate); font-family: var(--mono); }
+.workbench-page .workbench-index { display: flex; flex-wrap: wrap; gap: 4px 30px; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--line); }
+.workbench-page .workbench-index a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--c-moss); font-size: 13px; }
+.workbench-page .workbench-index a span { color: var(--c-clay); }
+.workbench-page .workbench-section { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; padding: 38px 0 42px; border-top: 1px solid var(--line); scroll-margin-top: 28px; }
+.workbench-page .workbench-section-index { color: var(--c-clay); font-family: var(--mono), var(--font); font-size: 12px; letter-spacing: .4px; }
+.workbench-page .workbench-section-heading h2 { margin-top: 8px; font-family: var(--font-serif); font-size: 25px; font-weight: 600; line-height: 1.7; }
+.workbench-page .workbench-section-heading > p:last-child { max-width: 17em; margin-top: 12px; color: var(--muted); font-size: 13px; line-height: 1.9; }
+.workbench-page .workbench-section-content { min-width: 0; }
+.workbench-page .workbench-entry + .workbench-entry { margin-top: 23px; padding-top: 22px; border-top: 1px solid var(--line); }
+.workbench-page .workbench-entry-meta { display: flex; flex-wrap: wrap; gap: 7px 14px; color: var(--c-slate); font-family: var(--mono), var(--font); font-size: 12px; line-height: 1.8; }
+.workbench-page .workbench-entry h3 { margin: 5px 0 8px; font-family: var(--font-serif); font-size: 21px; font-weight: 600; line-height: 1.7; overflow-wrap: anywhere; }
+.workbench-page .workbench-entry p { color: var(--muted); font-size: 14px; line-height: 1.95; }
+.workbench-page .workbench-entry p + p { margin-top: 10px; }
+.workbench-page .workbench-entry ul { margin: 10px 0 0; padding-left: 20px; color: var(--muted); font-size: 14px; line-height: 1.95; }
+.workbench-page .workbench-entry li + li { margin-top: 5px; }
+.workbench-page .workbench-entry li::marker { color: var(--c-clay); }
+.workbench-page .workbench-entry-version { color: var(--c-slate); font-family: var(--mono); }
+.workbench-page .workbench-entry-links { display: flex; flex-wrap: wrap; gap: 4px 24px; margin-top: 8px; }
+.workbench-page .workbench-entry-links a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--c-moss); font-size: 13px; }
+.workbench-page .workbench-tool-row { display: grid; grid-template-columns: minmax(0, .45fr) minmax(0, .55fr); gap: 18px; margin: 0; padding: 18px 0; border-bottom: 1px solid var(--line); }
+.workbench-page .workbench-tool-row:first-child { padding-top: 0; }
+.workbench-page .workbench-tool-row:last-child { padding-bottom: 0; border-bottom: 0; }
+.workbench-page .workbench-tool-row dt { color: var(--c-moss); font-size: 14px; font-weight: 500; line-height: 1.9; overflow-wrap: anywhere; }
+.workbench-page .workbench-tool-title { display: block; margin-top: 4px; font-size: 16px; font-weight: 600; line-height: 1.9; }
+.workbench-page .workbench-tool-row dd { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.95; overflow-wrap: anywhere; }
+.workbench-page .workbench-tool-row dd + dd { grid-column: 2; margin-top: -10px; }
+.workbench-page .workbench-tool-row dd a { color: var(--c-moss); }
+.workbench-page .workbench-colophon-list { margin: 0; }
+.workbench-page .workbench-colophon-list > div + div { margin-top: 24px; }
+.workbench-page .workbench-colophon-list dt { margin-bottom: 7px; color: var(--c-moss); font-size: 14px; font-weight: 500; }
+.workbench-page .workbench-colophon-list dd { max-width: 620px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.95; }
+.workbench-page .workbench-colophon-list a { color: var(--c-moss); text-decoration: underline; text-decoration-color: #b9c3b7; text-underline-offset: 4px; }
+.workbench-page .workbench-palette { display: flex; gap: 7px; margin-top: 13px; }
+.workbench-page .workbench-palette i { display: block; width: 22px; height: 5px; background: var(--c-moss); }
+.workbench-page .workbench-palette i:nth-child(2) { background: var(--c-clay); }
+.workbench-page .workbench-palette i:nth-child(3) { background: var(--c-amber); }
+.workbench-page .workbench-palette i:nth-child(4) { background: var(--c-slate); }
+.workbench-page .workbench-section:target .workbench-section-heading h2 { color: var(--c-moss); }
+.workbench-page a:focus-visible, .workbench-page .workbench-section:focus-visible { outline: 2px solid var(--c-moss); outline-offset: 4px; }
+@media (max-width: 799px) {
+  .workbench-page .workbench-hero { padding: 42px 0 30px; }
+  .workbench-page .workbench-section { grid-template-columns: 170px minmax(0, 1fr); gap: 28px; }
+  .workbench-page .workbench-tool-row { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+  .workbench-page .workbench-tool-row dd + dd { grid-column: 1; margin-top: 0; }
+}
+@media (max-width: 599px) {
+  .workbench-page { padding-bottom: 40px; }
+  .workbench-page .workbench-hero { padding-top: 34px; }
+  .workbench-page .workbench-hero h1 { margin-top: 14px; font-size: 32px; line-height: 1.7; }
+  .workbench-page .workbench-intro { font-size: 15px; }
+  .workbench-page .workbench-index { gap: 0 24px; margin-top: 19px; }
+  .workbench-page .workbench-section { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 29px 0 31px; }
+  .workbench-page .workbench-section-heading h2 { font-size: 24px; }
+  .workbench-page .workbench-section-heading > p:last-child { max-width: none; margin-top: 6px; }
+  .workbench-page .workbench-entry h3 { font-size: 20px; }
+}

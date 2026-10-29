@@ -1,0 +1,12 @@
+/* Seasonal light above, continuous paper below; no fixed or animated background. */
+body { background-color: var(--bg-paper); background-image: radial-gradient(circle at 15% 10%, var(--global-wash), transparent 55%), radial-gradient(circle at 85% 20%, var(--global-wash-2), transparent 60%), url('page-background.svg'); background-size: 100% max(720px, 70vw), 100% max(720px, 70vw), 1600px 1200px; background-position: center top; background-repeat: no-repeat, no-repeat, repeat; }
+:is(.writing-intro, .reading-header, .workbench-hero, body[data-page="life"] .room-header) { position: relative; isolation: isolate; }
+:is(.writing-intro, .reading-header, .workbench-hero, body[data-page="life"] .room-header)::before { content: ''; position: absolute; inset: 0 0 auto; height: 180px; max-height: 100%; z-index: -1; pointer-events: none; color: var(--room-accent); opacity: .05; mask-image: linear-gradient(#000, transparent); }
+:is(.writing-intro, .reading-header)::before { background: repeating-linear-gradient(transparent 0 27px, currentColor 27px 28px); }
+.workbench-hero::before { background-image: linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px); background-size: 24px 24px; }
+body[data-page="life"] .room-header::before { background: radial-gradient(circle at 1px 1px, currentColor 1px, transparent 1px) 0 0 / 26px 26px; }
+html[data-theme="night"] :is(.writing-intro, .reading-header, .workbench-hero, body[data-page="life"] .room-header)::before { opacity: .03; }
+.site-footer.house-footer { isolation: isolate; }
+.site-footer.house-footer::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: url('page-background.svg') repeat; filter: grayscale(1) brightness(0) invert(1); opacity: .06; }
+@media print { :is(.writing-intro, .reading-header, .workbench-hero, body[data-page="life"] .room-header, .site-footer.house-footer)::before { display: none; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
