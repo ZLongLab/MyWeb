@@ -68,4 +68,10 @@ WASM 用 npm 模块 `?url` 导入，由 Vite 输出带内容哈希的站内地�
 
 增量来自共享作品、版本记录、搜索入口和路由登记。两个页面都没有加载图片工坊页面分块、Worker、四个编解码／缩放 JS 或任何 WASM。图片工坊本身打开及选图后也没有 WASM 请求，第一次转换才请求选定编码器；原尺寸 PNG 不请求 WASM。完整清单见 `bundle-before.json`、`bundle-after.json`、`bundle-comparison.json`。
 
-本地验收已完成；正式部署与线上复核结果在发布后追加。
+### 正式部署与线上复核
+
+2026-10-29 发布提交 `5952f7f4c96317fac7cb88531c82cac63369996d`。[Actions 40866710429](https://github.com/ZLongLab/MyWeb/actions/runs/40866710429) 的构建、Chromium 浏览器回归与 GitHub Pages 部署全部成功，正式地址为 [图片工坊](https://zlonglab.github.io/MyWeb/image-tools.html)。
+
+线上完成 337 项逐项核对，包含全部 17 页、123 个预缓存文件与本机构建比对、四个 WASM 的 SHA-256、许可证与发现文件返回 200、优化器空配置与既有本地交互。正式页面打开和选图均不加载 WASM；实际完成 WebP／JPEG／AVIF／PNG 转换，输出均可解码且尺寸正确，WebP 比测试原 PNG 更小并实际触发下载。一个 Worker 请求四个唯一站内 WASM，`crossOriginIsolated=false` 下正常处理；脚本错误、失败资源、新增外部运行请求均为 0。详见 `live-results.json`。
+
+首页作品数读取 `assets/site-snapshot.js` 中原有的已核对静态统计，仍为 7；新增工坊后的作品目录实际为 8 项。本次按“不改现有页面内容”的范围保留该文件和首页显示，没有运行快照生成／抓取／批准命令。GitHub 贡献范围和 53 次总数保持原样；首页统计与目录之间的差异在此明确记录。

@@ -65,5 +65,13 @@
   "optimizerSourceAndWorkflowUnchanged": true,
   "credentialPatternFindings": [],
   "publishedFiles": 179,
-  "deployed": false
+  "deployed": true,
+  "deployedCommit": "5952f7f4c96317fac7cb88531c82cac63369996d",
+  "actionsRunId": 40866710429,
+  "actionsUrl": "https://github.com/ZLongLab/MyWeb/actions/runs/40866710429",
+  "liveChecks": 337,
+  "liveScriptErrors": 0,
+  "liveExternalRequests": 0,
+  "frozenHomeProjectCount": 7,
+  "projectCatalogCount": 8
 }
