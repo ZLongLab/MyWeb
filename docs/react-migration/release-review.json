@@ -12,5 +12,11 @@
   "cachedFiles": 113,
   "optimizerCredentialsEmpty": true,
   "forbiddenPublishedFiles": [],
-  "deployed": false
+  "deployed": true,
+  "runtimeCommit": "4375262a1e599fdcbfb842f83a4eaf23dafb3904",
+  "actionsRun": 40809891425,
+  "actionsConclusion": "success",
+  "actionsURL": "https://github.com/ZLongLab/MyWeb/actions/runs/40809891425",
+  "liveChecks": 296,
+  "liveFailedChecks": 0
 }

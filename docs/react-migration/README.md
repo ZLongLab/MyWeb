@@ -96,3 +96,13 @@ npm run test:e2e
 - 再次核对 13 份数据／核心文件、19 份旧样式未变，165 个发布文件中没有源码、依赖、文档、截图或本机恢复材料。
 - `release-review.json`、`browser-results.json`、`upgrade-results.json` 保存复查证据；截图只保留本机。
 - 回退基线为 `b059dda8bc05c71b5aaa8a4b732009708815c781`；保留 Git 历史，必要时可通过反向提交恢复原实现，不强制覆盖远程历史。
+
+## 正式发布与线上复核
+
+2026-10-29 已发布至 https://zlonglab.github.io/MyWeb/ 。运行文件对应提交 `4375262a1e599fdcbfb842f83a4eaf23dafb3904`。[GitHub Actions 构建及部署](https://github.com/ZLongLab/MyWeb/actions/runs/40809891425)全部成功。
+
+线上 296 项检查通过：16 个主站入口、OG、RSS／sitemap／robots、全部 113 项主站缓存资源逐一与审查产物核对，图片收藏、视频草稿、本地便签、搜索和主题切换正常。优化器页面、许可和对应源码下载存在，配置中没有预置模型密钥。隔离测试浏览器没有脚本错误、运行资源失败或新增外部运行请求；未使用个人浏览器资料。
+
+GitHub Pages 在嵌套错误地址响应中另行注入了一个相同的 base 标签，已核对所有 base 均为 `/MyWeb/`，嵌套 404 的导航解析正确。详细结果见 `live-results.json`。没有修改已核对的 GitHub 快照，未调用真实模型，也没有进行实机手机验证。
+
+后续仅更新本发布记录的提交使用 `[skip ci]`，线上运行文件保持上述已验收提交。
