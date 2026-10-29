@@ -37,5 +37,23 @@
   "mainFiles": 134,
   "optimizerFiles": 45,
   "tests": 33,
-  "deployed": false
+  "deployed": true,
+  "deployedCommit": "417818ad93e9130b473edf5804f0e734fb5ec7d9",
+  "actionsRunId": 40875438355,
+  "actionsUrl": "https://github.com/ZLongLab/MyWeb/actions/runs/40875438355",
+  "liveChecks": 405,
+  "liveVideoContent": {
+    "templates": 15,
+    "terms": 57,
+    "oldFavorites": 8,
+    "oldDrafts": 8,
+    "oldOutputsAndFieldsPreserved": true,
+    "sources": 5,
+    "platformSeparation": true,
+    "storageKey": "myweb_video_studio_v1",
+    "storageVersion": 1
+  },
+  "liveErrors": 0,
+  "liveExternalRequests": 0,
+  "liveFailedResources": 0
 }
