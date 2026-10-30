@@ -52,6 +52,19 @@ assert.ok(core.compose(templates[0], { ...comparison, camera: '缓慢推近（Sl
 assert.ok(core.compose(templates[0], { ...comparison, duration: '' }, 'draft', 'sora').includes('0 秒起，结束秒数待定'));
 const storyboard = templates.find(t => t.id === 'story-sequence');
 assert.ok(core.compose(storyboard, storyboard.example, 'draft', 'generic').includes('S03｜6–9 秒'));
+const independentEnding = core.compose(templates[0], { ...comparison, extra: '不要新增人物；结尾保持安静的背影，不展示卡片文字。' }, 'draft', 'seedance');
+assert.ok(independentEnding.includes('结尾保持安静的背影'), 'A separate ending must survive simple constraint reduction');
+assert.ok(independentEnding.includes('不要新增人物') && !independentEnding.includes('不展示卡片文字'), 'Simple output must still keep only the first constraint');
+const inlineTimeline = core.compose(storyboard, { ...fields, duration: '约 10 秒', extra: 'S01｜2–5秒｜店主拾起明信片。\nS02｜5–9秒｜店主轻轻笑了。' }, 'draft', 'generic');
+assert.ok(inlineTimeline.includes('S01｜2–5 秒（剪辑安排）｜店主拾起明信片。'), 'Explicit inline timing must not be replaced with equal splits');
+assert.ok(inlineTimeline.includes('S02｜5–9 秒（剪辑安排）｜店主轻轻笑了。'));
+const inlineSequence = inlineTimeline.split('分镜序列：\n')[1].split('\n\n镜头语言：')[0];
+assert.ok(!inlineSequence.includes('0–5 秒') && !inlineSequence.includes('｜2–5秒｜'), 'Do not output conflicting or duplicate time anchors in the shot sequence');
+const endingPriority = core.compose(templates[0], { ...comparison, extra: '落点是窗边；不要新增人物；结尾保持安静的背影。' }, 'draft', 'seedance');
+assert.ok(endingPriority.includes('结尾保持安静的背影'), 'An explicit ending takes priority over a route landing point');
+const decimalTimeline = core.compose(storyboard, { ...fields, extra: 'S01｜1.5–2.5 秒（剪辑安排）｜拾起卡片。\nS02｜2.5–4秒，轻轻微笑。' }, 'draft', 'generic');
+assert.ok(decimalTimeline.includes('S01｜1.5–2.5 秒（剪辑安排）｜拾起卡片。'));
+assert.ok(decimalTimeline.includes('S02｜2.5–4 秒（剪辑安排）｜轻轻微笑。'));
 for (const target of context.window.VIDEO_PLATFORMS) {
   assert.equal(templates.filter(t => core.supportsPlatform(t, target.id)).length, { seedance: 13, kling: 5, sora: 3, runway: 3, generic: 3 }[target.id]);
   assert.ok(core.supportsPlatform({ platform: '通用' }, target.id));
@@ -73,4 +86,5 @@ assert.throws(() => core.validate({ ...modern, drafts: [{ ...draft, platform: 'u
 assert.throws(() => core.merge(modern, { ...modern, drafts: [{ ...draft, platform: 'kling' }] }, ids), /同编号/);
 assert.equal(modern.drafts[0].platform, 'sora');
 console.log('PASS: simple single paragraph / one constraint and rich anchored sections / bilingual camera assertions executed on identical fields.');
+console.log('PASS: independent ending survives constraint reduction; inline and decimal shot anchors are preserved without duplicate timings.');
 console.log('PASS: 15 unchanged template ids; 57 terms; 5 platform filters; legacy missing dialect defaults both; 1.10 import verbatim; new → 1.11 → new additive compatibility; atomic rejection.');

@@ -60,6 +60,25 @@ test('All five platforms filter templates and immediately recompose without losi
   expect(dialogs).toEqual([]);
 });
 
+test('Separate endings and user-authored shot timings survive platform switching', async ({ page }) => {
+  await open(page);
+  await page.locator('#prompt-extra').fill('不要新增人物；结尾保持安静的背影，不展示卡片文字。');
+  const simple = await page.locator('#prompt-output').inputValue();
+  expect(simple).toContain('结尾保持安静的背影');
+  expect(simple).toContain('不要新增人物');
+  expect(simple).not.toContain('不展示卡片文字');
+  expect(simple).not.toContain('\n');
+  const extra = 'S01｜2–5秒｜店主拾起明信片。\nS02｜5–9秒｜店主轻轻笑了。';
+  await page.locator('#prompt-extra').fill(extra);
+  for (const target of ['kling', 'sora', 'runway', 'generic']) {
+    await page.locator('#prompt-platform').selectOption(target);
+    const output = await page.locator('#prompt-output').inputValue();
+    const sequence = output.split('分镜序列：\n')[1].split('\n\n镜头语言：')[0];
+    expect(sequence).toBe('S01｜2–5 秒（剪辑安排）｜店主拾起明信片。\nS02｜5–9 秒（剪辑安排）｜店主轻轻笑了。');
+    await expect(page.locator('#prompt-extra')).toHaveValue(extra);
+  }
+});
+
 test('Real new export is accepted by the unchanged 1.11 importer and its old export is readable in 1.12', async ({ page }) => {
   page.on('dialog', dialog => dialog.accept());
   await open(page);

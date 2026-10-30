@@ -1,6 +1,6 @@
 // 工作台只记录已在本站项目中确认的内容；updated 是人工核对日期，不随浏览时间变化。
 window.SITE_WORKBENCH = {
-  updated: '2026-10-29',
+  updated: '2026-10-30',
   focus: [
     { projectId: 'recallai', label: '本地资料检索', description: '整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用边界。' },
     { projectId: 'document-assistant', label: '文档整理', description: '把规则分类、确认归档和备份恢复的取舍写清楚，保留源码与下载版本的区别。' },
@@ -13,6 +13,7 @@ window.SITE_WORKBENCH = {
     { title: 'Capacitor · React · TypeScript', purpose: '移动端适配', description: '用于 Folia 的 Android 适配、构建和界面集成。', projectId: 'folia-android' }
   ],
   updates: [
+    { version: '1.12.1', date: '2026-10-30', title: '把结尾与时间留准确', changes: ['修正视频灵感室简派对补充结尾的提取，保留画面结尾并只取首条关键约束。', '繁派尊重逐镜已填秒数，不再重复插入均分时间；保持页面、模板及草稿格式。'] },
     { version: '1.12.0', date: '2026-10-29', title: '让提示词换一种说法', changes: ['视频灵感室新增 Seedance 简派与可灵、Sora、Runway、通用繁派，切换时保留表单，按平台筛选已有模板。', '两套本地组装档案不调用 AI；15 个模板仅加方言标注，旧草稿原文与收藏仍可读取，新草稿加存平台。'] },
     { version: '1.11.0', date: '2026-10-29', title: '给视频创作多留几个起点', changes: ['视频灵感室从 8 个扩为 15 个模板，增加分镜叙事、产品广告、一镜到底与可灵方向，保留全部旧模板 id 和草稿字段。', '加入 57 条摄影候选词，分开标注平台，固定五个来源快照与许可范围；收藏、草稿及导入导出格式不变。'] },
     { version: '1.10.0', date: '2026-10-29', title: '把几张图片放进工坊', changes: ['新增图片工坊，批量图片顺序转换 WebP、JPEG、AVIF、PNG，统一质量与尺寸，逐张或全部下载。', '融合 jSquash / Squoosh 单线程编解码，本地处理不上传；二进制按需加载，不进入离线预缓存。'] },

@@ -27,15 +27,19 @@
     var shots = extra.split('\n').filter(function (line) { return /^S\d+\s*[｜|:：]/i.test(line.trim()); });
     var seconds = String(fields.duration || '').match(/(\d+(?:\.\d+)?)\s*秒/);
     var duration = seconds && Number(seconds[1]) > 0 ? Number(seconds[1]) : null;
-    function anchor(index, total, id) {
-      var explicit = extra.match(new RegExp(id + '\\s+(\\d+(?:\\.\\d+)?)\\s*[–—~-]\\s*(\\d+(?:\\.\\d+)?)\\s*秒', 'i'));
+    function anchor(index, total, id, inlineTime) {
+      var explicit = inlineTime || extra.match(new RegExp('(?:^|[^a-zA-Z0-9_])' + id + '\\s+(\\d+(?:\\.\\d+)?)\\s*[–—~-]\\s*(\\d+(?:\\.\\d+)?)\\s*秒', 'i'));
       if (explicit) return explicit[1] + '–' + explicit[2] + ' 秒';
       if (duration) return Number((duration * index / total).toFixed(2)) + '–' + Number((duration * (index + 1) / total).toFixed(2)) + ' 秒';
       return index === 0 ? '0 秒起，结束秒数待定' : '起止秒数待定';
     }
     if (shots.length) return shots.map(function (line, index) {
       var id = line.trim().match(/^S\d+/i)[0];
-      return id + '｜' + anchor(index, shots.length, id) + '（剪辑安排）｜' + line.replace(/^\s*S\d+\s*[｜|:：]\s*/i, '');
+      var body = line.replace(/^\s*S\d+\s*[｜|:：]\s*/i, '');
+      // A shot's own timing takes precedence over summary timing and equal splits.
+      var inlineTime = body.match(/^(\d+(?:\.\d+)?)\s*[–—~-]\s*(\d+(?:\.\d+)?)\s*秒\s*(?:[（(]剪辑安排[）)]\s*)?(?:[｜|:：，,]\s*|$)/);
+      if (inlineTime) body = body.slice(inlineTime[0].length);
+      return id + '｜' + anchor(index, shots.length, id, inlineTime) + '（剪辑安排）｜' + body;
     }).join('\n');
     return 'S01｜' + anchor(0, 1, 'S01') + '（剪辑安排）｜' + [fields.subject, fields.scene, fields.action].map(inline).filter(Boolean).join('；');
   }
@@ -46,9 +50,10 @@
     if (profile.order) {
       var clauses = profile.order.map(function (key) { return inline(fields[key]); }).filter(Boolean);
       var visualExtra = String(fields.extra || '').split(/后期|精确卡点/)[0].split('\n').filter(function (line) { return !/^\s*S\d+\s*[｜|:：]/i.test(line); }).join('\n');
-      var notes = visualExtra.split(/[；。\n]/).map(function (text) { return text.trim(); }).filter(Boolean);
-      var constraints = notes.filter(function (text) { return new RegExp(profile.constraintPattern).test(text) && !/^S\d+\s*[｜|:：]/i.test(text); });
-      var ending = notes.find(function (text) { return new RegExp(profile.endingPattern).test(text) && !constraints.includes(text) && !/^S\d+\s*[｜|:：]/i.test(text); });
+      var notes = visualExtra.split(/[；;。！？!?，,\n]/).map(function (text) { return text.trim(); }).filter(Boolean);
+      // Keep the ending independently, even when it contains a word such as 保持.
+      var ending = profile.endingPattern.split('|').map(function (pattern) { return notes.find(function (text) { return new RegExp(pattern).test(text); }); }).find(Boolean);
+      var constraints = notes.filter(function (text) { return text !== ending && new RegExp(profile.constraintPattern).test(text); });
       if (ending) clauses.splice(Math.min(2, clauses.length), 0, ending);
       clauses.push(...constraints.slice(0, profile.constraintLimit));
       var intent = [fields.duration, fields.aspect].map(inline).filter(Boolean).join('，');
