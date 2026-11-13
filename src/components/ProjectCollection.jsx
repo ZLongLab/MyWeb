@@ -87,7 +87,10 @@ export default function ProjectCollection() {
           {category === "全部" ? "" : " · " + category}
         </p>
       </div>
-      <div data-project-list>
+      <div
+        data-project-list
+        data-project-view={category === "全部" ? "bento" : "filtered"}
+      >
         {selected.map((project) => (
           <ProjectCard
             key={project.id}

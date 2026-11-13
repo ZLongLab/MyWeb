@@ -1,4 +1,6 @@
 import ProjectCollection from "../components/ProjectCollection.jsx";
+import PortfolioPrism from "../components/projects/PortfolioPrism.jsx";
+import "../styles/projects-bento.css";
 function PortfolioIntro() {
   return (
     <section className="portfolio-intro" aria-labelledby="portfolio-heading">
@@ -14,6 +16,7 @@ function PortfolioIntro() {
         </h1>
         <p>{"本地工具、开源适配，以及这个小站。"}</p>
       </div>
+      <PortfolioPrism />
       {"\n\n    "}
     </section>
   );
