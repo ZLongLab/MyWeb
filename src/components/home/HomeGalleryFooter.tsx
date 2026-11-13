@@ -1,0 +1,36 @@
+import { homeData } from "./home-data";
+export default function HomeGalleryFooter() {
+  return (
+    <footer className="gallery-footer">
+      <div className="gallery-width gallery-footer-inner">
+        <nav className="gallery-footer-nav" aria-label="房间平面图">
+          {[0, 1, 2].map((column) => (
+            <div key={column}>
+              {homeData.house.rooms
+                .filter((_: unknown, index: number) => index % 3 === column)
+                .map((room: { id: string; title: string; href: string }) => (
+                  <a key={room.id} href={room.href}>
+                    {room.title}
+                  </a>
+                ))}
+            </div>
+          ))}
+        </nav>
+        <div className="footer-thanks">
+          <p>Thanks for visiting!</p>
+          <a href="feed.xml">订阅 RSS ↗</a>
+          <a
+            href="https://github.com/ZLongLab"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub ↗
+          </a>
+        </div>
+        <span className="gallery-watermark" aria-hidden="true">
+          有间小站。
+        </span>
+      </div>
+    </footer>
+  );
+}

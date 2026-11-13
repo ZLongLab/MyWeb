@@ -109,7 +109,6 @@ export const pageControllers = {
     () => import("../controllers/pictures.js"),
     () => import("../controllers/navigation.js"),
     () => import("../controllers/app.js"),
-    () => import("../controllers/home-projects.js"),
     () => import("../controllers/workbench.js"),
     () => import("../controllers/media-viewer.js"),
     () => import("../controllers/search.js"),

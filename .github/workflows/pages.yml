@@ -24,6 +24,8 @@ jobs:
         run: npm ci --ignore-scripts
       - name: Check JavaScript and React rules
         run: npm run lint
+      - name: Check homepage TypeScript
+        run: npm run typecheck
       - name: Check local prompt data rules
         run: npm run check
       - name: Checkout pinned Prompt Optimizer source
