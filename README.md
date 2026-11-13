@@ -2,7 +2,7 @@
 
 ZL 的中文个人网站，使用 **React 19 + TypeScript / JavaScript + CSS + Vite 8**。现有 17 个主站 HTML 地址、10 个房间，以及图片／视频灵感室和本地便签。首页采用晨雾玻璃画廊设计，组件位于 `src/components/home/`，TypeScript 类型检查运行 `npm run typecheck`。
 
-首页从 `src/data/site.js` 读取项目、文章、房间和已批准的 GitHub 快照。`home-data.ts` 定义首页数据类型并复用既有导航函数。音频胶囊支持选择本地音频、播放、暂停、进度调整与切歌，文件通过临时对象 URL 使用。首页样式与设计变量位于 `src/styles/home-gallery.css`，`PrismSphereCanvas.tsx` 提供响应式粒子球与指针反馈。
+首页从 `src/data/site.js` 读取项目、文章、房间和已批准的 GitHub 快照。`home-data.ts` 定义首页数据类型并复用既有导航函数。主站统一使用晨雾玻璃样式与深色文字，公共页脚覆盖全部房间。首页样式与设计变量位于 `src/styles/home-gallery.css`，`PrismSphereCanvas.tsx` 管理透明高分屏 Canvas、动画与可见性生命周期，`prism-renderer.ts` 绘制约 1800 个球面粒子、双轨道、折射棱镜及焦散。
 
 工程层已接入稳定版 **React Compiler 1.0**、官方 React 开发插件和 **Oxlint**，保留原有 CSS 与纯前端部署。图片／视频工具的专用数据和逻辑按页面加载；首页渲染所需 JavaScript 相比升级前减少约 6.5%。发布前自动检查 JavaScript、提示词逻辑与浏览器交互。范围和测量条件见 [前端工程升级记录](docs/frontend-modernization/README.md)。
 

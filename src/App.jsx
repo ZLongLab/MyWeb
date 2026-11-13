@@ -10,9 +10,9 @@ export default function App({ route }) {
       <a className="skip-link" href="#main">
         跳到正文
       </a>
-      {route.page !== "home" && <Navbar page={route.page} />}
+      <Navbar page={route.page} />
       <Page />
-      {route.page !== "home" && <Footer page={route.page} />}
+      <Footer page={route.page} />
     </>
   );
 }

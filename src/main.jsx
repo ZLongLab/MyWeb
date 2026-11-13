@@ -1,6 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import "./data/site.js";
+import "./styles/home-gallery.css";
+import "./styles/gallery-system.css";
 import App from "./App.jsx";
 import { pages } from "./pages/registry.js";
 import { pageControllers } from "./runtime/page-controllers.js";

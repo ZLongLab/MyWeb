@@ -1,0 +1,344 @@
+/* Shared gallery surfaces and readable text across the React multi-page site. */
+:root {
+  --morning-bg: #f6f7f6;
+  --morning-ink: #17251f;
+  --morning-muted: #43554b;
+  --morning-meta: #52665b;
+  --morning-accent: #285f48;
+  --morning-warm: #875132;
+  --morning-slate: #3f6066;
+  --morning-glass: rgba(255, 255, 255, 0.76);
+  --morning-soft: #edf2ee;
+  --morning-footer: #e7ece6;
+  --morning-line: rgba(22, 49, 34, 0.13);
+  --morning-shadow: 0 8px 30px rgba(0, 0, 0, 0.035);
+}
+html[data-theme="night"] {
+  --morning-bg: #1b2722;
+  --morning-ink: #edf5ef;
+  --morning-muted: #cfdfd4;
+  --morning-meta: #b2c9bb;
+  --morning-accent: #a5dfbe;
+  --morning-warm: #e8bd8d;
+  --morning-slate: #b6d7e4;
+  --morning-glass: rgba(39, 57, 47, 0.8);
+  --morning-soft: #2b4033;
+  --morning-footer: #203128;
+  --morning-line: rgba(211, 235, 220, 0.17);
+  --morning-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+html body[data-page] {
+  --bg-paper: var(--morning-bg);
+  --bg-band: var(--morning-soft);
+  --bg: var(--morning-bg);
+  --surface: var(--morning-glass);
+  --soft: var(--morning-soft);
+  --ink: var(--morning-ink);
+  --muted: var(--morning-muted);
+  --green: var(--morning-accent);
+  --warm: var(--morning-warm);
+  --c-clay: var(--morning-warm);
+  --slate: var(--morning-slate);
+  --c-slate: var(--morning-slate);
+  --room-accent-text: var(--morning-accent);
+  --line: var(--morning-line);
+  --gallery-bg: var(--morning-bg);
+  --gallery-ink: var(--morning-ink);
+  --gallery-muted: var(--morning-muted);
+  --gallery-meta: var(--morning-meta);
+  --gallery-glass: var(--morning-glass);
+  --gallery-line: var(--morning-line);
+  --footer-bg: var(--morning-footer);
+  --frame-cool: var(--morning-soft);
+  --frame-warm: var(--morning-soft);
+  --frame-sand: var(--morning-soft);
+  --frame-mist: var(--morning-soft);
+  --radius-panel: 20px;
+  --radius-window: 16px;
+  --shadow-near: var(--morning-shadow);
+  background: var(--morning-bg) !important;
+  color: var(--morning-ink);
+}
+html body[data-page]::before,
+html body[data-page]::after {
+  display: none !important;
+}
+html body[data-page] :is(h1, h2, h3, h4) {
+  color: var(--morning-ink);
+}
+html
+  body[data-page]
+  :is(
+    .hero-intro,
+    .hero-subtitle,
+    .product-copy p,
+    .gallery-list-row,
+    .gallery-quote,
+    .room-lead,
+    .room-note,
+    .room-empty,
+    .room-meta,
+    .room-updated,
+    .prompt-description,
+    .prompt-field-hint,
+    .prompt-storage-note,
+    .image-room-lead,
+    .image-tools-lead,
+    .portfolio-summary,
+    .section-subtitle
+  ) {
+  color: var(--morning-muted);
+}
+html
+  body[data-page]
+  :is(
+    .hero-chips span,
+    .product-tags span,
+    .product-number,
+    .product-detail,
+    .gallery-section-heading > a,
+    .gallery-text-link,
+    .gallery-card-heading > span,
+    .gallery-card-heading > a,
+    .activity-caption,
+    .gallery-metrics dt,
+    .gallery-list-row time,
+    .gallery-list-row small,
+    .gallery-footer-nav a,
+    .footer-thanks,
+    .footer-thanks a,
+    .room-kicker,
+    .eyebrow,
+    .prompt-step,
+    .prompt-result-count,
+    .image-tools-local,
+    .portfolio-meta
+  ) {
+  color: var(--morning-meta);
+}
+html body[data-page] .hero-intro {
+  font-size: 13px;
+}
+html body[data-page] .idea-card text {
+  fill: var(--morning-muted);
+  font-size: 12px;
+}
+html body[data-page] .gallery-metrics dd {
+  color: var(--morning-ink);
+}
+html body[data-page] .gallery-quote p {
+  color: var(--morning-muted);
+}
+html body[data-page] .gallery-list-row small,
+html body[data-page] .hero-chips span {
+  background: var(--morning-soft);
+  border-color: var(--morning-line);
+}
+html body[data-page] .gallery-section-heading::after {
+  background: var(--morning-line);
+}
+html
+  body[data-page]
+  :is(
+    .gallery-bento,
+    .gallery-list-row,
+    .gallery-metrics,
+    .gallery-metrics > div
+  ) {
+  border-color: var(--morning-line);
+}
+
+html body[data-page] .site-header {
+  width: min(1240px, calc(100% - 64px));
+  margin: 22px auto 0;
+  padding: 15px 24px;
+  height: 76px;
+  min-height: 76px;
+  border: 1px solid var(--morning-line);
+  border-radius: 24px;
+  background: var(--morning-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--morning-shadow);
+}
+html body[data-page] .site-header.is-scrolled {
+  height: 76px;
+  margin-bottom: 0;
+}
+html body[data-page] .brand {
+  color: var(--morning-ink);
+  font-family: var(--serif);
+}
+html body[data-page] .brand-mark {
+  display: none;
+}
+html body[data-page] .brand [data-site-title]::after {
+  content: "。";
+}
+html
+  body[data-page]
+  :is(.portfolio-tags li, .portfolio-keywords, .article-meta, .room-updated) {
+  color: var(--morning-meta);
+}
+html body[data-page] .site-nav > a,
+html body[data-page] .site-nav button {
+  color: var(--morning-muted);
+  background: transparent;
+  border-color: transparent;
+}
+html body[data-page] .site-nav a:hover,
+html body[data-page] .site-nav a[aria-current="page"] {
+  background: var(--morning-soft);
+  color: var(--morning-accent);
+}
+html
+  body[data-page]
+  :is(
+    .room-panel,
+    .portfolio-project,
+    .article-card,
+    .garden-card,
+    .project-overview,
+    .guestbook-form,
+    .guestbook-note,
+    .prompt-panel,
+    .prompt-card,
+    .prompt-draft,
+    .image-room-card,
+    .image-room-notebook,
+    .image-tools-panel,
+    .image-tools-drop,
+    .image-tools-item,
+    .workbench-tool-teaser,
+    .room-defaults,
+    .room-changelog-entry,
+    .about-quote,
+    .friend-link,
+    .life-item
+  ) {
+  border: 1px solid var(--morning-line);
+  border-radius: 20px;
+  background: var(--morning-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--morning-shadow);
+}
+html
+  body[data-page]
+  :is(.prompt-card.is-selected, .image-room-card.is-selected) {
+  border-color: var(--morning-accent);
+  background: var(--morning-soft);
+}
+html
+  body[data-page]
+  :is(
+    .room-section,
+    .workbench-section,
+    .reading-header,
+    .reading-toc,
+    .project-toc,
+    .room-window-bar,
+    .prompt-panel-head
+  ) {
+  border-color: var(--morning-line);
+}
+html
+  body[data-page]
+  :is(input:not([type="range"]):not([type="checkbox"]), textarea, select) {
+  background: var(--morning-glass);
+  color: var(--morning-ink);
+  border-color: var(--morning-line);
+}
+html body[data-page] ::placeholder {
+  color: var(--morning-meta);
+  opacity: 1;
+}
+html body[data-page] :is(.site-search-dialog, .site-dialog, .image-viewer) {
+  background: var(--morning-bg);
+  color: var(--morning-ink);
+  border: 1px solid var(--morning-line);
+  border-radius: 20px;
+}
+html
+  body[data-page]
+  :is(
+    .site-search-field,
+    .site-search-item,
+    .site-search-footer,
+    .image-viewer-stage
+  ) {
+  background: var(--morning-glass);
+  color: var(--morning-ink);
+}
+html body[data-page] :is(.gallery-button, .button, .guestbook-export) {
+  color: var(--morning-accent);
+  background: var(--morning-soft);
+  border-color: var(--morning-line);
+}
+html body[data-page] :is(.prompt-main-action, .image-tools-start) {
+  background: #285f48;
+  color: #fff;
+}
+html body[data-page] .gallery-footer {
+  background: var(--morning-footer);
+  color: var(--morning-muted);
+  border-color: var(--morning-line);
+}
+html body[data-page] .gallery-footer-nav a {
+  font-size: 12px;
+  min-height: 40px;
+}
+html body[data-page] .footer-thanks a {
+  font-size: 11px;
+}
+html body[data-page] .gallery-watermark {
+  color: #a5b5a6;
+}
+html body[data-page] .gallery-footer {
+  margin-top: auto;
+}
+html[data-theme="night"] body[data-page] .product-glass-card {
+  background: radial-gradient(
+    circle at top left,
+    rgba(70, 113, 89, 0.3),
+    rgba(39, 57, 47, 0.86) 70%
+  );
+}
+html[data-theme="night"] body[data-page] .product-1 {
+  background: radial-gradient(
+    circle at top left,
+    rgba(142, 112, 77, 0.18),
+    rgba(39, 57, 47, 0.86) 70%
+  );
+}
+html[data-theme="night"] body[data-page] .gallery-heatmap rect[fill="#e7ede8"] {
+  fill: #344e40;
+}
+@media (max-width: 700px) {
+  html body[data-page] .site-header {
+    width: calc(100% - 40px);
+    padding: 13px 16px;
+    margin-top: 16px;
+  }
+  html body[data-page] .site-nav.is-open {
+    background: var(--morning-glass);
+    border: 1px solid var(--morning-line);
+    border-radius: 18px;
+    backdrop-filter: blur(16px);
+  }
+  html body[data-page] .gallery-footer-nav a {
+    min-height: 44px;
+  }
+}
+@media print {
+  html body[data-page] {
+    background: white !important;
+    color: #111;
+  }
+  html body[data-page] :is(h1, h2, h3, h4, p, a) {
+    color: #111;
+  }
+  html body[data-page] .gallery-footer {
+    display: none;
+  }
+}
