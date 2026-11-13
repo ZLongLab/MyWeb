@@ -1,3 +1,7 @@
+import JournalSummary from "../components/journal/JournalSummary.jsx";
+import JournalEvolution from "../components/journal/JournalEvolution.jsx";
+import "../styles/journal-gallery.css";
+
 function WritingIntro() {
   return (
     <section className="writing-intro" aria-labelledby="writing-title">
@@ -13,6 +17,7 @@ function WritingIntro() {
         </h1>
         <p>{"记下想法、取舍，还有一步步实现的过程。"}</p>
       </div>
+      <JournalSummary />
       {"\n\n    "}
     </section>
   );
@@ -122,7 +127,10 @@ function WritingCollection() {
         </div>
       </section>
       {"\n      "}
-      <div id="article-list" className="article-list"></div>
+      <div className="journal-timeline">
+        <div id="article-list" className="article-list"></div>
+        <JournalEvolution />
+      </div>
       {"\n      "}
       <div className="article-empty" id="article-empty" hidden={true}>
         <span aria-hidden="true">{"⌕"}</span>

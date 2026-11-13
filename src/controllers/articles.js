@@ -130,29 +130,44 @@ export default function initialize(scope) {
 
     function createArticleRow(article, headingTag, context) {
       var row = createElement("a", "article-row");
-      row.classList.add("has-cover");
-      row.appendChild(window.SITE_GARDEN.cover(article));
+      var featured = article.id === articles[0].id;
+      row.classList.add(featured ? "journal-feature" : "journal-entry");
       row.href = articleHref(article, context);
-      row.appendChild(createMeta(article, false));
-      row.appendChild(
+      var copy = createElement("div", "journal-entry-copy");
+      copy.appendChild(
         createElement(headingTag || "h2", "article-row-title", article.title),
       );
-      row.appendChild(
+      copy.appendChild(
         createElement("p", "article-row-summary", article.summary),
       );
-
-      var bottom = createElement("div", "article-row-bottom");
+      var details = createElement("div", "journal-entry-details");
+      details.appendChild(createMeta(article, false));
       var tags = createElement("div", "article-tags");
       article.tags.forEach(function (tag) {
         tags.appendChild(createElement("span", "article-tag", tag));
       });
-      bottom.appendChild(tags);
-      var readLink = createElement("span", "article-read-link", "阅读全文 ");
-      var arrow = createElement("span", "", "→");
-      arrow.setAttribute("aria-hidden", "true");
-      readLink.appendChild(arrow);
-      bottom.appendChild(readLink);
-      row.appendChild(bottom);
+      details.appendChild(tags);
+      row.append(copy, details);
+      if (featured) {
+        var readLink = createElement("span", "article-read-link", "阅读全文 ");
+        var arrow = createElement("span", "", "→");
+        arrow.setAttribute("aria-hidden", "true");
+        readLink.appendChild(arrow);
+        row.appendChild(readLink);
+        // React owns the SVG definition. The list controller owns each use.
+        var visual = createElement("figure", "journal-feature-visual");
+        visual.setAttribute("aria-hidden", "true");
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("viewBox", "0 0 350 235");
+        var illustration = document.createElementNS(svg.namespaceURI, "use");
+        illustration.setAttribute("href", "#journal-evolution-symbol");
+        svg.appendChild(illustration);
+        visual.append(
+          svg,
+          createElement("figcaption", "", "小站演进 · 结构示意"),
+        );
+        row.appendChild(visual);
+      }
       return row;
     }
 
@@ -277,8 +292,9 @@ export default function initialize(scope) {
           clusters.hidden = view !== "topics";
           clusters.replaceChildren();
           window.SITE_GARDEN.clusters(matching).forEach(function (group) {
-            var card = createElement("a", "garden-cluster");
-            card.href = listHref({
+            var card = createElement("section", "journal-topic-card");
+            var overview = createElement("a", "garden-cluster");
+            overview.href = listHref({
               category: category,
               q: query,
               tag: group.tag,
@@ -288,11 +304,34 @@ export default function initialize(scope) {
             heading.append(
               createElement("small", "", group.articles.length + " 篇"),
             );
-            card.append(heading);
-            if (group.articles.length >= 2)
-              card.append(
-                createElement("p", "", "最新：" + group.articles[0].title),
+            overview.append(heading);
+            var topicDescriptions = {
+              建站手记: "从第一版到日常修缮，记下小站的结构、样式与取舍。",
+              开发记录:
+                "围绕本地工具与前端实现，整理功能背后的思路和使用边界。",
+              小站计划: "留下下一步的想法、清单与更新安排。",
+            };
+            overview.append(
+              createElement(
+                "p",
+                "",
+                topicDescriptions[group.tag] || group.articles[0].summary,
+              ),
+            );
+            card.append(overview);
+            var entries = createElement("ul", "journal-topic-articles");
+            group.articles.forEach(function (article) {
+              var item = createElement("li");
+              var link = createElement("a", "");
+              link.href = articleHref(article, context);
+              link.append(
+                createElement("span", "", article.title),
+                createDate(article),
               );
+              item.append(link);
+              entries.append(item);
+            });
+            card.append(entries);
             var distribution = createElement("div", "garden-distribution");
             ["seed", "growing", "evergreen"].forEach(function (value) {
               var badge = window.SITE_GARDEN.badge({ maturity: value });
