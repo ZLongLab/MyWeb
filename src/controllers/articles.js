@@ -134,9 +134,17 @@ export default function initialize(scope) {
       row.classList.add(featured ? "journal-feature" : "journal-entry");
       row.href = articleHref(article, context);
       var copy = createElement("div", "journal-entry-copy");
-      copy.appendChild(
-        createElement(headingTag || "h2", "article-row-title", article.title),
+      var heading = createElement(
+        headingTag || "h2",
+        "article-row-title",
+        article.title,
       );
+      if (featured) {
+        var headingArrow = createElement("span", "journal-title-arrow", "→");
+        headingArrow.setAttribute("aria-hidden", "true");
+        heading.append(headingArrow);
+      }
+      copy.appendChild(heading);
       copy.appendChild(
         createElement("p", "article-row-summary", article.summary),
       );
@@ -149,23 +157,20 @@ export default function initialize(scope) {
       details.appendChild(tags);
       row.append(copy, details);
       if (featured) {
-        var readLink = createElement("span", "article-read-link", "阅读全文 ");
-        var arrow = createElement("span", "", "→");
-        arrow.setAttribute("aria-hidden", "true");
-        readLink.appendChild(arrow);
+        // Editorial wording supplied for the featured card's metadata.
+        details.querySelector(".garden-maturity").lastChild.textContent =
+          "种树";
+        var readLink = createElement("span", "article-read-link", "阅读全文");
         row.appendChild(readLink);
         // React owns the SVG definition. The list controller owns each use.
         var visual = createElement("figure", "journal-feature-visual");
         visual.setAttribute("aria-hidden", "true");
         var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svg.setAttribute("viewBox", "0 0 350 235");
+        svg.setAttribute("viewBox", "0 0 350 250");
         var illustration = document.createElementNS(svg.namespaceURI, "use");
         illustration.setAttribute("href", "#journal-evolution-symbol");
         svg.appendChild(illustration);
-        visual.append(
-          svg,
-          createElement("figcaption", "", "小站演进 · 结构示意"),
-        );
+        visual.append(svg);
         row.appendChild(visual);
       }
       return row;
@@ -211,6 +216,19 @@ export default function initialize(scope) {
         );
         filterOptions.forEach(function (option) {
           var button = createElement("button", "", option.label);
+          var total =
+            option.value === "all"
+              ? articles.length
+              : articles.filter(function (article) {
+                  return article.category === option.value;
+                }).length;
+          var counter = createElement(
+            "small",
+            "journal-filter-count",
+            String(total).padStart(2, "0"),
+          );
+          counter.setAttribute("aria-hidden", "true");
+          button.append(counter);
           button.type = "button";
           button.setAttribute("data-article-filter", option.value);
           button.setAttribute("aria-pressed", "false");

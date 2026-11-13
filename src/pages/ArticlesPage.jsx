@@ -1,5 +1,5 @@
 import JournalSummary from "../components/journal/JournalSummary.jsx";
-import JournalEvolution from "../components/journal/JournalEvolution.jsx";
+import JournalConstellation from "../components/journal/JournalConstellation.jsx";
 import "../styles/journal-gallery.css";
 
 function WritingIntro() {
@@ -97,7 +97,7 @@ function WritingCollection() {
           {"按时间"}
         </button>
         <button type="button" data-article-view="topics" aria-pressed="false">
-          {"按主题丛"}
+          {"按主题"}
         </button>
       </div>
       {"\n      "}
@@ -129,7 +129,7 @@ function WritingCollection() {
       {"\n      "}
       <div className="journal-timeline">
         <div id="article-list" className="article-list"></div>
-        <JournalEvolution />
+        <JournalConstellation />
       </div>
       {"\n      "}
       <div className="article-empty" id="article-empty" hidden={true}>

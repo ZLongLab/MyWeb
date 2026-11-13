@@ -14,6 +14,47 @@ for (const theme of ["paper", "night"]) {
       "data-react-ready",
       "true",
     );
+    await expect(page.locator("body")).toHaveCSS(
+      "background-color",
+      "rgb(248, 247, 244)",
+    );
+    await expect(page.locator("html")).toHaveCSS("color-scheme", "light");
+    await expect(page.locator(".journal-summary")).toHaveCSS(
+      "background-color",
+      "rgba(0, 0, 0, 0)",
+    );
+    await expect(page.locator(".journal-summary")).toHaveCSS(
+      "box-shadow",
+      "none",
+    );
+    await expect(page.locator(".journal-prism")).toHaveCount(1);
+    await expect(page.locator(".nav-search-shortcut")).toHaveCSS(
+      "color",
+      "rgb(156, 163, 175)",
+    );
+    await expect(page.locator('.site-nav a[aria-current="page"]')).toHaveCSS(
+      "border-radius",
+      "8px",
+    );
+    await expect(page.locator(".journal-feature")).toHaveCSS(
+      "border-top-color",
+      "rgba(26, 48, 38, 0.05)",
+    );
+    await expect(page.locator(".journal-feature")).toHaveCSS(
+      "backdrop-filter",
+      "blur(16px)",
+    );
+    await expect(page.locator('[data-article-filter="all"] small')).toHaveText(
+      "06",
+    );
+    await expect(page.locator('[data-article-filter="all"]')).toHaveCSS(
+      "border-top-width",
+      "0px",
+    );
+    await expect(page.locator('[data-article-view="time"]')).toHaveCSS(
+      "background-color",
+      "rgba(0, 0, 0, 0)",
+    );
     await expect(page.locator(".journal-summary")).toContainText("6 篇文章");
     await expect(page.locator(".journal-summary")).toContainText("3 类主题");
     await expect(page.locator(".journal-summary time")).toHaveAttribute(
@@ -21,6 +62,9 @@ for (const theme of ["paper", "night"]) {
       "2026-10-26",
     );
     await expect(page.locator(".journal-feature")).toHaveCount(1);
+    await expect(page.locator(".journal-feature .garden-maturity")).toHaveText(
+      "种树",
+    );
     await expect(page.locator(".journal-entry")).toHaveCount(5);
     await expect(page.locator("#article-list .article-cover")).toHaveCount(0);
     await expect(page.locator(".journal-feature-visual use")).toHaveAttribute(
@@ -28,6 +72,10 @@ for (const theme of ["paper", "night"]) {
       "#journal-evolution-symbol",
     );
     await expect(page.locator("#journal-evolution-symbol")).toHaveCount(1);
+    await expect(page.locator("#journal-evolution-symbol line")).toHaveCount(
+      14,
+    );
+    await expect(page.locator("#journal-evolution-symbol path")).toHaveCount(0);
     fs.mkdirSync(".tmp/journal-gallery", { recursive: true });
     await page.screenshot({
       path: `.tmp/journal-gallery/time-${theme}.png`,
@@ -35,6 +83,15 @@ for (const theme of ["paper", "night"]) {
     });
 
     await page.emulateMedia({ reducedMotion: "no-preference" });
+    await page.locator(".journal-feature").hover();
+    await expect
+      .poll(() =>
+        page.locator(".journal-title-arrow").evaluate((node) => {
+          const matrix = new DOMMatrix(getComputedStyle(node).transform);
+          return [matrix.m41, matrix.m42];
+        }),
+      )
+      .toEqual([3, -3]);
     await page.locator(".journal-entry").first().hover();
     await expect
       .poll(() =>

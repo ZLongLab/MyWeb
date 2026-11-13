@@ -1,108 +1,229 @@
+/* This journal uses warm paper in both saved theme modes. */
+html:has(body[data-page="articles"]) {
+  color-scheme: light !important;
+  background: #f8f7f4;
+}
+html body[data-page="articles"] {
+  --morning-bg: #f8f7f4;
+  --morning-ink: #1a3026;
+  --morning-muted: #374151;
+  --morning-meta: #9ca3af;
+  --morning-accent: #476354;
+  --morning-warm: #9b8b6c;
+  --morning-glass: rgba(255, 255, 255, 0.75);
+  --morning-soft: #e6efea;
+  --morning-line: rgba(26, 48, 38, 0.05);
+  --morning-shadow: 0 8px 30px rgba(26, 48, 38, 0.025);
+  --morning-footer: #f1f0ec;
+  --serif: "Songti SC", "STSong", "SimSun", serif;
+  --journal-motion: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  color-scheme: light;
+}
+html[data-theme] body[data-page="articles"] .site-header {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: var(--morning-line);
+  box-shadow: 0 8px 32px rgba(26, 48, 38, 0.025);
+}
+html[data-theme] body[data-page="articles"] .brand {
+  font-family: var(--serif);
+  font-weight: 400;
+}
+html[data-theme] body[data-page="articles"] .site-nav :is(a, button) {
+  color: var(--morning-muted);
+  border: 1px solid transparent;
+  box-shadow: none;
+  font-weight: 400;
+  transition: var(--journal-motion);
+}
+html[data-theme] body[data-page="articles"] .site-nav a[aria-current="page"] {
+  background: #e6efea;
+  border-color: transparent;
+  border-radius: 8px;
+  color: var(--morning-ink);
+}
+html[data-theme]
+  body[data-page="articles"]
+  .site-nav
+  :is(.nav-search, .nav-contact) {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--morning-line);
+  border-radius: 22px;
+  box-shadow: 0 2px 12px rgba(26, 48, 38, 0.025);
+  backdrop-filter: blur(16px);
+}
+html[data-theme] body[data-page="articles"] .nav-theme {
+  background: transparent;
+  border-color: transparent;
+}
+body[data-page="articles"] .nav-contact span {
+  display: inline-block;
+  transition: var(--journal-motion);
+}
+html[data-theme] body[data-page="articles"] .nav-search-shortcut {
+  color: #9ca3af;
+}
+body[data-page="articles"] .nav-contact:hover span {
+  transform: translate(3px, -3px);
+}
 body[data-page="articles"] .writing-intro {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: start;
-  gap: 28px;
-  padding: 46px 0 34px;
+  gap: 24px;
+  padding: 60px 0 42px;
+  background: none;
 }
-body[data-page="articles"] .writing-intro h1 {
-  font: 500 44px/1.45 var(--serif);
-  margin: 19px 0 21px;
-  letter-spacing: -0.045em;
+html body[data-page="articles"] .writing-intro h1 {
+  font: 400 50px/1.45 var(--serif);
+  letter-spacing: -0.035em;
+  margin: 21px 0 22px;
+}
+body[data-page="articles"] .writing-intro .title-period {
+  color: var(--morning-ink);
+}
+html body[data-page="articles"] .writing-intro > div > p:last-child {
+  color: #374151;
+  font-size: 14px;
+}
+.journal-overview {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  margin-top: 0;
+  min-width: 0;
 }
 .journal-summary {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
   align-items: center;
-  margin-top: 7px;
-  padding: 12px 17px;
-  background: var(--morning-glass);
-  border: 1px solid var(--morning-line);
-  border-radius: 30px;
-  backdrop-filter: blur(16px);
-  box-shadow: var(--morning-shadow);
-  font: 11px/1.7 var(--font);
-  color: var(--morning-muted);
+  color: #9ca3af;
+  font: 10px/1.8 var(--font);
 }
 .journal-summary > span {
   white-space: nowrap;
 }
 .journal-summary > span + span {
-  border-left: 1px solid var(--morning-line);
-  padding-left: 16px;
+  border-left: 1px solid rgba(26, 48, 38, 0.1);
+  padding-left: 10px;
 }
 .journal-summary strong {
-  color: var(--morning-ink);
-  font: 17px var(--serif);
-  margin-right: 3px;
-}
-.journal-updated {
-  display: grid;
-  font-size: 9px;
+  font: inherit;
 }
 .journal-updated time {
-  font: 10px/1.8 var(--mono);
-  color: var(--morning-ink);
+  font: inherit;
+}
+.journal-prism {
+  display: block;
+  flex: none;
+  width: 48px;
+  height: 65px;
+}
+body[data-page="articles"] .writing-collection {
+  border-top: 1px solid var(--morning-line);
+  padding-bottom: 60px;
 }
 body[data-page="articles"] .writing-tools {
-  padding: 23px 0 14px;
-  margin-bottom: 0;
   gap: 24px;
-}
-html[data-theme]
-  body[data-page="articles"]
-  :is(.article-filters button, .garden-view-switch button) {
-  min-height: 44px;
-  padding: 7px 15px;
   margin: 0;
-  border: 1px solid var(--morning-line);
-  border-radius: 30px;
-  background: var(--morning-glass);
-  color: var(--morning-muted);
-  font-size: 12px;
-}
-.journal-feature .article-read-link > span {
-  opacity: 1;
-  transform: none;
-}
-html[data-theme]
-  body[data-page="articles"]
-  :is(.article-filters button, .garden-view-switch button):is(
-    [aria-pressed="true"],
-    :hover
-  ) {
-  color: var(--morning-accent);
-  background: var(--morning-soft);
-  border-color: color-mix(in srgb, var(--morning-accent) 25%, transparent);
+  padding: 25px 0 12px;
 }
 body[data-page="articles"] .article-filters {
   gap: 8px;
 }
-body[data-page="articles"] .article-search-label {
-  padding: 0 12px;
+html[data-theme] body[data-page="articles"] .article-filters button {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   min-height: 44px;
+  padding: 8px 12px;
+  margin: 0;
+  border: 0;
+  border-radius: 20px;
+  background: transparent;
+  color: #374151;
+  font-size: 12px;
+  font-weight: 400;
+  transition: var(--journal-motion);
+}
+html[data-theme]
+  body[data-page="articles"]
+  .article-filters
+  button[aria-pressed="true"] {
+  background: #e6efea;
+  color: #1a3026;
+}
+html[data-theme] body[data-page="articles"] .article-filters button:hover {
+  color: #1a3026;
+  background: rgba(230, 239, 234, 0.6);
+}
+.journal-filter-count {
+  align-self: flex-start;
+  margin-top: 2px;
+  color: #9ca3af;
+  font: 8px/1.5 var(--mono);
+}
+body[data-page="articles"] .article-search-label {
+  min-height: 44px;
+  padding: 0 14px;
   border: 1px solid var(--morning-line);
-  border-radius: 30px;
-  background: var(--morning-glass);
+  border-radius: 8px;
+  background: #fff;
+  color: #9ca3af;
 }
 html body[data-page="articles"] #article-search {
-  background: transparent;
-  border: 0;
   min-height: 44px;
   width: 100%;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  color: #374151;
+}
+html body[data-page="articles"] #article-search::placeholder {
+  color: #9ca3af;
 }
 body[data-page="articles"] .garden-view-switch {
-  margin: 9px 0 26px;
-  gap: 8px;
+  gap: 24px;
+  margin: 8px 0 29px;
 }
-body[data-page="articles"] .garden-view-switch button {
-  font-size: 11px;
-}
-.journal-timeline {
+html[data-theme] body[data-page="articles"] .garden-view-switch button {
   position: relative;
+  min-height: 44px;
+  padding: 7px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: #9ca3af;
+  font-size: 11px;
+  transition: var(--journal-motion);
+}
+html[data-theme]
+  body[data-page="articles"]
+  .garden-view-switch
+  button[aria-pressed="true"] {
+  color: #1a3026;
+}
+.garden-view-switch button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  height: 1px;
+  background: transparent;
+  transition: var(--journal-motion);
+}
+body[data-page="articles"]
+  .garden-view-switch
+  button[aria-pressed="true"]::after {
+  background: rgba(26, 48, 38, 0.5);
 }
 .journal-timeline:has(#article-list[hidden]) {
   display: none;
+}
+.journal-evolution-defs {
+  display: block;
 }
 body[data-page="articles"] .article-list {
   border: 0;
@@ -110,28 +231,31 @@ body[data-page="articles"] .article-list {
 html body[data-page="articles"] .article-row {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(200px, auto);
-  gap: 24px;
   align-items: center;
-  min-height: 135px;
-  padding: 26px 0;
+  gap: 28px;
+  min-height: 140px;
   margin: 0;
+  padding: 27px 0;
   border: 0;
   border-bottom: 1px solid var(--morning-line);
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-  transition: transform 0.25s ease;
+  transition: var(--journal-motion);
 }
-body[data-page="articles"] .article-row-title {
+html body[data-page="articles"] .article-row::before {
+  display: none;
+}
+html body[data-page="articles"] .article-row-title {
   margin: 0;
-  font: 500 21px/1.6 var(--serif);
-  color: var(--morning-ink);
+  font: 400 21px/1.6 var(--serif);
+  color: #1a3026;
 }
 body[data-page="articles"] .article-row-summary {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 13px;
-  line-height: 1.85;
-  color: var(--morning-muted);
+  line-height: 1.95;
+  color: #374151;
   max-width: 46em;
 }
 .journal-entry-copy {
@@ -148,9 +272,19 @@ body[data-page="articles"] .article-row-meta {
   gap: 6px 12px;
   margin: 0;
   font-size: 10px;
+  color: #9ca3af;
 }
 body[data-page="articles"] .article-row-meta .article-category {
   display: none;
+}
+body[data-page="articles"] :is(.article-date, .article-read-time) {
+  color: #9ca3af;
+}
+html body[data-page="articles"] .garden-maturity {
+  color: #9ca3af;
+}
+body[data-page="articles"] .garden-maturity i {
+  background: #abb8aa;
 }
 body[data-page="articles"] .article-tags {
   justify-content: flex-end;
@@ -160,83 +294,105 @@ body[data-page="articles"] .article-tags {
 }
 body[data-page="articles"] .article-tag {
   padding: 2px 8px;
-  border: 1px solid var(--morning-line);
-  border-radius: 20px;
-  background: var(--morning-soft);
-  color: var(--morning-muted);
+  border: 0;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.6);
+  color: #9ca3af;
   font-size: 10px;
 }
 body[data-page="articles"] .article-tag + .article-tag::before {
   content: none;
 }
-body[data-page="articles"]
-  .article-row:is(:hover, :focus-visible)
-  .article-row-title {
-  color: var(--morning-accent);
-}
 html body[data-page="articles"] .journal-entry:hover {
   transform: translateX(4px);
 }
+html
+  body[data-page="articles"]
+  .article-row:is(:hover, :focus-visible)
+  .article-row-title {
+  color: #476354;
+}
 html body[data-page="articles"] .journal-feature {
   grid-template-columns: minmax(0, 60%) minmax(0, 1fr);
-  gap: 14px;
   align-content: center;
-  min-height: 315px;
-  padding: 32px;
-  margin-bottom: 15px;
-  border: 1px solid var(--morning-line);
+  gap: 17px;
+  min-height: 355px;
+  margin-bottom: 22px;
+  padding: 40px;
+  border: 1px solid rgba(26, 48, 38, 0.05);
   border-radius: 20px;
-  background: radial-gradient(
-    ellipse at 70% 40%,
-    #eff6f4,
-    rgba(255, 255, 255, 0.78) 75%
-  );
+  background-color: rgba(255, 255, 255, 0.75);
+  background-image:
+    radial-gradient(
+      ellipse at 72% 23%,
+      rgba(239, 246, 244, 0.9),
+      transparent 67%
+    ),
+    radial-gradient(
+      ellipse at 100% 100%,
+      rgba(252, 247, 238, 0.9),
+      transparent 65%
+    );
   backdrop-filter: blur(16px);
   box-shadow: var(--morning-shadow);
 }
+html body[data-page="articles"] .journal-feature:hover {
+  background-color: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 10px 38px rgba(26, 48, 38, 0.035);
+}
 .journal-feature .journal-entry-details {
-  grid-row: 1;
   grid-column: 1;
+  grid-row: 1;
 }
 .journal-feature .journal-entry-copy {
-  grid-row: 2;
   grid-column: 1;
+  grid-row: 2;
 }
-body[data-page="articles"] .journal-feature .article-row-title {
-  font-size: 29px;
+html body[data-page="articles"] .journal-feature .article-row-title {
+  font-size: 34px;
   line-height: 1.5;
 }
 body[data-page="articles"] .journal-feature .article-row-meta {
   justify-content: flex-start;
 }
+body[data-page="articles"] .journal-feature .article-read-time::before {
+  content: "·";
+  margin-right: 8px;
+}
 body[data-page="articles"] .journal-feature .article-tags {
   display: none;
+}
+.journal-title-arrow {
+  display: inline-block;
+  margin-left: 13px;
+  font-size: 0.75em;
+  transition: var(--journal-motion);
+}
+.journal-feature:is(:hover, :focus-visible) .journal-title-arrow {
+  transform: translate(3px, -3px);
 }
 body[data-page="articles"] .journal-feature .article-read-link {
   grid-column: 1;
   grid-row: 3;
   justify-self: start;
-  margin-top: 7px;
-  margin-left: 0;
-  min-height: 44px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: var(--morning-accent);
+  min-height: 44px;
+  margin: 4px 0 0;
+  color: #374151;
   font-size: 12px;
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 48, 38, 0.25);
+  text-underline-offset: 6px;
 }
 .journal-feature-visual {
-  display: block;
-  pointer-events: none;
   grid-column: 2;
   grid-row: 1 / 4;
   align-self: center;
   width: 100%;
   max-width: 340px;
   margin: 0;
-}
-.journal-evolution-defs {
-  display: block;
+  pointer-events: none;
 }
 .journal-feature-visual svg {
   display: block;
@@ -244,50 +400,29 @@ body[data-page="articles"] .journal-feature .article-read-link {
   height: auto;
   overflow: visible;
 }
-.journal-evolution-label {
-  fill: var(--morning-muted);
-  font: 10px var(--font);
-}
-.journal-feature-visual figcaption {
-  text-align: center;
-  font: 9px/1.8 var(--mono);
-  color: var(--morning-meta);
-  margin-top: -8px;
-}
-.journal-orbit {
-  fill: none;
-  stroke: #9ebfaf;
-  stroke-width: 0.7;
-  stroke-dasharray: 3 5;
-  opacity: 0.55;
-}
 .journal-connections {
-  fill: none;
-  stroke: #8cae9c;
-  stroke-width: 0.8;
-}
-.journal-node-halo {
-  fill: #b4dbca;
-  fill-opacity: 0.16;
+  stroke: #9bb7a8;
+  stroke-width: 1px;
+  opacity: 0.4;
 }
 .journal-node {
-  fill: #c1dfd0;
-  stroke: #819d8c;
-  stroke-width: 0.8;
+  fill: #d2e2d8;
+  stroke: #9bb3a5;
+  stroke-width: 0.7;
 }
 .journal-node.warm {
-  fill: #e9dbb8;
-  stroke: #b3a078;
+  fill: #e9dfc9;
+  stroke: #b6aa8c;
+}
+.journal-node-orbit {
+  fill: none;
+  stroke: #b0c4b8;
+  stroke-width: 0.6;
+  opacity: 0.55;
 }
 .journal-satellite {
-  fill: #bad0c3;
-}
-html[data-theme="night"] body[data-page="articles"] .journal-feature {
-  background: radial-gradient(
-    ellipse at 70% 40%,
-    #365a474d,
-    var(--morning-glass) 75%
-  );
+  fill: #aabcb0;
+  opacity: 0.45;
 }
 body[data-page="articles"] .garden-clusters {
   grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -296,45 +431,46 @@ body[data-page="articles"] .garden-clusters {
 }
 .journal-topic-card {
   grid-column: span 5;
-  padding: 25px 28px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 27px 28px;
   border: 1px solid var(--morning-line);
   border-radius: 20px;
   background: var(--morning-glass);
   backdrop-filter: blur(16px);
   box-shadow: var(--morning-shadow);
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
+  transition: var(--journal-motion);
 }
 .journal-topic-card:nth-child(4n + 1),
 .journal-topic-card:nth-child(4n) {
   grid-column: span 7;
 }
+.journal-topic-card:hover {
+  background-color: rgba(255, 255, 255, 0.96);
+}
 body[data-page="articles"] .garden-cluster {
-  border: 0;
   padding: 0;
+  border: 0;
 }
 body[data-page="articles"] .garden-cluster h2 {
-  font: 500 23px/1.5 var(--serif);
-  color: var(--morning-ink);
   margin: 0 0 13px;
+  font: 400 23px/1.5 var(--serif);
+  color: #1a3026;
 }
 body[data-page="articles"] .garden-cluster h2 small {
-  font-size: 10px;
   padding: 3px 10px;
-  border: 1px solid var(--morning-line);
-  border-radius: 20px;
-  background: var(--morning-soft);
-  color: var(--morning-muted);
+  border: 0;
+  border-radius: 12px;
+  background: #eff6f4;
+  font-size: 10px;
+  color: #9ca3af;
 }
 body[data-page="articles"] .garden-cluster p {
+  margin: 0 0 19px;
   font-size: 12px;
   line-height: 1.85;
-  margin: 0 0 19px;
-  color: var(--morning-muted);
-}
-body[data-page="articles"] .garden-cluster:hover h2 {
-  color: var(--morning-accent);
+  color: #374151;
 }
 .journal-topic-articles {
   margin: 0;
@@ -346,14 +482,15 @@ body[data-page="articles"] .garden-cluster:hover h2 {
 }
 .journal-topic-articles a {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   gap: 16px;
   min-height: 58px;
   padding: 10px 0;
+  color: #374151;
   font-size: 13px;
   line-height: 1.8;
-  color: var(--morning-ink);
+  transition: var(--journal-motion);
 }
 .journal-topic-articles a span {
   min-width: 0;
@@ -361,69 +498,87 @@ body[data-page="articles"] .garden-cluster:hover h2 {
 }
 .journal-topic-articles time {
   flex-shrink: 0;
+  color: #9ca3af;
   font: 9px var(--mono);
-  color: var(--morning-meta);
 }
 .journal-topic-articles a:hover {
-  color: var(--morning-accent);
+  color: #1a3026;
 }
 body[data-page="articles"] .garden-distribution {
+  gap: 14px;
   margin-top: auto;
   padding-top: 18px;
-  gap: 14px;
   font-size: 10px;
 }
 body[data-page="articles"] #garden-map {
-  background: var(--morning-glass);
+  padding: 27px;
+  margin-top: 30px;
   border: 1px solid var(--morning-line);
   border-radius: 20px;
-  padding: 25px;
-  margin-top: 28px;
-}
-body[data-page="articles"] .writing-collection {
-  padding-bottom: 48px;
+  background: var(--morning-glass);
 }
 body[data-page="articles"] .garden-tag-filter {
   margin-bottom: 20px;
 }
-@media (max-width: 1050px) {
+html body[data-page="articles"] .gallery-watermark {
+  color: #d3d4cd;
+}
+html[data-theme]
+  body[data-page="articles"]
+  :is(
+    .article-filters button,
+    .garden-view-switch button,
+    .article-row,
+    .garden-cluster,
+    .nav-search
+  ):focus-visible {
+  outline: 2px solid #728879;
+  outline-offset: 4px;
+}
+@media (max-width: 1150px) {
   body[data-page="articles"] .writing-intro {
     grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
+    gap: 21px;
   }
-  .journal-summary {
+  .journal-overview {
     justify-self: start;
-    margin: 0;
-  }
-  html body[data-page="articles"] .article-row {
-    grid-template-columns: minmax(0, 1fr) 220px;
-  }
-  html body[data-page="articles"] .journal-feature {
-    grid-template-columns: 60% minmax(0, 1fr);
   }
 }
 @media (max-width: 700px) {
   body[data-page="articles"] .writing-intro {
-    padding: 35px 0 27px;
+    padding: 38px 0 30px;
   }
-  body[data-page="articles"] .writing-intro h1 {
-    font-size: 32px;
+  html body[data-page="articles"] .writing-intro h1 {
+    font-size: 36px;
+  }
+  .journal-overview {
+    gap: 9px;
+    width: 100%;
+    justify-content: space-between;
   }
   .journal-summary {
-    gap: 11px;
-    padding: 10px 13px;
-    font-size: 10px;
+    gap: 8px;
+    font-size: 9px;
   }
   .journal-summary > span + span {
-    padding-left: 11px;
+    padding-left: 8px;
   }
-  .journal-summary strong {
-    font-size: 15px;
+  .journal-prism {
+    width: 32px;
+    height: 48px;
   }
   body[data-page="articles"] .writing-tools {
     flex-direction: column;
     align-items: stretch;
     gap: 18px;
+  }
+  body[data-page="articles"] .article-filters {
+    gap: 3px;
+  }
+  html[data-theme] body[data-page="articles"] .article-filters button {
+    padding: 8px 9px;
+    gap: 6px;
+    font-size: 11px;
   }
   body[data-page="articles"] .article-search-label {
     width: 100%;
@@ -431,38 +586,33 @@ body[data-page="articles"] .garden-tag-filter {
   html body[data-page="articles"] .article-row {
     grid-template-columns: minmax(0, 1fr);
     gap: 14px;
-    padding: 23px 0;
+    padding: 24px 0;
   }
-  body[data-page="articles"] .article-row-title {
-    font-size: 20px;
-  }
-  .journal-entry-details {
-    gap: 10px;
+  html body[data-page="articles"] .article-row-title {
+    font-size: 21px;
   }
   body[data-page="articles"] :is(.article-row-meta, .article-tags) {
     justify-content: flex-start;
   }
   html body[data-page="articles"] .journal-feature {
-    padding: 24px;
-    min-height: 0;
     grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+    min-height: 0;
+    padding: 24px;
   }
-  body[data-page="articles"] .journal-feature .article-row-title {
-    font-size: 25px;
+  html body[data-page="articles"] .journal-feature .article-row-title {
+    font-size: 27px;
   }
   .journal-feature-visual {
-    grid-row: 4;
     grid-column: 1;
+    grid-row: 4;
     justify-self: center;
     max-width: 270px;
   }
   .journal-topic-card,
   .journal-topic-card:nth-child(n) {
     grid-column: span 12;
-    padding: 23px;
-  }
-  body[data-page="articles"] .garden-clusters {
-    gap: 18px;
+    padding: 24px;
   }
   .journal-topic-articles a {
     align-items: start;
@@ -472,10 +622,22 @@ body[data-page="articles"] .garden-tag-filter {
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  html body[data-page="articles"] .article-row {
+  html[data-theme]
+    body[data-page="articles"]
+    :is(
+      button,
+      a,
+      .article-row,
+      .journal-topic-card,
+      .journal-title-arrow,
+      .nav-contact span
+    ),
+  .garden-view-switch button::after {
     transition: none;
   }
-  html body[data-page="articles"] .journal-entry:hover {
+  html body[data-page="articles"] .journal-entry:hover,
+  .journal-feature:is(:hover, :focus-visible) .journal-title-arrow,
+  body[data-page="articles"] .nav-contact:hover span {
     transform: none;
   }
 }
