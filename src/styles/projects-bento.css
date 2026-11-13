@@ -364,10 +364,10 @@ body[data-page="projects"] .portfolio-project:not([data-layout="feature"]) {
   max-width: 290px;
 }
 .code-window {
-  background: linear-gradient(130deg, #244a3e, #173b31);
+  background: linear-gradient(130deg, #eff6f4, rgba(255, 255, 255, 0.75));
   border-radius: 9px;
   box-shadow: 0 8px 17px #244b3c19;
-  border: 1px solid #658372;
+  border: 1px solid var(--morning-line);
   overflow: hidden;
   padding-bottom: 17px;
 }
@@ -377,7 +377,7 @@ body[data-page="projects"] .portfolio-project:not([data-layout="feature"]) {
   gap: 4px;
   align-items: center;
   padding: 0 10px;
-  background: #a0c0aa25;
+  background: rgba(230, 239, 234, 0.5);
 }
 .code-toolbar > i {
   width: 4px;
@@ -394,7 +394,7 @@ body[data-page="projects"] .portfolio-project:not([data-layout="feature"]) {
 .code-toolbar span {
   margin-left: auto;
   font: 6px var(--mono);
-  color: #c3d9cc;
+  color: var(--morning-meta);
   letter-spacing: 0.08em;
 }
 .code-lines {
@@ -409,19 +409,19 @@ body[data-page="projects"] .portfolio-project:not([data-layout="feature"]) {
 }
 .code-lines i {
   width: 28%;
-  background: #94b2a34d;
+  background: #a9bbaf80;
   border-radius: 3px;
 }
 .code-lines b {
   width: 68%;
-  background: #e3d5a056;
+  background: #cabd9a80;
   border-radius: 3px;
 }
 .code-lines > span:nth-child(2n) {
   margin-left: 16px;
 }
 .code-lines > span:nth-child(3n) > b {
-  background: #9ed9c67a;
+  background: #94baaa80;
 }
 body[data-page="projects"] .portfolio-project[data-layout="network"],
 body[data-page="projects"] .portfolio-project[data-layout="wide"],
@@ -456,27 +456,6 @@ body[data-page="projects"]
 }
 body[data-page="projects"] [data-layout="compact"] .portfolio-title {
   font-size: 23px;
-}
-html[data-theme="night"] body[data-page="projects"] .portfolio-project {
-  background: var(--morning-glass);
-}
-html[data-theme="night"]
-  body[data-page="projects"]
-  .portfolio-project[data-project-visual="image-tools"] {
-  background: radial-gradient(
-    ellipse at 75% 45%,
-    #477a622b,
-    var(--morning-glass) 70%
-  );
-}
-html[data-theme="night"]
-  body[data-page="projects"]
-  .portfolio-project[data-project-visual="image-prompts"] {
-  background: radial-gradient(
-    ellipse at 85% 45%,
-    #a17c5026,
-    var(--morning-glass) 75%
-  );
 }
 @media (max-width: 1100px) {
   body[data-page="projects"] [data-project-list] {

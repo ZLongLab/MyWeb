@@ -1,6 +1,6 @@
 # 有间小站
 
-ZL 的中文个人网站，使用 **React 19 + TypeScript / JavaScript + CSS + Vite 8**。现有 17 个主站 HTML 地址、10 个房间，以及图片／视频灵感室和本地便签。首页采用晨雾玻璃画廊设计，组件位于 `src/components/home/`，TypeScript 类型检查运行 `npm run typecheck`。
+ZL 的中文个人网站，使用 **React 19 + TypeScript / JavaScript + CSS + Vite 8**。现有 17 个主站 HTML 地址、10 个房间，以及图片／视频灵感室和本地便签。主站统一采用暖白纸墨与磨砂微光画廊设计，共享规范位于 `src/styles/gallery-system.css`。首页组件位于 `src/components/home/`，TypeScript 类型检查运行 `npm run typecheck`。
 
 首页从 `src/data/site.js` 读取项目、文章、房间和已批准的 GitHub 快照。`home-data.ts` 定义首页数据类型并复用既有导航函数。主站统一使用晨雾玻璃样式与深色文字，公共页脚覆盖全部房间。首页样式与设计变量位于 `src/styles/home-gallery.css`，`PrismSphereCanvas.tsx` 管理透明高分屏 Canvas、动画与可见性生命周期，`prism-renderer.ts` 绘制约 1800 个球面粒子、双轨道、折射棱镜及焦散。
 
@@ -204,7 +204,7 @@ npm run test:e2e
 
 ## 纸色、夜色与离线使用
 
-- 顶栏太阳／月亮按钮切换纸色与夜色，手动选择存于 `myweb_theme_v1`。没有选择时按本地时间在 20:00–次日 06:00 默认夜色；首次绘制前确定主题。
+- 顶栏太阳／月亮按钮读写配色偏好 `myweb_theme_v1`；自动偏好按本地时间在 20:00–次日 06:00 取夜色。当前主站 17 页在两种偏好下均使用 `#F8F7F4` 暖白纸张、墨色标题与轻薄玻璃表面。
 - 工作台「换一束光」可选择自动或春／夏／秋／冬，手动季节存于 `myweb_season_v1`；自动按 3–5、6–8、9–11、12–2 月切换。季节与明暗独立，选择跨同源标签页同步，存储受限时当前页仍能切换。
 - 动效尊重系统“减少动态效果”：入场、滚动、门扇、颜色过渡、横带、热力图、平滑滚动与跨页动画全部关闭，内容直接可见。
 - 本机预览或 HTTPS 首次完整加载后缓存 80 个运行资源，支持断开网络后的页面浏览、详情参数、本地搜索与命令。缓存不包含 docs、研究记录、备份或用户便签数据；网络可用时优先使用新内容。

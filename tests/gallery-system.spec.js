@@ -15,14 +15,30 @@ for (const theme of ["paper", "night"]) {
       theme,
     );
     await page.setViewportSize({ width: 1440, height: 1000 });
+    fs.mkdirSync(".tmp/site-paper", { recursive: true });
     for (const route of routes) {
-      await page.goto(route);
+      const target =
+        route === "article.html"
+          ? route + "?id=how-this-site-grew"
+          : route === "project.html"
+            ? route + "?id=recallai"
+            : route;
+      await page.goto(target);
       await expect(page.locator("html")).toHaveAttribute(
         "data-react-ready",
         "true",
       );
       await expect(page.locator("audio,.audio-capsule")).toHaveCount(0);
       await expect(page.locator(".gallery-footer")).toHaveCount(1);
+      await expect(page.locator("body")).toHaveCSS(
+        "background-color",
+        "rgb(248, 247, 244)",
+      );
+      await expect(page.locator("html")).toHaveCSS("color-scheme", "light");
+      await expect(page.locator("h1:visible")).toHaveCSS(
+        "color",
+        "rgb(26, 48, 38)",
+      );
       const colors = await page.evaluate(() => {
         function rgb(value) {
           return value
@@ -55,11 +71,44 @@ for (const theme of ["paper", "night"]) {
           heading: ratio(text),
           muted: ratio(muted),
           overflow: document.documentElement.scrollWidth > innerWidth,
+          darkSurfaces: [
+            ...document.querySelectorAll(
+              "main,header,footer,main section,main article,main div",
+            ),
+          ]
+            .filter((node) => {
+              if (
+                node.closest("figure,.image-room-art") ||
+                node.querySelector(":scope > img")
+              )
+                return false;
+              const rect = node.getBoundingClientRect(),
+                style = getComputedStyle(node);
+              const color =
+                style.backgroundColor.match(/[\d.]+/g)?.map(Number) || [];
+              return (
+                rect.width > 180 &&
+                rect.height > 64 &&
+                color.length >= 3 &&
+                (color[3] ?? 1) > 0.5 &&
+                color.slice(0, 3).every((channel) => channel < 150)
+              );
+            })
+            .map((node) => ({
+              tag: node.tagName,
+              id: node.id,
+              className: node.className,
+            })),
         };
       });
       expect(colors.heading, route).toBeGreaterThan(7);
       expect(colors.muted, route).toBeGreaterThan(4.5);
       expect(colors.overflow, route).toBeFalsy();
+      expect(colors.darkSurfaces, route).toEqual([]);
+      await page.screenshot({
+        path: `.tmp/site-paper/${route.replace(".html", "")}-${theme}.png`,
+        fullPage: true,
+      });
     }
     expect(errors).toEqual([]);
     fs.mkdirSync(".tmp/gallery-system", { recursive: true });
