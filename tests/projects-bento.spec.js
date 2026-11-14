@@ -32,6 +32,7 @@ test("Whole project cards keep native links, keyboard access and filter context"
   await page.goto("projects.html");
   await page.getByRole("button", { name: "本地工具", exact: true }).click();
   const link = page.locator("#recallai .portfolio-title a");
+  await page.keyboard.press("Tab");
   await link.focus();
   await expect(link).toBeFocused();
   await expect
