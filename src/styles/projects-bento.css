@@ -140,7 +140,8 @@ html
 }
 body[data-page="projects"] .portfolio-content {
   min-width: 0;
-  position: relative;
+  /* Keep the card as the containing block for the expanded title link. */
+  position: static;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -175,6 +176,20 @@ body[data-page="projects"] .portfolio-title {
 body[data-page="projects"] .portfolio-title a {
   display: block;
   min-height: 44px;
+}
+body[data-page="projects"] .portfolio-title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: 20px;
+}
+body[data-page="projects"] .portfolio-title a:focus-visible {
+  outline: none;
+}
+body[data-page="projects"] .portfolio-title a:focus-visible::after {
+  outline: 2px solid var(--morning-accent);
+  outline-offset: 4px;
 }
 body[data-page="projects"] .portfolio-title .portfolio-title-line {
   display: block;

@@ -1,6 +1,48 @@
 import { test, expect } from "@playwright/test";
 import fs from "node:fs";
 
+test("Whole project cards keep native links, keyboard access and filter context", async ({
+  page,
+}) => {
+  await page.goto("projects.html");
+  const destinations = await page
+    .locator(".portfolio-title a")
+    .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
+  expect(destinations).toHaveLength(8);
+  for (const [index, destination] of destinations.entries()) {
+    await page.goto("projects.html");
+    const target = new URL(destination, page.url());
+    const card = page.locator(".portfolio-project").nth(index);
+    const bounds = await card.boundingBox();
+    await card.click({ position: { x: bounds.width - 10, y: 10 } });
+    await expect(page).toHaveURL(
+      (url) => url.pathname === target.pathname && url.search === target.search,
+    );
+  }
+  await page.goto("projects.html");
+  const imageCard = page.locator("#image-prompts");
+  const visual = imageCard.locator(".inspiration-visual");
+  const visualBounds = await visual.boundingBox();
+  await page.mouse.click(
+    visualBounds.x + visualBounds.width / 2,
+    visualBounds.y + visualBounds.height / 2,
+  );
+  await expect(page).toHaveURL(/\/image-prompts\.html$/);
+
+  await page.goto("projects.html");
+  await page.getByRole("button", { name: "本地工具", exact: true }).click();
+  const link = page.locator("#recallai .portfolio-title a");
+  await link.focus();
+  await expect(link).toBeFocused();
+  await expect
+    .poll(() =>
+      link.evaluate((node) => getComputedStyle(node, "::after").outlineWidth),
+    )
+    .toBe("2px");
+  await page.keyboard.press("Enter");
+  await expect(page).toHaveURL(/project\.html\?id=recallai&category=/);
+});
+
 for (const width of [1440, 390]) {
   test(`Project Bento keeps routes, filters and decorative widgets at ${width}`, async ({
     page,
