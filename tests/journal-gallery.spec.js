@@ -45,7 +45,7 @@ for (const theme of ["paper", "night"]) {
       "blur(16px)",
     );
     await expect(page.locator('[data-article-filter="all"] small')).toHaveText(
-      "06",
+      "08",
     );
     await expect(page.locator('[data-article-filter="all"]')).toHaveCSS(
       "border-top-width",
@@ -55,17 +55,17 @@ for (const theme of ["paper", "night"]) {
       "background-color",
       "rgba(0, 0, 0, 0)",
     );
-    await expect(page.locator(".journal-summary")).toContainText("6 篇文章");
+    await expect(page.locator(".journal-summary")).toContainText("8 篇文章");
     await expect(page.locator(".journal-summary")).toContainText("3 类主题");
     await expect(page.locator(".journal-summary time")).toHaveAttribute(
       "datetime",
-      "2026-10-26",
+      "2026-11-13",
     );
     await expect(page.locator(".journal-feature")).toHaveCount(1);
     await expect(page.locator(".journal-feature .garden-maturity")).toHaveText(
       "种树",
     );
-    await expect(page.locator(".journal-entry")).toHaveCount(5);
+    await expect(page.locator(".journal-entry")).toHaveCount(7);
     await expect(page.locator("#article-list .article-cover")).toHaveCount(0);
     await expect(page.locator(".journal-feature-visual use")).toHaveAttribute(
       "href",

@@ -520,6 +520,7 @@ export default function VideoStudioPage() {
         {"\n    "}
         {"\n    "}
         <PromptGrid />
+        <p className="room-note"><a className="text-link" href="article.html?id=video-studio-first-prompt">阅读视频灵感室入门教程 →</a></p>
         {"\n    "}
         <PromptNotebook />
         {"\n    "}

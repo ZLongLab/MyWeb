@@ -200,12 +200,12 @@ export default function initialize(scope) {
     var palette = document.getElementById("colophon-palette");
     if (palette)
       [
-        ["暖纸", "#FAF7F2"],
-        ["松针", "#2B5B46"],
-        ["陶土", "#C85A32"],
-        ["琥珀", "#D99B26"],
-        ["青瓷", "#4A6B7C"],
-        ["夜色", "#1E2420"],
+        ["暖白", "#F8F7F4"],
+        ["墨色", "#1A3026"],
+        ["正文", "#374151"],
+        ["小字", "#9CA3AF"],
+        ["薄荷", "#EFF6F4"],
+        ["香槟", "#FCF7EE"],
       ].forEach(function (entry) {
         var b = el("button", "palette-swatch");
         b.type = "button";

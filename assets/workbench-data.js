@@ -1,7 +1,8 @@
 // 工作台只记录已在本站项目中确认的内容；updated 是人工核对日期，不随浏览时间变化。
 window.SITE_WORKBENCH = {
-  updated: '2026-10-30',
+  updated: '2026-11-13',
   focus: [
+    { projectId: 'personal-site', label: '内容整理', description: '补齐图片工坊与视频灵感室的使用教程，同步整理 React、Vite、暖白纸墨外观和本地数据的说明。' },
     { projectId: 'recallai', label: '本地资料检索', description: '整理关键词检索、离线 OCR，以及原位置索引与复制收纳之间的使用边界。' },
     { projectId: 'document-assistant', label: '文档整理', description: '把规则分类、确认归档和备份恢复的取舍写清楚，保留源码与下载版本的区别。' },
     { projectId: 'folia-android', label: '开源适配', description: '记录基于 Folia 的 Android 适配与工程集成，保留原作者归属和开源许可。' }

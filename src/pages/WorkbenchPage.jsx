@@ -1,7 +1,12 @@
 import ToolShortcut from "../components/ToolShortcut.jsx";
 function ImageToolsShortcut() {
   return (
-    <ToolShortcut eyebrow="本地工具 / IMAGE WORKSHOP" href="image-tools.html" label="打开图片工坊 →" offset={20}>
+    <ToolShortcut
+      eyebrow="本地工具 / IMAGE WORKSHOP"
+      href="image-tools.html"
+      label="打开图片工坊 →"
+      offset={20}
+    >
       多张图片顺序转换 WebP、JPEG、AVIF、PNG，调整尺寸，全程本地处理。
     </ToolShortcut>
   );
@@ -233,7 +238,7 @@ function Colophon() {
             <dt>{"制作方式"}</dt>
             <dd>
               {
-                "原生 HTML、CSS 与 JavaScript 静态页面，不依赖框架或外部运行库；本地预览可使用本机服务。内容随文件维护，通过 GitHub Pages 和 ChatGPT 展示版本发布。"
+                "使用 React 与 Vite 组织多页入口，界面采用 JavaScript、TypeScript 与 CSS。内容维护在本地数据文件中，构建产物通过 GitHub Pages 发布，本机通过 HTTP 服务开发与预览。"
               }
             </dd>
           </div>
@@ -242,7 +247,7 @@ function Colophon() {
             <dt>{"字体与颜色"}</dt>
             <dd>
               {
-                "优先使用本机的中文无衬线与衬线字体，缺少时回退到系统字体。暖纸底、暖沙色带，搭配松针绿、暖陶土、琥珀金与青瓷灰蓝，没有在线字体请求。"
+                "标题优先使用本机宋体类衬线字体，正文使用中文无衬线字体。全站采用 #F8F7F4 暖白纸张、#1A3026 墨色标题和薄荷、香槟微光，玻璃表面使用细线边框。"
               }
               <span className="workbench-palette" aria-hidden="true">
                 <i></i>
@@ -257,7 +262,7 @@ function Colophon() {
             <dt>{"外观与离线"}</dt>
             <dd>
               {
-                "顶栏可切换纸色与夜色，选择留在当前浏览器。使用本地预览或 HTTPS 完整加载一次后，可离线浏览与搜索；浏览器支持时页脚会提供安装入口。双击文件打开同样可阅读与切换外观。"
+                "配色与季节偏好保存在当前浏览器，纸色与夜色偏好下均使用暖白外观。HTTP 本机预览或 HTTPS 访问完成缓存后，可浏览已缓存的页面并使用本地搜索；图片工坊的编解码器首次加载需要联网。"
               }
             </dd>
           </div>

@@ -107,7 +107,9 @@ test("React project filters, query reload and legacy anchors", async ({
   page,
 }) => {
   await ready(page, "projects.html");
-  await expect(page.locator(".portfolio-project")).toHaveCount(oldWindow.SITE_PROJECTS.length);
+  await expect(page.locator(".portfolio-project")).toHaveCount(
+    oldWindow.SITE_PROJECTS.length,
+  );
   await page.getByRole("button", { name: "本地工具", exact: true }).click();
   await expect(page.locator(".portfolio-project")).toHaveCount(
     oldWindow.SITE_PROJECTS.filter((p) => p.category === "本地工具").length,
@@ -139,10 +141,10 @@ test("Article search, topic clusters, graph and filter restoration", async ({
   await page.locator("#article-search").fill("never-matches-this-query");
   await expect(page.locator("#article-empty")).toBeVisible();
   await page.locator("#clear-article-filters").click();
-  await expect(page.locator("#article-list .article-row")).toHaveCount(6);
+  await expect(page.locator("#article-list .article-row")).toHaveCount(8);
   await page.locator('[data-article-view="topics"]').click();
   await expect(page.locator("#article-clusters")).toBeVisible();
-  await expect(page.locator(".garden-graph-node")).toHaveCount(6);
+  await expect(page.locator(".garden-graph-node")).toHaveCount(8);
   await expect(page.locator("#garden-map")).toBeVisible();
   await page.locator(".garden-cluster").first().click();
   await expect(page.locator("#garden-tag-filter")).toBeVisible();

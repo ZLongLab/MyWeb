@@ -4,6 +4,10 @@ export default function initialize(scope) {
     "use strict";
 
     var articles = window.SITE_CONTENT.sortArticles(window.SITE_ARTICLES);
+    var featuredArticle =
+      articles.find(function (article) {
+        return article.featured;
+      }) || articles[0];
     var config = window.SITE_DATA || {};
     var params = new URLSearchParams(window.location.search);
     var siteTitle =
@@ -130,7 +134,7 @@ export default function initialize(scope) {
 
     function createArticleRow(article, headingTag, context) {
       var row = createElement("a", "article-row");
-      var featured = article.id === articles[0].id;
+      var featured = article === featuredArticle;
       row.classList.add(featured ? "journal-feature" : "journal-entry");
       row.href = articleHref(article, context);
       var copy = createElement("div", "journal-entry-copy");
@@ -299,6 +303,9 @@ export default function initialize(scope) {
             return text.indexOf(term) !== -1;
           });
         });
+        var featuredIndex = matching.indexOf(featuredArticle);
+        if (featuredIndex > 0)
+          matching.unshift(matching.splice(featuredIndex, 1)[0]);
 
         list.replaceChildren();
         var context = { category: category, q: query, tag: tag, view: view };

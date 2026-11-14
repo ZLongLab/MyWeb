@@ -1,6 +1,6 @@
 // 房间目录是一份全站共用的数据；详情页不另算一个房间。
 window.SITE_HOUSE = {
-  updated: '2026-10-26',
+  updated: '2026-11-13',
   started: '2026-10-24',
   timeZone: 'Asia/Shanghai',
   quote: '把想法做出来，也给生活留一点空白。',
@@ -25,8 +25,8 @@ window.SITE_HOUSE = {
       { title: 'Python', reason: '用于医学图像分割模型的训练、评估和实验整理。', source: '站主于 2026-10-26 确认' },
       { title: 'Codex', reason: '用于这个小站的代码修改、页面检查和版本整理。', source: '本次开发环境' },
       { title: 'PowerShell', reason: '在 Windows 上启动本地预览、运行维护脚本。', source: '本机预览环境' },
-      { title: 'Node.js', reason: '运行零依赖预览服务，生成文章统计与静态快照。', source: 'package.json / server.mjs' },
-      { title: 'Chrome', reason: '检查本地页面、键盘操作、夜色和离线功能。', source: '本机浏览器验收' },
+      { title: 'Node.js', reason: '运行 Vite 开发与构建流程，生成文章统计和静态发布文件。', source: 'package.json / vite.config.js' },
+      { title: 'Chrome', reason: '检查页面布局、键盘操作、本地工具和离线浏览。', source: '本机浏览器验收' },
       { title: 'Git · GitHub', reason: '保存源码和可回退的版本，不代替浏览器便签备份。', source: '本站公开源码仓库' }
     ],
     defaults: [
@@ -41,6 +41,6 @@ window.SITE_HOUSE = {
     { title: 'Brian Lovin', url: 'https://brianlovin.com/', reason: '参考作品陈列、页面秩序和真实内容之间的关系。' },
     { title: 'Now / nownownow', url: 'https://nownownow.com/about', reason: '了解如何用一页近况，说明此刻真正关注的事情。' },
     { title: 'IndieWeb · Colophon', url: 'https://indieweb.org/colophon', reason: '把网站怎样制作、数据留在哪里，写成能读懂的说明。' },
-    { title: 'MDN Web Docs', url: 'https://developer.mozilla.org/zh-CN/', reason: '查阅原生 HTML、CSS 和浏览器接口，不必先引入一个框架。' }
+    { title: 'MDN Web Docs', url: 'https://developer.mozilla.org/zh-CN/', reason: '查阅 HTML、CSS、JavaScript 和浏览器接口的用法与兼容信息。' }
   ]
 };

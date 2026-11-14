@@ -42,9 +42,7 @@ function Resources() {
       </div>
       <div className="room-section-body">
         <p className="room-note">
-          {
-            "这些是本站的设计参考与文档来源，不表示站主与作者之间存在友链或互访关系。"
-          }
+          {"这里收录本站使用的设计参考与文档资源，每条链接附上参考理由。"}
         </p>
         <ul className="friend-list" id="links-resources"></ul>
       </div>
@@ -57,12 +55,12 @@ function ExchangeLinks() {
     <section className="room-section">
       <div className="room-section-head">
         <p className="room-kicker">{"03 / NEXT DOOR"}</p>
-        <h2>{"以后再串门"}</h2>
+        <h2>{"来串个门"}</h2>
       </div>
       <div className="room-section-body">
         <p>
           {
-            "邻居环等到小站开放、认识更多人以后再考虑。现在这里保留一条安静的路。"
+            "小站已经开放访问。欢迎分享你的网站、项目或实用工具，可以通过关于页的 GitHub 入口交流，并附上一句介绍或使用感受。"
           }
         </p>
         <a href="about.html#contact">{"联系 ZL →"}</a>

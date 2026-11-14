@@ -29,17 +29,17 @@ function SiteStructure() {
       <div className="room-section-body">
         <p>
           {
-            "使用原生 HTML、CSS 与 JavaScript。没有框架、构建步骤或网站运行依赖；双击本地文件与本机预览服务都能浏览。"
+            "使用 React 与 Vite 组织 17 个多页入口，界面代码采用 JavaScript 与 TypeScript，样式使用 CSS。文章、作品与近况维护在本地数据文件中，构建产物通过 GitHub Pages 提供静态访问。"
           }
         </p>
         <p>
           {
-            "预览只提供明确允许的页面与资源。页面不请求远程字体、图床、天气或 GitHub API；GitHub 活动由本地脚本生成公开日历快照，人工核对后才放进网站。"
+            "主站的字体、图片与脚本由本站静态资源提供。文章统计由本地脚本生成，GitHub 活动使用经过核对的公开日历快照。图片工坊通过 jSquash / Squoosh 在浏览器内处理图片，提示词工具的收藏与草稿由各工具在本机保存。"
           }
         </p>
         <p>
           {
-            "在本机预览或 HTTPS 完整加载后可离线浏览。安装功能由浏览器决定，双击文件打开时不请求 manifest 或注册离线服务。"
+            "本地开发运行 npm run dev，发布前运行 npm run verify，使用 npm run build:pages 生成 dist 发布目录。本机通过 HTTP 服务预览，线上通过 HTTPS 访问；首次成功缓存后可浏览已缓存的页面和脚本，图片编解码器在首次加载时需要联网。"
           }
         </p>
       </div>
@@ -57,12 +57,12 @@ function ColorPalette() {
       <div className="room-section-body">
         <p>
           {
-            "中文优先本机 Noto Sans SC / Noto Serif SC，再回退系统字体；小字使用 Cascadia Code / Consolas。没有远程字体请求。"
+            "标题优先使用本机 Songti SC、STSong 或宋体，正文使用 Noto Sans SC 与系统中文无衬线字体，小字使用 Cascadia Code / Consolas。字体通过本机字体栈回退。"
           }
         </p>
         <p>
           {
-            "季节只改变玄关与全局点缀，各房间的身份色保持一致。顶栏切换纸色与夜色，工作台可选择季节。"
+            "主站 17 页统一使用暖白纸张、墨色标题、薄荷与香槟微光，以及半透明玻璃表面。顶栏的配色偏好与工作台的季节选择保存在当前浏览器，纸色与夜色偏好下均呈现暖白外观。"
           }
         </p>
         <div className="palette-grid" id="colophon-palette"></div>
@@ -109,7 +109,17 @@ function SitePrinciples() {
           </a>
           {"保存；源码备份不包含浏览器里的便签。"}
         </p>
-        <p>视频灵感室的内容来源按固定快照登记：LearnPrompt 策展内容 CC BY 4.0、代码 MIT；marsoyang1 未提供明确许可，只参考字段结构；Yuyyxz 与 rich5000 为 MIT；VideoPrompts.tools 仅参考 CC BY 4.0 模板库的字段维度。平台方言另参考 ZhongBiao-zheng / video-prompt（MIT），只借简派与繁派划分方法，档案及文字由本站原创，不保证模型效果。本站示例原创，不搬运案例提示词或媒体。<a href="video-prompts.html#video-sources">阅读逐项来源与改写说明 ↗</a>，<a href="THIRD-PARTY-LICENSES.txt">查看第三方许可登记 ↗</a>。</p>
+        <p>
+          视频灵感室的内容来源按固定快照登记：LearnPrompt 策展内容 CC BY
+          4.0、代码 MIT；marsoyang1 未提供明确许可，只参考字段结构；Yuyyxz 与
+          rich5000 为 MIT；VideoPrompts.tools 仅参考 CC BY 4.0
+          模板库的字段维度。平台方言另参考 ZhongBiao-zheng /
+          video-prompt（MIT），只借简派与繁派划分方法，档案及文字由本站原创，不保证模型效果。本站示例原创，不搬运案例提示词或媒体。
+          <a href="video-prompts.html#video-sources">
+            阅读逐项来源与改写说明 ↗
+          </a>
+          ，<a href="THIRD-PARTY-LICENSES.txt">查看第三方许可登记 ↗</a>。
+        </p>
       </div>
     </section>
   );
@@ -118,12 +128,27 @@ function SitePrinciples() {
 function ImageToolsNote() {
   return (
     <section className="room-section" id="image-tools">
-      <div className="room-section-head"><p className="room-kicker">IMAGE WORKSHOP</p><h2>图片工坊的使用边界</h2></div>
+      <div className="room-section-head">
+        <p className="room-kicker">IMAGE WORKSHOP</p>
+        <h2>图片工坊的使用边界</h2>
+      </div>
       <div className="room-section-body">
-        <p><a href="image-tools.html">打开图片工坊 →</a> 批量调整图片格式与宽度，编解码来自 jSquash / Squoosh；PNG 使用浏览器 Canvas。全程在本地处理，不上传图片。</p>
-        <p>图片和结果只保留在当前页，刷新后需要重新选择。动画只处理首帧，JPEG 透明区域填为白色，输出不保留原图附加元数据。</p>
-        <p>页面壳与脚本可离线打开；较大的编解码器二进制不进入离线预缓存，首次转换或重新加载组件需要联网，不保证离线转换。AVIF 编码较慢。</p>
-        <p><a href="THIRD-PARTY-LICENSES.txt">查看编解码器开源许可证 ↗</a></p>
+        <p>
+          <a href="image-tools.html">打开图片工坊 →</a>{" "}
+          批量调整图片格式与宽度，编解码来自 jSquash / Squoosh；PNG 使用浏览器
+          Canvas。全程在本地处理，不上传图片。
+        </p>
+        <p>
+          图片和结果只保留在当前页，刷新后需要重新选择。动画只处理首帧，JPEG
+          透明区域填为白色，输出不保留原图附加元数据。
+        </p>
+        <p>
+          页面壳与脚本可离线打开；较大的编解码器二进制不进入离线预缓存，首次转换或重新加载组件需要联网，不保证离线转换。AVIF
+          编码较慢。
+        </p>
+        <p>
+          <a href="THIRD-PARTY-LICENSES.txt">查看编解码器开源许可证 ↗</a>
+        </p>
       </div>
     </section>
   );

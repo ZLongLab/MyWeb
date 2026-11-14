@@ -44,7 +44,7 @@ function build(articles, source) {
   const nodes = groups.flatMap((group, index) => group.map((a, i) => {
     const slots = index === 0 ? [[135, 120], [250, 190], [385, 120]] : isolated.length ? [[555, 60], [760, 120], [610, 190]] : [[190, 60], [705, 120], [430, 190]];
     const citations = edges.filter(e => e.to === a.id).length, [x, y] = slots[i % 3];
-    return { id: a.id, title: a.title, label: shortLabel(a.title), maturity: ['seed', 'growing', 'evergreen'].includes(a.maturity) ? a.maturity : 'seed', citations, x, y: y + Math.floor(i / 3) * 200, r: 10 + Math.min(3, citations), isolated: index === 0 };
+    return { id: a.id, title: a.title, label: shortLabel(a.graphLabel || a.title), maturity: ['seed', 'growing', 'evergreen'].includes(a.maturity) ? a.maturity : 'seed', citations, x, y: y + Math.floor(i / 3) * 200, r: 10 + Math.min(3, citations), isolated: index === 0 };
   }));
   const data = { version: 2, sourceHash: createHash('sha256').update(source).digest('hex'), eligible: largestComponent >= 3, height: 250 + Math.max(0, Math.ceil(Math.max(isolated.length, connected.length) / 3) - 1) * 200, nodes, edges };
   const zones = Array.from({ length: Math.ceil(isolated.length / 3) }, (_, row) => `<g class="garden-waiting-zone" aria-hidden="true"><ellipse cx="250" cy="${145 + row * 200}" rx="220" ry="95"/><text x="48" y="${42 + row * 200}">${isolated.every(a => !a.maturity || a.maturity === 'seed') ? '还没连上小径的种子' : '还没连上小径的记录'}</text></g>`).join('');

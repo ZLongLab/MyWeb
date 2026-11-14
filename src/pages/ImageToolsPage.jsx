@@ -164,6 +164,7 @@ export default function ImageToolsPage() {
         {items.length ? <ImageToolsQueue items={items} downloadLinks={downloadLinks} /> : <p className="image-tools-empty">还没有图片。先放进几张想整理的文件。</p>}
       </section>
       <aside className="image-tools-notes" aria-label="使用说明">
+        <p><a href="article.html?id=image-workshop-batch-guide">阅读批量转换入门教程 →</a></p>
         <p>支持浏览器可解码的静态图片；GIF 等动画只处理首帧。JPEG 的透明区域会填为白色，输出不保留原图附加元数据。单张最多 3200 万像素。</p>
         <p>文件只在当前页暂存，刷新后需要重新选择。全部下载会逐个保存，浏览器可能询问是否允许多个文件下载。</p>
         <p>离线时可打开本页；处理组件不预缓存，首次转换或重新加载组件需要联网。</p>
