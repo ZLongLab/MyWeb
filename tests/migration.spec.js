@@ -236,6 +236,10 @@ test("Old local notes are preserved, can merge backups, export and delete", asyn
     mimeType: "application/json",
     buffer: Buffer.from(JSON.stringify(old)),
   });
+  await expect(page.locator("#guestbook-status")).toHaveText(
+    "已导入 0 条便签，跳过 1 条重复记录。现有便签已保留。",
+  );
+  await expect(page.locator("#guestbook-import")).toBeEnabled();
   await expect(page.locator(".guestbook-entry")).toHaveCount(2);
   await page.locator("#guestbook-import-file").setInputFiles({
     name: "bad.json",
