@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071812">
+  <meta name="description" content="有间小站的圣诞夜。转动粒子圣诞树，点亮盘旋的光带，换一串喜欢的灯。">
+  <title>圣诞夜 · 有间小站</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/styles/christmas.css">
+  <script type="module" src="/src/pages/christmas.js"></script>
+</head>
+<body>
+  <div class="page">
+    <header class="masthead">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>有间小站<span class="brand-divider"></span><span class="edition">圣诞特辑</span></span>
+      </div>
+      <a class="home-link" href="./index.html">返回小站</a>
+    </header>
+
+    <main class="cover" id="christmas" data-color="gold" data-lit="false">
+      <div class="sky-glints" aria-hidden="true">
+        <span style="--x: 19%; --y: 19%; --size: 11px; --delay: -4s"></span>
+        <span style="--x: 43%; --y: 16%; --size: 7px; --delay: -1s"></span>
+        <span style="--x: 51%; --y: 34%; --size: 14px; --delay: -5s"></span>
+        <span style="--x: 46%; --y: 67%; --size: 8px; --delay: -3s"></span>
+        <span style="--x: 93%; --y: 30%; --size: 9px; --delay: -6s"></span>
+        <span style="--x: 8%; --y: 87%; --size: 6px; --delay: -2s"></span>
+      </div>
+      <div class="scene">
+        <canvas class="tree-lights" role="img" aria-label="可旋转的粒子圣诞树" aria-describedby="rotation-hint"></canvas>
+        <span class="rotation-hint" id="rotation-hint" hidden>拖动旋转<span class="sr-only">，也可使用左右方向键</span></span>
+      </div>
+      <canvas class="snow" aria-hidden="true"></canvas>
+      <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+      <div class="greeting">
+        <p class="date"><span aria-hidden="true"></span> 12 月 25 日 · 圣诞节</p>
+        <h1 lang="en"><span>Merry</span> <em>Christmas</em></h1>
+        <p class="wish">愿这个冬天，<br>每一个小小的愿望，都有一束光。</p>
+        <button class="light-switch" type="button" aria-controls="christmas" hidden>
+          <span aria-hidden="true">✦</span> <span class="light-label">点亮圣诞树</span>
+        </button>
+      </div>
+
+      <div class="controls" hidden>
+        <div class="colors" role="group" aria-label="圣诞树灯色">
+          <button class="color" type="button" data-select="gold" aria-label="暖金" title="暖金" aria-pressed="true"></button>
+          <button class="color" type="button" data-select="ice" aria-label="冰蓝" title="冰蓝" aria-pressed="false"></button>
+          <button class="color" type="button" data-select="rose" aria-label="玫瑰" title="玫瑰" aria-pressed="false"></button>
+        </div>
+        <button class="snow-switch" type="button" aria-pressed="false">
+          <span aria-hidden="true">❄</span> 飘雪
+        </button>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
