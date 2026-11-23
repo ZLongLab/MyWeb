@@ -5,12 +5,14 @@ test("Whole project cards keep native links, keyboard access and filter context"
   page,
 }) => {
   await page.goto("projects.html");
+  await expect(page.locator(".portfolio-title a")).toHaveCount(8);
   const destinations = await page
     .locator(".portfolio-title a")
     .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
   expect(destinations).toHaveLength(8);
   for (const [index, destination] of destinations.entries()) {
     await page.goto("projects.html");
+    await expect(page.locator(".portfolio-title a")).toHaveCount(8);
     const target = new URL(destination, page.url());
     const card = page.locator(".portfolio-project").nth(index);
     const bounds = await card.boundingBox();

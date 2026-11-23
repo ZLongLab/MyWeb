@@ -35,9 +35,12 @@ for (const theme of ["paper", "night"]) {
         "rgb(248, 247, 244)",
       );
       await expect(page.locator("html")).toHaveCSS("color-scheme", "light");
+      await expect(page.locator("body")).toHaveCSS("color", "rgb(51, 51, 51)");
+      await expect(page.locator("body")).toHaveCSS("font-weight", "400");
+      await expect(page.locator("h1:visible")).toHaveCSS("font-weight", "600");
       await expect(page.locator("h1:visible")).toHaveCSS(
         "color",
-        "rgb(26, 48, 38)",
+        "rgb(34, 34, 34)",
       );
       const colors = await page.evaluate(() => {
         function rgb(value) {

@@ -5,8 +5,9 @@ html:has(body[data-page]) {
 }
 :root {
   --morning-bg: #f8f7f4;
-  --morning-ink: #1a3026;
-  --morning-muted: #374151;
+  --morning-ink: #222222;
+  --morning-text: #333333;
+  --morning-muted: #4a4a4a;
   --morning-meta: #9ca3af;
   --morning-accent: #476354;
   --morning-warm: #9b8b6c;
@@ -59,16 +60,28 @@ html body[data-page] {
   --shadow-near: var(--morning-shadow);
   color-scheme: light;
   background: var(--morning-bg) !important;
-  color: var(--morning-ink);
+  color: var(--morning-text);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 html body[data-page]::before,
 html body[data-page]::after {
   display: none !important;
 }
-html[data-theme] body[data-page] :is(h1, h2, h3, h4) {
+html[data-theme] body[data-page] :is(h1, h2, h3, h4, h5, h6) {
   color: var(--morning-ink);
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 500;
+}
+html[data-theme] body[data-page] main h1 {
+  font-weight: 600;
+}
+html[data-theme] body[data-page] main :is(h2, h3, h4, h5, h6) {
+  font-weight: 500;
+}
+html body[data-page] :is(.reading-body, #project-body, .room-section-body) {
+  color: var(--morning-text);
 }
 html
   body[data-page]
@@ -172,7 +185,7 @@ html body[data-page] .site-header.is-scrolled {
 html body[data-page] .brand {
   color: var(--morning-ink);
   font-family: var(--serif);
-  font-weight: 400;
+  font-weight: 500;
 }
 html body[data-page] .brand-mark {
   display: none;
