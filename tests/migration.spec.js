@@ -42,7 +42,26 @@ for (const width of [1440, 390])
       if (response.status() >= 400) failed.push(response.url());
     });
     for (const path of pages) {
-      await ready(page, path);
+      if (path === "christmas.html") {
+        await page.goto(path);
+        const lights = page.getByRole("button", { name: "点亮圣诞树" });
+        await expect(lights).toBeVisible();
+        await lights.click();
+        await expect(page.getByRole("button", { name: "调暗树灯" })).toBeVisible();
+        const ice = page.getByRole("button", { name: "冰蓝" });
+        await ice.click();
+        await expect(ice).toHaveAttribute("aria-pressed", "true");
+        const snow = page.getByRole("button", { name: "飘雪" });
+        await expect(snow).toHaveAttribute("aria-pressed", "false");
+        await snow.click();
+        await expect(snow).toHaveAttribute("aria-pressed", "true");
+        await expect(page.getByRole("link", { name: "返回小站" })).toHaveAttribute(
+          "href",
+          "./index.html",
+        );
+      } else {
+        await ready(page, path);
+      }
       await expect(page.locator("main")).toHaveCount(1);
       await expect(page.locator("h1:visible")).toHaveCount(1);
       if (path === "404.html")
