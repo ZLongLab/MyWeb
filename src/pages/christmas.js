@@ -15,6 +15,7 @@ const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 const TAU = Math.PI * 2;
 const embers = new EmberTrail();
 const LIGHT_UP_TIME = 2.3;
+const TREE_GROUND = 1.086;
 const palettes = {
   gold: {
     needles: ["#45826d", "#83b498", "#bbd5ac", "#ffe4a3"],
@@ -193,7 +194,7 @@ function drawBackdrop(palette, power) {
   }
 
   ctx.save();
-  ctx.translate(x, y + unit * 1.014);
+  ctx.translate(x, y + unit * TREE_GROUND);
   ctx.scale(1, .22);
   const floor = ctx.createRadialGradient(0, 0, 0, 0, 0, unit * .55);
   floor.addColorStop(0, palette.glow + "42");
@@ -205,6 +206,74 @@ function drawBackdrop(palette, power) {
   ctx.restore();
 }
 
+function drawTrunk(palette, power) {
+  const ctx = treeContext;
+  const { x, y, unit } = treeView;
+  ctx.save();
+  ctx.translate(x, y + unit * TREE_GROUND);
+  ctx.scale(unit, unit);
+  ctx.globalAlpha = 1;
+
+  // Flatten the contact shadow so the base sits on the snow plane.
+  ctx.save();
+  ctx.scale(1, .23);
+  const shadow = ctx.createRadialGradient(0, 0, .006, 0, 0, .155);
+  shadow.addColorStop(0, "#050b08cf");
+  shadow.addColorStop(.42, "#050b0869");
+  shadow.addColorStop(1, "#050b0800");
+  ctx.fillStyle = shadow;
+  ctx.fillRect(-.155, -.155, .31, .31);
+  ctx.restore();
+
+  ctx.beginPath();
+  ctx.moveTo(-.014, -.305);
+  ctx.bezierCurveTo(-.022, -.218, -.013, -.113, -.027, -.043);
+  ctx.bezierCurveTo(-.031, -.022, -.04, -.01, -.054, -.003);
+  ctx.bezierCurveTo(-.042, .004, -.018, -.009, -.009, -.004);
+  ctx.bezierCurveTo(.003, .004, .013, -.005, .024, -.005);
+  ctx.bezierCurveTo(.038, -.004, .046, .002, .058, -.003);
+  ctx.bezierCurveTo(.033, -.016, .029, -.028, .027, -.056);
+  ctx.bezierCurveTo(.015, -.144, .021, -.237, .012, -.305);
+  ctx.closePath();
+
+  const bark = ctx.createLinearGradient(-.036, 0, .044, 0);
+  bark.addColorStop(0, "#30241a");
+  bark.addColorStop(.28, "#62442d");
+  bark.addColorStop(.53, "#4e3525");
+  bark.addColorStop(.78, "#37291f");
+  bark.addColorStop(1, "#2b2119");
+  ctx.fillStyle = bark;
+  ctx.fill();
+  ctx.clip();
+
+  ctx.lineWidth = .0013;
+  for (const [line, color] of [
+    [-.023, "#211911b8"], [-.014, "#b57c4e74"], [-.007, "#241a16b0"],
+    [.001, "#e1aa6662"], [.009, "#2b1b15a0"], [.017, "#ae714740"],
+  ]) {
+    ctx.strokeStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(line * .6, -.287);
+    ctx.bezierCurveTo(line + .006, -.187, line - .008, -.055, line * 1.75, -.005);
+    ctx.stroke();
+  }
+
+  const shade = ctx.createLinearGradient(0, -.305, 0, -.08);
+  shade.addColorStop(0, "#102119");
+  shade.addColorStop(.37, "#101d16a3");
+  shade.addColorStop(1, "#101d1600");
+  ctx.fillStyle = shade;
+  ctx.fillRect(-.06, -.306, .12, .31);
+
+  ctx.globalAlpha = .26 + power * .35;
+  ctx.strokeStyle = palette.core;
+  ctx.lineWidth = .0014;
+  ctx.beginPath();
+  ctx.moveTo(-.013, -.166);
+  ctx.bezierCurveTo(-.017, -.103, -.017, -.022, -.039, -.008);
+  ctx.stroke();
+  ctx.restore();
+}
 function drawRibbon(projected, palette, progress, front) {
   const ctx = treeContext;
   const { unit } = treeView;
@@ -315,6 +384,7 @@ function drawTree(elapsed) {
   for (let i = 0; i < ribbon.length; i++) project(ribbon[i], c, s, projectedRibbon[i]);
   drawRibbon(projectedRibbon, palette, progress, false);
   embers.draw(ctx, palette.emberAtlas, project, unit, false);
+  drawTrunk(palette, progress);
 
   const particleScale = Math.max(.64, unit / 400);
   for (let tone = 0; tone < model.needles.length; tone++) {
