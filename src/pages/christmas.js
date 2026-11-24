@@ -1,6 +1,7 @@
 import { CAMERA_DEPTH, EmberTrail, makeEmberAtlas, smoothstep } from "./christmas-embers.js";
 import { createMusicBox } from "./christmas-audio.js";
 import { downloadGreetingCard, drawGreetingCard, loadForestImage } from "./christmas-card.js";
+import { SnowField } from "./christmas-snow.js";
 
 const cover = document.querySelector(".cover");
 const dateTextEl = document.querySelector(".date-text");
@@ -27,6 +28,7 @@ const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
 
 const TAU = Math.PI * 2;
 const embers = new EmberTrail();
+const snowField = new SnowField();
 const musicBox = createMusicBox();
 const LIGHT_UP_TIME = 2.3;
 const LIGHT_DOWN_TIME = .65;
@@ -65,9 +67,9 @@ let lightProgress = 0;
 let flashAt = -10;
 let snowing = !reducedMotion.matches;
 let treeView;
-let snowView;
-let flakes = [];
+let stackedView = false;
 let forestImage = null;
+let frostSprite = null;
 
 function formatChristmasDate(now = new Date()) {
   try {
@@ -104,6 +106,7 @@ function point(a, radius, y, size, tone = 0) {
 
 function makeTree() {
   const needles = [[], [], [], []];
+  const frost = [];
   const ornaments = [];
   const lamps = [];
 
@@ -123,6 +126,16 @@ function makeTree() {
         const tone = Math.min(3, Math.floor(random(0, 4.9) * (.48 + .48 * along)));
         needles[tone].push(point(aSprig, length * along, ySprig, random(.39, 1.35), tone));
       }
+
+      // Delicate snow dusting resting on the upper outer edge of pine boughs.
+      const frostCount = tier < 2 ? 2 : 3;
+      for (let f = 0; f < frostCount; f++) {
+        const along = random(.56, 1.02);
+        const aFrost = a + random(-.16, .16) * (1 - .5 * along);
+        const yFrost = tip - (1 - along) * .068 - random(.003, .016);
+        frost.push(point(aFrost, length * along, yFrost, random(.008, .018), random(0, TAU)));
+      }
+
       // Keep bottom-most ornaments tucked cleanly inside the pine skirt above the snow plane.
       if (tier < 11 && (branch + tier) % 4 === 0) {
         ornaments.push(point(a, length * .82, tip + .014, random(.011, .021), (tier + branch) % 3 === 0 ? 1 : 0));
@@ -133,11 +146,18 @@ function makeTree() {
     }
   }
 
-  return { needles, ornaments, lamps };
+  return { needles, frost, ornaments, lamps };
 }
 
 const model = makeTree();
 const sky = Array.from({ length: 120 }, () => [Math.random(), Math.random(), random(.3, 1.1)]);
+const groundGlints = Array.from({ length: 42 }, () => ({
+  rx: random(-.72, .72),
+  ry: random(-.03, .13),
+  size: random(1.1, 2.5),
+  phase: random(0, TAU),
+  rate: random(1.3, 2.9),
+}));
 const ribbon = Array.from({ length: 281 }, (_, i) => {
   const t = i / 280;
   const y = .035 + t * .835;
@@ -146,23 +166,35 @@ const ribbon = Array.from({ length: 281 }, (_, i) => {
   return point(t * TAU * 3.95 + .45, radius, y, 1, t);
 });
 
-function sprite(paint) {
+function sprite(paint, dim = 96) {
   const canvas = document.createElement("canvas");
-  canvas.width = canvas.height = 96;
-  paint(canvas.getContext("2d"));
+  canvas.width = canvas.height = dim;
+  paint(canvas.getContext("2d"), dim / 2);
   return canvas;
 }
 
 function makeGlow(color) {
-  return sprite((ctx) => {
-    const gradient = ctx.createRadialGradient(48, 48, 0, 48, 48, 47);
+  return sprite((ctx, c) => {
+    const gradient = ctx.createRadialGradient(c, c, 0, c, c, c - 1);
     gradient.addColorStop(0, "#fffdf0");
     gradient.addColorStop(.11, color);
     gradient.addColorStop(.31, color + "75");
     gradient.addColorStop(1, color + "00");
     ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, 96, 96);
+    ctx.fillRect(0, 0, c * 2, c * 2);
   });
+}
+
+function makeFrostDust() {
+  return sprite((ctx, c) => {
+    const grad = ctx.createRadialGradient(c, c, 0, c, c, c - 1);
+    grad.addColorStop(0, "rgba(255, 255, 255, 0.96)");
+    grad.addColorStop(.34, "rgba(232, 246, 255, 0.72)");
+    grad.addColorStop(.72, "rgba(202, 230, 245, 0.22)");
+    grad.addColorStop(1, "rgba(202, 230, 245, 0)");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, c * 2, c * 2);
+  }, 48);
 }
 
 function makeOrnament(light, shade) {
@@ -196,45 +228,19 @@ function canvasView(canvas, ctx) {
   return { width, height };
 }
 
-function makeFlake(width, height) {
-  return {
-    x: random(0, width),
-    y: random(0, height),
-    size: random(.55, 1.75),
-    speed: random(14, 43),
-    drift: random(4, 20),
-    phase: random(0, TAU),
-  };
-}
-
 function resize() {
   const view = canvasView(treeCanvas, treeContext);
-  const stacked = matchMedia("(max-width: 43rem)").matches;
-  const unit = Math.min(view.height * (stacked ? .76 : .72), view.width * (stacked ? .84 : .8));
+  stackedView = matchMedia("(max-width: 43rem)").matches;
+  const unit = Math.min(view.height * (stackedView ? .76 : .72), view.width * (stackedView ? .84 : .8));
   treeView = {
     ...view,
     unit,
-    x: view.width * (stacked ? .5 : .63),
-    y: (view.height - unit) * (stacked ? .37 : .42),
+    x: view.width * (stackedView ? .5 : .63),
+    y: (view.height - unit) * (stackedView ? .37 : .42),
   };
 
-  const prevWidth = snowView?.width || 0;
-  const prevHeight = snowView?.height || 0;
-  snowView = canvasView(snowCanvas, snowContext);
-  const count = Math.min(115, Math.max(35, Math.round(snowView.width / 11)));
-
-  if (flakes.length && prevWidth > 0 && prevHeight > 0) {
-    const sx = snowView.width / prevWidth;
-    const sy = snowView.height / prevHeight;
-    for (const flake of flakes) {
-      flake.x *= sx;
-      flake.y *= sy;
-    }
-    if (flakes.length > count) flakes.length = count;
-    while (flakes.length < count) flakes.push(makeFlake(snowView.width, snowView.height));
-  } else {
-    flakes = Array.from({ length: count }, () => makeFlake(snowView.width, snowView.height));
-  }
+  const snowDims = canvasView(snowCanvas, snowContext);
+  snowField.resize(snowDims.width, snowDims.height);
   render();
 }
 
@@ -272,17 +278,43 @@ function drawBackdrop(palette, power) {
     ctx.fillRect(px * width, py * height, size, size);
   }
 
+  // Soft moonlit snow mist hugging the ground around the tree.
+  ctx.save();
+  ctx.translate(x, y + unit * (TREE_GROUND + .018));
+  ctx.scale(1, .21);
+  const mist = ctx.createRadialGradient(0, 0, 0, 0, 0, unit * .76);
+  mist.addColorStop(0, "rgba(220, 240, 248, 0.16)");
+  mist.addColorStop(.58, "rgba(195, 224, 236, 0.08)");
+  mist.addColorStop(1, "rgba(195, 224, 236, 0)");
+  ctx.globalAlpha = .85;
+  ctx.fillStyle = mist;
+  ctx.fillRect(-unit * .76, -unit * .76, unit * 1.52, unit * 1.52);
+  ctx.restore();
+
   ctx.save();
   ctx.translate(x, y + unit * TREE_GROUND);
   ctx.scale(1, .22);
-  const floor = ctx.createRadialGradient(0, 0, 0, 0, 0, unit * .52);
+  const floor = ctx.createRadialGradient(0, 0, 0, 0, 0, unit * .54);
   floor.addColorStop(0, palette.glow + "42");
   floor.addColorStop(.5, palette.glow + "18");
   floor.addColorStop(1, palette.glow + "00");
   ctx.globalAlpha = .38 + power * .5;
   ctx.fillStyle = floor;
-  ctx.fillRect(-unit * .52, -unit * .52, unit * 1.04, unit * 1.04);
+  ctx.fillRect(-unit * .54, -unit * .54, unit * 1.08, unit * 1.08);
   ctx.restore();
+
+  // Sparkling snow crystals catching tree light across the fresh snow slope.
+  if (frostSprite) {
+    const baseY = y + unit * TREE_GROUND;
+    for (const g of groundGlints) {
+      const shimmer = .35 + .65 * (.5 + .5 * Math.sin(time * g.rate + g.phase));
+      const gx = x + g.rx * unit;
+      const gy = baseY + g.ry * unit;
+      const radialFade = Math.max(0, 1 - Math.abs(g.rx) * 1.15);
+      const alpha = shimmer * (.14 + .28 * power + .12 * radialFade);
+      paintSprite(frostSprite, gx, gy, g.size * 2.4, alpha);
+    }
+  }
 }
 
 function drawTrunk(palette, power) {
@@ -521,6 +553,17 @@ function drawTree(elapsed) {
     }
   }
 
+  // Frosted snow dusting perched gently along the pine bough tips.
+  if (frostSprite) {
+    for (const speck of model.frost) {
+      const p = project(speck, c, s, scratch);
+      const depthAlpha = p.depth < -.06 ? .16 : (.34 + p.depth * .42);
+      const shimmer = .88 + .12 * Math.sin(time * 1.8 + speck.tone);
+      const size = speck.size * unit * p.zoom * (p.depth < 0 ? .88 : 1.15);
+      paintSprite(frostSprite, p.x, p.y, size, Math.min(.68, depthAlpha * shimmer));
+    }
+  }
+
   for (const ornament of projectedOrnaments) project(ornament.item, c, s, ornament);
   projectedOrnaments.sort((first, second) => first.depth - second.depth);
   for (const p of projectedOrnaments) {
@@ -549,24 +592,13 @@ function drawTree(elapsed) {
 }
 
 function drawSnow(elapsed) {
-  const { width, height } = snowView;
-  snowContext.clearRect(0, 0, width, height);
-  if (!snowing) return;
-
-  snowContext.fillStyle = "#f2faf6";
-  for (const flake of flakes) {
-    flake.y += flake.speed * elapsed;
-    flake.x += Math.sin(time * .6 + flake.phase) * flake.drift * elapsed;
-
-    if (flake.y > height + 4) flake.y = -4;
-    if (flake.x < -4) flake.x = width + 4;
-    if (flake.x > width + 4) flake.x = -4;
-
-    snowContext.globalAlpha = .22 + flake.size * .24;
-    snowContext.beginPath();
-    snowContext.arc(flake.x, flake.y, flake.size, 0, TAU);
-    snowContext.fill();
-  }
+  snowField.draw(snowContext, elapsed, time, {
+    active: snowing,
+    color: cover.dataset.color,
+    lit: lightProgress > .12,
+    treeCenterX: stackedView ? .5 : .715,
+    stacked: stackedView,
+  });
 }
 
 function render(now = performance.now()) {
@@ -646,6 +678,7 @@ if (dateTextEl) {
 }
 
 if (treeContext && snowContext) {
+  frostSprite = makeFrostDust();
   for (const [name, palette] of Object.entries(palettes)) {
     palette.emberAtlas = makeEmberAtlas(name);
     palette.light = makeGlow(palette.glow);
@@ -693,6 +726,8 @@ if (treeContext && snowContext) {
     angle = drag.angle + (event.clientX - drag.startX) * .0115;
     const instVel = (dx * .0115) / (dtMs / 1000);
     drag.velocity = Math.max(-6.5, Math.min(6.5, drag.velocity * .55 + instVel * .45));
+    // Dragging gently stirs the falling snow across the winter night.
+    if (snowing && !reducedMotion.matches) snowField.impulse(dx * 1.15);
     drag.lastX = event.clientX;
     drag.lastY = event.clientY;
     drag.lastTime = event.timeStamp;
@@ -707,6 +742,7 @@ if (treeContext && snowContext) {
       handleTreeTap(event.clientX, event.clientY);
     } else if (!reducedMotion.matches && event.timeStamp - released.lastTime < 90) {
       spinVelocity = released.velocity;
+      if (snowing) snowField.impulse(released.velocity * 18);
     }
   });
   treeCanvas.addEventListener("lostpointercapture", () => {
@@ -718,7 +754,10 @@ if (treeContext && snowContext) {
     event.preventDefault();
     const step = event.key === "ArrowLeft" ? -.18 : .18;
     angle += step;
-    if (!reducedMotion.matches) spinVelocity = step * 3.5;
+    if (!reducedMotion.matches) {
+      spinVelocity = step * 3.5;
+      if (snowing) snowField.impulse(step * 110);
+    }
     render();
   });
 

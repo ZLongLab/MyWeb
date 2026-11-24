@@ -46,22 +46,27 @@ export function loadForestImage() {
   return forestImagePromise;
 }
 
-function drawCoverImage(ctx, img, width, height) {
-  if (!img || !img.naturalWidth || !img.naturalHeight) return;
-  const imgRatio = img.naturalWidth / img.naturalHeight;
+function drawCoverSource(ctx, source, srcW, srcH, width, height) {
+  if (!source || !srcW || !srcH) return;
+  const imgRatio = srcW / srcH;
   const targetRatio = width / height;
   let sx = 0;
   let sy = 0;
-  let sw = img.naturalWidth;
-  let sh = img.naturalHeight;
+  let sw = srcW;
+  let sh = srcH;
   if (imgRatio > targetRatio) {
-    sw = img.naturalHeight * targetRatio;
-    sx = (img.naturalWidth - sw) / 2;
+    sw = srcH * targetRatio;
+    sx = (srcW - sw) / 2;
   } else {
-    sh = img.naturalWidth / targetRatio;
-    sy = (img.naturalHeight - sh) / 2;
+    sh = srcW / targetRatio;
+    sy = (srcH - sh) / 2;
   }
-  ctx.drawImage(img, sx, sy, sw, sh, 0, 0, width, height);
+  ctx.drawImage(source, sx, sy, sw, sh, 0, 0, width, height);
+}
+
+function drawCoverImage(ctx, img, width, height) {
+  if (!img) return;
+  drawCoverSource(ctx, img, img.naturalWidth, img.naturalHeight, width, height);
 }
 
 function drawFourPointStar(ctx, cx, cy, outerR, color) {
@@ -188,11 +193,11 @@ export function drawGreetingCard(canvas, {
     }
   }
 
-  // Optional gentle snow overlay.
+  // Composite multi-layer live snowfall without stretching flakes across aspect ratios.
   if (snowing && snowCanvas && snowCanvas.width && snowCanvas.height) {
     ctx.save();
-    ctx.globalAlpha = .82;
-    ctx.drawImage(snowCanvas, 0, 0, width, height);
+    ctx.globalAlpha = .92;
+    drawCoverSource(ctx, snowCanvas, snowCanvas.width, snowCanvas.height, width, height);
     ctx.restore();
   }
 

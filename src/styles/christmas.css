@@ -164,6 +164,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 .cover::after {
   z-index: -1;
   background:
+    linear-gradient(0deg, rgba(214, 236, 245, .09) 0%, rgba(214, 236, 245, .03) 10%, transparent 22%),
     radial-gradient(ellipse 34% 59% at 73% 50%, var(--forest-light), transparent 90%),
     radial-gradient(ellipse 34% 25% at 72% 91%, var(--snow-light), transparent 85%);
 }
@@ -646,6 +647,7 @@ h1 em {
   .cover::after {
     background:
       linear-gradient(180deg, rgba(6, 20, 15, .74) 0%, rgba(6, 20, 15, .50) 24%, rgba(6, 20, 15, 0) 48%),
+      linear-gradient(0deg, rgba(214, 236, 245, .10) 0%, transparent 18%),
       radial-gradient(ellipse 54% 35% at 50% 64%, var(--forest-light), transparent 95%),
       radial-gradient(ellipse 60% 20% at 50% 88%, var(--snow-light), transparent 88%);
   }
