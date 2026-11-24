@@ -12,9 +12,10 @@ export async function optimizerFiles(root, optional = false) {
   catch (error) { if (optional && error.code === 'ENOENT') return null; throw Error('Build Prompt Optimizer first: npm run build:optimizer'); }
   const pin = JSON.parse(await fs.readFile(path.join(root, 'scripts/optimizer-source.json'), 'utf8'));
   if (meta.commit !== pin.commit || meta.credentialsConfigured !== false) throw Error('Unexpected optimizer build identity.');
-  const directory = await fs.realpath(meta.directory);
+  const targetDir = path.resolve(root, meta.directory);
+  const directory = await fs.realpath(targetDir);
   const tempRoot = await fs.realpath(path.join(root, '.tmp'));
-  if (!directory.startsWith(tempRoot + path.sep + 'optimizer-public-') || (await fs.lstat(meta.directory)).isSymbolicLink()) throw Error('Optimizer output must be inside this checkout.');
+  if (!directory.startsWith(tempRoot + path.sep + 'optimizer-public-') || (await fs.lstat(targetDir)).isSymbolicLink()) throw Error('Optimizer output must be inside this checkout.');
   const files = []; let bytes = 0;
   async function walk(dir, prefix = '') {
     for (const entry of await fs.readdir(dir, { withFileTypes: true })) {

@@ -69,6 +69,9 @@ test("New guides connect tools, journal, RSS, sitemap and current site notes", a
   expect(mapText).toContain(
     "https://zlonglab.github.io/MyWeb/video-prompts.html",
   );
+  expect(mapText).toContain(
+    "https://zlonglab.github.io/MyWeb/christmas.html",
+  );
   await page.goto("colophon.html");
   await expect(page.locator("main")).toContainText("React 与 Vite");
   await expect(

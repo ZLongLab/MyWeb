@@ -178,6 +178,10 @@ test("Search keyboard commands and theme persistence", async ({ page }) => {
   await page.locator("#site-search-dialog input").fill("切换到春日");
   await page.locator('[data-search-entry="command:season:spring"]').click();
   await expect(page.locator("html")).toHaveAttribute("data-season", "spring");
+  await page.locator("#site-search-dialog input").fill("圣诞");
+  await expect(
+    page.locator('[data-search-entry="page:christmas"]'),
+  ).toHaveAttribute("href", "christmas.html");
   await page.keyboard.press("Escape");
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "night");
@@ -410,6 +414,13 @@ test("Real service worker keeps query pages and all lazy modules available offli
   );
   expect(
     keys.some((path) => /\/(feed.xml|sitemap.xml|robots.txt)$/.test(path)),
+  ).toBeFalsy();
+  expect(
+    keys.some((path) =>
+      /\/assets\/(?:christmas|home-gallery|gallery-system|journal-gallery|projects-bento)\.css$|\/assets\/favicon-[^/]+\.svg$/.test(
+        path,
+      ),
+    ),
   ).toBeFalsy();
   await context.setOffline(true);
   await ready(page, "image-prompts.html?example=amber-bottle");

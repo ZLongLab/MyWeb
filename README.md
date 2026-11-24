@@ -25,8 +25,8 @@ npm run dev
 - `src/components/` 维护导航、页脚、站标、作品卡片与筛选、工作台工具入口。作品筛选与导航菜单使用 React 状态。
 - `src/controllers/` 是已能正常工作的浏览器交互模块，通过 React 生命周期接入。原生表单值和空列表区域由这些模块管理，避免 React 同时管理其内部节点。不要在这些区域加入会反复更新的 React 子节点；后续可按模块替换为状态组件。
 - `ProjectCard`、`ProjectCollection`、`ToolShortcut`、`SiteMark` 四个完全由 React 管理的组件启用编译器自动记忆化和保留状态的 Fast Refresh。其他页面与原生交互区域沿用整页更新，防止热更新造成重复监听或覆盖用户输入。新增组件需确认 DOM 所有权后再扩展 `vite.config.js` 的范围。
-- `src/styles/` 是当前样式源文件；构建会原样复制公共 CSS 并保留每页原加载顺序。`public/assets/` 是当前图片、图标、站标等静态资源，`public/` 保存 RSS、站点地图、robots 与安装清单。
-- `assets/*-data.js`、`assets/site-snapshot.js`、`assets/video-templates.js` 和两份 `*-core.js` 继续作为有效内容／纯逻辑来源，维护脚本仍能读取。其余原 `assets` 控制器、样式、图片，以及根目录旧 SW／XML／manifest 保留作迁移恢复材料，**新页面和发布构建不引用它们**。请勿继续修改这些旧副本。
+- `src/styles/` 是当前样式源文件；构建会原样复制静态页面 `<link>` 引用的公共 CSS（排除已由 Vite 打包进哈希产物的模块样式），保留每页原加载顺序。`public/assets/` 是当前图片、图标、站标等静态资源，`public/` 保存 RSS、站点地图、robots 与安装清单。
+- `assets/` 仅保留仍由应用与维护脚本读取的 16 份内容数据与纯逻辑文件（`*-data.js`、`site-snapshot.js`、`video-*.js` 与两份 `*-core.js`）。迁移前的旧静态版本文件已从主干清理，如需回溯可通过历史提交 `b059dda` 及既有版本 tag 恢复。
 - 个人信息在 `assets/site-data.js`，作品在 `assets/projects-data.js`，文章在 `assets/articles-data.js`，房间／工具在 `assets/house-data.js`，近况／版本记录在 `assets/workbench-data.js`。新增页面还需在 `src/pages/registry.js` 登记。
 
 ## 构建与发布
@@ -40,7 +40,7 @@ npm run preview
 
 `npm run build` 在本机已有已校验优化器产物时会一并复制；没有产物时只构建主站并明确提示。**完整正式发布请使用 `npm run build:optimizer` 和 `npm run build:pages`**；后者缺少优化器产物会失败，避免漏掉已上线的子站。优化器的源码准备方式见下面 1.7.2 记录。
 
-推送至 `main` 后，GitHub Actions 使用锁文件安装主站依赖，检查 JavaScript 与提示词数据，再构建固定版本优化器和主站，通过 Chromium 浏览器回归后将 `dist/` 上传到 Pages。任一步骤失败都会阻止发布。构建不上传源码、依赖、本机截图、历史材料或密钥。只有 Actions 的部署步骤成功才代表线上已更新。
+推送至 `main` 后，GitHub Actions 使用锁文件安装主站依赖（带 npm、Playwright Chromium 与按脚本哈希缓存的优化器产物），检查 JavaScript、TypeScript 与提示词数据，构建并校验优化器和主站，通过 Chromium 浏览器回归后将 `dist/` 上传到 Pages。任一步骤失败都会阻止发布。构建不上传源码、依赖、本机截图、历史材料或密钥。只有 Actions 的部署步骤成功才代表线上已更新。
 
 ## 验证
 

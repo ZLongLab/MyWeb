@@ -298,6 +298,14 @@ export default function initialize(scope) {
       href: "video-prompts.html",
       body: "Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿",
     });
+    addEntry({
+      id: "page:christmas",
+      type: "页面",
+      title: "圣诞夜 · 圣诞特辑",
+      summary: "转动粒子圣诞树，点亮盘旋的光带，换一串喜欢的灯。",
+      href: "christmas.html",
+      body: "圣诞 圣诞树 圣诞夜 特辑 飘雪 粒子 彩蛋 christmas",
+    });
     [
       {
         id: "page:workbench:now",

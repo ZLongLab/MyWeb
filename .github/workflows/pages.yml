@@ -20,6 +20,7 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: '24.22.1'
+          cache: 'npm'
       - name: Install React and Vite dependencies
         run: npm ci --ignore-scripts
       - name: Check JavaScript and React rules
@@ -28,27 +29,49 @@ jobs:
         run: npm run typecheck
       - name: Check local prompt data rules
         run: npm run check
+      - name: Restore built Prompt Optimizer cache
+        id: optimizer-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            .tmp/optimizer-build.json
+            .tmp/optimizer-public-*
+          key: optimizer-${{ runner.os }}-node24.22.1-${{ hashFiles('scripts/optimizer-source.json', 'scripts/build-optimizer.mjs', 'scripts/optimizer-appearance.mjs', 'scripts/optimizer-appearance.css', 'scripts/optimizer-theme.ts', 'scripts/optimizer-files.mjs') }}
       - name: Checkout pinned Prompt Optimizer source
+        if: steps.optimizer-cache.outputs.cache-hit != 'true'
         uses: actions/checkout@v6
         with:
           repository: linshenkx/prompt-optimizer
           ref: fe72bb1f6e6ff970658b67b75dc630ff1adcfc55
           path: .tmp/prompt-optimizer-source
           persist-credentials: false
-      - uses: pnpm/action-setup@v4
+      - if: steps.optimizer-cache.outputs.cache-hit != 'true'
+        uses: pnpm/action-setup@v4
         with:
           version: '10.6.1'
           run_install: false
       - name: Install optimizer web dependencies
+        if: steps.optimizer-cache.outputs.cache-hit != 'true'
         working-directory: .tmp/prompt-optimizer-source
         run: pnpm --filter '@prompt-optimizer/web...' install --frozen-lockfile --ignore-scripts
       - name: Build optimizer without preset model credentials
+        if: steps.optimizer-cache.outputs.cache-hit != 'true'
         run: node scripts/build-optimizer.mjs
       - name: Prepare runtime files only
         id: build
         run: node scripts/build-pages.mjs --site-url=https://zlonglab.github.io/MyWeb/
+      - name: Restore Playwright Chromium cache
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Install browser for release checks
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
+      - name: Install Chromium system dependencies
+        if: steps.playwright-cache.outputs.cache-hit == 'true'
+        run: npx playwright install-deps chromium
       - name: Check browser behavior before publishing
         run: npm run test:e2e
       - uses: actions/upload-pages-artifact@v4

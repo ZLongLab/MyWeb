@@ -16,17 +16,36 @@ const managedComponents = /\/src\/(?:components\/(?:ProjectCard|ProjectCollectio
 const refreshComponents = /\/src\/components\/(?:ProjectCard|ProjectCollection|ToolShortcut|SiteMark|image-tools\/(?:ImageToolsSettings|ImageToolsQueue))\.jsx$/;
 const compilerPreset = reactCompilerPreset({ compilationMode: 'annotation', target: '19' });
 compilerPreset.rolldown.filter.id = { include: managedComponents, exclude: /node_modules/ };
+// Stylesheets imported via Vite JS/HTML modules are already bundled with content
+// hashes; keep them out of public/assets so they are never duplicated or precached twice.
+const bundledStyles = new Set([
+  "react-shell.css",
+  "home-gallery.css",
+  "gallery-system.css",
+  "journal-gallery.css",
+  "projects-bento.css",
+  "christmas.css",
+]);
 async function syncStyles() {
-  // Serve each stylesheet in its original order; bundling these together changes
+  // Serve each static stylesheet in its original order; bundling these together changes
   // the cascade on projects, notes and the workbench. src/styles is canonical.
-  await fs.mkdir(path.join(root, "public/assets"), { recursive: true });
-  for (const file of await fs.readdir(path.join(root, "src/styles"))) {
-    if (file.endsWith(".css") && file !== "react-shell.css") {
-      await fs.copyFile(
-        path.join(root, "src/styles", file),
-        path.join(root, "public/assets", file),
-      );
+  const targetDir = path.join(root, "public/assets");
+  await fs.mkdir(targetDir, { recursive: true });
+  const active = new Set(
+    (await fs.readdir(path.join(root, "src/styles"))).filter(
+      (file) => file.endsWith(".css") && !bundledStyles.has(file),
+    ),
+  );
+  for (const existing of await fs.readdir(targetDir)) {
+    if (existing.endsWith(".css") && !active.has(existing)) {
+      await fs.rm(path.join(targetDir, existing), { force: true });
     }
+  }
+  for (const file of active) {
+    await fs.copyFile(
+      path.join(root, "src/styles", file),
+      path.join(targetDir, file),
+    );
   }
 }
 const pages = (await fs.readdir(root)).filter((file) =>
@@ -55,7 +74,7 @@ function siteFiles() {
         if (
           path.dirname(file) === path.join(root, "src/styles") &&
           file.endsWith(".css") &&
-          path.basename(file) !== "react-shell.css"
+          !bundledStyles.has(path.basename(file))
         ) {
           await syncStyles();
           server.ws.send({ type: "full-reload" });

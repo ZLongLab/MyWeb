@@ -20,8 +20,9 @@ for (const file of pages) {
   if (!title || !description) throw Error('Missing existing metadata in ' + file);
   const metadata = generated[file] || { title, description, url: base + file, type: file === 'article.html' ? 'article' : 'website' };
   if (metadata.title !== title || metadata.description !== description) differences.push({ file, html: { title, description }, generator: metadata });
-  const properties = { 'og:title': metadata.title, 'og:description': metadata.description, 'og:type': metadata.type, 'og:url': metadata.url, 'og:image': image };
-  const twitter = { 'twitter:card': 'summary_large_image', 'twitter:title': metadata.title, 'twitter:description': metadata.description, 'twitter:url': metadata.url, 'twitter:image': image };
+  const pageImage = metadata.image && metadata.image.startsWith(base) ? metadata.image : image;
+  const properties = { 'og:title': metadata.title, 'og:description': metadata.description, 'og:type': metadata.type, 'og:url': metadata.url, 'og:image': pageImage };
+  const twitter = { 'twitter:card': 'summary_large_image', 'twitter:title': metadata.title, 'twitter:description': metadata.description, 'twitter:url': metadata.url, 'twitter:image': pageImage };
   const lines = Object.entries(properties).map(([key, value]) => '  <meta property="' + key + '" content="' + escape(value) + '">').concat(Object.entries(twitter).map(([key, value]) => '  <meta name="' + key + '" content="' + escape(value) + '">'));
   if (file === 'article.html' || file === 'articles.html') lines.push('  <link rel="alternate" type="application/rss+xml" title="有间小站" href="feed.xml">');
   const block = '  <!-- discovery:start -->\n' + lines.join('\n') + '\n  <!-- discovery:end -->\n';
