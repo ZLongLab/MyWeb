@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071812">
-  <meta name="description" content="有间小站的圣诞夜。转动粒子圣诞树，点亮盘旋的光带，换一串喜欢的灯。">
+  <meta name="description" content="有间小站的圣诞夜。转动粒子圣诞树，点亮盘旋的光带，换一串喜欢的灯，听一曲八音盒，或保存专属圣诞贺卡。">
   <title>圣诞夜 · 有间小站</title>
   <!-- discovery:start -->
   <meta property="og:title" content="圣诞夜 · 有间小站">
@@ -42,14 +42,14 @@
         <span style="--x: 8%; --y: 87%; --size: 6px; --delay: -2s"></span>
       </div>
       <div class="scene">
-        <canvas class="tree-lights" role="img" aria-label="可旋转的粒子圣诞树" aria-describedby="rotation-hint"></canvas>
-        <span class="rotation-hint" id="rotation-hint" hidden>拖动旋转<span class="sr-only">，也可使用左右方向键</span></span>
+        <canvas class="tree-lights" role="img" aria-label="可旋转的粒子圣诞树，轻点树身可点亮或绽放星屑" aria-describedby="rotation-hint"></canvas>
+        <span class="rotation-hint" id="rotation-hint" hidden>拖动旋转 · 轻点星屑<span class="sr-only">，也可使用左右方向键</span></span>
       </div>
       <canvas class="snow" aria-hidden="true"></canvas>
       <div class="frame" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 
       <div class="greeting">
-        <p class="date"><span aria-hidden="true"></span> 12 月 25 日 · 圣诞节</p>
+        <p class="date"><span aria-hidden="true"></span> <span class="date-text">12 月 25 日 · 圣诞节</span></p>
         <h1 lang="en"><span>Merry</span> <em>Christmas</em></h1>
         <p class="wish">愿这个冬天，<br>每一个小小的愿望，都有一束光。</p>
         <button class="light-switch" type="button" aria-controls="christmas" hidden>
@@ -63,11 +63,57 @@
           <button class="color" type="button" data-select="ice" aria-label="冰蓝" title="冰蓝" aria-pressed="false"></button>
           <button class="color" type="button" data-select="rose" aria-label="玫瑰" title="玫瑰" aria-pressed="false"></button>
         </div>
-        <button class="snow-switch" type="button" aria-pressed="false">
+        <span class="controls-sep" aria-hidden="true"></span>
+        <button class="snow-switch control-pill" type="button" aria-pressed="false">
           <span aria-hidden="true">❄</span> 飘雪
+        </button>
+        <button class="music-switch control-pill" type="button" aria-pressed="false" title="播放或暂停八音盒《平安夜》">
+          <span aria-hidden="true">♪</span> 音乐
+        </button>
+        <button class="card-trigger control-pill" type="button" aria-haspopup="dialog" aria-controls="card-dialog">
+          <span aria-hidden="true">✦</span> 贺卡
         </button>
       </div>
     </main>
+
+    <dialog class="card-dialog" id="card-dialog" aria-labelledby="card-dialog-title">
+      <div class="card-dialog-shell">
+        <div class="card-dialog-head">
+          <div>
+            <p class="card-dialog-kicker">本地合成 · 1600×960 高清 PNG</p>
+            <h2 id="card-dialog-title">保存你的专属圣诞贺卡</h2>
+          </div>
+          <button class="card-close" id="card-close" type="button" aria-label="关闭贺卡窗口">×</button>
+        </div>
+
+        <div class="card-preview-frame">
+          <canvas class="card-preview" width="1600" height="960" aria-label="圣诞贺卡实时预览"></canvas>
+        </div>
+
+        <div class="card-presets" role="group" aria-label="快捷祝福语">
+          <button class="card-preset" type="button" data-wish-preset="愿这个冬天，\n每一个小小的愿望，都有一束光。">冬夜星光</button>
+          <button class="card-preset" type="button" data-wish-preset="平安夜的雪轻轻落下，\n愿你岁岁平安，事事顺遂。">平安顺遂</button>
+          <button class="card-preset" type="button" data-wish-preset="这一年辛苦了，\n愿新岁如树顶星光，温暖明亮。">岁末温暖</button>
+        </div>
+
+        <div class="card-fields">
+          <label class="card-field">
+            <span>祝福语</span>
+            <textarea id="card-wish-input" rows="2" maxlength="64">愿这个冬天，
+每一个小小的愿望，都有一束光。</textarea>
+          </label>
+          <label class="card-field">
+            <span>署名（可选）</span>
+            <input id="card-sign-input" type="text" maxlength="24" placeholder="例如：来自有间小站 / 你的名字">
+          </label>
+        </div>
+
+        <div class="card-dialog-actions">
+          <span class="card-tip">会保留当前灯色、角度与飘雪状态</span>
+          <button class="card-download" id="card-download" type="button">下载高清贺卡 PNG</button>
+        </div>
+      </div>
+    </dialog>
   </div>
 </body>
 </html>

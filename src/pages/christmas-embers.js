@@ -3,13 +3,13 @@ export const CAMERA_DEPTH = 1 / .39;
 const TAU = Math.PI * 2;
 const CELL = 48;
 const COLOR_FRAMES = 48;
-const POOL_SIZE = 420;
+const POOL_SIZE = 480;
 const COLOR_TIMES = [0, .32, .60, .87, 1];
 
 const emberColors = {
   gold: ["#fff8da", "#f4d198", "#f2763d", "#4fae91", "#143f34"],
-  ice: ["#fff9e7", "#f7dbab", "#ee865d", "#a7dcff", "#5889b7"],
-  rose: ["#fff5df", "#f6cdab", "#f06a57", "#83c3ad", "#284c43"],
+  ice: ["#ffffff", "#dff6ff", "#7ac9ff", "#539ad8", "#17375c"],
+  rose: ["#fff6fa", "#ffd4e4", "#f588b3", "#d89d86", "#392235"],
 };
 
 export function smoothstep(from, to, x) {
@@ -164,6 +164,21 @@ export class EmberTrail {
     this.carry = 0;
   }
 
+  burst(x, y, z, amount = 30) {
+    for (let i = 0; i < amount && this.count < this.pool.length; i++) {
+      const seed = (Math.random() * 0x100000000) >>> 0;
+      const p = this.pool[this.count++];
+      initializeEmber(p, seed, x, y, z);
+      const theta = sample(seed, 10) * TAU;
+      const lift = .14 + .28 * sample(seed, 11);
+      p.lifespan = .95 + 1.15 * sample(seed, 12);
+      p.size = .006 + .026 * sample(seed, 13) ** 2.4;
+      p.vx = Math.cos(theta) * lift;
+      p.vy = -.08 - .24 * sample(seed, 14);
+      p.vz = Math.sin(theta) * lift * .75;
+    }
+  }
+
   update(elapsed, time, ribbon, progress, cosine, sine, lit) {
     const dt = Math.min(elapsed, .05);
     const drag = Math.exp(-1.65 * dt);
@@ -178,13 +193,13 @@ export class EmberTrail {
       }
     }
 
-    if (!lit) return;
+    if (!lit || progress <= .01) return;
     const lightingUp = progress < 1;
-    this.carry += dt * (lightingUp ? 215 : 164);
+    this.carry += dt * (lightingUp ? 210 : 158);
     const spawn = Math.floor(this.carry);
     this.carry -= spawn;
     for (let i = 0; i < spawn && this.count < this.pool.length; i++) {
-      const seed = Math.random() * 0x100000000 >>> 0;
+      const seed = (Math.random() * 0x100000000) >>> 0;
       const head = lightingUp ? progress : (time * .27) % 1;
       const nearHead = sample(seed, 8) < (lightingUp ? .80 : .46);
       const location = nearHead

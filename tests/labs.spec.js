@@ -107,3 +107,60 @@ test("Focus Lab timer, Web Audio presets, and article TOC & share link work clea
   expect(errors).toEqual([]);
   expect(external).toEqual([]);
 });
+
+test("Christmas tree countdown, tap-to-light, music box, and greeting card PNG export work cleanly", async ({
+  page,
+}) => {
+  const errors = [];
+  const external = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  page.on("request", (request) => {
+    if (
+      /^https?:/.test(request.url()) &&
+      new URL(request.url()).hostname !== "127.0.0.1"
+    ) {
+      external.push(request.url());
+    }
+  });
+
+  await page.goto("christmas.html");
+  await expect(page.locator("audio")).toHaveCount(0);
+  await expect(page.locator(".date-text")).toContainText("12 月");
+
+  // Direct tap on the tree canvas silhouette lights the tree.
+  const box = await page.locator(".tree-lights").boundingBox();
+  await page.mouse.click(box.x + box.width * 0.63, box.y + box.height * 0.5);
+  await expect(page.locator("#christmas")).toHaveAttribute("data-lit", "true");
+  await expect(page.getByRole("button", { name: "调暗树灯" })).toBeVisible();
+
+  // Switch theme to ice and toggle Web Audio music box.
+  await page.getByRole("button", { name: "冰蓝" }).click();
+  await expect(page.locator("#christmas")).toHaveAttribute("data-color", "ice");
+
+  const musicBtn = page.getByRole("button", { name: "音乐" });
+  await expect(musicBtn).toHaveAttribute("aria-pressed", "false");
+  await musicBtn.click();
+  await expect(musicBtn).toHaveAttribute("aria-pressed", "true");
+  await musicBtn.click();
+  await expect(musicBtn).toHaveAttribute("aria-pressed", "false");
+
+  // Open greeting card modal, apply preset + signature, and download PNG.
+  await page.getByRole("button", { name: "贺卡" }).click();
+  await expect(page.locator("#card-dialog")).toBeVisible();
+  await page.getByRole("button", { name: "平安顺遂" }).click();
+  await expect(page.locator(".wish")).toContainText("平安夜的雪轻轻落下");
+  await page.locator("#card-sign-input").fill("ZL");
+
+  const downloadPromise = page.waitForEvent("download");
+  await page.locator("#card-download").click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe("christmas-card-ice.png");
+  const bytes = fs.readFileSync(await download.path());
+  expect(bytes.subarray(1, 4).toString()).toBe("PNG");
+
+  await page.locator("#card-close").click();
+  await expect(page.locator("#card-dialog")).not.toBeVisible();
+
+  expect(errors).toEqual([]);
+  expect(external).toEqual([]);
+});
