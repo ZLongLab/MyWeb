@@ -246,7 +246,7 @@ html[data-theme] body[data-page] .gallery-button.gallery-button-ghost:hover {
 }
 .gallery-tools-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
 }
 .gallery-tool-card {
@@ -285,6 +285,18 @@ html body[data-page] .gallery-tool-card[data-tool-tone="plum"] {
   border-color: rgba(104, 83, 148, 0.15);
   --tool-accent: #5a4682;
   --tool-soft: #e7def4;
+}
+html body[data-page] .gallery-tool-card[data-tool-tone="sage"] {
+  background: radial-gradient(circle at top left, #eaf4f2, rgba(255, 255, 255, 0.92) 70%);
+  border-color: rgba(48, 108, 101, 0.15);
+  --tool-accent: #2c625b;
+  --tool-soft: #dceee9;
+}
+html body[data-page] .gallery-tool-card[data-tool-tone="rose"] {
+  background: radial-gradient(circle at top left, #f9efef, rgba(255, 255, 255, 0.92) 70%);
+  border-color: rgba(158, 92, 101, 0.15);
+  --tool-accent: #824952;
+  --tool-soft: #f2dfe1;
 }
 .gallery-tool-head {
   display: flex;

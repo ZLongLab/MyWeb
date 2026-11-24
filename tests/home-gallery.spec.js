@@ -22,7 +22,7 @@ for (const width of [1440, 390]) {
       "true",
     );
     await expect(page.locator(".product-glass-card")).toHaveCount(2);
-    await expect(page.locator(".gallery-tool-card")).toHaveCount(4);
+    await expect(page.locator(".gallery-tool-card")).toHaveCount(6);
     await expect(page.locator(".christmas-spotlight")).toHaveAttribute(
       "href",
       "christmas.html",
@@ -38,10 +38,13 @@ for (const width of [1440, 390]) {
         .slice(0, 26)
         .reduce((count, week) => count + week.days.length, 0),
     );
+    const expectedTotal = await page.evaluate(() =>
+      String(window.SITE_SNAPSHOT.github.total),
+    );
     await expect(page.locator(".gallery-heatmap rect")).toHaveCount(
       expectedDays,
     );
-    await expect(page.locator(".gallery-metrics")).toContainText("53");
+    await expect(page.locator(".gallery-metrics")).toContainText(expectedTotal);
     await page.locator('.idea-card a[aria-label="视频灵感"]').hover();
     await expect(page.locator(".idea-card line.is-connected")).toHaveCount(3);
     await expect(

@@ -5,7 +5,7 @@ const base = 'https://zlonglab.github.io/MyWeb/';
 const recordOption = process.argv.find(arg => arg.startsWith('--record-dir='));
 const recordDir = recordOption ? recordOption.slice(13) : 'docs/discovery-1.8';
 if (!/^docs\/[a-z0-9][a-z0-9.-]*$/.test(recordDir) || recordDir.includes('..')) throw Error('Record directory must be one named directory under docs/.');
-const image = base + 'assets/images/recallai-preview-960.webp';
+const image = base + 'assets/images/site-og-card.png';
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 const decode = value => value.replaceAll('&amp;', '&').replaceAll('&quot;', '"').replaceAll('&#39;', "'").replaceAll('&lt;', '<').replaceAll('&gt;', '>');
 const generated = JSON.parse(await fs.readFile(new URL('.tmp/discovery/og-metadata.json', root), 'utf8'));

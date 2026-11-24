@@ -50,6 +50,32 @@ function VideoShortcut() {
   );
 }
 
+function FrameStudioShortcut() {
+  return (
+    <ToolShortcut
+      eyebrow="本地工具 / FRAME STUDIO"
+      href="frame-studio.html"
+      label="打开画框工坊 →"
+      offset={0}
+    >
+      {"拖入或粘贴截图，套上圆角玻璃画框与渐变底色，高清导出不上传。"}
+    </ToolShortcut>
+  );
+}
+
+function FocusLabShortcut() {
+  return (
+    <ToolShortcut
+      eyebrow="小实验室 / FOCUS LAB"
+      href="focus-lab.html"
+      label="打开专注白噪音钟 →"
+      offset={0}
+    >
+      {"Web Audio 实时合成细雨、壁炉与松林微风，搭配番茄钟与本地记录。"}
+    </ToolShortcut>
+  );
+}
+
 function WorkbenchHero() {
   return (
     <header className="workbench-hero">
@@ -305,9 +331,11 @@ export default function WorkbenchPage() {
         {"\n    "}
         <section className="workbench-tool-grid" aria-label="站内工具快捷入口">
           <ImageToolsShortcut />
+          <FrameStudioShortcut />
           <ImageShortcut />
-          <OptimizerShortcut />
           <VideoShortcut />
+          <OptimizerShortcut />
+          <FocusLabShortcut />
         </section>
         {"\n\n    "}
         <Appearance />

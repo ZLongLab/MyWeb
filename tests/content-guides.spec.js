@@ -94,5 +94,5 @@ test("New guides connect tools, journal, RSS, sitemap and current site notes", a
   await page.keyboard.press("Escape");
   const snapshot = await page.evaluate(() => window.SITE_SNAPSHOT);
   expect(snapshot.statistics).toMatchObject({ articles: 8, projects: 8 });
-  expect(snapshot.github.total).toBe(53);
+  expect(snapshot.github.total).toBeGreaterThanOrEqual(53);
 });

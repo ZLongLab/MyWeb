@@ -22,10 +22,16 @@ try {
   if (projectWindow.SITE_PROJECTS.some(p => p.id === 'image-tools')) paths.push('image-tools.html');
   if (projectWindow.SITE_PROJECTS.some(p => p.id === 'video-prompts')) paths.push('video-prompts.html');
   const hasChristmas = await access(new URL('christmas.html', root)).then(() => true, () => false);
+  const hasFrameStudio = await access(new URL('frame-studio.html', root)).then(() => true, () => false);
+  const hasFocusLab = await access(new URL('focus-lab.html', root)).then(() => true, () => false);
+  if (hasFrameStudio) paths.push('frame-studio.html');
+  if (hasFocusLab) paths.push('focus-lab.html');
   if (hasChristmas) paths.push('christmas.html');
   const sitemap = '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + paths.map(p => '<url><loc>' + escape(url(p)) + '</loc></url>').join('') + '</urlset>\n';
   const og = Object.fromEntries(houseWindow.SITE_HOUSE.rooms.map(r => [r.href, { title: r.name + ' · 有间小站', description: r.description, url: url(r.href), type: 'website' }]));
   og['about.html'] = { title: '关于 ZL · 有间小站', description: '计算机学生，记录实用工具与把想法做出来的过程。', url: url('about.html'), type: 'website' };
+  if (hasFrameStudio) og['frame-studio.html'] = { title: '画框工坊 · 截图美化器 · 有间小站', description: '拖入或 Ctrl+V 粘贴截图，一键套上画廊渐变背景、圆角玻璃画框与柔和阴影并高清导出；全程本地处理，不上传图片。', url: url('frame-studio.html'), type: 'website' };
+  if (hasFocusLab) og['focus-lab.html'] = { title: '专注时钟 · 白噪音实验室 · 有间小站', description: '纯浏览器 Web Audio 实时合成窗外细雨、冬夜壁炉与松林微风白噪音，搭配极简专注番茄钟与本地专注记录；零音频下载、离线可用。', url: url('focus-lab.html'), type: 'website' };
   if (hasChristmas) og['christmas.html'] = { title: '圣诞夜 · 有间小站', description: '转动粒子圣诞树，点亮盘旋的光带，换一串喜欢的灯。', url: url('christmas.html'), type: 'website', image: url('assets/images/christmas-snow-forest.webp') };
   for (const article of articles) og['article.html?id=' + article.id] = { title: article.title + ' · 有间小站', description: article.summary, url: url('article.html?id=' + encodeURIComponent(article.id)), type: 'article' };
   for (const project of projectWindow.SITE_PROJECTS) og['project.html?id=' + project.id] = { title: project.title + ' · 有间小站', description: project.summary, url: url('project.html?id=' + encodeURIComponent(project.id)), type: 'website' };

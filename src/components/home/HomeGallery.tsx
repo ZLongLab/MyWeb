@@ -14,6 +14,14 @@ const ONLINE_TOOLS = [
     desc: "本地批量压缩与格式转换，不上传原图。",
   },
   {
+    href: "frame-studio.html",
+    title: "画框工坊",
+    badge: "Ctrl+V 即用",
+    icon: "▣",
+    tone: "sage",
+    desc: "粘贴作品截图，一键套上画廊底色与圆角阴影。",
+  },
+  {
     href: "image-prompts.html",
     title: "图片灵感室",
     badge: "20 个起点",
@@ -36,6 +44,14 @@ const ONLINE_TOOLS = [
     icon: "✦",
     tone: "plum",
     desc: "接入自己的模型，对比并精修提示词。",
+  },
+  {
+    href: "focus-lab.html",
+    title: "专注白噪音",
+    badge: "Web Audio",
+    icon: "◌",
+    tone: "rose",
+    desc: "实时合成细雨、壁炉与微风，配极简番茄钟。",
   },
 ] as const;
 

@@ -25,6 +25,8 @@ const bundledStyles = new Set([
   "journal-gallery.css",
   "projects-bento.css",
   "christmas.css",
+  "frame-studio.css",
+  "focus-lab.css",
 ]);
 async function syncStyles() {
   // Serve each static stylesheet in its original order; bundling these together changes

@@ -48,16 +48,30 @@ function ArticleContent() {
         <p className="reading-summary" id="article-summary"></p>
       </header>
       {"\n      "}
-      <div className="reading-body" id="article-body"></div>
+      <div className="reading-layout">
+        <div className="reading-body" id="article-body"></div>
+        <aside className="reading-toc-aside" id="article-toc-wrap" hidden={true}>
+          <nav className="reading-toc" id="article-toc" aria-label="文章目录"></nav>
+        </aside>
+      </div>
       {"\n      "}
       <div id="article-garden-references"></div>
       {"\n      "}
       <div className="reading-end">
         <p>{"感谢你读到这里。"}</p>
-        <a className="text-link" href="articles.html" data-article-list-link="">
-          {"返回文章列表 "}
-          <span aria-hidden="true">{"→"}</span>
-        </a>
+        <div className="reading-end-actions">
+          <button
+            type="button"
+            className="reading-share-button"
+            id="article-copy-link"
+          >
+            {"复制本文链接"}
+          </button>
+          <a className="text-link" href="articles.html" data-article-list-link="">
+            {"返回文章列表 "}
+            <span aria-hidden="true">{"→"}</span>
+          </a>
+        </div>
       </div>
       {"\n      "}
       <section className="related-section" aria-labelledby="related-heading">

@@ -4,6 +4,16 @@ export const pages = {
     page: "image-tools",
     room: "workbench",
   },
+  "frame-studio.html": {
+    load: () => import("./FrameStudioPage.jsx"),
+    page: "frame-studio",
+    room: "workbench",
+  },
+  "focus-lab.html": {
+    load: () => import("./FocusLabPage.jsx"),
+    page: "focus-lab",
+    room: "workbench",
+  },
   "404.html": {
     load: () => import("./NotFoundPage.jsx"),
     page: "notfound",

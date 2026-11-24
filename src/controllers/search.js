@@ -306,6 +306,22 @@ export default function initialize(scope) {
       href: "christmas.html",
       body: "圣诞 圣诞树 圣诞夜 特辑 飘雪 粒子 彩蛋 christmas",
     });
+    addEntry({
+      id: "page:frame-studio",
+      type: "页面",
+      title: "画框工坊 · 截图美化器",
+      summary: "拖入或 Ctrl+V 粘贴截图，一键套上画廊背景、圆角窗口与投影后高清导出。",
+      href: "frame-studio.html",
+      body: "画框 截图 美化 套壳 阴影 背景 粘贴 导出 PNG WebP frame studio",
+    });
+    addEntry({
+      id: "page:focus-lab",
+      type: "页面",
+      title: "专注时钟 · 白噪音实验室",
+      summary: "纯 Web Audio 实时合成细雨、壁炉与松林微风，搭配极简番茄钟与本地统计。",
+      href: "focus-lab.html",
+      body: "专注 番茄钟 计时器 白噪音 雨声 壁炉 风声 实验室 focus pomodoro audio",
+    });
     [
       {
         id: "page:workbench:now",

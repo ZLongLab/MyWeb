@@ -495,12 +495,20 @@ export default function initialize(scope) {
       var summary = document.getElementById("article-summary");
       if (summary) summary.textContent = article.summary;
       var body = document.getElementById("article-body");
+      var tocWrap = document.getElementById("article-toc-wrap");
+      var tocNav = document.getElementById("article-toc");
       if (body) {
         body.replaceChildren();
-        article.sections.forEach(function (section) {
+        var tocItems = [];
+        article.sections.forEach(function (section, idx) {
           var block = createElement("section", "article-body-section");
-          if (section.heading)
-            block.appendChild(createElement("h2", "", section.heading));
+          if (section.heading) {
+            var headingId = "article-section-" + (idx + 1);
+            var h2 = createElement("h2", "", section.heading);
+            h2.id = headingId;
+            block.appendChild(h2);
+            tocItems.push({ id: headingId, label: section.heading, node: h2 });
+          }
           (section.paragraphs || []).forEach(function (paragraph) {
             block.appendChild(createElement("p", "", paragraph));
           });
@@ -511,8 +519,91 @@ export default function initialize(scope) {
             });
             block.appendChild(bullets);
           }
+          if (section.code && typeof section.code === "string") {
+            var codeWrap = createElement("div", "article-code-block");
+            var copyCode = createElement("button", "article-code-copy", "复制代码");
+            copyCode.type = "button";
+            var pre = createElement("pre");
+            pre.appendChild(createElement("code", "", section.code));
+            scope.listen(copyCode, "click", function () {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(section.code).then(function () {
+                  copyCode.textContent = "已复制";
+                  if (window.SITE_FEEDBACK) window.SITE_FEEDBACK.show("代码已复制。");
+                  scope.timeout(function () { copyCode.textContent = "复制代码"; }, 1800);
+                }, function () {});
+              }
+            });
+            codeWrap.append(copyCode, pre);
+            block.appendChild(codeWrap);
+          }
           body.appendChild(block);
         });
+        if (tocWrap && tocNav) {
+          tocNav.replaceChildren();
+          if (tocItems.length >= 2) {
+            tocWrap.hidden = false;
+            tocNav.appendChild(createElement("p", "reading-toc-title", "目录"));
+            var tocList = createElement("ol");
+            var tocLinks = tocItems.map(function (item) {
+              var li = createElement("li");
+              var link = createElement("a", "", item.label);
+              link.href = "#" + item.id;
+              li.appendChild(link);
+              tocList.appendChild(li);
+              return { id: item.id, link: link };
+            });
+            tocNav.appendChild(tocList);
+            function setActiveToc(activeId) {
+              tocLinks.forEach(function (entry) {
+                var active = entry.id === activeId;
+                entry.link.classList.toggle("is-active", active);
+                if (active) entry.link.setAttribute("aria-current", "location");
+                else entry.link.removeAttribute("aria-current");
+              });
+            }
+            setActiveToc(tocItems[0].id);
+            if (typeof IntersectionObserver === "function") {
+              var observer = scope.observer(
+                function (entries) {
+                  entries.forEach(function (entry) {
+                    if (entry.isIntersecting) setActiveToc(entry.target.id);
+                  });
+                },
+                { rootMargin: "-15% 0px -70% 0px", threshold: 0 },
+              );
+              tocItems.forEach(function (item) {
+                observer.observe(item.node);
+              });
+            }
+          } else {
+            tocWrap.hidden = true;
+          }
+        }
+        var shareBtn = document.getElementById("article-copy-link");
+        if (shareBtn) {
+          scope.listen(shareBtn, "click", function () {
+            var shareUrl = window.location.href;
+            function announce(ok) {
+              var msg = ok ? "已复制文章链接。" : "复制不可用，请从地址栏复制。";
+              shareBtn.textContent = ok ? "链接已复制 ✓" : "复制本文链接";
+              if (window.SITE_FEEDBACK) window.SITE_FEEDBACK.show(msg);
+              if (ok) {
+                scope.timeout(function () {
+                  shareBtn.textContent = "复制本文链接";
+                }, 2000);
+              }
+            }
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(shareUrl).then(
+                function () { announce(true); },
+                function () { announce(false); },
+              );
+            } else {
+              announce(false);
+            }
+          });
+        }
         var relatedProject = (
           Array.isArray(window.SITE_PROJECTS) ? window.SITE_PROJECTS : []
         ).find(function (entry) {
