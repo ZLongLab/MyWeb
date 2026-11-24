@@ -1,4 +1,5 @@
 import ToolShortcut from "../components/ToolShortcut.jsx";
+import LocalDataVault from "../components/LocalDataVault.jsx";
 function ImageToolsShortcut() {
   return (
     <ToolShortcut
@@ -99,6 +100,10 @@ function WorkbenchHero() {
       </p>
       {"\n      "}
       <nav className="workbench-index" aria-label="工作台内容">
+        <a href="#vault">
+          {"本地数据保险箱 "}
+          <span aria-hidden="true">{"↓"}</span>
+        </a>
         <a href="#now">
           {"当前近况 "}
           <span aria-hidden="true">{"↓"}</span>
@@ -337,6 +342,8 @@ export default function WorkbenchPage() {
           <OptimizerShortcut />
           <FocusLabShortcut />
         </section>
+        {"\n\n    "}
+        <LocalDataVault />
         {"\n\n    "}
         <Appearance />
         {"\n\n    "}

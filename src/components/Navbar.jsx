@@ -14,7 +14,16 @@ export default function Navbar({ page }) {
         ? "projects"
         : page === "article"
           ? "articles"
-          : page;
+          : [
+                "workbench",
+                "image-tools",
+                "image-prompts",
+                "video-prompts",
+                "frame-studio",
+                "focus-lab",
+              ].includes(page)
+            ? "workbench"
+            : page;
   useEffect(() => {
     const close = () => setOpen(false);
     const escape = (event) => {
@@ -81,6 +90,7 @@ export default function Navbar({ page }) {
               ["index", "首页"],
               ["projects", "作品"],
               ["articles", "文章"],
+              ["workbench", "工具箱"],
               ["about", "关于"],
             ].map(([slug, label]) => (
               <a

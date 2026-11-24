@@ -251,3 +251,36 @@
     transition: none;
   }
 }
+
+.focus-custom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--morning-muted);
+}
+.focus-custom-row input {
+  width: 68px;
+  min-height: 34px;
+  padding: 0 8px;
+  border-radius: 10px;
+  border: 1px solid var(--morning-line);
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  font: 12px var(--mono);
+  color: var(--morning-ink);
+}
+.focus-custom-row button {
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 99px;
+  border: 1px solid rgba(67, 97, 83, 0.25);
+  background: var(--morning-soft);
+  color: var(--morning-accent);
+  font-size: 12px;
+  cursor: pointer;
+}
+.focus-custom-row button:hover {
+  filter: brightness(0.97);
+}

@@ -63,21 +63,39 @@ export default function initialize(scope) {
         );
         doing.append(li);
       });
-    renderLife(
-      document.getElementById("now-reading"),
-      life.reading,
-      "还没有公开的在读记录。",
-    );
-    renderLife(
-      document.getElementById("now-listening"),
-      life.listening,
-      "还没有公开的在听记录。",
-    );
+    var nowReadingEl = document.getElementById("now-reading");
+    if (nowReadingEl) {
+      if (Array.isArray(life.reading) && life.reading.length) {
+        renderLife(nowReadingEl, life.reading, "还没有公开的在读记录。");
+      } else {
+        var readingPanel = nowReadingEl.closest(".room-panel");
+        if (readingPanel) readingPanel.hidden = true;
+      }
+    }
+    var nowListeningEl = document.getElementById("now-listening");
+    if (nowListeningEl) {
+      if (Array.isArray(life.listening) && life.listening.length) {
+        renderLife(nowListeningEl, life.listening, "还没有公开的在听记录。");
+      } else {
+        var listeningPanel = nowListeningEl.closest(".room-panel");
+        if (listeningPanel) listeningPanel.hidden = true;
+      }
+    }
     var notDoing = document.getElementById("now-not-doing");
-    if (notDoing)
+    if (notDoing) {
       (house.notDoing || []).forEach(function (text) {
         notDoing.append(el("li", "", text));
       });
+      var hasReading = Array.isArray(life.reading) && life.reading.length > 0;
+      var hasListening =
+        Array.isArray(life.listening) && life.listening.length > 0;
+      var notDoingPanel = notDoing.closest(".room-panel");
+      if (notDoingPanel && !hasReading && !hasListening) {
+        notDoingPanel.classList.add("room-panel-full");
+        var kicker = notDoingPanel.querySelector(".room-kicker");
+        if (kicker) kicker.textContent = "02 / NOT NOW";
+      }
+    }
     var software = document.getElementById("uses-software");
     if (software)
       ((house.tools || {}).software || []).forEach(function (item) {
@@ -92,11 +110,10 @@ export default function initialize(scope) {
     var hardware = document.getElementById("uses-hardware");
     if (hardware) {
       var devices = (house.tools || {}).hardware || [];
-      if (!devices.length)
-        empty(
-          hardware,
-          "设备型号和外设尚未记录。这里等真实内容，不填推荐清单。",
-        );
+      if (!devices.length) {
+        var hwSection = hardware.closest(".room-section");
+        if (hwSection) hwSection.hidden = true;
+      }
       devices.forEach(function (item) {
         var li = el("li");
         li.append(el("h3", "", item.title), el("p", "", item.reason));
@@ -104,21 +121,31 @@ export default function initialize(scope) {
       });
     }
     var defaults = document.getElementById("uses-defaults");
-    if (defaults)
-      ((house.tools || {}).defaults || []).forEach(function (item) {
-        var row = el("div");
-        row.append(
-          el("dt", "", item.title),
-          el(
-            "dd",
-            "",
-            typeof item.value === "string" && item.value.trim()
-              ? item.value.trim()
-              : "先留着，等想好了再填",
-          ),
-        );
-        defaults.append(row);
+    if (defaults) {
+      var defaultItems = (house.tools || {}).defaults || [];
+      var hasAnyDefault = defaultItems.some(function (item) {
+        return typeof item.value === "string" && item.value.trim().length > 0;
       });
+      if (!hasAnyDefault) {
+        var defSection = defaults.closest(".room-section");
+        if (defSection) defSection.hidden = true;
+      } else {
+        defaultItems.forEach(function (item) {
+          var row = el("div");
+          row.append(
+            el("dt", "", item.title),
+            el(
+              "dd",
+              "",
+              typeof item.value === "string" && item.value.trim()
+                ? item.value.trim()
+                : "待补充",
+            ),
+          );
+          defaults.append(row);
+        });
+      }
+    }
     ["reading", "listening", "watching"].forEach(function (key) {
       renderLife(
         document.getElementById("life-" + key),
@@ -187,11 +214,15 @@ export default function initialize(scope) {
         target.append(li);
       });
     }
-    resourceList(
-      document.getElementById("links-friends"),
-      house.friends,
-      "友链等慢慢认识以后再写。这里不把设计参考当成朋友关系。",
-    );
+    var friendsList = document.getElementById("links-friends");
+    if (friendsList) {
+      if (Array.isArray(house.friends) && house.friends.length) {
+        resourceList(friendsList, house.friends, "");
+      } else {
+        var friendsSection = friendsList.closest(".room-section");
+        if (friendsSection) friendsSection.hidden = true;
+      }
+    }
     resourceList(
       document.getElementById("links-resources"),
       house.resources,
@@ -251,6 +282,21 @@ export default function initialize(scope) {
     document.querySelectorAll("[data-room-updated]").forEach(function (node) {
       node.textContent = desk.updated || house.updated;
       node.setAttribute("datetime", desk.updated || house.updated);
+    });
+    // Keep numbered room section kickers contiguous when optional empty sections are hidden.
+    var visibleSections = Array.from(
+      document.querySelectorAll(".room-page .room-section"),
+    ).filter(function (section) {
+      return !section.hidden;
+    });
+    visibleSections.forEach(function (section, index) {
+      var kicker = section.querySelector(".room-section-head .room-kicker");
+      if (kicker && /^\d{2}\s*\//.test(kicker.textContent)) {
+        kicker.textContent = kicker.textContent.replace(
+          /^\d{2}/,
+          String(index + 1).padStart(2, "0"),
+        );
+      }
     });
   })();
 }

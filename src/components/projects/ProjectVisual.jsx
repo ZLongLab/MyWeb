@@ -257,6 +257,70 @@ function FloorplanVisual() {
   );
 }
 
+function FrameVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface frame-mini">
+        <div className="mini-bar">
+          <span>画框预览</span>
+          <span className="mini-pill">PNG · WebP</span>
+        </div>
+        <div className="frame-mini-stage">
+          <div className="frame-mini-window">
+            <div className="frame-mini-dots">
+              <i />
+              <i />
+              <i />
+            </div>
+            <div className="frame-mini-lines">
+              <span />
+              <span />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FocusVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface focus-mini">
+        <div className="mini-bar">
+          <span>25:00 专注</span>
+          <span className="mini-mono">WEB AUDIO</span>
+        </div>
+        <div className="focus-mini-pills">
+          <span className="is-mint">☂ 细雨</span>
+          <span className="is-warm">✦ 壁炉</span>
+          <span className="is-mist">〰 微风</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ChristmasVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface xmas-mini">
+        <div className="mini-bar">
+          <span>冬夜粒子树</span>
+          <span className="mini-pill">❄ 三层飘雪</span>
+        </div>
+        <div className="xmas-mini-row">
+          <span className="xmas-star">✦</span>
+          <div className="xmas-mini-tags">
+            <span>暖金 · 冰蓝 · 玫瑰</span>
+            <b>♪ 八音盒 · 贺卡 PNG</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ProjectVisual({ project }) {
   if (project.id === "image-tools") return <ConversionVisual />;
   if (project.id === "image-prompts") return <InspirationVisual />;
@@ -265,5 +329,8 @@ export default function ProjectVisual({ project }) {
   if (project.id === "recallai") return <RecallVisual />;
   if (project.id === "document-assistant") return <ArchiveVisual />;
   if (project.id === "folia-android") return <AudioVisual />;
+  if (project.id === "frame-studio") return <FrameVisual />;
+  if (project.id === "focus-lab") return <FocusVisual />;
+  if (project.id === "christmas") return <ChristmasVisual />;
   return <FloorplanVisual />;
 }

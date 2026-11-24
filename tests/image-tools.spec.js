@@ -145,6 +145,16 @@ test('An invalid image does not block subsequent jobs, and completed files can a
   await page.getByRole('button', { name: '全部下载', exact: true }).click();
   await expect.poll(() => downloads.length).toBe(2);
   expect(downloads).toEqual(['one-02.webp', 'two-03.webp']);
+  const zipEvent = page.waitForEvent('download');
+  await page.getByRole('button', { name: '打包 ZIP', exact: true }).click();
+  const zipDownload = await zipEvent;
+  expect(zipDownload.suggestedFilename()).toMatch(/^image-workshop-\d{4}-\d{2}-\d{2}\.zip$/);
+  const zipBytes = fs.readFileSync(await zipDownload.path());
+  expect(zipBytes.subarray(0, 4)).toEqual(Buffer.from([0x50, 0x4b, 0x03, 0x04]));
+  await page.locator('.image-tools-compare-btn').first().click();
+  await expect(page.locator('.image-compare-dialog')).toBeVisible();
+  await page.locator('.image-compare-close').click();
+  await expect(page.locator('.image-compare-dialog')).not.toBeVisible();
   await page.getByRole('button', { name: '清空列表' }).click();
   await expect(page.locator('.image-tools-item')).toHaveCount(0);
 });

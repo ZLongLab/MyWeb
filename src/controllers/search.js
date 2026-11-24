@@ -400,7 +400,7 @@ export default function initialize(scope) {
       id: "command:theme",
       type: "命令",
       title: "切换纸色 / 夜色",
-      summary: "在暖纸与夜色之间切换，记住你的选择。",
+      summary: "切换站点主题标记（当前主站统一采用晨光瓷白外观）。",
       body: "主题 浅色 深色 明亮 黑暗 白天 晚上 theme dark light",
       action: function () {
         if (
@@ -567,7 +567,7 @@ export default function initialize(scope) {
     input.maxLength = 100;
     input.autocomplete = "off";
     input.spellcheck = false;
-    input.placeholder = "搜索作品、文章，或试试“主题”“四季”";
+    input.placeholder = "搜索作品、文章、工具，或试试“画框”“专注”“四季”";
     input.setAttribute("aria-label", "搜索作品、文章、页面与命令");
     input.setAttribute("aria-controls", "site-search-results");
     searchLabel.appendChild(input);
@@ -719,10 +719,11 @@ export default function initialize(scope) {
           true,
         );
         var commonIds = [
+          "page:frame-studio",
+          "page:focus-lab",
           "page:image-tools",
-          "command:room:now",
-          "command:github",
-          "command:top",
+          "page:christmas",
+          "command:room:workbench",
         ];
         renderGroup(
           "命令",

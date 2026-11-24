@@ -4,7 +4,7 @@ function size(bytes) {
   return `${(bytes / 1024 / 1024).toFixed(2)} MB`;
 }
 
-export default function ImageToolsQueue({ items, downloadLinks }) {
+export default function ImageToolsQueue({ items, downloadLinks, onCompare }) {
   "use memo";
   return (
     <ol className="image-tools-list" aria-label="图片处理队列">
@@ -23,9 +23,19 @@ export default function ImageToolsQueue({ items, downloadLinks }) {
               {item.result && <span className="image-tools-ratio">{change >= 0 ? '减少' : '增加'} {Math.abs(change).toFixed(1)}%</span>}
             </div>
             {item.result ? (
-              <a className="image-tools-download" href={item.result.url} download={item.result.name}
-                ref={node => { if (node) downloadLinks.current.set(item.id, node); else downloadLinks.current.delete(item.id); }}
-                aria-label={`下载 ${item.result.name}`}>下载 <span aria-hidden="true">↓</span></a>
+              <div className="image-tools-item-actions">
+                <button
+                  type="button"
+                  className="image-tools-compare-btn"
+                  onClick={() => onCompare?.(item)}
+                  aria-label={`对比 ${item.file.name} 压缩前后画质`}
+                >
+                  对比
+                </button>
+                <a className="image-tools-download" href={item.result.url} download={item.result.name}
+                  ref={node => { if (node) downloadLinks.current.set(item.id, node); else downloadLinks.current.delete(item.id); }}
+                  aria-label={`下载 ${item.result.name}`}>下载 <span aria-hidden="true">↓</span></a>
+              </div>
             ) : <span className="image-tools-download-placeholder" aria-hidden="true">—</span>}
           </li>
         );

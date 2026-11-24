@@ -59,7 +59,7 @@ for (const theme of ["paper", "night"]) {
     await expect(page.locator(".journal-summary")).toContainText("3 类主题");
     await expect(page.locator(".journal-summary time")).toHaveAttribute(
       "datetime",
-      "2026-11-13",
+      "2026-11-24",
     );
     await expect(page.locator(".journal-feature")).toHaveCount(1);
     await expect(page.locator(".journal-feature .garden-maturity")).toHaveText(

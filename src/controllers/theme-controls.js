@@ -71,7 +71,7 @@ export default function initialize(scope) {
     function applyTheme(theme, persist) {
       var mode = isTheme(theme) ? theme : timeDefault();
       root.dataset.theme = mode;
-      root.style.colorScheme = mode === "night" ? "dark" : "light";
+      root.style.colorScheme = "light";
       updateMeta();
       var night = mode === "night";
       var action = night ? "切换为纸色模式" : "切换为夜色模式";

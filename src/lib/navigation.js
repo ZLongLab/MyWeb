@@ -34,6 +34,9 @@ export function detailHref(section, id, context) {
     "image-tools": "image-tools.html",
     "video-prompts": "video-prompts.html",
     "prompt-optimizer": "prompt-optimizer/",
+    "frame-studio": "frame-studio.html",
+    "focus-lab": "focus-lab.html",
+    christmas: "christmas.html",
   };
   if (section === "projects" && tools[id]) return tools[id];
   const params = new URLSearchParams({ id });

@@ -6,12 +6,14 @@ window.SITE_ARTICLES = [
   {
     id: 'image-workshop-batch-guide',
     graphLabel: '批量图片处理',
-    maturity: 'seed',
+    maturity: 'growing',
+    tended: '2026-11-24',
     title: '用图片工坊完成一次批量压缩',
     category: '开发记录',
     date: '2026-11-13',
     summary: '从选择图片、设置格式与宽度，到检查体积和逐张下载，走完一次本地图片处理流程。',
     tags: ['开发记录', '本地工具'],
+    links: ['video-studio-first-prompt', 'how-this-site-grew'],
     projectId: 'image-tools',
     sections: [
       {
@@ -44,12 +46,14 @@ window.SITE_ARTICLES = [
   {
     id: 'video-studio-first-prompt',
     graphLabel: '视频提示词入门',
-    maturity: 'seed',
+    maturity: 'growing',
+    tended: '2026-11-24',
     title: '视频灵感室从一句想法到分镜提示词',
     category: '开发记录',
     date: '2026-11-13',
     summary: '选平台、选模板、填故事，再整理镜头和结尾，把创作想法保存成可以继续修改的文字草稿。',
     tags: ['开发记录'],
+    links: ['image-workshop-batch-guide'],
     projectId: 'video-prompts',
     sections: [
       {
@@ -82,7 +86,8 @@ window.SITE_ARTICLES = [
   {
     id: 'how-this-site-grew',
     featured: true,
-    maturity: 'seed',
+    maturity: 'evergreen',
+    tended: '2026-11-24',
     title: '这个站是怎么长出来的',
     category: '建站手记',
     date: '2026-10-26',
@@ -113,12 +118,14 @@ window.SITE_ARTICLES = [
   },
   {
     id: 'documentassistant-confirm-before-archive',
-    maturity: 'seed',
+    maturity: 'growing',
+    tended: '2026-11-24',
     title: 'DocumentAssistant：先给出分类建议，再确认归档',
     category: '开发记录',
     date: '2026-10-25',
     summary: '从规则分类、复制归档到备份恢复，整理文档工具为什么需要把最后的确认留给使用者。',
     tags: ['DocumentAssistant', '本地工具', '开发记录'],
+    links: ['recallai-local-search'],
     projectId: 'document-assistant',
     sections: [
       {
@@ -144,12 +151,14 @@ window.SITE_ARTICLES = [
   },
   {
     id: 'recallai-local-search',
-    maturity: 'seed',
+    maturity: 'growing',
+    tended: '2026-11-24',
     title: 'RecallAI：本地检索与收纳的边界',
     category: '开发记录',
     date: '2026-10-25',
     summary: '从关键词检索、离线 OCR 到原位置索引和复制收纳，整理一个本地资料工具的实现取舍。',
     tags: ['RecallAI', '本地工具', '开发记录'],
+    links: ['documentassistant-confirm-before-archive'],
     projectId: 'recallai',
     sections: [
       {
@@ -249,6 +258,7 @@ window.SITE_ARTICLES = [
     readTime: '2 分钟',
     summary: '围绕项目内容、实际使用和上线准备整理下一步，让每次更新都有一个可以着手的地方。',
     tags: ['小站计划'],
+    links: ['how-this-site-grew', 'small-first-version'],
     sections: [
       {
         paragraphs: [

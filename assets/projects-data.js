@@ -113,12 +113,45 @@ window.SITE_PROJECTS = [
     sourceUrl: 'https://github.com/ZLongLab/folia-major'
   },
   {
+    id: 'frame-studio',
+    title: '画框工坊 · 截图与文字卡片',
+    category: '网页工具',
+    summary: '粘贴截图、代码或摘录文字，套上柔和画廊底色、圆角窗口与投影后高清导出。',
+    tags: ['截图美化', '代码卡片', 'Canvas 导出'],
+    keywords: ['画框工坊', '截图', '套壳', '代码图', '引文卡', 'PNG', 'WebP', 'Frame Studio'],
+    status: '已上线 · 本地合成',
+    featured: false,
+    detail: '纯浏览器 Canvas 实时合成工具：支持拖入或 Ctrl+V 粘贴截图，也可以直接切换到文字 / 代码卡片模式，选择背景氛围、画框风格、画幅比例与底部落款，一键导出 PNG、WebP 或直接复制到剪贴板。'
+  },
+  {
+    id: 'focus-lab',
+    title: '专注时钟 · 白噪音实验室',
+    category: '网页工具',
+    summary: '零外部音频文件，用 Web Audio 实时合成细雨、壁炉与松林微风，搭配时间戳校准番茄钟。',
+    tags: ['番茄钟', 'Web Audio', '本地统计'],
+    keywords: ['专注时钟', '白噪音', '番茄钟', '雨声', '壁炉', '风声', 'Focus Lab'],
+    status: '已上线 · 实时合成',
+    featured: false,
+    detail: '结合极简番茄钟与三路 Web Audio 环境音混音台。计时采用目标时间戳校准，切换后台标签页也不会走慢；今日专注轮次与时长仅保存在当前浏览器。'
+  },
+  {
+    id: 'christmas',
+    title: '圣诞夜 · 3D 粒子圣诞树',
+    category: '互动特辑',
+    summary: '可惯性旋转的粒子圣诞树，带三层景深飘雪、六瓣冰晶、八音盒《平安夜》与高清贺卡导出。',
+    tags: ['Canvas 3D', '八音盒', '贺卡导出'],
+    keywords: ['圣诞树', '圣诞夜', '飘雪', '雪花', '八音盒', '贺卡', 'Christmas'],
+    status: '冬日限定 · 互动实验',
+    featured: false,
+    detail: '一页独立的冬夜互动实验：包含 3D 粒子树、枝头落霜、暖金 / 冰蓝 / 玫瑰三色联动、轻点树身星屑涟漪、纯 Web Audio 钢片琴八音盒，以及支持自定义祝福语的 1600×960 高清贺卡合成导出。'
+  },
+  {
     id: 'personal-site',
     title: '有间小站 · 个人网站',
     category: '网站',
     summary: '把已经做过的东西放在一起，也为新的文章、想法和交流留出位置。',
     tags: ['React', 'Vite', 'JavaScript / TypeScript', 'CSS'],
     status: '持续完善',
-    detail: '有间小站使用 React 与 Vite 组织 17 个多页入口，界面代码采用 JavaScript 与 TypeScript，样式使用 CSS。文章、项目与近况维护在本地数据文件中，构建后通过 GitHub Pages 提供静态访问。\n\n站内包括作品与开发记录、图片工坊、图片与视频灵感室，以及浏览器本地便签。当前主站使用暖白纸墨与磨砂微光外观，项目与教程可以沿站内链接继续阅读。'
+    detail: '有间小站使用 React 与 Vite 组织 20 个多页入口，界面代码采用 JavaScript 与 TypeScript，样式使用 CSS。文章、项目与近况维护在本地数据文件中，构建后通过 GitHub Pages 提供静态访问。\n\n站内包括作品与开发记录、图片工坊、画框工坊、图片与视频灵感室、专注白噪音实验室、圣诞夜互动特辑，以及浏览器本地随手便签与统一本地数据保险箱。'
   }
 ];

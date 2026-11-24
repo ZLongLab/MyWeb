@@ -20,6 +20,9 @@ export default function ProjectCard({ project, index, category }) {
           "compact",
           "wide",
           "medium",
+          "third",
+          "third",
+          "third",
           "banner",
         ][index] || "medium"
       }

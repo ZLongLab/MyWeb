@@ -61,6 +61,21 @@ const FRAMES = [
   { id: "clean", label: "纯圆角" },
 ];
 
+const STUDIO_MODES = [
+  { id: "image", label: "图片截图" },
+  { id: "code", label: "代码卡片" },
+  { id: "quote", label: "引文摘录" },
+];
+
+const DEFAULT_CODE = `// Local-first: every render stays in your browser
+export function formatGreeting(name: string) {
+  const hour = new Date().getHours();
+  const mood = hour < 12 ? "晨光正好" : hour < 19 ? "午后静谧" : "晚风轻柔";
+  return \`\${mood}，欢迎来到 \${name}。\`;
+}`;
+
+const DEFAULT_QUOTE = "把想法做出来，也给生活留一点空隙。\n慢一点没关系，把每一件小事做扎实。";
+
 function drawRoundedRect(ctx, x, y, w, h, r) {
   const radius = Math.max(0, Math.min(r, w / 2, h / 2));
   ctx.beginPath();
@@ -116,7 +131,7 @@ function createSampleImage() {
 
   const pills = [
     ["PNG / WebP 导出", "#375e4d", "#d8f2e6"],
-    ["自定义圆角与阴影", "#5b4832", "#f5e3cc"],
+    ["代码 / 引文卡片", "#5b4832", "#f5e3cc"],
     ["Ctrl+V 粘贴即得", "#2d4b5e", "#d8ecf8"],
   ];
   pills.forEach(([label, bg, fg], i) => {
@@ -151,6 +166,153 @@ function createSampleImage() {
   return sample;
 }
 
+function tokenizeCodeLine(line) {
+  if (/^\s*(\/\/|#|--)/.test(line)) return [{ text: line, kind: "comment" }];
+  const tokens = [];
+  const regex =
+    /("(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|`(?:\\.|[^`\\])*`|\b(?:import|export|from|const|let|var|function|return|if|else|for|while|async|await|def|class|try|catch|new|true|false|null|undefined)\b|\b\d+(?:\.\d+)?\b)/g;
+  let last = 0;
+  for (const match of line.matchAll(regex)) {
+    if (match.index > last) {
+      tokens.push({ text: line.slice(last, match.index), kind: "plain" });
+    }
+    const token = match[0];
+    const kind =
+      /^['"`]/.test(token)
+        ? "string"
+        : /^\d/.test(token)
+          ? "number"
+          : "keyword";
+    tokens.push({ text: token, kind });
+    last = match.index + token.length;
+  }
+  if (last < line.length) tokens.push({ text: line.slice(last), kind: "plain" });
+  return tokens.length ? tokens : [{ text: " ", kind: "plain" }];
+}
+
+function createCodeCardSource(codeText, codeTheme) {
+  const lines = (codeText || " ").replace(/\r\n/g, "\n").split("\n").slice(0, 24);
+  const lineH = 38;
+  const padX = 48;
+  const padY = 44;
+  const width = 1040;
+  const height = Math.max(380, padY * 2 + lines.length * lineH);
+  const dark = codeTheme === "dark";
+
+  const surface = document.createElement("canvas");
+  surface.width = width;
+  surface.height = height;
+  const ctx = surface.getContext("2d");
+
+  ctx.fillStyle = dark ? "#14221d" : "#fbfaf7";
+  ctx.fillRect(0, 0, width, height);
+
+  const colors = dark
+    ? {
+        gutter: "rgba(182, 207, 194, 0.36)",
+        plain: "#eef4f0",
+        keyword: "#8bd9b5",
+        string: "#f5d393",
+        number: "#a6d4ff",
+        comment: "#7fa090",
+      }
+    : {
+        gutter: "rgba(56, 78, 68, 0.34)",
+        plain: "#24302b",
+        keyword: "#2b6b52",
+        string: "#9c6334",
+        number: "#30648f",
+        comment: "#7c8c84",
+      };
+
+  ctx.font = '500 22px "Cascadia Code", Consolas, "Courier New", monospace';
+  ctx.textBaseline = "middle";
+
+  lines.forEach((rawLine, index) => {
+    const y = padY + index * lineH + lineH / 2;
+    ctx.fillStyle = colors.gutter;
+    ctx.textAlign = "right";
+    ctx.fillText(String(index + 1).padStart(2, " "), padX + 28, y);
+
+    ctx.textAlign = "left";
+    let x = padX + 54;
+    for (const part of tokenizeCodeLine(rawLine.slice(0, 84))) {
+      ctx.fillStyle = colors[part.kind] || colors.plain;
+      ctx.fillText(part.text, x, y);
+      x += ctx.measureText(part.text).width;
+    }
+  });
+
+  return surface;
+}
+
+function wrapEditorialLines(ctx, text, maxWidth) {
+  const result = [];
+  for (const para of (text || "").replace(/\r\n/g, "\n").split("\n")) {
+    if (!para.trim()) {
+      result.push("");
+      continue;
+    }
+    let current = "";
+    for (const ch of para) {
+      if (ctx.measureText(current + ch).width > maxWidth && current) {
+        result.push(current);
+        current = ch;
+      } else {
+        current += ch;
+      }
+    }
+    if (current) result.push(current);
+  }
+  return result.slice(0, 10);
+}
+
+function createQuoteCardSource(quoteText, authorText) {
+  const width = 1040;
+  const measureCanvas = document.createElement("canvas");
+  const mCtx = measureCanvas.getContext("2d");
+  mCtx.font = '500 38px "Songti SC", "STSong", "Noto Serif SC", Georgia, serif';
+  const lines = wrapEditorialLines(mCtx, quoteText.trim() || DEFAULT_QUOTE, 820);
+  const height = Math.max(460, 240 + lines.length * 64);
+
+  const surface = document.createElement("canvas");
+  surface.width = width;
+  surface.height = height;
+  const ctx = surface.getContext("2d");
+
+  const bg = ctx.createLinearGradient(0, 0, width, height);
+  bg.addColorStop(0, "#fdfcfa");
+  bg.addColorStop(1, "#f4f6f2");
+  ctx.fillStyle = bg;
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.fillStyle = "rgba(67, 97, 83, 0.16)";
+  ctx.font = '400 112px Georgia, serif';
+  ctx.fillText("“", 88, 146);
+
+  ctx.fillStyle = "#222925";
+  ctx.font = '500 38px "Songti SC", "STSong", "Noto Serif SC", Georgia, serif';
+  ctx.textBaseline = "middle";
+  let y = 178;
+  for (const line of lines) {
+    ctx.fillText(line, 110, y);
+    y += 64;
+  }
+
+  ctx.strokeStyle = "rgba(67, 97, 83, 0.24)";
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  ctx.moveTo(110, height - 92);
+  ctx.lineTo(164, height - 92);
+  ctx.stroke();
+
+  ctx.fillStyle = "#52695c";
+  ctx.font = '500 22px "PingFang SC", "Microsoft YaHei", system-ui, sans-serif';
+  ctx.fillText(authorText.trim() || "ZL · 有间小站", 182, height - 92);
+
+  return surface;
+}
+
 function computeCanvasGeometry(srcW, srcH, frameStyle, ratioId, padding, caption) {
   const scaleLimit = Math.min(1, 2200 / Math.max(srcW, srcH));
   const imgW = Math.round(srcW * scaleLimit);
@@ -173,6 +335,7 @@ function computeCanvasGeometry(srcW, srcH, frameStyle, ratioId, padding, caption
 }
 
 export default function FrameStudioPage() {
+  const [studioMode, setStudioMode] = useState("image");
   const [backdropId, setBackdropId] = useState("porcelain");
   const [frameStyle, setFrameStyle] = useState("mac");
   const [ratioId, setRatioId] = useState("auto");
@@ -180,9 +343,14 @@ export default function FrameStudioPage() {
   const [radius, setRadius] = useState(18);
   const [shadow, setShadow] = useState(55);
   const [caption, setCaption] = useState("");
+  const [codeText, setCodeText] = useState(DEFAULT_CODE);
+  const [codeTitle, setCodeTitle] = useState("greeting.ts");
+  const [codeTheme, setCodeTheme] = useState("dark");
+  const [quoteText, setQuoteText] = useState(DEFAULT_QUOTE);
+  const [quoteAuthor, setQuoteAuthor] = useState("ZL · 有间小站");
   const [fileName, setFileName] = useState("示例画布");
   const [dragging, setDragging] = useState(false);
-  const [status, setStatus] = useState("已载入示例画布。拖入图片，或按 Ctrl+V 直接粘贴截图。");
+  const [status, setStatus] = useState("已载入示例画布。拖入图片、按 Ctrl+V 粘贴截图，或切换代码/引文卡片模式。");
   const [sourceSize, setSourceSize] = useState({ width: 1120, height: 680 });
   const [sourceTick, setSourceTick] = useState(0);
 
@@ -190,9 +358,28 @@ export default function FrameStudioPage() {
   const sourceRef = useRef(null);
   const objectUrlRef = useRef(null);
 
+  const activeDimensionsSource =
+    studioMode === "image"
+      ? sourceSize
+      : studioMode === "code"
+        ? {
+            width: 1040,
+            height: Math.max(
+              380,
+              88 + Math.min(24, (codeText || " ").split("\n").length) * 38,
+            ),
+          }
+        : {
+            width: 1040,
+            height: Math.max(
+              460,
+              240 + Math.min(10, Math.max(2, quoteText.split("\n").length + 1)) * 64,
+            ),
+          };
+
   const geometry = computeCanvasGeometry(
-    sourceSize.width,
-    sourceSize.height,
+    activeDimensionsSource.width,
+    activeDimensionsSource.height,
     frameStyle,
     ratioId,
     padding,
@@ -211,6 +398,7 @@ export default function FrameStudioPage() {
       if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
       objectUrlRef.current = url;
       sourceRef.current = img;
+      setStudioMode("image");
       setSourceSize({ width: img.naturalWidth, height: img.naturalHeight });
       setFileName(file.name.replace(/\.[^.]+$/, "") || "screenshot");
       setStatus(`已载入「${file.name}」（${img.naturalWidth} × ${img.naturalHeight}）。`);
@@ -257,7 +445,13 @@ export default function FrameStudioPage() {
     const canvas = canvasRef.current;
     if (!canvas) return;
     if (!sourceRef.current) sourceRef.current = createSampleImage();
-    const source = sourceRef.current;
+
+    const source =
+      studioMode === "code"
+        ? createCodeCardSource(codeText, codeTheme)
+        : studioMode === "quote"
+          ? createQuoteCardSource(quoteText, quoteAuthor)
+          : sourceRef.current;
 
     const { imgW, imgH, barH, frameW, frameH, captionSpace, outW, outH } =
       computeCanvasGeometry(
@@ -287,6 +481,7 @@ export default function FrameStudioPage() {
 
     const frameX = Math.round((outW - frameW) / 2);
     const frameY = Math.round((outH - captionSpace - frameH) / 2);
+    const darkBar = studioMode === "code" && codeTheme === "dark";
 
     ctx.save();
     if (shadow > 0) {
@@ -296,7 +491,7 @@ export default function FrameStudioPage() {
       ctx.shadowBlur = Math.round(shadow * 0.95);
       ctx.shadowOffsetY = Math.round(shadow * 0.38);
     }
-    ctx.fillStyle = frameStyle === "mac" ? "#f4f3ef" : "#ffffff";
+    ctx.fillStyle = darkBar ? "#1a2b25" : frameStyle === "mac" ? "#f4f3ef" : "#ffffff";
     drawRoundedRect(ctx, frameX, frameY, frameW, frameH, radius);
     ctx.fill();
     ctx.restore();
@@ -306,7 +501,7 @@ export default function FrameStudioPage() {
     ctx.clip();
 
     if (frameStyle === "mac") {
-      ctx.fillStyle = "#f2f1ed";
+      ctx.fillStyle = darkBar ? "#1b2c26" : "#f2f1ed";
       ctx.fillRect(frameX, frameY, frameW, barH);
       const dotY = frameY + barH / 2;
       const dotR = Math.max(4.5, barH * 0.16);
@@ -316,7 +511,14 @@ export default function FrameStudioPage() {
         ctx.arc(frameX + 20 + idx * (dotR * 3.1), dotY, dotR, 0, Math.PI * 2);
         ctx.fill();
       });
-      ctx.fillStyle = "rgba(34, 34, 34, 0.06)";
+      if (studioMode === "code" && codeTitle.trim()) {
+        ctx.fillStyle = darkBar ? "rgba(220, 236, 228, 0.7)" : "rgba(52, 66, 58, 0.65)";
+        ctx.font = `500 ${Math.max(13, Math.round(barH * 0.38))}px "Cascadia Code", Consolas, monospace`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(codeTitle.trim(), frameX + frameW / 2, dotY);
+      }
+      ctx.fillStyle = darkBar ? "rgba(255, 255, 255, 0.08)" : "rgba(34, 34, 34, 0.06)";
       ctx.fillRect(frameX, frameY + barH - 1, frameW, 1);
     }
 
@@ -354,21 +556,45 @@ export default function FrameStudioPage() {
       ctx.fillText(caption.trim(), outW / 2, frameY + frameH + captionSpace / 2 + 6);
       ctx.restore();
     }
-  }, [backdropId, frameStyle, ratioId, padding, radius, shadow, caption, sourceTick]);
+  }, [
+    studioMode,
+    backdropId,
+    frameStyle,
+    ratioId,
+    padding,
+    radius,
+    shadow,
+    caption,
+    codeText,
+    codeTitle,
+    codeTheme,
+    quoteText,
+    quoteAuthor,
+    sourceTick,
+  ]);
+
+  function exportStem() {
+    if (studioMode === "code") {
+      return (codeTitle.trim().replace(/\.[^.]+$/, "") || "code-card").replace(/[^\w\u4e00-\u9fa5-]+/g, "-");
+    }
+    if (studioMode === "quote") return "quote-card";
+    return fileName;
+  }
 
   function exportImage(mime, ext) {
     const canvas = canvasRef.current;
     if (!canvas) return;
+    const stem = exportStem();
     canvas.toBlob(
       (blob) => {
         if (!blob) return;
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.download = `${fileName}-framed.${ext}`;
+        link.download = `${stem}-framed.${ext}`;
         link.click();
         setTimeout(() => URL.revokeObjectURL(url), 1000);
-        setStatus(`已导出 ${fileName}-framed.${ext}（${dimensions.width} × ${dimensions.height}）。`);
+        setStatus(`已导出 ${stem}-framed.${ext}（${canvas.width} × ${canvas.height}）。`);
       },
       mime,
       mime === "image/webp" ? 0.92 : undefined,
@@ -386,7 +612,7 @@ export default function FrameStudioPage() {
       try {
         await navigator.clipboard.write([new window.ClipboardItem({ "image/png": blob })]);
         setStatus("已复制高清 PNG 到剪贴板，可直接粘贴使用。");
-        window.SITE_FEEDBACK?.show("高清截图已复制到剪贴板。");
+        window.SITE_FEEDBACK?.show("高清图片已复制到剪贴板。");
       } catch {
         setStatus("复制未获得授权，可以直接点击下载 PNG。");
       }
@@ -399,6 +625,7 @@ export default function FrameStudioPage() {
       objectUrlRef.current = null;
     }
     sourceRef.current = createSampleImage();
+    setStudioMode("image");
     setSourceSize({ width: 1120, height: 680 });
     setFileName("示例画布");
     setSourceTick((tick) => tick + 1);
@@ -413,7 +640,7 @@ export default function FrameStudioPage() {
           画框工坊<span className="title-period">。</span>
         </h1>
         <p className="room-lead">
-          拖入图片，或直接按 <kbd>Ctrl+V</kbd> 粘贴截图，套上轻暖画廊背景、圆角窗口与柔和投影后一键带走。
+          拖入图片或按 <kbd>Ctrl+V</kbd> 粘贴截图，也可以切到代码片段或引文卡片模式，一键套上画廊背景与投影带走。
         </p>
         <p className="image-tools-local">纯前端 Canvas 实时合成，不上传原图，断网也能正常使用。</p>
       </header>
@@ -438,27 +665,46 @@ export default function FrameStudioPage() {
           }}
         >
           <div className="frame-stage-top">
-            <span className="frame-stage-meta">
-              {dimensions.width} × {dimensions.height} px
-            </span>
+            <div className="frame-mode-tabs" role="group" aria-label="画框内容类型">
+              {STUDIO_MODES.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  aria-pressed={studioMode === item.id}
+                  onClick={() => {
+                    setStudioMode(item.id);
+                    setStatus(`已切换至「${item.label}」模式。`);
+                  }}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
             <div className="frame-stage-picks">
-              <label className="frame-pick-btn" htmlFor="frame-file-input">
-                选择图片
-              </label>
-              <input
-                id="frame-file-input"
-                type="file"
-                accept="image/*"
-                className="visually-hidden"
-                onChange={(event) => {
-                  const file = event.target.files?.[0];
-                  if (file) loadImageFile(file);
-                  event.target.value = "";
-                }}
-              />
-              <button type="button" className="frame-reset-btn" onClick={resetSample}>
-                示例图
-              </button>
+              <span className="frame-stage-meta">
+                {dimensions.width} × {dimensions.height} px
+              </span>
+              {studioMode === "image" && (
+                <>
+                  <label className="frame-pick-btn" htmlFor="frame-file-input">
+                    选择图片
+                  </label>
+                  <input
+                    id="frame-file-input"
+                    type="file"
+                    accept="image/*"
+                    className="visually-hidden"
+                    onChange={(event) => {
+                      const file = event.target.files?.[0];
+                      if (file) loadImageFile(file);
+                      event.target.value = "";
+                    }}
+                  />
+                  <button type="button" className="frame-reset-btn" onClick={resetSample}>
+                    示例图
+                  </button>
+                </>
+              )}
             </div>
           </div>
 
@@ -469,9 +715,77 @@ export default function FrameStudioPage() {
             <canvas
               ref={canvasRef}
               className="frame-preview-canvas"
-              aria-label="美化后的截图预览"
+              aria-label="美化后的画框预览"
             />
           </div>
+
+          {studioMode === "code" && (
+            <div className="frame-inline-editor">
+              <div className="frame-inline-row">
+                <label>
+                  <span>文件名</span>
+                  <input
+                    type="text"
+                    maxLength={40}
+                    value={codeTitle}
+                    onChange={(event) => setCodeTitle(event.target.value)}
+                    placeholder="greeting.ts"
+                  />
+                </label>
+                <div className="frame-pills" role="group" aria-label="代码底色">
+                  <button
+                    type="button"
+                    aria-pressed={codeTheme === "dark"}
+                    onClick={() => setCodeTheme("dark")}
+                  >
+                    深松代码底
+                  </button>
+                  <button
+                    type="button"
+                    aria-pressed={codeTheme === "light"}
+                    onClick={() => setCodeTheme("light")}
+                  >
+                    浅纸代码底
+                  </button>
+                </div>
+              </div>
+              <label>
+                <span>代码片段（最多 24 行）</span>
+                <textarea
+                  id="frame-code-input"
+                  rows={6}
+                  value={codeText}
+                  onChange={(event) => setCodeText(event.target.value)}
+                  spellCheck={false}
+                />
+              </label>
+            </div>
+          )}
+
+          {studioMode === "quote" && (
+            <div className="frame-inline-editor">
+              <label>
+                <span>摘录正文</span>
+                <textarea
+                  id="frame-quote-input"
+                  rows={4}
+                  maxLength={240}
+                  value={quoteText}
+                  onChange={(event) => setQuoteText(event.target.value)}
+                />
+              </label>
+              <label>
+                <span>出处或署名</span>
+                <input
+                  id="frame-quote-author"
+                  type="text"
+                  maxLength={40}
+                  value={quoteAuthor}
+                  onChange={(event) => setQuoteAuthor(event.target.value)}
+                />
+              </label>
+            </div>
+          )}
 
           <p className="frame-studio-status" role="status" aria-live="polite">
             {status}

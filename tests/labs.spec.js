@@ -164,3 +164,85 @@ test("Christmas tree countdown, tap-to-light, music box, and greeting card PNG e
   expect(errors).toEqual([]);
   expect(external).toEqual([]);
 });
+
+test("Site polish: Frame code/quote cards, Focus custom duration, Notes edit/pin/filter, and Workbench Data Vault", async ({
+  page,
+}) => {
+  const errors = [];
+  const external = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  page.on("request", (request) => {
+    if (
+      /^https?:/.test(request.url()) &&
+      new URL(request.url()).hostname !== "127.0.0.1"
+    ) {
+      external.push(request.url());
+    }
+  });
+
+  // Top nav exposes Workbench toolbox and empty rooms stay tidy.
+  await page.goto("uses.html");
+  await expect(page.locator("html")).toHaveAttribute("data-react-ready", "true");
+  await expect(page.locator('#site-nav a[href="workbench.html"]')).toHaveText("工具箱");
+  await expect(page.locator("#uses-hardware")).not.toBeVisible();
+  await expect(page.locator("#uses-defaults")).not.toBeVisible();
+
+  // Frame Studio code card & quote card modes.
+  await page.goto("frame-studio.html");
+  await expect(page.locator("html")).toHaveAttribute("data-react-ready", "true");
+  await page.getByRole("button", { name: "代码卡片" }).click();
+  await expect(page.locator("#frame-code-input")).toBeVisible();
+  await page.getByRole("button", { name: "引文摘录" }).click();
+  await expect(page.locator("#frame-quote-input")).toBeVisible();
+
+  // Focus Lab custom minutes.
+  await page.goto("focus-lab.html");
+  await expect(page.locator("html")).toHaveAttribute("data-react-ready", "true");
+  await page.locator("#focus-custom-minutes").fill("12");
+  await page.getByRole("button", { name: "设为专注" }).click();
+  await expect(page.locator(".focus-clock-digits")).toHaveText("12:00");
+
+  // Guestbook: save without nickname, pin, edit, and filter.
+  await page.goto("guestbook.html");
+  await expect(page.locator("html")).toHaveAttribute("data-react-ready", "true");
+  await page.locator("#guestbook-content").fill("一条不用填名字的快捷灵感");
+  await page.locator("#guestbook-submit").click();
+  await expect(page.locator(".guestbook-entry-name").first()).toHaveText("随手记");
+  await page.locator("[data-pin-message]").first().click();
+  await expect(page.locator(".guestbook-pin-badge")).toHaveText("置顶");
+  await page.locator("[data-edit-message]").first().click();
+  await page.locator(".guestbook-edit-area").fill("修改后的置顶灵感");
+  await page.locator(".guestbook-edit-save").click();
+  await expect(page.locator(".guestbook-entry-content").first()).toHaveText("修改后的置顶灵感");
+  await page.locator("#guestbook-filter").fill("不存在的词");
+  await expect(page.locator(".guestbook-entry")).toHaveCount(0);
+  await page.locator("#guestbook-filter").fill("");
+  await expect(page.locator(".guestbook-entry")).toHaveCount(1);
+
+  // Workbench Local Data Vault exports and restores local vault JSON.
+  await page.goto("workbench.html");
+  await expect(page.locator("html")).toHaveAttribute("data-react-ready", "true");
+  await expect(page.locator("#vault")).toBeVisible();
+  const downloadPromise = page.waitForEvent("download");
+  await page.locator("#vault-export-all").click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toContain("myweb-local-vault-");
+  const vaultJson = JSON.parse(fs.readFileSync(await download.path(), "utf8"));
+  expect(vaultJson.app).toBe("myweb-local-vault");
+  expect(vaultJson.stores.myweb_guestbook_v1.entries).toHaveLength(1);
+
+  await page.evaluate(() => localStorage.removeItem("myweb_guestbook_v1"));
+  await page.locator("#vault-import-file").setInputFiles({
+    name: "vault.json",
+    mimeType: "application/json",
+    buffer: Buffer.from(JSON.stringify(vaultJson)),
+  });
+  await expect(page.locator("#vault-status")).toContainText("已恢复");
+  const restored = await page.evaluate(() =>
+    JSON.parse(localStorage.getItem("myweb_guestbook_v1") || "{}"),
+  );
+  expect(restored.entries).toHaveLength(1);
+
+  expect(errors).toEqual([]);
+  expect(external).toEqual([]);
+});

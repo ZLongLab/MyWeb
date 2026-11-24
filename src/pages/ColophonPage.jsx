@@ -29,7 +29,7 @@ function SiteStructure() {
       <div className="room-section-body">
         <p>
           {
-            "使用 React 与 Vite 组织 17 个多页入口，界面代码采用 JavaScript 与 TypeScript，样式使用 CSS。文章、作品与近况维护在本地数据文件中，构建产物通过 GitHub Pages 提供静态访问。"
+            "使用 React 与 Vite 组织 20 个多页入口，界面代码采用 JavaScript 与 TypeScript，样式使用 CSS。文章、作品与近况维护在本地数据文件中，构建产物通过 GitHub Pages 提供静态访问。"
           }
         </p>
         <p>
@@ -62,7 +62,7 @@ function ColorPalette() {
         </p>
         <p>
           {
-            "主站 17 页统一使用清透暖白瓷底（#FAF9F7）、墨色标题、薄荷与浅杏微光，以及半透明玻璃表面。工作台的季节选择保存在当前浏览器。"
+            "主站各页统一使用清透暖白瓷底（#FAF9F7）、墨色标题、薄荷与浅杏微光，以及半透明玻璃表面。工作台的季节选择保存在当前浏览器。"
           }
         </p>
         <div className="palette-grid" id="colophon-palette"></div>

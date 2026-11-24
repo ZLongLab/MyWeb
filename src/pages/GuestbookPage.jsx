@@ -1,7 +1,6 @@
 function GuestbookIntro() {
   return (
     <section className="guestbook-intro" aria-labelledby="guestbook-title">
-      {"\n      "}
       <div>
         <p className="eyebrow">
           <span className="status-dot" aria-hidden="true"></span>
@@ -11,9 +10,8 @@ function GuestbookIntro() {
           {"灵感草稿箱"}
           <span className="title-period">{"。"}</span>
         </h1>
-        <p>{"记下还没展开的想法，留给下一次动手。"}</p>
+        <p>{"记下还没展开的想法、待办或摘录，支持置顶、原位编辑与筛选。"}</p>
       </div>
-      {"\n\n    "}
     </section>
   );
 }
@@ -23,7 +21,9 @@ function GuestbookScope() {
     <p className="guestbook-scope">
       <span aria-hidden="true">{"◎"}</span>
       <span>
-        {"便签仅保存在当前浏览器，不会发送给站主，也不会跨设备同步。"}
+        {"便签仅保存在当前浏览器，不会发送给站主；可在下方导出 JSON，或前往"}
+        <a href="workbench.html#vault">{"工作台本地数据保险箱"}</a>
+        {"统一备份。"}
       </span>
     </p>
   );
@@ -32,37 +32,43 @@ function GuestbookScope() {
 function GuestbookLayout() {
   return (
     <div className="guestbook-layout">
-      {"\n      "}
       <section className="guestbook-compose" aria-labelledby="compose-heading">
-        {"\n        "}
         <p className="eyebrow section-index">{"01 / LEAVE A NOTE"}</p>
         <h2 id="compose-heading">{"写一张便签。"}</h2>
         <p className="guestbook-compose-description">
-          {"用一个称呼，和一段想留下的话。"}
+          {"直接写下内容就能保存；分类或称呼可以留空，也可以点快捷标签。"}
         </p>
-        {"\n        "}
-        <form id="guestbook-form" novalidate="">
-          {"\n          "}
+        <form id="guestbook-form" noValidate>
           <div className="guestbook-field">
             <label htmlFor="guestbook-name">
-              {"你的称呼 "}
-              <span>{"必填"}</span>
+              {"分类或称呼 "}
+              <span>{"选填 · 默认「随手记」"}</span>
             </label>
             <input
               id="guestbook-name"
               name="nickname"
               type="text"
-              required={true}
-              minLength="1"
               maxLength="30"
               autoComplete="nickname"
+              placeholder="例如：灵感、待办、摘录，或留空"
               aria-describedby="guestbook-name-hint"
             />
+            <div className="guestbook-quick-tags" role="group" aria-label="快捷分类标签">
+              {["灵感", "待办", "摘录", "碎碎念"].map((tag) => (
+                <button
+                  key={tag}
+                  type="button"
+                  className="guestbook-tag-chip"
+                  data-note-tag={tag}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
             <p className="guestbook-field-hint" id="guestbook-name-hint">
-              {"1–30 个字符，可以使用昵称。"}
+              {"1–30 个字符；留空时自动记作「随手记」。"}
             </p>
           </div>
-          {"\n          "}
           <div className="guestbook-field">
             <label htmlFor="guestbook-content">
               {"想留下的话 "}
@@ -85,14 +91,12 @@ function GuestbookLayout() {
               <span id="guestbook-character-count">{"0 / 600"}</span>
             </div>
           </div>
-          {"\n          "}
           <p
             className="guestbook-error"
             id="guestbook-error"
             role="alert"
             hidden={true}
           ></p>
-          {"\n          "}
           <button
             className="button button-primary guestbook-submit"
             id="guestbook-submit"
@@ -102,15 +106,12 @@ function GuestbookLayout() {
             {"保存到本浏览器 "}
             <span aria-hidden="true">{"→"}</span>
           </button>
-          {"\n          "}
           <p className="guestbook-form-note">
             {
-              "最多保留 100 条。清除浏览器的网站数据会同时移除留言，重要内容可以导出一份。"
+              "最多保留 100 条。清除浏览器的网站数据会同时移除便签，重要内容可以导出一份。"
             }
           </p>
-          {"\n        "}
         </form>
-        {"\n        "}
         <p
           className="guestbook-status"
           id="guestbook-status"
@@ -118,12 +119,8 @@ function GuestbookLayout() {
           aria-live="polite"
           aria-atomic="true"
         ></p>
-        {"\n        "}
-        {"\n      "}
       </section>
-      {"\n      "}
       <section className="guestbook-saved" aria-labelledby="saved-heading">
-        {"\n        "}
         <div className="guestbook-saved-heading">
           <div>
             <p className="eyebrow section-index">{"02 / WORDS KEPT HERE"}</p>
@@ -159,24 +156,28 @@ function GuestbookLayout() {
             />
           </div>
         </div>
-        {"\n        "}
         <p className="guestbook-backup-note" id="guestbook-import-note">
           {"导入会合并便签，完全相同的记录自动跳过。"}
         </p>
-        {"\n        "}
-        <p className="guestbook-count" id="guestbook-count">
-          {"正在读取本地便签…"}
-        </p>
-        {"\n        "}
+        <div className="guestbook-toolbar">
+          <p className="guestbook-count" id="guestbook-count">
+            {"正在读取本地便签…"}
+          </p>
+          <input
+            id="guestbook-filter"
+            className="guestbook-filter"
+            type="search"
+            maxLength="60"
+            placeholder="筛选分类或正文…"
+            aria-label="筛选本地便签"
+          />
+        </div>
         <div className="guestbook-empty" id="guestbook-empty" hidden={true}>
           <h3>{"还没有便签。"}</h3>
           <p>{"留一句话，让这一页从你开始。"}</p>
         </div>
-        {"\n        "}
         <div className="guestbook-list" id="guestbook-list"></div>
-        {"\n      "}
       </section>
-      {"\n    "}
     </div>
   );
 }
@@ -185,13 +186,9 @@ export default function GuestbookPage() {
   return (
     <>
       <main className="container" id="main">
-        {"\n    "}
         <GuestbookIntro />
-        {"\n    "}
         <GuestbookScope />
-        {"\n    "}
         <GuestbookLayout />
-        {"\n  "}
       </main>
       <dialog
         className="site-dialog guestbook-delete-dialog"
@@ -199,7 +196,6 @@ export default function GuestbookPage() {
         aria-labelledby="delete-message-title"
         aria-describedby="delete-message-description"
       >
-        {"\n    "}
         <button
           className="dialog-close"
           type="button"
@@ -211,7 +207,7 @@ export default function GuestbookPage() {
         <p className="eyebrow">{"REMOVE THIS NOTE"}</p>
         <h2 id="delete-message-title">{"删除这张便签？"}</h2>
         <p id="delete-message-description">
-          {"这条留言将从当前浏览器移除，删除后无法在此恢复。"}
+          {"这条便签将从当前浏览器移除，删除后无法在此恢复。"}
         </p>
         <p className="guestbook-delete-preview" id="delete-message-preview"></p>
         <p
@@ -237,7 +233,6 @@ export default function GuestbookPage() {
             {"确认删除"}
           </button>
         </div>
-        {"\n  "}
       </dialog>
     </>
   );

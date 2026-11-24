@@ -89,8 +89,9 @@ function createNoiseBuffer(ctx, kind) {
 }
 
 function playBowlChime(ctx) {
-  if (!ctx || ctx.state !== "running") return;
-  const now = ctx.currentTime;
+  if (!ctx) return;
+  if (ctx.state === "suspended") ctx.resume().catch(() => {});
+  const now = ctx.currentTime + 0.02;
   [528, 1056].forEach((freq, idx) => {
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
@@ -107,8 +108,10 @@ function playBowlChime(ctx) {
 
 export default function FocusLabPage() {
   const [modeId, setModeId] = useState("focus-25");
-  const mode = MODES.find((item) => item.id === modeId) || MODES[0];
-  const [secondsLeft, setSecondsLeft] = useState(mode.minutes * 60);
+  const [customMinutes, setCustomMinutes] = useState("30");
+  const [activeMinutes, setActiveMinutes] = useState(25);
+  const [activeKind, setActiveKind] = useState("focus");
+  const [secondsLeft, setSecondsLeft] = useState(25 * 60);
   const [running, setRunning] = useState(false);
   const [task, setTask] = useState("");
   const [volumes, setVolumes] = useState({ rain: 0, fire: 0, wind: 0 });
@@ -116,6 +119,8 @@ export default function FocusLabPage() {
   const [notice, setNotice] = useState("选好专注时长或调开白噪音，开始安静的一段时间。");
 
   const audioRef = useRef(null);
+  const endTimeRef = useRef(0);
+  const completedRef = useRef(false);
   const baseTitleRef = useRef("专注时钟 · 白噪音实验室 · 有间小站");
 
   const ensureAudio = useCallback(() => {
@@ -198,25 +203,29 @@ export default function FocusLabPage() {
       document.title = baseTitleRef.current;
       return;
     }
-    document.title = `${formatClock(secondsLeft)} · ${mode.kind === "focus" ? "专注中" : "休息中"} · 有间小站`;
-  }, [running, secondsLeft, mode.kind]);
+    document.title = `${formatClock(secondsLeft)} · ${activeKind === "focus" ? "专注中" : "休息中"} · 有间小站`;
+  }, [running, secondsLeft, activeKind]);
 
+  // Timestamp-calibrated countdown so background tabs never drift.
   useEffect(() => {
     if (!running) return;
-    const timer = window.setInterval(() => {
-      setSecondsLeft((prev) => {
-        if (prev > 1) return prev - 1;
-        window.clearInterval(timer);
+    completedRef.current = false;
+
+    function syncRemaining() {
+      const remaining = Math.max(0, Math.ceil((endTimeRef.current - Date.now()) / 1000));
+      setSecondsLeft(remaining);
+      if (remaining <= 0 && !completedRef.current) {
+        completedRef.current = true;
         setRunning(false);
         playBowlChime(audioRef.current?.ctx);
-        if (mode.kind === "focus") {
+        if (activeKind === "focus") {
           setStats((current) => {
             const key = todayKey();
             const base = current.date === key ? current : { date: key, sessions: 0, minutes: 0 };
             const next = {
               date: key,
               sessions: base.sessions + 1,
-              minutes: base.minutes + mode.minutes,
+              minutes: base.minutes + activeMinutes,
             };
             try {
               localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
@@ -225,15 +234,23 @@ export default function FocusLabPage() {
             }
             return next;
           });
-          setNotice(`已完成一轮 ${mode.minutes} 分钟专注，喝口水歇一会儿。`);
+          setNotice(`已完成一轮 ${activeMinutes} 分钟专注，喝口水歇一会儿。`);
         } else {
           setNotice("休息结束，准备好开始下一轮专注了。");
         }
-        return 0;
-      });
-    }, 1000);
-    return () => window.clearInterval(timer);
-  }, [running, mode.kind, mode.minutes]);
+      }
+    }
+
+    const timer = window.setInterval(syncRemaining, 250);
+    const onVisible = () => {
+      if (!document.hidden) syncRemaining();
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      window.clearInterval(timer);
+      document.removeEventListener("visibilitychange", onVisible);
+    };
+  }, [running, activeKind, activeMinutes]);
 
   function applyVolumes(nextVolumes) {
     setVolumes(nextVolumes);
@@ -254,19 +271,44 @@ export default function FocusLabPage() {
   function switchMode(nextId) {
     const picked = MODES.find((item) => item.id === nextId) || MODES[0];
     setModeId(picked.id);
+    setActiveMinutes(picked.minutes);
+    setActiveKind(picked.kind);
     setRunning(false);
     setSecondsLeft(picked.minutes * 60);
     setNotice(`已切换至「${picked.label}」。`);
   }
 
-  function toggleTimer() {
-    if (secondsLeft === 0) {
-      setSecondsLeft(mode.minutes * 60);
+  function applyCustomDuration(event) {
+    event.preventDefault();
+    const parsed = Math.round(Number(customMinutes));
+    if (!Number.isFinite(parsed) || parsed < 1 || parsed > 120) {
+      setNotice("自定义时长请输入 1–120 之间的整数分钟。");
+      return;
     }
-    setRunning((prev) => !prev);
+    setModeId("custom");
+    setActiveMinutes(parsed);
+    setActiveKind("focus");
+    setRunning(false);
+    setSecondsLeft(parsed * 60);
+    setNotice(`已设定自定义专注时长：${parsed} 分钟。`);
   }
 
-  const total = mode.minutes * 60;
+  function toggleTimer() {
+    if (running) {
+      const remaining = Math.max(0, Math.ceil((endTimeRef.current - Date.now()) / 1000));
+      setSecondsLeft(remaining);
+      setRunning(false);
+      return;
+    }
+    // Prepare Web Audio context on user gesture so the end chime can play reliably.
+    ensureAudio();
+    const baseSeconds = secondsLeft === 0 ? activeMinutes * 60 : secondsLeft;
+    if (secondsLeft === 0) setSecondsLeft(baseSeconds);
+    endTimeRef.current = Date.now() + baseSeconds * 1000;
+    setRunning(true);
+  }
+
+  const total = activeMinutes * 60;
   const progress = total > 0 ? (total - secondsLeft) / total : 0;
   const radius = 92;
   const circumference = 2 * Math.PI * radius;
@@ -280,7 +322,7 @@ export default function FocusLabPage() {
           专注时钟与白噪音<span className="title-period">。</span>
         </h1>
         <p className="room-lead">
-          不加载任何外部音频文件，用浏览器 Web Audio 实时合成窗外细雨、壁炉暖流与松林微风。
+          不加载任何外部音频文件，用浏览器 Web Audio 实时合成窗外细雨、壁炉暖流与松林微风；计时按时间戳校准，切后台也不漂移。
         </p>
       </header>
 
@@ -299,6 +341,19 @@ export default function FocusLabPage() {
             ))}
           </div>
 
+          <form className="focus-custom-row" onSubmit={applyCustomDuration}>
+            <label htmlFor="focus-custom-minutes">自定义分钟</label>
+            <input
+              id="focus-custom-minutes"
+              type="number"
+              min="1"
+              max="120"
+              value={customMinutes}
+              onChange={(event) => setCustomMinutes(event.target.value)}
+            />
+            <button type="submit">设为专注</button>
+          </form>
+
           <div className="focus-ring-wrap">
             <svg viewBox="0 0 220 220" className="focus-ring-svg" aria-hidden="true">
               <circle cx="110" cy="110" r={radius} className="focus-ring-track" />
@@ -313,7 +368,7 @@ export default function FocusLabPage() {
             </svg>
             <div className="focus-clock-readout">
               <span className="focus-clock-state">
-                {running ? (mode.kind === "focus" ? "专注中" : "休息中") : "已就绪"}
+                {running ? (activeKind === "focus" ? "专注中" : "休息中") : "已就绪"}
               </span>
               <time className="focus-clock-digits">{formatClock(secondsLeft)}</time>
             </div>
@@ -343,7 +398,7 @@ export default function FocusLabPage() {
               className="button"
               onClick={() => {
                 setRunning(false);
-                setSecondsLeft(mode.minutes * 60);
+                setSecondsLeft(activeMinutes * 60);
                 setNotice("计时器已重置。");
               }}
             >
@@ -431,7 +486,7 @@ export default function FocusLabPage() {
             <p>
               喜欢互动小实验？也可以去看看冬日限定的{" "}
               <a href="christmas.html">圣诞夜粒子圣诞树 →</a>，或用{" "}
-              <a href="frame-studio.html">画框工坊 →</a> 给作品截图加上画廊边框。
+              <a href="frame-studio.html">画框工坊 →</a> 给作品截图与代码加上画廊边框。
             </p>
           </aside>
         </section>

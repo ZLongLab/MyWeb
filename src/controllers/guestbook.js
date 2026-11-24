@@ -1,4 +1,4 @@
-// Behavior preserved from the 1.9.0 implementation; initialized by the React lifecycle.
+// Local-only notes controller with optional tags, pinning, inline editing and search.
 export default function initialize(scope) {
   (function () {
     "use strict";
@@ -6,6 +6,7 @@ export default function initialize(scope) {
     var STORAGE_KEY = "myweb_guestbook_v1";
     var MAX_ENTRIES = 100;
     var MAX_STORED_LENGTH = 300000;
+    var DEFAULT_LABEL = "随手记";
 
     function StorageProblem(code, message) {
       this.name = "StorageProblem";
@@ -38,14 +39,28 @@ export default function initialize(scope) {
     }
 
     function validEntry(entry) {
+      if (!entry || typeof entry !== "object" || Array.isArray(entry))
+        return false;
+      var keys = Object.keys(entry);
+      var required = ["id", "nickname", "content", "createdAt"];
+      var allowed = ["id", "nickname", "content", "createdAt", "pinned"];
       if (
-        !exactKeys(entry, ["id", "nickname", "content", "createdAt"]) ||
+        !required.every(function (k) {
+          return Object.prototype.hasOwnProperty.call(entry, k);
+        }) ||
+        !keys.every(function (k) {
+          return allowed.indexOf(k) !== -1;
+        })
+      )
+        return false;
+      if (
         typeof entry.id !== "string" ||
         !/^[a-zA-Z0-9-]{16,80}$/.test(entry.id) ||
         !validText(entry.nickname, 30) ||
         !validText(entry.content, 600) ||
         typeof entry.createdAt !== "string" ||
-        !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(entry.createdAt)
+        !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(entry.createdAt) ||
+        (entry.pinned !== undefined && typeof entry.pinned !== "boolean")
       )
         return false;
       var date = new Date(entry.createdAt);
@@ -98,7 +113,6 @@ export default function initialize(scope) {
 
     function writeEntries(entries) {
       var raw = JSON.stringify({ version: 1, entries: entries });
-      // 每次写入也校验完整结构，格式异常时不触碰已存的数据。
       decodeStored(raw);
       try {
         window.localStorage.setItem(STORAGE_KEY, raw);
@@ -144,6 +158,7 @@ export default function initialize(scope) {
     var nameInput = document.getElementById("guestbook-name");
     var contentInput = document.getElementById("guestbook-content");
     var characterCount = document.getElementById("guestbook-character-count");
+    var filterInput = document.getElementById("guestbook-filter");
     var list = document.getElementById("guestbook-list");
     var count = document.getElementById("guestbook-count");
     var empty = document.getElementById("guestbook-empty");
@@ -157,9 +172,11 @@ export default function initialize(scope) {
     var deletePreview = document.getElementById("delete-message-preview");
     var deleteError = document.getElementById("delete-message-error");
     var confirmDelete = document.getElementById("delete-message-confirm");
+    var tagButtons = form.querySelectorAll("[data-note-tag]");
     var entries = [];
     var storageReady = false;
     var pendingDeleteId = null;
+    var editingId = null;
     var importing = false;
 
     function element(tag, className, text) {
@@ -182,63 +199,135 @@ export default function initialize(scope) {
 
     function renderEntries() {
       list.replaceChildren();
-      empty.hidden = !storageReady || entries.length !== 0;
+      var query = filterInput
+        ? filterInput.value.trim().toLocaleLowerCase()
+        : "";
+      var visible = entries
+        .slice()
+        .sort(function (a, b) {
+          var pinDiff = (b.pinned ? 1 : 0) - (a.pinned ? 1 : 0);
+          return pinDiff || Date.parse(b.createdAt) - Date.parse(a.createdAt);
+        })
+        .filter(function (entry) {
+          if (!query) return true;
+          return (
+            entry.nickname.toLocaleLowerCase().indexOf(query) !== -1 ||
+            entry.content.toLocaleLowerCase().indexOf(query) !== -1
+          );
+        });
+
+      empty.hidden = !storageReady || visible.length !== 0;
+      if (storageReady && entries.length > 0 && visible.length === 0) {
+        empty.querySelector("h3").textContent = "没有匹配的便签。";
+        empty.querySelector("p").textContent = "换个关键词，或者清空筛选看看。";
+      } else {
+        empty.querySelector("h3").textContent = "还没有便签。";
+        empty.querySelector("p").textContent = "留一句话，让这一页从你开始。";
+      }
+
       count.textContent = storageReady
-        ? entries.length + " 条本地便签 / 最多 100 条"
+        ? query
+          ? "匹配 " + visible.length + " / 共 " + entries.length + " 条便签"
+          : entries.length + " 条本地便签 / 最多 100 条"
         : "暂时无法读取本地便签";
       submitButton.disabled = !storageReady;
       exportButton.disabled = !storageReady || entries.length === 0;
       importButton.disabled = !storageReady || importing;
-      entries
-        .slice()
-        .sort(function (a, b) {
-          return Date.parse(b.createdAt) - Date.parse(a.createdAt);
-        })
-        .forEach(function (entry) {
-          var card = element("article", "guestbook-entry");
-          var header = element("div", "guestbook-entry-header");
-          var avatar = element(
-            "span",
-            "guestbook-avatar",
-            Array.from(entry.nickname)[0],
-          );
-          avatar.setAttribute("aria-hidden", "true");
-          header.appendChild(avatar);
-          var info = element("div", "guestbook-entry-info");
-          info.appendChild(
-            element("h3", "guestbook-entry-name", entry.nickname),
-          );
-          var time = element(
-            "time",
-            "guestbook-entry-date",
-            new Date(entry.createdAt).toLocaleString("zh-CN", {
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit",
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: false,
-            }),
-          );
-          time.dateTime = entry.createdAt;
-          info.appendChild(time);
-          header.appendChild(info);
-          var remove = element("button", "guestbook-entry-delete", "删除");
-          remove.type = "button";
-          remove.setAttribute("data-delete-message", entry.id);
-          remove.setAttribute(
-            "aria-label",
-            "删除" + entry.nickname + "的这条本地便签",
-          );
-          remove.setAttribute("aria-haspopup", "dialog");
-          remove.disabled = !storageReady;
-          header.appendChild(remove);
-          card.appendChild(header);
+
+      visible.forEach(function (entry) {
+        var card = element(
+          "article",
+          "guestbook-entry" + (entry.pinned ? " is-pinned" : ""),
+        );
+        var header = element("div", "guestbook-entry-header");
+        var avatar = element(
+          "span",
+          "guestbook-avatar",
+          Array.from(entry.nickname)[0],
+        );
+        avatar.setAttribute("aria-hidden", "true");
+        header.appendChild(avatar);
+        var info = element("div", "guestbook-entry-info");
+        var titleRow = element("div", "guestbook-entry-title-row");
+        titleRow.appendChild(
+          element("h3", "guestbook-entry-name", entry.nickname),
+        );
+        if (entry.pinned)
+          titleRow.appendChild(element("span", "guestbook-pin-badge", "置顶"));
+        info.appendChild(titleRow);
+        var time = element(
+          "time",
+          "guestbook-entry-date",
+          new Date(entry.createdAt).toLocaleString("zh-CN", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: false,
+          }),
+        );
+        time.dateTime = entry.createdAt;
+        info.appendChild(time);
+        header.appendChild(info);
+
+        var actions = element("div", "guestbook-entry-actions");
+        var pin = element(
+          "button",
+          "guestbook-entry-action",
+          entry.pinned ? "取消置顶" : "置顶",
+        );
+        pin.type = "button";
+        pin.setAttribute("data-pin-message", entry.id);
+        pin.disabled = !storageReady;
+        actions.appendChild(pin);
+
+        var edit = element("button", "guestbook-entry-action", "编辑");
+        edit.type = "button";
+        edit.setAttribute("data-edit-message", entry.id);
+        edit.disabled = !storageReady;
+        actions.appendChild(edit);
+
+        var remove = element("button", "guestbook-entry-delete", "删除");
+        remove.type = "button";
+        remove.setAttribute("data-delete-message", entry.id);
+        remove.setAttribute(
+          "aria-label",
+          "删除" + entry.nickname + "的这条本地便签",
+        );
+        remove.setAttribute("aria-haspopup", "dialog");
+        remove.disabled = !storageReady;
+        actions.appendChild(remove);
+        header.appendChild(actions);
+        card.appendChild(header);
+
+        if (editingId === entry.id) {
+          var editForm = element("form", "guestbook-edit-form");
+          editForm.setAttribute("data-save-edit", entry.id);
+          var editArea = element("textarea", "guestbook-edit-area");
+          editArea.rows = 4;
+          editArea.maxLength = 600;
+          editArea.value = entry.content;
+          editArea.setAttribute("aria-label", "编辑便签内容");
+          editForm.appendChild(editArea);
+          var editBar = element("div", "guestbook-edit-actions");
+          var saveBtn = element("button", "guestbook-edit-save", "保存修改");
+          saveBtn.type = "submit";
+          var cancelBtn = element("button", "guestbook-edit-cancel", "取消");
+          cancelBtn.type = "button";
+          cancelBtn.setAttribute("data-cancel-edit", "");
+          editBar.appendChild(cancelBtn);
+          editBar.appendChild(saveBtn);
+          editForm.appendChild(editBar);
+          card.appendChild(editForm);
+        } else {
           card.appendChild(
             element("p", "guestbook-entry-content", entry.content),
           );
-          list.appendChild(card);
-        });
+        }
+
+        list.appendChild(card);
+      });
     }
 
     function handleStorageError(error) {
@@ -272,6 +361,15 @@ export default function initialize(scope) {
       characterCount.textContent = contentInput.value.length + " / 600";
     }
 
+    tagButtons.forEach(function (btn) {
+      scope.listen(btn, "click", function () {
+        nameInput.value = btn.getAttribute("data-note-tag") || "";
+        nameInput.removeAttribute("aria-invalid");
+        if (storageReady) clearError();
+        contentInput.focus();
+      });
+    });
+
     scope.listen(nameInput, "input", function () {
       nameInput.removeAttribute("aria-invalid");
       if (storageReady) clearError();
@@ -281,17 +379,20 @@ export default function initialize(scope) {
       updateCharacterCount();
       if (storageReady) clearError();
     });
+    if (filterInput) {
+      scope.listen(filterInput, "input", renderEntries);
+    }
 
     scope.listen(form, "submit", function (event) {
       event.preventDefault();
       if (!storageReady) return;
       clearError();
-      var nickname = nameInput.value.trim();
+      var nickname = nameInput.value.trim() || DEFAULT_LABEL;
       var content = contentInput.value.trim();
       nameInput.removeAttribute("aria-invalid");
       contentInput.removeAttribute("aria-invalid");
       if (!validText(nickname, 30)) {
-        showError("请填写 1–30 个字符的称呼，不能只输入空格。");
+        showError("分类或称呼最多 30 个字符。");
         nameInput.setAttribute("aria-invalid", "true");
         nameInput.focus();
         return;
@@ -303,7 +404,6 @@ export default function initialize(scope) {
         return;
       }
       try {
-        // 提交前读取最新内容，保留其他同源标签页刚刚写下的便签。
         var latest = readEntries();
         if (latest.length >= MAX_ENTRIES) {
           entries = latest;
@@ -340,8 +440,51 @@ export default function initialize(scope) {
     });
 
     scope.listen(list, "click", function (event) {
+      if (!storageReady) return;
+      var pinBtn = event.target.closest("[data-pin-message]");
+      if (pinBtn) {
+        var pinId = pinBtn.getAttribute("data-pin-message");
+        try {
+          var latest = readEntries();
+          var next = latest.map(function (item) {
+            if (item.id !== pinId) return item;
+            var updated = {
+              id: item.id,
+              nickname: item.nickname,
+              content: item.content,
+              createdAt: item.createdAt,
+            };
+            if (!item.pinned) updated.pinned = true;
+            return updated;
+          });
+          writeEntries(next);
+          entries = next;
+          renderEntries();
+          status.textContent = "已更新置顶状态。";
+        } catch (error) {
+          handleStorageError(error);
+        }
+        return;
+      }
+
+      var editBtn = event.target.closest("[data-edit-message]");
+      if (editBtn) {
+        editingId = editBtn.getAttribute("data-edit-message");
+        renderEntries();
+        var activeArea = list.querySelector(".guestbook-edit-area");
+        if (activeArea) activeArea.focus();
+        return;
+      }
+
+      var cancelBtn = event.target.closest("[data-cancel-edit]");
+      if (cancelBtn) {
+        editingId = null;
+        renderEntries();
+        return;
+      }
+
       var button = event.target.closest("[data-delete-message]");
-      if (!button || !storageReady) return;
+      if (!button) return;
       var entry = entries.find(function (item) {
         return item.id === button.getAttribute("data-delete-message");
       });
@@ -357,6 +500,42 @@ export default function initialize(scope) {
       deleteError.textContent = "";
       deleteError.hidden = true;
       deleteDialog.showModal();
+    });
+
+    scope.listen(list, "submit", function (event) {
+      var editForm = event.target.closest("[data-save-edit]");
+      if (!editForm || !storageReady) return;
+      event.preventDefault();
+      var id = editForm.getAttribute("data-save-edit");
+      var area = editForm.querySelector(".guestbook-edit-area");
+      var nextContent = area ? area.value.trim() : "";
+      if (!validText(nextContent, 600)) {
+        showError("请填写 1–600 个字符的便签内容。");
+        if (area) area.focus();
+        return;
+      }
+      try {
+        var latest = readEntries();
+        var next = latest.map(function (item) {
+          if (item.id !== id) return item;
+          var updated = {
+            id: item.id,
+            nickname: item.nickname,
+            content: nextContent,
+            createdAt: item.createdAt,
+          };
+          if (item.pinned) updated.pinned = true;
+          return updated;
+        });
+        writeEntries(next);
+        entries = next;
+        editingId = null;
+        clearError();
+        renderEntries();
+        status.textContent = "便签修改已保存到当前浏览器。";
+      } catch (error) {
+        handleStorageError(error);
+      }
     });
 
     scope.listen(deleteDialog, "close", function () {
@@ -446,7 +625,6 @@ export default function initialize(scope) {
             "备份格式无效。请选择本站导出的版本 1 JSON 文件，现有便签保持不变。",
           );
         }
-        // Read after the asynchronous file operation, so a recent save is retained.
         var latest = readEntries();
         var known = new Map(
           latest.map(function (entry) {
