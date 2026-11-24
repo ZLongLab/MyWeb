@@ -703,7 +703,7 @@ export default function initialize(scope) {
           true,
         );
         var commonIds = [
-          "command:theme",
+          "page:image-tools",
           "command:room:now",
           "command:github",
           "command:top",

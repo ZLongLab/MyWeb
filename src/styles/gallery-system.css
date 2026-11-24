@@ -1,22 +1,25 @@
-/* Warm paper and frosted light shared by every main-site room. */
+/* Light porcelain-warm paper and frosted glass shared by every main-site room. */
 html:has(body[data-page]) {
   color-scheme: light !important;
-  background: #f8f7f4;
+  background: #faf9f7;
 }
 :root {
-  --morning-bg: #f8f7f4;
+  --morning-bg: #faf9f7;
   --morning-ink: #222222;
   --morning-text: #333333;
   --morning-muted: #4a4a4a;
   --morning-meta: #9ca3af;
-  --morning-accent: #476354;
-  --morning-warm: #9b8b6c;
+  --morning-accent: #436153;
+  --morning-warm: #a69579;
   --morning-slate: #3f6066;
-  --morning-glass: rgba(255, 255, 255, 0.75);
-  --morning-soft: #e6efea;
-  --morning-footer: #f1f0ec;
-  --morning-line: rgba(26, 48, 38, 0.05);
-  --morning-shadow: 0 8px 30px rgba(26, 48, 38, 0.025);
+  --morning-glass: rgba(255, 255, 255, 0.86);
+  --morning-soft: #eaf2ee;
+  --morning-footer: #18241e;
+  --morning-footer-ink: #f2ece0;
+  --morning-footer-muted: #c2cdc5;
+  --morning-footer-accent: #e8c98f;
+  --morning-line: rgba(26, 48, 38, 0.06);
+  --morning-shadow: 0 8px 30px rgba(26, 48, 38, 0.032);
   --gallery-motion: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 html body[data-page] {
@@ -59,11 +62,51 @@ html body[data-page] {
   --radius-window: 16px;
   --shadow-near: var(--morning-shadow);
   color-scheme: light;
-  background: var(--morning-bg) !important;
+  background-color: var(--morning-bg) !important;
+  background-image:
+    radial-gradient(
+      ellipse 52% 28% at 88% 2%,
+      rgba(154, 214, 189, 0.2),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 46% 24% at 8% 14%,
+      rgba(244, 206, 168, 0.19),
+      transparent 74%
+    ),
+    radial-gradient(
+      ellipse 44% 24% at 86% 64%,
+      rgba(182, 208, 232, 0.14),
+      transparent 72%
+    ),
+    radial-gradient(rgba(45, 72, 58, 0.036) 1px, transparent 1px) !important;
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    26px 26px !important;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat !important;
   color: var(--morning-text);
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+html body[data-page="article"] {
+  background-image:
+    radial-gradient(
+      ellipse 50% 24% at 86% 2%,
+      rgba(154, 214, 189, 0.14),
+      transparent 72%
+    ),
+    radial-gradient(
+      ellipse 42% 20% at 10% 12%,
+      rgba(244, 206, 168, 0.13),
+      transparent 74%
+    ) !important;
+  background-size:
+    100% 100%,
+    100% 100% !important;
+  background-repeat: no-repeat, no-repeat !important;
 }
 html body[data-page]::before,
 html body[data-page]::after {
@@ -76,6 +119,7 @@ html[data-theme] body[data-page] :is(h1, h2, h3, h4, h5, h6) {
 }
 html[data-theme] body[data-page] main h1 {
   font-weight: 600;
+  font-style: normal;
 }
 html[data-theme] body[data-page] main :is(h2, h3, h4, h5, h6) {
   font-weight: 500;
@@ -262,6 +306,9 @@ html
   -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--morning-shadow);
 }
+html body[data-page] .room-panel {
+  padding: 24px 26px;
+}
 html
   body[data-page]
   :is(.prompt-card.is-selected, .image-room-card.is-selected) {
@@ -324,35 +371,51 @@ html[data-theme] body[data-page] :is(.prompt-main-action, .image-tools-start) {
   border: 1px solid var(--morning-line);
 }
 html body[data-page] .gallery-footer {
-  background: var(--morning-footer);
-  color: var(--morning-muted);
-  border-color: var(--morning-line);
+  background: linear-gradient(180deg, #1c2a24 0%, #16211c 100%);
+  color: var(--morning-footer-muted);
+  border-top: 1px solid rgba(232, 201, 143, 0.24);
+  margin-top: auto;
 }
 html body[data-page] .gallery-footer-nav a {
   font-size: 12px;
   min-height: 40px;
+  color: var(--morning-footer-muted);
+}
+html body[data-page] .gallery-footer-nav a:hover,
+html body[data-page] .gallery-footer-nav a[aria-current="page"] {
+  color: var(--morning-footer-accent);
+}
+html body[data-page] .footer-thanks {
+  color: var(--morning-footer-muted);
+}
+html body[data-page] .footer-thanks p {
+  color: var(--morning-footer-ink);
 }
 html body[data-page] .footer-thanks a {
   font-size: 11px;
+  color: var(--morning-footer-accent);
+}
+html body[data-page] .footer-thanks a:hover {
+  color: #fff3cf;
 }
 html body[data-page] .gallery-watermark {
-  color: #d3d4cd;
+  color: rgba(242, 236, 224, 0.22);
 }
-html body[data-page] .gallery-footer {
-  margin-top: auto;
+html body[data-page] .gallery-footer a:focus-visible {
+  outline-color: var(--morning-footer-accent);
 }
 html[data-theme] body[data-page] .product-glass-card {
   background: radial-gradient(
     circle at top left,
     #eff6f4,
-    rgba(255, 255, 255, 0.75) 70%
+    rgba(255, 255, 255, 0.84) 70%
   );
 }
 html[data-theme] body[data-page] .product-1 {
   background: radial-gradient(
     circle at top left,
-    #fcf7ee,
-    rgba(255, 255, 255, 0.75) 70%
+    #fbf6f1,
+    rgba(255, 255, 255, 0.84) 70%
   );
 }
 html body[data-page] .room-window-bar {

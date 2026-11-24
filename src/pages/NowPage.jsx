@@ -19,9 +19,9 @@ function RoomHeader() {
 
 function RoomPanels() {
   return (
-    <div className="room-panels">
+    <div className="room-panels room-panels-now">
       {"\n  "}
-      <section className="room-panel">
+      <section className="room-panel room-panel-making">
         <p className="room-kicker">{"01 / MAKING"}</p>
         <h2>{"正在做"}</h2>
         <ul className="room-list" id="now-doing"></ul>

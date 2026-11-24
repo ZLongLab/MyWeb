@@ -16,7 +16,7 @@ for (const theme of ["paper", "night"]) {
     );
     await expect(page.locator("body")).toHaveCSS(
       "background-color",
-      "rgb(248, 247, 244)",
+      "rgb(250, 249, 247)",
     );
     await expect(page.locator("html")).toHaveCSS("color-scheme", "light");
     await expect(page.locator(".journal-summary")).toHaveCSS(

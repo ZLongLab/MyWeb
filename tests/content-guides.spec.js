@@ -75,7 +75,7 @@ test("New guides connect tools, journal, RSS, sitemap and current site notes", a
   await page.goto("colophon.html");
   await expect(page.locator("main")).toContainText("React 与 Vite");
   await expect(
-    page.getByRole("button", { name: "复制暖白色值 #F8F7F4", exact: true }),
+    page.getByRole("button", { name: "复制瓷白色值 #FAF9F7", exact: true }),
   ).toBeVisible();
   await page.goto("now.html");
   await expect(page.locator("#now-doing")).toContainText("使用教程");

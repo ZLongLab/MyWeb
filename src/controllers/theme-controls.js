@@ -15,10 +15,10 @@ export default function initialize(scope) {
       winter: "冬 · 雾蓝",
     };
     var paperColors = {
-      spring: "#f7f8f3",
-      summer: "#faf7f0",
-      autumn: "#faf5ec",
-      winter: "#f5f6f7",
+      spring: "#f9faf8",
+      summer: "#faf9f7",
+      autumn: "#faf9f7",
+      winter: "#f8f9fa",
     };
     var seasonPreference = "auto";
 
@@ -59,44 +59,14 @@ export default function initialize(scope) {
     }
     function updateMeta() {
       var color = document.querySelector('meta[name="theme-color"]');
-      if (color)
-        color.content =
-          root.dataset.theme === "night"
-            ? "#1e2420"
-            : paperColors[root.dataset.season] || "#faf7f2";
+      if (color) color.content = paperColors[root.dataset.season] || "#faf9f7";
     }
 
+    // The main site uses a unified light porcelain-warm palette; omit the legacy
+    // dark-mode toggle from the header so visitors never click an inactive switch.
     var button = navigation && navigation.querySelector(".nav-theme");
-    var shape = null;
-    var label = null;
-    if (navigation && !button) {
-      button = document.createElement("button");
-      button.type = "button";
-      button.className = "nav-theme";
-      var icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      icon.setAttribute("viewBox", "0 0 24 24");
-      icon.setAttribute("width", "18");
-      icon.setAttribute("height", "18");
-      icon.setAttribute("fill", "none");
-      icon.setAttribute("stroke", "currentColor");
-      icon.setAttribute("stroke-width", "1.7");
-      icon.setAttribute("stroke-linecap", "round");
-      icon.setAttribute("stroke-linejoin", "round");
-      icon.setAttribute("aria-hidden", "true");
-      shape = document.createElementNS("http://www.w3.org/2000/svg", "path");
-      icon.appendChild(shape);
-      label = document.createElement("span");
-      label.className = "nav-theme-label";
-      button.append(icon, label);
-      navigation.insertBefore(
-        button,
-        navigation.querySelector(".nav-search") ||
-          navigation.querySelector(".nav-contact"),
-      );
-    } else if (button) {
-      shape = button.querySelector("path");
-      label = button.querySelector(".nav-theme-label");
-    }
+    var shape = button ? button.querySelector("path") : null;
+    var label = button ? button.querySelector(".nav-theme-label") : null;
 
     function applyTheme(theme, persist) {
       var mode = isTheme(theme) ? theme : timeDefault();

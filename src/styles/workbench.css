@@ -9,6 +9,10 @@
 .workbench-page .workbench-index { display: flex; flex-wrap: wrap; gap: 4px 30px; margin-top: 24px; padding-top: 12px; border-top: 1px solid var(--line); }
 .workbench-page .workbench-index a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: var(--c-moss); font-size: 13px; }
 .workbench-page .workbench-index a span { color: var(--c-clay); }
+.workbench-page .workbench-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 36px; }
+.workbench-page .workbench-tool-grid .workbench-tool-teaser { margin: 0 !important; padding: 20px 22px; display: flex; flex-direction: column; gap: 6px; }
+.workbench-page .workbench-tool-grid .workbench-tool-teaser-description { margin: 0; line-height: 1.85; font-size: 13px; color: var(--muted); }
+.workbench-page .workbench-tool-grid .workbench-tool-teaser-description .text-link { display: inline-flex; align-items: center; min-height: 36px; font-weight: 500; color: var(--morning-accent, var(--c-moss)); margin-right: 6px; }
 .workbench-page .workbench-section { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 48px; padding: 38px 0 42px; border-top: 1px solid var(--line); scroll-margin-top: 28px; }
 .workbench-page .workbench-section-index { color: var(--c-clay); font-family: var(--mono), var(--font); font-size: 12px; letter-spacing: .4px; }
 .workbench-page .workbench-section-heading h2 { margin-top: 8px; font-family: var(--font-serif); font-size: 25px; font-weight: 600; line-height: 1.7; }
@@ -47,6 +51,7 @@
 .workbench-page a:focus-visible, .workbench-page .workbench-section:focus-visible { outline: 2px solid var(--c-moss); outline-offset: 4px; }
 @media (max-width: 799px) {
   .workbench-page .workbench-hero { padding: 42px 0 30px; }
+  .workbench-page .workbench-tool-grid { grid-template-columns: minmax(0, 1fr); gap: 12px; margin-bottom: 28px; }
   .workbench-page .workbench-section { grid-template-columns: 170px minmax(0, 1fr); gap: 28px; }
   .workbench-page .workbench-tool-row { grid-template-columns: minmax(0, 1fr); gap: 5px; }
   .workbench-page .workbench-tool-row dd + dd { grid-column: 1; margin-top: 0; }

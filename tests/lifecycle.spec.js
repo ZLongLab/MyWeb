@@ -37,16 +37,15 @@ test("Development entry can unmount and remount without duplicate native integra
       "data-react-ready",
       "true",
     );
-    await expect(page.locator(".nav-theme")).toHaveCount(1);
+    await expect(page.locator(".nav-theme")).toHaveCount(0);
+    await expect(page.locator(".nav-search")).toHaveCount(1);
     await expect(page.locator("#site-search-dialog")).toHaveCount(1);
     await expect(page.locator(".image-viewer")).toHaveCount(1);
     await expect(page.locator(".site-header-sentinel")).toHaveCount(1);
-    const before = await page.locator("html").getAttribute("data-theme");
-    await page.locator(".nav-theme").click();
-    await expect(page.locator("html")).toHaveAttribute(
-      "data-theme",
-      before === "paper" ? "night" : "paper",
-    );
+    await page.locator(".nav-search").click();
+    await expect(page.locator("#site-search-dialog")).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.locator("#site-search-dialog")).not.toBeVisible();
   }
   expect(errors).toEqual([]);
 });

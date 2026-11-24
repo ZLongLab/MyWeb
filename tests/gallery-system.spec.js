@@ -32,12 +32,13 @@ for (const theme of ["paper", "night"]) {
       await expect(page.locator(".gallery-footer")).toHaveCount(1);
       await expect(page.locator("body")).toHaveCSS(
         "background-color",
-        "rgb(248, 247, 244)",
+        "rgb(250, 249, 247)",
       );
       await expect(page.locator("html")).toHaveCSS("color-scheme", "light");
       await expect(page.locator("body")).toHaveCSS("color", "rgb(51, 51, 51)");
       await expect(page.locator("body")).toHaveCSS("font-weight", "400");
       await expect(page.locator("h1:visible")).toHaveCSS("font-weight", "600");
+      await expect(page.locator("h1:visible")).toHaveCSS("font-style", "normal");
       await expect(page.locator("h1:visible")).toHaveCSS(
         "color",
         "rgb(34, 34, 34)",
@@ -81,7 +82,9 @@ for (const theme of ["paper", "night"]) {
           ]
             .filter((node) => {
               if (
-                node.closest("figure,.image-room-art") ||
+                node.closest(
+                  "figure,.image-room-art,.gallery-footer,.christmas-spotlight",
+                ) ||
                 node.querySelector(":scope > img")
               )
                 return false;

@@ -5,7 +5,7 @@ function ImageToolsShortcut() {
       eyebrow="本地工具 / IMAGE WORKSHOP"
       href="image-tools.html"
       label="打开图片工坊 →"
-      offset={20}
+      offset={0}
     >
       多张图片顺序转换 WebP、JPEG、AVIF、PNG，调整尺寸，全程本地处理。
     </ToolShortcut>
@@ -14,10 +14,10 @@ function ImageToolsShortcut() {
 function ImageShortcut() {
   return (
     <ToolShortcut
-      eyebrow="新添的小工具 / IMAGE STUDIO"
+      eyebrow="图片工具 / IMAGE STUDIO"
       href="image-prompts.html"
       label="打开图片灵感室 →"
-      offset={20}
+      offset={0}
     >
       {"20 个图片提示词起点，按风格找灵感，复制与本地收藏。"}
     </ToolShortcut>
@@ -30,7 +30,7 @@ function OptimizerShortcut() {
       eyebrow="开源工具 / PROMPT OPTIMIZER"
       href="prompt-optimizer/"
       label="打开提示词优化器 →"
-      offset={20}
+      offset={0}
     >
       {"优化、测试与收藏；实际使用前在模型管理中配置自己的服务。"}
     </ToolShortcut>
@@ -40,10 +40,10 @@ function OptimizerShortcut() {
 function VideoShortcut() {
   return (
     <ToolShortcut
-      eyebrow="新添的小工具 / VIDEO STUDIO"
+      eyebrow="视频工具 / VIDEO STUDIO"
       href="video-prompts.html"
       label="打开视频灵感室 →"
-      offset={28}
+      offset={0}
     >
       {"选模板、填想法，把下一条视频的提示词留在这里。"}
     </ToolShortcut>
@@ -247,7 +247,7 @@ function Colophon() {
             <dt>{"字体与颜色"}</dt>
             <dd>
               {
-                "标题优先使用本机宋体类衬线字体，正文使用中文无衬线字体。全站采用 #F8F7F4 暖白纸张、#222222 墨色标题和薄荷、香槟微光，玻璃表面使用细线边框。"
+                "标题优先使用本机宋体类衬线字体，正文使用中文无衬线字体。全站采用 #FAF9F7 晨光瓷白、#222222 墨色标题和薄荷、浅杏微光，玻璃表面使用细线边框。"
               }
               <span className="workbench-palette" aria-hidden="true">
                 <i></i>
@@ -301,15 +301,14 @@ export default function WorkbenchPage() {
   return (
     <>
       <main className="container workbench-page" id="main">
-        <ImageToolsShortcut />
-        {"\n    "}
-        <ImageShortcut />
-        {"\n    "}
-        <OptimizerShortcut />
-        {"\n    "}
-        <VideoShortcut />
-        {"\n    "}
         <WorkbenchHero />
+        {"\n    "}
+        <section className="workbench-tool-grid" aria-label="站内工具快捷入口">
+          <ImageToolsShortcut />
+          <ImageShortcut />
+          <OptimizerShortcut />
+          <VideoShortcut />
+        </section>
         {"\n\n    "}
         <Appearance />
         {"\n\n    "}

@@ -186,8 +186,7 @@ test("Search keyboard commands and theme persistence", async ({ page }) => {
   await page.reload();
   await expect(page.locator("html")).toHaveAttribute("data-theme", "night");
   await expect(page.locator("html")).toHaveAttribute("data-season", "spring");
-  await page.locator(".nav-theme").click();
-  await expect(page.locator("html")).toHaveAttribute("data-theme", "paper");
+  await expect(page.locator(".nav-theme")).toHaveCount(0);
 });
 test("Narrow navigation uses React state and closes after commands or Escape", async ({
   page,

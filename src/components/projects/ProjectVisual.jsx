@@ -105,21 +105,150 @@ function InspirationVisual() {
   );
 }
 
-function CodeVisual() {
+function OptimizerVisual() {
   return (
-    <div className="project-visual code-visual" aria-hidden="true">
-      <div className="code-window">
-        <div className="code-toolbar">
-          <i />
-          <i />
-          <i />
-          <span>LOCAL / WORKSPACE</span>
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface optimizer-mini">
+        <div className="mini-bar">
+          <span>原始草稿</span>
+          <span className="mini-pill">→ 精修输出</span>
         </div>
-        <div className="code-lines">
-          {[54, 83, 63, 91, 48, 72].map((width, i) => (
-            <span key={i} style={{ width: `${width}%` }}>
-              <i />
-              <b />
+        <div className="optimizer-panes">
+          <div className="optimizer-draft">
+            <b>输入</b>
+            <span>帮我润色一段项目介绍…</span>
+          </div>
+          <div className="optimizer-refined">
+            <b>优化后</b>
+            <span>角色 · 约束 · 结构化输出 ✓</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function StoryboardVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface storyboard-mini">
+        <div className="mini-bar">
+          <span>分镜时间轴</span>
+          <span className="mini-mono">10s · 3 镜</span>
+        </div>
+        <div className="storyboard-shots">
+          <div className="shot-chip is-mint">
+            <b>S01</b>
+            <span>0–3s 缓推</span>
+          </div>
+          <div className="shot-chip is-warm">
+            <b>S02</b>
+            <span>3–7s 特写</span>
+          </div>
+          <div className="shot-chip is-mist">
+            <b>S03</b>
+            <span>7–10s 定格</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function RecallVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface recall-mini">
+        <div className="recall-search">
+          <span>⌕ 离线 OCR · 关键词</span>
+          <b>0.04s</b>
+        </div>
+        <div className="recall-hits">
+          <div>
+            <span>notes/lab-04.pdf</span>
+            <b>命中 3 处</b>
+          </div>
+          <div>
+            <span>docs/paper-outline.md</span>
+            <span>全文索引</span>
+          </div>
+          <div>
+            <span>slides/week-07.png</span>
+            <span>图片文字</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ArchiveVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface archive-mini">
+        <div className="mini-bar">
+          <span>分类建议</span>
+          <span className="mini-pill">待确认归档</span>
+        </div>
+        <div className="archive-rows">
+          <div>
+            <span>实验报告.docx</span>
+            <i>→</i>
+            <b>课程 / 实验</b>
+          </div>
+          <div>
+            <span>综述文献.pdf</span>
+            <i>→</i>
+            <b>参考资料</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function AudioVisual() {
+  const heights = [38, 86, 58, 96, 46, 78, 64, 90, 42, 68];
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface audio-mini">
+        <div className="audio-cover">♪</div>
+        <div className="audio-body">
+          <div className="audio-meta">
+            <b>Local Audio</b>
+            <span>Android 适配</span>
+          </div>
+          <div className="audio-bars">
+            {heights.map((h, i) => (
+              <i key={i} style={{ height: `${h}%` }} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FloorplanVisual() {
+  const rooms = [
+    ["玄关", "is-mint"],
+    ["客厅", ""],
+    ["书房", ""],
+    ["工作台", "is-warm"],
+    ["院子", ""],
+    ["说明书", ""],
+  ];
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface floorplan-mini">
+        <div className="mini-bar">
+          <span>有间平面图</span>
+          <span className="mini-mono">10 ROOMS</span>
+        </div>
+        <div className="floorplan-grid">
+          {rooms.map(([name, tone]) => (
+            <span key={name} className={tone}>
+              {name}
             </span>
           ))}
         </div>
@@ -128,63 +257,13 @@ function CodeVisual() {
   );
 }
 
-function NetworkVisual() {
-  const points = [
-    [28, 65],
-    [94, 25],
-    [166, 47],
-    [202, 111],
-    [118, 135],
-    [59, 112],
-    [119, 80],
-  ];
-  const edges = [
-    [0, 1],
-    [0, 5],
-    [0, 6],
-    [1, 2],
-    [1, 6],
-    [2, 3],
-    [2, 6],
-    [3, 4],
-    [3, 6],
-    [4, 5],
-    [4, 6],
-    [5, 6],
-  ];
-  return (
-    <div className="project-visual network-visual" aria-hidden="true">
-      <svg viewBox="0 0 230 160">
-        {edges.map(([a, b]) => (
-          <line
-            key={`${a}-${b}`}
-            x1={points[a][0]}
-            y1={points[a][1]}
-            x2={points[b][0]}
-            y2={points[b][1]}
-          />
-        ))}
-        {points.map(([x, y], i) => (
-          <circle
-            key={i}
-            cx={x}
-            cy={y}
-            r={i === 6 ? 5 : 3.5}
-            className={"node-" + (i % 3)}
-          />
-        ))}
-        <text x="94" y="14">
-          ideas / connections
-        </text>
-      </svg>
-    </div>
-  );
-}
-
 export default function ProjectVisual({ project }) {
   if (project.id === "image-tools") return <ConversionVisual />;
   if (project.id === "image-prompts") return <InspirationVisual />;
-  if (["recallai", "document-assistant"].includes(project.id))
-    return <CodeVisual />;
-  return <NetworkVisual />;
+  if (project.id === "prompt-optimizer") return <OptimizerVisual />;
+  if (project.id === "video-prompts") return <StoryboardVisual />;
+  if (project.id === "recallai") return <RecallVisual />;
+  if (project.id === "document-assistant") return <ArchiveVisual />;
+  if (project.id === "folia-android") return <AudioVisual />;
+  return <FloorplanVisual />;
 }

@@ -6,7 +6,10 @@ export default function ReadingNotesList() {
   return (
     <section className="gallery-reading">
       <div className="gallery-section-heading">
-        <h2>看过的书 / 碎碎念</h2>
+        <h2>
+          <i className="section-dot dot-mist" aria-hidden="true" />
+          书房笔记 / 最近写的
+        </h2>
         <a href="articles.html">所有记录 ↗</a>
       </div>
       {homeData.reading.map((book) => (

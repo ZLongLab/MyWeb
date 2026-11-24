@@ -22,6 +22,13 @@ for (const width of [1440, 390]) {
       "true",
     );
     await expect(page.locator(".product-glass-card")).toHaveCount(2);
+    await expect(page.locator(".gallery-tool-card")).toHaveCount(4);
+    await expect(page.locator(".christmas-spotlight")).toHaveAttribute(
+      "href",
+      "christmas.html",
+    );
+    await expect(page.locator(".hero-status-pill")).toBeVisible();
+    await expect(page.locator(".gallery-letter-card")).toBeVisible();
     await expect(page.locator(".product-copy").first()).toHaveAttribute(
       "href",
       /project.html\?id=recallai/,

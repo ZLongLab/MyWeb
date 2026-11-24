@@ -37,7 +37,7 @@ test('React Compiler output and Fast Refresh preserve an active project filter',
     expect(await page.evaluate(() => window.hotRefreshMarker)).toBe('preserve-this-document');
     await expect(page.getByRole('button', { name: '本地工具', exact: true })).toHaveAttribute('aria-pressed', 'true');
     await expect(page.locator('.portfolio-project')).toHaveCount(count);
-    await expect(page.locator('.nav-theme')).toHaveCount(1);
+    await expect(page.locator('.nav-search')).toHaveCount(1);
   } finally {
     // Restore only our own temporary edit, preserving any concurrent human edit.
     if (fs.readFileSync(file, 'utf8') === updated) fs.writeFileSync(file, original);

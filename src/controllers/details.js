@@ -39,12 +39,36 @@ export default function initialize(scope) {
       uses: ["M18 13h28M24 13v12a8 8 0 0 0 16 0v-3M32 40v12M21 52h22"],
       guestbook: ["M17 12h30v31L36 54H17zM36 54V43h11"],
     };
+    var lifePictures = {
+      "life-reading": [
+        "M14 18c6-2 12-2 18 2 6-4 12-4 18-2v30c-6-2-12-2-18 2-6-4-12-4-18-2Z",
+        "M32 20v30",
+      ],
+      "life-listening": [
+        "M32 14a18 18 0 1 0 0 36 18 18 0 1 0 0-36Z",
+        "M32 27a5 5 0 1 0 0 10 5 5 0 1 0 0-10Z",
+        "M22 24a13 13 0 0 1 10-4",
+      ],
+      "life-watching": [
+        "M12 18h40v28H12Z",
+        "M20 18v28M44 18v28M12 27h8M12 37h8M44 27h8M44 37h8",
+      ],
+      "life-photos": [
+        "M15 14h34v36H15Z",
+        "M20 19h24v20H20Z",
+        "M23 35l7-7 5 5 4-4 5 6",
+      ],
+    };
     if (pictures[page])
       document
         .querySelectorAll(".room-empty, #guestbook-empty")
         .forEach(function (node) {
-          if (!node.querySelector(".empty-sketch"))
-            node.prepend(drawing(pictures[page], "empty-sketch"));
+          if (!node.querySelector(".empty-sketch")) {
+            var parentId = node.parentElement && node.parentElement.id;
+            var paths =
+              (page === "life" && lifePictures[parentId]) || pictures[page];
+            node.prepend(drawing(paths, "empty-sketch"));
+          }
         });
     if (page === "uses")
       document
