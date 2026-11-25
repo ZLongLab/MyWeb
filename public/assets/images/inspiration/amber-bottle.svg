@@ -1,1 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>琥珀瓶的光 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#d3ad82" stop-opacity=".5"/><stop offset=".5" stop-color="#d3ad82"/><stop offset="1" stop-color="#345746" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#ece9dc"/><path d="M0 240 500 200v150H0z" fill="#a9b9a2"/><ellipse cx="259" cy="294" rx="121" ry="20" fill="#345746" opacity=".12"/><rect x="202" y="83" width="91" height="28" rx="5" fill="#345746"/><rect x="185" y="106" width="124" height="177" rx="25" fill="url(#glass)" stroke="#345746" stroke-opacity=".3"/><path d="M202 132v121" stroke="#fffdf8" stroke-width="6" opacity=".55"/><rect x="207" y="170" width="80" height="62" rx="4" fill="#ece9dc" opacity=".4"/><path d="M373 65c-17 50-23 95-8 153m-8-105c-43 0-53-27-32-35 21-5 40 12 32 35m5-40c35-5 49-34 28-37-17-3-29 16-28 37" fill="#345746" fill-opacity=".12" stroke="#345746" stroke-opacity=".13" stroke-width="3"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>琥珀瓶的光 · 本站构图示意</title>
+<defs>
+<linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f5efe4"/><stop offset="100%" stop-color="#e4d9c8"/></linearGradient>
+    <linearGradient id="stone" x1="0" y1="0" x2="1" y2="0.4"><stop offset="0%" stop-color="#dfd3bf"/><stop offset="100%" stop-color="#c9ba9f"/></linearGradient>
+    <linearGradient id="amber" x1="0" y1="0" x2="1" y2="0.9"><stop offset="0%" stop-color="#e8a454"/><stop offset="45%" stop-color="#b96723"/><stop offset="100%" stop-color="#6b3410"/></linearGradient>
+    <linearGradient id="caustic" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#eb9e42" stop-opacity="0.48"/><stop offset="100%" stop-color="#eb9e42" stop-opacity="0"/></linearGradient>
+</defs>
+<rect width="500" height="350" fill="url(#wall)"/>
+    <polygon points="0,236 500,214 500,350 0,350" fill="url(#stone)"/>
+    <path d="M32 288c42-22 108-26 168-10 20 5 30 22 18 34-54 16-132 16-196-2Z" fill="#f3ecdf" stroke="#d1c4ad" stroke-width="1.2"/>
+    <path d="M52 294c48-14 106-16 146-4" stroke="#d8cbb4" stroke-width="1.4" fill="none"/>
+    <ellipse cx="216" cy="278" rx="108" ry="18" fill="url(#caustic)"/>
+    <ellipse cx="308" cy="278" rx="64" ry="13" fill="#4f2d14" opacity="0.22"/>
+    <rect x="282" y="72" width="54" height="32" rx="5" fill="#2d231c"/>
+    <rect x="288" y="102" width="42" height="16" fill="#7c4218"/>
+    <path d="M262 146c0-18 14-30 26-30h42c12 0 26 12 26 30v120c0 12-10 20-22 20h-50c-12 0-22-8-22-20Z" fill="url(#amber)" stroke="#5b2c0d" stroke-opacity="0.35"/>
+    <rect x="275" y="142" width="12" height="122" rx="6" fill="#fff7e6" opacity="0.38"/>
+    <rect x="336" y="152" width="6" height="96" rx="3" fill="#ffcf87" opacity="0.28"/>
+    <rect x="274" y="172" width="70" height="58" rx="3" fill="#f6efe2" opacity="0.24" stroke="#fff4de" stroke-opacity="0.35"/>
+</svg>

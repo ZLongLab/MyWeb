@@ -67,6 +67,49 @@ const STUDIO_MODES = [
   { id: "quote", label: "引文摘录" },
 ];
 
+const STYLE_PRESETS = [
+  {
+    id: "gallery-morning",
+    label: "画廊晨光",
+    backdropId: "porcelain",
+    frameStyle: "mac",
+    ratioId: "auto",
+    padding: 72,
+    radius: 18,
+    shadow: 55,
+  },
+  {
+    id: "pine-showcase",
+    label: "暗夜展示",
+    backdropId: "pine",
+    frameStyle: "glass",
+    ratioId: "16:9",
+    padding: 84,
+    radius: 20,
+    shadow: 75,
+  },
+  {
+    id: "social-square",
+    label: "方图分享",
+    backdropId: "apricot",
+    frameStyle: "mac",
+    ratioId: "1:1",
+    padding: 64,
+    radius: 16,
+    shadow: 45,
+  },
+  {
+    id: "clear-glass",
+    label: "清透浮窗",
+    backdropId: "mint",
+    frameStyle: "glass",
+    ratioId: "4:3",
+    padding: 80,
+    radius: 22,
+    shadow: 40,
+  },
+];
+
 const DEFAULT_CODE = `// Local-first: every render stays in your browser
 export function formatGreeting(name: string) {
   const hour = new Date().getHours();
@@ -635,14 +678,27 @@ export default function FrameStudioPage() {
   return (
     <main className="container frame-studio" id="main">
       <header className="frame-studio-hero">
-        <p className="eyebrow">工作台里的小工具 / FRAME STUDIO</p>
-        <h1>
-          画框工坊<span className="title-period">。</span>
-        </h1>
-        <p className="room-lead">
-          拖入图片或按 <kbd>Ctrl+V</kbd> 粘贴截图，也可以切到代码片段或引文卡片模式，一键套上画廊背景与投影带走。
-        </p>
-        <p className="image-tools-local">纯前端 Canvas 实时合成，不上传原图，断网也能正常使用。</p>
+        <div className="frame-studio-hero-copy">
+          <p className="eyebrow">工作台里的小工具 / FRAME STUDIO</p>
+          <h1>
+            画框工坊<span className="title-period">。</span>
+          </h1>
+          <p className="room-lead">
+            拖入图片或按 <kbd>Ctrl+V</kbd> 粘贴截图，也可以切到代码片段或引文卡片模式，一键套上画廊背景与投影带走。
+          </p>
+          <p className="image-tools-local">纯前端 Canvas 实时合成，不上传原图，断网也能正常使用。</p>
+        </div>
+        <div className="frame-studio-hero-card glass-card" aria-hidden="true">
+          <div className="frame-studio-hero-card-top">
+            <span>Canvas 实时渲染</span>
+            <b>3 模式 · 2x 高清</b>
+          </div>
+          <div className="frame-studio-hero-tags">
+            <span className={studioMode === "image" ? "is-active" : ""}><b>01</b> 截图套框</span>
+            <span className={studioMode === "code" ? "is-active" : ""}><b>02</b> 语法高亮代码卡</span>
+            <span className={studioMode === "quote" ? "is-active" : ""}><b>03</b> 衬线引文摘录</span>
+          </div>
+        </div>
       </header>
 
       <div className="frame-studio-grid">
@@ -793,6 +849,36 @@ export default function FrameStudioPage() {
         </section>
 
         <aside className="frame-controls-panel glass-card" aria-label="画框样式设置">
+          <div className="frame-control-group">
+            <h2>一键组合预设</h2>
+            <div className="frame-pills">
+              {STYLE_PRESETS.map((preset) => {
+                const matched =
+                  backdropId === preset.backdropId &&
+                  frameStyle === preset.frameStyle &&
+                  ratioId === preset.ratioId;
+                return (
+                  <button
+                    key={preset.id}
+                    type="button"
+                    aria-pressed={matched}
+                    onClick={() => {
+                      setBackdropId(preset.backdropId);
+                      setFrameStyle(preset.frameStyle);
+                      setRatioId(preset.ratioId);
+                      setPadding(preset.padding);
+                      setRadius(preset.radius);
+                      setShadow(preset.shadow);
+                      setStatus(`已套用「${preset.label}」画框预设。`);
+                    }}
+                  >
+                    {preset.label}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           <div className="frame-control-group">
             <h2>背景氛围</h2>
             <div className="frame-swatches">

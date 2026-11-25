@@ -23,3 +23,11 @@
 .guestbook-edit-cancel,.guestbook-edit-save{border-radius:99px;padding:5px 14px;font-size:12px;cursor:pointer}
 .guestbook-edit-cancel{border:1px solid #cfd7c8;background:transparent;color:var(--muted)}
 .guestbook-edit-save{border:1px solid #3c6250;background:#3c6250;color:#faf9f7}
+
+/* Unified frosted glass panels for Local Notes */
+.guestbook-layout { gap:28px; align-items:start; }
+.guestbook-compose, .guestbook-saved { padding:26px 28px; border:1px solid var(--morning-line); border-radius:20px; background:var(--morning-glass); backdrop-filter:blur(16px); box-shadow:var(--morning-shadow); }
+.guestbook-scope { margin-bottom:24px; padding:14px 18px; border:1px solid var(--morning-line); border-radius:14px; background:rgba(255,255,255,.72); }
+.guestbook-empty { border-radius:14px; border:1px dashed rgba(67,97,83,.18); background:rgba(244,246,243,.65); }
+.guestbook-submit { border-radius:12px !important; }
+@media (max-width:799px) { .guestbook-compose, .guestbook-saved { padding:20px 18px; } }

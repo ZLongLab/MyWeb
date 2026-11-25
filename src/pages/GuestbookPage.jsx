@@ -10,7 +10,18 @@ function GuestbookIntro() {
           {"灵感草稿箱"}
           <span className="title-period">{"。"}</span>
         </h1>
-        <p>{"记下还没展开的想法、待办或摘录，支持置顶、原位编辑与筛选。"}</p>
+        <p>{"记下还没展开的想法、待办或摘录，支持快捷分类、置顶、原位编辑与一键筛选。"}</p>
+      </div>
+      <div className="guestbook-hero-card glass-card" aria-hidden="true">
+        <div className="guestbook-hero-card-top">
+          <span>本地记事本</span>
+          <b>仅存于当前浏览器</b>
+        </div>
+        <div className="guestbook-hero-stats">
+          <span><b id="guestbook-stat-total">0</b> 已存便签</span>
+          <span><b id="guestbook-stat-pinned">0</b> 已置顶</span>
+          <span><b id="guestbook-stat-tags">0</b> 分类数</span>
+        </div>
       </div>
     </section>
   );
@@ -171,6 +182,26 @@ function GuestbookLayout() {
             placeholder="筛选分类或正文…"
             aria-label="筛选本地便签"
           />
+        </div>
+        <div className="guestbook-filter-chips" role="group" aria-label="按分类筛选便签">
+          {[
+            { id: "all", label: "全部" },
+            { id: "pinned", label: "仅看置顶" },
+            { id: "灵感", label: "灵感" },
+            { id: "待办", label: "待办" },
+            { id: "摘录", label: "摘录" },
+            { id: "碎碎念", label: "碎碎念" },
+          ].map((chip) => (
+            <button
+              key={chip.id}
+              type="button"
+              className="guestbook-filter-chip"
+              data-filter-chip={chip.id}
+              aria-pressed={chip.id === "all" ? "true" : "false"}
+            >
+              {chip.label}
+            </button>
+          ))}
         </div>
         <div className="guestbook-empty" id="guestbook-empty" hidden={true}>
           <h3>{"还没有便签。"}</h3>

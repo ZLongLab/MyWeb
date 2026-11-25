@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>窗边的自然肖像 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#d3ad82" stop-opacity=".5"/><stop offset=".5" stop-color="#d3ad82"/><stop offset="1" stop-color="#345746" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#ece9dc"/><path d="M0 0h150v350H0z" fill="#a9b9a2" opacity=".5"/><path d="M30 40h95v220H30z" fill="#ece9dc" opacity=".8"/><path d="M77 40v220M30 145h95" stroke="#d3ad82" stroke-width="3"/><ellipse cx="300" cy="320" rx="170" ry="38" fill="#345746" opacity=".12"/><path d="M175 350v-24c0-75 46-109 105-109s114 34 114 109v24" fill="#345746"/><path d="m260 218-14 40 34 25 31-27-16-38" fill="#d3ad82"/><ellipse cx="280" cy="144" rx="64" ry="80" fill="#d3ad82"/><path d="M213 156c-7-77 28-117 77-108 45 7 69 40 56 103l-20-48-33 9-61-14-5 57" fill="#345746"/><path d="M267 165q15 7 27 0" fill="none" stroke="#345746" stroke-width="2" opacity=".5"/><path d="M270 191q12 4 23 0" fill="none" stroke="#345746" stroke-width="2" opacity=".45"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>窗边的自然肖像 · 本站构图示意</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f6f2e8"/><stop offset="55%" stop-color="#ede9dc"/><stop offset="100%" stop-color="#dfe6dc"/></linearGradient>
+    <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0.8"><stop offset="0%" stop-color="#fffdf6" stop-opacity="0.72"/><stop offset="100%" stop-color="#fffdf6" stop-opacity="0"/></linearGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0.8" y2="1"><stop offset="0%" stop-color="#f9f6ee"/><stop offset="100%" stop-color="#d8d1c2"/></linearGradient>
+    <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4e5d52"/><stop offset="100%" stop-color="#2d3b32"/></linearGradient>
+    <radialGradient id="skin" cx="35%" cy="35%" r="70%"><stop offset="0%" stop-color="#efd4bc"/><stop offset="100%" stop-color="#cfa98b"/></radialGradient>
+</defs>
+<rect width="500" height="350" fill="url(#bg)"/>
+    <rect x="0" y="0" width="128" height="350" fill="#d5dfd3" opacity="0.55"/>
+    <rect x="20" y="24" width="92" height="218" rx="4" fill="#fffdf8" stroke="#c7b89c" stroke-width="2.5"/>
+    <path d="M66 24v218M20 96h92M20 168h92" stroke="#c7b89c" stroke-width="2"/>
+    <polygon points="112,28 360,118 360,350 112,242" fill="url(#beam)"/>
+    <rect x="128" y="264" width="372" height="86" fill="#e5decb" opacity="0.55"/>
+    <path d="M398 274c-4-44 6-82 24-114m-18 68c-22-4-34-16-24-28 11-10 26 2 24 28m6-26c22-8 34-24 22-34-12-8-24 10-22 34m-10 46c20-2 32-12 24-24-8-10-22 4-24 24" stroke="#62806a" stroke-width="2.2" fill="#89a890" fill-opacity="0.32" stroke-linecap="round"/>
+    <rect x="382" y="252" width="34" height="54" rx="10" fill="#ffffff" fill-opacity="0.55" stroke="#9eb3a2" stroke-width="1.5"/>
+    <ellipse cx="222" cy="336" rx="106" ry="18" fill="#3a4c40" opacity="0.1"/>
+    <path d="M138 350c4-68 38-104 88-104s84 36 88 104Z" fill="url(#coat)" stroke="#c7bfb0" stroke-width="1.4"/>
+    <path d="M210 218c-2 22-8 34-16 42l32 14 26-16c-8-10-12-22-12-40Z" fill="url(#skin)"/>
+    <path d="M204 248l22 26 24-24" fill="none" stroke="#c7bfb0" stroke-width="2"/>
+    <ellipse cx="226" cy="170" rx="40" ry="48" fill="url(#skin)"/>
+    <path d="M185 168c-6-52 24-76 56-68 28 7 42 32 34 74-6-22-14-36-28-40-18-5-36 4-46 18-4 6-8 14-10 28-4-4-5-8-6-12Z" fill="url(#hair)"/>
+    <circle cx="192" cy="176" r="14" fill="url(#hair)"/>
+    <path d="M174 282h20m-14 0v68" stroke="#b69d7c" stroke-width="6" stroke-linecap="round" opacity="0.7"/>
+    <line x1="322" y1="68" x2="454" y2="68" stroke="#6d8272" stroke-opacity="0.18" stroke-dasharray="4 6"/>
+</svg>

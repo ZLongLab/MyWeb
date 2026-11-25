@@ -173,6 +173,11 @@ export default function initialize(scope) {
     var deleteError = document.getElementById("delete-message-error");
     var confirmDelete = document.getElementById("delete-message-confirm");
     var tagButtons = form.querySelectorAll("[data-note-tag]");
+    var filterChipButtons = document.querySelectorAll("[data-filter-chip]");
+    var statTotal = document.getElementById("guestbook-stat-total");
+    var statPinned = document.getElementById("guestbook-stat-pinned");
+    var statTags = document.getElementById("guestbook-stat-tags");
+    var activeFilterChip = "all";
     var entries = [];
     var storageReady = false;
     var pendingDeleteId = null;
@@ -209,6 +214,14 @@ export default function initialize(scope) {
           return pinDiff || Date.parse(b.createdAt) - Date.parse(a.createdAt);
         })
         .filter(function (entry) {
+          if (activeFilterChip === "pinned" && !entry.pinned) return false;
+          if (
+            activeFilterChip !== "all" &&
+            activeFilterChip !== "pinned" &&
+            entry.nickname !== activeFilterChip
+          ) {
+            return false;
+          }
           if (!query) return true;
           return (
             entry.nickname.toLocaleLowerCase().indexOf(query) !== -1 ||
@@ -216,17 +229,36 @@ export default function initialize(scope) {
           );
         });
 
+      if (statTotal) statTotal.textContent = String(entries.length);
+      if (statPinned) {
+        statPinned.textContent = String(
+          entries.filter(function (item) {
+            return Boolean(item.pinned);
+          }).length,
+        );
+      }
+      if (statTags) {
+        statTags.textContent = String(
+          new Set(
+            entries.map(function (item) {
+              return item.nickname;
+            }),
+          ).size,
+        );
+      }
+
       empty.hidden = !storageReady || visible.length !== 0;
       if (storageReady && entries.length > 0 && visible.length === 0) {
         empty.querySelector("h3").textContent = "没有匹配的便签。";
-        empty.querySelector("p").textContent = "换个关键词，或者清空筛选看看。";
+        empty.querySelector("p").textContent = "换个关键词，或者切换上方分类筛选看看。";
       } else {
         empty.querySelector("h3").textContent = "还没有便签。";
         empty.querySelector("p").textContent = "留一句话，让这一页从你开始。";
       }
 
+      var filtered = Boolean(query) || activeFilterChip !== "all";
       count.textContent = storageReady
-        ? query
+        ? filtered
           ? "匹配 " + visible.length + " / 共 " + entries.length + " 条便签"
           : entries.length + " 条本地便签 / 最多 100 条"
         : "暂时无法读取本地便签";
@@ -382,6 +414,18 @@ export default function initialize(scope) {
     if (filterInput) {
       scope.listen(filterInput, "input", renderEntries);
     }
+    filterChipButtons.forEach(function (chip) {
+      scope.listen(chip, "click", function () {
+        activeFilterChip = chip.getAttribute("data-filter-chip") || "all";
+        filterChipButtons.forEach(function (other) {
+          other.setAttribute(
+            "aria-pressed",
+            other === chip ? "true" : "false",
+          );
+        });
+        renderEntries();
+      });
+    });
 
     scope.listen(form, "submit", function (event) {
       event.preventDefault();

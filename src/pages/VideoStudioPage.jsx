@@ -32,36 +32,17 @@ function PromptHero() {
         </p>
       </div>
       {"\n      "}
-      <svg
-        className="prompt-hero-art"
-        viewBox="0 0 180 110"
-        fill="none"
-        aria-hidden="true"
-      >
-        <rect
-          x="17"
-          y="20"
-          width="138"
-          height="78"
-          rx="5"
-          stroke="currentColor"
-          strokeWidth="1.2"
-        ></rect>
-        <path
-          d="M17 37h138M17 80h138M65 37v43M113 37v43M27 26h14m10 0h14m10 0h14m10 0h14m10 0h14M27 91h14m10 0h14m10 0h14m10 0h14m10 0h14"
-          stroke="currentColor"
-          strokeWidth="1.2"
-        ></path>
-        <circle cx="41" cy="58" r="9" stroke="currentColor"></circle>
-        <path
-          d="m78 69 12-22 12 22Zm46-11 10-10 10 10-10 10Z"
-          stroke="currentColor"
-        ></path>
-        <path
-          d="m143 5 2 7 7 2-7 2-2 7-2-7-7-2 7-2Z"
-          fill="currentColor"
-        ></path>
-      </svg>
+      <div className="prompt-hero-card glass-card" aria-hidden="true">
+        <div className="prompt-hero-card-top">
+          <span>分镜工作台</span>
+          <b>5 平台 · 15 模板</b>
+        </div>
+        <div className="prompt-hero-card-shots">
+          <span className="is-mint"><b>S01</b> 景别 · 构图</span>
+          <span className="is-warm"><b>S02</b> 动作 · 运镜</span>
+          <span className="is-mist"><b>S03</b> 光影 · 结尾</span>
+        </div>
+      </div>
       {"\n    "}
     </section>
   );

@@ -183,7 +183,7 @@ export default function initialize(scope) {
         img.alt = item.title + "的构图示意";
         img.width = 500;
         img.height = 350;
-        img.loading = "lazy";
+        img.loading = "eager";
         img.decoding = "async";
         art.append(img, el("span", "image-room-badge", "构图示意"));
         var copy = el("span", "image-room-copy");

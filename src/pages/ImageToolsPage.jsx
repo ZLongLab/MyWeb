@@ -6,6 +6,12 @@ import { createZipBlob } from '../features/image-tools/zip.js';
 
 const accept = 'image/png,image/jpeg,image/webp,image/avif,image/gif,image/bmp';
 const supported = /\.(?:png|jpe?g|webp|avif|gif|bmp)$/i;
+const PRESETS = [
+  { id: 'blog-webp', label: '博客配图', meta: 'WebP 80% · 1920px', settings: { format: 'webp', quality: 80, width: 1920 } },
+  { id: 'tiny-avif', label: '极小体积', meta: 'AVIF 68% · 原尺寸', settings: { format: 'avif', quality: 68, width: 0 } },
+  { id: 'social-jpg', label: '社媒分享', meta: 'JPEG 85% · 960px', settings: { format: 'jpeg', quality: 85, width: 960 } },
+  { id: 'lossless-png', label: '无损原图', meta: 'PNG · 原尺寸', settings: { format: 'png', quality: 100, width: 0 } },
+];
 
 function formatBytes(bytes) {
   if (bytes < 1024) return `${bytes} B`;
@@ -207,13 +213,30 @@ export default function ImageToolsPage() {
     }
   }
   const completed = items.filter(item => item.status === 'done').length;
+  const completedItems = items.filter(item => item.status === 'done' && item.result);
+  const totalInBytes = completedItems.reduce((sum, item) => sum + item.file.size, 0);
+  const totalOutBytes = completedItems.reduce((sum, item) => sum + item.result.size, 0);
+  const savedPct = totalInBytes > 0 ? ((1 - totalOutBytes / totalInBytes) * 100) : 0;
   return (
     <main className="image-tools" id="main">
       <header className="image-tools-hero">
-        <p className="eyebrow">工作台里的小工具 / IMAGE WORKSHOP · 04</p>
-        <h1>图片工坊<span className="title-period">。</span></h1>
-        <p className="image-tools-lead">把几张图片放进来，调整格式与尺寸，可滑动对比画质并一键打包带走。</p>
-        <p className="image-tools-local">全程在当前浏览器本地处理，支持 Ctrl+V 粘贴截图，绝不上传原图。</p>
+        <div className="image-tools-hero-copy">
+          <p className="eyebrow">工作台里的小工具 / IMAGE WORKSHOP · 04</p>
+          <h1>图片工坊<span className="title-period">。</span></h1>
+          <p className="image-tools-lead">把几张图片放进来，选一个预设或微调格式与尺寸，可滑动对比画质并一键打包带走。</p>
+          <p className="image-tools-local">全程在当前浏览器本地处理，支持 Ctrl+V 粘贴截图，绝不上传原图。</p>
+        </div>
+        <div className="image-tools-hero-card glass-card" aria-hidden="true">
+          <div className="image-tools-hero-card-top">
+            <span>本地 WASM 引擎</span>
+            <b>0 上传 · 批量处理</b>
+          </div>
+          <div className="image-tools-hero-formats">
+            <span className="is-mint"><b>WebP</b> 轻巧通用</span>
+            <span className="is-warm"><b>AVIF</b> 极限压缩</span>
+            <span className="is-mist"><b>JPEG / PNG</b> 无损透明</span>
+          </div>
+        </div>
       </header>
 
       <section aria-label="选择图片与转换设置" className="image-tools-panel">
@@ -221,13 +244,46 @@ export default function ImageToolsPage() {
           onDragOver={event => { event.preventDefault(); if (!busy && !downloading) setDragging(true); }}
           onDragLeave={event => { if (!event.currentTarget.contains(event.relatedTarget)) setDragging(false); }}
           onDrop={event => { event.preventDefault(); setDragging(false); addFiles(event.dataTransfer.files); }}>
-          <span className="image-tools-drop-mark" aria-hidden="true">＋</span>
+          <span className="image-tools-drop-mark" aria-hidden="true">
+            <svg viewBox="0 0 36 36" width="32" height="32" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="4" y="6" width="28" height="24" rx="5" />
+              <circle cx="13" cy="14" r="2.2" />
+              <path d="m32 23-7.5-7.5L13 27" />
+              <path d="M23 11h6M26 8v6" />
+            </svg>
+          </span>
           <h2>拖放图片到这里，或按 Ctrl+V 粘贴</h2>
-          <p>可一次选择多张，按顺序逐张处理。</p>
+          <p>可一次选择多张，按顺序逐张处理，支持 PNG · JPEG · WebP · AVIF · GIF · BMP。</p>
           <label className="image-tools-pick" htmlFor="image-tools-input">选择图片</label>
           <input className="visually-hidden" id="image-tools-input" type="file" multiple accept={accept}
             aria-label="选择需要转换的图片" disabled={busy || downloading}
             onChange={event => { addFiles(event.target.files); event.target.value = ''; }} />
+        </div>
+        <div className="image-tools-presets" role="group" aria-label="常用转换预设">
+          <span className="image-tools-presets-label">快捷预设</span>
+          <div className="image-tools-presets-row">
+            {PRESETS.map(preset => {
+              const active = settings.format === preset.settings.format
+                && settings.width === preset.settings.width
+                && (preset.settings.format === 'png' || settings.quality === preset.settings.quality);
+              return (
+                <button
+                  key={preset.id}
+                  type="button"
+                  className="image-tools-preset-btn"
+                  aria-pressed={active}
+                  disabled={busy || downloading}
+                  onClick={() => {
+                    setSettings(preset.settings);
+                    setNotice(`已套用「${preset.label}」预设（${preset.meta}）。`);
+                  }}
+                >
+                  <strong>{preset.label}</strong>
+                  <span>{preset.meta}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
         <ImageToolsSettings settings={settings} onChange={setSettings} busy={busy || downloading} />
         <div className="image-tools-actions">
@@ -246,6 +302,13 @@ export default function ImageToolsPage() {
             <button type="button" disabled={!items.length || busy || downloading} onClick={() => { releaseResults(); setItems([]); setNotice('列表已清空。'); }}>清空列表</button>
           </div>
         </div>
+        {completed > 0 && (
+          <div className="image-tools-summary" aria-live="polite">
+            <span>已完成 <b>{completed} / {items.length}</b> 张</span>
+            <span>原图总计 <b>{formatBytes(totalInBytes)}</b> → 输出 <b>{formatBytes(totalOutBytes)}</b></span>
+            <span className="is-saved">{savedPct >= 0 ? `累计减少 ${savedPct.toFixed(1)}%` : `体积变化 +${Math.abs(savedPct).toFixed(1)}%`}</span>
+          </div>
+        )}
         <p className="image-tools-notice" role="status" aria-live="polite">{notice}</p>
         {items.length ? <ImageToolsQueue items={items} downloadLinks={downloadLinks} onCompare={openCompare} /> : <p className="image-tools-empty">还没有图片。先放进几张想整理的文件。</p>}
       </section>

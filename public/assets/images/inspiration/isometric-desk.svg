@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>等距视角的小书桌 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#eeede6" stop-opacity=".5"/><stop offset=".5" stop-color="#eeede6"/><stop offset="1" stop-color="#404743" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#dfdfda"/><ellipse cx="250" cy="300" rx="175" ry="25" fill="#404743" opacity=".1"/><path d="m82 205 187-108 175 103-185 109z" fill="#eeede6"/><path d="M82 205v15l177 104 185-109v-15L259 309z" fill="#404743" opacity=".6"/><path d="M110 223v80m280-81v79" stroke="#404743" stroke-width="12"/><path d="m179 178 85-48 70 40-86 51z" fill="#dfdfda"/><path d="M264 129v-47m-34 1h69l-16-25h-37z" fill="#404743"/><path d="m365 197 15 24h30l12-25z" fill="#404743"/><path d="M395 195v-53m0 20c-47-29-43-39-21-31 17 4 19 19 21 31m0 21c45-31 41-43 22-34-13 7-18 23-22 34" fill="#b8bab2" stroke="#404743" stroke-width="3"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>等距视角的小书桌 · 本站构图示意</title>
+<defs>
+<linearGradient id="isoBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#f7f4ec"/><stop offset="100%" stop-color="#e8ece6"/></linearGradient>
+</defs>
+<rect width="500" height="350" fill="url(#isoBg)"/>
+    <polygon points="88,202 262,110 420,196 246,288" fill="#e5c59c" stroke="#c7a278" stroke-width="1.5"/>
+    <polygon points="88,202 246,288 246,304 88,218" fill="#c9a276"/>
+    <polygon points="246,288 420,196 420,212 246,304" fill="#ae865b"/>
+    <line x1="112" y1="230" x2="112" y2="324" stroke="#8f6b46" stroke-width="10" stroke-linecap="round"/>
+    <line x1="246" y1="302" x2="246" y2="342" stroke="#785838" stroke-width="10" stroke-linecap="round"/>
+    <line x1="396" y1="224" x2="396" y2="318" stroke="#785838" stroke-width="10" stroke-linecap="round"/>
+    <polygon points="184,186 254,148 318,184 248,222" fill="#fcfaf4" stroke="#d5cfc2"/>
+    <line x1="219" y1="167" x2="283" y2="203" stroke="#d5cfc2" stroke-width="1.5"/>
+    <path d="M206 184l34-18m-20 26l34-18" stroke="#9aa89d" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="294" cy="144" rx="18" ry="10" fill="#4e6e5c"/>
+    <path d="M294 142v-48l-16-14" stroke="#4e6e5c" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="256,96 296,76 310,104 270,124" fill="#d9895b"/>
+    <polygon points="348,176 376,162 396,174 368,188" fill="#c87953"/>
+    <circle cx="368" cy="158" r="14" fill="#6d9979"/><circle cx="382" cy="150" r="12" fill="#88b594"/>
+    <ellipse cx="164" cy="212" rx="13" ry="8" fill="#f7f4ec" stroke="#b9c6bc" stroke-width="1.5"/>
+</svg>

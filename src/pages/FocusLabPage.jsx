@@ -10,16 +10,55 @@ const MODES = [
 ];
 
 const CHANNELS = [
-  { id: "rain", label: "窗外细雨", hint: "柔和粉红噪声与细雨高频", icon: "☂" },
-  { id: "fire", label: "冬夜壁炉", hint: "低沉暖流与轻微木柴噼啪", icon: "✦" },
-  { id: "wind", label: "松林微风", hint: "缓慢起伏的林间呼吸风声", icon: "〰" },
+  {
+    id: "rain",
+    label: "窗外细雨",
+    hint: "柔和粉红噪声与细雨高频",
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M6.5 14.5h10.2a3.8 3.8 0 0 0 .4-7.56A5.2 5.2 0 0 0 7 8.1a3.2 3.2 0 0 0-.5 6.4Z" />
+        <path d="M9 17.5 8 20M13 17.5 12 20M17 17.5 16 20" />
+      </svg>
+    ),
+  },
+  {
+    id: "fire",
+    label: "冬夜壁炉",
+    hint: "低沉暖流与轻微木柴噼啪",
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M12 3.5c2.6 2.9 5.5 6.1 5.5 10a5.5 5.5 0 1 1-11 0c0-2.4 1.2-4.6 2.8-6.4.2 1.7 1 2.7 2.1 3.1-.3-2.5.1-4.7.6-6.7Z" />
+      </svg>
+    ),
+  },
+  {
+    id: "wind",
+    label: "松林微风",
+    hint: "缓慢起伏的林间呼吸风声",
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M4 9h10.5a2.5 2.5 0 1 0-2.4-3.2M4 13h14a2.3 2.3 0 1 1-2.2 3M4 17h7.5a2 2 0 1 1-1.9 2.6" />
+      </svg>
+    ),
+  },
+  {
+    id: "stream",
+    label: "午后溪流",
+    hint: "清润流水中频与轻柔水波起伏",
+    icon: (
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <path d="M3 8.5c2.2-1.8 4.4-1.8 6.5 0s4.3 1.8 6.5 0 4.3-1.8 5 0M3 14c2.2-1.8 4.4-1.8 6.5 0s4.3 1.8 6.5 0 4.3-1.8 5 0M6 19c1.8-1.2 3.6-1.2 5.4 0s3.6 1.2 5.4 0" />
+      </svg>
+    ),
+  },
 ];
 
 const MIX_PRESETS = [
-  { label: "雨夜书房", values: { rain: 55, fire: 28, wind: 0 } },
-  { label: "松林清晨", values: { rain: 15, fire: 0, wind: 52 } },
-  { label: "静谧壁炉", values: { rain: 0, fire: 60, wind: 18 } },
-  { label: "全部静音", values: { rain: 0, fire: 0, wind: 0 } },
+  { label: "雨夜书房", values: { rain: 55, fire: 28, wind: 0, stream: 0 } },
+  { label: "松林清晨", values: { rain: 15, fire: 0, wind: 52, stream: 0 } },
+  { label: "静谧壁炉", values: { rain: 0, fire: 60, wind: 18, stream: 0 } },
+  { label: "溪边读书", values: { rain: 0, fire: 0, wind: 26, stream: 52 } },
+  { label: "全部静音", values: { rain: 0, fire: 0, wind: 0, stream: 0 } },
 ];
 
 function todayKey() {
@@ -114,7 +153,7 @@ export default function FocusLabPage() {
   const [secondsLeft, setSecondsLeft] = useState(25 * 60);
   const [running, setRunning] = useState(false);
   const [task, setTask] = useState("");
-  const [volumes, setVolumes] = useState({ rain: 0, fire: 0, wind: 0 });
+  const [volumes, setVolumes] = useState({ rain: 0, fire: 0, wind: 0, stream: 0 });
   const [stats, setStats] = useState(readStats);
   const [notice, setNotice] = useState("选好专注时长或调开白噪音，开始安静的一段时间。");
 
@@ -180,9 +219,24 @@ export default function FocusLabPage() {
       return filter;
     });
 
+    const streamGain = buildChannel(pink, (c, src) => {
+      const filter = c.createBiquadFilter();
+      filter.type = "bandpass";
+      filter.frequency.value = 920;
+      filter.Q.value = 0.85;
+      const lfo = c.createOscillator();
+      const lfoGain = c.createGain();
+      lfo.frequency.value = 0.24;
+      lfoGain.gain.value = 180;
+      lfo.connect(lfoGain).connect(filter.frequency);
+      lfo.start();
+      src.connect(filter);
+      return filter;
+    });
+
     audioRef.current = {
       ctx,
-      gains: { rain: rainGain, fire: fireGain, wind: windGain },
+      gains: { rain: rainGain, fire: fireGain, wind: windGain, stream: streamGain },
     };
     return audioRef.current;
   }, []);
@@ -262,8 +316,8 @@ export default function FocusLabPage() {
       return;
     }
     const now = engine.ctx.currentTime;
-    for (const key of ["rain", "fire", "wind"]) {
-      const target = (nextVolumes[key] / 100) * 0.42;
+    for (const key of ["rain", "fire", "wind", "stream"]) {
+      const target = ((nextVolumes[key] || 0) / 100) * 0.42;
       engine.gains[key].gain.setTargetAtTime(target, now, 0.08);
     }
   }
@@ -293,7 +347,7 @@ export default function FocusLabPage() {
     setNotice(`已设定自定义专注时长：${parsed} 分钟。`);
   }
 
-  function toggleTimer() {
+  const toggleTimer = useCallback(() => {
     if (running) {
       const remaining = Math.max(0, Math.ceil((endTimeRef.current - Date.now()) / 1000));
       setSecondsLeft(remaining);
@@ -306,7 +360,21 @@ export default function FocusLabPage() {
     if (secondsLeft === 0) setSecondsLeft(baseSeconds);
     endTimeRef.current = Date.now() + baseSeconds * 1000;
     setRunning(true);
-  }
+  }, [running, ensureAudio, secondsLeft, activeMinutes]);
+
+  useEffect(() => {
+    function onKeyDown(event) {
+      if (event.code !== "Space" || event.repeat || event.metaKey || event.ctrlKey || event.altKey) return;
+      const tag = event.target?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "BUTTON" || event.target?.isContentEditable) {
+        return;
+      }
+      event.preventDefault();
+      toggleTimer();
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [toggleTimer]);
 
   const total = activeMinutes * 60;
   const progress = total > 0 ? (total - secondsLeft) / total : 0;
@@ -317,13 +385,26 @@ export default function FocusLabPage() {
   return (
     <main className="container focus-lab" id="main">
       <header className="focus-lab-hero">
-        <p className="eyebrow">小实验室 / FOCUS &amp; SOUNDSCAPE LAB</p>
-        <h1>
-          专注时钟与白噪音<span className="title-period">。</span>
-        </h1>
-        <p className="room-lead">
-          不加载任何外部音频文件，用浏览器 Web Audio 实时合成窗外细雨、壁炉暖流与松林微风；计时按时间戳校准，切后台也不漂移。
-        </p>
+        <div className="focus-lab-hero-copy">
+          <p className="eyebrow">小实验室 / FOCUS &amp; SOUNDSCAPE LAB</p>
+          <h1>
+            专注时钟与白噪音<span className="title-period">。</span>
+          </h1>
+          <p className="room-lead">
+            不加载任何外部音频文件，用浏览器 Web Audio 实时合成窗外细雨、壁炉暖流、松林微风与午后溪流；计时按时间戳校准，切后台也不漂移。
+          </p>
+        </div>
+        <div className="focus-lab-hero-card glass-card" aria-hidden="true">
+          <div className="focus-lab-hero-card-top">
+            <span>今日专注速览</span>
+            <b>{running ? "计时进行中" : "Space 开始 / 暂停"}</b>
+          </div>
+          <div className="focus-lab-hero-metrics">
+            <span><b>{stats.sessions} 轮</b> 今日完成</span>
+            <span><b>{stats.minutes} 分</b> 累计专注</span>
+            <span><b>{activeSounds} / 4</b> 活跃声道</span>
+          </div>
+        </div>
       </header>
 
       <div className="focus-lab-grid">
@@ -461,6 +542,13 @@ export default function FocusLabPage() {
                       <h3>{ch.label}</h3>
                       <p>{ch.hint}</p>
                     </div>
+                    {value > 0 && (
+                      <span className="focus-wave" aria-hidden="true">
+                        <i />
+                        <i />
+                        <i />
+                      </span>
+                    )}
                     <span className="focus-channel-val">{value}%</span>
                   </div>
                   <input

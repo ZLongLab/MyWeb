@@ -1,64 +1,122 @@
-/* MyWeb's paper, moss and clay. No controls or workspaces are removed. */
+/* MyWeb Morning Porcelain (#FAF9F7) glass theme for Prompt Optimizer. No controls or workspaces are removed. */
 :root {
-  --myweb-tool-nav-height: 76px;
-  --myweb-paper: #faf7f2;
-  --myweb-card: #fffdf8;
-  --myweb-soft: #f3efe6;
-  --myweb-ink: #272c26;
-  --myweb-muted: #5a6058;
-  --myweb-line: #deded2;
-  --myweb-moss: #2b5b46;
-  --myweb-clay: #a44827;
+  --myweb-tool-nav-height: 74px;
+  --myweb-paper: #faf9f7;
+  --myweb-card: rgba(255, 255, 255, 0.88);
+  --myweb-card-solid: #ffffff;
+  --myweb-soft: #eaf2ee;
+  --myweb-ink: #222222;
+  --myweb-muted: #4a4a4a;
+  --myweb-meta: #7c8580;
+  --myweb-line: rgba(26, 48, 38, 0.08);
+  --myweb-moss: #436153;
+  --myweb-clay: #a69579;
+  --myweb-shadow: 0 8px 30px rgba(26, 48, 38, 0.036);
   --myweb-font: "Noto Sans SC", "Microsoft YaHei UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --myweb-serif: "Songti SC", "STSong", "SimSun", serif;
 }
 :root.dark {
-  --myweb-paper: #1e2420;
-  --myweb-card: #252e28;
-  --myweb-soft: #2d3830;
-  --myweb-ink: #e4e8de;
-  --myweb-muted: #b3bcad;
-  --myweb-line: #435044;
+  --myweb-paper: #161f1b;
+  --myweb-card: rgba(28, 39, 34, 0.9);
+  --myweb-card-solid: #1e2a24;
+  --myweb-soft: #26362e;
+  --myweb-ink: #edf1ea;
+  --myweb-muted: #b6c2b8;
+  --myweb-meta: #8e9e93;
+  --myweb-line: rgba(210, 228, 218, 0.12);
   --myweb-moss: #98c6a5;
-  --myweb-clay: #e7a078;
+  --myweb-clay: #dfc08c;
+  --myweb-shadow: 0 10px 30px rgba(0, 0, 0, 0.24);
   color-scheme: dark;
 }
-html, body { background: var(--myweb-paper); }
+html, body {
+  background-color: var(--myweb-paper);
+  background-image:
+    radial-gradient(ellipse 52% 28% at 88% 2%, rgba(154, 214, 189, 0.18), transparent 72%),
+    radial-gradient(ellipse 46% 24% at 8% 14%, rgba(244, 206, 168, 0.17), transparent 74%),
+    radial-gradient(ellipse 44% 24% at 86% 64%, rgba(182, 208, 232, 0.13), transparent 72%);
+  background-repeat: no-repeat;
+}
+:root.dark, :root.dark body {
+  background-image:
+    radial-gradient(ellipse 52% 28% at 88% 2%, rgba(72, 115, 95, 0.18), transparent 72%),
+    radial-gradient(ellipse 46% 24% at 8% 14%, rgba(166, 149, 121, 0.12), transparent 74%);
+}
 #myweb-tool-nav {
   box-sizing: border-box;
   position: fixed; inset: 0 0 auto; z-index: 10000;
   height: var(--myweb-tool-nav-height);
-  display: flex; align-items: center; gap: 28px;
+  display: flex; align-items: center; gap: 22px;
   padding: 0 clamp(20px, 3vw, 48px);
-  background: var(--myweb-paper); color: var(--myweb-ink);
+  background: var(--myweb-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  color: var(--myweb-ink);
   border-bottom: 1px solid var(--myweb-line);
+  box-shadow: var(--myweb-shadow);
   font: 13px/1.6 var(--myweb-font);
   -webkit-font-smoothing: antialiased;
 }
-#myweb-tool-nav a { color: inherit; text-decoration: none; white-space: nowrap; }
+#myweb-tool-nav a { color: inherit; text-decoration: none; white-space: nowrap; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
 #myweb-tool-nav a:hover { color: var(--myweb-moss); }
-#myweb-tool-nav a:focus-visible { outline: 2px solid var(--myweb-moss); outline-offset: 4px; border-radius: 4px; }
-#myweb-tool-nav .myweb-tool-brand { display: flex; align-items: center; gap: 9px; font-size: 19px; font-weight: 600; letter-spacing: -.5px; min-height: 44px; }
-.myweb-tool-brand svg { flex: none; }
-.myweb-tool-room { display: flex; align-items: center; gap: 13px; color: var(--myweb-ink); }
+#myweb-tool-nav a:focus-visible { outline: 2px solid var(--myweb-moss); outline-offset: 3px; border-radius: 8px; }
+#myweb-tool-nav .myweb-tool-brand {
+  display: flex; align-items: center; gap: 9px;
+  font-family: var(--myweb-serif); font-size: 20px; font-weight: 500; letter-spacing: -0.3px; min-height: 44px;
+}
+.myweb-tool-room {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 5px 12px; border-radius: 99px;
+  background: var(--myweb-soft); border: 1px solid var(--myweb-line);
+  color: var(--myweb-ink); font-size: 12px;
+}
 .myweb-tool-room > span:first-child { color: var(--myweb-muted); }
-.myweb-tool-room i { font-style: normal; color: #9ba08f; }
-.myweb-tool-stamp { color: var(--myweb-clay); font: 10px/1.5 "Cascadia Code", Consolas, monospace; letter-spacing: 1.4px; margin-left: 3px; }
-.myweb-tool-links { margin-left: auto; display: flex; align-items: center; gap: 24px; color: var(--myweb-muted); font-size: 12px; }
-.myweb-tool-links a { display: flex; gap: 12px; align-items: center; min-height: 44px; }
-#app .compact-viewport-frame { top: var(--myweb-tool-nav-height) !important; height: calc(100dvh - var(--myweb-tool-nav-height)) !important; max-height: calc(100dvh - var(--myweb-tool-nav-height)) !important; }
+.myweb-tool-room i { font-style: normal; color: var(--myweb-meta); }
+.myweb-tool-stamp {
+  color: var(--myweb-moss); font: 600 10px/1.5 "Cascadia Code", Consolas, monospace;
+  letter-spacing: 1px; margin-left: 2px;
+}
+.myweb-tool-links { margin-left: auto; display: flex; align-items: center; gap: 8px; color: var(--myweb-muted); font-size: 12px; }
+.myweb-tool-links a {
+  display: inline-flex; gap: 5px; align-items: center; min-height: 36px;
+  padding: 0 12px; border-radius: 99px;
+  border: 1px solid transparent;
+}
+.myweb-tool-links a:hover {
+  background: var(--myweb-soft);
+  border-color: var(--myweb-line);
+  color: var(--myweb-moss);
+}
+.myweb-tool-links a.myweb-tool-back {
+  background: rgba(255, 255, 255, 0.7);
+  border-color: var(--myweb-line);
+  color: var(--myweb-moss);
+  font-weight: 500;
+}
+:root.dark .myweb-tool-links a.myweb-tool-back {
+  background: rgba(38, 54, 46, 0.72);
+}
+#app .compact-viewport-frame { top: var(--myweb-tool-nav-height) !important; height: calc(100dvh - var(--myweb-tool-nav-height)) !important; max-height: calc(100dvh - var(--myweb-tool-nav-height)) !important; background: transparent !important; }
 #app .n-config-provider { font-family: var(--myweb-font); -webkit-font-smoothing: antialiased; }
-#app .nav-header-enhanced { padding: 13px clamp(20px, 3vw, 48px) !important; }
+#app .n-layout, #app .n-layout-scroll-container, #app .n-layout-header, #app .n-layout-content { background: transparent !important; }
+#app .nav-header-enhanced {
+  padding: 13px clamp(20px, 3vw, 48px) !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--myweb-line) !important;
+}
+:root.dark #app .nav-header-enhanced { background: rgba(24, 34, 29, 0.72) !important; }
 #app .brand-link { padding-left: 0; }
 #app .brand-link .logo-image { display: none; }
-#app .brand-link .theme-title { font-size: 17px; font-weight: 600; letter-spacing: -.4px; }
+#app .brand-link .theme-title { font-family: var(--myweb-serif); font-size: 18px; font-weight: 600; letter-spacing: -0.2px; }
 #app .core-navigation { margin-left: 8px; padding-left: 22px; }
-#app .nav-actions .n-button:not(.n-button--circle) { --n-border-radius: 7px !important; }
-#app .nav-actions .n-button__icon { font-size: 14px; opacity: .8; }
-#app .nav-actions .action-button .n-button__icon { filter: grayscale(1); opacity: .65; }
+#app .nav-actions .n-button:not(.n-button--circle) { --n-border-radius: 99px !important; }
+#app .nav-actions .n-button__icon { font-size: 14px; opacity: .82; }
+#app .nav-actions .action-button .n-button__icon { filter: grayscale(1); opacity: .68; }
 #app .nav-actions .myweb-model-action {
-  --n-color: color-mix(in srgb, var(--myweb-moss) 7%, var(--myweb-card)) !important;
+  --n-color: var(--myweb-soft) !important;
   --n-text-color: var(--myweb-moss) !important;
-  --n-border: 1px solid color-mix(in srgb, var(--myweb-moss) 38%, var(--myweb-line)) !important;
+  --n-border: 1px solid rgba(67, 97, 83, 0.28) !important;
 }
 /* Keep visual order and keyboard order aligned: title, modes, then management actions. */
 #app .nav-content { display: grid !important; grid-template-columns: auto minmax(0, 1fr); gap: 12px 24px !important; }
@@ -71,45 +129,63 @@ html, body { background: var(--myweb-paper); }
   margin: 0; padding: 0; min-height: 0;
   border-left: 0;
 }
-.myweb-workspace-guide { display: none; margin: 0; align-items: center; gap: 10px; font: 11px/1.7 var(--myweb-font); color: var(--myweb-muted); white-space: nowrap; }
+.myweb-workspace-guide {
+  display: none; margin: 0; align-items: center; gap: 10px;
+  padding: 5px 14px; border-radius: 99px;
+  background: var(--myweb-card); border: 1px solid var(--myweb-line);
+  font: 11px/1.7 var(--myweb-font); color: var(--myweb-muted); white-space: nowrap;
+}
 #app .compact-viewport-frame:has([data-testid="workspace"]) .myweb-workspace-guide { display: flex; }
-.myweb-workspace-guide i { font-style: normal; color: var(--myweb-clay); opacity: .75; }
-#app .n-card { border-radius: 10px; }
-#app .n-card-header__main { letter-spacing: -.3px; }
+.myweb-workspace-guide i { font-style: normal; color: var(--myweb-clay); }
+#app .n-card {
+  border-radius: 18px !important;
+  background: var(--myweb-card) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: var(--myweb-line) !important;
+  box-shadow: var(--myweb-shadow) !important;
+}
+#app .n-card-header__main { font-family: var(--myweb-serif); font-weight: 600; letter-spacing: -0.2px; }
+#app .n-button--primary-type:not(.n-button--disabled) {
+  background: linear-gradient(135deg, #355a4a, #48735f) !important;
+  border-color: transparent !important;
+  color: #faf9f7 !important;
+  box-shadow: 0 6px 16px rgba(45, 78, 64, 0.16);
+}
+#app .n-button--primary-type:not(.n-button--disabled):hover { filter: brightness(1.06); }
 #app textarea { line-height: 1.85 !important; }
 #app .n-input--textarea .n-input-wrapper { padding: 12px 14px; }
 #app .n-empty { --n-text-color: var(--myweb-muted); }
 #app .n-empty .n-empty__icon { opacity: .55; }
 #app .variant-result-card .n-empty { padding: 20px; box-sizing: border-box; text-align: center; }
 #app .variant-result-card .n-empty__description { max-width: 17em; color: var(--myweb-muted); font-size: 12px; line-height: 1.9; }
-#app .variant-result-card .n-empty__icon { margin-bottom: 14px; color: var(--myweb-moss); opacity: .42; }
+#app .variant-result-card .n-empty__icon { margin-bottom: 14px; color: var(--myweb-moss); opacity: .45; }
 #app .input-panel-title { display: inline-flex; align-items: center; gap: 10px; }
 #app .input-panel-title::before { content: ''; width: 3px; height: 16px; background: var(--myweb-moss); border-radius: 2px; flex-shrink: 0; }
 #app .n-input--textarea:focus-within { transition: box-shadow 160ms ease, border-color 160ms ease; }
 /* Compact layouts have their own surface variables; keep them in the same palette. */
 :root[data-optimizer-theme="light"], :root[data-optimizer-theme="dark"] {
-  --compact-paper: var(--myweb-card);
+  --compact-paper: var(--myweb-card-solid);
   --compact-soft: var(--myweb-soft);
   --compact-border: var(--myweb-line);
   --compact-ink: var(--myweb-ink);
   --compact-muted: var(--myweb-muted);
 }
 @media (max-width: 1100px) {
-  #myweb-tool-nav { gap: 22px; }
+  #myweb-tool-nav { gap: 16px; }
   .myweb-tool-stamp { display: none; }
   #app .myweb-workspace-guide { display: none !important; }
 }
 @media (max-width: 640px) {
   :root { --myweb-tool-nav-height: 60px; }
-  #myweb-tool-nav { padding: 0 14px; gap: 14px; }
+  #myweb-tool-nav { padding: 0 14px; gap: 10px; }
   #myweb-tool-nav .myweb-tool-brand { font-size: 16px; gap: 6px; }
-  .myweb-tool-brand svg { width: 27px; height: 27px; }
-  .myweb-tool-room { font-size: 12px; }
+  .myweb-tool-room { font-size: 11px; padding: 3px 9px; }
   .myweb-tool-room > span:first-child, .myweb-tool-room i { display: none; }
-  .myweb-tool-links { gap: 0; font-size: 11px; }
+  .myweb-tool-links { gap: 4px; font-size: 11px; }
   .myweb-tool-links .myweb-studio-link { display: none; }
-  .myweb-tool-links a { gap: 3px; }
-  #app .compact-original-card { border-radius: 10px; }
+  .myweb-tool-links a { padding: 0 9px; }
+  #app .compact-original-card { border-radius: 16px; }
 }
 @media (prefers-reduced-motion: reduce) {
   #myweb-tool-nav * { transition: none !important; }

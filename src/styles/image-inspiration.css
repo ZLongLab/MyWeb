@@ -76,3 +76,17 @@
 @media(max-width:799px){.image-room{width:calc(100% - 40px)}.image-room-hero{grid-template-columns:1fr;padding:30px 0;gap:22px}.image-room-hero h1{font-size:36px}.image-room-preview{max-width:420px;justify-self:center;width:100%;padding-left:14px}.image-room-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.image-room-search{width:100%}.image-room-dialog{width:calc(100% - 24px);max-height:calc(100dvh - 24px)}.image-room-detail{grid-template-columns:1fr;padding:19px;gap:16px}.image-room-dialog-top{padding:17px 19px}.image-room-detail-art img{max-height:220px;object-fit:cover}.image-room-detail-art>p{margin-bottom:9px}.image-room-palette{display:none}.image-room-attribution{margin-top:10px}.image-room-sources{grid-template-columns:1fr;gap:15px}.image-room-card-title{font-size:16px}.image-room-copy{padding:13px 13px 9px}.image-room-card-bottom{padding-left:13px}.image-room-save{padding-inline:8px}.image-room-dialog-top h2{font-size:22px}}
 @media(max-width:480px){.image-room-grid{grid-template-columns:1fr}.image-room-preview{max-width:330px}.image-room-hero h1{font-size:33px}.image-room-filter{padding-inline:11px}.image-room-summary{min-height:0}.image-room-card-title{font-size:19px}.image-room-card-bottom{padding-bottom:10px}.image-room-meta{gap:3px}.image-room-backup{gap:18px}.image-room-detail-links{gap:3px 15px}}
 @media(prefers-reduced-motion:reduce){.image-room-card,.image-room-art img{transition:none!important}.image-room-open:hover .image-room-art img{transform:none}}
+
+/* Unified morning-porcelain gallery elevation for Image Inspiration Room */
+.image-room-preview > a { padding:10px; border-radius:16px; background:rgba(255,255,255,.88); border:1px solid var(--morning-line); box-shadow:0 12px 32px rgba(26,48,38,.07); transition:transform .3s ease,box-shadow .3s ease; }
+.image-room-preview > a:hover { transform:rotate(0deg) translateY(-3px); box-shadow:0 16px 38px rgba(26,48,38,.11); }
+.image-room-preview img { border-radius:10px; }
+.image-room-search { border-radius:99px; background:rgba(255,255,255,.84); border:1px solid var(--morning-line); box-shadow:0 2px 10px rgba(26,48,38,.03); }
+.image-room-card { border-radius:20px !important; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; }
+.image-room-card:hover { transform:translateY(-3px); box-shadow:0 14px 36px rgba(26,48,38,.08); border-color:rgba(67,97,83,.22); }
+.image-room-art { border-bottom:1px solid rgba(26,48,38,.05); background:#f4f3ef; }
+.image-room-art .image-room-badge { bottom:10px; left:12px; padding:3px 9px; border-radius:99px; background:rgba(250,249,247,.88); backdrop-filter:blur(8px); border:1px solid rgba(26,48,38,.08); color:#3f5549; font-weight:500; }
+.image-room-save { border-radius:99px; padding:6px 12px; min-height:36px; }
+.image-room-sources { padding:26px 28px; border:1px solid var(--morning-line); border-radius:20px; background:var(--morning-glass); backdrop-filter:blur(16px); box-shadow:var(--morning-shadow); }
+.image-room-dialog { border-radius:22px; }
+.image-room-detail-art img { border-radius:14px; border:1px solid var(--morning-line); }

@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>黏土质感的小狐狸 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#d5a967" stop-opacity=".5"/><stop offset=".5" stop-color="#d5a967"/><stop offset="1" stop-color="#263f52" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#dce4e8"/><ellipse cx="250" cy="300" rx="175" ry="25" fill="#263f52" opacity=".1"/><ellipse cx="253" cy="288" rx="142" ry="32" fill="#94afbd"/><path d="M227 266c-87 32-117-73-86-84 2 57 31 54 60 44" fill="#d5a967"/><path d="m192 191 8-85 59 40 58-40 11 85c-5 85-134 84-136 0" fill="#d5a967"/><path d="m209 209 51 24 53-24-53 58z" fill="#dce4e8"/><path d="M218 187h8m65 0h8" stroke="#263f52" stroke-width="5" stroke-linecap="round"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>黏土质感的小狐狸 · 本站构图示意</title>
+<defs>
+<linearGradient id="clayBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#edf4ec"/><stop offset="100%" stop-color="#d7e6d7"/></linearGradient>
+    <radialGradient id="foxCoat" cx="38%" cy="30%" r="72%"><stop offset="0%" stop-color="#ec9662"/><stop offset="100%" stop-color="#c46235"/></radialGradient>
+</defs>
+<rect width="500" height="350" fill="url(#clayBg)"/>
+    <ellipse cx="250" cy="288" rx="146" ry="30" fill="#6f9673"/>
+    <ellipse cx="250" cy="282" rx="138" ry="24" fill="#88af89"/>
+    <path d="M188 264c-54 10-76-40-50-68 18-18 44 10 58 34Z" fill="url(#foxCoat)"/>
+    <path d="M142 204c-12 10-12 28 2 34 12-10 10-26-2-34Z" fill="#fbf5ea"/>
+    <ellipse cx="254" cy="236" rx="46" ry="48" fill="url(#foxCoat)"/>
+    <ellipse cx="254" cy="244" rx="22" ry="32" fill="#fbf5ea"/>
+    <path d="M206 164l8-56 36 28h20l36-28 8 56c0 44-108 44-108 0Z" fill="url(#foxCoat)"/>
+    <path d="M214 168l40 28 40-28c-12 24-26 32-40 32s-28-8-40-32Z" fill="#fbf5ea"/>
+    <circle cx="236" cy="162" r="4.5" fill="#2d241f"/><circle cx="272" cy="162" r="4.5" fill="#2d241f"/>
+    <circle cx="254" cy="176" r="5" fill="#2d241f"/>
+    <rect x="336" y="254" width="12" height="24" rx="5" fill="#f7efe0"/>
+    <path d="M322 258c0-18 40-18 40 0Z" fill="#d97558"/>
+    <rect x="364" y="264" width="9" height="16" rx="4" fill="#f7efe0"/>
+    <path d="M354 266c0-12 28-12 28 0Z" fill="#e39c68"/>
+</svg>

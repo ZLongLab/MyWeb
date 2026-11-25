@@ -200,3 +200,17 @@ body[data-page="workbench"] .workbench-section-index { color: var(--c-slate); }
   h2, h3, figure { break-inside: avoid; break-after: avoid; }
   @page { margin: 18mm; }
 }
+
+/* Unified frosted cards for Links, Colophon changelog archive, and Project TOC */
+.friend-list { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:16px; }
+.friend-list > li { padding:20px 22px; border:1px solid var(--morning-line); border-radius:18px; background:var(--morning-glass); backdrop-filter:blur(16px); box-shadow:var(--morning-shadow); transition:transform .22s ease,border-color .22s ease; }
+.friend-list > li:first-child { padding-top:20px; }
+.friend-list > li:last-child { border-bottom:1px solid var(--morning-line); }
+.friend-list > li:hover { transform:translateY(-2px); border-color:rgba(67,97,83,.22); }
+.friend-list h3 { margin:0 0 6px; font-size:18px; }
+.friend-list h3 a { min-height:34px; text-decoration:none; }
+.room-changelog-entry { padding:20px 22px !important; margin-bottom:14px; }
+.room-changelog-archive { margin-top:16px; border:1px solid var(--morning-line); border-radius:18px; background:rgba(255,255,255,.72); padding:14px 20px; }
+.room-changelog-archive summary { cursor:pointer; font-size:13px; font-weight:500; color:var(--morning-accent); min-height:36px; display:flex; align-items:center; }
+.room-changelog-archive-list { margin-top:14px; }
+@media (max-width:720px) { .friend-list { grid-template-columns:1fr; } }

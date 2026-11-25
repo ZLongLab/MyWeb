@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>层层纸片里的山 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#ebe2d2" stop-opacity=".5"/><stop offset=".5" stop-color="#ebe2d2"/><stop offset="1" stop-color="#514c40" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#e6ddd0"/><ellipse cx="250" cy="300" rx="175" ry="25" fill="#514c40" opacity=".1"/><path d="M0 214 91 68l94 109L301 50l99 133L500 99v251H0z" fill="#bea98c"/><path d="M0 282 126 119l88 126 79-85 100 110 107-89v169H0z" fill="#514c40"/><path d="m225 350 78-84-15-43 33-39-7-18 21 16-15 44 17 39-56 85" fill="#e6ddd0"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>层层纸片里的山 · 本站构图示意</title>
+<defs>
+<linearGradient id="paperSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#f7f2e7"/><stop offset="100%" stop-color="#e9e2d2"/></linearGradient>
+    <filter id="paperDrop" x="-10%" y="-10%" width="120%" height="130%"><feDropShadow dx="0" dy="-4" stdDeviation="4" flood-color="#2a433e" flood-opacity="0.16"/></filter>
+</defs>
+<rect width="500" height="350" fill="url(#paperSky)"/>
+    <circle cx="372" cy="84" r="28" fill="#f0d59b" opacity="0.85"/>
+    <path d="M0 172l88-62 92 54 114-78 96 68 110-58v254H0Z" fill="#c7d8d5" filter="url(#paperDrop)"/>
+    <path d="M0 214l112-66 84 62 108-72 104 68 92-48v192H0Z" fill="#95b5b2" filter="url(#paperDrop)"/>
+    <path d="M0 258l128-64 88 54 96-56 102 58 86-38v138H0Z" fill="#5e8783" filter="url(#paperDrop)"/>
+    <path d="M0 296l150-46 96 42 114-44 140 42v60H0Z" fill="#3a5e5a" filter="url(#paperDrop)"/>
+    <path d="M236 350c14-34 52-50 42-78-8-22-36-26-26-48 8-18 32-24 24-40 16 14 2 30-6 44-8 16 24 22 30 44 8 28-24 48-32 78Z" fill="#f5efe2"/>
+</svg>

@@ -3,24 +3,32 @@ import LocalDataVault from "../components/LocalDataVault.jsx";
 function ImageToolsShortcut() {
   return (
     <ToolShortcut
-      eyebrow="本地工具 / IMAGE WORKSHOP"
+      eyebrow="IMAGE WORKSHOP"
+      title="图片工坊"
+      badge="WebP / AVIF"
+      icon="image-tools"
+      tone="mint"
       href="image-tools.html"
       label="打开图片工坊 →"
       offset={0}
     >
-      多张图片顺序转换 WebP、JPEG、AVIF、PNG，调整尺寸，全程本地处理。
+      多张图片批量转换格式、一键压缩预设、滑动对比画质并打包 ZIP，全程本地不上传。
     </ToolShortcut>
   );
 }
 function ImageShortcut() {
   return (
     <ToolShortcut
-      eyebrow="图片工具 / IMAGE STUDIO"
+      eyebrow="IMAGE STUDIO"
+      title="图片灵感室"
+      badge="20 个起点"
+      icon="image-prompts"
+      tone="warm"
       href="image-prompts.html"
       label="打开图片灵感室 →"
       offset={0}
     >
-      {"20 个图片提示词起点，按风格找灵感，复制与本地收藏。"}
+      {"20 张原创构图示意与提示词起点，按人物、产品、海报、场景与插画浏览与本地收藏。"}
     </ToolShortcut>
   );
 }
@@ -28,12 +36,16 @@ function ImageShortcut() {
 function OptimizerShortcut() {
   return (
     <ToolShortcut
-      eyebrow="开源工具 / PROMPT OPTIMIZER"
+      eyebrow="PROMPT OPTIMIZER"
+      title="提示词优化器"
+      badge="自托管"
+      icon="optimizer"
+      tone="violet"
       href="prompt-optimizer/"
       label="打开提示词优化器 →"
       offset={0}
     >
-      {"优化、测试与收藏；实际使用前在模型管理中配置自己的服务。"}
+      {"接入自己的模型，系统优化、变量测试与对比结果；密钥仅留在当前浏览器。"}
     </ToolShortcut>
   );
 }
@@ -41,12 +53,16 @@ function OptimizerShortcut() {
 function VideoShortcut() {
   return (
     <ToolShortcut
-      eyebrow="视频工具 / VIDEO STUDIO"
+      eyebrow="VIDEO STUDIO"
+      title="视频灵感室"
+      badge="5 平台 · 15 模板"
+      icon="video-prompts"
+      tone="slate"
       href="video-prompts.html"
       label="打开视频灵感室 →"
       offset={0}
     >
-      {"选模板、填想法，把下一条视频的提示词留在这里。"}
+      {"按平台方言选模板、填故事与摄影词库，整理可直接复制的分镜提示词与草稿。"}
     </ToolShortcut>
   );
 }
@@ -54,12 +70,16 @@ function VideoShortcut() {
 function FrameStudioShortcut() {
   return (
     <ToolShortcut
-      eyebrow="本地工具 / FRAME STUDIO"
+      eyebrow="FRAME STUDIO"
+      title="画框工坊"
+      badge="Ctrl+V 即用"
+      icon="frame-studio"
+      tone="sky"
       href="frame-studio.html"
       label="打开画框工坊 →"
       offset={0}
     >
-      {"拖入或粘贴截图，套上圆角玻璃画框与渐变底色，高清导出不上传。"}
+      {"粘贴截图或切换代码卡片、引文摘录，一键套上画廊底色、玻璃窗口与高清投影导出。"}
     </ToolShortcut>
   );
 }
@@ -67,12 +87,50 @@ function FrameStudioShortcut() {
 function FocusLabShortcut() {
   return (
     <ToolShortcut
-      eyebrow="小实验室 / FOCUS LAB"
+      eyebrow="FOCUS LAB"
+      title="专注时钟与白噪音"
+      badge="Web Audio"
+      icon="focus-lab"
+      tone="rose"
       href="focus-lab.html"
       label="打开专注白噪音钟 →"
       offset={0}
     >
-      {"Web Audio 实时合成细雨、壁炉与松林微风，搭配番茄钟与本地记录。"}
+      {"零外部音频文件，实时合成细雨、壁炉、松风与溪流，搭配时间戳校准番茄钟。"}
+    </ToolShortcut>
+  );
+}
+
+function GuestbookShortcut() {
+  return (
+    <ToolShortcut
+      eyebrow="LOCAL NOTES"
+      title="灵感草稿箱"
+      badge="本地便签"
+      icon="guestbook"
+      tone="sand"
+      href="guestbook.html"
+      label="打开灵感草稿箱 →"
+      offset={0}
+    >
+      {"随时记下未展开的想法、待办与摘录，支持快捷分类、置顶、原位编辑与 JSON 备份。"}
+    </ToolShortcut>
+  );
+}
+
+function ChristmasShortcut() {
+  return (
+    <ToolShortcut
+      eyebrow="INTERACTIVE CANVAS"
+      title="圣诞夜粒子树"
+      badge="冬日特辑"
+      icon="christmas"
+      tone="pine"
+      href="christmas.html"
+      label="点亮圣诞树 →"
+      offset={0}
+    >
+      {"可惯性旋转的 3D 粒子圣诞树，附带三层飘雪、纯代码八音盒与 1600×960 贺卡导出。"}
     </ToolShortcut>
   );
 }
@@ -341,6 +399,8 @@ export default function WorkbenchPage() {
           <VideoShortcut />
           <OptimizerShortcut />
           <FocusLabShortcut />
+          <GuestbookShortcut />
+          <ChristmasShortcut />
         </section>
         {"\n\n    "}
         <LocalDataVault />

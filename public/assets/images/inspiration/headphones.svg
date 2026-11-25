@@ -1,1 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>耳机的结构练习 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#ebe2d2" stop-opacity=".5"/><stop offset=".5" stop-color="#ebe2d2"/><stop offset="1" stop-color="#514c40" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#e6ddd0"/><path d="M0 240 500 200v150H0z" fill="#bea98c"/><ellipse cx="259" cy="294" rx="121" ry="20" fill="#514c40" opacity=".12"/><path d="M170 210v-60a80 80 0 0 1 160 0v60" fill="none" stroke="#514c40" stroke-width="25"/><rect x="146" y="167" width="45" height="98" rx="18" fill="#514c40"/><rect x="309" y="167" width="45" height="98" rx="18" fill="#514c40"/><path d="M159 180v68m164-68v68" stroke="#ebe2d2" stroke-width="5"/><path d="M373 65c-17 50-23 95-8 153m-8-105c-43 0-53-27-32-35 21-5 40 12 32 35m5-40c35-5 49-34 28-37-17-3-29 16-28 37" fill="#514c40" fill-opacity=".12" stroke="#514c40" stroke-opacity=".13" stroke-width="3"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>耳机的结构练习 · 本站构图示意</title>
+<defs>
+<linearGradient id="techBg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#edf2f6"/><stop offset="100%" stop-color="#d5e0e9"/></linearGradient>
+    <linearGradient id="band" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#354f69"/><stop offset="100%" stop-color="#1e3144"/></linearGradient>
+    <linearGradient id="plinth" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#dce4ec"/></linearGradient>
+</defs>
+<rect width="500" height="350" fill="url(#techBg)"/>
+    <polygon points="104,264 396,264 432,318 68,318" fill="url(#plinth)" stroke="#c5d2de"/>
+    <rect x="68" y="318" width="364" height="32" fill="#cbd7e2"/>
+    <ellipse cx="250" cy="282" rx="116" ry="16" fill="#1e3144" opacity="0.16"/>
+    <path d="M168 188v-28c0-52 38-92 84-92s84 40 84 92v28" stroke="url(#band)" stroke-width="24" stroke-linecap="round"/>
+    <path d="M174 166c0-48 34-84 78-84s78 36 78 84" stroke="#6e8ba6" stroke-width="3" opacity="0.45"/>
+    <line x1="168" y1="184" x2="168" y2="206" stroke="#9ab0c4" stroke-width="6" stroke-linecap="round"/>
+    <line x1="336" y1="184" x2="336" y2="206" stroke="#9ab0c4" stroke-width="6" stroke-linecap="round"/>
+    <rect x="142" y="186" width="46" height="88" rx="22" fill="#23374b"/>
+    <rect x="176" y="194" width="18" height="72" rx="9" fill="#3a536c"/>
+    <rect x="316" y="186" width="46" height="88" rx="22" fill="#23374b"/>
+    <rect x="310" y="194" width="18" height="72" rx="9" fill="#3a536c"/>
+    <circle cx="160" cy="230" r="11" stroke="#e48b53" stroke-width="3"/>
+    <circle cx="344" cy="230" r="11" stroke="#e48b53" stroke-width="3"/>
+    <path d="M150 202v52m204-52v52" stroke="#ffffff" stroke-opacity="0.22" stroke-width="3" stroke-linecap="round"/>
+</svg>

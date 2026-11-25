@@ -267,8 +267,9 @@ export default function initialize(scope) {
         palette.append(b);
       });
     var changelog = document.getElementById("colophon-changelog");
-    if (changelog)
-      (desk.updates || []).forEach(function (item) {
+    if (changelog) {
+      var updates = desk.updates || [];
+      function buildLogEntry(item) {
         var row = el("article", "room-changelog-entry");
         var time = el("time", "room-meta", item.date + " / v" + item.version);
         time.dateTime = item.date;
@@ -277,26 +278,54 @@ export default function initialize(scope) {
           ul.append(el("li", "", text));
         });
         row.append(time, el("h3", "", item.title), ul);
-        changelog.append(row);
+        return row;
+      }
+      updates.slice(0, 6).forEach(function (item) {
+        changelog.append(buildLogEntry(item));
       });
+      if (updates.length > 6) {
+        var older = updates.slice(6);
+        var details = el("details", "room-changelog-archive");
+        details.append(
+          el(
+            "summary",
+            "",
+            "展开更早的 " + older.length + " 条历史版本记录",
+          ),
+        );
+        var archiveBody = el("div", "room-changelog-archive-list");
+        older.forEach(function (item) {
+          archiveBody.append(buildLogEntry(item));
+        });
+        details.append(archiveBody);
+        changelog.append(details);
+      }
+    }
     document.querySelectorAll("[data-room-updated]").forEach(function (node) {
       node.textContent = desk.updated || house.updated;
       node.setAttribute("datetime", desk.updated || house.updated);
     });
-    // Keep numbered room section kickers contiguous when optional empty sections are hidden.
-    var visibleSections = Array.from(
+    // Renumber room section kickers only when at least one sibling section was hidden.
+    var allSections = Array.from(
       document.querySelectorAll(".room-page .room-section"),
-    ).filter(function (section) {
-      return !section.hidden;
+    );
+    var hasHiddenSection = allSections.some(function (section) {
+      return section.hidden;
     });
-    visibleSections.forEach(function (section, index) {
-      var kicker = section.querySelector(".room-section-head .room-kicker");
-      if (kicker && /^\d{2}\s*\//.test(kicker.textContent)) {
-        kicker.textContent = kicker.textContent.replace(
-          /^\d{2}/,
-          String(index + 1).padStart(2, "0"),
-        );
-      }
-    });
+    if (hasHiddenSection) {
+      allSections
+        .filter(function (section) {
+          return !section.hidden;
+        })
+        .forEach(function (section, index) {
+          var kicker = section.querySelector(".room-section-head .room-kicker");
+          if (kicker && /^\d{2}\s*\//.test(kicker.textContent)) {
+            kicker.textContent = kicker.textContent.replace(
+              /^\d{2}/,
+              String(index + 1).padStart(2, "0"),
+            );
+          }
+        });
+    }
   })();
 }

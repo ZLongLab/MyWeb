@@ -282,6 +282,8 @@ html
     .article-card,
     .garden-card,
     .project-overview,
+    .guestbook-compose,
+    .guestbook-saved,
     .guestbook-form,
     .guestbook-note,
     .prompt-panel,
@@ -365,10 +367,208 @@ html[data-theme]
   border-color: var(--morning-line);
   transition: var(--gallery-motion);
 }
-html[data-theme] body[data-page] :is(.prompt-main-action, .image-tools-start) {
+html[data-theme]
+  body[data-page]
+  :is(
+    .button.button-primary,
+    .prompt-main-action,
+    .image-tools-start,
+    .frame-export-primary,
+    .focus-start-btn
+  ) {
+  background: linear-gradient(135deg, #355a4a, #48735f);
+  color: #faf9f7;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(45, 78, 64, 0.16);
+}
+html[data-theme]
+  body[data-page]
+  :is(
+    .button.button-primary,
+    .prompt-main-action,
+    .image-tools-start,
+    .frame-export-primary,
+    .focus-start-btn
+  ):hover:not(:disabled) {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+html[data-theme]
+  body[data-page]
+  :is(
+    .button.button-primary,
+    .prompt-main-action,
+    .image-tools-start,
+    .frame-export-primary,
+    .focus-start-btn
+  ):disabled {
+  opacity: 0.54;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+html body[data-page="focus-lab"] .focus-timer-actions button {
+  border-radius: 12px;
+}
+html body[data-page="guestbook"] .guestbook-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 28px;
+  align-items: end;
+}
+html body[data-page="guestbook"] .guestbook-hero-card {
+  padding: 18px 20px;
+  border-radius: 20px;
+  display: grid;
+  gap: 12px;
+}
+html body[data-page="guestbook"] .guestbook-hero-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--morning-muted);
+}
+html body[data-page="guestbook"] .guestbook-hero-card-top b {
+  font: 500 11px var(--mono), var(--font);
+  padding: 3px 9px;
+  border-radius: 99px;
   background: var(--morning-soft);
-  color: var(--morning-ink);
+  color: var(--morning-accent);
+}
+html body[data-page="guestbook"] .guestbook-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+html body[data-page="guestbook"] .guestbook-hero-stats span {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(244, 246, 243, 0.8);
   border: 1px solid var(--morning-line);
+  font-size: 11px;
+  color: var(--morning-muted);
+  text-align: center;
+}
+html body[data-page="guestbook"] .guestbook-hero-stats b {
+  font: 600 16px var(--serif);
+  color: var(--morning-ink);
+}
+html body[data-page="guestbook"] .guestbook-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 14px 0 16px;
+}
+html body[data-page="guestbook"] .guestbook-filter-chip {
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 99px;
+  border: 1px solid var(--morning-line);
+  background: rgba(255, 255, 255, 0.78);
+  color: var(--morning-muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+}
+html body[data-page="guestbook"] .guestbook-filter-chip:hover {
+  background: var(--morning-soft);
+  color: var(--morning-accent);
+}
+html body[data-page="guestbook"] .guestbook-filter-chip[aria-pressed="true"] {
+  background: var(--morning-soft);
+  border-color: rgba(67, 97, 83, 0.34);
+  color: var(--morning-accent);
+  font-weight: 500;
+}
+@media (max-width: 900px) {
+  html body[data-page="guestbook"] .guestbook-intro {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  html body[data-page="guestbook"] .guestbook-hero-card {
+    display: none;
+  }
+}
+html body[data-page="guestbook"] .guestbook-scope {
+  padding: 14px 18px;
+  margin-bottom: 8px;
+  border: 1px solid var(--morning-line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--morning-shadow);
+}
+html body[data-page="guestbook"] .guestbook-layout {
+  gap: 28px;
+  align-items: start;
+}
+html body[data-page="guestbook"] :is(.guestbook-compose, .guestbook-saved) {
+  padding: 26px 28px;
+}
+html body[data-page="guestbook"] .guestbook-empty {
+  border: 1px dashed rgba(67, 97, 83, 0.2);
+  border-radius: 16px;
+  background: rgba(244, 246, 243, 0.72);
+}
+@media (max-width: 799px) {
+  html body[data-page="guestbook"] :is(.guestbook-compose, .guestbook-saved) {
+    padding: 20px 18px;
+  }
+}
+html body[data-page] .room-note {
+  padding: 16px 20px;
+  border: 1px solid var(--morning-line);
+  border-left: 3px solid var(--morning-accent);
+  border-radius: 14px;
+  background: var(--morning-glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--morning-shadow);
+}
+html body[data-page] .room-empty {
+  padding: 22px 24px;
+  border: 1px dashed rgba(67, 97, 83, 0.2);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+html body[data-page="uses"] #uses-software {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+html body[data-page="uses"] #uses-software > li {
+  padding: 20px 22px;
+  border: 1px solid var(--morning-line);
+  border-radius: 18px;
+  background: var(--morning-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: var(--morning-shadow);
+  overflow: hidden;
+  transition: transform 0.22s ease, border-color 0.22s ease;
+}
+html body[data-page="uses"] #uses-software > li:hover {
+  transform: translateY(-2px);
+  border-color: rgba(67, 97, 83, 0.22);
+}
+@media (max-width: 720px) {
+  html body[data-page="uses"] #uses-software {
+    grid-template-columns: 1fr;
+  }
+}
+html body[data-page="project"] .project-toc {
+  padding: 20px 24px;
+  border: 1px solid var(--morning-line);
+  border-radius: 18px;
+  background: var(--morning-glass);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--morning-shadow);
 }
 html body[data-page] .gallery-footer {
   background: linear-gradient(180deg, #1c2a24 0%, #16211c 100%);
@@ -591,6 +791,8 @@ body[data-page="article"] .article-code-copy {
       .prompt-card,
       .room-panel,
       .glass-card,
+      .friend-list > li,
+      #uses-software > li,
       .nav-contact span
     ) {
     transition: none;

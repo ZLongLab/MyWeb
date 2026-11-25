@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350"><title>湖边的安静小屋 · 本站构图示意</title><defs><linearGradient id="glass" x1="0" x2="1"><stop stop-color="#d5a967" stop-opacity=".5"/><stop offset=".5" stop-color="#d5a967"/><stop offset="1" stop-color="#263f52" stop-opacity=".8"/></linearGradient><radialGradient id="light"><stop stop-color="#fffdf8" stop-opacity=".45"/><stop offset="1" stop-color="#fffdf8" stop-opacity="0"/></radialGradient></defs><rect width="500" height="350" fill="#dce4e8"/><rect width="500" height="350" fill="#dce4e8"/><path d="M0 275 500 239v111H0z" fill="#94afbd"/><path d="M0 205 113 105l85 103 89-135 110 145 103-74v206H0z" fill="#94afbd"/><path d="M0 255h500v95H0z" fill="#a7bdc1"/><path d="m272 169 79-53 88 53z" fill="#263f52"/><rect x="286" y="167" width="139" height="92" fill="#d5a967"/><rect x="332" y="192" width="39" height="45" fill="#dce4e8"/><path d="m286 279 139 18-139 15" fill="#d5a967" opacity=".25"/><rect width="500" height="350" fill="url(#light)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="350" viewBox="0 0 500 350" fill="none">
+<title>湖边的安静小屋 · 本站构图示意</title>
+<defs>
+<linearGradient id="dawnSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9dae4"/><stop offset="55%" stop-color="#e4ecea"/><stop offset="100%" stop-color="#f2e9dc"/></linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#9cb5c2"/><stop offset="100%" stop-color="#6e8d9c"/></linearGradient>
+</defs>
+<rect width="500" height="350" fill="url(#dawnSky)"/>
+    <path d="M0 184l86-68 74 58 98-86 94 74 82-46 66 52v60H0Z" fill="#9fb5bf" opacity="0.55"/>
+    <path d="M0 202l116-54 88 46 112-62 96 52 88-34v76H0Z" fill="#6c8982" opacity="0.72"/>
+    <rect x="0" y="220" width="500" height="130" fill="url(#lake)"/>
+    <rect x="0" y="212" width="500" height="18" fill="#f4f2eb" opacity="0.42"/>
+    <polygon points="292,168 370,118 448,168" fill="#3a4c47"/>
+    <rect x="308" y="166" width="124" height="58" fill="#8b694e"/>
+    <rect x="348" y="182" width="44" height="30" rx="2" fill="#f7d38c"/>
+    <line x1="370" y1="182" x2="370" y2="212" stroke="#6c4e38" stroke-width="2"/>
+    <g opacity="0.28">
+      <rect x="308" y="232" width="124" height="38" fill="#5e4735"/>
+      <rect x="350" y="236" width="40" height="24" fill="#f7d38c"/>
+      <line x1="64" y1="262" x2="210" y2="262" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+      <line x1="112" y1="286" x2="286" y2="286" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round"/>
+    </g>
+</svg>
