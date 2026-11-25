@@ -327,6 +327,16 @@
     grid-template-columns: 1fr;
   }
 }
+@media (max-width: 520px) {
+  .focus-mode-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .focus-timer-card,
+  .focus-sound-card {
+    padding: 20px 18px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .focus-ring-fill {
     transition: none;

@@ -1,6 +1,6 @@
 // 房间目录是一份全站共用的数据；详情页不另算一个房间。
 window.SITE_HOUSE = {
-  updated: '2026-11-24',
+  updated: '2026-11-25',
   started: '2026-10-24',
   timeZone: 'Asia/Shanghai',
   quote: '把想法做出来，也给生活留一点空白。',

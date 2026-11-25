@@ -253,7 +253,7 @@ export default function ImageToolsPage() {
             </svg>
           </span>
           <h2>拖放图片到这里，或按 Ctrl+V 粘贴</h2>
-          <p>可一次选择多张，按顺序逐张处理，支持 PNG · JPEG · WebP · AVIF · GIF · BMP。</p>
+          <p>支持多张顺序处理 · PNG / JPEG / WebP / AVIF / GIF / BMP。</p>
           <label className="image-tools-pick" htmlFor="image-tools-input">选择图片</label>
           <input className="visually-hidden" id="image-tools-input" type="file" multiple accept={accept}
             aria-label="选择需要转换的图片" disabled={busy || downloading}

@@ -359,6 +359,37 @@ html
   background: var(--morning-glass);
   color: var(--morning-ink);
 }
+html body[data-page] .site-search-field {
+  border-radius: 14px;
+  border-color: rgba(67, 97, 83, 0.2);
+}
+html body[data-page] .site-search-field input:focus-visible,
+html body[data-page] .image-room-search input:focus-visible {
+  outline: none;
+  animation: none;
+}
+html body[data-page] .site-search-close {
+  border-radius: 50%;
+}
+html body[data-page] .header-home-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 99px;
+  border: 1px solid var(--morning-line);
+  background: var(--morning-soft);
+  color: var(--morning-accent);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--gallery-motion);
+}
+html body[data-page] .header-home-pill:hover {
+  background: #ddeae3;
+  border-color: rgba(67, 97, 83, 0.24);
+}
 html[data-theme]
   body[data-page]
   :is(.gallery-button, .button, .guestbook-export, .about-contact-socials a) {

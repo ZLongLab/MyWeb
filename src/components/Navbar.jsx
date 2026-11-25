@@ -21,6 +21,7 @@ export default function Navbar({ page }) {
                 "video-prompts",
                 "frame-studio",
                 "focus-lab",
+                "guestbook",
               ].includes(page)
             ? "workbench"
             : page;
@@ -62,7 +63,11 @@ export default function Navbar({ page }) {
         <SiteMark />
         <span data-site-title>{site.siteTitle}</span>
       </a>
-      {page !== "notfound" && (
+      {page === "notfound" ? (
+        <a className="header-home-pill" href="index.html">
+          ← 返回首页
+        </a>
+      ) : (
         <>
           <button
             ref={button}

@@ -269,16 +269,16 @@ export default function initialize(scope) {
       id: "page:image-tools",
       type: "页面",
       title: "图片工坊 · 本地图片转换",
-      summary: "多张图片顺序压缩与缩放，转换 WebP、JPEG、AVIF、PNG；全程本地处理，不上传。",
+      summary: "批量转换 WebP、JPEG、AVIF、PNG，内置快捷预设、画质滑动对比与一键 ZIP 打包；全程本地不上传。",
       href: "image-tools.html",
-      body: "图片工坊 图片压缩 格式转换 批量 缩放 下载 WebP JPEG AVIF PNG jSquash Squoosh",
+      body: "图片工坊 图片压缩 格式转换 批量 缩放 预设 ZIP 对比 下载 WebP JPEG AVIF PNG jSquash Squoosh",
     });
     addEntry({
       id: "page:image-prompts",
       type: "页面",
       title: "图片灵感室 · 图片提示词起点",
       summary:
-        "20 个起点：人物、产品、海报、场景和插画；复制、收藏与本地备份。",
+        "20 张原创构图插画与提示词起点：人物、产品、海报、场景和插画；复制、收藏与本地备份。",
       href: "image-prompts.html",
       body: "图片 生图 提示词 灵感 摄影 水彩 人物 产品 海报 插画 Nano Banana 收藏",
     });
@@ -294,7 +294,7 @@ export default function initialize(scope) {
       id: "page:video-prompts",
       type: "页面",
       title: "视频灵感室 · AI 提示词工具",
-      summary: "15 个创作模板与摄影候选词：分镜、产品广告、一镜到底和可灵方向；收藏与备份草稿。",
+      summary: "5 平台 15 个创作模板与 57 条摄影词库：分镜、产品广告、一镜到底和可灵方向；收藏与备份草稿。",
       href: "video-prompts.html",
       body: "Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿",
     });
@@ -302,25 +302,25 @@ export default function initialize(scope) {
       id: "page:christmas",
       type: "页面",
       title: "圣诞夜 · 圣诞特辑",
-      summary: "转动粒子圣诞树，点亮盘旋的光带，换一串喜欢的灯。",
+      summary: "可旋转 3D 粒子圣诞树、三层飘雪、八音盒《平安夜》与 1600×960 贺卡导出。",
       href: "christmas.html",
-      body: "圣诞 圣诞树 圣诞夜 特辑 飘雪 粒子 彩蛋 christmas",
+      body: "圣诞 圣诞树 圣诞夜 特辑 飘雪 粒子 八音盒 贺卡 彩蛋 christmas",
     });
     addEntry({
       id: "page:frame-studio",
       type: "页面",
       title: "画框工坊 · 截图美化器",
-      summary: "拖入或 Ctrl+V 粘贴截图，一键套上画廊背景、圆角窗口与投影后高清导出。",
+      summary: "粘贴截图或切换代码卡片、引文摘录，一键套用组合预设、画廊背景与投影后高清导出。",
       href: "frame-studio.html",
-      body: "画框 截图 美化 套壳 阴影 背景 粘贴 导出 PNG WebP frame studio",
+      body: "画框 截图 美化 套壳 代码卡片 引文摘录 预设 阴影 背景 粘贴 导出 PNG WebP frame studio",
     });
     addEntry({
       id: "page:focus-lab",
       type: "页面",
       title: "专注时钟 · 白噪音实验室",
-      summary: "纯 Web Audio 实时合成细雨、壁炉与松林微风，搭配极简番茄钟与本地统计。",
+      summary: "纯 Web Audio 实时合成细雨、壁炉、松林微风与午后溪流，搭配番茄钟、空格启停与本地统计。",
       href: "focus-lab.html",
-      body: "专注 番茄钟 计时器 白噪音 雨声 壁炉 风声 实验室 focus pomodoro audio",
+      body: "专注 番茄钟 计时器 白噪音 雨声 壁炉 风声 溪流 空格 实验室 focus pomodoro audio",
     });
     [
       {
