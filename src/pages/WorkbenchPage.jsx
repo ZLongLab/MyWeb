@@ -118,6 +118,40 @@ function GuestbookShortcut() {
   );
 }
 
+function StarlightBoxShortcut() {
+  return (
+    <ToolShortcut
+      eyebrow="AUDIO-VISUAL LAB"
+      title="星轨八音盒"
+      badge="音画编曲"
+      icon="starlight-box"
+      tone="violet"
+      href="starlight-box.html"
+      label="打开星轨八音盒 →"
+      offset={0}
+    >
+      {"16 拍五声音阶发光音序器，支持 4 种纯 Web Audio 音色、键盘 A–K 弹奏与 3D 星环粒子绽放。"}
+    </ToolShortcut>
+  );
+}
+
+function FireworksShortcut() {
+  return (
+    <ToolShortcut
+      eyebrow="INTERACTIVE CANVAS"
+      title="夜空烟花湖"
+      badge="物理烟花"
+      icon="fireworks"
+      tone="sky"
+      href="fireworks.html"
+      label="放一场烟花 →"
+      offset={0}
+    >
+      {"点击夜空发射 5 种物理形态烟花，湖面实时映出微光倒影，附带合成音效与壁纸导出。"}
+    </ToolShortcut>
+  );
+}
+
 function ChristmasShortcut() {
   return (
     <ToolShortcut
@@ -400,6 +434,8 @@ export default function WorkbenchPage() {
           <OptimizerShortcut />
           <FocusLabShortcut />
           <GuestbookShortcut />
+          <StarlightBoxShortcut />
+          <FireworksShortcut />
           <ChristmasShortcut />
         </section>
         {"\n\n    "}

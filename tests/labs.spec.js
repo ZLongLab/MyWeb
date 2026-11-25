@@ -246,3 +246,61 @@ test("Site polish: Frame code/quote cards, Focus custom duration, Notes edit/pin
   expect(errors).toEqual([]);
   expect(external).toEqual([]);
 });
+
+test("Audio-visual editions: Starlight Music Box and Midnight Fireworks Lake work cleanly offline", async ({
+  page,
+}) => {
+  const errors = [];
+  const external = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  page.on("request", (request) => {
+    if (
+      /^https?:/.test(request.url()) &&
+      new URL(request.url()).hostname !== "127.0.0.1"
+    ) {
+      external.push(request.url());
+    }
+  });
+
+  // 1. Starlight Music Box: timbre, palette, presets, playback, keyboard play, share hash.
+  await page.goto("starlight-box.html");
+  await expect(page.locator("audio")).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("星轨八音盒。");
+  await page.getByRole("button", { name: "温暖电钢" }).click();
+  await expect(page.getByRole("button", { name: "温暖电钢" })).toHaveAttribute("aria-pressed", "true");
+  await page.getByRole("button", { name: "极光翡翠" }).click();
+  await expect(page.locator("#starlight-app")).toHaveAttribute("data-palette", "aurora");
+  await page.getByRole("button", { name: "雨夜回响" }).click();
+  await expect(page.locator("#star-play")).toHaveAttribute("aria-pressed", "true");
+  await page.keyboard.press("a");
+  await page.locator("#star-share").click();
+  expect(await page.evaluate(() => location.hash)).toMatch(/^#m=epiano\.\d+\.[0-9a-z]{32}$/);
+  await page.locator("#star-play").click();
+  await expect(page.locator("#star-play")).toHaveAttribute("aria-pressed", "false");
+  await page.locator("#star-collapse").click();
+  await expect(page.locator("#star-grid-wrap")).toBeHidden();
+  await page.locator("#star-collapse").click();
+  await expect(page.locator("#star-grid-wrap")).toBeVisible();
+
+  // 2. Midnight Fireworks Lake: palettes, shapes, sound, salvo, and 1600x960 PNG wallpaper export.
+  await page.goto("fireworks.html");
+  await expect(page.locator("audio")).toHaveCount(0);
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("夜空烟花湖。");
+  await page.getByRole("button", { name: "极光青碧" }).click();
+  await expect(page.locator("#fireworks-app")).toHaveAttribute("data-palette", "aurora");
+  await page.getByRole("button", { name: "星环" }).click();
+  await expect(page.getByRole("button", { name: "星环" })).toHaveAttribute("aria-pressed", "true");
+  await page.locator("#fw-sound").click();
+  await expect(page.locator("#fw-sound")).toHaveAttribute("aria-pressed", "true");
+  await page.locator("#fw-salvo").click();
+
+  const downloadPromise = page.waitForEvent("download");
+  await page.locator("#fw-save").click();
+  const download = await downloadPromise;
+  expect(download.suggestedFilename()).toBe("fireworks-lake-aurora.png");
+  const bytes = fs.readFileSync(await download.path());
+  expect(bytes.subarray(1, 4).toString()).toBe("PNG");
+
+  expect(errors).toEqual([]);
+  expect(external).toEqual([]);
+});

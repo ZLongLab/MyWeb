@@ -23,10 +23,10 @@ for (const width of [1440, 390]) {
     );
     await expect(page.locator(".product-glass-card")).toHaveCount(2);
     await expect(page.locator(".gallery-tool-card")).toHaveCount(6);
-    await expect(page.locator(".christmas-spotlight")).toHaveAttribute(
-      "href",
-      "christmas.html",
-    );
+    await expect(page.locator(".interactive-edition-card")).toHaveCount(3);
+    await expect(page.locator('.interactive-edition-card[href="starlight-box.html"]')).toBeVisible();
+    await expect(page.locator('.interactive-edition-card[href="fireworks.html"]')).toBeVisible();
+    await expect(page.locator('.interactive-edition-card[href="christmas.html"]')).toBeVisible();
     await expect(page.locator(".hero-status-pill")).toBeVisible();
     await expect(page.locator(".gallery-letter-card")).toBeVisible();
     await expect(page.locator(".product-copy").first()).toHaveAttribute(

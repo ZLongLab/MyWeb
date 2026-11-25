@@ -25,6 +25,8 @@ const bundledStyles = new Set([
   "journal-gallery.css",
   "projects-bento.css",
   "christmas.css",
+  "starlight-box.css",
+  "fireworks.css",
   "frame-studio.css",
   "focus-lab.css",
 ]);

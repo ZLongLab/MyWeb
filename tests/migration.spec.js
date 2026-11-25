@@ -59,6 +59,20 @@ for (const width of [1440, 390])
           "href",
           "./index.html",
         );
+      } else if (path === "starlight-box.html") {
+        await page.goto(path);
+        await expect(page.getByRole("button", { name: "播放星轨" })).toBeVisible();
+        await expect(page.getByRole("link", { name: "返回小站" })).toHaveAttribute(
+          "href",
+          "./index.html",
+        );
+      } else if (path === "fireworks.html") {
+        await page.goto(path);
+        await expect(page.getByRole("button", { name: "✦ 齐放" })).toBeVisible();
+        await expect(page.getByRole("link", { name: "返回小站" })).toHaveAttribute(
+          "href",
+          "./index.html",
+        );
       } else {
         await ready(page, path);
       }

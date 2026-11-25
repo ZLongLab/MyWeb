@@ -36,6 +36,8 @@ export function detailHref(section, id, context) {
     "prompt-optimizer": "prompt-optimizer/",
     "frame-studio": "frame-studio.html",
     "focus-lab": "focus-lab.html",
+    "starlight-box": "starlight-box.html",
+    fireworks: "fireworks.html",
     christmas: "christmas.html",
   };
   if (section === "projects" && tools[id]) return tools[id];

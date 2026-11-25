@@ -81,6 +81,39 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
 
 .home-link:hover { background: #253c2e; border-color: #829474; }
 
+.edition-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 99px;
+  background: rgba(9, 25, 19, 0.72);
+  border: 1px solid rgba(235, 206, 145, 0.24);
+  backdrop-filter: blur(12px);
+}
+.edition-switcher a {
+  padding: 5px 13px;
+  border-radius: 99px;
+  color: rgba(240, 232, 214, 0.72);
+  text-decoration: none;
+  font-size: 12px;
+  white-space: nowrap;
+  transition: background-color .2s ease, color .2s ease;
+}
+.edition-switcher a:hover { color: #fff6e0; }
+.edition-switcher a[aria-current="page"] {
+  background: rgba(235, 206, 145, 0.2);
+  color: #f4d898;
+  font-weight: 500;
+}
+@media (max-width: 720px) {
+  .masthead { flex-wrap: wrap; row-gap: 10px; }
+  .brand { white-space: nowrap; }
+  .edition-switcher { order: 3; width: 100%; justify-content: center; }
+  .edition-switcher a { padding: 5px 11px; font-size: 11.5px; }
+  .brand-divider, .edition { display: none; }
+}
+
 .cover {
   --deep: #0a2018;
   --accent: #ebce91;

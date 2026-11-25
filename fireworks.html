@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050914">
+  <meta name="description" content="有间小站的夜空烟花湖。点击夜空发射 5 种物理形态烟花，在静谧湖面映出微光倒影，配纯 Web Audio 实时合成音效与高清壁纸导出。">
+  <title>夜空烟花湖 · 声光特辑 · 有间小站</title>
+  <!-- discovery:start -->
+  <meta property="og:title" content="夜空烟花湖 · 声光特辑 · 有间小站">
+  <meta property="og:description" content="点击夜空发射 5 种物理形态烟花，带实时湖面水波倒影、纯 Web Audio 合成音效与 1600×960 壁纸导出。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zlonglab.github.io/MyWeb/fireworks.html">
+  <meta property="og:image" content="https://zlonglab.github.io/MyWeb/assets/images/site-og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="夜空烟花湖 · 声光特辑 · 有间小站">
+  <meta name="twitter:description" content="点击夜空发射 5 种物理形态烟花，带实时湖面水波倒影、纯 Web Audio 合成音效与 1600×960 壁纸导出。">
+  <meta name="twitter:url" content="https://zlonglab.github.io/MyWeb/fireworks.html">
+  <meta name="twitter:image" content="https://zlonglab.github.io/MyWeb/assets/images/site-og-card.png">
+  <!-- discovery:end -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/styles/fireworks.css">
+  <script type="module" src="/src/pages/fireworks.js"></script>
+</head>
+<body>
+  <div class="fw-page" id="fireworks-app" data-palette="festival">
+    <header class="fw-masthead">
+      <div class="fw-brand">
+        <span class="fw-brand-mark" aria-hidden="true">✦</span>
+        <span>有间小站<span class="fw-brand-divider"></span><span class="fw-edition">声光特辑</span></span>
+      </div>
+      <nav class="edition-switcher" aria-label="声光互动特辑切换">
+        <a href="./christmas.html">圣诞树</a>
+        <a href="./starlight-box.html">星轨八音盒</a>
+        <a href="./fireworks.html" aria-current="page">夜空烟花湖</a>
+      </nav>
+      <a class="fw-home-link" href="./index.html">返回小站</a>
+    </header>
+
+    <main class="fw-stage" id="main">
+      <canvas
+        class="fw-canvas"
+        id="fw-canvas"
+        role="img"
+        aria-label="静谧湖面与夜空烟花画布，点击夜空任意位置可发射烟花"
+      ></canvas>
+
+      <div class="fw-hero-overlay">
+        <p class="fw-kicker"><span>✧ MIDNIGHT LAKE FIREWORKS</span> · <span>PHYSICS + WEB AUDIO</span></p>
+        <h1>夜空烟花湖<span>。</span></h1>
+        <p class="fw-lead">点击夜空任意处升空绽放，在湖面映出微光倒影；按 <kbd>Space</kbd> 触发一轮齐放。</p>
+      </div>
+
+      <section class="fw-controls" aria-label="烟花控制栏">
+        <div class="fw-palettes" role="group" aria-label="烟花配色方案">
+          <button type="button" class="fw-swatch" data-palette="festival" aria-label="盛典鎏金" title="盛典鎏金" aria-pressed="true"></button>
+          <button type="button" class="fw-swatch" data-palette="aurora" aria-label="极光青碧" title="极光青碧" aria-pressed="false"></button>
+          <button type="button" class="fw-swatch" data-palette="sakura" aria-label="绯樱流萤" title="绯樱流萤" aria-pressed="false"></button>
+        </div>
+
+        <span class="fw-sep" aria-hidden="true"></span>
+
+        <div class="fw-shapes" role="group" aria-label="烟花形态">
+          <button type="button" class="fw-pill" data-shape="mixed" aria-pressed="true">混合</button>
+          <button type="button" class="fw-pill" data-shape="chrysanthemum" aria-pressed="false">菊花</button>
+          <button type="button" class="fw-pill" data-shape="willow" aria-pressed="false">垂柳</button>
+          <button type="button" class="fw-pill" data-shape="ring" aria-pressed="false">星环</button>
+          <button type="button" class="fw-pill" data-shape="star" aria-pressed="false">星芒</button>
+          <button type="button" class="fw-pill" data-shape="spiral" aria-pressed="false">螺旋</button>
+        </div>
+
+        <span class="fw-sep" aria-hidden="true"></span>
+
+        <div class="fw-actions">
+          <button type="button" class="fw-action-btn is-primary" id="fw-salvo">✦ 齐放</button>
+          <button type="button" class="fw-action-btn" id="fw-auto" aria-pressed="true">自动烟花秀</button>
+          <button type="button" class="fw-action-btn" id="fw-sound" aria-pressed="false" title="开启或静音 Web Audio 合成烟花音效">♪ 音效</button>
+          <button type="button" class="fw-action-btn" id="fw-save">保存壁纸 PNG</button>
+        </div>
+      </section>
+
+      <p class="fw-status" id="fw-status" role="status" aria-live="polite">点击夜空发射烟花 · 支持 5 种物理形态与湖面实时倒影</p>
+    </main>
+  </div>
+</body>
+</html>

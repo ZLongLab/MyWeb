@@ -3,7 +3,11 @@ import fs from "node:fs";
 
 const routes = fs
   .readdirSync(".")
-  .filter((name) => /^[a-z0-9-]+\.html$/.test(name) && name !== "christmas.html");
+  .filter(
+    (name) =>
+      /^[a-z0-9-]+\.html$/.test(name) &&
+      !["christmas.html", "starlight-box.html", "fireworks.html"].includes(name),
+  );
 for (const theme of ["paper", "night"]) {
   test(`All rooms share gallery surfaces, readable text and footer in ${theme}`, async ({
     page,

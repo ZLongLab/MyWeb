@@ -55,41 +55,71 @@ const ONLINE_TOOLS = [
   },
 ] as const;
 
+const INTERACTIVE_EDITIONS = [
+  {
+    href: "starlight-box.html",
+    kicker: "WEB AUDIO + 3D ORBIT",
+    title: "星轨八音盒",
+    desc: "点亮 16 拍五声音阶星格即兴作曲，键盘 A–K 实时弹奏，3D 星环绽放声景粒子。",
+    cta: "进入编曲台 →",
+    tone: "nebula",
+    mark: "✦",
+  },
+  {
+    href: "fireworks.html",
+    kicker: "PHYSICS + MIRROR LAKE",
+    title: "夜空烟花湖",
+    desc: "点击夜空升空 5 种真实物理形态烟花，湖面实时映出微光倒影，支持高清壁纸导出。",
+    cta: "放一场烟花 →",
+    tone: "lake",
+    mark: "✧",
+  },
+  {
+    href: "christmas.html",
+    kicker: "WINTER CANVAS 3D",
+    title: "圣诞夜 · 粒子树",
+    desc: "拖动旋转 3D 粒子圣诞树，切换三层景深飘雪、钢片琴八音盒与定制贺卡导出。",
+    cta: "点亮圣诞树 →",
+    tone: "pine",
+    mark: "❄",
+  },
+] as const;
+
 function ChristmasSpotlight() {
   return (
-    <a className="christmas-spotlight" href="christmas.html">
-      <div className="christmas-spotlight-copy">
+    <section
+      className="christmas-spotlight interactive-showcase"
+      aria-labelledby="interactive-showcase-title"
+    >
+      <div className="interactive-showcase-head">
         <p className="christmas-spotlight-kicker">
-          <span>✦ 冬日限定特辑</span>
+          <span>✦ 声光互动特辑</span>
           <i aria-hidden="true">·</i>
-          <span>INTERACTIVE CANVAS</span>
+          <span>INTERACTIVE CANVAS &amp; WEB AUDIO</span>
         </p>
-        <h2>圣诞夜 · 旋转粒子圣诞树</h2>
-        <p>
-          拖动旋转立体粒子圣诞树，点亮盘旋的光带，换一串暖金、冰蓝或玫瑰色的冬夜灯火。
-        </p>
+        <h2 id="interactive-showcase-title">把声音与粒子，放进夜空里玩一会儿。</h2>
       </div>
-      <div className="christmas-spotlight-visual">
-        <svg viewBox="0 0 84 90" aria-hidden="true">
-          <polygon
-            points="42,7 45,16 54,16 47,22 49,31 42,25 35,31 37,22 30,16 39,16"
-            fill="#f5d78e"
-          />
-          <circle cx="42" cy="36" r="2.3" fill="#ffe7ab" />
-          <circle cx="34" cy="46" r="2.1" fill="#9bd7ff" />
-          <circle cx="50" cy="47" r="2.3" fill="#f7c77c" />
-          <circle cx="29" cy="57" r="2.1" fill="#f4a8bc" />
-          <circle cx="42" cy="56" r="2.5" fill="#ffe7ab" />
-          <circle cx="55" cy="58" r="2.1" fill="#9bd7ff" />
-          <circle cx="24" cy="68" r="2.3" fill="#ffe7ab" />
-          <circle cx="36" cy="69" r="2.1" fill="#f7c77c" />
-          <circle cx="48" cy="68" r="2.4" fill="#f4a8bc" />
-          <circle cx="60" cy="69" r="2.1" fill="#ffe7ab" />
-          <rect x="39" y="75" width="6" height="9" rx="1.5" fill="#a28058" />
-        </svg>
-        <span className="christmas-spotlight-cta">点亮圣诞树 →</span>
+      <div className="interactive-showcase-grid">
+        {INTERACTIVE_EDITIONS.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            className="interactive-edition-card"
+            data-edition-tone={item.tone}
+          >
+            <div className="interactive-edition-top">
+              <span className="interactive-edition-mark" aria-hidden="true">
+                {item.mark}
+              </span>
+              <span className="interactive-edition-kicker">{item.kicker}</span>
+            </div>
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <span className="christmas-spotlight-cta">{item.cta}</span>
+          </a>
+        ))}
       </div>
-    </a>
+    </section>
   );
 }
 

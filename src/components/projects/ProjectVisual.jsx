@@ -301,6 +301,46 @@ function FocusVisual() {
   );
 }
 
+function StarlightVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface xmas-mini">
+        <div className="mini-bar">
+          <span>星轨八音盒</span>
+          <span className="mini-pill">♪ 4 种音色</span>
+        </div>
+        <div className="xmas-mini-row">
+          <span className="xmas-star">✦</span>
+          <div className="xmas-mini-tags">
+            <span>16 拍五声音阶 · 3D 星环</span>
+            <b>键盘 A–K 弹奏 · 分享链接</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FireworksVisual() {
+  return (
+    <div className="project-visual custom-card-visual" aria-hidden="true">
+      <div className="mini-surface xmas-mini">
+        <div className="mini-bar">
+          <span>夜空烟花湖</span>
+          <span className="mini-pill">✧ 5 种形态</span>
+        </div>
+        <div className="xmas-mini-row">
+          <span className="xmas-star">✧</span>
+          <div className="xmas-mini-tags">
+            <span>菊花 · 垂柳 · 星环 · 星芒</span>
+            <b>湖面实时倒影 · 壁纸 PNG</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function ChristmasVisual() {
   return (
     <div className="project-visual custom-card-visual" aria-hidden="true">
@@ -331,6 +371,8 @@ export default function ProjectVisual({ project }) {
   if (project.id === "folia-android") return <AudioVisual />;
   if (project.id === "frame-studio") return <FrameVisual />;
   if (project.id === "focus-lab") return <FocusVisual />;
+  if (project.id === "starlight-box") return <StarlightVisual />;
+  if (project.id === "fireworks") return <FireworksVisual />;
   if (project.id === "christmas") return <ChristmasVisual />;
   return <FloorplanVisual />;
 }

@@ -51,6 +51,18 @@ const TOOL_ICONS = {
       <path d="M12 15.5V21M9.5 21h5" />
     </svg>
   ),
+  "starlight-box": (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <ellipse cx="12" cy="12" rx="9" ry="4.5" transform="rotate(-18 12 12)" />
+      <circle cx="12" cy="12" r="2.2" />
+      <circle cx="18.2" cy="8.6" r="1.2" fill="currentColor" stroke="none" />
+    </svg>
+  ),
+  fireworks: (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.3 6.3l2.8 2.8M14.9 14.9l2.8 2.8M17.7 6.3l-2.8 2.8M9.1 14.9l-2.8 2.8" />
+    </svg>
+  ),
 };
 
 export default function ToolShortcut({

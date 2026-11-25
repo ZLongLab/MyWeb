@@ -299,6 +299,22 @@ export default function initialize(scope) {
       body: "Seedance AI 视频 提示词 模板 电影 动漫 定格 产品 旅行 音乐 MV 宠物 分镜 工具 收藏 草稿",
     });
     addEntry({
+      id: "page:starlight-box",
+      type: "页面",
+      title: "星轨八音盒 · 音画编曲台",
+      summary: "16 拍五声音阶发光音序器，支持 4 种纯 Web Audio 音色、键盘 A–K 弹奏与 3D 星环粒子绽放。",
+      href: "starlight-box.html",
+      body: "星轨 八音盒 编曲 钢琴 音乐 音序器 五声音阶 粒子 声光特辑 starlight music",
+    });
+    addEntry({
+      id: "page:fireworks",
+      type: "页面",
+      title: "夜空烟花湖 · 互动物理烟花",
+      summary: "点击夜空升空 5 种真实物理形态烟花，带实时湖面倒影、合成音效与 1600×960 壁纸导出。",
+      href: "fireworks.html",
+      body: "烟花 夜空 烟花湖 倒影 粒子 壁纸 声光特辑 fireworks",
+    });
+    addEntry({
       id: "page:christmas",
       type: "页面",
       title: "圣诞夜 · 圣诞特辑",

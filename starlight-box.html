@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#070b17">
+  <meta name="description" content="有间小站的星轨八音盒。点击发光星格编织五声音阶旋律，用键盘弹奏，在 3D 旋转星环中绽放声景粒子与光浪。">
+  <title>星轨八音盒 · 声光特辑 · 有间小站</title>
+  <!-- discovery:start -->
+  <meta property="og:title" content="星轨八音盒 · 声光特辑 · 有间小站">
+  <meta property="og:description" content="点击星格编织五声音阶旋律，支持 4 种纯 Web Audio 音色与 3D 星尘粒子绽放。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zlonglab.github.io/MyWeb/starlight-box.html">
+  <meta property="og:image" content="https://zlonglab.github.io/MyWeb/assets/images/site-og-card.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="星轨八音盒 · 声光特辑 · 有间小站">
+  <meta name="twitter:description" content="点击星格编织五声音阶旋律，支持 4 种纯 Web Audio 音色与 3D 星尘粒子绽放。">
+  <meta name="twitter:url" content="https://zlonglab.github.io/MyWeb/starlight-box.html">
+  <meta name="twitter:image" content="https://zlonglab.github.io/MyWeb/assets/images/site-og-card.png">
+  <!-- discovery:end -->
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/src/styles/starlight-box.css">
+  <script type="module" src="/src/pages/starlight-box.js"></script>
+</head>
+<body>
+  <div class="star-page" id="starlight-app" data-palette="nebula">
+    <header class="star-masthead">
+      <div class="star-brand">
+        <span class="star-brand-mark" aria-hidden="true">✦</span>
+        <span>有间小站<span class="star-brand-divider"></span><span class="star-edition">声光特辑</span></span>
+      </div>
+      <nav class="edition-switcher" aria-label="声光互动特辑切换">
+        <a href="./christmas.html">圣诞树</a>
+        <a href="./starlight-box.html" aria-current="page">星轨八音盒</a>
+        <a href="./fireworks.html">夜空烟花湖</a>
+      </nav>
+      <a class="star-home-link" href="./index.html">返回小站</a>
+    </header>
+
+    <main class="star-stage" id="main">
+      <canvas
+        class="star-canvas"
+        id="star-canvas"
+        role="img"
+        aria-label="3D 旋转星轨音画画布，轻点星空白处可实时弹奏音符并绽放粒子"
+      ></canvas>
+
+      <div class="star-hero-overlay" id="star-hero">
+        <p class="star-kicker"><span>✦ INTERACTIVE AUDIO-VISUAL</span> · <span>WEB AUDIO + 3D ORBIT</span></p>
+        <h1>星轨八音盒<span>。</span></h1>
+        <p class="star-lead">点亮下方发光星格即兴作曲，按键盘 <kbd>A</kbd>–<kbd>K</kbd> 实时弹奏，或轻点夜空触发星尘回响。</p>
+      </div>
+
+      <section class="star-dock" id="star-dock" aria-label="星轨音序编曲台">
+        <div class="star-dock-bar">
+          <div class="star-bar-group">
+            <button type="button" class="star-play-btn" id="star-play" aria-pressed="false">
+              <span class="star-play-icon" aria-hidden="true">▶</span>
+              <span class="star-play-label">播放星轨</span>
+            </button>
+
+            <div class="star-pills" role="group" aria-label="音色选择">
+              <button type="button" class="star-pill" data-timbre="celesta" aria-pressed="true">水晶八音盒</button>
+              <button type="button" class="star-pill" data-timbre="epiano" aria-pressed="false">温暖电钢</button>
+              <button type="button" class="star-pill" data-timbre="harp" aria-pressed="false">空灵竖琴</button>
+              <button type="button" class="star-pill" data-timbre="nebula" aria-pressed="false">星云垫音</button>
+            </div>
+          </div>
+
+          <div class="star-bar-group star-bar-right">
+            <div class="star-palettes" role="group" aria-label="星空配色">
+              <button type="button" class="star-swatch" data-palette="nebula" aria-label="暖金星云" title="暖金星云" aria-pressed="true"></button>
+              <button type="button" class="star-swatch" data-palette="aurora" aria-label="极光翡翠" title="极光翡翠" aria-pressed="false"></button>
+              <button type="button" class="star-swatch" data-palette="frost" aria-label="冰蓝雪夜" title="冰蓝雪夜" aria-pressed="false"></button>
+            </div>
+
+            <label class="star-bpm" title="调整播放速度">
+              <span>BPM</span>
+              <input id="star-bpm" type="range" min="68" max="144" step="2" value="98" aria-label="播放速度 BPM">
+              <output id="star-bpm-value">98</output>
+            </label>
+
+            <button type="button" class="star-ghost-btn" id="star-collapse" aria-expanded="true" aria-controls="star-grid-wrap">
+              收起面板
+            </button>
+          </div>
+        </div>
+
+        <div class="star-grid-wrap" id="star-grid-wrap">
+          <div class="star-subbar">
+            <div class="star-presets" role="group" aria-label="示范旋律">
+              <span class="star-subbar-label">示范曲</span>
+              <button type="button" class="star-chip" data-preset="starlight">星河漫步</button>
+              <button type="button" class="star-chip" data-preset="rainbox">雨夜回响</button>
+              <button type="button" class="star-chip" data-preset="morning">冬日晨光</button>
+            </div>
+            <div class="star-actions">
+              <button type="button" class="star-chip" id="star-random">✦ 随机灵感</button>
+              <button type="button" class="star-chip" id="star-clear">清空</button>
+              <button type="button" class="star-chip is-accent" id="star-share">复制旋律链接</button>
+            </div>
+          </div>
+
+          <div class="star-matrix" id="star-matrix" role="grid" aria-label="8音阶 16拍 星轨编曲矩阵"></div>
+
+          <div class="star-dock-foot">
+            <p class="star-status" id="star-status" role="status" aria-live="polite">五声音阶永不跑调 · 按空格启停，按 A–K 弹奏，或拖动/点击上方夜空</p>
+            <span class="star-key-hint" aria-hidden="true">Keys: A S D F G H J K</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

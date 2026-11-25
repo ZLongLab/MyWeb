@@ -5,14 +5,14 @@ test("Whole project cards keep native links, keyboard access and filter context"
   page,
 }) => {
   await page.goto("projects.html");
-  await expect(page.locator(".portfolio-title a")).toHaveCount(11);
+  await expect(page.locator(".portfolio-title a")).toHaveCount(13);
   const destinations = await page
     .locator(".portfolio-title a")
     .evaluateAll((links) => links.map((link) => link.getAttribute("href")));
-  expect(destinations).toHaveLength(11);
+  expect(destinations).toHaveLength(13);
   for (const [index, destination] of destinations.entries()) {
     await page.goto("projects.html");
-    await expect(page.locator(".portfolio-title a")).toHaveCount(11);
+    await expect(page.locator(".portfolio-title a")).toHaveCount(13);
     const target = new URL(destination, page.url());
     const card = page.locator(".portfolio-project").nth(index);
     const bounds = await card.boundingBox();
@@ -60,7 +60,7 @@ for (const width of [1440, 390]) {
       "true",
     );
     const cards = page.locator("[data-project-list] .portfolio-project");
-    await expect(cards).toHaveCount(11);
+    await expect(cards).toHaveCount(13);
     await expect(page.locator(".portfolio-state")).toContainText("持续打磨");
     await expect(page.locator(".portfolio-glass-aside svg")).toHaveCount(1);
     await expect(
@@ -100,8 +100,8 @@ for (const width of [1440, 390]) {
     expect(layout.spans).toEqual(
       (
         width === 1440
-          ? [6, 6, 6, 3, 3, 7, 5, 4, 4, 4, 12]
-          : Array(11).fill(12)
+          ? [6, 6, 6, 3, 3, 7, 5, 6, 6, 4, 4, 4, 12]
+          : Array(13).fill(12)
       ).map((span) => `span ${span}`),
     );
 
@@ -152,6 +152,6 @@ for (const width of [1440, 390]) {
       /project\.html\?id=recallai.*category=/,
     );
     await page.getByRole("button", { name: "全部", exact: true }).click();
-    await expect(cards).toHaveCount(11);
+    await expect(cards).toHaveCount(13);
   });
 }
